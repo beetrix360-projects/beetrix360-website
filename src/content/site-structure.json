@@ -1,0 +1,534 @@
+{
+  "_source": "Beetrix Navigation.docx (Website Service Pages: Developer Handoff)",
+  "divisions": [
+    {
+      "name": "Digital Marketing",
+      "slug": "digital-marketing",
+      "services": [
+        {
+          "name": "Social Media Management",
+          "slug": "social-media-management",
+          "keyword": "social media management services",
+          "subServices": [
+            {
+              "name": "Instagram Management",
+              "slug": "instagram-management",
+              "keyword": "instagram management services"
+            },
+            {
+              "name": "Facebook Management",
+              "slug": "facebook-management",
+              "keyword": "facebook management services"
+            },
+            {
+              "name": "LinkedIn Management",
+              "slug": "linkedin-management",
+              "keyword": "linkedin management services"
+            },
+            {
+              "name": "TikTok Account Management",
+              "slug": "tiktok-management",
+              "keyword": "tiktok account management"
+            },
+            {
+              "name": "Social Media Content Creation",
+              "slug": "content-creation",
+              "keyword": "social media content creation"
+            },
+            {
+              "name": "Community Management",
+              "slug": "community-management",
+              "keyword": "social media community management"
+            }
+          ]
+        },
+        {
+          "name": "Branding Services",
+          "slug": "branding-services",
+          "keyword": "branding services",
+          "subServices": [
+            {
+              "name": "Brand Identity Design Services",
+              "slug": "brand-identity-design",
+              "keyword": "brand identity design"
+            },
+            {
+              "name": "Logo Design Services",
+              "slug": "logo-design",
+              "keyword": "logo design services"
+            },
+            {
+              "name": "Custom Collateral Design Services",
+              "slug": "collateral-design",
+              "keyword": "marketing collateral design services"
+            },
+            {
+              "name": "Packaging and Label Design Service",
+              "slug": "packaging-label-design",
+              "keyword": "packaging and label design services"
+            },
+            {
+              "name": "Branding Strategy",
+              "slug": "branding-strategy",
+              "keyword": "brand strategy services"
+            }
+          ]
+        },
+        {
+          "name": "SEO Services",
+          "slug": "seo-services",
+          "keyword": "seo services",
+          "subServices": [
+            {
+              "name": "Local SEO",
+              "slug": "local-seo",
+              "keyword": "local seo services"
+            },
+            {
+              "name": "Technical SEO",
+              "slug": "technical-seo",
+              "keyword": "technical seo services"
+            },
+            {
+              "name": "On-Page SEO",
+              "slug": "on-page-seo",
+              "keyword": "on-page seo services"
+            },
+            {
+              "name": "Answer Engine Optimization (AEO)",
+              "slug": "answer-engine-optimization",
+              "keyword": "answer engine optimization"
+            },
+            {
+              "name": "Generative Engine Optimization (GEO)",
+              "slug": "generative-engine-optimization",
+              "keyword": "generative engine optimization"
+            },
+            {
+              "name": "Link Building",
+              "slug": "link-building",
+              "keyword": "link building services"
+            },
+            {
+              "name": "Ecommerce SEO",
+              "slug": "ecommerce-seo",
+              "keyword": "ecommerce seo services"
+            },
+            {
+              "name": "Keyword Research",
+              "slug": "keyword-research",
+              "keyword": "keyword research services"
+            }
+          ]
+        },
+        {
+          "name": "Email Marketing Services",
+          "slug": "email-marketing-services",
+          "keyword": "email marketing services",
+          "subServices": [
+            {
+              "name": "Email Campaign Management",
+              "slug": "email-campaigns",
+              "keyword": "email campaign management"
+            },
+            {
+              "name": "Email Automation",
+              "slug": "email-automation",
+              "keyword": "email automation services"
+            },
+            {
+              "name": "Newsletter Management",
+              "slug": "newsletter-management",
+              "keyword": "newsletter management services"
+            },
+            {
+              "name": "Email Template Design",
+              "slug": "email-design",
+              "keyword": "email template design"
+            }
+          ]
+        },
+        {
+          "name": "Sales Funnel Development",
+          "slug": "sales-funnel-development",
+          "keyword": "sales funnel development services",
+          "subServices": [
+            {
+              "name": "Landing Page Design",
+              "slug": "landing-pages",
+              "keyword": "landing page design services"
+            },
+            {
+              "name": "Lead Generation",
+              "slug": "lead-generation",
+              "keyword": "lead generation services"
+            },
+            {
+              "name": "Marketing Automation",
+              "slug": "marketing-automation",
+              "keyword": "marketing automation services"
+            },
+            {
+              "name": "Conversion Rate Optimization",
+              "slug": "conversion-rate-optimization",
+              "keyword": "conversion rate optimization services"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Agentic and AI Automations",
+      "slug": "ai-automation",
+      "services": [
+        {
+          "name": "AI Agent Development",
+          "slug": "ai-agent-development",
+          "keyword": "ai agent development services",
+          "subServices": [
+            {
+              "name": "Custom AI Agents",
+              "slug": "custom-ai-agents",
+              "keyword": "custom ai agent development"
+            },
+            {
+              "name": "AI Sales Agents",
+              "slug": "ai-sales-agents",
+              "keyword": "ai sales agent"
+            },
+            {
+              "name": "AI Customer Service Agents",
+              "slug": "ai-customer-service-agents",
+              "keyword": "ai customer service agent"
+            },
+            {
+              "name": "Multi-Agent Systems",
+              "slug": "multi-agent-systems",
+              "keyword": "multi-agent systems"
+            }
+          ]
+        },
+        {
+          "name": "Workflow Automation Services",
+          "slug": "workflow-automation-services",
+          "keyword": "ai workflow automation services",
+          "subServices": [
+            {
+              "name": "Business Process Automation",
+              "slug": "business-process-automation",
+              "keyword": "business process automation services"
+            },
+            {
+              "name": "Data Entry Automation",
+              "slug": "data-entry-automation",
+              "keyword": "data entry automation"
+            },
+            {
+              "name": "API and Systems Automation",
+              "slug": "api-automation",
+              "keyword": "api integration automation"
+            },
+            {
+              "name": "No-Code Automation",
+              "slug": "no-code-automation",
+              "keyword": "no-code automation services"
+            }
+          ]
+        },
+        {
+          "name": "AI Chatbot Development",
+          "slug": "ai-chatbot-development",
+          "keyword": "ai chatbot development",
+          "subServices": [
+            {
+              "name": "Customer Service Chatbots",
+              "slug": "customer-service-chatbots",
+              "keyword": "customer service chatbot development"
+            },
+            {
+              "name": "Website Chatbots",
+              "slug": "website-chatbots",
+              "keyword": "website chatbot development"
+            },
+            {
+              "name": "WhatsApp Chatbots",
+              "slug": "whatsapp-chatbots",
+              "keyword": "whatsapp chatbot development"
+            },
+            {
+              "name": "Ecommerce Chatbots",
+              "slug": "ecommerce-chatbots",
+              "keyword": "ecommerce chatbot"
+            }
+          ]
+        },
+        {
+          "name": "AI Integration Services",
+          "slug": "ai-integration-services",
+          "keyword": "ai integration services",
+          "subServices": [
+            {
+              "name": "CRM AI Integration",
+              "slug": "crm-ai-integration",
+              "keyword": "ai crm integration"
+            },
+            {
+              "name": "ChatGPT API Integration",
+              "slug": "chatgpt-integration",
+              "keyword": "chatgpt integration services"
+            },
+            {
+              "name": "AI Software Integration",
+              "slug": "ai-software-integration",
+              "keyword": "ai software integration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AI Content Generation",
+      "slug": "ai-content-generation",
+      "services": [
+        {
+          "name": "AI Content Writing Services",
+          "slug": "ai-content-writing",
+          "keyword": "ai content writing services",
+          "subServices": [
+            {
+              "name": "AI Blog Writing",
+              "slug": "ai-blog-writing",
+              "keyword": "ai blog writing services"
+            },
+            {
+              "name": "AI Copywriting",
+              "slug": "ai-copywriting",
+              "keyword": "ai copywriting services"
+            },
+            {
+              "name": "AI Product Descriptions",
+              "slug": "ai-product-descriptions",
+              "keyword": "ai product description writing"
+            },
+            {
+              "name": "AI Website Content",
+              "slug": "ai-website-content",
+              "keyword": "ai website content writing"
+            }
+          ]
+        },
+        {
+          "name": "AI Video Generation",
+          "slug": "ai-video-generation",
+          "keyword": "ai video generation services",
+          "subServices": [
+            {
+              "name": "AI Avatar Videos",
+              "slug": "ai-avatar-videos",
+              "keyword": "ai avatar video generation"
+            },
+            {
+              "name": "AI Faceless Videos",
+              "slug": "ai-faceless-videos",
+              "keyword": "faceless ai video"
+            },
+            {
+              "name": "AI Video Ads",
+              "slug": "ai-video-ads",
+              "keyword": "ai video ad creation"
+            },
+            {
+              "name": "AI Product Videos",
+              "slug": "ai-product-videos",
+              "keyword": "ai product video"
+            }
+          ]
+        },
+        {
+          "name": "AI Image Generation",
+          "slug": "ai-image-generation",
+          "keyword": "ai image generation services",
+          "subServices": [
+            {
+              "name": "AI Product Photography",
+              "slug": "ai-product-photography",
+              "keyword": "ai product photography"
+            },
+            {
+              "name": "AI Ad Creatives",
+              "slug": "ai-ad-creatives",
+              "keyword": "ai ad creative generation"
+            },
+            {
+              "name": "AI Lifestyle Images",
+              "slug": "ai-lifestyle-images",
+              "keyword": "ai lifestyle image generation"
+            }
+          ]
+        },
+        {
+          "name": "AI SEO Content Services",
+          "slug": "ai-seo-content",
+          "keyword": "ai content for seo",
+          "subServices": [
+            {
+              "name": "AI Content Optimization",
+              "slug": "ai-content-optimization",
+              "keyword": "ai content optimization"
+            },
+            {
+              "name": "Programmatic SEO Content",
+              "slug": "programmatic-seo",
+              "keyword": "programmatic seo"
+            },
+            {
+              "name": "Generative Engine Optimization",
+              "slug": "generative-engine-optimization",
+              "keyword": "ai generative engine optimization"
+            }
+          ]
+        },
+        {
+          "name": "AI Social Media Content",
+          "slug": "ai-social-media-content",
+          "keyword": "ai social media content creation",
+          "subServices": [
+            {
+              "name": "AI Social Media Posts",
+              "slug": "ai-social-posts",
+              "keyword": "ai social media post creation"
+            },
+            {
+              "name": "AI Reels and Shorts",
+              "slug": "ai-reels",
+              "keyword": "ai reels generation"
+            }
+          ]
+        },
+        {
+          "name": "AI UGC Ad Creation",
+          "slug": "ai-ugc-ads",
+          "keyword": "ai ugc ad creation",
+          "subServices": [
+            {
+              "name": "AI UGC Video Ads",
+              "slug": "ai-ugc-video-ads",
+              "keyword": "ai ugc video ads"
+            },
+            {
+              "name": "AI UGC Avatars",
+              "slug": "ai-ugc-avatars",
+              "keyword": "ai ugc avatar"
+            },
+            {
+              "name": "AI TikTok UGC Ads",
+              "slug": "ai-tiktok-ugc",
+              "keyword": "ai tiktok ugc ads"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Paid Media Buying",
+      "slug": "paid-media-buying",
+      "services": [
+        {
+          "name": "Amazon Management Services",
+          "slug": "amazon-management",
+          "keyword": "amazon management services",
+          "subServices": [
+            {
+              "name": "Amazon Ads Management",
+              "slug": "amazon-ads",
+              "keyword": "amazon advertising management"
+            },
+            {
+              "name": "Amazon DSP Management",
+              "slug": "amazon-dsp",
+              "keyword": "amazon dsp management"
+            },
+            {
+              "name": "Amazon Seller Operations Management",
+              "slug": "seller-operations",
+              "keyword": "amazon seller account management"
+            },
+            {
+              "name": "Amazon Creator Connections",
+              "slug": "creator-connections",
+              "keyword": "amazon creator connections"
+            },
+            {
+              "name": "Amazon Brand Management",
+              "slug": "brand-management",
+              "keyword": "amazon brand management services"
+            }
+          ]
+        },
+        {
+          "name": "Google Ads Management",
+          "slug": "google-ads-management",
+          "keyword": "google ads management services",
+          "subServices": [],
+          "sections": [
+            "customer and audience match targeting",
+            "competition analysis",
+            "ad copywriting",
+            "ad testing",
+            "ad tracking",
+            "bid management"
+          ]
+        },
+        {
+          "name": "Meta Ads Management",
+          "slug": "meta-ads-management",
+          "keyword": "meta ads management services",
+          "subServices": [],
+          "sections": [
+            "audience targeting",
+            "ongoing campaign management",
+            "comprehensive reports and tracking",
+            "ad copy and creatives"
+          ]
+        },
+        {
+          "name": "TikTok Ads Management",
+          "slug": "tiktok-ads-management",
+          "keyword": "tiktok ads management",
+          "subServices": [],
+          "sections": [
+            "ad account setup and audit",
+            "audience research and targeting",
+            "campaign strategy and launch",
+            "performance monitoring and optimization",
+            "influencer collaborations",
+            "reporting and insights"
+          ]
+        },
+        {
+          "name": "Walmart Ads Management",
+          "slug": "walmart-ads-management",
+          "keyword": "walmart ads management",
+          "subServices": [],
+          "sections": [
+            "campaign creation and management",
+            "optimization and performance monitoring",
+            "insights-driven reporting and adaptation"
+          ]
+        },
+        {
+          "name": "Target Ads Management",
+          "slug": "target-ads-management",
+          "keyword": "target ads management",
+          "subServices": [],
+          "sections": [
+            "product ads and sponsored products management",
+            "Roundel display and video advertising",
+            "programmatic and offsite audience targeting",
+            "budget optimization and ROAS management"
+          ]
+        }
+      ]
+    }
+  ]
+}

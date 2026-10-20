@@ -1,0 +1,373 @@
+{
+  "_note": "Homepage content, copied from beetrix360_homepage_v6.html. Shape is defined in src/lib/types.ts. Designed to be stored as one DynamoDB item (or one item per section) and edited from the dashboard.",
+  "seo": {
+    "title": "BeeTrix360 | Revenue Architects",
+    "description": "BeeTrix360 builds web, automation, AI agents and AI-search visibility as one measurable revenue system."
+  },
+  "hero": {
+    "badge": {
+      "tag": "Try this",
+      "text": "Ask ChatGPT for the best vendor in your space.",
+      "strong": "Is it you?",
+      "cta": "Free AI audit"
+    },
+    "headline": "We don't post content. We engineer",
+    "rotatingWords": ["revenue.", "pipeline.", "AI citations.", "booked calls."],
+    "subheading": "Web, automation, AI agents and AI-search visibility — one system that turns traffic into booked revenue.",
+    "auditForm": {
+      "label": "Your domain",
+      "placeholder": "yourcompany.com",
+      "button": "Get my free AI audit",
+      "modalTag": "Free AI audit"
+    },
+    "trust": {
+      "badge": "55+",
+      "text": "Trusted by teams at",
+      "highlight": "Tesla Solar, Microsoft & Subway"
+    },
+    "stats": [
+      { "value": 10, "prefix": "$", "suffix": "B+", "label": "Pipeline generated" },
+      { "value": 24.8, "decimals": 1, "suffix": "M", "label": "Leads processed" },
+      { "value": 55, "suffix": "+", "label": "Industries" },
+      { "value": 586, "prefix": "+", "suffix": "%", "label": "AI-search traffic" }
+    ],
+    "puzzle": {
+      "ariaLabel": "BeeTrix360 four-piece puzzle: Digitize, Automate, Agents, Content",
+      "labels": { "topLeft": "Agents", "topRight": "Automate", "bottomRight": "Digitize", "bottomLeft": "Content" },
+      "chips": [
+        { "label": "AI citations", "value": "+586%" },
+        { "label": "Lead response", "value": "0.4s" }
+      ],
+      "hintDesktop": "Hover to unlock · click to spin",
+      "hintMobile": "Tap to spin"
+    },
+    "showreel": {
+      "title": "Watch the 60s showreel",
+      "subtitle": "VIDEO PLACEHOLDER",
+      "video": "Showreel"
+    }
+  },
+  "clients": [
+    { "name": "TESLA SOLAR", "badge": "+40%", "accent": "green" },
+    { "name": "MICROSOFT", "badge": "+30%", "accent": "blue" },
+    { "name": "SUBWAY", "badge": "+25%", "accent": "yellow" },
+    { "name": "DAMAC" },
+    { "name": "WEST & POST" },
+    { "name": "BAY SQUARE" }
+  ],
+  "statement": {
+    "eyebrow": { "number": "00", "label": "The real problem", "accent": "pink" },
+    "text": "Growth rarely stalls from a lack of traffic. It stalls from slow handoffs, disconnected tools, and being invisible when buyers ask AI.",
+    "button": { "label": "Find my revenue leaks", "cta": "Free revenue leak check" },
+    "note": "Free · takes 2 minutes"
+  },
+  "pain": {
+    "heading": "Sound familiar?",
+    "hint": "Hover or tap a card to see the fix",
+    "cards": [
+      {
+        "accent": "pink",
+        "ariaLabel": "Admin overload — reveal fix",
+        "icon": "fa-solid fa-clock-rotate-left",
+        "front": { "kind": "stat", "stat": "60%", "text": "of the day lost to admin" },
+        "tag": "01 / Human latency",
+        "back": { "icon": "fa-solid fa-gears", "label": "The fix", "text": "Python & API automation across HR, finance and sales.", "button": "Fix this for me", "cta": "Automation fix" }
+      },
+      {
+        "accent": "blue",
+        "ariaLabel": "Clicks not contracts — reveal fix",
+        "icon": "fa-solid fa-chart-pie",
+        "front": { "kind": "bars", "text": "Reports show clicks, not contracts" },
+        "tag": "02 / Fractured data",
+        "back": { "icon": "fa-solid fa-link", "label": "The fix", "text": "Closed-loop attribution synced to your CRM.", "button": "Fix this for me", "cta": "Attribution fix" }
+      },
+      {
+        "accent": "yellow",
+        "ariaLabel": "Invisible in AI — reveal fix",
+        "icon": "fa-solid fa-eye-slash",
+        "front": { "kind": "query", "query": "\"Best vendor for…?\"", "text": "Invisible when buyers ask ChatGPT" },
+        "tag": "03 / AI invisibility",
+        "back": { "icon": "fa-solid fa-wand-magic-sparkles", "label": "The fix", "text": "GEO: structured content AI engines cite.", "button": "Fix this for me", "cta": "AI visibility fix" }
+      },
+      {
+        "accent": "green",
+        "ariaLabel": "Tool sprawl — reveal fix",
+        "icon": "fa-solid fa-layer-group",
+        "front": { "kind": "stat", "stat": "15", "text": "tools that don't talk" },
+        "tag": "04 / Stack bloat",
+        "back": { "icon": "fa-solid fa-cubes-stacked", "label": "The fix", "text": "One Next.js stack and a single data layer.", "button": "Fix this for me", "cta": "Stack consolidation fix" }
+      }
+    ],
+    "ctaBand": {
+      "icon": "fa-solid fa-stethoscope",
+      "iconStyle": "pink",
+      "title": "Recognize one of these?",
+      "text": "Each one is quietly costing you deals. We'll show you exactly where.",
+      "button": "Get my free diagnosis",
+      "buttonStyle": "pink",
+      "cta": "Free leak diagnosis"
+    }
+  },
+  "pillars": {
+    "eyebrow": { "number": "01", "label": "Four pillars", "accent": "blue" },
+    "heading": { "text": "One system.", "accent": "Four pieces.", "accentColor": "blue", "lineBreak": true },
+    "intro": "Like our logo, each pillar locks into the next. Keep scrolling to stack them.",
+    "button": { "label": "Build all four with us", "cta": "All four pillars" },
+    "link": { "label": "or see the results", "href": "#work" },
+    "cards": [
+      {
+        "accent": "blue",
+        "stepIcon": "fa-solid fa-layer-group",
+        "tag": "Pillar 01 · Digitize",
+        "number": "01",
+        "title": "Enterprise Digitization",
+        "text": "Brand, web and funnels engineered as one.",
+        "visual": "layers",
+        "visualFirst": false,
+        "placeholder": { "icon": "fa-regular fa-image", "lines": ["IMAGE", "Website mockup", "1200×900"] },
+        "chips": ["Naming & identity", "Next.js / headless", "Booking funnels"],
+        "footer": "STACK · NEXT.JS + HEADLESS",
+        "button": "Deploy pillar I",
+        "cta": "Pillar I: Digitization"
+      },
+      {
+        "accent": "pink",
+        "stepIcon": "fa-solid fa-gears",
+        "tag": "Pillar 02 · Automate",
+        "number": "02",
+        "title": "Workflow Automation",
+        "text": "Repetitive work handled by code, not people.",
+        "visual": "workflow",
+        "visualFirst": true,
+        "placeholder": { "icon": "fa-solid fa-film", "lines": ["VIDEO / GIF", "Workflow screen capture", "15s loop"] },
+        "chips": ["HR onboarding", "Invoice sync", "Salesforce & Odoo"],
+        "footer": "LEAD RESPONSE · 0.4s",
+        "button": "Deploy pillar II",
+        "cta": "Pillar II: Automation"
+      },
+      {
+        "accent": "green",
+        "stepIcon": "fa-solid fa-robot",
+        "tag": "Pillar 03 · Agents",
+        "number": "03",
+        "title": "Agentic AI Teams",
+        "text": "Digital employees that research, reason and act.",
+        "visual": "agents",
+        "visualFirst": false,
+        "placeholder": { "icon": "fa-regular fa-image", "lines": ["IMAGE", "Agent dashboard UI", "1200×900"] },
+        "chips": ["Multi-step reasoning", "Market research", "Self-hosted LLMs"],
+        "footer": "RUNS · 24/7",
+        "button": "Deploy pillar III",
+        "cta": "Pillar III: AI agents"
+      },
+      {
+        "accent": "yellow",
+        "stepIcon": "fa-solid fa-pen-nib",
+        "tag": "Pillar 04 · Content",
+        "number": "04",
+        "title": "AI-Ready Content",
+        "text": "Written to convert humans and get cited by AI.",
+        "visual": "bars",
+        "visualFirst": true,
+        "placeholder": { "icon": "fa-regular fa-image", "lines": ["IMAGE", "Content samples collage", "1200×900"] },
+        "chips": ["GEO", "Sales copy", "Entity structuring"],
+        "footer": "IMPACT · +586% AI TRAFFIC",
+        "button": "Deploy pillar IV",
+        "cta": "Pillar IV: AI-ready content"
+      }
+    ]
+  },
+  "kineticPillars": {
+    "words": ["Digitize", "Automate", "Agents", "Content"],
+    "direction": 1
+  },
+  "pipeline": {
+    "eyebrow": { "number": "02", "label": "How it flows", "accent": "green" },
+    "heading": { "text": "The zero-touch", "accent": "pipeline.", "accentColor": "pink" },
+    "intro": "From first click to booked meeting — no manual handoffs.",
+    "stages": [
+      { "accent": "blue", "icon": "fa-solid fa-bullseye", "label": "STAGE 01", "title": "Capture", "text": "Paid, SEO and AI search bring in buyers who are ready." },
+      { "accent": "pink", "icon": "fa-solid fa-bolt", "label": "STAGE 02 · 0.4s", "title": "Enrich", "text": "Scripts fill in company data and start outreach instantly." },
+      { "accent": "green", "icon": "fa-solid fa-route", "label": "STAGE 03", "title": "Route", "text": "CRM rules send each lead to the right closer." },
+      { "accent": "yellow", "icon": "fa-solid fa-calendar-check", "label": "STAGE 04", "title": "Close", "text": "Meetings auto-book, revenue ties back to source." }
+    ],
+    "ctaBand": {
+      "icon": "fa-solid fa-stopwatch",
+      "iconStyle": "green",
+      "title": "How fast do you answer a new lead?",
+      "text": "Most teams take hours. Buyers pick whoever replies first.",
+      "button": "Test my speed-to-lead",
+      "buttonStyle": "dark-green",
+      "cta": "Speed-to-lead test"
+    }
+  },
+  "geo": {
+    "eyebrow": { "number": "03", "label": "AI search", "accent": "yellow" },
+    "heading": { "text": "Get cited by AI,", "accent": "not just ranked.", "accentColor": "pink" },
+    "intro": "Buyers shortlist vendors in ChatGPT, Perplexity, Claude and AI Overviews. We make sure you're the answer.",
+    "stats": [
+      { "value": 586, "prefix": "+", "suffix": "%", "label": "Traffic from AI sources" },
+      { "value": 116, "prefix": "+", "suffix": "%", "label": "Share-of-voice vs. top rival", "accent": "green" }
+    ],
+    "shareOfVoice": {
+      "title": "AI share-of-voice (illustrative)",
+      "rows": [
+        { "label": "You", "value": 82 },
+        { "label": "Rival A", "value": 38 },
+        { "label": "Rival B", "value": 21 }
+      ]
+    },
+    "chat": {
+      "windowLabel": "AI assistant · simulated",
+      "question": "Which partner can automate our CRM, build on Next.js and prove ROI?",
+      "answerLead": "Top recommendation:",
+      "answerBrand": "BeeTrix360",
+      "answerRest": "— combines Next.js builds, CRM automation and AI agents with closed-loop ROI tracking.",
+      "citation": "Cited source · beetrix360.com"
+    },
+    "rankBadge": { "label": "Rank in AI answer", "value": "#1" },
+    "checkBand": {
+      "icon": "fa-solid fa-robot",
+      "title": "Is AI sending your buyers to a competitor?",
+      "text": "Enter your site. We'll check 4 AI engines and show who they recommend.",
+      "label": "Your website",
+      "placeholder": "yourcompany.com",
+      "button": "Check now",
+      "modalTag": "Does AI recommend me?"
+    }
+  },
+  "compare": {
+    "eyebrow": { "number": "04", "label": "The difference", "accent": "blue" },
+    "heading": { "text": "Drag to see the", "accent": "upgrade.", "accentColor": "green" },
+    "before": {
+      "label": "Typical agency",
+      "items": [
+        { "icon": "fa-solid fa-arrow-pointer", "label": "Goal", "value": "Clicks & impressions" },
+        { "icon": "fa-solid fa-puzzle-piece", "label": "Stack", "value": "15 disconnected tools" },
+        { "icon": "fa-solid fa-magnifying-glass", "label": "Search", "value": "Keyword blog posts" },
+        { "icon": "fa-solid fa-file-csv", "label": "Handoff", "value": "CSV uploads, slow follow-up" }
+      ]
+    },
+    "after": {
+      "label": "BeeTrix360",
+      "items": [
+        { "icon": "fa-solid fa-sack-dollar", "accent": "yellow", "label": "Goal", "value": "Closed revenue" },
+        { "icon": "fa-solid fa-cubes", "accent": "blue", "label": "Stack", "value": "One unified data layer" },
+        { "icon": "fa-solid fa-wand-magic-sparkles", "accent": "pink", "label": "Search", "value": "GEO + AI citations" },
+        { "icon": "fa-solid fa-bolt", "accent": "green", "label": "Handoff", "value": "Instant routing & booking" }
+      ]
+    },
+    "rangeLabel": "Compare typical agency with BeeTrix360",
+    "followUp": { "title": "Ready to switch sides?", "button": "Move me to the right side", "cta": "Switch to revenue engineering" }
+  },
+  "kineticProof": {
+    "words": ["Proof", "not promises", "Real revenue", "Real numbers"],
+    "direction": -1
+  },
+  "work": {
+    "eyebrow": { "number": "05", "label": "Results", "accent": "green" },
+    "heading": "Proof, not promises.",
+    "allButton": { "label": "All case studies", "cta": "Case study pack" },
+    "cases": [
+      { "accent": "green", "placeholder": "IMAGE · Solar campaign creative · 1200×900", "category": "Clean energy", "value": 40, "prefix": "+", "suffix": "%", "title": "Tesla Solar · pre-orders vs. target" },
+      { "accent": "blue", "placeholder": "IMAGE · Engagement dashboard · 1200×900", "category": "Enterprise SaaS", "value": 30, "prefix": "+", "suffix": "%", "title": "Microsoft · enterprise engagement" },
+      { "accent": "yellow", "placeholder": "IMAGE · Local ad creative · 1200×900", "category": "Global QSR", "value": 25, "prefix": "+", "suffix": "%", "title": "Subway · in-store footfall" }
+    ],
+    "realEstate": {
+      "title": "Real estate launches · Canada & Dubai",
+      "placeholder": "RENDER 800×1066",
+      "items": [
+        { "name": "West & Post", "location": "Oakville" },
+        { "name": "Elo 3 by Damac", "location": "Dubai" },
+        { "name": "Bravo", "location": "Vaughan" },
+        { "name": "IVY Gardens 2", "location": "Dubai" },
+        { "name": "River & Sky", "location": "Woodstock" },
+        { "name": "Bay Square", "location": "Dubai" },
+        { "name": "Pickering City Centre", "location": "Pickering" }
+      ]
+    },
+    "ctaBand": {
+      "icon": "fa-solid fa-trophy",
+      "iconStyle": "yellow",
+      "title": "Want numbers like these?",
+      "text": "Get a growth plan built on your data, not a template.",
+      "button": "Get my growth plan",
+      "buttonStyle": "pink",
+      "cta": "Growth plan"
+    }
+  },
+  "roi": {
+    "eyebrow": { "number": "06", "label": "Your numbers", "accent": "pink" },
+    "heading": "What could automation save you?",
+    "inputs": {
+      "team": { "label": "Team size (sales, ops, admin)", "min": 5, "max": 200, "step": 1, "default": 25 },
+      "share": { "label": "Time spent on repetitive admin", "min": 10, "max": 60, "step": 1, "default": 30 },
+      "cost": { "label": "Loaded hourly cost", "min": 15, "max": 120, "step": 5, "default": 40 }
+    },
+    "assumption": "Estimate assumes ~50% of admin time can be automated and 2,080 hrs/yr per person.",
+    "hoursLabel": "Hours back / year",
+    "savingsLabel": "Estimated annual savings",
+    "fteTemplate": "≈ {fte} full-time roles freed for high-value work",
+    "button": { "label": "Get my custom model →", "cta": "Custom ROI model" }
+  },
+  "process": {
+    "eyebrow": { "number": "07", "label": "Rollout", "accent": "yellow" },
+    "heading": { "text": "Live in", "accent": "90 days.", "accentColor": "pink" },
+    "intro": "A fixed, four-phase plan. You see progress every week.",
+    "video": { "label": "VIDEO PLACEHOLDER · 2-min process walkthrough", "video": "Process walkthrough" },
+    "badges": [
+      { "icon": "fa-solid fa-shield-halved", "accent": "green", "text": "Your data never trains public AI" },
+      { "icon": "fa-solid fa-server", "accent": "blue", "text": "Self-hosted LLM option" },
+      { "icon": "fa-solid fa-scale-balanced", "accent": "pink", "text": "Privacy-compliant" }
+    ],
+    "steps": [
+      { "accent": "blue", "range": "DAYS 01–14", "title": "Audit", "text": "Map your CRM data and find where leads slow down." },
+      { "accent": "pink", "range": "DAYS 15–30", "title": "Build", "text": "Ship the web platform and connect your data." },
+      { "accent": "yellow", "range": "DAYS 31–60", "title": "Activate", "text": "Turn on AI agents, outreach and GEO content." },
+      { "accent": "green", "range": "DAYS 61–90+", "title": "Scale", "text": "Pipeline runs itself. We optimize what the data shows." }
+    ],
+    "ctaBand": {
+      "icon": "fa-solid fa-rocket",
+      "iconStyle": "blue",
+      "title": "Your 90 days can start this month.",
+      "text": "Kickoff call, audit plan and timeline in one 30-minute session.",
+      "button": "Book my kickoff call",
+      "buttonStyle": "dark-blue",
+      "cta": "Kickoff call"
+    }
+  },
+  "contact": {
+    "heading": { "text": "Let's build your", "accent": "revenue engine.", "accentColor": "pink" },
+    "intro": "Get a free 90-day blueprint: AI-search audit, automation map and ROI model.",
+    "form": {
+      "nameLabel": "Name *",
+      "emailLabel": "Work email *",
+      "websiteLabel": "Website *",
+      "websitePlaceholder": "yourcompany.com",
+      "goalLegend": "Main goal",
+      "goals": [
+        { "icon": "fa-solid fa-wand-magic-sparkles", "accent": "yellow", "label": "AI search" },
+        { "icon": "fa-solid fa-gears", "accent": "pink", "label": "Automation" },
+        { "icon": "fa-solid fa-robot", "accent": "green", "label": "AI agents" },
+        { "icon": "fa-solid fa-code", "accent": "blue", "label": "New website" }
+      ],
+      "budgetLabel": "Monthly budget",
+      "budgets": ["$5k – $10k", "$10k – $25k", "$25k – $50k", "$50k+"],
+      "submit": "Get my blueprint →",
+      "note": "Reply within 1 business day. No spam."
+    },
+    "success": { "title": "You're in.", "text": "We'll send your blueprint shortly." }
+  },
+  "floatingCta": { "cta": "Free AI audit", "label": "Is AI recommending you?", "labelMobile": "Free AI audit" },
+  "chapters": [
+    { "href": "#hero", "label": "Start" },
+    { "href": "#pain", "label": "Problems" },
+    { "href": "#pillars", "label": "Pillars" },
+    { "href": "#pipeline", "label": "Pipeline" },
+    { "href": "#geo", "label": "AI search" },
+    { "href": "#work", "label": "Results" },
+    { "href": "#roi", "label": "ROI" },
+    { "href": "#process", "label": "Rollout" },
+    { "href": "#contact", "label": "Contact" }
+  ]
+}

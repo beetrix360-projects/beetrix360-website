@@ -1,0 +1,16 @@
+export { Hero, Loader } from "./Hero";
+export { ClientMarquee } from "./ClientMarquee";
+export { ProblemStatement } from "./ProblemStatement";
+export { PainFlipCards } from "./PainFlipCards";
+export { FourPillars } from "./FourPillars";
+export { KineticBand } from "./KineticBand";
+export { ZeroTouchPipeline } from "./ZeroTouchPipeline";
+export { GeoSection } from "./GeoSection";
+export { CompareSlider } from "./CompareSlider";
+export { ProofSection } from "./ProofSection";
+export { RoiCalculator } from "./RoiCalculator";
+export { RolloutTimeline } from "./RolloutTimeline";
+export { ContactSection } from "./ContactSection";
+export { FloatingCta } from "./FloatingCta";
+export { ChapterNav } from "./ChapterNav";
+export { HomeAnimations } from "./HomeAnimations";

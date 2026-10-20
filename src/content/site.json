@@ -1,0 +1,43 @@
+{
+  "_note": "Site-wide settings shared by every page, copied from beetrix360_homepage_v6.html.",
+  "name": "BeeTrix360",
+  "url": "https://www.beetrix360.com",
+  "description": "BeeTrix360 builds web, automation, AI agents and AI-search visibility as one measurable revenue system.",
+  "foundingYear": 2016,
+  "formerName": "Bee Social",
+  "phone": { "display": "+1 (424) 441-6042", "tel": "+14244416042", "ariaLabel": "Call +1 424 441 6042" },
+  "header": {
+    "cta": { "label": "Book a call", "cta": "Strategy call" },
+    "mobileCta": { "label": "Book a call →", "cta": "Strategy call" }
+  },
+  "footer": {
+    "tagline": "Revenue architects since 2016 — started as Bee Social.",
+    "exploreTitle": "Explore",
+    "explore": [
+      { "label": "Pillars", "href": "/#pillars" },
+      { "label": "AI search", "href": "/#geo" },
+      { "label": "Work", "href": "/#work" },
+      { "label": "ROI calculator", "href": "/#roi" }
+    ],
+    "contactTitle": "Contact",
+    "domainLabel": "www.beetrix360.com",
+    "bookLabel": "Book a call",
+    "bookHref": "/#contact",
+    "copyright": "© 2016–2026 BeeTrix360®. All rights reserved.",
+    "backToTop": "Back to top ↑"
+  },
+  "modal": {
+    "defaultTag": "Request",
+    "defaultTitle": "Let's talk growth",
+    "namePlaceholder": "Name & title *",
+    "emailPlaceholder": "Work email *",
+    "websitePlaceholder": "Website *",
+    "submit": "Send →",
+    "successTitle": "Request received",
+    "successText": "We'll reply within one business day."
+  },
+  "videoModal": {
+    "label": "VIDEO EMBED",
+    "hint": "Replace with YouTube / Vimeo iframe or <video>"
+  }
+}
