@@ -4,6 +4,7 @@ frontend:
     preBuild:
       commands:
         - npm ci
+        - env | grep -E '^(CONTENT_SOURCE|DYNAMODB_CONTENT_TABLE|DDB_REGION|S3_MEDIA_BUCKET|S3_REGION|AUTH_SECRET|NEXT_PUBLIC_|APP_AWS_)' >> .env.production || true
     build:
       commands:
         - npm run build
