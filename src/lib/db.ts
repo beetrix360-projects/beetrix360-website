@@ -11,22 +11,33 @@ import {
 import fs from "fs";
 import path from "path";
 
-// Initialize AWS DynamoDB Document Client if credentials are provided
-const region = process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION || "us-east-1";
-const hasAwsCreds = !!(process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY) || !!process.env.AWS_EXECUTION_ENV;
+// Initialize AWS DynamoDB Document Client
+const region =
+  process.env.DDB_REGION ||
+  process.env.AWS_REGION ||
+  process.env.AWS_DEFAULT_REGION ||
+  "us-east-1";
 
-const rawClient = hasAwsCreds
-  ? new DynamoDBClient({
-      region,
-      credentials:
-        process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY
+const accessKeyId =
+  process.env.APP_AWS_ACCESS_KEY_ID || process.env.AWS_ACCESS_KEY_ID;
+const secretAccessKey =
+  process.env.APP_AWS_SECRET_ACCESS_KEY || process.env.AWS_SECRET_ACCESS_KEY;
+
+const hasExplicitCreds = !!(accessKeyId && secretAccessKey);
+const isDynamoDbEnabled = process.env.CONTENT_SOURCE === "dynamodb";
+
+const rawClient =
+  hasExplicitCreds || isDynamoDbEnabled || !!process.env.AWS_EXECUTION_ENV
+    ? new DynamoDBClient({
+        region,
+        credentials: hasExplicitCreds
           ? {
-              accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-              secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+              accessKeyId: accessKeyId!,
+              secretAccessKey: secretAccessKey!,
             }
-          : undefined,
-    })
-  : null;
+          : undefined, // AWS SDK automatically uses IAM Service Role when undefined
+      })
+    : null;
 
 export const ddbDocClient = rawClient
   ? DynamoDBDocumentClient.from(rawClient, {
