@@ -74,6 +74,7 @@ export interface PillarCard {
   visual: PillarVisual;
   visualFirst: boolean;
   placeholder: Placeholder;
+  image?: string;
   chips: string[];
   footer: string;
   button: string;
@@ -110,6 +111,7 @@ export interface HomepageContent {
       hintDesktop: string;
       hintMobile: string;
     };
+    image?: string;
     showreel: { title: string; subtitle: string; video: string };
   };
   clients: { name: string; badge?: string; accent?: Accent }[];

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import type { HomepageContent } from "@/lib/types";
 import { saveHomepageAction } from "../../actions";
+import { ImageUploadField } from "@/components/admin/ImageUploadField";
 
 interface Props {
   initialContent: HomepageContent;
@@ -269,6 +270,20 @@ export function HomepageEditor({ initialContent, userRole }: Props) {
                     />
                   </div>
                 </div>
+
+                <div className="pt-4 border-t border-neutral-200">
+                  <ImageUploadField
+                    label="Hero Custom Banner / Showcase Image"
+                    value={content.hero.image || ""}
+                    onChange={(url) =>
+                      setContent({
+                        ...content,
+                        hero: { ...content.hero, image: url },
+                      })
+                    }
+                    helperText="Upload a showcase banner or graphic for the homepage hero. Saves to S3 & CDN."
+                  />
+                </div>
               </div>
             </div>
           )}
@@ -477,6 +492,19 @@ export function HomepageEditor({ initialContent, userRole }: Props) {
                           setContent({ ...content, pillars: { ...content.pillars, cards: newCards } });
                         }}
                         className="w-full px-3 py-1.5 bg-white border border-neutral-300 rounded-lg text-neutral-900 text-xs focus:border-emerald-500 focus:outline-none"
+                      />
+                    </div>
+
+                    <div className="pt-2 border-t border-neutral-200">
+                      <ImageUploadField
+                        label={`Pillar ${pillar.number} Card Image`}
+                        value={pillar.image || ""}
+                        onChange={(url) => {
+                          const newCards = [...content.pillars.cards];
+                          newCards[idx].image = url;
+                          setContent({ ...content, pillars: { ...content.pillars, cards: newCards } });
+                        }}
+                        helperText="Upload a card mockup or visual to replace the striped placeholder."
                       />
                     </div>
                   </div>

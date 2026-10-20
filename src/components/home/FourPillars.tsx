@@ -58,7 +58,12 @@ export function FourPillars({ p }: PillarsProps) {
         <div className="lg:col-span-7">
           <div id="stack" className="relative lg:h-[600px]">
             {p.cards.map((c, i) => {
-              const ph = (
+              const ph = c.image ? (
+                <div key="img" className="col-span-3 rounded-2xl overflow-hidden border border-bx-border bg-neutral-900/5 relative flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={c.image} alt={c.title} className="w-full h-full object-cover" />
+                </div>
+              ) : (
                 <Ph key="ph" icon={c.placeholder.icon} lines={c.placeholder.lines} className="col-span-3 rounded-2xl" />
               );
               const vis = <PillarVisualBlock key="vis" visual={c.visual} />;
