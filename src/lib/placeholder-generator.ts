@@ -508,8 +508,10 @@ export function generatePlaceholderSections(
   const pageType = page.pageType || "service";
   const cleanNoun = getCleanTopicNoun(h1);
 
-  // Map of all pages for safe verified linking (strictly guarantees links can only point to pages that exist)
-  const pageByPath = new Map<string, PageRecordV2>(allPages.map((p) => [p.path, p]));
+  // Map of all published pages for safe verified linking (strictly guarantees links can only point to pages that exist and are published)
+  const pageByPath = new Map<string, PageRecordV2>(
+    allPages.filter((p) => p.published).map((p) => [p.path, p])
+  );
 
   // Child pages for childCards
   const childPages = allPages

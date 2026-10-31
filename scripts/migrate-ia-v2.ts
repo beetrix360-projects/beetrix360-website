@@ -247,7 +247,7 @@ async function runMigration() {
       division: sp.division,
       sections: [],
       contentStatus: "placeholder",
-      published: true,
+      published: (sp as any).published !== false,
       redirectFrom: [],
       updatedAt: "",
     };
@@ -316,7 +316,7 @@ async function runMigration() {
           division: sp.division,
           sections: [],
           contentStatus,
-          published: true,
+          published: (sp as any).published !== false,
           redirectFrom: [],
           updatedAt: "",
         },
@@ -353,7 +353,7 @@ async function runMigration() {
       division: sp.division,
       sections: finalSections,
       contentStatus,
-      published: true,
+      published: (sp as any).published !== false,
       redirectFrom,
       note: sp.note,
       updatedAt: existing?.updatedAt || handEditedMatch?.updatedAt || nowTimestamp,
@@ -381,6 +381,7 @@ async function runMigration() {
         existing.origin !== pageRecord.origin ||
         existing.division !== pageRecord.division ||
         existing.contentStatus !== pageRecord.contentStatus ||
+        existing.published !== pageRecord.published ||
         existing.seo?.titleTag !== pageRecord.seo.titleTag ||
         existing.seo?.metaDescription !== pageRecord.seo.metaDescription ||
         existing.seo?.canonicalPath !== pageRecord.seo.canonicalPath ||
@@ -439,6 +440,7 @@ async function runMigration() {
       groups.push({
         heading: g.heading,
         headingPath: g.headingPath ? normalizePath(g.headingPath) : null,
+        span: g.span || (items.length > 6 ? 2 : 1),
         items,
       });
     }

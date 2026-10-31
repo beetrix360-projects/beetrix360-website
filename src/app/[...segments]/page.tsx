@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const page = await getPageByPath(rawPath);
-  if (!page) {
+  if (!page || !page.published) {
     return {};
   }
 

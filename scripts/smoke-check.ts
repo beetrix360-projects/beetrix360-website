@@ -218,12 +218,18 @@ async function runSmokeCheck() {
     if (!passed) failures.push(item);
   }
 
-  // 3. All 167 Inner Seed Pages (HTTP 200, Title brand count = 1, Robots from store)
-  const innerSeedPages = seedData.pages.map((p) => p.path).filter((p) => p !== "/");
-  console.log(`[3/5] Validating all ${innerSeedPages.length} inner pages (HTTP 200, brand 1x, store robots)...`);
+  // 3. Published Inner Seed Pages (HTTP 200, Title brand count = 1, Robots from store)
+  const publishedInnerPages = seedData.pages
+    .filter((p) => p.path !== "/" && (p as any).published !== false)
+    .map((p) => p.path);
+  const unpublishedPages = seedData.pages
+    .filter((p) => (p as any).published === false)
+    .map((p) => p.path);
+
+  console.log(`[3/5] Validating all ${publishedInnerPages.length} published inner pages (HTTP 200, brand 1x, store robots)...`);
 
   let checkedCount = 0;
-  await runWithConcurrency(innerSeedPages, async (pagePath) => {
+  await runWithConcurrency(publishedInnerPages, async (pagePath) => {
     const val = await fetchHtmlAndValidate(pagePath);
     const item: CheckResult = {
       path: pagePath,
@@ -238,10 +244,27 @@ async function runSmokeCheck() {
     if (!val.passed) failures.push(item);
 
     checkedCount++;
-    if (checkedCount % 40 === 0 || checkedCount === innerSeedPages.length) {
-      console.log(`  - Verified ${checkedCount}/${innerSeedPages.length} pages...`);
+    if (checkedCount % 40 === 0 || checkedCount === publishedInnerPages.length) {
+      console.log(`  - Verified ${checkedCount}/${publishedInnerPages.length} pages...`);
     }
   }, 8);
+
+  // 3.1. Unpublished Pages Check (must return 404 Not Found)
+  console.log(`\n[Unpublished Pages Check] Validating all ${unpublishedPages.length} unpublished pages (must return 404)...`);
+  for (const unpub of unpublishedPages) {
+    const res = await fetchRoute(unpub);
+    const passed = res.status === 404;
+    const item: CheckResult = {
+      path: unpub,
+      category: "page",
+      expected: "404 Not Found (Unpublished guard)",
+      actual: `${res.status}`,
+      status: res.status,
+      passed,
+    };
+    results.push(item);
+    if (!passed) failures.push(item);
+  }
 
   // 3.5. Internal Link Crawl: Verify every internal <a href> extracted across all 168 pages
   console.log(`\n[Link Crawl] Discovered ${internalLinkSources.size} unique internal link targets across 168 pages.`);
@@ -374,19 +397,21 @@ async function runSmokeCheck() {
     consoleErrors.push(err.message || String(err));
   });
 
-  // A. Top Bar at 1280px Desktop Breakpoint
-  console.log(`  - Capturing Top Bar at 1280px (topbar-1280.png)...`);
+  // A. Top Bar at 1280px Desktop Breakpoint (Shows hamburger button, desktop menu hidden)
+  console.log(`  - Capturing Top Bar at 1280px (topbar-1280.png showing menu button)...`);
   await page.setViewport({ width: 1280, height: 800, deviceScaleFactor: 1 });
   await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle2" });
   await new Promise((r) => setTimeout(r, 1000));
   await page.screenshot({ path: path.join(screenshotDir, "topbar-1280.png") });
 
-  // B. All 7 Mega Menu Dropdowns at 1440px Desktop Breakpoint
-  console.log(`  - Capturing all 7 Mega Menu Dropdowns at 1440px...`);
+  // B. Top Bar at 1440px (Closed and all Dropdowns open)
+  console.log(`  - Capturing Top Bar closed at 1440px (topbar-1440.png)...`);
   await page.setViewport({ width: 1440, height: 950, deviceScaleFactor: 1 });
   await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle2" });
   await new Promise((r) => setTimeout(r, 1200));
+  await page.screenshot({ path: path.join(screenshotDir, "topbar-1440.png") });
 
+  console.log(`  - Capturing all 7 Mega Menu Dropdowns at 1440px...`);
   const navLabels = seedData.navigation.menus.map((m) => m.label);
   for (let i = 0; i < navLabels.length; i++) {
     const label = navLabels[i];
@@ -407,10 +432,39 @@ async function runSmokeCheck() {
       ).catch(() => {});
       await new Promise((r) => setTimeout(r, 300));
       await page.screenshot({ path: path.join(screenshotDir, slug) });
+      if (label === "Company") {
+        await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1440.png") });
+      }
       // Close dropdown
       await page.keyboard.press("Escape");
       await new Promise((r) => setTimeout(r, 200));
     }
+  }
+
+  // C. Top Bar at 1920px (Closed and Company Dropdown Open)
+  console.log(`  - Capturing Top Bar closed at 1920px (topbar-1920.png)...`);
+  await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 1 });
+  await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle2" });
+  await new Promise((r) => setTimeout(r, 1000));
+  await page.screenshot({ path: path.join(screenshotDir, "topbar-1920.png") });
+
+  console.log(`  - Capturing Company Dropdown open at 1920px (company-dropdown-1920.png)...`);
+  const buttons1920 = await page.$$("nav[aria-label='Main'] button");
+  const companyIdx = navLabels.indexOf("Company");
+  if (companyIdx !== -1 && buttons1920[companyIdx]) {
+    await buttons1920[companyIdx].click();
+    await page.waitForFunction(
+      (idx) => {
+        const el = document.getElementById(`mega-menu-${idx}`);
+        return el && window.getComputedStyle(el).opacity === "1";
+      },
+      { timeout: 3000 },
+      companyIdx
+    ).catch(() => {});
+    await new Promise((r) => setTimeout(r, 300));
+    await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1920.png") });
+    await page.keyboard.press("Escape");
+    await new Promise((r) => setTimeout(r, 200));
   }
 
   // C. Mobile Menu at 390px (Opened)
@@ -463,7 +517,8 @@ async function runSmokeCheck() {
   console.log(`======================================================================`);
   console.log(`Total Routes Tested:   ${results.length}`);
   console.log(`  - Homepage & System: ${1 + SYSTEM_ROUTES.length}`);
-  console.log(`  - Seed IA v2 Pages:   ${innerSeedPages.length}`);
+  console.log(`  - Published IA v2:    ${publishedInnerPages.length}`);
+  console.log(`  - Unpublished (404):  ${unpublishedPages.length}`);
   console.log(`  - 301/308 Redirects:  ${redirectEntries.length}`);
   console.log(`  - 404 Unknown Routes: ${UNKNOWN_PATHS.length}`);
   console.log(`Internal Links Crawled: ${uniqueInternalTargets.length}`);
@@ -475,10 +530,13 @@ async function runSmokeCheck() {
   console.log(`Console Errors:        ${consoleErrors.length}`);
 
   console.log(`\n----------------------------------------------------------------------`);
-  console.log(`  PHASE 4 & 5 VISUAL VERIFICATION ARTIFACTS`);
+  console.log(`  HEADER & DROPDOWN VISUAL ARTIFACTS`);
   console.log(`----------------------------------------------------------------------`);
-  console.log(`  - Top Bar at 1280px:                      docs/smoke-screenshots/topbar-1280.png`);
-  console.log(`  - 7 Dropdowns at 1440px:                  docs/smoke-screenshots/dropdown-1..7-*-1440.png`);
+  console.log(`  - Top Bar at 1280px (Menu button):        docs/smoke-screenshots/topbar-1280.png`);
+  console.log(`  - Top Bar closed at 1440px:               docs/smoke-screenshots/topbar-1440.png`);
+  console.log(`  - Company Dropdown open at 1440px:        docs/smoke-screenshots/company-dropdown-1440.png`);
+  console.log(`  - Top Bar closed at 1920px:               docs/smoke-screenshots/topbar-1920.png`);
+  console.log(`  - Company Dropdown open at 1920px:        docs/smoke-screenshots/company-dropdown-1920.png`);
   console.log(`  - Mobile Drawer at 390px:                 docs/smoke-screenshots/mobile-menu-390.png`);
   console.log(`  - Sample Service Page (/seo/local-seo):   docs/smoke-screenshots/page-service-1440.png`);
   console.log(`  - Sample Challenge (/challenges/...):     docs/smoke-screenshots/page-challenge-1440.png`);

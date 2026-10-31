@@ -91,7 +91,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
       }`}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-[76px] shrink-0 flex items-center justify-between gap-2">
+      <div className="w-full max-w-[1536px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 h-[76px] shrink-0 flex items-center justify-between">
         {/* Brand Wordmark & Animated Logo */}
         <Link
           href="/"
@@ -101,12 +101,12 @@ export function Navbar({ site, navigation }: NavbarProps) {
           <Logo floating />
         </Link>
 
-        {/* Desktop Mega Menu Navigation (100% Server-Rendered HTML) */}
+        {/* Desktop Mega Menu Navigation (100% Server-Rendered HTML, min 1440px) */}
         <nav
-          className="hidden xl:flex items-center justify-center flex-1 min-w-0"
+          className="hidden min-[1440px]:flex items-center justify-center flex-1 min-w-0 mx-10"
           aria-label="Main"
         >
-          <div className="flex items-center gap-0.5 2xl:gap-1.5 flex-nowrap">
+          <div className="flex items-center gap-1.5 min-[1600px]:gap-3 flex-nowrap">
             {menus.map((menu, mIdx) => {
               const isOpen = openDropdown === mIdx;
               return (
@@ -132,7 +132,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                     aria-expanded={isOpen}
                     aria-haspopup="true"
                     aria-controls={`mega-menu-${mIdx}`}
-                    className={`px-2.5 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-semibold tracking-tight transition rounded-lg flex items-center gap-1 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink ${
+                    className={`px-3 min-[1600px]:px-4 py-2 text-xs min-[1600px]:text-sm font-semibold tracking-tight transition rounded-lg flex items-center gap-1 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink ${
                       isOpen
                         ? "text-bx-pink bg-bx-pink/5"
                         : "text-neutral-700 hover:text-bx-pink hover:bg-neutral-50"
@@ -146,7 +146,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                     />
                   </button>
 
-                  {/* Dropdown 5-Track Mega Menu (Always in SSR DOM for SEO crawlers) */}
+                  {/* Dropdown 5-Track Mega Menu (Aligned identically to header container) */}
                   <div
                     id={`mega-menu-${mIdx}`}
                     className={`fixed left-0 right-0 top-[76px] bg-white border-b border-neutral-200 shadow-2xl transition-all duration-200 ${
@@ -155,7 +155,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                         : "opacity-0 invisible -translate-y-2 pointer-events-none"
                     }`}
                   >
-                    <div className="max-w-[1440px] mx-auto px-6 py-8">
+                    <div className="w-full max-w-[1536px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 py-8">
                       {/* 5-Column Grid */}
                       <div className="grid grid-cols-5 gap-8">
                         {menu.groups.map((group, gIdx) => {
@@ -292,7 +292,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
         </nav>
 
         {/* Header CTA Button */}
-        <div className="hidden xl:flex items-center gap-3 shrink-0">
+        <div className="hidden min-[1440px]:flex items-center gap-3 shrink-0">
           <Link
             href={cta.path}
             data-cta=""
@@ -306,7 +306,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="xl:hidden p-2 rounded-lg text-neutral-700 hover:text-bx-pink hover:bg-neutral-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink"
+          className="min-[1440px]:hidden p-2 rounded-lg text-neutral-700 hover:text-bx-pink hover:bg-neutral-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
         >
@@ -316,7 +316,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="xl:hidden flex-1 overflow-y-auto bg-white p-5 border-t border-neutral-100">
+        <div className="min-[1440px]:hidden flex-1 overflow-y-auto bg-white p-5 border-t border-neutral-100">
           <nav aria-label="Mobile Navigation" className="space-y-4 pb-12">
             {menus.map((menu, mIdx) => {
               const isAccordionOpen = mobileAccordion === mIdx;

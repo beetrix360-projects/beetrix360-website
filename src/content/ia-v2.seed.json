@@ -40,7 +40,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo",
@@ -77,7 +78,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/local-seo",
@@ -114,7 +116,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/technical-seo",
@@ -151,7 +154,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/on-page-seo",
@@ -188,7 +192,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/ecommerce-seo",
@@ -225,7 +230,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/link-building",
@@ -262,7 +268,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/keyword-research",
@@ -299,7 +306,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/programmatic-seo",
@@ -336,7 +344,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/generative-engine-optimization",
@@ -373,7 +382,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/answer-engine-optimization",
@@ -410,7 +420,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/chatgpt-optimization",
@@ -447,7 +458,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/ai-visibility-tracking",
@@ -484,7 +496,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/ai-brand-perception",
@@ -521,7 +534,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/enterprise-seo",
@@ -558,7 +572,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/seo/enterprise-geo",
@@ -595,7 +610,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/digital-marketing",
@@ -632,7 +648,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/digital-marketing/competitor-analysis",
@@ -669,7 +686,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/digital-marketing/ai-digital-marketing",
@@ -706,7 +724,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/paid-media",
@@ -743,7 +762,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/paid-media/google-ads",
@@ -780,7 +800,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/paid-media/google-local-services-ads",
@@ -817,7 +838,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/paid-media/meta-ads",
@@ -854,7 +876,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/paid-media/tiktok-ads",
@@ -891,7 +914,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/paid-media/social-media-advertising",
@@ -928,7 +952,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/paid-media/programmatic-advertising",
@@ -965,7 +990,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/paid-media/enterprise-ppc",
@@ -1002,7 +1028,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/paid-media/enterprise-social-advertising",
@@ -1039,7 +1066,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/marketplaces",
@@ -1076,7 +1104,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/marketplaces/amazon",
@@ -1113,7 +1142,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/marketplaces/amazon/advertising",
@@ -1150,7 +1180,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/marketplaces/amazon/seo",
@@ -1187,7 +1218,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/marketplaces/amazon/dsp",
@@ -1224,7 +1256,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/marketplaces/amazon/seller-operations",
@@ -1261,7 +1294,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/marketplaces/amazon/brand-management",
@@ -1298,7 +1332,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/marketplaces/amazon/creator-connections",
@@ -1335,7 +1370,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/marketplaces/amazon/enterprise-advertising",
@@ -1372,7 +1408,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/marketplaces/walmart",
@@ -1409,7 +1446,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/marketplaces/target",
@@ -1446,7 +1484,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/branding",
@@ -1483,7 +1522,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/branding/brand-strategy",
@@ -1520,7 +1560,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/branding/business-naming",
@@ -1557,7 +1598,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/branding/brand-identity-design",
@@ -1594,7 +1636,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/branding/logo-design",
@@ -1631,7 +1674,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/branding/collateral-design",
@@ -1668,7 +1712,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/branding/packaging-label-design",
@@ -1705,7 +1750,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/social-media",
@@ -1742,7 +1788,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/social-media/instagram-management",
@@ -1779,7 +1826,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/social-media/facebook-management",
@@ -1816,7 +1864,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/social-media/linkedin-management",
@@ -1853,7 +1902,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/social-media/tiktok-management",
@@ -1890,7 +1940,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/social-media/content-and-design",
@@ -1927,7 +1978,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/social-media/community-management",
@@ -1964,7 +2016,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/social-media/influencer-marketing",
@@ -2001,7 +2054,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/social-media/enterprise-management",
@@ -2038,7 +2092,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/content-marketing",
@@ -2075,7 +2130,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/content-marketing/website-copywriting",
@@ -2112,7 +2168,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/content-marketing/infographics-motion-graphics",
@@ -2149,7 +2206,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content",
@@ -2186,7 +2244,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/writing",
@@ -2223,7 +2282,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/writing/blog-writing",
@@ -2260,7 +2320,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/writing/copywriting",
@@ -2297,7 +2358,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/writing/product-descriptions",
@@ -2334,7 +2396,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/video",
@@ -2371,7 +2434,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/video/avatar-videos",
@@ -2408,7 +2472,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/video/faceless-videos",
@@ -2445,7 +2510,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/video/video-ads",
@@ -2482,7 +2548,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/video/product-videos",
@@ -2519,7 +2586,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/images",
@@ -2556,7 +2624,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/images/product-photography",
@@ -2593,7 +2662,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/images/ad-creatives",
@@ -2630,7 +2700,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/images/lifestyle-images",
@@ -2667,7 +2738,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/ugc-ads",
@@ -2704,7 +2776,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/ugc-ads/ugc-avatars",
@@ -2741,7 +2814,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/ugc-ads/tiktok-ugc-ads",
@@ -2778,7 +2852,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/social-media",
@@ -2815,7 +2890,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/social-media/reels-shorts",
@@ -2852,7 +2928,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai-content/enterprise",
@@ -2889,7 +2966,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-design",
@@ -2926,7 +3004,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-design/redesign",
@@ -2963,7 +3042,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-design/rapid-web-design",
@@ -3000,7 +3080,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-design/ecommerce",
@@ -3037,7 +3118,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-design/landing-pages",
@@ -3074,7 +3156,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-development",
@@ -3111,7 +3194,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-development/wordpress",
@@ -3148,7 +3232,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-development/ecommerce",
@@ -3185,7 +3270,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-development/web-applications",
@@ -3222,7 +3308,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-development/cms",
@@ -3259,7 +3346,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-development/site-security",
@@ -3296,7 +3384,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/web-development/maintenance",
@@ -3333,7 +3422,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/conversion",
@@ -3370,7 +3460,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/conversion/sales-funnels",
@@ -3407,7 +3498,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/conversion/lead-generation",
@@ -3444,7 +3536,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/conversion/website-personalization",
@@ -3481,7 +3574,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/conversion/review-generation",
@@ -3518,7 +3612,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/conversion/account-based-marketing",
@@ -3555,7 +3650,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/conversion/analytics-tracking",
@@ -3592,7 +3688,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/email-marketing",
@@ -3629,7 +3726,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/email-marketing/campaign-management",
@@ -3666,7 +3764,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/email-marketing/automation",
@@ -3703,7 +3802,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/email-marketing/newsletter-management",
@@ -3740,7 +3840,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/email-marketing/design-testing",
@@ -3777,7 +3878,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai",
@@ -3814,7 +3916,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/consulting",
@@ -3851,7 +3954,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/agent-development",
@@ -3888,7 +3992,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/agent-development/custom-ai-agents",
@@ -3925,7 +4030,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/agent-development/ai-sales-agents",
@@ -3962,7 +4068,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/agent-development/ai-customer-service-agents",
@@ -3999,7 +4106,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/agent-development/multi-agent-systems",
@@ -4036,7 +4144,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/chatbot-development",
@@ -4073,7 +4182,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/chatbot-development/website-chatbots",
@@ -4110,7 +4220,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/chatbot-development/whatsapp-chatbots",
@@ -4147,7 +4258,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/chatbot-development/ecommerce-chatbots",
@@ -4184,7 +4296,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/integration",
@@ -4221,7 +4334,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/integration/chatgpt-integration",
@@ -4258,7 +4372,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/integration/crm-ai-integration",
@@ -4295,7 +4410,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/integration/ai-software-integration",
@@ -4332,7 +4448,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/ai/enterprise-automation",
@@ -4369,7 +4486,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/automation",
@@ -4406,7 +4524,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/automation/business-process-automation",
@@ -4443,7 +4562,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/automation/document-processing",
@@ -4480,7 +4600,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/automation/data-entry-automation",
@@ -4517,7 +4638,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/automation/api-integration",
@@ -4554,7 +4676,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/automation/no-code-automation",
@@ -4591,7 +4714,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/automation/crm-automation",
@@ -4628,7 +4752,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/automation/marketing-automation",
@@ -4665,7 +4790,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/automation/salesforce-marketing-automation",
@@ -4702,7 +4828,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/automation/channel-partner-pipeline",
@@ -4739,7 +4866,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/challenges/website-doesnt-drive-leads",
@@ -4775,7 +4903,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/challenges/website-traffic-going-down",
@@ -4811,7 +4940,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/challenges/website-doesnt-convert",
@@ -4847,7 +4977,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/challenges/not-appearing-in-ai-search",
@@ -4883,7 +5014,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/challenges/agency-isnt-driving-results",
@@ -4919,7 +5051,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/challenges/too-much-manual-work",
@@ -4955,7 +5088,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/challenges/ads-spend-but-dont-sell",
@@ -4991,7 +5125,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/case-studies",
@@ -5026,7 +5161,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/portfolio",
@@ -5061,7 +5197,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/results",
@@ -5096,7 +5233,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/industries",
@@ -5131,7 +5269,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/enterprise",
@@ -5166,7 +5305,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": false
     },
     {
       "path": "/about",
@@ -5201,7 +5341,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/about/our-approach",
@@ -5236,7 +5377,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/about/our-approach/ai-search",
@@ -5271,7 +5413,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/about/team",
@@ -5306,7 +5449,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": false
     },
     {
       "path": "/about/values",
@@ -5341,7 +5485,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/about/equality",
@@ -5376,7 +5521,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": false
     },
     {
       "path": "/about/history",
@@ -5411,7 +5557,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/about/security",
@@ -5446,7 +5593,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": false
     },
     {
       "path": "/careers",
@@ -5481,7 +5629,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/contact",
@@ -5516,7 +5665,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/get-a-proposal",
@@ -5551,7 +5701,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/pricing",
@@ -5586,7 +5737,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/pricing/website-cost",
@@ -5622,7 +5774,8 @@
           "type": "article",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/pricing/seo-cost",
@@ -5658,7 +5811,8 @@
           "type": "article",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/pricing/ppc-cost",
@@ -5694,7 +5848,8 @@
           "type": "article",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/pricing/geo-cost",
@@ -5730,7 +5885,8 @@
           "type": "article",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/pricing/social-media-pricing",
@@ -5766,7 +5922,8 @@
           "type": "article",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/pricing/local-seo-pricing",
@@ -5802,7 +5959,8 @@
           "type": "article",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/pricing/ai-automation-cost",
@@ -5838,7 +5996,8 @@
           "type": "article",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/blog",
@@ -5873,7 +6032,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/tools",
@@ -5908,7 +6068,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": false
     },
     {
       "path": "/tools/seo-checker",
@@ -5943,7 +6104,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": false
     },
     {
       "path": "/tools/marketing-budget-calculator",
@@ -5978,7 +6140,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": false
     },
     {
       "path": "/tools/marketing-technology-scorecard",
@@ -6013,7 +6176,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": false
     },
     {
       "path": "/tools/faq-generator",
@@ -6048,7 +6212,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": false
     },
     {
       "path": "/privacy-policy",
@@ -6083,7 +6248,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/terms",
@@ -6118,7 +6284,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     },
     {
       "path": "/cookie-policy",
@@ -6153,7 +6320,8 @@
           "type": "website",
           "imagePath": null
         }
-      }
+      },
+      "published": true
     }
   ],
   "navigation": {
@@ -6737,9 +6905,7 @@
       {
         "label": "Company",
         "viewAllPath": "/about",
-        "bottomBarLinks": [
-          "/tools"
-        ],
+        "bottomBarLinks": [],
         "groups": [
           {
             "heading": "About Beetrix360",
@@ -6748,9 +6914,6 @@
             "items": [
               {
                 "path": "/about/our-approach"
-              },
-              {
-                "path": "/about/team"
               },
               {
                 "path": "/case-studies"
@@ -6768,19 +6931,13 @@
                 "path": "/about/values"
               },
               {
-                "path": "/about/equality"
-              },
-              {
                 "path": "/about/history"
-              },
-              {
-                "path": "/about/security"
               },
               {
                 "path": "/industries"
               },
               {
-                "path": "/enterprise"
+                "path": "/blog"
               }
             ]
           },
@@ -6811,34 +6968,13 @@
                 "path": "/challenges/ads-spend-but-dont-sell"
               }
             ]
-          },
-          {
-            "heading": "Resources",
-            "headingPath": null,
-            "span": 1,
-            "items": [
-              {
-                "path": "/blog"
-              },
-              {
-                "path": "/pricing"
-              },
-              {
-                "path": "/tools/seo-checker"
-              },
-              {
-                "path": "/tools/marketing-budget-calculator"
-              },
-              {
-                "path": "/tools/marketing-technology-scorecard"
-              },
-              {
-                "path": "/tools/faq-generator"
-              }
-            ]
           }
         ],
-        "proofCard": null
+        "proofCard": {
+          "text": "Headline client result",
+          "cta": "Read the case study",
+          "path": "/case-studies"
+        }
       }
     ]
   }
