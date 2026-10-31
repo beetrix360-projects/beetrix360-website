@@ -220,6 +220,29 @@ async function runMigration() {
     console.log(`[Carry-Over Audit] 0 hand-edited pages detected. All records match standard seed timestamps.`);
   }
 
+  // Detect pages in store that no longer exist in the seed (only when NOT hand-edited)
+  const pagesToDelete: any[] = [];
+  for (const p of existingPages) {
+    const normPath = p.path && p.path.startsWith("/") ? normalizePath(p.path) : null;
+    if (normPath && !seedPaths.has(normPath)) {
+      if (p.updatedBy) {
+        // Hand-edited page missing from seed - safety abort handled above in unmappedHandEdited
+      } else {
+        pagesToDelete.push(p);
+      }
+    }
+  }
+
+  console.log(`\n[Deletions Audit] Checking for pages in store no longer present in seed...`);
+  if (pagesToDelete.length > 0) {
+    console.log(`[Deletions Audit] Found ${pagesToDelete.length} unedited page(s) to delete:`);
+    for (const p of pagesToDelete) {
+      console.log(`  - DELETE: ${p.path} ("${p.h1 || p.menuLabel || p.path}")`);
+    }
+  } else {
+    console.log(`[Deletions Audit] 0 pages to delete. Store matches seed paths.`);
+  }
+
   // Step 3: Index Seed Pages & Resolve Stable IDs
   const seedPages = seedData.pages;
   console.log(`\n[Pages] Seeding ${seedPages.length} pages from src/content/ia-v2.seed.json...`);
@@ -409,7 +432,21 @@ async function runMigration() {
     }
   }
 
-  console.log(`[Pages Summary] Created: ${pagesCreated}, Updated: ${pagesUpdated}, Unchanged: ${pagesUnchanged}`);
+  // Execute Deletions for removed pages through db.ts
+  if (pagesToDelete.length > 0) {
+    if (isApply) {
+      console.log(`\n[Cleanup] Deleting ${pagesToDelete.length} removed pages through db.ts...`);
+      for (const p of pagesToDelete) {
+        await deleteDbItem("PAGE", p.path);
+        console.log(`  - DELETED: ${p.path}`);
+      }
+      console.log(`[Cleanup] Successfully deleted ${pagesToDelete.length} page(s) from store.`);
+    } else {
+      console.log(`\n[Cleanup] [DRY RUN] Would delete ${pagesToDelete.length} page(s) from store through db.ts.`);
+    }
+  }
+
+  console.log(`[Pages Summary] Created: ${pagesCreated}, Updated: ${pagesUpdated}, Unchanged: ${pagesUnchanged}, Deleted: ${pagesToDelete.length}`);
 
   // Step 4: Navigation Migration
   console.log(`\n[Navigation] Resolving navigation structure to stable page IDs...`);

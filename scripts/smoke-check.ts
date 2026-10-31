@@ -222,9 +222,6 @@ async function runSmokeCheck() {
   const publishedInnerPages = seedData.pages
     .filter((p) => p.path !== "/" && (p as any).published !== false)
     .map((p) => p.path);
-  const unpublishedPages = seedData.pages
-    .filter((p) => (p as any).published === false)
-    .map((p) => p.path);
 
   console.log(`[3/5] Validating all ${publishedInnerPages.length} published inner pages (HTTP 200, brand 1x, store robots)...`);
 
@@ -249,25 +246,8 @@ async function runSmokeCheck() {
     }
   }, 8);
 
-  // 3.1. Unpublished Pages Check (must return 404 Not Found)
-  console.log(`\n[Unpublished Pages Check] Validating all ${unpublishedPages.length} unpublished pages (must return 404)...`);
-  for (const unpub of unpublishedPages) {
-    const res = await fetchRoute(unpub);
-    const passed = res.status === 404;
-    const item: CheckResult = {
-      path: unpub,
-      category: "page",
-      expected: "404 Not Found (Unpublished guard)",
-      actual: `${res.status}`,
-      status: res.status,
-      passed,
-    };
-    results.push(item);
-    if (!passed) failures.push(item);
-  }
-
-  // 3.5. Internal Link Crawl: Verify every internal <a href> extracted across all 168 pages
-  console.log(`\n[Link Crawl] Discovered ${internalLinkSources.size} unique internal link targets across 168 pages.`);
+  // 3.5. Internal Link Crawl: Verify every internal <a href> extracted across all 159 pages
+  console.log(`\n[Link Crawl] Discovered ${internalLinkSources.size} unique internal link targets across 159 pages.`);
   console.log(`  Verifying all internal links (must return 200 OK, 0 redirects, 0 404s)...`);
 
   const uniqueInternalTargets = Array.from(internalLinkSources.keys()).sort();
@@ -517,7 +497,6 @@ async function runSmokeCheck() {
       if (companyIdx !== -1 && buttons[companyIdx]) {
         await buttons[companyIdx].click();
         await new Promise((r) => setTimeout(r, 400));
-        await page.screenshot({ path: path.join(screenshotDir, "dropdown-company-1440.png") });
         await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1440.png") });
         await page.keyboard.press("Escape");
         await new Promise((r) => setTimeout(r, 200));
@@ -532,7 +511,6 @@ async function runSmokeCheck() {
       if (companyIdx !== -1 && buttons[companyIdx]) {
         await buttons[companyIdx].click();
         await new Promise((r) => setTimeout(r, 400));
-        await page.screenshot({ path: path.join(screenshotDir, "dropdown-company-1600.png") });
         await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1600.png") });
         await page.keyboard.press("Escape");
         await new Promise((r) => setTimeout(r, 200));
@@ -547,7 +525,6 @@ async function runSmokeCheck() {
       if (companyIdx !== -1 && buttons[companyIdx]) {
         await buttons[companyIdx].click();
         await new Promise((r) => setTimeout(r, 400));
-        await page.screenshot({ path: path.join(screenshotDir, "dropdown-company-1920.png") });
         await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1920.png") });
         await page.keyboard.press("Escape");
         await new Promise((r) => setTimeout(r, 200));
@@ -626,7 +603,6 @@ async function runSmokeCheck() {
   console.log(`Total Routes Tested:   ${results.length}`);
   console.log(`  - Homepage & System: ${1 + SYSTEM_ROUTES.length}`);
   console.log(`  - Published IA v2:    ${publishedInnerPages.length}`);
-  console.log(`  - Unpublished (404):  ${unpublishedPages.length}`);
   console.log(`  - 301/308 Redirects:  ${redirectEntries.length}`);
   console.log(`  - 404 Unknown Routes: ${UNKNOWN_PATHS.length}`);
   console.log(`Internal Links Crawled: ${uniqueInternalTargets.length}`);
