@@ -1,10 +1,10 @@
 import { getSiteSettings } from "@/lib/content";
-import { getAllPages } from "@/lib/page-manager";
+import { getAllPages } from "@/lib/db";
 import { getSessionUser } from "@/lib/auth";
 import { SeoStudioClient } from "./SeoStudioClient";
 
 export const metadata = {
-  title: "SEO & JSON-LD Linked Data Studio | Beetrix360 Admin",
+  title: "SEO & JSON-LD Structured Data Studio | Beetrix360 Admin",
 };
 
 export default async function AdminSeoPage() {
@@ -19,10 +19,10 @@ export default async function AdminSeoPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-neutral-200">
         <div>
           <h1 className="text-2xl font-bold font-heading text-neutral-900">
-            SEO & JSON-LD Structured Data Studio
+            SEO &amp; JSON-LD Structured Data Studio
           </h1>
           <p className="text-xs text-neutral-500 mt-1">
-            Manage global and section-level SEO metadata. Inspect live Schema.org JSON-LD structured data compiled into each page&apos;s &lt;head&gt;.
+            Global entity schema properties and 159-page structured data inspector with real-time SEO health check audits.
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -32,16 +32,11 @@ export default async function AdminSeoPage() {
         </div>
       </div>
 
-      <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-sm flex items-start gap-3">
-        <div>
-          <p className="font-semibold text-amber-950">Read-Only Notice (IA v2 Migration)</p>
-          <p className="text-xs text-amber-800 mt-0.5">
-            The legacy SEO Studio screen is in read-only mode to prevent overwriting metadata during the IA v2 migration. Full editing will be restored in Phase 6.
-          </p>
-        </div>
-      </div>
-
-      <SeoStudioClient initialSite={site} pages={pages} userRole="viewer" />
+      <SeoStudioClient
+        initialSite={site}
+        pages={pages}
+        userRole={user?.role || "viewer"}
+      />
     </div>
   );
 }

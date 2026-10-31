@@ -360,6 +360,8 @@ export interface SeoConfigV2 {
   robots: SeoRobots;
   robotsAfterContentReady: SeoRobots;
   breadcrumbLabel: string;
+  indexLock?: boolean;
+  indexLockReason?: string;
   schemaTypes: string[];
   faqSchemaOnlyWhenReady: boolean;
   openGraph: {

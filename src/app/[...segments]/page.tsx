@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { JsonLd } from "@/components/site/JsonLd";
 import { getPageByPath, getRedirect, getSiteSettings, getAllPages } from "@/lib/content";
-import { webPageSchema, breadcrumbSchema, itemListSchema, serviceSchema } from "@/lib/schema";
+import { buildPageJsonLd } from "@/lib/schema";
 import { absoluteUrl } from "@/lib/site-url";
 import type { PageRecordV2 } from "@/lib/types";
 import { generatePlaceholderSections } from "@/lib/placeholder-generator";
@@ -141,41 +141,7 @@ export default async function CatchAllPage({ params }: PageProps) {
   );
 
   // 6. Build JSON-LD structured data graph
-  const ldNodes: any[] = [
-    webPageSchema({
-      path: page.path,
-      name: page.h1,
-      description: page.seo?.metaDescription || (undefined as any),
-    }),
-    breadcrumbSchema(crumbItems),
-  ];
-
-  // If hub page with child pages, emit ItemList
-  if (childPages.length > 0) {
-    ldNodes.push(
-      itemListSchema(
-        page.h1,
-        childPages.map((c) => ({ name: c.h1, path: c.path }))
-      )
-    );
-  }
-
-  // Service schema strictly emitted only when contentStatus is ready
-  if (
-    page.contentStatus === "ready" &&
-    (page.pageType === "service" ||
-      page.pageType === "sub" ||
-      page.pageType === "platform")
-  ) {
-    ldNodes.push(
-      serviceSchema({
-        name: page.h1,
-        keyword: page.targetKeyword,
-        path: page.path,
-        division: { name: page.division, slug: page.slug, services: [] },
-      })
-    );
-  }
+  const ldNodes = buildPageJsonLd(page, allPages);
 
   // Resolve sections: either stored sections or deterministic placeholder sections
   const sections =

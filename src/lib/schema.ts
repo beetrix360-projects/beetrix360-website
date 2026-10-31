@@ -1,4 +1,4 @@
-import type { Division, FaqItem, Service, SiteSettings, SubService } from "./types";
+import type { Division, FaqItem, PageRecordV2, Service, SiteSettings, SubService } from "./types";
 import { absoluteUrl, SITE_URL } from "./site-url";
 
 // schema.org structured data (JSON-LD). Only facts present in the supplied files are used.
@@ -115,6 +115,89 @@ export function faqSchema(faqs: FaqItem[] | undefined) {
       acceptedAnswer: { "@type": "Answer", text: f.answer },
     })),
   };
+}
+
+/**
+ * Builds the exact JSON-LD array for a given page and allPages list.
+ * Identical output between public rendering and the admin SEO inspector.
+ */
+export function buildPageJsonLd(page: PageRecordV2, allPages: PageRecordV2[]): any[] {
+  const pageById = new Map<string, PageRecordV2>(allPages.map((p) => [p.id, p]));
+
+  // Construct breadcrumbs dynamically from parentId tree
+  const chain: PageRecordV2[] = [page];
+  let curr = page;
+  while (curr.parentId) {
+    const parent = pageById.get(curr.parentId);
+    if (!parent || parent.path === "/") break;
+    chain.unshift(parent);
+    curr = parent;
+  }
+  const crumbItems = [
+    { name: "Home", path: "/" },
+    ...chain.map((p) => ({
+      name: p.seo?.breadcrumbLabel || p.menuLabel || p.h1,
+      path: p.path,
+    })),
+  ];
+
+  // Query child pages
+  const childPages = allPages.filter((p) => p.parentId === page.id && p.published);
+
+  const ldNodes: any[] = [
+    webPageSchema({
+      path: page.path,
+      name: page.h1,
+      description: page.seo?.metaDescription || "",
+    }),
+    breadcrumbSchema(crumbItems),
+  ];
+
+  // If hub page with child pages, emit ItemList
+  if (childPages.length > 0) {
+    ldNodes.push(
+      itemListSchema(
+        page.h1,
+        childPages.map((c) => ({ name: c.h1, path: c.path }))
+      )
+    );
+  }
+
+  // Service schema strictly emitted only when contentStatus is ready
+  if (
+    page.contentStatus === "ready" &&
+    (page.pageType === "service" ||
+      page.pageType === "sub" ||
+      page.pageType === "platform")
+  ) {
+    ldNodes.push(
+      serviceSchema({
+        name: page.h1,
+        keyword: page.targetKeyword,
+        path: page.path,
+        division: { name: page.division, slug: page.slug, services: [] },
+      })
+    );
+  }
+
+  // FAQ Schema if present
+  const faqSection = page.sections?.find((s) => s.type === "faq");
+  if (faqSection?.content?.items && (!page.seo?.faqSchemaOnlyWhenReady || page.contentStatus === "ready")) {
+    const faqData = faqSchema(faqSection.content.items);
+    if (faqData) ldNodes.push(faqData);
+  }
+
+  // Custom JSON-LD if provided and valid JSON
+  if (page.seo?.customJsonLd?.trim()) {
+    try {
+      const parsed = JSON.parse(page.seo.customJsonLd.trim());
+      ldNodes.push(parsed);
+    } catch {
+      // Ignored for invalid json in compilation
+    }
+  }
+
+  return ldNodes;
 }
 
 export type { SubService };
