@@ -9,3 +9,4 @@ const jiti = createJiti(__filename, {
 });
 
 jiti(path.resolve(__dirname, "smoke-check.ts"));
+

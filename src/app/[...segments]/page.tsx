@@ -44,11 +44,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ? absoluteUrl(page.seo.canonicalPath)
     : absoluteUrl(rawPath);
 
-  const title = page.seo?.titleTag || `${page.h1} | Beetrix360`;
+  let rawTitle = page.seo?.titleTag || `${page.h1} | Beetrix360`;
+  // Ensure "Beetrix360" is not duplicated if both topic and brand suffix contain it
+  if (rawTitle.endsWith(" | Beetrix360") && (rawTitle.match(/Beetrix360/g) || []).length > 1) {
+    rawTitle = rawTitle.slice(0, -" | Beetrix360".length).trim();
+  }
   const description = page.seo?.metaDescription || undefined;
 
   return {
-    title,
+    title: { absolute: rawTitle },
     ...(description ? { description } : {}),
     alternates: {
       canonical: canonicalUrl,
@@ -58,7 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       follow: page.seo?.robots?.follow ?? true,
     },
     openGraph: {
-      title: page.seo?.openGraph?.title || title,
+      title: page.seo?.openGraph?.title || rawTitle,
       ...(description ? { description: page.seo?.openGraph?.description || description } : {}),
       url: canonicalUrl,
       type: "website",
@@ -69,7 +73,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: page.seo?.twitter?.title || title,
+      title: page.seo?.twitter?.title || rawTitle,
       ...(description ? { description: page.seo?.twitter?.description || description } : {}),
     },
   };

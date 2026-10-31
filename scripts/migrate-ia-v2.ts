@@ -258,14 +258,20 @@ async function runMigration() {
 
     const existing = await getDbItem<PageRecordV2>("PAGE", normPath);
 
-    // Carry-over fields: title, meta description, Open Graph image, and sections
-    const contentStatus = existing?.contentStatus === "ready" || handEditedMatch ? "ready" : "placeholder";
-    const finalRobots = contentStatus === "ready" ? sp.seo?.robotsAfterContentReady : initialRobots;
+    // Bug 1 fix: A page is "ready" only if it is a carried-over hand-edited page, or an editor set it (updatedBy present).
+    // Never inherit "ready" from a previous migration run.
+    const isHandEdited = Boolean(handEditedMatch) || Boolean(existing?.updatedBy);
+    const contentStatus = isHandEdited ? "ready" : (isHome ? "ready" : "placeholder");
+    const finalRobots = isHome
+      ? { index: true, follow: true }
+      : (isHandEdited
+          ? (sp.seo?.robotsAfterContentReady || { index: true, follow: true })
+          : (sp.seo?.robots || { index: false, follow: true }));
 
     const finalTitle = handEditedMatch?.seo?.title || handEditedMatch?.title || sp.seo?.titleTag || `${sp.h1} | Beetrix360`;
     const finalMetaDesc = handEditedMatch?.seo?.description || sp.seo?.metaDescription || null;
     const finalOgImage = handEditedMatch?.seo?.ogImage || sp.seo?.openGraph?.imagePath || null;
-    const finalSections = existing?.sections?.length
+    const finalSections = existing?.sections?.length && isHandEdited
       ? existing.sections
       : (handEditedMatch?.sections?.length ? handEditedMatch.sections : []);
 

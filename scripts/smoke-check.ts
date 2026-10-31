@@ -58,6 +58,60 @@ async function fetchRoute(urlPath: string): Promise<{ status: number; location: 
   }
 }
 
+async function fetchHtmlAndValidate(urlPath: string): Promise<{
+  status: number;
+  passed: boolean;
+  title: string;
+  robots: string;
+  errors: string[];
+}> {
+  const errors: string[] = [];
+  try {
+    const res = await fetch(`${BASE_URL}${urlPath}`, { redirect: "manual" });
+    if (res.status !== 200) {
+      errors.push(`HTTP status ${res.status} (expected 200)`);
+      return { status: res.status, passed: false, title: "", robots: "", errors };
+    }
+
+    const html = await res.text();
+
+    // 1. Title validation: Must contain "Beetrix360" exactly once
+    const titleMatch = html.match(/<title[^>]*>(.*?)<\/title>/i);
+    const title = titleMatch ? titleMatch[1].trim() : "";
+    const brandMatches = (title.match(/Beetrix360/g) || []).length;
+    if (brandMatches !== 1) {
+      errors.push(`Brand "Beetrix360" occurred ${brandMatches} times in title: "${title}" (expected exactly 1)`);
+    }
+
+    // 2. Robots meta validation: Must match store
+    const robotsMatch =
+      html.match(/<meta[^>]*name=["']robots["'][^>]*content=["'](.*?)["']/i) ||
+      html.match(/<meta[^>]*content=["'](.*?)["'][^>]*name=["']robots["']/i);
+    const robots = (robotsMatch ? robotsMatch[1] : "").toLowerCase().trim();
+
+    if (urlPath === "/") {
+      if (robots.includes("noindex")) {
+        errors.push(`Homepage robots contains "noindex": "${robots}"`);
+      }
+    } else {
+      if (!robots.includes("noindex") || !robots.includes("follow")) {
+        errors.push(`Expected robots "noindex, follow", got "${robots || "none"}"`);
+      }
+    }
+
+    return {
+      status: res.status,
+      passed: errors.length === 0,
+      title,
+      robots,
+      errors,
+    };
+  } catch (err: any) {
+    errors.push(`Network/fetch failure: ${err?.message || err}`);
+    return { status: 500, passed: false, title: "", robots: "", errors };
+  }
+}
+
 async function runWithConcurrency<T, R>(items: T[], fn: (item: T) => Promise<R>, concurrency = 8): Promise<R[]> {
   const results: R[] = [];
   let index = 0;
@@ -83,16 +137,30 @@ async function runSmokeCheck() {
   const results: CheckResult[] = [];
   const failures: CheckResult[] = [];
 
-  // 1. Homepage & System Routes
-  console.log(`[1/4] Checking Homepage and System Routes (${1 + SYSTEM_ROUTES.length} routes)...`);
-  const initialRoutes = ["/", ...SYSTEM_ROUTES];
-  for (const r of initialRoutes) {
+  // 1. Homepage Check (HTTP 200, Title brand count = 1, Robots indexable)
+  console.log(`[1/5] Validating Homepage (/) metadata & robots...`);
+  const homeVal = await fetchHtmlAndValidate("/");
+  const homePassed = homeVal.passed;
+  const homeItem: CheckResult = {
+    path: "/",
+    category: "homepage",
+    expected: "200 OK | Title 1x brand | index, follow",
+    actual: `${homeVal.status} | Title: "${homeVal.title}" | Robots: "${homeVal.robots}"`,
+    status: homeVal.status,
+    passed: homePassed,
+    notes: homeVal.errors.join("; ") || undefined,
+  };
+  results.push(homeItem);
+  if (!homePassed) failures.push(homeItem);
+
+  // 2. System Routes (/admin/login, /sitemap.xml, /robots.txt, /llms.txt)
+  console.log(`[2/5] Validating System Routes (${SYSTEM_ROUTES.length} routes)...`);
+  for (const r of SYSTEM_ROUTES) {
     const res = await fetchRoute(r);
     const passed = res.status === 200;
-    const cat = r === "/" ? "homepage" : "system";
     const item: CheckResult = {
       path: r,
-      category: cat,
+      category: "system",
       expected: "200 OK",
       actual: `${res.status}`,
       status: res.status,
@@ -102,37 +170,37 @@ async function runSmokeCheck() {
     if (!passed) failures.push(item);
   }
 
-  // 2. All 168 Seed Pages
-  const seedPages = seedData.pages.map((p) => p.path).filter((p) => p !== "/");
-  console.log(`[2/4] Checking all ${seedPages.length} seed pages (concurrency: 8)...`);
-  
+  // 3. All 167 Inner Seed Pages (HTTP 200, Title brand count = 1, Robots "noindex, follow")
+  const innerSeedPages = seedData.pages.map((p) => p.path).filter((p) => p !== "/");
+  console.log(`[3/5] Validating all ${innerSeedPages.length} inner pages (HTTP 200, brand 1x, noindex/follow)...`);
+
   let checkedCount = 0;
-  await runWithConcurrency(seedPages, async (pagePath) => {
-    const res = await fetchRoute(pagePath);
-    const passed = res.status === 200;
+  await runWithConcurrency(innerSeedPages, async (pagePath) => {
+    const val = await fetchHtmlAndValidate(pagePath);
     const item: CheckResult = {
       path: pagePath,
       category: "page",
-      expected: "200 OK",
-      actual: `${res.status}`,
-      status: res.status,
-      passed,
+      expected: "200 OK | Brand 1x | noindex, follow",
+      actual: `${val.status} | Brand count: ${(val.title.match(/Beetrix360/g) || []).length} | Robots: "${val.robots}"`,
+      status: val.status,
+      passed: val.passed,
+      notes: val.errors.join("; ") || undefined,
     };
     results.push(item);
-    if (!passed) failures.push(item);
+    if (!val.passed) failures.push(item);
+
     checkedCount++;
-    if (checkedCount % 40 === 0 || checkedCount === seedPages.length) {
-      console.log(`  - Checked ${checkedCount}/${seedPages.length} seed pages...`);
+    if (checkedCount % 40 === 0 || checkedCount === innerSeedPages.length) {
+      console.log(`  - Verified ${checkedCount}/${innerSeedPages.length} pages...`);
     }
   }, 8);
 
-  // 3. All 90 Old Paths (Redirects)
+  // 4. All 90 Old Paths (Redirects: 301/308 single hop to target)
   const redirectEntries = Object.entries(RAW_REDIRECT_MAP);
-  console.log(`\n[3/4] Checking all ${redirectEntries.length} legacy redirect routes (expected 301/308 single hop)...`);
+  console.log(`\n[4/5] Checking all ${redirectEntries.length} legacy redirect routes (expected 301/308 single hop)...`);
   for (const [oldPath, map] of redirectEntries) {
     const res = await fetchRoute(oldPath);
     const loc = res.location || "";
-    // Location may be relative or absolute; normalize
     const targetPath = map.to;
     const isRedirect = res.status === 301 || res.status === 308;
     const matchesTarget = loc === targetPath || loc.endsWith(targetPath);
@@ -151,8 +219,8 @@ async function runSmokeCheck() {
     if (!passed) failures.push(item);
   }
 
-  // 4. Unknown Paths (404 Not Found)
-  console.log(`\n[4/4] Checking unknown paths (expected 404)...`);
+  // 5. Unknown Paths (404 Not Found)
+  console.log(`\n[5/5] Checking unknown paths (expected 404)...`);
   for (const unk of UNKNOWN_PATHS) {
     const res = await fetchRoute(unk);
     const passed = res.status === 404;
@@ -168,7 +236,7 @@ async function runSmokeCheck() {
     if (!passed) failures.push(item);
   }
 
-  // 5. Browser Rendering, CSS/JS Asset Verification, Console Errors & Screenshots
+  // 6. Browser Rendering, CSS/JS Asset Verification, Console Errors & Screenshots
   console.log(`\n[Browser & Visual Validation] Launching Headless Chrome for Page-Type Checks...`);
   const screenshotDir = path.join(process.cwd(), "docs", "smoke-screenshots");
   if (!fs.existsSync(screenshotDir)) {
@@ -221,7 +289,7 @@ async function runSmokeCheck() {
       }
     });
 
-    page.on("pageerror", (err) => {
+    page.on("pageerror", (err: any) => {
       consoleErrors.push(err.message || String(err));
     });
 
@@ -236,7 +304,6 @@ async function runSmokeCheck() {
 
     // 390px mobile view
     await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true });
-    // short pause for re-layout
     await new Promise((r) => setTimeout(r, 250));
     const shot390Name = `${slugName}-390.png`;
     const shot390Path = path.join(screenshotDir, shot390Name);
@@ -262,16 +329,16 @@ async function runSmokeCheck() {
     fs.rmSync(profileDir, { recursive: true, force: true });
   } catch {}
 
-  // 6. Print Summary Report
+  // 7. Print Summary Report
   console.log(`\n======================================================================`);
   console.log(`  SMOKE CHECK SUMMARY REPORT`);
   console.log(`======================================================================`);
-  console.log(`Total Routes Tested: ${results.length}`);
+  console.log(`Total Routes Tested:   ${results.length}`);
   console.log(`  - Homepage & System: ${1 + SYSTEM_ROUTES.length}`);
-  console.log(`  - Seed IA v2 Pages:   ${seedPages.length}`);
+  console.log(`  - Seed IA v2 Pages:   ${innerSeedPages.length}`);
   console.log(`  - 301/308 Redirects:  ${redirectEntries.length}`);
   console.log(`  - 404 Unknown Routes: ${UNKNOWN_PATHS.length}`);
-  console.log(`Failures:              ${failures.length}`);
+  console.log(`Total Failures:        ${failures.length}`);
 
   console.log(`\n----------------------------------------------------------------------`);
   console.log(`  PAGE-TYPE ASSET & VISUAL CHECKS`);
@@ -288,19 +355,21 @@ async function runSmokeCheck() {
   }
 
   if (failures.length > 0) {
-    console.error(`\n[FAILURES DETECTED]:`);
+    console.error(`\n[FAILURES DETECTED (${failures.length})]:`);
     for (const f of failures) {
-      console.error(`  - [${f.category.toUpperCase()}] ${f.path}: Expected ${f.expected}, got ${f.actual}`);
+      console.error(`  - [${f.category.toUpperCase()}] ${f.path}: Expected ${f.expected}`);
+      console.error(`    Actual: ${f.actual}`);
+      if (f.notes) console.error(`    Note:   ${f.notes}`);
     }
     process.exit(1);
   }
 
   console.log(`\n======================================================================`);
-  console.log(`  ALL SMOKE CHECKS & ASSET VERIFICATIONS PASSED (100% SUCCESS)`);
+  console.log(`  ALL SMOKE CHECKS, METADATA CHECKS & ASSET VERIFICATIONS PASSED!`);
   console.log(`======================================================================\n`);
 }
 
-runSmokeCheck().catch((err) => {
+runSmokeCheck().catch((err: any) => {
   console.error("\n[FATAL SMOKE CHECK ERROR]:", err);
   process.exit(1);
 });
