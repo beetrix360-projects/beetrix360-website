@@ -1,6 +1,6 @@
 import "server-only";
-import defaultHomepage from "@/content/homepage.json";
-import defaultSite from "@/content/site.json";
+import defaultHomepage from "../content/homepage.json";
+import defaultSite from "../content/site.json";
 import {
   getDbItem,
   putDbItem,

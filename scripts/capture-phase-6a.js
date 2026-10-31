@@ -4,7 +4,26 @@ const fs = require("fs");
 const os = require("os");
 const { SignJWT } = require("jose");
 
-const AUTH_SECRET = "7c8f9b2d4e1a6c8e3f0b5d9a2c4e7f1b9a8c3d5e2f4a6b8c1d9e0f2a4b6c8e1";
+// Load .env.local into process.env if not set
+if (!process.env.AUTH_SECRET) {
+  const envPath = path.resolve(__dirname, "../.env.local");
+  if (fs.existsSync(envPath)) {
+    const content = fs.readFileSync(envPath, "utf-8");
+    for (const line of content.split("\n")) {
+      const match = line.trim().match(/^AUTH_SECRET\s*=\s*["']?([^"'\r\n]+)["']?/);
+      if (match) {
+        process.env.AUTH_SECRET = match[1];
+        break;
+      }
+    }
+  }
+}
+
+const AUTH_SECRET = process.env.AUTH_SECRET;
+if (!AUTH_SECRET) {
+  throw new Error("AUTH_SECRET must be set in process.env or .env.local");
+}
+
 const JWT_SECRET = new TextEncoder().encode(AUTH_SECRET);
 const ARTIFACT_DIR = "C:/Users/anees/.gemini/antigravity/brain/d4188237-15fe-4379-9c5e-2d7457de7ba0";
 const SMOKE_DIR = path.join(__dirname, "../docs/smoke-screenshots");

@@ -27,6 +27,14 @@ import {
 } from "@/lib/db";
 import type { AnalyticsSettings, HomepageContent, PageRecordV2, PageTypeV2, SiteSettings } from "@/lib/types";
 
+function safeRevalidate(path: string, type?: "layout" | "page") {
+  try {
+    revalidatePath(path, type);
+  } catch {
+    // Graceful fallback when called outside active request context (e.g. test scripts)
+  }
+}
+
 /**
  * Authentication Actions
  */
@@ -65,7 +73,7 @@ export async function saveHomepageAction(content: HomepageContent) {
   }
 
   await saveHomepageContent(content);
-  revalidatePath("/");
+  safeRevalidate("/");
   return { success: true, timestamp: new Date().toISOString() };
 }
 
@@ -149,8 +157,8 @@ export async function savePageV2Action(page: PageRecordV2) {
   // 8. Save via path-based DB store
   await savePage(page);
 
-  revalidatePath(page.path);
-  revalidatePath("/");
+  safeRevalidate(page.path);
+  safeRevalidate("/");
 
   return { success: true, page };
 }
@@ -179,8 +187,8 @@ export async function markPageReadyV2Action(pageId: string) {
 
   await savePage(page);
 
-  revalidatePath(page.path);
-  revalidatePath("/");
+  safeRevalidate(page.path);
+  safeRevalidate("/");
 
   return { success: true, page };
 }
@@ -209,11 +217,11 @@ export async function bulkMarkPagesReadyAction(pageIds: string[]) {
     page.updatedBy = user.name || user.email;
     page.updatedAt = new Date().toISOString();
     await savePage(page);
-    revalidatePath(page.path);
+    safeRevalidate(page.path);
     updatedPages.push(page);
   }
 
-  revalidatePath("/");
+  safeRevalidate("/");
   return { success: true, count: updatedPages.length };
 }
 
@@ -344,11 +352,11 @@ export async function movePageV2Action(pageId: string, newParentId: string | nul
       }
     }
 
-    revalidatePath(m.oldPath);
-    revalidatePath(m.newPath);
+    safeRevalidate(m.oldPath);
+    safeRevalidate(m.newPath);
   }
 
-  revalidatePath("/");
+  safeRevalidate("/");
   return { success: true, newPath };
 }
 
@@ -442,8 +450,8 @@ export async function createPageV2Action(data: {
   };
 
   await savePage(newPage);
-  revalidatePath(newPage.path);
-  revalidatePath("/");
+  safeRevalidate(newPage.path);
+  safeRevalidate("/");
 
   return { success: true, page: newPage };
 }
@@ -468,8 +476,8 @@ export async function deletePageV2Action(path: string) {
   }
 
   await deletePageByPath(path);
-  revalidatePath(path);
-  revalidatePath("/");
+  safeRevalidate(path);
+  safeRevalidate("/");
 
   return { success: true };
 }
@@ -527,7 +535,7 @@ export async function saveSiteSettingsAction(settings: SiteSettings) {
   }
 
   await saveSiteSettings(settings);
-  revalidatePath("/", "layout");
+  safeRevalidate("/", "layout");
   return { success: true, timestamp: new Date().toISOString() };
 }
 
@@ -542,6 +550,6 @@ export async function saveAnalyticsSettingsAction(settings: AnalyticsSettings) {
   }
 
   await saveAnalyticsSettings(settings);
-  revalidatePath("/", "layout");
+  safeRevalidate("/", "layout");
   return { success: true, timestamp: new Date().toISOString() };
 }

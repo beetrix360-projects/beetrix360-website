@@ -60,13 +60,26 @@ export async function createSessionToken(user: UserProfile): Promise<string> {
     .sign(JWT_SECRET);
 }
 
+let cliSessionTokenOverride: string | null = null;
+
+export function setCliSessionToken(token: string | null) {
+  cliSessionTokenOverride = token;
+}
+
 /**
  * Verifies current session from request cookies.
  */
 export async function getSessionUser(): Promise<UserProfile | null> {
   try {
-    const cookieStore = await cookies();
-    const token = cookieStore.get(COOKIE_NAME)?.value;
+    let token = cliSessionTokenOverride;
+    if (!token) {
+      try {
+        const cookieStore = await cookies();
+        token = cookieStore.get(COOKIE_NAME)?.value || null;
+      } catch {
+        // Fallback when called outside active request context
+      }
+    }
     if (!token) return null;
 
     const { payload } = await jwtVerify(token, JWT_SECRET);
