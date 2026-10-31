@@ -25,12 +25,12 @@ export function keywordTitle(keyword: string) {
  */
 export function structureMetadata(opts: { path: string; keyword: string; name: string; divisionName: string }): Metadata {
   const title = keywordTitle(opts.keyword);
-  const description = `${opts.name} from BeeTrix360, part of our ${opts.divisionName} services.`;
+  const description = `${opts.name} from Beetrix360, part of our ${opts.divisionName} services.`;
   return {
     title,
     description,
     alternates: { canonical: opts.path },
-    openGraph: { title: `${title} | BeeTrix360`, description, url: opts.path, type: "website" },
-    twitter: { title: `${title} | BeeTrix360`, description },
+    openGraph: { title: `${title} | Beetrix360`, description, url: opts.path, type: "website" },
+    twitter: { title: `${title} | Beetrix360`, description },
   };
 }

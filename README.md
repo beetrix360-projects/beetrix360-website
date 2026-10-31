@@ -1,4 +1,4 @@
-# BeeTrix360 website (Next.js)
+# Beetrix360 website (Next.js)
 
 Next.js 15 (App Router, TypeScript, Tailwind CSS 3) build of `beetrix360_homepage_v6.html`, with the
 service URL structure from `Beetrix Navigation.docx`.
@@ -50,7 +50,7 @@ Routes are generated from `site-structure.json`, so adding a service there adds 
 
 ## Placeholders (intentionally not invented)
 
-* Inner page copy: each division/service/sub-service page shows a striped **"PAGE CONTENT PLACEHOLDER"** block. Meta descriptions are assembled only from doc facts (`"{name} from BeeTrix360, part of our {division} services."`) until real copy exists.
+* Inner page copy: each division/service/sub-service page shows a striped **"PAGE CONTENT PLACEHOLDER"** block. Meta descriptions are assembled only from doc facts (`"{name} from Beetrix360, part of our {division} services."`) until real copy exists.
 * Images and videos: the same striped placeholders as the design (with their intended sizes).
 * Forms (hero audit, AI check, contact, request modal) behave as in the design: front-end only, no data is sent. Look for `TODO(backend)`.
 * The design's mega-menu items (e.g. "PPC Management Services", "About", "Pricing Guides") were replaced by the navigation doc's menu, and their promo cards were dropped, because the doc defines the site's real pages.

@@ -38,127 +38,80 @@ export interface PageRecord {
 }
 
 /**
- * Seed pages from site-structure.json if DB is empty
+ * Seed pages from site-structure.json if DB is empty (Disabled in IA v2 - seeding only via scripts/migrate-ia-v2.ts)
  */
 export async function seedPagesIfEmpty(): Promise<void> {
-  const existing = await queryDbByPk<PageRecord>("PAGE");
-  if (existing.length > 0) return;
+  throw new Error("Disabled until the new editor (Phase 6) is ready");
+}
 
-  const records: PageRecord[] = [];
-  const divisions = structure.divisions || [];
-
-  for (let dIdx = 0; dIdx < divisions.length; dIdx++) {
-    const d = divisions[dIdx];
-    // Parent Division Page
-    records.push({
-      id: `page_${d.slug}`,
-      slug: d.slug,
-      title: d.name,
-      parentId: null,
-      pageType: "division",
-      status: "published",
-      keyword: d.name,
-      order: dIdx + 1,
-      seo: {
-        title: `${d.name} Services | BeeTrix360`,
-        description: `Explore enterprise ${d.name} capabilities, performance architectures, and proven solutions.`,
-      },
-      sections: [
-        {
-          id: `sec_${d.slug}_hero`,
-          type: "hero",
-          title: d.name,
-          content: { label: "Enterprise Solutions", headline: d.name, description: `Specialized ${d.name} infrastructure.` },
-        },
-      ],
-      updatedAt: new Date().toISOString(),
-    });
-
-    // Child Services
-    const services = d.services || [];
-    for (let sIdx = 0; sIdx < services.length; sIdx++) {
-      const s = services[sIdx];
-      records.push({
-        id: `page_${s.slug}`,
-        slug: s.slug,
-        title: s.name,
-        parentId: d.slug,
-        pageType: "service",
-        status: "published",
-        keyword: s.keyword || s.name,
-        order: sIdx + 1,
-        seo: {
-          title: `${s.name} | ${d.name} | BeeTrix360`,
-          description: `High-impact ${s.name} crafted for scaling businesses.`,
-        },
-        sections: [
-          {
-            id: `sec_${s.slug}_hero`,
-            type: "hero",
-            title: s.name,
-            content: { label: d.name, headline: s.name, description: `Comprehensive ${s.name} workflows.` },
-          },
-        ],
-        updatedAt: new Date().toISOString(),
-      });
-
-      // Grandchild Sub-Services
-      const subServices = s.subServices || [];
-      for (let subIdx = 0; subIdx < subServices.length; subIdx++) {
-        const sub = subServices[subIdx];
-        records.push({
-          id: `page_${sub.slug}`,
-          slug: `${s.slug}/${sub.slug}`,
-          title: sub.name,
-          parentId: s.slug,
-          pageType: "sub-service",
-          status: "published",
-          keyword: sub.keyword || sub.name,
-          order: subIdx + 1,
-          seo: {
-            title: `${sub.name} | ${s.name} | BeeTrix360`,
-            description: `Targeted ${sub.name} designed to maximize ROI and operational velocity.`,
-          },
-          sections: [],
-          updatedAt: new Date().toISOString(),
-        });
-      }
-    }
-  }
-
-  for (const page of records) {
-    await putDbItem("PAGE", page.slug, page);
-  }
+function normalizePageRecord(p: any): PageRecord {
+  const title = p.title || p.h1 || p.menuLabel || p.seo?.titleTag || p.slug || "Untitled Page";
+  const slug = p.slug || (p.path ? p.path.replace(/^\//, "") : "");
+  const path = p.path || (slug ? `/${slug}` : "/");
+  return {
+    ...p,
+    id: p.id || `page_${slug}`,
+    slug,
+    title,
+    parentId: p.parentId || null,
+    pageType: p.pageType || "service",
+    status: p.status || (p.contentStatus === "ready" ? "published" : "draft"),
+    keyword: p.keyword || p.targetKeyword || "",
+    order: p.order || 0,
+    seo: {
+      canonical: path,
+      noIndex: false,
+      ...p.seo,
+      title: p.seo?.title || p.seo?.titleTag || title,
+      description: p.seo?.description || p.seo?.metaDescription || "",
+    },
+    sections: p.sections || [],
+    updatedAt: p.updatedAt || new Date().toISOString(),
+  };
 }
 
 /**
  * Fetch all pages from DB
  */
 export async function getAllPages(): Promise<PageRecord[]> {
-  await seedPagesIfEmpty();
-  const pages = await queryDbByPk<PageRecord>("PAGE");
-  return pages.sort((a, b) => (a.order || 0) - (b.order || 0));
+  const pages = await queryDbByPk<any>("PAGE");
+  return pages.map(normalizePageRecord).sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
 /**
- * Fetch page by slug
+ * Fetch page by id
+ */
+export async function getPageById(id: string): Promise<PageRecord | null> {
+  const all = await getAllPages();
+  return all.find((p) => p.id === id) || null;
+}
+
+/**
+ * Fetch page by path
+ */
+export async function getPageByPath(path: string): Promise<PageRecord | null> {
+  const norm = path.startsWith("/") ? path : `/${path}`;
+  const all = await getAllPages();
+  return all.find((p: any) => (p.path ? p.path === norm : `/${p.slug}` === norm)) || null;
+}
+
+/**
+ * Fetch page by slug (Deprecated in IA v2: lookup by id or path instead)
  */
 export async function getPageBySlug(slug: string): Promise<PageRecord | null> {
-  await seedPagesIfEmpty();
-  return await getDbItem<PageRecord>("PAGE", slug);
+  return null;
 }
 
 /**
- * Save or update a page
+ * Save or update a page (Disabled until Phase 6)
  */
 export async function savePage(page: PageRecord): Promise<void> {
-  page.updatedAt = new Date().toISOString();
-  await putDbItem("PAGE", page.slug, page);
+  throw new Error("Disabled until the new editor (Phase 6) is ready");
 }
 
 /**
- * Delete a page by slug
+ * Delete a page by slug (Disabled until Phase 6)
  */
 export async function deletePageBySlug(slug: string): Promise<void> {
-  await deleteDbItem("PAGE", slug);
+  throw new Error("Disabled until the new editor (Phase 6) is ready");
 }

@@ -3,7 +3,7 @@ import { getSessionUser } from "@/lib/auth";
 import { LoginForm } from "./LoginForm";
 
 export const metadata = {
-  title: "Admin Login | BeeTrix360 Studio",
+  title: "Admin Login | Beetrix360 Studio",
 };
 
 export default async function AdminLoginPage() {
@@ -25,7 +25,7 @@ export default async function AdminLoginPage() {
             STUDIO ENGINE v2.6
           </div>
           <h1 className="text-3xl font-extrabold tracking-tight font-heading text-neutral-900">
-            BeeTrix<span className="text-bx-pink">360</span> Studio
+            Beetrix<span className="text-bx-pink">360</span> Studio
           </h1>
           <p className="mt-2 text-sm text-neutral-500">
             Sign in to manage homepage components, page hierarchies, navigation menus, and SEO schemas.

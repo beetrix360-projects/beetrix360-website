@@ -13,10 +13,10 @@ import {
   updateUserRole,
   UserRole,
 } from "@/lib/auth";
-import { saveHomepageContent } from "@/lib/content";
+import { saveAnalyticsSettings, saveHomepageContent, saveSiteSettings } from "@/lib/content";
 import { deletePageBySlug, getAllPages, getPageBySlug, PageRecord, savePage } from "@/lib/page-manager";
 import { NavigationConfig, saveSiteNavigation } from "@/lib/navigation";
-import type { HomepageContent } from "@/lib/types";
+import type { AnalyticsSettings, HomepageContent, SiteSettings } from "@/lib/types";
 
 /**
  * Authentication Actions
@@ -61,50 +61,21 @@ export async function saveHomepageAction(content: HomepageContent) {
 }
 
 /**
- * Requirement 2: Pages & Parents CRUD Actions
+ * Requirement 2: Pages & Parents CRUD Actions (Read-Only Guarded)
  */
 export async function savePageAction(page: PageRecord) {
-  const user = await getSessionUser();
-  if (!user) throw new Error("Unauthorized");
-  if (!["admin", "editor", "moderator"].includes(user.role)) {
-    throw new Error("Forbidden: Insufficient permissions to save pages.");
-  }
-
-  await savePage(page);
-  revalidatePath("/");
-  revalidatePath("/[slug]", "page");
-  revalidatePath(`/${page.slug}`);
-  return { success: true };
+  throw new Error("Disabled until the new editor (Phase 6) is ready");
 }
 
 export async function deletePageAction(slug: string) {
-  const user = await getSessionUser();
-  if (!user) throw new Error("Unauthorized");
-  // Only Admin and Moderator have Delete access
-  if (!["admin", "moderator"].includes(user.role)) {
-    throw new Error("Forbidden: Only Administrators and Moderators can delete pages.");
-  }
-
-  await deletePageBySlug(slug);
-  revalidatePath("/");
-  revalidatePath("/[slug]", "page");
-  return { success: true };
+  throw new Error("Disabled until the new editor (Phase 6) is ready");
 }
 
 /**
- * Requirement 3: Menu Arrangement Save Action
+ * Requirement 3: Menu Arrangement Save Action (Read-Only Guarded)
  */
 export async function saveNavigationAction(nav: NavigationConfig) {
-  const user = await getSessionUser();
-  if (!user) throw new Error("Unauthorized");
-  // Only Admin has Menu arrangement access
-  if (user.role !== "admin") {
-    throw new Error("Forbidden: Only Full Administrators can modify navigation arrangements.");
-  }
-
-  await saveSiteNavigation(nav);
-  revalidatePath("/", "layout");
-  return { success: true };
+  throw new Error("Disabled until the new editor (Phase 6) is ready");
 }
 
 /**
@@ -147,4 +118,34 @@ export async function deleteUserAction(id: string) {
 
   await deleteUser(id);
   return { success: true };
+}
+
+/**
+ * Requirement 5: Global Site Identity & SEO Save Action
+ */
+export async function saveSiteSettingsAction(settings: SiteSettings) {
+  const user = await getSessionUser();
+  if (!user) throw new Error("Unauthorized");
+  if (!["admin", "editor", "moderator"].includes(user.role)) {
+    throw new Error("Forbidden: You do not have permission to update global site settings.");
+  }
+
+  await saveSiteSettings(settings);
+  revalidatePath("/", "layout");
+  return { success: true, timestamp: new Date().toISOString() };
+}
+
+/**
+ * Requirement 6: Google Analytics (GA4) & Google Tag Manager (GTM) Save Action
+ */
+export async function saveAnalyticsSettingsAction(settings: AnalyticsSettings) {
+  const user = await getSessionUser();
+  if (!user) throw new Error("Unauthorized");
+  if (!["admin", "editor", "moderator"].includes(user.role)) {
+    throw new Error("Forbidden: You do not have permission to update analytics settings.");
+  }
+
+  await saveAnalyticsSettings(settings);
+  revalidatePath("/", "layout");
+  return { success: true, timestamp: new Date().toISOString() };
 }

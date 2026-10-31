@@ -3,7 +3,7 @@ import { getSessionUser } from "@/lib/auth";
 import { HomepageEditor } from "./HomepageEditor";
 
 export const metadata = {
-  title: "Homepage Component Editor | BeeTrix360 Admin",
+  title: "Homepage Component Editor | Beetrix360 Admin",
 };
 
 export default async function AdminHomepagePage() {

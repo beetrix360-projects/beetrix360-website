@@ -3,7 +3,7 @@ import { getAllUsers, getSessionUser } from "@/lib/auth";
 import { UserManagerClient } from "./UserManagerClient";
 
 export const metadata = {
-  title: "User Management & RBAC | BeeTrix360 Admin",
+  title: "User Management & RBAC | Beetrix360 Admin",
 };
 
 export default async function AdminUsersPage() {

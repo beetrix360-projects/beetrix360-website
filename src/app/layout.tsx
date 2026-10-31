@@ -4,7 +4,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./globals.css";
 import { JsonLd } from "@/components/site/JsonLd";
 import { MarketingShell } from "@/components/site/MarketingShell";
-import { getSiteSettings } from "@/lib/content";
+import { GoogleAnalyticsAndTagManager } from "@/components/site/GoogleAnalytics";
+import { getAnalyticsSettings, getSiteSettings, getNavigation } from "@/lib/content";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { divisions } from "@/lib/site-structure";
 import { SITE_URL } from "@/lib/site-url";
@@ -47,15 +48,20 @@ export const viewport: Viewport = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const site = await getSiteSettings();
+  const [site, analytics, navigation] = await Promise.all([
+    getSiteSettings(),
+    getAnalyticsSettings(),
+    getNavigation(),
+  ]);
   return (
     <html
       lang="en"
       className={`${bricolage.variable} ${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
     >
       <body className="font-sans selection:bg-bx-pink selection:text-white">
+        <GoogleAnalyticsAndTagManager settings={analytics} />
         <JsonLd data={[organizationSchema(site), websiteSchema(site)]} />
-        <MarketingShell site={site} divisions={divisions}>
+        <MarketingShell site={site} navigation={navigation} divisions={divisions}>
           {children}
         </MarketingShell>
       </body>

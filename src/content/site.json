@@ -1,8 +1,8 @@
 {
   "_note": "Site-wide settings shared by every page, copied from beetrix360_homepage_v6.html.",
-  "name": "BeeTrix360",
+  "name": "Beetrix360",
   "url": "https://www.beetrix360.com",
-  "description": "BeeTrix360 builds web, automation, AI agents and AI-search visibility as one measurable revenue system.",
+  "description": "Beetrix360 builds web, automation, AI agents and AI-search visibility as one measurable revenue system.",
   "foundingYear": 2016,
   "formerName": "Bee Social",
   "phone": { "display": "+1 (424) 441-6042", "tel": "+14244416042", "ariaLabel": "Call +1 424 441 6042" },
@@ -23,7 +23,7 @@
     "domainLabel": "www.beetrix360.com",
     "bookLabel": "Book a call",
     "bookHref": "/#contact",
-    "copyright": "© 2016–2026 BeeTrix360®. All rights reserved.",
+    "copyright": "© 2016–2026 Beetrix360®. All rights reserved.",
     "backToTop": "Back to top ↑"
   },
   "modal": {

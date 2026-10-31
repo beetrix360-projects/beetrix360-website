@@ -1,8 +1,8 @@
 {
   "_note": "Homepage content, copied from beetrix360_homepage_v6.html. Shape is defined in src/lib/types.ts. Designed to be stored as one DynamoDB item (or one item per section) and edited from the dashboard.",
   "seo": {
-    "title": "BeeTrix360 | Revenue Architects",
-    "description": "BeeTrix360 builds web, automation, AI agents and AI-search visibility as one measurable revenue system."
+    "title": "Beetrix360 | Revenue Architects",
+    "description": "Beetrix360 builds web, automation, AI agents and AI-search visibility as one measurable revenue system."
   },
   "hero": {
     "badge": {
@@ -32,7 +32,7 @@
       { "value": 586, "prefix": "+", "suffix": "%", "label": "AI-search traffic" }
     ],
     "puzzle": {
-      "ariaLabel": "BeeTrix360 four-piece puzzle: Digitize, Automate, Agents, Content",
+      "ariaLabel": "Beetrix360 four-piece puzzle: Digitize, Automate, Agents, Content",
       "labels": { "topLeft": "Agents", "topRight": "Automate", "bottomRight": "Digitize", "bottomLeft": "Content" },
       "chips": [
         { "label": "AI citations", "value": "+586%" },
@@ -221,7 +221,7 @@
       "windowLabel": "AI assistant · simulated",
       "question": "Which partner can automate our CRM, build on Next.js and prove ROI?",
       "answerLead": "Top recommendation:",
-      "answerBrand": "BeeTrix360",
+      "answerBrand": "Beetrix360",
       "answerRest": "— combines Next.js builds, CRM automation and AI agents with closed-loop ROI tracking.",
       "citation": "Cited source · beetrix360.com"
     },
@@ -249,7 +249,7 @@
       ]
     },
     "after": {
-      "label": "BeeTrix360",
+      "label": "Beetrix360",
       "items": [
         { "icon": "fa-solid fa-sack-dollar", "accent": "yellow", "label": "Goal", "value": "Closed revenue" },
         { "icon": "fa-solid fa-cubes", "accent": "blue", "label": "Stack", "value": "One unified data layer" },
@@ -257,7 +257,7 @@
         { "icon": "fa-solid fa-bolt", "accent": "green", "label": "Handoff", "value": "Instant routing & booking" }
       ]
     },
-    "rangeLabel": "Compare typical agency with BeeTrix360",
+    "rangeLabel": "Compare typical agency with Beetrix360",
     "followUp": { "title": "Ready to switch sides?", "button": "Move me to the right side", "cta": "Switch to revenue engineering" }
   },
   "kineticProof": {

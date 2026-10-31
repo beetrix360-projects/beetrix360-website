@@ -9,6 +9,7 @@ import {
   Database,
   CheckCircle2,
   Sparkles,
+  BarChart3,
 } from "lucide-react";
 import { getSessionUser } from "@/lib/auth";
 import { getAllPages } from "@/lib/page-manager";
@@ -195,7 +196,7 @@ export default async function AdminOverviewPage() {
                 <Search className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-neutral-900 group-hover:text-cyan-800 transition-colors">
-                5. SEO & JSON-LD Engine
+                5. SEO &amp; JSON-LD Engine
               </h3>
               <p className="text-xs text-neutral-500 mt-2 leading-relaxed">
                 Inspect structured data schemas (Organization, Service, FAQPage, HowTo) automatically compiled and injected into the &lt;head&gt;.
@@ -207,22 +208,27 @@ export default async function AdminOverviewPage() {
             </div>
           </Link>
 
-          {/* Module 6: Storage Engine Status */}
-          <div className="p-6 rounded-2xl bg-white border border-neutral-200 flex flex-col justify-between">
+          {/* Module 6: Google Analytics & Tag Manager */}
+          <Link
+            href="/admin/analytics"
+            className="group p-6 rounded-2xl bg-white border border-neutral-200 hover:border-orange-300 hover:shadow-md transition-all flex flex-col justify-between"
+          >
             <div>
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 border border-emerald-100">
-                <Database className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-4 border border-orange-100">
+                <BarChart3 className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-bold text-neutral-900">AWS Storage Engine</h3>
+              <h3 className="text-base font-bold text-neutral-900 group-hover:text-orange-700 transition-colors">
+                6. Google Analytics &amp; Tag Manager
+              </h3>
               <p className="text-xs text-neutral-500 mt-2 leading-relaxed">
-                Single-table architecture compatible with Amazon DynamoDB and local JSON persistence during development.
+                Configure GA4 Measurement IDs, Google Tag Manager containers, Consent Mode v2, and automatic CTA/form conversion tracking.
               </p>
             </div>
-            <div className="mt-6 flex items-center gap-2 text-xs font-mono text-emerald-700 font-medium">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              <span>Table: Beetrix_Content Ready</span>
+            <div className="mt-6 flex items-center gap-1.5 text-xs font-semibold text-orange-600 group-hover:translate-x-1 transition-transform">
+              <span>Configure GA4 &amp; GTM</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

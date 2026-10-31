@@ -46,10 +46,12 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
 
   const parentOptions = pages.filter((p) => p.parentId === null);
 
-  const filteredPages = pages.filter((p) =>
-    p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    p.slug.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredPages = pages.filter((p) => {
+    const title = (p?.title || (p as any)?.h1 || (p as any)?.menuLabel || "").toLowerCase();
+    const slug = (p?.slug || (p as any)?.path || "").toLowerCase();
+    const q = (searchQuery || "").toLowerCase();
+    return title.includes(q) || slug.includes(q);
+  });
 
   const handleSaveSelected = async () => {
     if (!selectedPage || !canEdit) return;
@@ -57,8 +59,8 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
     setStatusMessage(null);
     try {
       await savePageAction(selectedPage);
-      setPages(pages.map((p) => (p.slug === selectedPage.slug ? selectedPage : p)));
-      setStatusMessage({ type: "success", text: `Page /${selectedPage.slug} updated successfully!` });
+      setPages(pages.map((p) => (p.id === selectedPage.id ? selectedPage : p)));
+      setStatusMessage({ type: "success", text: `Page ${(selectedPage as any).path || `/${selectedPage.slug}`} updated successfully!` });
     } catch (err: any) {
       setStatusMessage({ type: "error", text: err?.message || "Failed to update page." });
     } finally {
@@ -68,6 +70,7 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
 
   const handleCreatePage = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!canEdit) return;
     if (!newPage.title || !newPage.slug) return;
     setSaving(true);
     setStatusMessage(null);
@@ -87,7 +90,7 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
         keyword: newPage.keyword || newPage.title,
         order: pages.length + 1,
         seo: {
-          title: newPage.seo?.title || `${newPage.title} | BeeTrix360`,
+          title: newPage.seo?.title || `${newPage.title} | Beetrix360`,
           description: newPage.seo?.description || `Discover enterprise ${newPage.title} capabilities.`,
         },
         sections: [
@@ -105,7 +108,7 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
       setPages([...pages, pageToCreate]);
       setIsCreating(false);
       setSelectedPage(pageToCreate);
-      setStatusMessage({ type: "success", text: `Page /${pageToCreate.slug} created and live revalidated!` });
+      setStatusMessage({ type: "success", text: `Page ${(pageToCreate as any).path || `/${pageToCreate.slug}`} created and live revalidated!` });
     } catch (err: any) {
       setStatusMessage({ type: "error", text: err?.message || "Failed to create page." });
     } finally {
@@ -113,19 +116,21 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
     }
   };
 
-  const handleDelete = async (slug: string) => {
+  const handleDelete = async (id: string) => {
     if (!canDelete) {
       setStatusMessage({ type: "error", text: "Forbidden: Only Administrators and Moderators can delete pages." });
       return;
     }
-    if (!confirm(`Are you sure you want to permanently delete page "/${slug}"?`)) return;
+    const target = pages.find((p) => p.id === id);
+    const route = (target as any)?.path || `/${target?.slug || id}`;
+    if (!confirm(`Are you sure you want to permanently delete page "${route}"?`)) return;
 
     setSaving(true);
     try {
-      await deletePageAction(slug);
-      setPages(pages.filter((p) => p.slug !== slug));
-      if (selectedPage?.slug === slug) setSelectedPage(null);
-      setStatusMessage({ type: "success", text: `Page /${slug} successfully deleted.` });
+      await deletePageAction(target?.slug || id);
+      setPages(pages.filter((p) => p.id !== id));
+      if (selectedPage?.id === id) setSelectedPage(null);
+      setStatusMessage({ type: "success", text: `Page ${route} successfully deleted.` });
     } catch (err: any) {
       setStatusMessage({ type: "error", text: err?.message || "Failed to delete page." });
     } finally {
@@ -201,12 +206,12 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
           </div>
 
           {filteredPages.map((page) => {
-            const isSelected = selectedPage?.slug === page.slug;
+            const isSelected = selectedPage?.id === page.id;
             const isParent = page.parentId === null;
 
             return (
               <div
-                key={page.slug}
+                key={page.id}
                 onClick={() => {
                   setSelectedPage(page);
                   setIsCreating(false);
@@ -224,11 +229,17 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
                     ) : (
                       <ChevronRight className="w-3.5 h-3.5 text-neutral-400 ml-2 shrink-0" />
                     )}
-                    <span className="text-xs font-semibold text-neutral-900 truncate">{page.title}</span>
+                    <span className="text-xs font-semibold text-neutral-900 truncate">
+                      {page.title || (page as any).h1 || page.slug}
+                    </span>
                   </div>
                   <div className="text-[11px] font-mono text-neutral-500 mt-1 truncate">
-                    /{page.slug}
-                    {page.parentId && <span className="text-neutral-400 ml-1.5">(Parent: /{page.parentId})</span>}
+                    {(page as any).path || `/${page.slug}`}
+                    {page.parentId && (
+                      <span className="text-neutral-400 ml-1.5">
+                        (Parent: {pages.find((p) => p.id === page.parentId || p.slug === page.parentId)?.title || page.parentId})
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -237,7 +248,7 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
                     {page.pageType}
                   </span>
                   <a
-                    href={`/${page.slug}`}
+                    href={(page as any).path || `/${page.slug}`}
                     target="_blank"
                     onClick={(e) => e.stopPropagation()}
                     className="p-1 hover:text-emerald-600 text-neutral-400 transition-colors"
@@ -315,8 +326,8 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
                   >
                     <option value="">None (Top-Level Parent Division)</option>
                     {parentOptions.map((p) => (
-                      <option key={p.slug} value={p.slug}>
-                        {p.title} (/{p.slug})
+                      <option key={p.id} value={p.id}>
+                        {p.title} ({(p as any).path || `/${p.slug}`})
                       </option>
                     ))}
                   </select>
@@ -356,8 +367,8 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
 
               <button
                 type="submit"
-                disabled={saving}
-                className="w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                disabled={saving || !canEdit}
+                className="w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs disabled:opacity-50"
               >
                 {saving ? (
                   <span className="w-3.5 h-3.5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
@@ -374,13 +385,15 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
             <div className="space-y-6">
               <div className="pb-4 border-b border-neutral-200 flex items-center justify-between">
                 <div>
-                  <h2 className="text-lg font-bold text-neutral-900 font-heading">{selectedPage.title}</h2>
-                  <p className="text-xs font-mono text-neutral-500 mt-0.5">Route: /{selectedPage.slug}</p>
+                  <h2 className="text-lg font-bold text-neutral-900 font-heading">
+                    {selectedPage.title || (selectedPage as any).h1 || selectedPage.slug}
+                  </h2>
+                  <p className="text-xs font-mono text-neutral-500 mt-0.5">Route: {(selectedPage as any).path || `/${selectedPage.slug}`}</p>
                 </div>
                 <div className="flex items-center gap-2">
                   {canDelete && (
                     <button
-                      onClick={() => handleDelete(selectedPage.slug)}
+                      onClick={() => handleDelete(selectedPage.id)}
                       className="px-3 py-1.5 rounded-xl bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 text-xs font-mono flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -425,10 +438,10 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
                     >
                       <option value="">None (Top-Level Parent Division)</option>
                       {parentOptions
-                        .filter((p) => p.slug !== selectedPage.slug)
+                        .filter((p) => p.id !== selectedPage.id)
                         .map((p) => (
-                          <option key={p.slug} value={p.slug}>
-                            {p.title} (/{p.slug})
+                          <option key={p.id} value={p.id}>
+                            {p.title} ({(p as any).path || `/${p.slug}`})
                           </option>
                         ))}
                     </select>
@@ -470,7 +483,7 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
                   </label>
                   <input
                     type="text"
-                    value={selectedPage.seo.title}
+                    value={selectedPage.seo?.title || (selectedPage.seo as any)?.titleTag || ""}
                     onChange={(e) =>
                       setSelectedPage({
                         ...selectedPage,
@@ -487,7 +500,7 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
                   </label>
                   <textarea
                     rows={2}
-                    value={selectedPage.seo.description}
+                    value={selectedPage.seo?.description || (selectedPage.seo as any)?.metaDescription || ""}
                     onChange={(e) =>
                       setSelectedPage({
                         ...selectedPage,
@@ -505,7 +518,7 @@ export function PageManagerClient({ initialPages, userRole }: Props) {
                   <textarea
                     rows={3}
                     placeholder='{"@context": "https://schema.org", "@type": "Service", "name": "..."}'
-                    value={selectedPage.seo.customJsonLd || ""}
+                    value={selectedPage.seo?.customJsonLd || ""}
                     onChange={(e) =>
                       setSelectedPage({
                         ...selectedPage,

@@ -10,12 +10,13 @@ import {
   ExternalLink,
   LogOut,
   ShieldCheck,
+  BarChart3,
 } from "lucide-react";
 import { getSessionUser } from "@/lib/auth";
 import { logoutAction } from "../actions";
 
 export const metadata = {
-  title: "BeeTrix360 Admin Studio",
+  title: "Beetrix360 Admin Studio",
 };
 
 export default async function AdminDashboardLayout({
@@ -40,7 +41,7 @@ export default async function AdminDashboardLayout({
       <aside className="w-64 border-r border-neutral-200 bg-white flex flex-col shrink-0 shadow-xs">
         <div className="h-16 px-6 flex items-center justify-between border-b border-neutral-200">
           <Link href="/admin" className="flex items-center gap-2 font-heading font-extrabold text-lg tracking-tight text-neutral-900">
-            <span>BeeTrix<span className="text-bx-pink">360</span></span>
+            <span>Beetrix<span className="text-bx-pink">360</span></span>
             <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600 font-semibold border border-neutral-200">
               STUDIO
             </span>
@@ -109,7 +110,15 @@ export default async function AdminDashboardLayout({
             className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors"
           >
             <Search className="w-4 h-4 text-cyan-600" />
-            <span>SEO & JSON-LD</span>
+            <span>SEO &amp; JSON-LD</span>
+          </Link>
+
+          <Link
+            href="/admin/analytics"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors"
+          >
+            <BarChart3 className="w-4 h-4 text-orange-600" />
+            <span>GA4 &amp; Tag Manager</span>
           </Link>
         </nav>
 

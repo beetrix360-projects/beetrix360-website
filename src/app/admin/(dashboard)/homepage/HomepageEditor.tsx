@@ -770,7 +770,7 @@ export function HomepageEditor({ initialContent, userRole }: Props) {
                         url: "https://www.beetrix360.com/",
                         isPartOf: {
                           "@type": "WebSite",
-                          name: "BeeTrix360",
+                          name: "Beetrix360",
                         },
                       },
                       null,

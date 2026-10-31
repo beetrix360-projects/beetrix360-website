@@ -207,5 +207,5 @@ export async function getSiteNavigation(): Promise<NavigationConfig> {
 }
 
 export async function saveSiteNavigation(nav: NavigationConfig): Promise<void> {
-  await putDbItem("SITE#config", "NAVIGATION", nav);
+  throw new Error("Disabled until the new editor (Phase 6) is ready");
 }

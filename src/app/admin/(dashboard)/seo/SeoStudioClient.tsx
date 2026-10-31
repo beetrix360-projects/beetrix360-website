@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import type { SiteSettings } from "@/lib/types";
 import type { PageRecord } from "@/lib/page-manager";
+import { saveSiteSettingsAction } from "../../actions";
 
 interface Props {
   initialSite: SiteSettings;
@@ -29,6 +30,7 @@ export function SeoStudioClient({ initialSite, pages, userRole }: Props) {
     setSaving(true);
     setStatusMessage(null);
     try {
+      await saveSiteSettingsAction(site);
       setStatusMessage({ type: "success", text: "Global SEO metadata successfully updated!" });
     } catch (err: any) {
       setStatusMessage({ type: "error", text: err?.message || "Failed to update SEO." });
@@ -111,7 +113,7 @@ export function SeoStudioClient({ initialSite, pages, userRole }: Props) {
           mainEntity: [
             {
               "@type": "Question",
-              name: "How does BeeTrix360 engineer measurable outcomes?",
+              name: "How does Beetrix360 engineer measurable outcomes?",
               acceptedAnswer: {
                 "@type": "Answer",
                 text: "Through our unified tech architecture, autonomous workflows, and conversion-optimized pipelines.",

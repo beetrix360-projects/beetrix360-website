@@ -4,7 +4,7 @@ import { getSessionUser } from "@/lib/auth";
 import { SeoStudioClient } from "./SeoStudioClient";
 
 export const metadata = {
-  title: "SEO & JSON-LD Linked Data Studio | BeeTrix360 Admin",
+  title: "SEO & JSON-LD Linked Data Studio | Beetrix360 Admin",
 };
 
 export default async function AdminSeoPage() {
@@ -32,7 +32,16 @@ export default async function AdminSeoPage() {
         </div>
       </div>
 
-      <SeoStudioClient initialSite={site} pages={pages} userRole={user?.role || "editor"} />
+      <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-sm flex items-start gap-3">
+        <div>
+          <p className="font-semibold text-amber-950">Read-Only Notice (IA v2 Migration)</p>
+          <p className="text-xs text-amber-800 mt-0.5">
+            The legacy SEO Studio screen is in read-only mode to prevent overwriting metadata during the IA v2 migration. Full editing will be restored in Phase 6.
+          </p>
+        </div>
+      </div>
+
+      <SeoStudioClient initialSite={site} pages={pages} userRole="viewer" />
     </div>
   );
 }
