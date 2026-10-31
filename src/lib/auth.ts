@@ -19,10 +19,20 @@ export interface UserRecord extends UserProfile {
   passwordHash: string;
 }
 
-const JWT_SECRET = new TextEncoder().encode(
-  process.env.AUTH_SECRET || "beetrix360-super-secret-jwt-key-2026-production"
-);
 const COOKIE_NAME = "bx_admin_token";
+
+/**
+ * Returns JWT secret derived strictly from AUTH_SECRET environment variable.
+ * Refuses operation and logs an error if AUTH_SECRET is not configured.
+ */
+function getJwtSecret(): Uint8Array {
+  const secret = process.env.AUTH_SECRET;
+  if (!secret || secret.trim() === "") {
+    console.error("[AUTH ERROR] AUTH_SECRET environment variable is missing. Authentication refused.");
+    throw new Error("AUTH_SECRET environment variable is missing.");
+  }
+  return new TextEncoder().encode(secret);
+}
 
 /**
  * Ensures at least one master admin exists on initial setup.
@@ -48,6 +58,7 @@ export async function seedInitialAdmin(): Promise<void> {
  * Sign session token.
  */
 export async function createSessionToken(user: UserProfile): Promise<string> {
+  const secret = getJwtSecret();
   return await new SignJWT({
     id: user.id,
     email: user.email,
@@ -57,12 +68,20 @@ export async function createSessionToken(user: UserProfile): Promise<string> {
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
     .setExpirationTime("7d")
-    .sign(JWT_SECRET);
+    .sign(secret);
 }
 
 let cliSessionTokenOverride: string | null = null;
 
+/**
+ * CLI test session helper.
+ * Strictly disabled in production environment (NODE_ENV === "production").
+ */
 export function setCliSessionToken(token: string | null) {
+  if (process.env.NODE_ENV === "production") {
+    console.warn("[AUTH WARN] setCliSessionToken is disabled in production environment.");
+    return;
+  }
   cliSessionTokenOverride = token;
 }
 
@@ -71,7 +90,14 @@ export function setCliSessionToken(token: string | null) {
  */
 export async function getSessionUser(): Promise<UserProfile | null> {
   try {
-    let token = cliSessionTokenOverride;
+    const secret = getJwtSecret();
+    let token: string | null = null;
+
+    // CLI override only available outside production environment
+    if (process.env.NODE_ENV !== "production") {
+      token = cliSessionTokenOverride;
+    }
+
     if (!token) {
       try {
         const cookieStore = await cookies();
@@ -82,7 +108,7 @@ export async function getSessionUser(): Promise<UserProfile | null> {
     }
     if (!token) return null;
 
-    const { payload } = await jwtVerify(token, JWT_SECRET);
+    const { payload } = await jwtVerify(token, secret);
     return {
       id: payload.id as string,
       email: payload.email as string,
@@ -90,7 +116,10 @@ export async function getSessionUser(): Promise<UserProfile | null> {
       role: payload.role as UserRole,
       createdAt: "",
     };
-  } catch {
+  } catch (err: any) {
+    if (err?.message?.includes("AUTH_SECRET")) {
+      console.error("[AUTH ERROR] Cannot verify session: AUTH_SECRET is missing.");
+    }
     return null;
   }
 }
@@ -134,7 +163,10 @@ export async function createUser(data: {
 }): Promise<UserProfile> {
   const id = `usr_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
   const salt = await bcrypt.genSalt(10);
-  const passwordHash = await bcrypt.hash(data.password || "BeetrixPass2026!", salt);
+  if (!data.password || data.password.trim() === "") {
+    throw new Error("Password is required to create a user.");
+  }
+  const passwordHash = await bcrypt.hash(data.password, salt);
 
   const newRecord: UserRecord = {
     id,
