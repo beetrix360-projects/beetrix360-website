@@ -304,11 +304,62 @@ export async function getNavigation(): Promise<NavigationRecord | null> {
 }
 
 /**
+ * Retrieve the previous navigation record backup.
+ */
+export async function getPreviousNavigation(): Promise<NavigationRecord | null> {
+  return getDbItem<NavigationRecord>("SITE#config", "NAVIGATION#previous");
+}
+
+/**
  * Save the navigation record.
  */
 export async function saveNavigation(nav: NavigationRecord): Promise<void> {
   nav.updatedAt = new Date().toISOString();
   await putDbItem("SITE#config", "NAVIGATION", nav);
+}
+
+/**
+ * Save the navigation record with an automatic backup of the previous version.
+ * Stores previous version at SITE#config:NAVIGATION#previous.
+ * Stamps updatedBy and updatedAt on the new record.
+ */
+export async function saveNavigationWithBackup(
+  nav: NavigationRecord,
+  updatedBy?: string
+): Promise<void> {
+  const current = await getNavigation();
+  if (current) {
+    await putDbItem("SITE#config", "NAVIGATION#previous", current);
+  }
+  nav.updatedAt = new Date().toISOString();
+  if (updatedBy) {
+    nav.updatedBy = updatedBy;
+  }
+  await putDbItem("SITE#config", "NAVIGATION", nav);
+}
+
+/**
+ * Restore the previous navigation record backup.
+ * Swaps previous to current and current to previous.
+ * Stamps updatedBy and updatedAt.
+ */
+export async function restorePreviousNavigation(
+  restoredBy?: string
+): Promise<NavigationRecord | null> {
+  const previous = await getPreviousNavigation();
+  if (!previous) {
+    throw new Error("No previous navigation version found to restore.");
+  }
+  const current = await getNavigation();
+  if (current) {
+    await putDbItem("SITE#config", "NAVIGATION#previous", current);
+  }
+  previous.updatedAt = new Date().toISOString();
+  if (restoredBy) {
+    previous.updatedBy = restoredBy;
+  }
+  await putDbItem("SITE#config", "NAVIGATION", previous);
+  return previous;
 }
 
 /**

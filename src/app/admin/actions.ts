@@ -22,10 +22,22 @@ import {
   getAllPages,
   getAllRedirects,
   getPageByPath,
+  getNavigation,
+  getPreviousNavigation,
+  saveNavigationWithBackup,
+  restorePreviousNavigation,
   savePage,
   saveRedirect,
 } from "@/lib/db";
-import type { AnalyticsSettings, HomepageContent, PageRecordV2, PageTypeV2, SiteSettings } from "@/lib/types";
+import type {
+  AnalyticsSettings,
+  HomepageContent,
+  NavigationRecord,
+  PageRecordV2,
+  PageTypeV2,
+  SiteSettings,
+} from "@/lib/types";
+import { validateNavigationRecord } from "@/lib/navigation-validation";
 
 function safeRevalidate(path: string, type?: "layout" | "page") {
   try {
@@ -552,4 +564,97 @@ export async function saveAnalyticsSettingsAction(settings: AnalyticsSettings) {
   await saveAnalyticsSettings(settings);
   safeRevalidate("/", "layout");
   return { success: true, timestamp: new Date().toISOString() };
+}
+
+/**
+ * ============================================================================
+ * Phase 6B: IA v2 Navigation Studio Server Actions
+ * ============================================================================
+ */
+
+/**
+ * Save Navigation Record V2.
+ * Strictly restricted to admin role.
+ * Preserves previous version at SITE#config:NAVIGATION#previous.
+ * Enforces live validation: <= 12 items/group, exactly 5 tracks/menu, no duplicates.
+ * Safe revalidation of layout, sitemap, llms.txt.
+ */
+export async function saveNavigationV2Action(nav: NavigationRecord) {
+  const user = await getSessionUser();
+  if (!user) throw new Error("Unauthorized");
+  if (user.role !== "admin") {
+    throw new Error("Forbidden: Only administrators have permission to edit site navigation.");
+  }
+
+  // 1. Resolve page items and synchronize paths and labels
+  const allPages = await getAllPages();
+  const pageById = new Map<string, PageRecordV2>();
+  for (const p of allPages) {
+    if (p.id) pageById.set(p.id, p);
+  }
+
+  for (const menu of nav.menus || []) {
+    for (const group of menu.groups || []) {
+      for (const item of group.items || []) {
+        if ("pageId" in item && item.pageId) {
+          const page = pageById.get(item.pageId);
+          if (!page) {
+            throw new Error(`Referenced pageId "${item.pageId}" does not exist in the page store.`);
+          }
+          item.path = page.path;
+          item.label = item.label || page.menuLabel || page.h1;
+        }
+      }
+    }
+  }
+
+  // 2. Validate navigation rules
+  const validation = validateNavigationRecord(nav, allPages);
+  if (!validation.isValid) {
+    throw new Error(`Navigation validation failed:\n${validation.errors.join("\n")}`);
+  }
+
+  // 3. Save with automatic version backup
+  const updatedBy = user.name || user.email;
+  await saveNavigationWithBackup(nav, updatedBy);
+
+  // 4. Safe dynamic cache revalidation
+  safeRevalidate("/", "layout");
+  safeRevalidate("/sitemap.xml");
+  safeRevalidate("/llms.txt");
+
+  return {
+    success: true,
+    timestamp: nav.updatedAt,
+    updatedBy: nav.updatedBy,
+  };
+}
+
+/**
+ * Restore previous Navigation Record version.
+ * Strictly restricted to admin role.
+ */
+export async function restorePreviousNavigationAction() {
+  const user = await getSessionUser();
+  if (!user) throw new Error("Unauthorized");
+  if (user.role !== "admin") {
+    throw new Error("Forbidden: Only administrators have permission to restore site navigation.");
+  }
+
+  const restored = await restorePreviousNavigation(user.name || user.email);
+  if (!restored) {
+    throw new Error("No previous navigation record found to restore.");
+  }
+
+  // Safe dynamic cache revalidation
+  safeRevalidate("/", "layout");
+  safeRevalidate("/sitemap.xml");
+  safeRevalidate("/llms.txt");
+
+  return {
+    success: true,
+    nav: restored,
+    timestamp: restored.updatedAt,
+    updatedBy: restored.updatedBy,
+  };
 }

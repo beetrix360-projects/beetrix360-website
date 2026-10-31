@@ -11,7 +11,10 @@ import {
   getAllRedirects,
   saveRedirect,
   getNavigation,
+  getPreviousNavigation,
   saveNavigation,
+  saveNavigationWithBackup,
+  restorePreviousNavigation,
   normalizePath,
 } from "./db";
 import type {
@@ -130,7 +133,10 @@ export {
   getAllRedirects,
   saveRedirect,
   getNavigation,
+  getPreviousNavigation,
   saveNavigation,
+  saveNavigationWithBackup,
+  restorePreviousNavigation,
   normalizePath,
 };
 

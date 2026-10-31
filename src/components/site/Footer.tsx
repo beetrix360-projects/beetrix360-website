@@ -72,15 +72,21 @@ export function Footer({ site, navigation, divisions }: FooterProps) {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <span>{f.copyright}</span>
             <div className="flex items-center gap-4">
-              <Link href="/privacy-policy" className="hover:text-bx-pink transition">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="hover:text-bx-pink transition">
-                Terms
-              </Link>
-              <Link href="/cookie-policy" className="hover:text-bx-pink transition">
-                Cookie Policy
-              </Link>
+              {(navigation?.footerLegal || ["/privacy-policy", "/terms", "/cookie-policy"]).map((path) => {
+                const label =
+                  path === "/privacy-policy"
+                    ? "Privacy Policy"
+                    : path === "/terms"
+                    ? "Terms"
+                    : path === "/cookie-policy"
+                    ? "Cookie Policy"
+                    : path.replace(/^\//, "").replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+                return (
+                  <Link key={path} href={path} className="hover:text-bx-pink transition">
+                    {label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
           <a href="#top" className="hover:text-bx-dark transition">
