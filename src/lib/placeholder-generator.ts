@@ -5,24 +5,237 @@ import type { PageRecordV2, SectionBlockV2 } from "./types";
  * Strictly follows SEO and content rules:
  * - Exactly one H1 per page (Hero)
  * - Section headings as H2, sub-points as H3 (no skipped heading levels)
- * - Target keyword incorporated naturally once in the first sentence (never raw-pasted as ungrammatical phrase)
  * - Page H1 used in headings
  * - Zero hallucination / no invented metrics, clients, prices, or claims
- * - Bracketed placeholders where real facts or policies belong: [To be specified: ...] / [Add ...]
- * - Specific "What's included" lists derived from each service's H1 and parent
- * - Unique causes and tailored solution services for all 7 challenge pages
+ * - Bracketed placeholders where real facts, policies, or methodology belong: [To be specified: ...] / [Add ...]
+ * - Specific "What's included" lists tailored to each service domain (social platforms, web development, SEO, etc.)
+ * - Context-matched 4-step processes (Design never mentions tracking or schemas; Dev focuses on architecture and testing)
+ * - Unique causes and valid, existing store-backed solution services for all 7 challenge pages
+ * - Natural English phrasing: NEVER inserts raw question-style keywords into sentences
  * - Neutral one-line descriptions per page type with no marketing claims
  * - placeholder: true on every generated block
  */
 
-// Specific "What's included" deliverables for service pages
+// Format a clean, natural topic noun from H1 (eliminates question phrasing like "how much does seo cost?")
+function getCleanTopicNoun(h1: string): string {
+  let clean = h1.replace(/\?+$/, "").trim();
+  clean = clean.replace(/^(how much does|how much do|what does|what do|why does|why do|why is|cost of)\s+/i, "");
+  clean = clean.replace(/\s+cost$/i, "");
+  if (/\bseo\b/i.test(clean)) {
+    clean = clean.replace(/\bseo\b/gi, "SEO");
+  }
+  return clean;
+}
+
+// 4-Step delivery process customized to the discipline
+function getServiceDeliveryProcess(h1: string, path: string): { step: number; title: string; description: string }[] {
+  const p = path.toLowerCase();
+
+  // 1. Creative & Design (Logo Design, Branding, Visual Identity, Packaging)
+  if (p.includes("/branding") || p.includes("/design") || p.includes("logo") || p.includes("identity")) {
+    return [
+      {
+        step: 1,
+        title: "Creative Brief & Discovery",
+        description: `Clarifying design objectives, target audience perception, aesthetic preferences, and competitive context for ${h1}.`,
+      },
+      {
+        step: 2,
+        title: "Concept Exploration & Direction",
+        description: `Developing distinct visual directions, structural sketches, typography pairings, and initial layout concepts.`,
+      },
+      {
+        step: 3,
+        title: "Design Refinement & Crafting",
+        description: `Iterating on selected directions, refining proportions, color harmonization, and typography based on stakeholder feedback.`,
+      },
+      {
+        step: 4,
+        title: "Master Asset Delivery & Guidelines",
+        description: `Exporting production-ready vector and digital packages, raster formats, and comprehensive usage documentation.`,
+      },
+    ];
+  }
+
+  // 2. Web & Software Development (WordPress, Ecommerce, Web Apps, Shopify)
+  if (p.includes("/web-development") || p.includes("/web") || p.includes("development") || p.includes("wordpress") || p.includes("shopify")) {
+    return [
+      {
+        step: 1,
+        title: "Technical Scoping & Architecture",
+        description: `Defining technology stack requirements, database schemas, third-party integrations, and hosting environments for ${h1}.`,
+      },
+      {
+        step: 2,
+        title: "Environment Setup & Core Build",
+        description: `Developing custom data models, reusable UI components, API endpoints, and business logic in a staging environment.`,
+      },
+      {
+        step: 3,
+        title: "Cross-Device Testing & Code QA",
+        description: `Rigorous functional validation, responsive viewport checks, performance optimization, and security audits.`,
+      },
+      {
+        step: 4,
+        title: "Deployment & Production Launch",
+        description: `Staging review sign-off, live server cutover, database migration, automated backup configuration, and handover.`,
+      },
+    ];
+  }
+
+  // 3. Social Media & Content Management (Instagram, LinkedIn, Facebook, TikTok, Content)
+  if (p.includes("/social-media") || p.includes("/content") || p.includes("social") || p.includes("management")) {
+    return [
+      {
+        step: 1,
+        title: "Audience & Platform Research",
+        description: `Analyzing target demographics, top-performing industry content, posting formats, and platform algorithms for ${h1}.`,
+      },
+      {
+        step: 2,
+        title: "Editorial Strategy & Template Setup",
+        description: `Establishing content pillars, brand tone guidelines, approved graphic templates, and publishing calendars.`,
+      },
+      {
+        step: 3,
+        title: "Scheduled Publishing & Active Engagement",
+        description: `Consistent asset production, copywriting, scheduled distribution, community interaction, and inbox monitoring.`,
+      },
+      {
+        step: 4,
+        title: "Performance Review & Content Refinement",
+        description: `Monthly reach and engagement analysis, format experimentation, and strategic editorial roadmap updates.`,
+      },
+    ];
+  }
+
+  // 4. Default: Technical SEO, Paid Media, Automation & General Services
+  return [
+    {
+      step: 1,
+      title: "Discovery & Technical Audit",
+      description: `In-depth diagnostic review of current infrastructure, asset inventories, and baseline performance for ${h1}.`,
+    },
+    {
+      step: 2,
+      title: "System Setup & Configuration",
+      description: `Configuring tracking parameters, technical assets, workflow rules, and core integration points.`,
+    },
+    {
+      step: 3,
+      title: "Structured Execution & Implementation",
+      description: `Sprint-based rollout, technical asset creation, rigorous peer review, and quality verification.`,
+    },
+    {
+      step: 4,
+      title: "Evaluation & Milestone Review",
+      description: `Reviewing technical logs, deliverable milestones, and identifying incremental optimization opportunities.`,
+    },
+  ];
+}
+
+// Specific "What's included" deliverables for every service domain
 function getServiceDeliverables(page: PageRecordV2, allPages: PageRecordV2[]): string[] {
-  const slug = page.slug;
-  const path = page.path;
+  const p = page.path.toLowerCase();
+  const slug = page.slug.toLowerCase();
   const h1 = page.h1;
 
-  // 1. Branding & Creative
-  if (path.includes("/branding/logo-design") || slug === "logo-design") {
+  // 1. Social Media Platform Management
+  if (p.includes("/social-media/instagram-management") || slug === "instagram-management") {
+    return [
+      "Visual grid aesthetic planning and monthly content calendar development",
+      "Custom Reels, multi-slide carousel, and daily story creative asset design",
+      "Caption copywriting, hashtag cluster research, and engagement callouts",
+      "Active community interaction, comment moderation, and DM triage workflows",
+      "Profile bio optimization, story highlights structure, and custom link-in-bio setup",
+      "Monthly performance reporting covering follower reach, engagement rate, and profile actions",
+    ];
+  }
+  if (p.includes("/social-media/facebook-management") || slug === "facebook-management") {
+    return [
+      "Page profile optimization, custom cover banner design, and action button configuration",
+      "Multi-format editorial calendar (feed posts, short videos, community announcements)",
+      "Audience engagement, comment moderation, and inbox response protocols",
+      "Facebook Group community management and discussion facilitation",
+      "Meta Business Suite integration and event tracking verification",
+      "Monthly audience growth and demographic engagement analytics reporting",
+    ];
+  }
+  if (p.includes("/social-media/linkedin-management") || slug === "linkedin-management") {
+    return [
+      "Executive personal profile and corporate company page strategic alignment",
+      "B2B industry thought leadership articles, commentary, and carousel slide decks (PDF)",
+      "Custom graphic templates, infographics, and corporate announcement styling",
+      "Employee advocacy guidelines and engagement prompting workflows",
+      "Company page SEO optimization, specialty tag configuration, and showcase pages",
+      "Monthly executive reporting on follower seniority, industry reach, and post impressions",
+    ];
+  }
+  if (p.includes("/social-media/tiktok-management") || slug === "tiktok-management") {
+    return [
+      "Native vertical video concept ideation, storyboarding, and creative scripting",
+      "Trending audio discovery and timely trend participation workflows",
+      "On-screen text styling, captions, and niche hashtag strategy",
+      "Community comment response management and video reply content creation",
+      "TikTok profile optimization and link-in-bio commercial routing",
+      "Analytics reporting on average watch time, completion rates, and audience retention curves",
+    ];
+  }
+  if (p.includes("/social-media/youtube-management") || slug === "youtube-management") {
+    return [
+      "Video title optimization, keyword-rich descriptions, and metadata tag structuring",
+      "High-contrast custom thumbnail design and visual brand consistency",
+      "Video chapter timestamps, pinned comments, and end-screen info card setup",
+      "Community tab updates, subscriber polls, and channel discussion moderation",
+      "Custom playlist organization and channel homepage layout curation",
+      "Monthly analytics on audience retention, click-through rate (CTR), and subscriber velocity",
+    ];
+  }
+
+  // 2. Web Development Platforms
+  if (p.includes("/web-development/wordpress") || slug === "wordpress") {
+    return [
+      "Custom block theme development or lightweight headless WordPress architecture",
+      "Database query optimization, object caching setup, and server response tuning",
+      "Custom post type (CPT) and custom field (ACF) data modeling for structured content",
+      "Plugin security audit, vulnerability hardening, and minimal third-party plugin footprint",
+      "Responsive layout validation, cross-browser testing, and mobile performance audits",
+      "Automated daily backups, staging environment configuration, and safe update workflows",
+    ];
+  }
+  if (p.includes("/web-development/ecommerce-development") || slug === "ecommerce-development") {
+    return [
+      "Product catalog architecture, variant configuration, and category filtering taxonomy",
+      "Secure payment gateway integration (Stripe, digital wallets) and automated tax calculation",
+      "Inventory management synchronization and third-party logistics (3PL) integration",
+      "Abandoned checkout recovery workflows and transactional email notification templates",
+      "Mobile commerce optimization and fast product detail page (PDP) rendering",
+      "PCI-DSS compliance review, security safeguards, and SSL certificate installation",
+    ];
+  }
+  if (p.includes("/web-development/web-application-development") || slug === "web-application-development") {
+    return [
+      "Application architecture planning, database schema design, and technical stack selection",
+      "Secure REST / GraphQL API endpoints, JWT authentication, and role-based access control (RBAC)",
+      "Modular frontend component implementation with dynamic state management",
+      "Third-party webhook integrations, asynchronous task queues, and background workers",
+      "Automated unit and integration testing suite configuration",
+      "Cloud infrastructure provisioning, CI/CD automated deployment pipelines, and error logging",
+    ];
+  }
+  if (p.includes("/web-development/shopify") || slug === "shopify") {
+    return [
+      "Liquid theme customization or headless Shopify Storefront API implementation",
+      "App ecosystem audit, JavaScript execution optimization, and core web vitals speed tuning",
+      "Custom product page merchandising, variant selector logic, and bundle offer setup",
+      "Shopify checkout extensibility configuration and branded customer portal styling",
+      "Third-party application integration (reviews, subscriptions, marketing automation)",
+      "Google Merchant Center product feed integration and enhanced conversion tracking",
+    ];
+  }
+
+  // 3. Branding & Creative
+  if (p.includes("/branding/logo-design") || slug === "logo-design") {
     return [
       "Initial visual exploration and creative concept sketches",
       "Typography pairings and primary brand color palette definitions",
@@ -32,7 +245,7 @@ function getServiceDeliverables(page: PageRecordV2, allPages: PageRecordV2[]): s
       "Logo usage specifications, clear-space rules, and minimum reproduction sizes",
     ];
   }
-  if (path.includes("/branding/brand-strategy") || slug === "brand-strategy") {
+  if (p.includes("/branding/brand-strategy") || slug === "brand-strategy") {
     return [
       "Market positioning audit and competitor landscape analysis",
       "Target customer segmentation and audience profile definition",
@@ -42,7 +255,7 @@ function getServiceDeliverables(page: PageRecordV2, allPages: PageRecordV2[]): s
       "Implementation roadmap for internal and customer-facing touchpoints",
     ];
   }
-  if (path.includes("/branding/brand-guidelines") || slug === "brand-guidelines" || path.includes("/branding/corporate-identity")) {
+  if (p.includes("/branding/brand-guidelines") || slug === "brand-guidelines" || p.includes("corporate-identity")) {
     return [
       "Comprehensive digital brand guidelines and visual standards manual",
       "Typography system, scale hierarchy, and web-safe font fallback rules",
@@ -53,8 +266,8 @@ function getServiceDeliverables(page: PageRecordV2, allPages: PageRecordV2[]): s
     ];
   }
 
-  // 2. SEO Services
-  if (path.includes("/seo/local-seo") || slug === "local-seo") {
+  // 4. SEO Services
+  if (p.includes("/seo/local-seo") || slug === "local-seo") {
     return [
       "Google Business Profile audit, category alignment, and profile optimization",
       "NAP (Name, Address, Phone) citation audit and consistency remediation across local directories",
@@ -64,7 +277,7 @@ function getServiceDeliverables(page: PageRecordV2, allPages: PageRecordV2[]): s
       "Local map pack visibility tracking and localized search ranking reports",
     ];
   }
-  if (path.includes("/seo/technical-seo") || slug === "technical-seo") {
+  if (p.includes("/seo/technical-seo") || slug === "technical-seo") {
     return [
       "Crawl budget analysis, server log review, and HTTP status code audit",
       "Core Web Vitals diagnostic assessment and page rendering speed evaluation",
@@ -74,7 +287,7 @@ function getServiceDeliverables(page: PageRecordV2, allPages: PageRecordV2[]): s
       "Mobile viewport validation and international hreflang configuration",
     ];
   }
-  if (path.includes("/seo/on-page-seo") || slug === "on-page-seo") {
+  if (p.includes("/seo/on-page-seo") || slug === "on-page-seo") {
     return [
       "Search intent mapping and keyword targeting architecture across key pages",
       "Title tag, meta description, and heading hierarchy (H1, H2, H3) optimization",
@@ -84,7 +297,7 @@ function getServiceDeliverables(page: PageRecordV2, allPages: PageRecordV2[]): s
       "Rich snippet eligibility review and page-level schema markup",
     ];
   }
-  if (path.includes("/seo/keyword-research") || slug === "keyword-research") {
+  if (p.includes("/seo/keyword-research") || slug === "keyword-research") {
     return [
       "Comprehensive search query discovery and topical cluster mapping",
       "Search intent classification (informational, commercial, transactional, navigational)",
@@ -94,7 +307,7 @@ function getServiceDeliverables(page: PageRecordV2, allPages: PageRecordV2[]): s
       "Prioritized keyword roadmap aligned to content planning and page updates",
     ];
   }
-  if (path.includes("/seo/link-building") || slug === "link-building") {
+  if (p.includes("/seo/link-building") || slug === "link-building") {
     return [
       "Backlink profile audit and toxic link risk assessment",
       "Competitor backlink gap analysis and referring domain roadmapping",
@@ -104,7 +317,7 @@ function getServiceDeliverables(page: PageRecordV2, allPages: PageRecordV2[]): s
       "Acquired link reporting, domain authority metrics, and anchor text distribution",
     ];
   }
-  if (path.includes("/seo/programmatic-seo") || slug === "programmatic-seo") {
+  if (p.includes("/seo/programmatic-seo") || slug === "programmatic-seo") {
     return [
       "Structured database schema design and dataset normalization",
       "Dynamic page template architecture and internal linking graph setup",
@@ -114,222 +327,22 @@ function getServiceDeliverables(page: PageRecordV2, allPages: PageRecordV2[]): s
       "Indexation monitoring and performance tracking across programmatic URLs",
     ];
   }
-  if (path.includes("/seo/ecommerce-seo") || slug === "ecommerce-seo") {
+
+  // 5. Automation
+  if (p.includes("/automation") || p.includes("/ai-automation")) {
     return [
-      "Product catalog architecture and category taxonomy optimization",
-      "Faceted navigation crawl controls and canonicalization rules",
-      "Product detail page (PDP) structured data schema markup and rich snippet setup",
-      "Out-of-stock and discontinued product handling workflows",
-      "Category page content structure and internal link distribution",
-      "Product search visibility and Google Merchant Center data alignment",
-    ];
-  }
-  if (path.includes("/seo/enterprise-seo") || slug === "enterprise-seo") {
-    return [
-      "Multi-domain, sub-brand, and international site architecture governance",
-      "Cross-functional engineering coordination and technical backlog specifications",
-      "Large-scale crawl data analysis and enterprise indexation management",
-      "Enterprise CMS workflows, approval protocols, and staging validation rules",
-      "Search performance telemetry and executive dashboard configuration",
-      "Search engine algorithm volatility monitoring and technical compliance audits",
+      "Operational workflow discovery and manual bottleneck identification",
+      "Cloud platform integration architecture via standard webhooks and REST APIs",
+      "Trigger, condition, and multi-step action sequence configuration",
+      "Automated error logging, notification alerts, and exception retry logic",
+      "Data formatting, payload validation, and system access permission setup",
+      "Deployment verification, execution run logs, and operational documentation",
     ];
   }
 
-  // 3. AI Search & Generative Engine Optimization
-  if (path.includes("/seo/generative-engine-optimization") || slug === "generative-engine-optimization" || slug === "enterprise-geo") {
-    return [
-      "Brand visibility audit across Google AI Overviews, Perplexity, and ChatGPT",
-      "Structured data schema enhancements to support AI entity extraction",
-      "Direct answer formatting, factual tabular data, and citational structure planning",
-      "Knowledge graph consistency and digital authority footprint verification",
-      "Comparative sentiment and brand perception analysis in generative search outputs",
-      "Ongoing monitoring of generative search citations and referral patterns",
-    ];
-  }
-  if (path.includes("/seo/answer-engine-optimization") || slug === "answer-engine-optimization") {
-    return [
-      "Question-and-answer content architecture mapped to voice and conversational queries",
-      "FAQPage and QAPage structured data schema deployment",
-      "Featured snippet and direct answer formatting across core service pages",
-      "Entity relationship modeling and concise factual statement structuring",
-      "Conversational search intent mapping across buyer research stages",
-      "Zero-click answer placement audits and tracking",
-    ];
-  }
-  if (path.includes("/seo/chatgpt-optimization") || slug === "chatgpt-optimization") {
-    return [
-      "Brand citation source audit across major AI conversational platforms",
-      "Third-party authoritative publication and directory presence review",
-      "Knowledge base and entity consistency verification across web sources",
-      "Content formatting guidelines optimized for LLM information retrieval",
-      "Systematic prompt testing across relevant commercial queries",
-      "Brand recommendation analysis and citation tracking",
-    ];
-  }
-
-  // 4. Paid Media
-  if (path.includes("/paid-media/google-ads") || slug === "google-ads") {
-    return [
-      "Search and Performance Max account structure architecture",
-      "High-intent commercial keyword selection and negative keyword library configuration",
-      "Responsive search ad copy variations and ad asset extension setup",
-      "Conversion tracking configuration and value-based bidding parameters",
-      "Bidding strategy alignment (Target CPA / Target ROAS) and audience signal setup",
-      "Search query reporting, search term pruning, and budget pacing controls",
-    ];
-  }
-  if (path.includes("/paid-media/meta-ads") || slug === "meta-ads") {
-    return [
-      "Campaign budget optimization (CBO) and ad set targeting architecture",
-      "Custom audience, lookalike audience, and exclusion list configuration",
-      "Ad creative copy variations, headline testing, and call-to-action alignment",
-      "Meta Conversions API (CAPI) and pixel event tracking verification",
-      "Placement optimization across Facebook, Instagram, and Audience Network",
-      "Frequency monitoring, creative fatigue analysis, and performance reporting",
-    ];
-  }
-  if (path.includes("/paid-media/tiktok-ads") || slug === "tiktok-ads") {
-    return [
-      "TikTok Ads Manager account structure and TikTok Pixel configuration",
-      "Native vertical video creative briefs and hook testing strategy",
-      "In-feed ad formats, spark ads, and interactive add-on deployment",
-      "Demographic, interest, and behavioral audience targeting setup",
-      "Event tracking and TikTok Events API implementation",
-      "Campaign bid optimization and creative refresh cadences",
-    ];
-  }
-  if (path.includes("/paid-media/programmatic-advertising") || slug === "programmatic-advertising") {
-    return [
-      "Demand-side platform (DSP) setup and inventory selection",
-      "First-party audience data onboarding and third-party segment evaluation",
-      "Private marketplace (PMP) deal negotiation and contextual targeting configuration",
-      "Display, native, and video ad creative specification and QA",
-      "Brand safety, viewability, and fraud protection filter configuration",
-      "Cross-channel frequency capping and supply path optimization",
-    ];
-  }
-
-  // 5. Marketplaces
-  if (path.includes("/marketplaces/amazon/advertising") || slug === "advertising") {
-    return [
-      "Sponsored Products, Sponsored Brands, and Sponsored Display campaign setup",
-      "High-converting keyword harvesting and competitor ASIN targeting",
-      "Negative keyword libraries and bid management optimization",
-      "Amazon Attribution setup for external traffic measurement",
-      "Campaign portfolio organization and target ACoS / ROAS budgeting",
-      "Search term performance analysis and budget pacing",
-    ];
-  }
-  if (path.includes("/marketplaces/amazon/seo") || slug === "seo") {
-    return [
-      "Amazon search algorithm ranking factor audit and catalog review",
-      "Keyword-optimized product title, bullet points, and product description copy",
-      "Backend search terms, subject matter, and target audience field optimization",
-      "A+ Content / Enhanced Brand Content (EBC) layout and graphic briefs",
-      "Product variation structuring and parent-child listing setup",
-      "Organic rank tracking for high-priority category search terms",
-    ];
-  }
-
-  // 6. AI & Automation
-  if (path.includes("/ai-automation/workflow-automation") || slug === "workflow-automation") {
-    return [
-      "End-to-end operational process mapping and bottleneck assessment",
-      "Cloud integration architecture across business software platforms",
-      "Multi-step trigger, condition, and action sequence configuration",
-      "Automated exception handling, error logging, and retry logic",
-      "Production deployment, webhook verification, and user access controls",
-      "Workflow documentation, execution logs, and staff handoff guide",
-    ];
-  }
-  if (path.includes("/ai-automation/business-process-automation") || slug === "business-process-automation") {
-    return [
-      "Cross-departmental business process discovery and ROI prioritization",
-      "Custom automation architecture replacing repetitive manual operations",
-      "Integration with core ERP, CRM, and internal database systems",
-      "Automated notification, approval routing, and task assignment logic",
-      "Data validation safeguards and audit trail compliance",
-      "Operational efficiency metrics and team enablement documentation",
-    ];
-  }
-  if (path.includes("/ai-automation/document-processing") || slug === "document-processing") {
-    return [
-      "Optical character recognition (OCR) and intelligent document parsing setup",
-      "Automated data extraction from invoices, receipts, and order forms",
-      "Validation rules and discrepancy flagging against internal databases",
-      "Automated document classification, tagging, and folder filing",
-      "Secure data routing to accounting and operations systems",
-      "Human-in-the-loop exception review workflow configuration",
-    ];
-  }
-  if (path.includes("/ai-automation/data-entry-automation") || slug === "data-entry-automation") {
-    return [
-      "Audit of manual data entry touchpoints and error frequency",
-      "Automated ingestion pipeline connecting forms, emails, and spreadsheets",
-      "Field mapping, format standardization, and data cleansing routines",
-      "Scheduled and real-time database synchronization workflows",
-      "Duplicate detection and validation error alerting",
-      "Audit trail logging and data integrity verification",
-    ];
-  }
-
-  // 7. Web & Conversion
-  if (path.includes("/conversion/landing-page-design") || slug === "landing-page-design") {
-    return [
-      "Information architecture and conversion-focused wireframing",
-      "High-fidelity responsive UI mockups tailored to acquisition campaigns",
-      "Conversion-oriented copywriting layout and visual hierarchy design",
-      "Lead capture form design and CRM integration specification",
-      "Mobile usability optimization and fast-loading asset preparation",
-      "Conversion tracking event tag placement (GA4, Meta, Google Ads)",
-    ];
-  }
-  if (path.includes("/conversion/conversion-rate-optimization") || slug === "conversion-rate-optimization") {
-    return [
-      "Quantitative analytics audit (funnel leakage, drop-off points, completion rates)",
-      "Qualitative user behavior analysis (heatmaps, scroll depth, session replays)",
-      "Conversion friction audit and heuristic evaluation of key templates",
-      "Prioritized testing hypothesis backlog scored by impact and implementation effort",
-      "Test variation design and technical QA across device viewports",
-      "Post-test statistical analysis and implementation documentation",
-    ];
-  }
-  if (path.includes("/web/website-design") || slug === "website-design") {
-    return [
-      "User research, sitemap planning, and core wireframe development",
-      "Visual design system, component styling, and typographic hierarchy",
-      "Responsive desktop, tablet, and mobile interface design",
-      "Interactive prototype creation and stakeholder feedback reviews",
-      "Design asset handoff with detailed developer documentation",
-      "Accessibility review compliant with WCAG standards",
-    ];
-  }
-
-  // 8. AI Content
-  if (path.includes("/ai-content/ai-content-optimization") || slug === "ai-content-optimization") {
-    return [
-      "Content inventory audit and performance gap identification",
-      "Topical relevance, semantic entity, and keyword coverage analysis",
-      "Human editorial review, fact-checking, and brand voice alignment",
-      "Heading structure, internal links, and metadata refinement",
-      "Reader engagement enhancements (summaries, key takeaways, clear sections)",
-      "Search snippet and AI overview eligibility review",
-    ];
-  }
-  if (path.includes("/ai-content/ai-blog-post-generation") || slug === "ai-blog-post-generation") {
-    return [
-      "Editorial content calendar and keyword-driven topic ideation",
-      "Structured outline generation with search intent mapping",
-      "AI-assisted first draft generation customized to brand tone",
-      "Senior human editor refinement, fact verification, and tone polishing",
-      "Header hierarchy, featured image styling, and internal link integration",
-      "Publishing checklist and CMS formatting standards",
-    ];
-  }
-
-  // Default clean, realistic deliverables derived from H1 and parent topic
-  const parent = allPages.find((p) => p.id === page.parentId);
-  const contextName = parent ? `${parent.h1}` : "Beetrix360";
+  // Default clean, realistic deliverables derived from H1
+  const parent = allPages.find((pg) => pg.id === page.parentId);
+  const contextName = parent ? parent.h1 : "Beetrix360";
 
   return [
     `Initial requirements discovery and technical scope assessment for ${h1}`,
@@ -341,12 +354,12 @@ function getServiceDeliverables(page: PageRecordV2, allPages: PageRecordV2[]): s
   ];
 }
 
-// 7 Challenge page configurations
-const CHALLENGE_CONFIGS: Record<
+// 7 Challenge page configurations using ONLY verified, existing paths from the page store
+const CHALLENGE_CANDIDATE_PATHS: Record<
   string,
   {
     causes: string[];
-    solutionServices: { name: string; path: string }[];
+    candidatePaths: string[];
   }
 > = {
   "/challenges/website-doesnt-drive-leads": {
@@ -357,11 +370,11 @@ const CHALLENGE_CONFIGS: Record<
       "Lack of trust signals, verified client proof, or clear differentiation on service pages",
       "Slow page load times and mobile usability issues driving visitors away before interacting",
     ],
-    solutionServices: [
-      { name: "Landing Page Design", path: "/conversion/landing-page-design" },
-      { name: "Conversion Rate Optimization", path: "/conversion/conversion-rate-optimization" },
-      { name: "On-Page SEO", path: "/seo/on-page-seo" },
-      { name: "Google Ads", path: "/paid-media/google-ads" },
+    candidatePaths: [
+      "/web-design/landing-pages",
+      "/conversion",
+      "/seo/on-page-seo",
+      "/paid-media/google-ads",
     ],
   },
   "/challenges/website-traffic-going-down": {
@@ -372,11 +385,11 @@ const CHALLENGE_CONFIGS: Record<
       "Loss of critical referring backlinks or broken external citations",
       "Tracking or analytics configuration errors misreporting organic traffic levels",
     ],
-    solutionServices: [
-      { name: "Technical SEO", path: "/seo/technical-seo" },
-      { name: "Link Building", path: "/seo/link-building" },
-      { name: "Keyword Research", path: "/seo/keyword-research" },
-      { name: "On-Page SEO", path: "/seo/on-page-seo" },
+    candidatePaths: [
+      "/seo/technical-seo",
+      "/seo/link-building",
+      "/seo/keyword-research",
+      "/seo/on-page-seo",
     ],
   },
   "/challenges/website-doesnt-convert": {
@@ -387,11 +400,11 @@ const CHALLENGE_CONFIGS: Record<
       "Absence of social proof, client reviews, or security guarantees at key decision points",
       "Responsive rendering defects on mobile and tablet screen sizes",
     ],
-    solutionServices: [
-      { name: "Conversion Rate Optimization", path: "/conversion/conversion-rate-optimization" },
-      { name: "Landing Page Design", path: "/conversion/landing-page-design" },
-      { name: "Website Design", path: "/web/website-design" },
-      { name: "A/B Testing", path: "/conversion/ab-testing" },
+    candidatePaths: [
+      "/conversion",
+      "/web-design/landing-pages",
+      "/web-design",
+      "/web-development",
     ],
   },
   "/challenges/not-appearing-in-ai-search": {
@@ -402,11 +415,11 @@ const CHALLENGE_CONFIGS: Record<
       "Competitors dominate reference citations in Perplexity, ChatGPT, and Google AI Overviews",
       "Technical robots exclusion blocking AI bot user-agents from discovering and parsing domain content",
     ],
-    solutionServices: [
-      { name: "Generative Engine Optimization", path: "/seo/generative-engine-optimization" },
-      { name: "Answer Engine Optimization", path: "/seo/answer-engine-optimization" },
-      { name: "ChatGPT Optimization", path: "/seo/chatgpt-optimization" },
-      { name: "AI Brand Perception", path: "/seo/ai-brand-perception" },
+    candidatePaths: [
+      "/seo/generative-engine-optimization",
+      "/seo/answer-engine-optimization",
+      "/seo/chatgpt-optimization",
+      "/seo/ai-brand-perception",
     ],
   },
   "/challenges/agency-isnt-driving-results": {
@@ -417,11 +430,11 @@ const CHALLENGE_CONFIGS: Record<
       "Slow execution velocity, missed deadlines, and high agency account manager turnover",
       "Siloed channel management with disconnected SEO, paid search, and creative teams",
     ],
-    solutionServices: [
-      { name: "Enterprise SEO", path: "/seo/enterprise-seo" },
-      { name: "Enterprise PPC", path: "/paid-media/enterprise-ppc" },
-      { name: "Competitor Analysis", path: "/digital-marketing/competitor-analysis" },
-      { name: "AI Digital Marketing", path: "/digital-marketing/ai-digital-marketing" },
+    candidatePaths: [
+      "/seo/enterprise-seo",
+      "/paid-media/enterprise-ppc",
+      "/digital-marketing/competitor-analysis",
+      "/digital-marketing/ai-digital-marketing",
     ],
   },
   "/challenges/too-much-manual-work": {
@@ -432,11 +445,11 @@ const CHALLENGE_CONFIGS: Record<
       "Customer support staff spending hours resolving standard, repetitive inquiries",
       "Lack of standardized automated intake funnels for leads, onboarding, or vendor requests",
     ],
-    solutionServices: [
-      { name: "Workflow Automation", path: "/ai-automation/workflow-automation" },
-      { name: "Business Process Automation", path: "/ai-automation/business-process-automation" },
-      { name: "Document Processing", path: "/ai-automation/document-processing" },
-      { name: "Data Entry Automation", path: "/ai-automation/data-entry-automation" },
+    candidatePaths: [
+      "/automation",
+      "/automation/business-process-automation",
+      "/automation/document-processing",
+      "/automation/data-entry-automation",
     ],
   },
   "/challenges/ads-spend-but-dont-sell": {
@@ -447,30 +460,31 @@ const CHALLENGE_CONFIGS: Record<
       "Conversion tracking missing server-side tagging (CAPI) or inaccurate attribution attribution signals",
       "Ad creative fatigue and lack of structured copy testing across audience segments",
     ],
-    solutionServices: [
-      { name: "Google Ads", path: "/paid-media/google-ads" },
-      { name: "Meta Ads", path: "/paid-media/meta-ads" },
-      { name: "Landing Page Design", path: "/conversion/landing-page-design" },
-      { name: "Enterprise PPC", path: "/paid-media/enterprise-ppc" },
+    candidatePaths: [
+      "/paid-media/google-ads",
+      "/paid-media/meta-ads",
+      "/web-design/landing-pages",
+      "/paid-media/enterprise-ppc",
     ],
   },
 };
 
 // Neutral one-line descriptions per page type with no claims
 function getNeutralTagline(pageType: string, h1: string): string {
+  const cleanNoun = getCleanTopicNoun(h1);
   switch (pageType) {
     case "hub":
-      return `Overview of capabilities, practice areas, and strategic advisory for ${h1.toLowerCase()}.`;
+      return `Overview of capabilities, practice areas, and strategic advisory for ${cleanNoun}.`;
     case "service":
     case "sub":
     case "platform":
-      return `Scope of deliverables, technical implementation standards, and execution methodology for ${h1.toLowerCase()}.`;
+      return `Scope of deliverables, technical implementation standards, and execution methodology for ${cleanNoun}.`;
     case "challenge":
       return "Diagnostic overview, common operational bottlenecks, and implementation paths to resolve this challenge.";
     case "pricing":
-      return `Overview of engagement models, cost drivers, and scoping criteria for ${h1.toLowerCase()}.`;
+      return `Overview of engagement models, cost drivers, and scoping criteria for ${cleanNoun}.`;
     case "tool":
-      return `Technical specifications, feature capabilities, and integration parameters for the ${h1.toLowerCase()} tool.`;
+      return `Technical specifications, feature capabilities, and integration parameters for the ${cleanNoun} utility.`;
     case "about":
     case "company":
       return "Organizational background, operational philosophy, and team leadership at Beetrix360.";
@@ -480,7 +494,7 @@ function getNeutralTagline(pageType: string, h1: string): string {
     case "legal":
       return "Official legal policies, compliance disclosures, and terms governing Beetrix360 services.";
     default:
-      return `Overview of capabilities and technical execution for ${h1.toLowerCase()}.`;
+      return `Overview of capabilities and technical execution for ${cleanNoun}.`;
   }
 }
 
@@ -488,11 +502,14 @@ export function generatePlaceholderSections(
   page: PageRecordV2,
   allPages: PageRecordV2[]
 ): SectionBlockV2[] {
-  const kw = page.targetKeyword;
   const h1 = page.h1;
   const path = page.path;
   const division = page.division || "Beetrix360";
   const pageType = page.pageType || "service";
+  const cleanNoun = getCleanTopicNoun(h1);
+
+  // Map of all pages for safe verified linking (strictly guarantees links can only point to pages that exist)
+  const pageByPath = new Map<string, PageRecordV2>(allPages.map((p) => [p.path, p]));
 
   // Child pages for childCards
   const childPages = allPages
@@ -530,7 +547,6 @@ export function generatePlaceholderSections(
       h1,
       badge: division,
       tagline: getNeutralTagline(pageType, h1),
-      targetKeyword: kw,
       primaryCta: { label: "Get a proposal", path: "/get-a-proposal" },
       secondaryCta: { label: "Schedule Strategy Call", path: "/contact" },
     },
@@ -539,7 +555,7 @@ export function generatePlaceholderSections(
   // PAGE TYPE SPECIFIC SECTIONS
   switch (pageType) {
     case "hub": {
-      // Intro (2 short paragraphs, kw natural in first sentence, H1 in title)
+      // Intro (H1 in title, natural English phrasing without awkward keyword insertions)
       sections.push({
         id: `${page.id}-sec-intro`,
         type: "richText",
@@ -548,7 +564,7 @@ export function generatePlaceholderSections(
         title: `Overview of ${h1}`,
         content: {
           paragraphs: [
-            `Our ${h1.toLowerCase()} practice coordinates specialized disciplines to help teams achieve sustainable ${kw} across search engines and modern digital ecosystems. Beetrix360 unites experienced engineers, analysts, and growth architects to deploy proven frameworks tailored to enterprise requirements.`,
+            `Our ${cleanNoun} practice coordinates specialized disciplines to help teams establish sustainable visibility and performance across digital ecosystems. Beetrix360 unites experienced engineers, analysts, and growth architects to deploy proven frameworks tailored to enterprise requirements.`,
             `Every program is designed around clear performance benchmarks, transparent attribution models, and direct commercial outcomes. Explore the specialized capabilities below to see how each discipline fits into our complete service architecture.`,
           ],
         },
@@ -602,7 +618,7 @@ export function generatePlaceholderSections(
         },
       });
 
-      // faq (4 questions, no invented policies)
+      // faq (4 questions, bracketed placeholders for all policy/methodology details)
       sections.push({
         id: `${page.id}-sec-faq`,
         type: "faq",
@@ -613,7 +629,7 @@ export function generatePlaceholderSections(
           items: [
             {
               question: `How does Beetrix360 approach ${h1}?`,
-              answer: `Our approach combines technical rigor with commercial alignment, focusing directly on measurable milestones and transparent execution.`,
+              answer: `[To be specified: practice area approach, strategic methodology, and delivery framework for ${h1}]`,
             },
             {
               question: `What timeline is typical to see progress from ${h1}?`,
@@ -662,7 +678,7 @@ export function generatePlaceholderSections(
     case "service":
     case "sub":
     case "platform": {
-      // Intro (kw in first sentence naturally, H1 in title)
+      // Intro (natural English phrasing, no ungrammatical question insertions)
       sections.push({
         id: `${page.id}-sec-intro`,
         type: "richText",
@@ -671,13 +687,13 @@ export function generatePlaceholderSections(
         title: `Overview of ${h1}`,
         content: {
           paragraphs: [
-            `Our ${h1.toLowerCase()} solutions help organizations implement effective ${kw} through disciplined execution and technical best practices. Beetrix360 coordinates specialized resources across every phase of delivery to reduce complexity and ensure predictable project execution.`,
-            `Whether launching a new initiative or modernizing existing processes, our team develops structured workflows tailored to your organizational parameters and technical requirements.`,
+            `Our ${cleanNoun} solutions help organizations execute disciplined digital strategies through structured workflows, technical best practices, and verified delivery standards. Beetrix360 coordinates specialized teams across every phase of delivery to reduce operational complexity and ensure predictable project execution.`,
+            `Whether launching a new initiative or modernizing existing processes, our team develops tailored execution roadmaps aligned directly with your organizational parameters.`,
           ],
         },
       });
 
-      // bulletList (What's included: 5-6 items specific to service)
+      // bulletList (Specific to service domain)
       sections.push({
         id: `${page.id}-sec-included`,
         type: "bulletList",
@@ -689,7 +705,7 @@ export function generatePlaceholderSections(
         },
       });
 
-      // process (4 steps)
+      // process (Context-tailored 4 steps: design doesn't mention tracking/schemas)
       sections.push({
         id: `${page.id}-sec-process`,
         type: "process",
@@ -697,28 +713,7 @@ export function generatePlaceholderSections(
         headingLevel: "h2",
         title: `Our 4-Step Delivery Process`,
         content: {
-          steps: [
-            {
-              step: 1,
-              title: "Discovery & Requirements",
-              description: `Assessment of current assets, conversion barriers, and specific target milestones for ${h1}.`,
-            },
-            {
-              step: 2,
-              title: "Technical Setup & Configuration",
-              description: `Deploying foundational tracking, schemas, technical assets, and workflow parameters.`,
-            },
-            {
-              step: 3,
-              title: "Active Execution & Quality Assurance",
-              description: `Structured sprint execution, peer review, and verification across all project requirements.`,
-            },
-            {
-              step: 4,
-              title: "Review & Continuous Refinement",
-              description: `Evaluating milestone outcomes, reviewing delivery reports, and identifying incremental improvements.`,
-            },
-          ],
+          steps: getServiceDeliveryProcess(h1, path),
         },
       });
 
@@ -737,7 +732,7 @@ export function generatePlaceholderSections(
         });
       }
 
-      // faq (3 questions, no invented policies)
+      // faq (3 questions, bracketed placeholders for methodology & policies)
       sections.push({
         id: `${page.id}-sec-faq`,
         type: "faq",
@@ -748,7 +743,7 @@ export function generatePlaceholderSections(
           items: [
             {
               question: `How does Beetrix360 deliver ${h1}?`,
-              answer: `We emphasize structured execution, clear technical standards, and verifiable deliverables tailored directly to your operational scope.`,
+              answer: `[To be specified: delivery methodology, dedicated squad composition, and execution workflow for ${h1}]`,
             },
             {
               question: `How is project progress tracked and evaluated?`,
@@ -805,7 +800,7 @@ export function generatePlaceholderSections(
     }
 
     case "challenge": {
-      const challengeConfig = CHALLENGE_CONFIGS[path] || {
+      const config = CHALLENGE_CANDIDATE_PATHS[path] || {
         causes: [
           `Misaligned search intent where high-traffic landing pages fail to answer core commercial questions`,
           `Technical friction, slow page loading performance, or fractured responsive viewport rendering`,
@@ -813,13 +808,22 @@ export function generatePlaceholderSections(
           `Inadequate data tracking and missing event telemetry preventing actionable attribution`,
           `Disjointed handoffs between marketing acquisition channels and sales pipeline follow-ups`,
         ],
-        solutionServices: [
-          { name: "Conversion Rate Optimization", path: "/conversion/conversion-rate-optimization" },
-          { name: "Landing Page Design", path: "/conversion/landing-page-design" },
-          { name: "Technical SEO", path: "/seo/technical-seo" },
-          { name: "Google Ads", path: "/paid-media/google-ads" },
+        candidatePaths: [
+          "/conversion",
+          "/web-design/landing-pages",
+          "/seo/on-page-seo",
+          "/paid-media/google-ads",
         ],
       };
+
+      // Safely resolve candidate paths against store (guarantees NO 404 links)
+      const verifiedSolutionCards: { name: string; path: string }[] = [];
+      for (const targetPath of config.candidatePaths) {
+        const found = pageByPath.get(targetPath);
+        if (found && found.published) {
+          verifiedSolutionCards.push({ name: found.h1, path: found.path });
+        }
+      }
 
       // Common causes bulletList (5 causes specific to this challenge)
       sections.push({
@@ -829,11 +833,11 @@ export function generatePlaceholderSections(
         headingLevel: "h2",
         title: "Common Root Causes We Uncover",
         content: {
-          items: challengeConfig.causes,
+          items: config.causes,
         },
       });
 
-      // How we fix it (intro with natural keyword)
+      // How we fix it (natural intro without awkward phrasing)
       sections.push({
         id: `${page.id}-sec-solution`,
         type: "richText",
@@ -842,13 +846,13 @@ export function generatePlaceholderSections(
         title: "How Beetrix360 Resolves This Challenge",
         content: {
           paragraphs: [
-            `When addressing challenges related to ${kw}, organizations must first identify the structural issues preventing effective execution. Rather than applying surface-level fixes, we isolate operational friction points, reconstruct underperforming funnels, and align technical workflows with commercial outcomes.`,
+            `When addressing operational challenges in digital growth, organizations must first isolate the structural issues preventing effective execution. Rather than applying surface-level fixes, we isolate operational friction points, reconstruct underperforming funnels, and align technical workflows with commercial outcomes.`,
             `Our multi-disciplinary teams unite technical architecture, process automation, and structured testing to turn operational bottlenecks into predictable advantages.`,
           ],
         },
       });
 
-      // Core services that actually fix this specific challenge
+      // Core services that actually fix this specific challenge (verified against page store)
       sections.push({
         id: `${page.id}-sec-fix-services`,
         type: "childCards",
@@ -857,7 +861,7 @@ export function generatePlaceholderSections(
         title: "Core Services Used to Solve This Problem",
         content: {
           subtitle: "Explore the primary disciplines deployed to address this challenge.",
-          cards: challengeConfig.solutionServices,
+          cards: verifiedSolutionCards,
         },
       });
 
@@ -878,16 +882,16 @@ export function generatePlaceholderSections(
     }
 
     case "pricing": {
-      // Intro (kw natural in first sentence, H1 in title)
+      // Intro (H1 in title, natural English without inserting question syntax into sentences)
       sections.push({
         id: `${page.id}-sec-intro`,
         type: "richText",
         placeholder: true,
         headingLevel: "h2",
-        title: `Understanding Investment in ${h1}`,
+        title: `Understanding Investment in ${cleanNoun}`,
         content: {
           paragraphs: [
-            `Evaluating the investment required for ${kw} depends on project scope, organizational goals, and technical requirements. Beetrix360 provides transparent scoping frameworks engineered around verifiable deliverables and clear milestones.`,
+            `Evaluating the investment required for ${cleanNoun} depends on project scope, organizational goals, and technical requirements. Beetrix360 provides transparent scoping frameworks engineered around verifiable deliverables and clear milestones.`,
           ],
         },
       });
@@ -922,7 +926,7 @@ export function generatePlaceholderSections(
         },
       });
 
-      // faq (strictly bracketed placeholders for policy statements)
+      // faq (strictly bracketed placeholders for all policy statements)
       sections.push({
         id: `${page.id}-sec-faq`,
         type: "faq",
@@ -972,7 +976,7 @@ export function generatePlaceholderSections(
         title: `About the ${h1} Engine`,
         content: {
           paragraphs: [
-            `The ${h1} utility is designed to assist teams analyzing ${kw} with direct visibility into technical benchmarks and operational metrics.`,
+            `The ${h1} utility is designed to assist teams analyzing digital performance with direct visibility into technical benchmarks and operational metrics.`,
           ],
         },
       });
@@ -1014,7 +1018,7 @@ export function generatePlaceholderSections(
         title: `About ${h1}`,
         content: {
           paragraphs: [
-            `At Beetrix360, our commitment to ${h1.toLowerCase()} is grounded in empirical results, operational integrity, and long-term client partnerships. We bridge the gap between creative execution and technical engineering.`,
+            `At Beetrix360, our commitment to ${cleanNoun} is grounded in empirical results, operational integrity, and long-term client partnerships. We bridge the gap between creative execution and technical engineering.`,
           ],
         },
       });
@@ -1026,7 +1030,7 @@ export function generatePlaceholderSections(
         headingLevel: "h2",
         title: "Verified Documentation & Details",
         content: {
-          notice: `[Add real ${h1.toLowerCase()} material: verified case studies, team leadership bios, company milestones, corporate governance, or verified publication listings]`,
+          notice: `[Add real ${cleanNoun} material: verified case studies, team leadership bios, company milestones, corporate governance, or verified publication listings]`,
         },
       });
 
@@ -1123,7 +1127,7 @@ export function generatePlaceholderSections(
         title: `${h1} Overview`,
         content: {
           paragraphs: [
-            `Our ${h1.toLowerCase()} capabilities provide structured solutions for organizations navigating ${kw}.`,
+            `Our ${cleanNoun} capabilities provide structured solutions for organizations navigating digital channels.`,
             `[Add verified case study metric and custom copy for ${h1}]`,
           ],
         },

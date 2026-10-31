@@ -60,11 +60,11 @@ export function Footer({ site, navigation, divisions }: FooterProps) {
             </ul>
           </div>
         </div>
-        {/* Division hubs: crawlable links to every section of the site (from the navigation doc). */}
+        {/* Main navigation hubs: crawlable links to every primary division */}
         <nav aria-label="Services" className="py-6 border-b border-bx-border flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          {divisions.map((d) => (
-            <Link key={d.slug} href={`/${d.slug}`} className="text-neutral-500 hover:text-bx-pink">
-              {d.name}
+          {(navigation?.menus || []).map((m) => (
+            <Link key={m.viewAllPath} href={m.viewAllPath} className="text-neutral-500 hover:text-bx-pink transition">
+              {m.label}
             </Link>
           ))}
         </nav>

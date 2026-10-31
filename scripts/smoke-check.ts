@@ -31,6 +31,44 @@ const SYSTEM_ROUTES = [
   "/llms.txt",
 ];
 
+const internalLinkSources = new Map<string, Set<string>>();
+
+function extractInternalLinksFromHtml(html: string, sourcePath: string) {
+  const linkMatches = html.matchAll(/<a\s+[^>]*href=["']([^"']+)["']/gi);
+  for (const m of linkMatches) {
+    let href = m[1].trim();
+    if (!href) continue;
+    if (href.startsWith("http://localhost:3000")) {
+      href = href.replace("http://localhost:3000", "");
+    } else if (href.startsWith("https://beetrix360.com")) {
+      href = href.replace("https://beetrix360.com", "");
+    } else if (href.startsWith("http://beetrix360.com")) {
+      href = href.replace("http://beetrix360.com", "");
+    }
+    if (
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:") ||
+      href.startsWith("javascript:") ||
+      href.startsWith("#") ||
+      href.startsWith("http://") ||
+      href.startsWith("https://")
+    ) {
+      continue;
+    }
+    if (!href.startsWith("/")) continue;
+    if (href.startsWith("/_next") || href.startsWith("/api")) continue;
+
+    // Normalize: strip query parameters and anchor hash
+    const cleanPath = href.split("?")[0].split("#")[0].trim();
+    const normalized = cleanPath === "" || cleanPath === "/" ? "/" : cleanPath.replace(/\/+$/, "");
+
+    if (!internalLinkSources.has(normalized)) {
+      internalLinkSources.set(normalized, new Set());
+    }
+    internalLinkSources.get(normalized)!.add(sourcePath);
+  }
+}
+
 async function fetchRoute(urlPath: string): Promise<{ status: number; location: string | null }> {
   try {
     const res = await fetch(`${BASE_URL}${urlPath}`, {
@@ -106,6 +144,8 @@ async function fetchHtmlAndValidate(urlPath: string): Promise<{
         errors.push(`Expected follow:false, but HTML meta is missing "nofollow": "${robots}"`);
       }
     }
+
+    extractInternalLinksFromHtml(html, urlPath);
 
     return {
       status: res.status,
@@ -202,6 +242,45 @@ async function runSmokeCheck() {
       console.log(`  - Verified ${checkedCount}/${innerSeedPages.length} pages...`);
     }
   }, 8);
+
+  // 3.5. Internal Link Crawl: Verify every internal <a href> extracted across all 168 pages
+  console.log(`\n[Link Crawl] Discovered ${internalLinkSources.size} unique internal link targets across 168 pages.`);
+  console.log(`  Verifying all internal links (must return 200 OK, 0 redirects, 0 404s)...`);
+
+  const uniqueInternalTargets = Array.from(internalLinkSources.keys()).sort();
+  const linkCrawlFailures: { target: string; status: number; issue: string; sources: string[] }[] = [];
+
+  let linkCrawlChecked = 0;
+  await runWithConcurrency(uniqueInternalTargets, async (target) => {
+    const res = await fetchRoute(target);
+    const sources = Array.from(internalLinkSources.get(target) || []);
+    const isRedirect = res.status === 301 || res.status === 308 || res.status === 302 || res.status === 307;
+    const is404 = res.status === 404;
+    const is500 = res.status >= 500;
+
+    if (isRedirect || is404 || is500) {
+      const issue = isRedirect
+        ? `Redirected (${res.status} -> ${res.location})`
+        : is404
+        ? `404 Not Found`
+        : `Server Error ${res.status}`;
+      linkCrawlFailures.push({ target, status: res.status, issue, sources });
+
+      const item: CheckResult = {
+        path: target,
+        category: "page",
+        expected: "200 OK (Direct internal link)",
+        actual: issue,
+        status: res.status,
+        passed: false,
+        notes: `Found on: ${sources.slice(0, 3).join(", ")}${sources.length > 3 ? ` (+${sources.length - 3} more)` : ""}`,
+      };
+      failures.push(item);
+    }
+    linkCrawlChecked++;
+  }, 8);
+
+  console.log(`  - Crawled ${uniqueInternalTargets.length} internal links: ${uniqueInternalTargets.length - linkCrawlFailures.length} direct 200 OK, ${linkCrawlFailures.length} issues.`);
 
   // 4. All 90 Old Paths (Redirects: 301/308 single hop to target)
   const redirectEntries = Object.entries(RAW_REDIRECT_MAP);
@@ -387,6 +466,10 @@ async function runSmokeCheck() {
   console.log(`  - Seed IA v2 Pages:   ${innerSeedPages.length}`);
   console.log(`  - 301/308 Redirects:  ${redirectEntries.length}`);
   console.log(`  - 404 Unknown Routes: ${UNKNOWN_PATHS.length}`);
+  console.log(`Internal Links Crawled: ${uniqueInternalTargets.length}`);
+  console.log(`  - Direct 200 OK:      ${uniqueInternalTargets.length - linkCrawlFailures.length}`);
+  console.log(`  - Redirects:          ${linkCrawlFailures.filter(f => f.status === 301 || f.status === 308 || f.status === 302 || f.status === 307).length} (expected 0)`);
+  console.log(`  - 404 Broken:         ${linkCrawlFailures.filter(f => f.status === 404).length} (expected 0)`);
   console.log(`Total Failures:        ${failures.length}`);
   console.log(`CSS/JS Asset Failures: ${failedAssets.length}`);
   console.log(`Console Errors:        ${consoleErrors.length}`);
