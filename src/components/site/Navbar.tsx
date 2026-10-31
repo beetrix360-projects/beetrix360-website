@@ -83,13 +83,15 @@ export function Navbar({ site, navigation }: NavbarProps) {
     <header
       id="site-nav"
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled || openDropdown !== null
+        mobileMenuOpen
+          ? "inset-0 h-dvh bg-white flex flex-col xl:block xl:inset-x-0 xl:bottom-auto xl:h-[76px] xl:bg-white/80 xl:backdrop-blur-sm border-b border-neutral-200"
+          : scrolled || openDropdown !== null
           ? "bg-white/95 backdrop-blur-md border-b border-neutral-200/80 shadow-sm"
           : "bg-white/80 backdrop-blur-sm border-b border-neutral-100"
       }`}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-[76px] flex items-center justify-between gap-2">
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-[76px] shrink-0 flex items-center justify-between gap-2">
         {/* Brand Wordmark & Animated Logo */}
         <Link
           href="/"
@@ -117,6 +119,16 @@ export function Navbar({ site, navigation }: NavbarProps) {
                     ref={(el) => { triggerRefs.current[mIdx] = el; }}
                     type="button"
                     onClick={() => toggleDropdown(mIdx)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+                        e.preventDefault();
+                        toggleDropdown(mIdx);
+                      } else if (e.key === "Escape") {
+                        e.preventDefault();
+                        setOpenDropdown(null);
+                        triggerRefs.current[mIdx]?.focus();
+                      }
+                    }}
                     aria-expanded={isOpen}
                     aria-haspopup="true"
                     aria-controls={`mega-menu-${mIdx}`}
@@ -283,6 +295,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
         <div className="hidden xl:flex items-center gap-3 shrink-0">
           <Link
             href={cta.path}
+            data-cta=""
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-bx-pink text-white text-xs 2xl:text-sm font-semibold hover:bg-bx-pink/90 transition shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink"
           >
             {cta.label} <ArrowRight className="w-3.5 h-3.5" />
@@ -303,7 +316,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="xl:hidden fixed inset-x-0 top-[76px] bottom-0 bg-white z-40 overflow-y-auto border-t border-neutral-200 p-5">
+        <div className="xl:hidden flex-1 overflow-y-auto bg-white p-5 border-t border-neutral-100">
           <nav aria-label="Mobile Navigation" className="space-y-4 pb-12">
             {menus.map((menu, mIdx) => {
               const isAccordionOpen = mobileAccordion === mIdx;
@@ -377,6 +390,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
             <div className="pt-4">
               <Link
                 href={cta.path}
+                data-cta=""
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-bx-pink text-white font-semibold text-sm shadow-md"
               >
                 {cta.label} <ArrowRight className="w-4 h-4" />

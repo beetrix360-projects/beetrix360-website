@@ -41,3 +41,4 @@ export function RichTextSection({
     </section>
   );
 }
+

@@ -11,9 +11,10 @@ import { CtaSection } from "./CtaSection";
 
 interface SectionRendererProps {
   sections: SectionBlockV2[];
+  isAdmin?: boolean;
 }
 
-export function SectionRenderer({ sections }: SectionRendererProps) {
+export function SectionRenderer({ sections, isAdmin = false }: SectionRendererProps) {
   // Exclude hero which is rendered at the top of the catch-all page
   const nonHeroSections = sections.filter((s) => s.type !== "hero");
 
@@ -86,6 +87,7 @@ export function SectionRenderer({ sections }: SectionRendererProps) {
                 headingLevel={sec.headingLevel === "h3" ? "h3" : "h2"}
                 notice={sec.content?.notice}
                 placeholder={sec.placeholder}
+                isAdmin={isAdmin}
               />
             );
 
@@ -120,3 +122,4 @@ export function SectionRenderer({ sections }: SectionRendererProps) {
     </div>
   );
 }
+

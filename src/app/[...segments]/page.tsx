@@ -8,6 +8,7 @@ import type { PageRecordV2 } from "@/lib/types";
 import { generatePlaceholderSections } from "@/lib/placeholder-generator";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { SectionRenderer } from "@/components/sections/SectionRenderer";
+import { getSessionUser } from "@/lib/auth";
 
 export const dynamicParams = true;
 
@@ -185,6 +186,9 @@ export default async function CatchAllPage({ params }: PageProps) {
   const heroSection = sections.find((s) => s.type === "hero");
   const heroTagline = heroSection?.content?.tagline || heroSection?.content?.description;
 
+  const user = await getSessionUser();
+  const isAdmin = !!user;
+
   return (
     <>
       <JsonLd data={ldNodes} />
@@ -195,10 +199,11 @@ export default async function CatchAllPage({ params }: PageProps) {
           tagline={heroTagline}
           crumbItems={crumbItems}
           contentStatus={page.contentStatus}
+          isAdmin={isAdmin}
           primaryCta={heroSection?.content?.primaryCta}
           secondaryCta={heroSection?.content?.secondaryCta}
         />
-        <SectionRenderer sections={sections} />
+        <SectionRenderer sections={sections} isAdmin={isAdmin} />
       </main>
     </>
   );

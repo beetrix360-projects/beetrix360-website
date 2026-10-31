@@ -3,9 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Wordmark } from "@/components/ui";
-import type { Division, SiteSettings } from "@/lib/types";
+import type { Division, SiteSettings, NavigationRecord } from "@/lib/types";
 
-export function Footer({ site, divisions }: { site: SiteSettings; divisions: Division[] }) {
+interface FooterProps {
+  site: SiteSettings;
+  navigation?: NavigationRecord | null;
+  divisions: Division[];
+}
+
+export function Footer({ site, navigation, divisions }: FooterProps) {
   const pathname = usePathname();
   if (pathname?.startsWith("/admin")) {
     return null;
@@ -62,9 +68,22 @@ export function Footer({ site, divisions }: { site: SiteSettings; divisions: Div
             </Link>
           ))}
         </nav>
-        <div className="pt-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-neutral-400">
-          <span>{f.copyright}</span>
-          <a href="#top" className="hover:text-bx-dark">
+        <div className="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-neutral-400">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <span>{f.copyright}</span>
+            <div className="flex items-center gap-4">
+              <Link href="/privacy-policy" className="hover:text-bx-pink transition">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:text-bx-pink transition">
+                Terms
+              </Link>
+              <Link href="/cookie-policy" className="hover:text-bx-pink transition">
+                Cookie Policy
+              </Link>
+            </div>
+          </div>
+          <a href="#top" className="hover:text-bx-dark transition">
             {f.backToTop}
           </a>
         </div>

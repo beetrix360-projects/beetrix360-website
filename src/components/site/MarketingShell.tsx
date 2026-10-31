@@ -37,7 +37,7 @@ export function MarketingShell({ site, navigation, divisions, children }: Props)
       </div>
       <Navbar site={site} navigation={navigation} />
       <main id="top">{children}</main>
-      <Footer site={site} divisions={divisions} />
+      <Footer site={site} navigation={navigation} divisions={divisions} />
       <Modals modal={site.modal} video={site.videoModal} />
       <SiteRuntime />
     </>

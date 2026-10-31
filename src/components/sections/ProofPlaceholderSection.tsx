@@ -6,6 +6,7 @@ interface ProofPlaceholderSectionProps {
   headingLevel?: "h2" | "h3";
   notice?: string;
   placeholder?: boolean;
+  isAdmin?: boolean;
 }
 
 export function ProofPlaceholderSection({
@@ -13,7 +14,12 @@ export function ProofPlaceholderSection({
   headingLevel = "h2",
   notice = "[Add verified client case studies, verified ROI metrics, and industry accolades]",
   placeholder,
+  isAdmin = false,
 }: ProofPlaceholderSectionProps) {
+  if (!isAdmin) {
+    return null;
+  }
+
   const HeadingTag = headingLevel;
 
   return (
@@ -40,3 +46,4 @@ export function ProofPlaceholderSection({
     </section>
   );
 }
+

@@ -171,7 +171,7 @@ async function runMigration() {
   console.log(`[Carry-Over Audit] Scanning existing page records for manual/custom content...`);
   const existingPages = await queryDbByPk<any>("PAGE");
   const handEditedPages: any[] = [];
-  
+
   for (const p of existingPages) {
     // Condition:
     // 1. Legacy record (slug-based) whose timestamp != 2026-10-19T13:05 batch or has updatedBy
@@ -294,7 +294,7 @@ async function runMigration() {
     const finalTitle = handEditedMatch?.seo?.title || handEditedMatch?.title || sp.seo?.titleTag || `${sp.h1} | Beetrix360`;
     const finalMetaDesc = handEditedMatch?.seo?.description || sp.seo?.metaDescription || null;
     const finalOgImage = handEditedMatch?.seo?.ogImage || sp.seo?.openGraph?.imagePath || null;
-    
+
     // Phase 4: Deterministic placeholder sections
     let finalSections = existing?.sections?.length && isHandEdited
       ? existing.sections

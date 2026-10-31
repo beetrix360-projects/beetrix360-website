@@ -51,11 +51,13 @@ export function FaqSection({
                     }`}
                   />
                 </button>
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-2 text-sm sm:text-base text-neutral-600 leading-relaxed border-t border-neutral-100">
-                    {item.answer}
-                  </div>
-                )}
+                <div
+                  className={`px-6 pb-6 pt-2 text-sm sm:text-base text-neutral-600 leading-relaxed border-t border-neutral-100 ${
+                    isOpen ? "block" : "hidden"
+                  }`}
+                >
+                  <p>{item.answer}</p>
+                </div>
               </div>
             );
           })}
@@ -64,3 +66,4 @@ export function FaqSection({
     </section>
   );
 }
+

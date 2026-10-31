@@ -343,12 +343,13 @@ async function runSmokeCheck() {
   const hamburger = await page.$("button[aria-label='Open menu']");
   if (hamburger) {
     await hamburger.click();
-    await new Promise((r) => setTimeout(r, 500));
+    await page.waitForSelector("nav[aria-label='Mobile Navigation'] button", { timeout: 3000 }).catch(() => {});
+    await new Promise((r) => setTimeout(r, 300));
     // Click first accordion button
     const firstAcc = await page.$("nav[aria-label='Mobile Navigation'] button");
     if (firstAcc) {
       await firstAcc.click();
-      await new Promise((r) => setTimeout(r, 400));
+      await new Promise((r) => setTimeout(r, 600));
     }
     await page.screenshot({ path: path.join(screenshotDir, "mobile-menu-390.png") });
   }
