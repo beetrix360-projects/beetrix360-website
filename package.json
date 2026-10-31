@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "migrate": "node scripts/run-migrate.js"
+    "migrate": "node scripts/run-migrate.js",
+    "smoke-check": "node scripts/run-smoke-check.js"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.1152.0",
@@ -32,6 +33,7 @@
     "@types/react-dom": "19.1.9",
     "autoprefixer": "10.4.21",
     "postcss": "8.5.6",
+    "puppeteer-core": "^25.16.0",
     "tailwindcss": "3.4.19",
     "typescript": "5.9.2"
   },

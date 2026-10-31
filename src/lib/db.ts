@@ -316,23 +316,31 @@ export async function saveNavigation(nav: NavigationRecord): Promise<void> {
  * Used for full backups on local and DynamoDB stores.
  */
 export async function exportAllDbRecords(): Promise<Record<string, any>> {
-  if (ddbDocClient && process.env.CONTENT_SOURCE === "dynamodb") {
+  if (process.env.CONTENT_SOURCE === "dynamodb") {
+    if (!ddbDocClient) {
+      throw new Error("[Backup Abort] CONTENT_SOURCE=dynamodb but DynamoDB DocumentClient is not initialized.");
+    }
+    const map: Record<string, any> = {};
+    let lastEvaluatedKey: Record<string, any> | undefined = undefined;
     try {
-      const res = await ddbDocClient.send(
-        new ScanCommand({
-          TableName: TABLE_NAME,
-        })
-      );
-      const map: Record<string, any> = {};
-      if (res.Items) {
-        for (const item of res.Items) {
-          const key = `${item.pk}:${item.sk}`;
-          map[key] = item.data ?? item;
+      do {
+        const res: any = await ddbDocClient.send(
+          new ScanCommand({
+            TableName: TABLE_NAME,
+            ExclusiveStartKey: lastEvaluatedKey,
+          })
+        );
+        if (res.Items) {
+          for (const item of res.Items) {
+            const key = `${item.pk}:${item.sk}`;
+            map[key] = item.data ?? item;
+          }
         }
-      }
+        lastEvaluatedKey = res.LastEvaluatedKey;
+      } while (lastEvaluatedKey);
       return map;
-    } catch (err) {
-      console.warn("[DynamoDB Scan Error]: Falling back to local store for export", err);
+    } catch (err: any) {
+      throw new Error(`[Backup Abort] Failed to scan DynamoDB table "${TABLE_NAME}" during backup: ${err?.message || err}`);
     }
   }
 

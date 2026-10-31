@@ -486,7 +486,9 @@ async function runMigration() {
   console.log(`======================================================\n`);
 }
 
-runMigration().catch((err) => {
-  console.error("\n[FATAL ERROR IN MIGRATION]:", err);
-  process.exit(1);
-});
+if (process.argv[1]?.includes("migrate")) {
+  runMigration().catch((err) => {
+    console.error("\n[FATAL ERROR IN MIGRATION]:", err);
+    process.exit(1);
+  });
+}
