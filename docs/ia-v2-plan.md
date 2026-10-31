@@ -298,6 +298,7 @@
 
 ### Phase 6 — Admin Studio Enhancements
 **Goal**: Full page tree control, visual section editor, dedicated SEO tab, and menu validation.
+> **Persistence & Carry-Over Invariant**: Every save, edit, and "Mark ready" action in Admin Studio must record `updatedBy` with the username/ID of the logged-in user and update `updatedAt`. The migration script checks `updatedBy` to detect user modifications, ensuring future migration runs never revert an edited or marked-ready page back to placeholder status.
 - **Files to add/modify**:
   - `src/app/admin/(dashboard)/pages/page.tsx`: Hierarchical 3-level tree view with real-time filters (division, pageType, status, indexable).
   - `src/app/admin/(dashboard)/pages/[id]/page.tsx`: Full page editor with Section blocks and dedicated **SEO Tab**:

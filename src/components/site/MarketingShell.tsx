@@ -6,15 +6,16 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { Modals } from "./Modals";
 import { SiteRuntime } from "./SiteRuntime";
-import type { Division, SiteSettings } from "@/lib/types";
+import type { Division, SiteSettings, NavigationRecord } from "@/lib/types";
 
 interface Props {
   site: SiteSettings;
+  navigation?: NavigationRecord | null;
   divisions: Division[];
   children: React.ReactNode;
 }
 
-export function MarketingShell({ site, divisions, children }: Props) {
+export function MarketingShell({ site, navigation, divisions, children }: Props) {
   const pathname = usePathname();
   const isAdmin = pathname?.startsWith("/admin");
 
@@ -34,7 +35,7 @@ export function MarketingShell({ site, divisions, children }: Props) {
       <div className="fixed top-0 left-0 right-0 h-[3px] z-[60] pointer-events-none" aria-hidden="true">
         <div id="progress" className="h-full bg-gradient-to-r from-bx-blue via-bx-pink to-bx-yellow" />
       </div>
-      <Navbar site={site} />
+      <Navbar site={site} navigation={navigation} />
       <main id="top">{children}</main>
       <Footer site={site} divisions={divisions} />
       <Modals modal={site.modal} video={site.videoModal} />

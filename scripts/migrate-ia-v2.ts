@@ -16,6 +16,7 @@ import {
   exportAllDbRecords,
 } from "../src/lib/db";
 import type { PageRecordV2, NavigationRecord, RedirectRecord } from "../src/lib/types";
+import { generatePlaceholderSections } from "../src/lib/placeholder-generator";
 
 // Master 301 Redirect Mapping (90 Active Legacy Redirects, Excluding Identity Rows)
 export const RAW_REDIRECT_MAP: Record<string, { to: string; note: string }> = {
@@ -230,6 +231,28 @@ async function runMigration() {
     pageIdByPath.set(normalized, generateStableId(normalized));
   }
 
+  const allBaselinePages: PageRecordV2[] = seedPages.map((sp) => {
+    const normPath = normalizePath(sp.path);
+    return {
+      id: pageIdByPath.get(normPath)!,
+      path: normPath,
+      parentId: sp.parentPath ? (pageIdByPath.get(normalizePath(sp.parentPath)) || null) : null,
+      slug: sp.slug,
+      h1: sp.h1,
+      menuLabel: sp.menuLabel || sp.h1,
+      targetKeyword: sp.targetKeyword,
+      seo: {} as any,
+      pageType: sp.pageType as any,
+      origin: sp.origin as any,
+      division: sp.division,
+      sections: [],
+      contentStatus: "placeholder",
+      published: true,
+      redirectFrom: [],
+      updatedAt: "",
+    };
+  });
+
   const pagesToSave: PageRecordV2[] = [];
   let pagesCreated = 0;
   let pagesUpdated = 0;
@@ -271,9 +294,35 @@ async function runMigration() {
     const finalTitle = handEditedMatch?.seo?.title || handEditedMatch?.title || sp.seo?.titleTag || `${sp.h1} | Beetrix360`;
     const finalMetaDesc = handEditedMatch?.seo?.description || sp.seo?.metaDescription || null;
     const finalOgImage = handEditedMatch?.seo?.ogImage || sp.seo?.openGraph?.imagePath || null;
-    const finalSections = existing?.sections?.length && isHandEdited
+    
+    // Phase 4: Deterministic placeholder sections
+    let finalSections = existing?.sections?.length && isHandEdited
       ? existing.sections
       : (handEditedMatch?.sections?.length ? handEditedMatch.sections : []);
+
+    if (finalSections.length === 0 && !isHome) {
+      finalSections = generatePlaceholderSections(
+        {
+          id,
+          path: normPath,
+          parentId,
+          slug: sp.slug,
+          h1: sp.h1,
+          menuLabel: sp.menuLabel || sp.h1,
+          targetKeyword: sp.targetKeyword,
+          seo: {} as any,
+          pageType: sp.pageType as any,
+          origin: sp.origin as any,
+          division: sp.division,
+          sections: [],
+          contentStatus,
+          published: true,
+          redirectFrom: [],
+          updatedAt: "",
+        },
+        allBaselinePages
+      );
+    }
 
     const nowTimestamp = new Date().toISOString();
 
@@ -344,7 +393,8 @@ async function runMigration() {
         existing.seo?.openGraph?.type !== pageRecord.seo.openGraph.type ||
         existing.seo?.openGraph?.imagePath !== pageRecord.seo.openGraph.imagePath ||
         JSON.stringify(existing.seo?.schemaTypes || []) !== JSON.stringify(pageRecord.seo.schemaTypes || []) ||
-        JSON.stringify(existing.redirectFrom || []) !== JSON.stringify(pageRecord.redirectFrom || []);
+        JSON.stringify(existing.redirectFrom || []) !== JSON.stringify(pageRecord.redirectFrom || []) ||
+        JSON.stringify(existing.sections || []) !== JSON.stringify(pageRecord.sections || []);
 
       if (isDiff) {
         pagesUpdated++;
