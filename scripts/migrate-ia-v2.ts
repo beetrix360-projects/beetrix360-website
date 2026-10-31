@@ -7,8 +7,14 @@ try {
 import fs from "fs";
 import path from "path";
 import seedData from "../src/content/ia-v2.seed.json";
-import oldStructure from "../src/content/site-structure.json";
-import { getDbItem, putDbItem, queryDbByPk, deleteDbItem, normalizePath } from "../src/lib/db";
+import {
+  getDbItem,
+  putDbItem,
+  queryDbByPk,
+  deleteDbItem,
+  normalizePath,
+  exportAllDbRecords,
+} from "../src/lib/db";
 import type { PageRecordV2, NavigationRecord, RedirectRecord } from "../src/lib/types";
 
 // Master 301 Redirect Mapping (90 Active Legacy Redirects, Excluding Identity Rows)
@@ -145,7 +151,7 @@ async function runMigration() {
   console.log(`  BEETRIX360 IA v2 MIGRATION SCRIPT (${isDryRun ? "DRY RUN" : "APPLY MODE"})`);
   console.log(`======================================================\n`);
 
-  // Step 1: Backup (Only on --apply)
+  // Step 1: Universal Backup through db.ts (Only on --apply)
   if (isApply) {
     const backupDir = path.join(process.cwd(), ".data", "backups");
     if (!fs.existsSync(backupDir)) {
@@ -154,39 +160,58 @@ async function runMigration() {
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
     const backupFile = path.join(backupDir, `backup-${timestamp}.json`);
 
-    const localStorePath = path.join(process.cwd(), ".data", "content-store.json");
-    if (fs.existsSync(localStorePath)) {
-      fs.copyFileSync(localStorePath, backupFile);
-      console.log(`[Backup] Created snapshot of active store at: ${backupFile}`);
-    } else {
-      console.log(`[Backup] No local store file found to snapshot.`);
-    }
+    console.log(`[Backup] Exporting all database records through db.ts...`);
+    const allRecords = await exportAllDbRecords();
+    fs.writeFileSync(backupFile, JSON.stringify(allRecords, null, 2), "utf8");
+    console.log(`[Backup] Full snapshot created successfully at: ${backupFile} (${Object.keys(allRecords).length} items)`);
   }
 
-  // Step 2: Dynamic Hand-Edited Page Carry-Over Check
+  // Step 2: Dynamic Hand-Edited Page Carry-Over Check & Abort Protection
   console.log(`[Carry-Over Audit] Scanning existing page records for manual/custom content...`);
   const existingPages = await queryDbByPk<any>("PAGE");
   const handEditedPages: any[] = [];
   
   for (const p of existingPages) {
-    // Check for hand-edited copy:
-    // 1. A legacy record (keyed by slug without full path) whose timestamp != initial batch or has updatedBy
-    // 2. An IA v2 record that an editor explicitly edited (updatedBy set or contentStatus === 'ready')
+    // Condition:
+    // 1. Legacy record (slug-based) whose timestamp != 2026-10-19T13:05 batch or has updatedBy
+    // 2. Already migrated page explicitly modified by editor (updatedBy set or custom ready status)
     const isLegacy = !p.path || !p.path.startsWith("/");
     if (isLegacy) {
-      const isModifiedLegacy = Boolean(p.updatedBy) || (p.updatedAt && !p.updatedAt.startsWith("2026-10-19T13:05"));
-      if (isModifiedLegacy) {
+      const isModified = Boolean(p.updatedBy) || (p.updatedAt && !p.updatedAt.startsWith("2026-10-19T13:05"));
+      if (isModified) {
         handEditedPages.push(p);
       }
     } else {
-      if (p.updatedBy || p.contentStatus === "ready") {
+      if (p.updatedBy) {
         handEditedPages.push(p);
       }
     }
   }
 
+  // Abort safety check: Ensure all detected hand-edited pages map cleanly to new target pages
+  const seedPaths = new Set(seedData.pages.map((p) => normalizePath(p.path)));
+  const unmappedHandEdited: string[] = [];
+
+  for (const hep of handEditedPages) {
+    const sourcePath = hep.path ? normalizePath(hep.path) : "/" + hep.slug;
+    const targetPath = seedPaths.has(sourcePath)
+      ? sourcePath
+      : RAW_REDIRECT_MAP[sourcePath]?.to;
+
+    if (!targetPath || !seedPaths.has(normalizePath(targetPath))) {
+      unmappedHandEdited.push(`${sourcePath} (title: "${hep.title || hep.h1}")`);
+    }
+  }
+
+  if (unmappedHandEdited.length > 0) {
+    console.error(`\n[FATAL ABORT] Found hand-edited page(s) that cannot be mapped to the new IA tree:`);
+    unmappedHandEdited.forEach((u) => console.error(`  - ${u}`));
+    console.error(`Migration safely aborted before writing anything to protect data.`);
+    process.exit(1);
+  }
+
   if (handEditedPages.length > 0) {
-    console.log(`[Carry-Over Audit] Detected ${handEditedPages.length} hand-edited pages in target store:`);
+    console.log(`[Carry-Over Audit] Detected ${handEditedPages.length} hand-edited pages in target store (all mapped):`);
     for (const hep of handEditedPages) {
       console.log(`   - ${hep.slug || hep.path} (updatedBy: ${hep.updatedBy || "none"}, updatedAt: ${hep.updatedAt})`);
     }
@@ -226,18 +251,25 @@ async function runMigration() {
     const initialRobots = isHome ? { index: true, follow: true } : (sp.seo?.robots || { index: false, follow: true });
 
     // Check if hand-edited page maps here
-    const handEditedMatch = handEditedPages.find(
-      (hep) => hep.path === normPath || RAW_REDIRECT_MAP[hep.path]?.to === normPath || RAW_REDIRECT_MAP["/" + hep.slug]?.to === normPath
-    );
+    const handEditedMatch = handEditedPages.find((hep) => {
+      const src = hep.path ? normalizePath(hep.path) : "/" + hep.slug;
+      return src === normPath || RAW_REDIRECT_MAP[src]?.to === normPath;
+    });
 
     const existing = await getDbItem<PageRecordV2>("PAGE", normPath);
 
+    // Carry-over fields: title, meta description, Open Graph image, and sections
     const contentStatus = existing?.contentStatus === "ready" || handEditedMatch ? "ready" : "placeholder";
     const finalRobots = contentStatus === "ready" ? sp.seo?.robotsAfterContentReady : initialRobots;
 
-    const sections = existing?.sections?.length
+    const finalTitle = handEditedMatch?.seo?.title || handEditedMatch?.title || sp.seo?.titleTag || `${sp.h1} | Beetrix360`;
+    const finalMetaDesc = handEditedMatch?.seo?.description || sp.seo?.metaDescription || null;
+    const finalOgImage = handEditedMatch?.seo?.ogImage || sp.seo?.openGraph?.imagePath || null;
+    const finalSections = existing?.sections?.length
       ? existing.sections
-      : (handEditedMatch && handEditedMatch.sections?.length ? handEditedMatch.sections : []);
+      : (handEditedMatch?.sections?.length ? handEditedMatch.sections : []);
+
+    const nowTimestamp = new Date().toISOString();
 
     const pageRecord: PageRecordV2 = {
       id,
@@ -248,8 +280,8 @@ async function runMigration() {
       menuLabel: sp.menuLabel || sp.h1,
       targetKeyword: sp.targetKeyword,
       seo: {
-        titleTag: sp.seo?.titleTag || `${sp.h1} | Beetrix360`,
-        metaDescription: sp.seo?.metaDescription || null,
+        titleTag: finalTitle,
+        metaDescription: finalMetaDesc,
         canonicalPath: normPath,
         robots: finalRobots,
         robotsAfterContentReady: sp.seo?.robotsAfterContentReady || { index: true, follow: true },
@@ -258,24 +290,24 @@ async function runMigration() {
         faqSchemaOnlyWhenReady: sp.seo?.faqSchemaOnlyWhenReady ?? true,
         openGraph: {
           type: sp.seo?.openGraph?.type || "website",
-          imagePath: sp.seo?.openGraph?.imagePath || null,
+          imagePath: finalOgImage,
         },
       },
       pageType: sp.pageType as any,
       origin: sp.origin as any,
       division: sp.division,
-      sections,
+      sections: finalSections,
       contentStatus,
       published: true,
       redirectFrom,
       note: sp.note,
-      updatedAt: existing?.updatedAt || handEditedMatch?.updatedAt || "2026-10-19T13:05:00.000Z",
+      updatedAt: existing?.updatedAt || handEditedMatch?.updatedAt || nowTimestamp,
       updatedBy: existing?.updatedBy || handEditedMatch?.updatedBy || undefined,
     };
 
     pagesToSave.push(pageRecord);
 
-    // Check diff against current store
+    // Comprehensive Idempotency Check comparing every seeded field
     if (!existing) {
       pagesCreated++;
       if (isApply) {
@@ -284,14 +316,34 @@ async function runMigration() {
     } else {
       const isDiff =
         existing.id !== pageRecord.id ||
+        existing.path !== pageRecord.path ||
+        existing.parentId !== pageRecord.parentId ||
+        existing.slug !== pageRecord.slug ||
         existing.h1 !== pageRecord.h1 ||
-        existing.contentStatus !== pageRecord.contentStatus ||
+        existing.menuLabel !== pageRecord.menuLabel ||
         existing.targetKeyword !== pageRecord.targetKeyword ||
+        existing.pageType !== pageRecord.pageType ||
+        existing.origin !== pageRecord.origin ||
+        existing.division !== pageRecord.division ||
+        existing.contentStatus !== pageRecord.contentStatus ||
         existing.seo?.titleTag !== pageRecord.seo.titleTag ||
-        existing.seo?.robots?.index !== pageRecord.seo.robots.index;
+        existing.seo?.metaDescription !== pageRecord.seo.metaDescription ||
+        existing.seo?.canonicalPath !== pageRecord.seo.canonicalPath ||
+        existing.seo?.robots?.index !== pageRecord.seo.robots.index ||
+        existing.seo?.robots?.follow !== pageRecord.seo.robots.follow ||
+        existing.seo?.robotsAfterContentReady?.index !== pageRecord.seo.robotsAfterContentReady.index ||
+        existing.seo?.robotsAfterContentReady?.follow !== pageRecord.seo.robotsAfterContentReady.follow ||
+        existing.seo?.breadcrumbLabel !== pageRecord.seo.breadcrumbLabel ||
+        existing.seo?.faqSchemaOnlyWhenReady !== pageRecord.seo.faqSchemaOnlyWhenReady ||
+        existing.seo?.openGraph?.type !== pageRecord.seo.openGraph.type ||
+        existing.seo?.openGraph?.imagePath !== pageRecord.seo.openGraph.imagePath ||
+        JSON.stringify(existing.seo?.schemaTypes || []) !== JSON.stringify(pageRecord.seo.schemaTypes || []) ||
+        JSON.stringify(existing.redirectFrom || []) !== JSON.stringify(pageRecord.redirectFrom || []);
+
       if (isDiff) {
         pagesUpdated++;
         if (isApply) {
+          pageRecord.updatedAt = nowTimestamp;
           await putDbItem("PAGE", normPath, pageRecord);
         }
       } else {

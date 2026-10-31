@@ -259,10 +259,10 @@
 - **Homepage Protection**:
   - The seed record for `/` specifies `seo.robots: { index: false, follow: true }`. The migration overrides this: `/` **must stay `index: true, follow: true`**.
   - The migration must **never** replace existing homepage content (`PAGE#home:CONTENT` or `src/content/homepage.json`). The seed record for `/` only supplies baseline SEO fields.
-- **Automated Backup & Navigation Preservation**:
-  - First action of `--apply`: Dumps the entire store (including existing `SITE#config:STRUCTURE` and `PAGE#home`) to `.data/backups/backup-<timestamp>.json`.
+- **Automated Backup & Retirement of `SITE#config:STRUCTURE`**:
+  - First action of `--apply`: Dumps the entire store (including all `PAGE`, `REDIRECT`, `SITE#config`, `PAGE#home`, and `USER` items) through `db.ts` to `.data/backups/backup-<timestamp>.json`. This ensures universal backup parity across local JSON and DynamoDB.
   - Writes the new navigation model to `SITE#config:NAVIGATION`.
-  - Legacy `SITE#config:STRUCTURE` is retained in the backup and preserved as an archive in storage without premature deletion.
+  - **Retirement of `SITE#config:STRUCTURE`**: `sitemap.ts`, `llms.txt`, `Navbar` (in Phase 5), and the admin menu arrangement screen (in Phase 7) will completely stop reading `SITE#config:STRUCTURE` and migrate exclusively to `getAllPages()` / `SITE#config:NAVIGATION`. Once these consumer migrations are verified in Phases 5 & 7, `SITE#config:STRUCTURE` will no longer be read or written by the runtime application, and will be retained solely inside the historical backup snapshots.
 - **Dynamic Hand-Edited Carry-Over Check**:
   - Dynamically scans the target store (local JSON or DynamoDB) for any page record where `updatedBy` is defined or `updatedAt` is different from the original seed run timestamp (`2026-10-19T13:05...`).
   - If any hand-edited page is detected, its content is automatically carried over to the mapped IA v2 path and marked `contentStatus: "ready"`, or execution safely aborts with a detailed list of modified records for review.

@@ -5,16 +5,16 @@ import { ArrowRight, CheckCircle2, ChevronRight, Layers } from "lucide-react";
 import { Breadcrumbs } from "@/components/pages/InnerPage";
 import { JsonLd } from "@/components/site/JsonLd";
 import { getPageByPath, getRedirect, getSiteSettings, getAllPages } from "@/lib/content";
-import { webPageSchema, breadcrumbSchema, itemListSchema, serviceSchema, faqSchema } from "@/lib/schema";
-import { absoluteUrl, SITE_URL } from "@/lib/site-url";
+import { webPageSchema, breadcrumbSchema, itemListSchema, serviceSchema } from "@/lib/schema";
+import { absoluteUrl } from "@/lib/site-url";
 import type { PageRecordV2 } from "@/lib/types";
-import seedData from "@/content/ia-v2.seed.json";
 
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  // Pre-generate parameters from the seed for fast build & ISR
-  return seedData.pages
+  // Pre-generate parameters from the page store for fast build & ISR
+  const pages = await getAllPages();
+  return pages
     .filter((p) => p.path !== "/")
     .map((p) => ({
       segments: p.path.replace(/^\//, "").split("/"),
@@ -45,13 +45,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     : absoluteUrl(rawPath);
 
   const title = page.seo?.titleTag || `${page.h1} | Beetrix360`;
-  const description =
-    page.seo?.metaDescription ||
-    `${page.h1} - Measurable, full-funnel solutions engineered by Beetrix360.`;
+  const description = page.seo?.metaDescription || undefined;
 
   return {
     title,
-    description,
+    ...(description ? { description } : {}),
     alternates: {
       canonical: canonicalUrl,
     },
@@ -61,7 +59,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     openGraph: {
       title: page.seo?.openGraph?.title || title,
-      description: page.seo?.openGraph?.description || description,
+      ...(description ? { description: page.seo?.openGraph?.description || description } : {}),
       url: canonicalUrl,
       type: "website",
       siteName: "Beetrix360",
@@ -72,7 +70,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     twitter: {
       card: "summary_large_image",
       title: page.seo?.twitter?.title || title,
-      description: page.seo?.twitter?.description || description,
+      ...(description ? { description: page.seo?.twitter?.description || description } : {}),
     },
   };
 }
@@ -112,43 +110,42 @@ export default async function CatchAllPage({ params }: PageProps) {
   }
 
   const site = await getSiteSettings();
+  const allPages = await getAllPages();
+  const pageById = new Map<string, PageRecordV2>(allPages.map((p) => [p.id, p]));
 
-  // 4. Construct breadcrumbs
-  const crumbItems = [{ name: "Home", path: "/" }];
-  const parts = segments;
-  let accum = "";
-  for (let i = 0; i < parts.length; i++) {
-    accum += "/" + parts[i];
-    if (i === parts.length - 1) {
-      crumbItems.push({
-        name: page.seo?.breadcrumbLabel || page.menuLabel || page.h1,
-        path: accum,
-      });
-    } else {
-      // Ancestor segment label
-      const ancestor = seedData.pages.find((p) => p.path === accum);
-      crumbItems.push({
-        name: ancestor?.seo?.breadcrumbLabel || ancestor?.menuLabel || parts[i],
-        path: accum,
-      });
-    }
+  // 4. Construct breadcrumbs dynamically from parentId tree
+  const chain: PageRecordV2[] = [page];
+  let curr = page;
+  while (curr.parentId) {
+    const parent = pageById.get(curr.parentId);
+    if (!parent || parent.path === "/") break;
+    chain.unshift(parent);
+    curr = parent;
   }
+  const crumbItems = [
+    { name: "Home", path: "/" },
+    ...chain.map((p) => ({
+      name: p.seo?.breadcrumbLabel || p.menuLabel || p.h1,
+      path: p.path,
+    })),
+  ];
 
-  // 5. Build JSON-LD structured data graph
+  // 5. Query child pages from parentId in page store
+  const childPages = allPages.filter(
+    (p) => p.parentId === page.id && p.published
+  );
+
+  // 6. Build JSON-LD structured data graph
   const ldNodes: any[] = [
     webPageSchema({
       path: page.path,
       name: page.h1,
-      description:
-        page.seo?.metaDescription || `${page.h1} solutions from Beetrix360.`,
+      description: page.seo?.metaDescription || (undefined as any),
     }),
     breadcrumbSchema(crumbItems),
   ];
 
-  // If hub page, add ItemList of child pages
-  const childPages = seedData.pages.filter(
-    (p) => p.parentPath === page.path && p.path !== page.path
-  );
+  // If hub page with child pages, emit ItemList
   if (childPages.length > 0) {
     ldNodes.push(
       itemListSchema(
@@ -174,6 +171,10 @@ export default async function CatchAllPage({ params }: PageProps) {
       })
     );
   }
+
+  // Extract optional hero/intro section text if present
+  const heroSection = page.sections?.find((s) => s.type === "hero");
+  const heroDescription = heroSection?.content?.description;
 
   return (
     <>
@@ -204,9 +205,9 @@ export default async function CatchAllPage({ params }: PageProps) {
               {page.h1}
             </h1>
 
-            {page.targetKeyword && (
+            {heroDescription && (
               <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-3xl leading-relaxed">
-                Engineered for high-intent visibility and revenue growth. Beetrix360 delivers complete, full-funnel execution for <strong>{page.targetKeyword}</strong>.
+                {heroDescription}
               </p>
             )}
 
@@ -230,30 +231,32 @@ export default async function CatchAllPage({ params }: PageProps) {
         {/* Dynamic / Seed Sections */}
         {page.sections && page.sections.length > 0 ? (
           <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 2xl:px-20 py-16 space-y-16">
-            {page.sections.map((sec) => (
-              <section key={sec.id} className="py-6 border-b border-neutral-100 last:border-b-0">
-                {sec.title && (
-                  <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-bx-dark">
-                    {sec.title}
-                  </h2>
-                )}
-                {sec.content && (
-                  <div className="prose prose-neutral max-w-none text-neutral-600">
-                    {sec.content.description && <p>{sec.content.description}</p>}
-                    {sec.content.items && Array.isArray(sec.content.items) && (
-                      <ul className="grid sm:grid-cols-2 gap-3 mt-4 list-none p-0">
-                        {sec.content.items.map((it: any, idx: number) => (
-                          <li key={idx} className="flex items-start gap-2 bg-neutral-50 p-4 rounded-xl border border-neutral-100">
-                            <CheckCircle2 className="w-5 h-5 text-bx-pink shrink-0 mt-0.5" />
-                            <span>{typeof it === "string" ? it : it.label || it.title}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                )}
-              </section>
-            ))}
+            {page.sections
+              .filter((sec) => sec.type !== "hero")
+              .map((sec) => (
+                <section key={sec.id} className="py-6 border-b border-neutral-100 last:border-b-0">
+                  {sec.title && (
+                    <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-bx-dark">
+                      {sec.title}
+                    </h2>
+                  )}
+                  {sec.content && (
+                    <div className="prose prose-neutral max-w-none text-neutral-600">
+                      {sec.content.description && <p>{sec.content.description}</p>}
+                      {sec.content.items && Array.isArray(sec.content.items) && (
+                        <ul className="grid sm:grid-cols-2 gap-3 mt-4 list-none p-0">
+                          {sec.content.items.map((it: any, idx: number) => (
+                            <li key={idx} className="flex items-start gap-2 bg-neutral-50 p-4 rounded-xl border border-neutral-100">
+                              <CheckCircle2 className="w-5 h-5 text-bx-pink shrink-0 mt-0.5" />
+                              <span>{typeof it === "string" ? it : it.label || it.title}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  )}
+                </section>
+              ))}
           </div>
         ) : (
           /* Default Placeholder Content Frame */

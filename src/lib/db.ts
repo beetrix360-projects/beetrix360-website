@@ -311,3 +311,33 @@ export async function saveNavigation(nav: NavigationRecord): Promise<void> {
   await putDbItem("SITE#config", "NAVIGATION", nav);
 }
 
+/**
+ * Universal export of all records across all partition keys (PAGE, REDIRECT, SITE#config, PAGE#home, USER).
+ * Used for full backups on local and DynamoDB stores.
+ */
+export async function exportAllDbRecords(): Promise<Record<string, any>> {
+  if (ddbDocClient && process.env.CONTENT_SOURCE === "dynamodb") {
+    try {
+      const res = await ddbDocClient.send(
+        new ScanCommand({
+          TableName: TABLE_NAME,
+        })
+      );
+      const map: Record<string, any> = {};
+      if (res.Items) {
+        for (const item of res.Items) {
+          const key = `${item.pk}:${item.sk}`;
+          map[key] = item.data ?? item;
+        }
+      }
+      return map;
+    } catch (err) {
+      console.warn("[DynamoDB Scan Error]: Falling back to local store for export", err);
+    }
+  }
+
+  const store = ensureLocalStore();
+  return JSON.parse(JSON.stringify(store));
+}
+
+
