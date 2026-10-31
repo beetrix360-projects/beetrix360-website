@@ -456,6 +456,7 @@ async function runMigration() {
 
     navMenus.push({
       label: m.label,
+      shortLabel: (m as any).shortLabel || undefined,
       viewAllPath: normalizePath(m.viewAllPath),
       bottomBarLinks,
       proofCard: m.proofCard

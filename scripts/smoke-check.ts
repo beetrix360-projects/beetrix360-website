@@ -397,74 +397,182 @@ async function runSmokeCheck() {
     consoleErrors.push(err.message || String(err));
   });
 
-  // A. Top Bar at 1280px Desktop Breakpoint (Shows hamburger button, desktop menu hidden)
-  console.log(`  - Capturing Top Bar at 1280px (topbar-1280.png showing menu button)...`);
-  await page.setViewport({ width: 1280, height: 800, deviceScaleFactor: 1 });
-  await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle2" });
-  await new Promise((r) => setTimeout(r, 1000));
-  await page.screenshot({ path: path.join(screenshotDir, "topbar-1280.png") });
+  // A. Header Zero-Overlap & Spacing Verification at 7 Viewports
+  const HEADER_VIEWPORTS = [1280, 1366, 1440, 1536, 1600, 1920, 2560];
+  console.log(`\n[Header Verification] Checking layout and zero overlap at ${HEADER_VIEWPORTS.length} viewports...`);
 
-  // B. Top Bar at 1440px (Closed and all Dropdowns open)
-  console.log(`  - Capturing Top Bar closed at 1440px (topbar-1440.png)...`);
-  await page.setViewport({ width: 1440, height: 950, deviceScaleFactor: 1 });
-  await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle2" });
-  await new Promise((r) => setTimeout(r, 1200));
-  await page.screenshot({ path: path.join(screenshotDir, "topbar-1440.png") });
-
-  console.log(`  - Capturing all 7 Mega Menu Dropdowns at 1440px...`);
+  interface HeaderCheckRecord {
+    width: number;
+    mode: string;
+    logoMenuGap: string;
+    menuButtonGap: string;
+    overlap: boolean;
+    passed: boolean;
+    notes: string;
+  }
+  const headerCheckRecords: HeaderCheckRecord[] = [];
   const navLabels = seedData.navigation.menus.map((m) => m.label);
-  for (let i = 0; i < navLabels.length; i++) {
-    const label = navLabels[i];
-    const slug = `dropdown-${i + 1}-${label.toLowerCase().replace(/[^a-z0-9]/g, "-")}-1440.png`;
-    console.log(`    * [${i + 1}/7] Dropdown: "${label}" -> ${slug}`);
 
-    // Click trigger button by index
-    const buttons = await page.$$("nav[aria-label='Main'] button");
-    if (buttons[i]) {
-      await buttons[i].click();
-      await page.waitForFunction(
-        (idx) => {
-          const el = document.getElementById(`mega-menu-${idx}`);
-          return el && window.getComputedStyle(el).opacity === "1";
-        },
-        { timeout: 3000 },
-        i
-      ).catch(() => {});
-      await new Promise((r) => setTimeout(r, 300));
-      await page.screenshot({ path: path.join(screenshotDir, slug) });
-      if (label === "Company") {
-        await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1440.png") });
+  for (const w of HEADER_VIEWPORTS) {
+    await page.setViewport({ width: w, height: 900, deviceScaleFactor: 1 });
+    await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle2" });
+    await new Promise((r) => setTimeout(r, 600));
+
+    const check = await page.evaluate(() => {
+      const logo = document.querySelector("#site-nav a[aria-label$='home']") as HTMLElement | null;
+      const nav = document.querySelector("#site-nav nav[aria-label='Main']") as HTMLElement | null;
+      const cta = document.querySelector("#site-nav [data-cta]") as HTMLElement | null;
+      const menuBtn = document.querySelector(
+        "#site-nav button[aria-label='Open menu'], #site-nav button[aria-label='Close menu']"
+      ) as HTMLElement | null;
+
+      const isVisible = (el: HTMLElement | null) => {
+        if (!el) return false;
+        const style = window.getComputedStyle(el);
+        const rect = el.getBoundingClientRect();
+        return style.display !== "none" && style.visibility !== "hidden" && rect.width > 0 && rect.height > 0;
+      };
+
+      const navVisible = isVisible(nav);
+      const menuBtnVisible = isVisible(menuBtn);
+
+      if (!navVisible && menuBtnVisible) {
+        return {
+          mode: "mobile",
+          logoMenuGap: null,
+          menuButtonGap: null,
+          overlap: false,
+          passed: true,
+          notes: "Mobile menu button shown (desktop menu hidden)",
+        };
       }
-      // Close dropdown
-      await page.keyboard.press("Escape");
-      await new Promise((r) => setTimeout(r, 200));
+
+      if (navVisible && !menuBtnVisible && logo) {
+        const logoRect = logo.getBoundingClientRect();
+        const navRect = nav!.getBoundingClientRect();
+        const ctaRect = cta ? cta.getBoundingClientRect() : null;
+
+        const logoMenuGap = Math.round(navRect.left - logoRect.right);
+        const menuButtonGap = ctaRect ? Math.round(ctaRect.left - navRect.right) : 999;
+        const overlap = logoRect.right > navRect.left || (ctaRect ? navRect.right > ctaRect.left : false);
+
+        // Requirement: At least 32px between logo and first item, and between last item and button. No overlap.
+        const passed = !overlap && logoMenuGap >= 32 && menuButtonGap >= 32;
+
+        return {
+          mode: "desktop",
+          logoMenuGap,
+          menuButtonGap,
+          overlap,
+          passed,
+          notes: passed
+            ? `Desktop bar: gaps ${logoMenuGap}px / ${menuButtonGap}px >= 32px`
+            : `FAIL: gaps ${logoMenuGap}px / ${menuButtonGap}px (must be >= 32px, no overlap)`,
+        };
+      }
+
+      return {
+        mode: "invalid",
+        logoMenuGap: null,
+        menuButtonGap: null,
+        overlap: true,
+        passed: false,
+        notes: `Invalid visibility: navVisible=${navVisible}, menuBtnVisible=${menuBtnVisible}`,
+      };
+    });
+
+    const rec: HeaderCheckRecord = {
+      width: w,
+      mode: check.mode,
+      logoMenuGap: check.logoMenuGap !== null ? `${check.logoMenuGap}px` : "-",
+      menuButtonGap: check.menuButtonGap !== null ? `${check.menuButtonGap}px` : "-",
+      overlap: check.overlap,
+      passed: check.passed,
+      notes: check.notes,
+    };
+    headerCheckRecords.push(rec);
+
+    if (!check.passed) {
+      failures.push({
+        path: `header-at-${w}px`,
+        category: "page",
+        expected: "Desktop bar with gaps >= 32px OR Mobile button",
+        actual: check.notes,
+        status: 200,
+        passed: false,
+      });
+    }
+
+    // Capture required screenshots
+    if (w === 1280) {
+      console.log(`  - Capturing Top Bar at 1280px (topbar-1280.png showing menu button)...`);
+      await page.screenshot({ path: path.join(screenshotDir, "topbar-1280.png") });
+    } else if (w === 1440) {
+      console.log(`  - Capturing Top Bar closed at 1440px (topbar-1440.png)...`);
+      await page.screenshot({ path: path.join(screenshotDir, "topbar-1440.png") });
+      // Open Company dropdown
+      console.log(`  - Capturing Company Dropdown open at 1440px...`);
+      const buttons = await page.$$("nav[aria-label='Main'] button");
+      const companyIdx = navLabels.indexOf("Company");
+      if (companyIdx !== -1 && buttons[companyIdx]) {
+        await buttons[companyIdx].click();
+        await new Promise((r) => setTimeout(r, 400));
+        await page.screenshot({ path: path.join(screenshotDir, "dropdown-company-1440.png") });
+        await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1440.png") });
+        await page.keyboard.press("Escape");
+        await new Promise((r) => setTimeout(r, 200));
+      }
+    } else if (w === 1600) {
+      console.log(`  - Capturing Top Bar closed at 1600px (topbar-1600.png)...`);
+      await page.screenshot({ path: path.join(screenshotDir, "topbar-1600.png") });
+      // Open Company dropdown
+      console.log(`  - Capturing Company Dropdown open at 1600px...`);
+      const buttons = await page.$$("nav[aria-label='Main'] button");
+      const companyIdx = navLabels.indexOf("Company");
+      if (companyIdx !== -1 && buttons[companyIdx]) {
+        await buttons[companyIdx].click();
+        await new Promise((r) => setTimeout(r, 400));
+        await page.screenshot({ path: path.join(screenshotDir, "dropdown-company-1600.png") });
+        await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1600.png") });
+        await page.keyboard.press("Escape");
+        await new Promise((r) => setTimeout(r, 200));
+      }
+    } else if (w === 1920) {
+      console.log(`  - Capturing Top Bar closed at 1920px (topbar-1920.png)...`);
+      await page.screenshot({ path: path.join(screenshotDir, "topbar-1920.png") });
+      // Open Company dropdown
+      console.log(`  - Capturing Company Dropdown open at 1920px...`);
+      const buttons = await page.$$("nav[aria-label='Main'] button");
+      const companyIdx = navLabels.indexOf("Company");
+      if (companyIdx !== -1 && buttons[companyIdx]) {
+        await buttons[companyIdx].click();
+        await new Promise((r) => setTimeout(r, 400));
+        await page.screenshot({ path: path.join(screenshotDir, "dropdown-company-1920.png") });
+        await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1920.png") });
+        await page.keyboard.press("Escape");
+        await new Promise((r) => setTimeout(r, 200));
+      }
     }
   }
 
-  // C. Top Bar at 1920px (Closed and Company Dropdown Open)
-  console.log(`  - Capturing Top Bar closed at 1920px (topbar-1920.png)...`);
-  await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 1 });
+  // B. Capture all 7 Mega Menu Dropdowns at 1440px
+  console.log(`  - Capturing all 7 Mega Menu Dropdowns at 1440px...`);
+  await page.setViewport({ width: 1440, height: 950, deviceScaleFactor: 1 });
   await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle2" });
-  await new Promise((r) => setTimeout(r, 1000));
-  await page.screenshot({ path: path.join(screenshotDir, "topbar-1920.png") });
+  await new Promise((r) => setTimeout(r, 600));
 
-  console.log(`  - Capturing Company Dropdown open at 1920px (company-dropdown-1920.png)...`);
-  const buttons1920 = await page.$$("nav[aria-label='Main'] button");
-  const companyIdx = navLabels.indexOf("Company");
-  if (companyIdx !== -1 && buttons1920[companyIdx]) {
-    await buttons1920[companyIdx].click();
-    await page.waitForFunction(
-      (idx) => {
-        const el = document.getElementById(`mega-menu-${idx}`);
-        return el && window.getComputedStyle(el).opacity === "1";
-      },
-      { timeout: 3000 },
-      companyIdx
-    ).catch(() => {});
-    await new Promise((r) => setTimeout(r, 300));
-    await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1920.png") });
-    await page.keyboard.press("Escape");
-    await new Promise((r) => setTimeout(r, 200));
+  for (let i = 0; i < navLabels.length; i++) {
+    const label = navLabels[i];
+    const slug = `dropdown-${i + 1}-${label.toLowerCase().replace(/[^a-z0-9]/g, "-")}-1440.png`;
+
+    const buttons = await page.$$("nav[aria-label='Main'] button");
+    if (buttons[i]) {
+      await buttons[i].click();
+      await new Promise((r) => setTimeout(r, 300));
+      await page.screenshot({ path: path.join(screenshotDir, slug) });
+      await page.keyboard.press("Escape");
+      await new Promise((r) => setTimeout(r, 200));
+    }
   }
 
   // C. Mobile Menu at 390px (Opened)
@@ -528,6 +636,21 @@ async function runSmokeCheck() {
   console.log(`Total Failures:        ${failures.length}`);
   console.log(`CSS/JS Asset Failures: ${failedAssets.length}`);
   console.log(`Console Errors:        ${consoleErrors.length}`);
+
+  console.log(`\n----------------------------------------------------------------------`);
+  console.log(`  HEADER ZERO-OVERLAP & SPACING VERIFICATION TABLE (>= 32px GAPS)`);
+  console.log(`----------------------------------------------------------------------`);
+  console.log(`| Viewport | Mode    | Logo-Menu Gap | Menu-Button Gap | Overlap | Status | Notes |`);
+  console.log(`|----------|---------|---------------|-----------------|---------|--------|-------|`);
+  for (const r of headerCheckRecords) {
+    const wStr = `${r.width}px`.padEnd(8);
+    const mStr = r.mode.padEnd(7);
+    const lgStr = r.logoMenuGap.padEnd(13);
+    const mbStr = r.menuButtonGap.padEnd(15);
+    const ovStr = (r.overlap ? "OVERLAP" : "None").padEnd(7);
+    const stStr = (r.passed ? "PASS" : "FAIL").padEnd(6);
+    console.log(`| ${wStr} | ${mStr} | ${lgStr} | ${mbStr} | ${ovStr} | ${stStr} | ${r.notes} |`);
+  }
 
   console.log(`\n----------------------------------------------------------------------`);
   console.log(`  HEADER & DROPDOWN VISUAL ARTIFACTS`);

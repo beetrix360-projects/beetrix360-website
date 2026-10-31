@@ -29,6 +29,15 @@ export function Navbar({ site, navigation }: NavbarProps) {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const triggerRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
+  // Measurement refs for dynamic zero-overlap detection
+  const containerRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const middleColRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const measureNavRef = useRef<HTMLDivElement>(null);
+  const [useMobileMenu, setUseMobileMenu] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -63,6 +72,42 @@ export function Navbar({ site, navigation }: NavbarProps) {
   const menus = navigation?.menus || [];
   const cta = navigation?.cta || { label: "Get a proposal", path: "/get-a-proposal" };
 
+  // Dynamic layout measurement: guarantees menu fits with at least 32px room on both sides
+  useEffect(() => {
+    const checkFit = () => {
+      if (!containerRef.current) return;
+      const containerWidth = containerRef.current.clientWidth;
+      const logoWidth = logoRef.current?.offsetWidth || 160;
+      const ctaBtn = ctaRef.current?.querySelector("[data-cta]") as HTMLElement | null;
+      const ctaWidth = ctaBtn?.offsetWidth || 160;
+      const menuWidth = measureNavRef.current?.offsetWidth || navRef.current?.scrollWidth || 880;
+
+      // Middle space available between logo and CTA button
+      const availableMiddle = containerWidth - logoWidth - ctaWidth;
+
+      // Requirement: At least 32px between logo and first item, and between last item and button (total >= 64px)
+      const fits = availableMiddle >= menuWidth + 72;
+
+      setUseMobileMenu(!fits);
+    };
+
+    checkFit();
+
+    let ro: ResizeObserver | null = null;
+    if (typeof ResizeObserver !== "undefined" && containerRef.current) {
+      ro = new ResizeObserver(() => {
+        checkFit();
+      });
+      ro.observe(containerRef.current);
+    }
+
+    window.addEventListener("resize", checkFit);
+    return () => {
+      if (ro) ro.disconnect();
+      window.removeEventListener("resize", checkFit);
+    };
+  }, [menus]);
+
   const handleMouseEnter = (idx: number) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setOpenDropdown(idx);
@@ -84,35 +129,48 @@ export function Navbar({ site, navigation }: NavbarProps) {
       id="site-nav"
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         mobileMenuOpen
-          ? "inset-0 h-dvh bg-white flex flex-col xl:block xl:inset-x-0 xl:bottom-auto xl:h-[76px] xl:bg-white/80 xl:backdrop-blur-sm border-b border-neutral-200"
+          ? `inset-0 h-dvh bg-white flex flex-col ${useMobileMenu ? "" : "min-[1440px]:block min-[1440px]:inset-x-0 min-[1440px]:bottom-auto min-[1440px]:h-[76px] min-[1440px]:bg-white/80 min-[1440px]:backdrop-blur-sm"} border-b border-neutral-200`
           : scrolled || openDropdown !== null
           ? "bg-white/95 backdrop-blur-md border-b border-neutral-200/80 shadow-sm"
           : "bg-white/80 backdrop-blur-sm border-b border-neutral-100"
       }`}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="w-full max-w-[1536px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 h-[76px] shrink-0 flex items-center justify-between">
-        {/* Brand Wordmark & Animated Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-3 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink rounded-lg"
-          aria-label={`${site.name} home`}
-        >
-          <Logo floating />
-        </Link>
+      {/* Three-column grid bar: auto (Logo) | 1fr (Menu centered) | auto (Actions) */}
+      <div
+        ref={containerRef}
+        className="w-full max-w-[1760px] mx-auto px-6 sm:px-8 xl:px-10 h-[76px] shrink-0 grid grid-cols-[auto_1fr_auto] items-center"
+      >
+        {/* Col 1: Brand Wordmark & Animated Logo */}
+        <div ref={logoRef} className="flex items-center shrink-0">
+          <Link
+            href="/"
+            className="flex items-center gap-3 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink rounded-lg"
+            aria-label={`${site.name} home`}
+          >
+            <Logo floating />
+          </Link>
+        </div>
 
-        {/* Desktop Mega Menu Navigation (100% Server-Rendered HTML, min 1440px) */}
-        <nav
-          className="hidden min-[1440px]:flex items-center justify-center flex-1 min-w-0 mx-10"
-          aria-label="Main"
+        {/* Col 2: Desktop Mega Menu Navigation (centered in middle column, never narrower than content) */}
+        <div
+          ref={middleColRef}
+          className={`px-8 flex justify-center items-center ${
+            useMobileMenu ? "hidden" : "hidden min-[1440px]:flex"
+          }`}
         >
-          <div className="flex items-center gap-1.5 min-[1600px]:gap-3 flex-nowrap">
+          <nav
+            ref={navRef}
+            className="flex items-center gap-1.5 flex-nowrap shrink-0"
+            aria-label="Main"
+          >
             {menus.map((menu, mIdx) => {
               const isOpen = openDropdown === mIdx;
+              const displayLabel = menu.shortLabel || menu.label;
               return (
                 <div
                   key={menu.label}
-                  className="relative"
+                  className="relative shrink-0"
                   onMouseEnter={() => handleMouseEnter(mIdx)}
                 >
                   <button
@@ -132,13 +190,13 @@ export function Navbar({ site, navigation }: NavbarProps) {
                     aria-expanded={isOpen}
                     aria-haspopup="true"
                     aria-controls={`mega-menu-${mIdx}`}
-                    className={`px-3 min-[1600px]:px-4 py-2 text-xs min-[1600px]:text-sm font-semibold tracking-tight transition rounded-lg flex items-center gap-1 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink ${
+                    className={`px-3 py-2 text-sm font-semibold tracking-tight transition rounded-lg flex items-center gap-1 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink ${
                       isOpen
                         ? "text-bx-pink bg-bx-pink/5"
                         : "text-neutral-700 hover:text-bx-pink hover:bg-neutral-50"
                     }`}
                   >
-                    <span>{menu.label}</span>
+                    <span>{displayLabel}</span>
                     <ChevronDown
                       className={`w-3.5 h-3.5 text-neutral-400 transition-transform duration-200 ${
                         isOpen ? "rotate-180 text-bx-pink" : ""
@@ -155,7 +213,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                         : "opacity-0 invisible -translate-y-2 pointer-events-none"
                     }`}
                   >
-                    <div className="w-full max-w-[1536px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 py-8">
+                    <div className="w-full max-w-[1760px] mx-auto px-6 sm:px-8 xl:px-10 py-8">
                       {/* 5-Column Grid */}
                       <div className="grid grid-cols-5 gap-8">
                         {menu.groups.map((group, gIdx) => {
@@ -288,35 +346,57 @@ export function Navbar({ site, navigation }: NavbarProps) {
                 </div>
               );
             })}
-          </div>
-        </nav>
-
-        {/* Header CTA Button */}
-        <div className="hidden min-[1440px]:flex items-center gap-3 shrink-0">
-          <Link
-            href={cta.path}
-            data-cta=""
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-bx-pink text-white text-xs 2xl:text-sm font-semibold hover:bg-bx-pink/90 transition shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink"
-          >
-            {cta.label} <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+          </nav>
         </div>
+
+      {/* Col 3: Action Buttons (CTA & Mobile Toggle) */}
+      <div ref={ctaRef} className="flex items-center justify-end shrink-0 gap-3">
+        {/* Header CTA Button */}
+        <Link
+          href={cta.path}
+          data-cta=""
+          className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-bx-pink text-white text-sm font-semibold hover:bg-bx-pink/90 transition shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink shrink-0 ${
+            useMobileMenu ? "hidden" : "hidden min-[1440px]:inline-flex"
+          }`}
+        >
+          {cta.label} <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
 
         {/* Mobile Hamburger Toggle */}
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="min-[1440px]:hidden p-2 rounded-lg text-neutral-700 hover:text-bx-pink hover:bg-neutral-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink"
+          className={`p-2 rounded-lg text-neutral-700 hover:text-bx-pink hover:bg-neutral-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink ${
+            useMobileMenu ? "flex" : "flex min-[1440px]:hidden"
+          }`}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
+    </div>
+
+    {/* Hidden offscreen row to measure natural width accurately */}
+    <div
+      ref={measureNavRef}
+      aria-hidden="true"
+      className="fixed top-0 left-[-9999px] pointer-events-none invisible flex items-center gap-1.5 whitespace-nowrap"
+    >
+      {menus.map((menu) => (
+        <div
+          key={menu.label}
+          className="px-3 py-2 text-sm font-semibold tracking-tight flex items-center gap-1"
+        >
+          <span>{menu.shortLabel || menu.label}</span>
+          <span className="w-3.5 h-3.5" />
+        </div>
+      ))}
+    </div>
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="min-[1440px]:hidden flex-1 overflow-y-auto bg-white p-5 border-t border-neutral-100">
+        <div className={`${useMobileMenu ? "flex flex-col" : "min-[1440px]:hidden"} flex-1 overflow-y-auto bg-white p-5 border-t border-neutral-100`}>
           <nav aria-label="Mobile Navigation" className="space-y-4 pb-12">
             {menus.map((menu, mIdx) => {
               const isAccordionOpen = mobileAccordion === mIdx;

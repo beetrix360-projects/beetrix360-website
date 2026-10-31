@@ -6527,7 +6527,8 @@
           "text": "Headline ROAS or sales result",
           "cta": "Read the case study",
           "path": "/case-studies"
-        }
+        },
+        "shortLabel": "Paid Media"
       },
       {
         "label": "Brand, Content & Social",
@@ -6610,7 +6611,8 @@
           "text": "Brand and social work sample",
           "cta": "View the portfolio",
           "path": "/portfolio"
-        }
+        },
+        "shortLabel": "Brand & Social"
       },
       {
         "label": "AI Content",

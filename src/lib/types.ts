@@ -454,6 +454,7 @@ export interface NavigationProofCard {
 
 export interface NavigationMenu {
   label: string;
+  shortLabel?: string;
   viewAllPath: string;
   bottomBarLinks: { label: string; path: string }[];
   proofCard: NavigationProofCard | null;
