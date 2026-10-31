@@ -205,3 +205,4 @@ export function validateNavigationRecord(
     topBarMeasurement: topBarFit,
   };
 }
+

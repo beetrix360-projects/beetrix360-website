@@ -31,6 +31,7 @@ const jiti = createJiti(path.resolve(__dirname, "smoke-runner.js"), {
 
 const {
   getDbItem,
+  putDbItem,
   getNavigation,
   getPreviousNavigation,
 } = jiti("../src/lib/db");
@@ -39,6 +40,8 @@ const {
   saveNavigationV2Action,
   restorePreviousNavigationAction,
 } = jiti("../src/app/admin/actions");
+
+const STORE_PATH = path.resolve(__dirname, "../.data/content-store.json");
 
 async function runLivePhase6bSuite() {
   console.log("======================================================================");
@@ -252,6 +255,19 @@ async function runLivePhase6bSuite() {
     console.warn(`Note on public fetch: ${err.message}`);
   }
 
+  // Ensure SITE#config:NAVIGATION#previous does not retain test modifications
+  await putDbItem("SITE#config", "NAVIGATION#previous", restoredDbNav);
+  console.log("PASS: SITE#config:NAVIGATION#previous reset to match clean current navigation.");
+
+  // Confirm "[Phase 6B Test]" appears nowhere in the store
+  if (fs.existsSync(STORE_PATH)) {
+    const storeRaw = fs.readFileSync(STORE_PATH, "utf-8");
+    if (storeRaw.includes("[Phase 6B Test]")) {
+      throw new Error("FAIL: '[Phase 6B Test]' was found in the content store!");
+    }
+    console.log("PASS: Verified '[Phase 6B Test]' appears nowhere in the content store.");
+  }
+
   console.log("\n======================================================================");
   console.log("  ALL PHASE 6B TESTS PASSED SUCCESSFULLY");
   console.log("======================================================================\n");
@@ -261,3 +277,4 @@ runLivePhase6bSuite().catch((err) => {
   console.error("\nFATAL ERROR in Phase 6B suite:\n", err);
   process.exit(1);
 });
+

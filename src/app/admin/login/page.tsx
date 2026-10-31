@@ -37,7 +37,7 @@ export default async function AdminLoginPage() {
         </div>
 
         <div className="mt-6 text-center text-xs text-neutral-500">
-          <p className="font-mono">Initial Master Admin: admin@beetrix360.com / admin123456</p>
+          <p className="font-mono">Beetrix360 Admin Studio</p>
         </div>
       </div>
     </div>

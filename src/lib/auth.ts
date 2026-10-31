@@ -36,12 +36,22 @@ function getJwtSecret(): Uint8Array {
 
 /**
  * Ensures at least one master admin exists on initial setup.
+ * Requires INITIAL_ADMIN_PASSWORD environment variable.
+ * If missing, does not create any user and logs clear instructions.
  */
 export async function seedInitialAdmin(): Promise<void> {
   const existing = await queryDbByPk<UserRecord>("USER");
   if (existing.length === 0) {
+    const initialPassword = process.env.INITIAL_ADMIN_PASSWORD;
+    if (!initialPassword || initialPassword.trim() === "") {
+      console.warn(
+        "[AUTH NOTICE] No administrator accounts exist in the store, and INITIAL_ADMIN_PASSWORD is not set. To seed the initial admin account, set INITIAL_ADMIN_PASSWORD in .env.local or your environment variables."
+      );
+      return;
+    }
+
     const salt = await bcrypt.genSalt(10);
-    const hash = await bcrypt.hash("admin123456", salt);
+    const hash = await bcrypt.hash(initialPassword.trim(), salt);
     const initialAdmin: UserRecord = {
       id: "usr_initial_admin",
       email: "admin@beetrix360.com",

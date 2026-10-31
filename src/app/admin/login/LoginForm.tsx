@@ -73,7 +73,6 @@ export function LoginForm() {
             name="password"
             type={showPassword ? "text" : "password"}
             required
-            defaultValue="admin123456"
             placeholder="••••••••"
             className="w-full pl-10 pr-10 py-2.5 bg-neutral-50/70 border border-neutral-300 rounded-xl text-neutral-900 placeholder-neutral-400 focus:bg-white focus:outline-none focus:border-bx-pink focus:ring-1 focus:ring-bx-pink transition-all text-xs"
           />
