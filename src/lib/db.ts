@@ -10,6 +10,7 @@ import {
 } from "@aws-sdk/lib-dynamodb";
 import fs from "fs";
 import path from "path";
+import type { PageRecordV2, RedirectRecord, NavigationRecord } from "./types";
 
 // Initialize AWS DynamoDB Document Client
 const region =
@@ -202,3 +203,111 @@ export async function deleteDbItem(pk: string, sk: string): Promise<void> {
     }
   }
 }
+
+// ============================================================================
+// IA v2 Domain Methods (Pages, Redirects, Navigation)
+// ============================================================================
+
+export function normalizePath(p: string): string {
+  if (!p) return "/";
+  let clean = p.trim();
+  if (!clean.startsWith("/")) clean = "/" + clean;
+  if (clean.length > 1 && clean.endsWith("/")) clean = clean.slice(0, -1);
+  return clean;
+}
+
+/**
+ * Retrieve a page by its normalized full path (e.g. /seo/local-seo).
+ */
+export async function getPageByPath(rawPath: string): Promise<PageRecordV2 | null> {
+  const normalized = normalizePath(rawPath);
+  return getDbItem<PageRecordV2>("PAGE", normalized);
+}
+
+/**
+ * Retrieve all pages.
+ */
+export async function getAllPages(): Promise<PageRecordV2[]> {
+  return queryDbByPk<PageRecordV2>("PAGE");
+}
+
+/**
+ * Save or update a page by its full path.
+ */
+export async function savePage(page: PageRecordV2): Promise<void> {
+  const normalized = normalizePath(page.path);
+  page.path = normalized;
+  page.updatedAt = new Date().toISOString();
+  await putDbItem("PAGE", normalized, page);
+}
+
+/**
+ * Delete a page by its full path.
+ */
+export async function deletePageByPath(rawPath: string): Promise<void> {
+  const normalized = normalizePath(rawPath);
+  await deleteDbItem("PAGE", normalized);
+}
+
+/**
+ * Retrieve a 301/308 redirect record for a given path.
+ */
+export async function getRedirect(rawPath: string): Promise<RedirectRecord | null> {
+  const normalized = normalizePath(rawPath);
+  return getDbItem<RedirectRecord>("REDIRECT", normalized);
+}
+
+/**
+ * Retrieve all redirect records.
+ */
+export async function getAllRedirects(): Promise<RedirectRecord[]> {
+  return queryDbByPk<RedirectRecord>("REDIRECT");
+}
+
+/**
+ * Save a 301 redirect record.
+ * Refuses self-referential / identity redirects (source === target).
+ */
+export async function saveRedirect(redirect: RedirectRecord): Promise<void> {
+  const from = normalizePath(redirect.from);
+  const to = normalizePath(redirect.to);
+
+  // Programmatic refusal of identity redirects
+  if (from === to) {
+    console.warn(`[Redirect Skipped] Identity redirect ignored: ${from} -> ${to}`);
+    return;
+  }
+
+  const record: RedirectRecord = {
+    from,
+    to,
+    status: redirect.status || 301,
+    createdAt: redirect.createdAt || new Date().toISOString(),
+  };
+
+  await putDbItem("REDIRECT", from, record);
+}
+
+/**
+ * Delete a redirect record by source path.
+ */
+export async function deleteRedirect(rawFrom: string): Promise<void> {
+  const normalized = normalizePath(rawFrom);
+  await deleteDbItem("REDIRECT", normalized);
+}
+
+/**
+ * Retrieve the current navigation record.
+ */
+export async function getNavigation(): Promise<NavigationRecord | null> {
+  return getDbItem<NavigationRecord>("SITE#config", "NAVIGATION");
+}
+
+/**
+ * Save the navigation record.
+ */
+export async function saveNavigation(nav: NavigationRecord): Promise<void> {
+  nav.updatedAt = new Date().toISOString();
+  await putDbItem("SITE#config", "NAVIGATION", nav);
+}
+
