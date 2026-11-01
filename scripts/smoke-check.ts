@@ -377,6 +377,109 @@ async function runSmokeCheck() {
     consoleErrors.push(err.message || String(err));
   });
 
+  /**
+   * Helper: Wait until #loader does not exist or computed display is "none", visibility "hidden", or opacity "0"
+   * (timeout 10s), then wait a further 500ms for hero animations to settle.
+   */
+  async function waitForLoaderGone(targetPage: typeof page): Promise<void> {
+    const startTime = Date.now();
+    const timeoutMs = 10000;
+
+    while (Date.now() - startTime < timeoutMs) {
+      const isGone = await targetPage.evaluate(() => {
+        const loader = document.getElementById("loader");
+        if (!loader) return true;
+        const style = window.getComputedStyle(loader);
+        return (
+          style.display === "none" ||
+          style.visibility === "hidden" ||
+          style.opacity === "0"
+        );
+      });
+
+      if (isGone) {
+        await new Promise((r) => setTimeout(r, 500));
+        return;
+      }
+      await new Promise((r) => setTimeout(r, 100));
+    }
+
+    await new Promise((r) => setTimeout(r, 500));
+  }
+
+  /**
+   * Helper: Guard right before each screenshot to ensure #loader is not visible and navigation/menu button is visible.
+   */
+  async function captureGuardedScreenshot(
+    targetPage: typeof page,
+    screenshotPath: string,
+    screenshotName: string
+  ): Promise<void> {
+    const check = await targetPage.evaluate(() => {
+      const loader = document.getElementById("loader");
+      let loaderVisible = false;
+      if (loader) {
+        const style = window.getComputedStyle(loader);
+        const rect = loader.getBoundingClientRect();
+        if (
+          style.display !== "none" &&
+          style.visibility !== "hidden" &&
+          style.opacity !== "0" &&
+          rect.width > 0 &&
+          rect.height > 0
+        ) {
+          loaderVisible = true;
+        }
+      }
+
+      const nav =
+        document.querySelector("#site-nav nav[aria-label='Main']") ||
+        document.querySelector("nav[aria-label='Main']");
+      const menuBtn = document.querySelector(
+        "#site-nav button[aria-label='Open menu'], #site-nav button[aria-label='Close menu'], button[aria-label='Open menu'], button[aria-label='Close menu']"
+      );
+
+      const isVisible = (el: Element | null) => {
+        if (!el) return false;
+        const style = window.getComputedStyle(el);
+        const rect = el.getBoundingClientRect();
+        return (
+          style.display !== "none" &&
+          style.visibility !== "hidden" &&
+          style.opacity !== "0" &&
+          rect.width > 0 &&
+          rect.height > 0
+        );
+      };
+
+      const navVisible = isVisible(nav);
+      const menuBtnVisible = isVisible(menuBtn);
+
+      return {
+        loaderVisible,
+        headerVisible: navVisible || menuBtnVisible,
+        navVisible,
+        menuBtnVisible,
+      };
+    });
+
+    if (check.loaderVisible || !check.headerVisible) {
+      const errorMsg = `Screenshot guard failed for ${screenshotName}: loaderVisible=${check.loaderVisible}, navVisible=${check.navVisible}, menuBtnVisible=${check.menuBtnVisible}`;
+      console.error(`  [GUARD FAILURE] ${errorMsg}`);
+      failures.push({
+        path: `screenshot-${screenshotName}`,
+        category: "page",
+        expected: "#loader not visible AND (nav[aria-label='Main'] OR menu button visible)",
+        actual: errorMsg,
+        status: 200,
+        passed: false,
+        notes: errorMsg,
+      });
+    }
+
+    await targetPage.screenshot({ path: screenshotPath });
+  }
+
   // A. Header Zero-Overlap & Spacing Verification at 7 Viewports
   const HEADER_VIEWPORTS = [1280, 1366, 1440, 1536, 1600, 1920, 2560];
   console.log(`\n[Header Verification] Checking layout and zero overlap at ${HEADER_VIEWPORTS.length} viewports...`);
@@ -395,8 +498,9 @@ async function runSmokeCheck() {
 
   for (const w of HEADER_VIEWPORTS) {
     await page.setViewport({ width: w, height: 900, deviceScaleFactor: 1 });
+    await waitForLoaderGone(page);
     await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle2" });
-    await new Promise((r) => setTimeout(r, 600));
+    await waitForLoaderGone(page);
 
     const check = await page.evaluate(() => {
       const logo = document.querySelector("#site-nav a[aria-label$='home']") as HTMLElement | null;
@@ -486,10 +590,12 @@ async function runSmokeCheck() {
     // Capture required screenshots
     if (w === 1280) {
       console.log(`  - Capturing Top Bar at 1280px (topbar-1280.png showing menu button)...`);
-      await page.screenshot({ path: path.join(screenshotDir, "topbar-1280.png") });
+      await waitForLoaderGone(page);
+      await captureGuardedScreenshot(page, path.join(screenshotDir, "topbar-1280.png"), "topbar-1280.png");
     } else if (w === 1440) {
       console.log(`  - Capturing Top Bar closed at 1440px (topbar-1440.png)...`);
-      await page.screenshot({ path: path.join(screenshotDir, "topbar-1440.png") });
+      await waitForLoaderGone(page);
+      await captureGuardedScreenshot(page, path.join(screenshotDir, "topbar-1440.png"), "topbar-1440.png");
       // Open Company dropdown
       console.log(`  - Capturing Company Dropdown open at 1440px...`);
       const buttons = await page.$$("nav[aria-label='Main'] button");
@@ -497,13 +603,15 @@ async function runSmokeCheck() {
       if (companyIdx !== -1 && buttons[companyIdx]) {
         await buttons[companyIdx].click();
         await new Promise((r) => setTimeout(r, 400));
-        await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1440.png") });
+        await waitForLoaderGone(page);
+        await captureGuardedScreenshot(page, path.join(screenshotDir, "company-dropdown-1440.png"), "company-dropdown-1440.png");
         await page.keyboard.press("Escape");
         await new Promise((r) => setTimeout(r, 200));
       }
     } else if (w === 1600) {
       console.log(`  - Capturing Top Bar closed at 1600px (topbar-1600.png)...`);
-      await page.screenshot({ path: path.join(screenshotDir, "topbar-1600.png") });
+      await waitForLoaderGone(page);
+      await captureGuardedScreenshot(page, path.join(screenshotDir, "topbar-1600.png"), "topbar-1600.png");
       // Open Company dropdown
       console.log(`  - Capturing Company Dropdown open at 1600px...`);
       const buttons = await page.$$("nav[aria-label='Main'] button");
@@ -511,13 +619,15 @@ async function runSmokeCheck() {
       if (companyIdx !== -1 && buttons[companyIdx]) {
         await buttons[companyIdx].click();
         await new Promise((r) => setTimeout(r, 400));
-        await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1600.png") });
+        await waitForLoaderGone(page);
+        await captureGuardedScreenshot(page, path.join(screenshotDir, "company-dropdown-1600.png"), "company-dropdown-1600.png");
         await page.keyboard.press("Escape");
         await new Promise((r) => setTimeout(r, 200));
       }
     } else if (w === 1920) {
       console.log(`  - Capturing Top Bar closed at 1920px (topbar-1920.png)...`);
-      await page.screenshot({ path: path.join(screenshotDir, "topbar-1920.png") });
+      await waitForLoaderGone(page);
+      await captureGuardedScreenshot(page, path.join(screenshotDir, "topbar-1920.png"), "topbar-1920.png");
       // Open Company dropdown
       console.log(`  - Capturing Company Dropdown open at 1920px...`);
       const buttons = await page.$$("nav[aria-label='Main'] button");
@@ -525,7 +635,8 @@ async function runSmokeCheck() {
       if (companyIdx !== -1 && buttons[companyIdx]) {
         await buttons[companyIdx].click();
         await new Promise((r) => setTimeout(r, 400));
-        await page.screenshot({ path: path.join(screenshotDir, "company-dropdown-1920.png") });
+        await waitForLoaderGone(page);
+        await captureGuardedScreenshot(page, path.join(screenshotDir, "company-dropdown-1920.png"), "company-dropdown-1920.png");
         await page.keyboard.press("Escape");
         await new Promise((r) => setTimeout(r, 200));
       }
@@ -535,8 +646,9 @@ async function runSmokeCheck() {
   // B. Capture all 7 Mega Menu Dropdowns at 1440px
   console.log(`  - Capturing all 7 Mega Menu Dropdowns at 1440px...`);
   await page.setViewport({ width: 1440, height: 950, deviceScaleFactor: 1 });
+  await waitForLoaderGone(page);
   await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle2" });
-  await new Promise((r) => setTimeout(r, 600));
+  await waitForLoaderGone(page);
 
   for (let i = 0; i < navLabels.length; i++) {
     const label = navLabels[i];
@@ -546,7 +658,8 @@ async function runSmokeCheck() {
     if (buttons[i]) {
       await buttons[i].click();
       await new Promise((r) => setTimeout(r, 300));
-      await page.screenshot({ path: path.join(screenshotDir, slug) });
+      await waitForLoaderGone(page);
+      await captureGuardedScreenshot(page, path.join(screenshotDir, slug), slug);
       await page.keyboard.press("Escape");
       await new Promise((r) => setTimeout(r, 200));
     }
@@ -555,8 +668,9 @@ async function runSmokeCheck() {
   // C. Mobile Menu at 390px (Opened)
   console.log(`  - Capturing Mobile Menu at 390px (mobile-menu-390.png)...`);
   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true });
+  await waitForLoaderGone(page);
   await page.goto(`${BASE_URL}/`, { waitUntil: "networkidle2" });
-  await new Promise((r) => setTimeout(r, 1200));
+  await waitForLoaderGone(page);
 
   const hamburger = await page.$("button[aria-label='Open menu']");
   if (hamburger) {
@@ -569,7 +683,8 @@ async function runSmokeCheck() {
       await firstAcc.click();
       await new Promise((r) => setTimeout(r, 600));
     }
-    await page.screenshot({ path: path.join(screenshotDir, "mobile-menu-390.png") });
+    await waitForLoaderGone(page);
+    await captureGuardedScreenshot(page, path.join(screenshotDir, "mobile-menu-390.png"), "mobile-menu-390.png");
   }
 
   // D. 3 Sample Pages with Rich Placeholder Content (Service, Challenge, Pricing)
@@ -583,14 +698,15 @@ async function runSmokeCheck() {
     console.log(`  - Capturing Placeholder Sample: [${sp.label.toUpperCase()}] at ${sp.path}...`);
     // 1440px
     await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 1 });
+    await waitForLoaderGone(page);
     await page.goto(`${BASE_URL}${sp.path}`, { waitUntil: "networkidle2" });
-    await new Promise((r) => setTimeout(r, 500));
-    await page.screenshot({ path: path.join(screenshotDir, `page-${sp.type}-1440.png`) });
+    await waitForLoaderGone(page);
+    await captureGuardedScreenshot(page, path.join(screenshotDir, `page-${sp.type}-1440.png`), `page-${sp.type}-1440.png`);
 
     // 390px
     await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true });
-    await new Promise((r) => setTimeout(r, 300));
-    await page.screenshot({ path: path.join(screenshotDir, `page-${sp.type}-390.png`) });
+    await waitForLoaderGone(page);
+    await captureGuardedScreenshot(page, path.join(screenshotDir, `page-${sp.type}-390.png`), `page-${sp.type}-390.png`);
   }
 
   await page.close();
