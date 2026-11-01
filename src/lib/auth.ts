@@ -26,10 +26,15 @@ const COOKIE_NAME = "bx_admin_token";
  * Refuses operation and logs an error if AUTH_SECRET is not configured.
  */
 function getJwtSecret(): Uint8Array {
-  const secret = process.env.AUTH_SECRET;
+  const secret =
+    process.env.ADMIN_JWT_SECRET ||
+    process.env.BEETRIX_AUTH_SECRET ||
+    process.env.AUTH_SECRET;
   if (!secret || secret.trim() === "") {
-    console.error("[AUTH ERROR] AUTH_SECRET environment variable is missing. Authentication refused.");
-    throw new Error("AUTH_SECRET environment variable is missing.");
+    console.error(
+      "[AUTH ERROR] ADMIN_JWT_SECRET (or AUTH_SECRET) environment variable is missing. Authentication refused."
+    );
+    throw new Error("ADMIN_JWT_SECRET environment variable is missing.");
   }
   return new TextEncoder().encode(secret);
 }
