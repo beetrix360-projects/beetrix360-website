@@ -50,12 +50,15 @@ export async function seedInitialAdmin(): Promise<void> {
       return;
     }
 
+    const initialEmail = (process.env.INITIAL_ADMIN_EMAIL || "admin@beetrix360.com").toLowerCase().trim();
+    const initialName = process.env.INITIAL_ADMIN_NAME?.trim() || "Master Administrator";
+
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(initialPassword.trim(), salt);
     const initialAdmin: UserRecord = {
       id: "usr_initial_admin",
-      email: "admin@beetrix360.com",
-      name: "Master Administrator",
+      email: initialEmail,
+      name: initialName,
       role: "admin",
       passwordHash: hash,
       createdAt: new Date().toISOString(),
