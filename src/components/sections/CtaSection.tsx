@@ -9,6 +9,7 @@ interface CtaSectionProps {
   buttonLabel?: string;
   buttonPath?: string;
   placeholder?: boolean;
+  isAdmin?: boolean;
 }
 
 export function CtaSection({
@@ -18,7 +19,16 @@ export function CtaSection({
   buttonLabel = "Request Strategic Proposal",
   buttonPath = "/get-a-proposal",
   placeholder,
+  isAdmin = false,
 }: CtaSectionProps) {
+  if (
+    !isAdmin &&
+    ((title && (title.includes("[") || title.includes("]"))) ||
+      (text && (text.includes("[") || text.includes("]"))))
+  ) {
+    return null;
+  }
+
   const HeadingTag = headingLevel;
 
   return (
@@ -54,4 +64,3 @@ export function CtaSection({
     </section>
   );
 }
-

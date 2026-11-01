@@ -31,6 +31,7 @@ export function SectionRenderer({ sections, isAdmin = false }: SectionRendererPr
                 headingLevel={sec.headingLevel === "h3" ? "h3" : "h2"}
                 paragraphs={sec.content?.paragraphs || (sec.content?.body ? [sec.content.body] : [])}
                 placeholder={sec.placeholder}
+                isAdmin={isAdmin}
               />
             );
 
@@ -42,6 +43,7 @@ export function SectionRenderer({ sections, isAdmin = false }: SectionRendererPr
                 headingLevel={sec.headingLevel === "h3" ? "h3" : "h2"}
                 items={sec.content?.items || []}
                 placeholder={sec.placeholder}
+                isAdmin={isAdmin}
               />
             );
 
@@ -65,6 +67,7 @@ export function SectionRenderer({ sections, isAdmin = false }: SectionRendererPr
                 headingLevel={sec.headingLevel === "h3" ? "h3" : "h2"}
                 steps={sec.content?.steps || []}
                 placeholder={sec.placeholder}
+                isAdmin={isAdmin}
               />
             );
 
@@ -76,6 +79,7 @@ export function SectionRenderer({ sections, isAdmin = false }: SectionRendererPr
                 headingLevel={sec.headingLevel === "h3" ? "h3" : "h2"}
                 items={sec.content?.items || []}
                 placeholder={sec.placeholder}
+                isAdmin={isAdmin}
               />
             );
 
@@ -86,6 +90,7 @@ export function SectionRenderer({ sections, isAdmin = false }: SectionRendererPr
                 title={sec.title}
                 headingLevel={sec.headingLevel === "h3" ? "h3" : "h2"}
                 notice={sec.content?.notice}
+                text={sec.content?.text}
                 placeholder={sec.placeholder}
                 isAdmin={isAdmin}
               />
@@ -112,6 +117,7 @@ export function SectionRenderer({ sections, isAdmin = false }: SectionRendererPr
                 buttonLabel={sec.content?.buttonLabel}
                 buttonPath={sec.content?.buttonPath}
                 placeholder={sec.placeholder}
+                isAdmin={isAdmin}
               />
             );
 
@@ -122,4 +128,3 @@ export function SectionRenderer({ sections, isAdmin = false }: SectionRendererPr
     </div>
   );
 }
-

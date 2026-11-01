@@ -304,22 +304,34 @@ async function runMigration() {
 
     const existing = await getDbItem<PageRecordV2>("PAGE", normPath);
 
-    // Bug 1 fix: A page is "ready" only if it is a carried-over hand-edited page, or an editor set it (updatedBy present).
-    // Never inherit "ready" from a previous migration run.
+    // Requirement 7: Migration safety - Re-running migration will NOT overwrite:
+    // - seo.robots (respect what has been indexed)
+    // - seo.indexLock and seo.indexLockReason
+    // - seo.indexedAt
+    // - contentStatus (preserve any page marked "review" or "final" or set in store)
+    // - sections (preserve existing generated or edited sections)
+    // - meta descriptions that are already set
     const isHandEdited = Boolean(handEditedMatch) || Boolean(existing?.updatedBy);
-    const contentStatus = isHandEdited ? "ready" : (isHome ? "ready" : "placeholder");
-    const finalRobots = isHome
-      ? { index: true, follow: true }
-      : (isHandEdited
-          ? (sp.seo?.robotsAfterContentReady || { index: true, follow: true })
-          : (sp.seo?.robots || { index: false, follow: true }));
+    const contentStatus = existing?.contentStatus
+      ? existing.contentStatus
+      : (isHandEdited ? "ready" : (isHome ? "ready" : "placeholder"));
 
-    const finalTitle = handEditedMatch?.seo?.title || handEditedMatch?.title || sp.seo?.titleTag || `${sp.h1} | Beetrix360`;
-    const finalMetaDesc = handEditedMatch?.seo?.description || sp.seo?.metaDescription || null;
-    const finalOgImage = handEditedMatch?.seo?.ogImage || sp.seo?.openGraph?.imagePath || null;
+    const finalRobots = existing?.seo?.robots
+      ? existing.seo.robots
+      : (isHome
+          ? { index: true, follow: true }
+          : (isHandEdited
+              ? (sp.seo?.robotsAfterContentReady || { index: true, follow: true })
+              : (sp.seo?.robots || { index: false, follow: true })));
 
-    // Phase 4: Deterministic placeholder sections
-    let finalSections = existing?.sections?.length && isHandEdited
+    const finalTitle = handEditedMatch?.seo?.title || handEditedMatch?.title || existing?.seo?.titleTag || sp.seo?.titleTag || `${sp.h1} | Beetrix360`;
+    const finalMetaDesc = existing?.seo?.metaDescription || handEditedMatch?.seo?.description || sp.seo?.metaDescription || null;
+    const finalOgImage = existing?.seo?.openGraph?.imagePath || handEditedMatch?.seo?.ogImage || sp.seo?.openGraph?.imagePath || null;
+    const finalIndexLock = existing?.seo?.indexLock ?? sp.seo?.indexLock;
+    const finalIndexLockReason = existing?.seo?.indexLockReason ?? sp.seo?.indexLockReason;
+    const finalIndexedAt = existing?.seo?.indexedAt ?? sp.seo?.indexedAt;
+
+    let finalSections = existing?.sections?.length
       ? existing.sections
       : (handEditedMatch?.sections?.length ? handEditedMatch.sections : []);
 
@@ -364,6 +376,9 @@ async function runMigration() {
         robots: finalRobots,
         robotsAfterContentReady: sp.seo?.robotsAfterContentReady || { index: true, follow: true },
         breadcrumbLabel: sp.seo?.breadcrumbLabel || sp.menuLabel || sp.h1,
+        indexLock: finalIndexLock,
+        indexLockReason: finalIndexLockReason,
+        indexedAt: finalIndexedAt,
         schemaTypes: sp.seo?.schemaTypes || ["WebPage"],
         faqSchemaOnlyWhenReady: sp.seo?.faqSchemaOnlyWhenReady ?? true,
         openGraph: {
@@ -413,6 +428,9 @@ async function runMigration() {
         existing.seo?.robotsAfterContentReady?.index !== pageRecord.seo.robotsAfterContentReady.index ||
         existing.seo?.robotsAfterContentReady?.follow !== pageRecord.seo.robotsAfterContentReady.follow ||
         existing.seo?.breadcrumbLabel !== pageRecord.seo.breadcrumbLabel ||
+        existing.seo?.indexLock !== pageRecord.seo.indexLock ||
+        existing.seo?.indexLockReason !== pageRecord.seo.indexLockReason ||
+        existing.seo?.indexedAt !== pageRecord.seo.indexedAt ||
         existing.seo?.faqSchemaOnlyWhenReady !== pageRecord.seo.faqSchemaOnlyWhenReady ||
         existing.seo?.openGraph?.type !== pageRecord.seo.openGraph.type ||
         existing.seo?.openGraph?.imagePath !== pageRecord.seo.openGraph.imagePath ||

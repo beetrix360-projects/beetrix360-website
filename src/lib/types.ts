@@ -362,6 +362,7 @@ export interface SeoConfigV2 {
   breadcrumbLabel: string;
   indexLock?: boolean;
   indexLockReason?: string;
+  indexedAt?: string;
   schemaTypes: string[];
   faqSchemaOnlyWhenReady: boolean;
   openGraph: {
@@ -402,6 +403,8 @@ export interface SectionBlockV2 {
   id: string;
   type: SectionBlockTypeV2;
   placeholder?: boolean;
+  generated?: boolean;
+  generatedAt?: string;
   title?: string;
   headingLevel?: "h1" | "h2" | "h3";
   content: Record<string, any>;
@@ -427,6 +430,7 @@ export interface PageRecordV2 {
   note?: string;
   updatedAt: string;
   updatedBy?: string;
+  savedInStudioAt?: string;
 }
 
 // ---- Navigation Model ----

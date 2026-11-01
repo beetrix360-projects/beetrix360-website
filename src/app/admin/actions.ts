@@ -165,6 +165,7 @@ export async function savePageV2Action(page: PageRecordV2) {
   // 7. Record audit trail
   page.updatedBy = user.name || user.email;
   page.updatedAt = new Date().toISOString();
+  page.savedInStudioAt = new Date().toISOString();
 
   // 8. Save via path-based DB store
   await savePage(page);

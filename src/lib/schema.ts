@@ -65,32 +65,19 @@ export function serviceSchema(opts: {
   name: string;
   keyword: string;
   path: string;
-  division: Division;
-  parent?: Service;
-  children?: { name: string; path: string }[];
+  description?: string;
+  division?: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${absoluteUrl(opts.path)}#service`,
     name: opts.name,
+    description: opts.description || "",
     serviceType: opts.keyword,
     url: absoluteUrl(opts.path),
     provider: { "@id": ORG_ID },
-    category: opts.division.name,
-    ...(opts.parent ? { isRelatedTo: { "@type": "Service", name: opts.parent.name, url: absoluteUrl(`/${opts.parent.slug}`) } } : {}),
-    ...(opts.children?.length
-      ? {
-          hasOfferCatalog: {
-            "@type": "OfferCatalog",
-            name: opts.name,
-            itemListElement: opts.children.map((c) => ({
-              "@type": "Offer",
-              itemOffered: { "@type": "Service", name: c.name, url: absoluteUrl(c.path) },
-            })),
-          },
-        }
-      : {}),
+    ...(opts.division ? { category: opts.division } : {}),
   };
 }
 
@@ -103,13 +90,27 @@ export function itemListSchema(name: string, items: { name: string; path: string
   };
 }
 
-/** Only emitted when real FAQ content exists (added later from the dashboard). */
+/**
+ * Only emitted when real FAQ content exists (no placeholders, no brackets).
+ */
 export function faqSchema(faqs: FaqItem[] | undefined) {
   if (!faqs?.length) return null;
+  const validFaqs = faqs.filter(
+    (f) =>
+      typeof f.question === "string" &&
+      typeof f.answer === "string" &&
+      !f.question.includes("[") &&
+      !f.question.includes("]") &&
+      !f.answer.includes("[") &&
+      !f.answer.includes("]") &&
+      f.answer.trim().length > 0
+  );
+  if (!validFaqs.length) return null;
+
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((f) => ({
+    mainEntity: validFaqs.map((f) => ({
       "@type": "Question",
       name: f.question,
       acceptedAnswer: { "@type": "Answer", text: f.answer },
@@ -163,26 +164,26 @@ export function buildPageJsonLd(page: PageRecordV2, allPages: PageRecordV2[]): a
     );
   }
 
-  // Service schema strictly emitted only when contentStatus is ready
+  // Service schema emitted on service, sub, and platform pages with name, description, provider (from site.json)
   if (
-    page.contentStatus === "ready" &&
-    (page.pageType === "service" ||
-      page.pageType === "sub" ||
-      page.pageType === "platform")
+    page.pageType === "service" ||
+    page.pageType === "sub" ||
+    page.pageType === "platform"
   ) {
     ldNodes.push(
       serviceSchema({
         name: page.h1,
         keyword: page.targetKeyword,
         path: page.path,
-        division: { name: page.division, slug: page.slug, services: [] },
+        description: page.seo?.metaDescription || "",
+        division: page.division,
       })
     );
   }
 
-  // FAQ Schema if present
-  const faqSection = page.sections?.find((s) => s.type === "faq");
-  if (faqSection?.content?.items && (!page.seo?.faqSchemaOnlyWhenReady || page.contentStatus === "ready")) {
+  // FAQ Schema if present with valid answers (no brackets)
+  const faqSection = (page.sections || []).find((s) => s.type === "faq");
+  if (faqSection?.content?.items) {
     const faqData = faqSchema(faqSection.content.items);
     if (faqData) ldNodes.push(faqData);
   }
