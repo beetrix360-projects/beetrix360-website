@@ -1,3 +1,4 @@
+import { RAW_REDIRECT_MAP } from "./redirect-map";
 import "server-only";
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import {
@@ -82,6 +83,20 @@ function ensureLocalStore(): Record<string, any> {
     const site = path.join(process.cwd(), "src/content/site.json");
     if (fs.existsSync(site)) {
       seed["SITE#config:SETTINGS"] = JSON.parse(fs.readFileSync(site, "utf-8"));
+    }
+    const seedFile = path.join(process.cwd(), "src/content/ia-v2.seed.json");
+    if (fs.existsSync(seedFile)) {
+      const seedData = JSON.parse(fs.readFileSync(seedFile, "utf-8"));
+      if (seedData.navigation) {
+        seed["SITE#config:NAVIGATION"] = seedData.navigation;
+      }
+      if (Array.isArray(seedData.pages)) {
+        for (const page of seedData.pages) {
+          if (page && page.path) {
+            seed[`PAGE:${normalizePath(page.path)}`] = page;
+          }
+        }
+      }
     }
   } catch (err) {
     console.error("Failed to seed initial local content store:", err);
@@ -245,7 +260,18 @@ export function normalizePath(p: string): string {
  */
 export async function getPageByPath(rawPath: string): Promise<PageRecordV2 | null> {
   const normalized = normalizePath(rawPath);
-  return getDbItem<PageRecordV2>("PAGE", normalized);
+  const custom = await getDbItem<PageRecordV2>("PAGE", normalized);
+  if (custom && custom.path) {
+    return custom;
+  }
+  try {
+    const seed = require("@/content/ia-v2.seed.json");
+    if (seed && Array.isArray(seed.pages)) {
+      const match = seed.pages.find((p: any) => normalizePath(p.path) === normalized);
+      if (match) return match as PageRecordV2;
+    }
+  } catch {}
+  return null;
 }
 
 /**
@@ -253,9 +279,19 @@ export async function getPageByPath(rawPath: string): Promise<PageRecordV2 | nul
  */
 export async function getAllPages(): Promise<PageRecordV2[]> {
   const pages = await queryDbByPk<PageRecordV2>("PAGE");
-  return pages.filter(
+  const valid = pages.filter(
     (p) => p && typeof p === "object" && typeof p.path === "string" && p.path.trim().length > 0
   );
+  if (valid.length > 0) {
+    return valid;
+  }
+  try {
+    const seed = require("@/content/ia-v2.seed.json");
+    if (seed && Array.isArray(seed.pages)) {
+      return seed.pages as PageRecordV2[];
+    }
+  } catch {}
+  return [];
 }
 
 /**
@@ -281,14 +317,37 @@ export async function deletePageByPath(rawPath: string): Promise<void> {
  */
 export async function getRedirect(rawPath: string): Promise<RedirectRecord | null> {
   const normalized = normalizePath(rawPath);
-  return getDbItem<RedirectRecord>("REDIRECT", normalized);
+  const custom = await getDbItem<RedirectRecord>("REDIRECT", normalized);
+  if (custom && custom.to) {
+    return custom;
+  }
+  const legacy = RAW_REDIRECT_MAP[normalized];
+  if (legacy) {
+    return {
+      from: normalized,
+      to: legacy.to,
+      status: 301,
+      createdAt: "2026-10-31T00:00:00.000Z",
+    };
+  }
+  return null;
 }
 
 /**
  * Retrieve all redirect records.
  */
 export async function getAllRedirects(): Promise<RedirectRecord[]> {
-  return queryDbByPk<RedirectRecord>("REDIRECT");
+  const custom = await queryDbByPk<RedirectRecord>("REDIRECT");
+  const valid = custom.filter((r) => r && typeof r.from === "string" && typeof r.to === "string");
+  if (valid.length > 0) {
+    return valid;
+  }
+  return Object.entries(RAW_REDIRECT_MAP).map(([from, target]) => ({
+    from,
+    to: target.to,
+    status: 301,
+    createdAt: "2026-10-31T00:00:00.000Z",
+  }));
 }
 
 /**
@@ -327,7 +386,19 @@ export async function deleteRedirect(rawFrom: string): Promise<void> {
  * Retrieve the current navigation record.
  */
 export async function getNavigation(): Promise<NavigationRecord | null> {
-  return getDbItem<NavigationRecord>("SITE#config", "NAVIGATION");
+  const custom = await getDbItem<NavigationRecord>("SITE#config", "NAVIGATION");
+  if (custom && Array.isArray(custom.menus) && custom.menus.length > 0) {
+    return custom;
+  }
+  try {
+    const seed = require("@/content/ia-v2.seed.json");
+    if (seed && seed.navigation && Array.isArray(seed.navigation.menus)) {
+      return seed.navigation as NavigationRecord;
+    }
+  } catch (err) {
+    console.error("Failed to load fallback navigation:", err);
+  }
+  return null;
 }
 
 /**
