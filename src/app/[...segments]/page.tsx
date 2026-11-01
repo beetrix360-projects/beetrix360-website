@@ -13,13 +13,23 @@ import { getSessionUser } from "@/lib/auth";
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  // Pre-generate parameters from the page store for fast build & ISR
-  const pages = await getAllPages();
-  return pages
-    .filter((p) => p.path !== "/")
-    .map((p) => ({
-      segments: p.path.replace(/^\//, "").split("/"),
-    }));
+  try {
+    // Pre-generate parameters from the page store for fast build & ISR
+    const pages = await getAllPages();
+    if (!Array.isArray(pages)) return [];
+    return pages
+      .filter((p) => p && typeof p.path === "string" && p.path.trim() !== "/" && p.path.trim().length > 0)
+      .map((p) => {
+        const clean = p.path.trim().replace(/^\/+|\/+$/g, "");
+        return {
+          segments: clean ? clean.split("/").filter(Boolean) : [],
+        };
+      })
+      .filter((entry) => entry.segments.length > 0);
+  } catch (err) {
+    console.warn("[generateStaticParams] Warning during build:", err);
+    return [];
+  }
 }
 
 interface PageProps {

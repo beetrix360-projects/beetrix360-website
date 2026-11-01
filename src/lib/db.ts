@@ -156,16 +156,36 @@ export async function putDbItem(pk: string, sk: string, data: any): Promise<void
 export async function queryDbByPk<T>(pk: string): Promise<T[]> {
   if (ddbDocClient && process.env.CONTENT_SOURCE === "dynamodb") {
     try {
-      const res = await ddbDocClient.send(
-        new QueryCommand({
-          TableName: TABLE_NAME,
-          KeyConditionExpression: "pk = :pk",
-          ExpressionAttributeValues: { ":pk": pk },
-        })
-      );
-      if (res.Items) {
-        return res.Items.map((item) => (item.data ?? item) as T);
-      }
+      const allItems: any[] = [];
+      let exclusiveStartKey: Record<string, any> | undefined = undefined;
+
+      do {
+        const res: any = await ddbDocClient.send(
+          new QueryCommand({
+            TableName: TABLE_NAME,
+            KeyConditionExpression: "pk = :pk",
+            ExpressionAttributeValues: { ":pk": pk },
+            ExclusiveStartKey: exclusiveStartKey,
+          })
+        );
+        if (res.Items) {
+          allItems.push(...res.Items);
+        }
+        exclusiveStartKey = res.LastEvaluatedKey;
+      } while (exclusiveStartKey);
+
+      return allItems.map((item) => {
+        const unwrapped =
+          item && item.data && typeof item.data === "object"
+            ? { ...item.data }
+            : item && typeof item === "object"
+            ? { ...item }
+            : item;
+        if (unwrapped && typeof unwrapped === "object" && !unwrapped.path && item.sk) {
+          unwrapped.path = item.sk;
+        }
+        return unwrapped as T;
+      });
     } catch (err) {
       console.warn(`[DynamoDB Query Error ${pk}]: Falling back to local store`, err);
     }
@@ -176,7 +196,11 @@ export async function queryDbByPk<T>(pk: string): Promise<T[]> {
   const results: T[] = [];
   for (const [k, v] of Object.entries(store)) {
     if (k.startsWith(prefix)) {
-      results.push(v as T);
+      const unwrapped = v && typeof v === "object" ? { ...v } : v;
+      if (unwrapped && typeof unwrapped === "object" && !unwrapped.path) {
+        unwrapped.path = k.slice(prefix.length);
+      }
+      results.push(unwrapped as T);
     }
   }
   return results;
@@ -228,7 +252,10 @@ export async function getPageByPath(rawPath: string): Promise<PageRecordV2 | nul
  * Retrieve all pages.
  */
 export async function getAllPages(): Promise<PageRecordV2[]> {
-  return queryDbByPk<PageRecordV2>("PAGE");
+  const pages = await queryDbByPk<PageRecordV2>("PAGE");
+  return pages.filter(
+    (p) => p && typeof p === "object" && typeof p.path === "string" && p.path.trim().length > 0
+  );
 }
 
 /**

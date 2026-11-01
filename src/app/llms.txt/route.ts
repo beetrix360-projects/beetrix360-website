@@ -33,7 +33,7 @@ export async function GET() {
 
   // Exactly the same set of indexed pages as sitemap.xml
   const indexedPages = pages
-    .filter((p) => p.published && p.seo?.robots?.index === true && !p.seo?.indexLock)
+    .filter((p) => p && typeof p.path === "string" && p.published && p.seo?.robots?.index === true && !p.seo?.indexLock)
     .sort((a, b) => (a.path === "/" ? -1 : b.path === "/" ? 1 : a.path.localeCompare(b.path)));
 
   lines.push("## Indexed Pages", "");

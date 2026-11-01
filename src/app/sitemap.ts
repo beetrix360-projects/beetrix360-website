@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Exactly published pages with seo.robots.index === true and not locked
   const indexablePages = pages.filter(
-    (p) => p.published && p.seo?.robots?.index === true && !p.seo?.indexLock
+    (p) => p && typeof p.path === "string" && p.published && p.seo?.robots?.index === true && !p.seo?.indexLock
   );
 
   return indexablePages.map((p) => {
