@@ -327,9 +327,10 @@ async function runMigration() {
     const finalTitle = handEditedMatch?.seo?.title || handEditedMatch?.title || existing?.seo?.titleTag || sp.seo?.titleTag || `${sp.h1} | Beetrix360`;
     const finalMetaDesc = existing?.seo?.metaDescription || handEditedMatch?.seo?.description || sp.seo?.metaDescription || null;
     const finalOgImage = existing?.seo?.openGraph?.imagePath || handEditedMatch?.seo?.ogImage || sp.seo?.openGraph?.imagePath || null;
-    const finalIndexLock = existing?.seo?.indexLock ?? sp.seo?.indexLock;
-    const finalIndexLockReason = existing?.seo?.indexLockReason ?? sp.seo?.indexLockReason;
-    const finalIndexedAt = existing?.seo?.indexedAt ?? sp.seo?.indexedAt;
+    const spSeo = sp.seo as (PageRecordV2["seo"] | undefined);
+    const finalIndexLock = existing?.seo?.indexLock ?? spSeo?.indexLock;
+    const finalIndexLockReason = existing?.seo?.indexLockReason ?? spSeo?.indexLockReason;
+    const finalIndexedAt = existing?.seo?.indexedAt ?? spSeo?.indexedAt;
 
     let finalSections = existing?.sections?.length
       ? existing.sections
