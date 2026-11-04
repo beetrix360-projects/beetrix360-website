@@ -4,7 +4,7 @@ import { PUZZLE_PATHS, Wordmark } from "@/components/ui";
 export function Logo({ floating = false }: { floating?: boolean }) {
   return (
     <>
-      <svg viewBox="0 0 100 100" className="w-10 h-10 overflow-visible" aria-hidden="true">
+      <svg viewBox="0 0 100 100" className="w-8 h-8 xl:w-9 xl:h-9 2xl:w-10 2xl:h-10 overflow-visible shrink-0" aria-hidden="true">
         <path d={PUZZLE_PATHS.green} fill="#2CB383" />
         <path d={PUZZLE_PATHS.yellow} fill="#FAB12F" />
         <path d={PUZZLE_PATHS.blue} fill="#3ABEF9" />
@@ -12,7 +12,7 @@ export function Logo({ floating = false }: { floating?: boolean }) {
           <path d={PUZZLE_PATHS.pink} fill="#DE2056" />
         </g>
       </svg>
-      <Wordmark />
+      <Wordmark className="text-base xl:text-lg 2xl:text-xl shrink-0" />
     </>
   );
 }
