@@ -16,9 +16,10 @@ export function FourPillars({ p }: PillarsProps) {
     <section
       id="pillars"
       aria-labelledby="pillars-title"
-      className="relative bg-bx-surface border-y border-bx-border py-20 lg:py-0 lg:h-screen lg:flex lg:items-center lg:overflow-hidden"
+      className="relative bg-bx-surface border-y border-bx-border py-20 lg:py-0"
     >
-      <div className={`w-full mx-auto ${PAD} grid lg:grid-cols-12 gap-10 lg:gap-14 items-center`}>
+      <div id="pillars-pinned" className="w-full lg:h-screen lg:flex lg:items-center lg:overflow-hidden">
+        <div className={`w-full mx-auto ${PAD} grid lg:grid-cols-12 gap-10 lg:gap-14 items-center`}>
         <div className="lg:col-span-5">
           <Eyebrow eyebrow={p.eyebrow} />
           <h2 id="pillars-title" data-split="" className="font-heading font-extrabold text-4xl sm:text-6xl 2xl:text-7xl tracking-tight leading-[1.05] mt-4">
@@ -107,6 +108,7 @@ export function FourPillars({ p }: PillarsProps) {
                 </article>
               );
             })}
+          </div>
           </div>
         </div>
       </div>

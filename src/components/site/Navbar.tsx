@@ -252,13 +252,13 @@ export function Navbar({ site, navigation }: NavbarProps) {
                                   <ul className="space-y-2 list-none p-0 m-0">
                                     {visibleItems
                                       .slice(0, Math.ceil(visibleItems.length / 2))
-                                      .map((it) => (
-                                        <li key={it.path}>
+                                      .map((it, itIdx) => (
+                                        <li key={it.path || `item-a-${itIdx}`}>
                                           <Link
                                             href={it.path}
                                             className="text-xs text-neutral-600 hover:text-bx-pink hover:translate-x-1 transition-all block py-1 font-medium"
                                           >
-                                            {it.label}
+                                            {it.label || it.path}
                                           </Link>
                                         </li>
                                       ))}
@@ -266,13 +266,13 @@ export function Navbar({ site, navigation }: NavbarProps) {
                                   <ul className="space-y-2 list-none p-0 m-0">
                                     {visibleItems
                                       .slice(Math.ceil(visibleItems.length / 2))
-                                      .map((it) => (
-                                        <li key={it.path}>
+                                      .map((it, itIdx) => (
+                                        <li key={it.path || `item-b-${itIdx}`}>
                                           <Link
                                             href={it.path}
                                             className="text-xs text-neutral-600 hover:text-bx-pink hover:translate-x-1 transition-all block py-1 font-medium"
                                           >
-                                            {it.label}
+                                            {it.label || it.path}
                                           </Link>
                                         </li>
                                       ))}
@@ -280,13 +280,13 @@ export function Navbar({ site, navigation }: NavbarProps) {
                                 </div>
                               ) : (
                                 <ul className="space-y-2 list-none p-0 m-0">
-                                  {visibleItems.map((it) => (
-                                    <li key={it.path}>
+                                  {visibleItems.map((it, itIdx) => (
+                                    <li key={it.path || `item-${itIdx}`}>
                                       <Link
                                         href={it.path}
                                         className="text-xs text-neutral-600 hover:text-bx-pink hover:translate-x-1 transition-all block py-1 font-medium"
                                       >
-                                        {it.label}
+                                        {it.label || it.path}
                                       </Link>
                                     </li>
                                   ))}
@@ -309,7 +309,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                             </div>
                             <div className="mt-6 pt-4 border-t border-white/10">
                               <Link
-                                href={menu.proofCard.path}
+                                href={menu.proofCard.path || "/case-studies"}
                                 className="inline-flex items-center gap-1.5 text-xs font-bold text-bx-pink hover:text-white transition"
                               >
                                 {menu.proofCard.cta} <ArrowRight className="w-3.5 h-3.5" />
@@ -322,22 +322,27 @@ export function Navbar({ site, navigation }: NavbarProps) {
                       {/* Bottom Bar: View all link & bottomBarLinks */}
                       <div className="mt-8 pt-6 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-4 text-xs">
                         <Link
-                          href={menu.viewAllPath}
+                          href={menu.viewAllPath || "/"}
                           className="font-semibold text-bx-pink hover:underline flex items-center gap-1.5"
                         >
                           View all in {menu.label} <ArrowRight className="w-3.5 h-3.5" />
                         </Link>
                         {menu.bottomBarLinks && menu.bottomBarLinks.length > 0 && (
                           <div className="flex items-center gap-4 text-neutral-500">
-                            {menu.bottomBarLinks.map((link) => (
-                              <Link
-                                key={link.path}
-                                href={link.path}
-                                className="hover:text-neutral-900 transition"
-                              >
-                                {link.label}
-                              </Link>
-                            ))}
+                            {menu.bottomBarLinks.map((link: any, lIdx: number) => {
+                              const path = typeof link === "string" ? link : link?.path;
+                              const label = (typeof link === "object" ? link?.label : null) || path;
+                              if (!path) return null;
+                              return (
+                                <Link
+                                  key={path || `bottom-${lIdx}`}
+                                  href={path}
+                                  className="hover:text-neutral-900 transition"
+                                >
+                                  {label}
+                                </Link>
+                              );
+                            })}
                           </div>
                         )}
                       </div>
@@ -438,13 +443,13 @@ export function Navbar({ site, navigation }: NavbarProps) {
                               </span>
                             )}
                             <ul className="space-y-2 list-none p-0 m-0">
-                              {items.map((it) => (
-                                <li key={it.path}>
+                              {items.map((it, itIdx) => (
+                                <li key={it.path || `mobile-it-${itIdx}`}>
                                   <Link
                                     href={it.path}
                                     className="text-sm text-neutral-700 hover:text-bx-pink block py-1"
                                   >
-                                    {it.label}
+                                    {it.label || it.path}
                                   </Link>
                                 </li>
                               ))}

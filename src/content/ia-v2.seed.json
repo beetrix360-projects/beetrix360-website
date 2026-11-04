@@ -6016,9 +6016,18 @@
         "label": "AI Search & SEO",
         "viewAllPath": "/seo",
         "bottomBarLinks": [
-          "/pricing/seo-cost",
-          "/pricing/geo-cost",
-          "/pricing/local-seo-pricing"
+          {
+            "label": "How Much Does SEO Cost?",
+            "path": "/pricing/seo-cost"
+          },
+          {
+            "label": "How Much Does Generative Engine Optimization Cost?",
+            "path": "/pricing/geo-cost"
+          },
+          {
+            "label": "Local SEO Pricing",
+            "path": "/pricing/local-seo-pricing"
+          }
         ],
         "groups": [
           {
@@ -6027,18 +6036,23 @@
             "span": 1,
             "items": [
               {
+                "label": "Local SEO",
                 "path": "/seo/local-seo"
               },
               {
+                "label": "Technical SEO",
                 "path": "/seo/technical-seo"
               },
               {
+                "label": "On-Page SEO",
                 "path": "/seo/on-page-seo"
               },
               {
+                "label": "Link Building",
                 "path": "/seo/link-building"
               },
               {
+                "label": "Ecommerce SEO",
                 "path": "/seo/ecommerce-seo"
               }
             ]
@@ -6049,21 +6063,27 @@
             "span": 1,
             "items": [
               {
+                "label": "Generative Engine & LLM Optimization (GEO)",
                 "path": "/seo/generative-engine-optimization"
               },
               {
+                "label": "Answer Engine Optimization (AEO)",
                 "path": "/seo/answer-engine-optimization"
               },
               {
+                "label": "Programmatic SEO",
                 "path": "/seo/programmatic-seo"
               },
               {
+                "label": "ChatGPT Optimization",
                 "path": "/seo/chatgpt-optimization"
               },
               {
+                "label": "AI & LLM Visibility Tracking",
                 "path": "/seo/ai-visibility-tracking"
               },
               {
+                "label": "AI Brand Perception",
                 "path": "/seo/ai-brand-perception"
               }
             ]
@@ -6074,15 +6094,19 @@
             "span": 1,
             "items": [
               {
+                "label": "Keyword Research",
                 "path": "/seo/keyword-research"
               },
               {
+                "label": "Digital Marketing Competitor Analysis",
                 "path": "/digital-marketing/competitor-analysis"
               },
               {
+                "label": "Enterprise SEO",
                 "path": "/seo/enterprise-seo"
               },
               {
+                "label": "Enterprise GEO",
                 "path": "/seo/enterprise-geo"
               }
             ]
@@ -6093,12 +6117,15 @@
             "span": 1,
             "items": [
               {
+                "label": "Our Results",
                 "path": "/results"
               },
               {
+                "label": "Case Studies",
                 "path": "/case-studies"
               },
               {
+                "label": "Our AI Search Approach",
                 "path": "/about/our-approach/ai-search"
               },
               {
@@ -6120,7 +6147,10 @@
         "label": "Paid Media & Marketplaces",
         "viewAllPath": "/paid-media",
         "bottomBarLinks": [
-          "/pricing/ppc-cost"
+          {
+            "label": "How Much Does PPC Cost?",
+            "path": "/pricing/ppc-cost"
+          }
         ],
         "groups": [
           {
@@ -6129,15 +6159,19 @@
             "span": 1,
             "items": [
               {
+                "label": "Google Ads Management",
                 "path": "/paid-media/google-ads"
               },
               {
+                "label": "Google Local Services Ads Management",
                 "path": "/paid-media/google-local-services-ads"
               },
               {
+                "label": "Programmatic Advertising",
                 "path": "/paid-media/programmatic-advertising"
               },
               {
+                "label": "Enterprise PPC Management",
                 "path": "/paid-media/enterprise-ppc"
               }
             ]
@@ -6148,15 +6182,19 @@
             "span": 1,
             "items": [
               {
+                "label": "Meta Ads Management",
                 "path": "/paid-media/meta-ads"
               },
               {
+                "label": "TikTok Ads Management",
                 "path": "/paid-media/tiktok-ads"
               },
               {
+                "label": "Influencer Marketing",
                 "path": "/social-media/influencer-marketing"
               },
               {
+                "label": "Enterprise Social Media Advertising",
                 "path": "/paid-media/enterprise-social-advertising"
               }
             ]
@@ -6167,33 +6205,43 @@
             "span": 2,
             "items": [
               {
+                "label": "Amazon Management Services",
                 "path": "/marketplaces/amazon"
               },
               {
+                "label": "Amazon Advertising Management",
                 "path": "/marketplaces/amazon/advertising"
               },
               {
+                "label": "Amazon SEO & Listing Optimization",
                 "path": "/marketplaces/amazon/seo"
               },
               {
+                "label": "Amazon DSP Management",
                 "path": "/marketplaces/amazon/dsp"
               },
               {
+                "label": "Amazon Seller Operations Management",
                 "path": "/marketplaces/amazon/seller-operations"
               },
               {
+                "label": "Amazon Brand Management",
                 "path": "/marketplaces/amazon/brand-management"
               },
               {
+                "label": "Amazon Creator Connections",
                 "path": "/marketplaces/amazon/creator-connections"
               },
               {
+                "label": "Enterprise Amazon Advertising",
                 "path": "/marketplaces/amazon/enterprise-advertising"
               },
               {
+                "label": "Walmart Marketplace & Ads Management",
                 "path": "/marketplaces/walmart"
               },
               {
+                "label": "Target Plus & Roundel Ads Management",
                 "path": "/marketplaces/target"
               }
             ]
@@ -6210,7 +6258,10 @@
         "label": "Brand, Content & Social",
         "viewAllPath": "/digital-marketing",
         "bottomBarLinks": [
-          "/pricing/social-media-pricing"
+          {
+            "label": "Social Media Pricing",
+            "path": "/pricing/social-media-pricing"
+          }
         ],
         "groups": [
           {
@@ -6219,21 +6270,27 @@
             "span": 1,
             "items": [
               {
+                "label": "Brand Strategy",
                 "path": "/branding/brand-strategy"
               },
               {
+                "label": "Business Naming",
                 "path": "/branding/business-naming"
               },
               {
+                "label": "Brand Identity Design",
                 "path": "/branding/brand-identity-design"
               },
               {
+                "label": "Logo Design",
                 "path": "/branding/logo-design"
               },
               {
+                "label": "Collateral Design",
                 "path": "/branding/collateral-design"
               },
               {
+                "label": "Packaging & Label Design",
                 "path": "/branding/packaging-label-design"
               }
             ]
@@ -6244,24 +6301,31 @@
             "span": 2,
             "items": [
               {
+                "label": "Instagram Management",
                 "path": "/social-media/instagram-management"
               },
               {
+                "label": "Facebook Management",
                 "path": "/social-media/facebook-management"
               },
               {
+                "label": "LinkedIn Management",
                 "path": "/social-media/linkedin-management"
               },
               {
+                "label": "TikTok Account Management",
                 "path": "/social-media/tiktok-management"
               },
               {
+                "label": "Social Media Content & Design",
                 "path": "/social-media/content-and-design"
               },
               {
+                "label": "Community Management",
                 "path": "/social-media/community-management"
               },
               {
+                "label": "Enterprise Social Media Management",
                 "path": "/social-media/enterprise-management"
               }
             ]
@@ -6272,12 +6336,15 @@
             "span": 1,
             "items": [
               {
+                "label": "Digital Marketing Services",
                 "path": "/digital-marketing"
               },
               {
+                "label": "Website Copywriting",
                 "path": "/content-marketing/website-copywriting"
               },
               {
+                "label": "Infographics & Motion Graphics",
                 "path": "/content-marketing/infographics-motion-graphics"
               }
             ]
@@ -6301,12 +6368,15 @@
             "span": 1,
             "items": [
               {
+                "label": "AI Blog Writing",
                 "path": "/ai-content/writing/blog-writing"
               },
               {
+                "label": "AI Copywriting",
                 "path": "/ai-content/writing/copywriting"
               },
               {
+                "label": "AI Product Descriptions",
                 "path": "/ai-content/writing/product-descriptions"
               }
             ]
@@ -6317,15 +6387,19 @@
             "span": 1,
             "items": [
               {
+                "label": "AI Avatar Videos",
                 "path": "/ai-content/video/avatar-videos"
               },
               {
+                "label": "AI Explainer & Faceless Videos",
                 "path": "/ai-content/video/faceless-videos"
               },
               {
+                "label": "AI Video Ads",
                 "path": "/ai-content/video/video-ads"
               },
               {
+                "label": "AI Product Videos",
                 "path": "/ai-content/video/product-videos"
               }
             ]
@@ -6336,12 +6410,15 @@
             "span": 1,
             "items": [
               {
+                "label": "AI Product Photography",
                 "path": "/ai-content/images/product-photography"
               },
               {
+                "label": "AI Ad Creatives",
                 "path": "/ai-content/images/ad-creatives"
               },
               {
+                "label": "AI Lifestyle Images",
                 "path": "/ai-content/images/lifestyle-images"
               }
             ]
@@ -6352,21 +6429,27 @@
             "span": 1,
             "items": [
               {
+                "label": "AI Social Media Content",
                 "path": "/ai-content/social-media"
               },
               {
+                "label": "AI Reels & Shorts",
                 "path": "/ai-content/social-media/reels-shorts"
               },
               {
+                "label": "AI UGC Ads",
                 "path": "/ai-content/ugc-ads"
               },
               {
+                "label": "AI UGC Avatars",
                 "path": "/ai-content/ugc-ads/ugc-avatars"
               },
               {
+                "label": "AI TikTok UGC Ads",
                 "path": "/ai-content/ugc-ads/tiktok-ugc-ads"
               },
               {
+                "label": "Enterprise AI Content",
                 "path": "/ai-content/enterprise"
               }
             ]
@@ -6382,7 +6465,10 @@
         "label": "Web & Conversion",
         "viewAllPath": "/web-design",
         "bottomBarLinks": [
-          "/pricing/website-cost"
+          {
+            "label": "How Much Should a Website Cost?",
+            "path": "/pricing/website-cost"
+          }
         ],
         "groups": [
           {
@@ -6391,15 +6477,19 @@
             "span": 1,
             "items": [
               {
+                "label": "Website Redesign",
                 "path": "/web-design/redesign"
               },
               {
+                "label": "Rapid Web Design",
                 "path": "/web-design/rapid-web-design"
               },
               {
+                "label": "Ecommerce Website Design",
                 "path": "/web-design/ecommerce"
               },
               {
+                "label": "Landing Page Design",
                 "path": "/web-design/landing-pages"
               }
             ]
@@ -6410,21 +6500,27 @@
             "span": 1,
             "items": [
               {
+                "label": "WordPress Development",
                 "path": "/web-development/wordpress"
               },
               {
+                "label": "Ecommerce Development",
                 "path": "/web-development/ecommerce"
               },
               {
+                "label": "Web Apps & Portals",
                 "path": "/web-development/web-applications"
               },
               {
+                "label": "CMS Development",
                 "path": "/web-development/cms"
               },
               {
+                "label": "Website Security",
                 "path": "/web-development/site-security"
               },
               {
+                "label": "Web Infrastructure & Maintenance",
                 "path": "/web-development/maintenance"
               }
             ]
@@ -6435,30 +6531,39 @@
             "span": 2,
             "items": [
               {
+                "label": "Sales Funnel Development",
                 "path": "/conversion/sales-funnels"
               },
               {
+                "label": "Lead Generation",
                 "path": "/conversion/lead-generation"
               },
               {
+                "label": "Marketing Automation",
                 "path": "/automation/marketing-automation"
               },
               {
+                "label": "Analytics & Tracking Setup",
                 "path": "/conversion/analytics-tracking"
               },
               {
+                "label": "Website Personalization",
                 "path": "/conversion/website-personalization"
               },
               {
+                "label": "Online Review Generation",
                 "path": "/conversion/review-generation"
               },
               {
+                "label": "Account-Based Marketing",
                 "path": "/conversion/account-based-marketing"
               },
               {
+                "label": "Salesforce Marketing Automation",
                 "path": "/automation/salesforce-marketing-automation"
               },
               {
+                "label": "Channel Partner Pipeline Management",
                 "path": "/automation/channel-partner-pipeline"
               }
             ]
@@ -6469,15 +6574,19 @@
             "span": 1,
             "items": [
               {
+                "label": "Email Campaign Management",
                 "path": "/email-marketing/campaign-management"
               },
               {
+                "label": "Email Automation",
                 "path": "/email-marketing/automation"
               },
               {
+                "label": "Newsletter Management",
                 "path": "/email-marketing/newsletter-management"
               },
               {
+                "label": "Email Design & Testing",
                 "path": "/email-marketing/design-testing"
               }
             ]
@@ -6489,7 +6598,10 @@
         "label": "AI & Automation",
         "viewAllPath": "/ai",
         "bottomBarLinks": [
-          "/pricing/ai-automation-cost"
+          {
+            "label": "How Much Does AI Automation Cost?",
+            "path": "/pricing/ai-automation-cost"
+          }
         ],
         "groups": [
           {
@@ -6498,27 +6610,35 @@
             "span": 2,
             "items": [
               {
+                "label": "Custom AI Agents",
                 "path": "/ai/agent-development/custom-ai-agents"
               },
               {
+                "label": "AI Sales Agents",
                 "path": "/ai/agent-development/ai-sales-agents"
               },
               {
+                "label": "AI Customer Service Agents",
                 "path": "/ai/agent-development/ai-customer-service-agents"
               },
               {
+                "label": "Multi-Agent Systems",
                 "path": "/ai/agent-development/multi-agent-systems"
               },
               {
+                "label": "AI Chatbot Development",
                 "path": "/ai/chatbot-development"
               },
               {
+                "label": "Website Chatbots",
                 "path": "/ai/chatbot-development/website-chatbots"
               },
               {
+                "label": "WhatsApp Chatbots",
                 "path": "/ai/chatbot-development/whatsapp-chatbots"
               },
               {
+                "label": "Ecommerce Chatbots",
                 "path": "/ai/chatbot-development/ecommerce-chatbots"
               }
             ]
@@ -6529,21 +6649,27 @@
             "span": 1,
             "items": [
               {
+                "label": "Business Process Automation",
                 "path": "/automation/business-process-automation"
               },
               {
+                "label": "Document Processing Automation",
                 "path": "/automation/document-processing"
               },
               {
+                "label": "Data Entry & Sync Automation",
                 "path": "/automation/data-entry-automation"
               },
               {
+                "label": "API & Systems Integration",
                 "path": "/automation/api-integration"
               },
               {
+                "label": "Low-Code & No-Code Automation",
                 "path": "/automation/no-code-automation"
               },
               {
+                "label": "CRM Automation",
                 "path": "/automation/crm-automation"
               }
             ]
@@ -6554,21 +6680,27 @@
             "span": 1,
             "items": [
               {
+                "label": "AI Consulting",
                 "path": "/ai/consulting"
               },
               {
+                "label": "ChatGPT API Integration",
                 "path": "/ai/integration/chatgpt-integration"
               },
               {
+                "label": "CRM AI Integration",
                 "path": "/ai/integration/crm-ai-integration"
               },
               {
+                "label": "AI Software Integration",
                 "path": "/ai/integration/ai-software-integration"
               },
               {
+                "label": "AI Digital Marketing Services",
                 "path": "/digital-marketing/ai-digital-marketing"
               },
               {
+                "label": "Enterprise AI Automation",
                 "path": "/ai/enterprise-automation"
               }
             ]
@@ -6591,30 +6723,39 @@
             "span": 2,
             "items": [
               {
+                "label": "Our Approach",
                 "path": "/about/our-approach"
               },
               {
+                "label": "Case Studies",
                 "path": "/case-studies"
               },
               {
+                "label": "Portfolio",
                 "path": "/portfolio"
               },
               {
+                "label": "Careers",
                 "path": "/careers"
               },
               {
+                "label": "Contact",
                 "path": "/contact"
               },
               {
+                "label": "Company Values",
                 "path": "/about/values"
               },
               {
+                "label": "Our History",
                 "path": "/about/history"
               },
               {
+                "label": "Industries",
                 "path": "/industries"
               },
               {
+                "label": "Blog",
                 "path": "/blog"
               }
             ]
@@ -6625,24 +6766,31 @@
             "span": 2,
             "items": [
               {
+                "label": "My Website Doesn't Drive Leads",
                 "path": "/challenges/website-doesnt-drive-leads"
               },
               {
+                "label": "My Website Traffic Is Going Down",
                 "path": "/challenges/website-traffic-going-down"
               },
               {
+                "label": "My Website Doesn't Convert",
                 "path": "/challenges/website-doesnt-convert"
               },
               {
+                "label": "My Website Isn't Appearing in AI Search",
                 "path": "/challenges/not-appearing-in-ai-search"
               },
               {
+                "label": "My Agency Isn't Driving Results",
                 "path": "/challenges/agency-isnt-driving-results"
               },
               {
+                "label": "My Team Is Buried in Manual Work",
                 "path": "/challenges/too-much-manual-work"
               },
               {
+                "label": "My Ads Spend but Don't Sell",
                 "path": "/challenges/ads-spend-but-dont-sell"
               }
             ]

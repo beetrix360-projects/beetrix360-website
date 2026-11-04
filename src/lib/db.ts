@@ -385,15 +385,91 @@ export async function deleteRedirect(rawFrom: string): Promise<void> {
 /**
  * Retrieve the current navigation record.
  */
+function normalizeNavigationRecord(nav: NavigationRecord): NavigationRecord {
+  if (!nav || !Array.isArray(nav.menus)) return nav;
+
+  let pageMap: Map<string, any> | null = null;
+  const getPageMap = () => {
+    if (!pageMap) {
+      pageMap = new Map();
+      try {
+        const seed = require("@/content/ia-v2.seed.json");
+        if (seed && Array.isArray(seed.pages)) {
+          for (const p of seed.pages) {
+            if (p.path) pageMap.set(p.path, p);
+          }
+        }
+      } catch {
+        // ignore
+      }
+    }
+    return pageMap;
+  };
+
+  return {
+    ...nav,
+    menus: nav.menus.map((menu) => {
+      const bottomBarLinks = Array.isArray(menu.bottomBarLinks)
+        ? menu.bottomBarLinks
+            .map((link: any) => {
+              if (typeof link === "string") {
+                const p = getPageMap().get(link);
+                return {
+                  label: p ? p.menuLabel || p.h1 : link.split("/").pop()?.replace(/-/g, " ") || link,
+                  path: link,
+                };
+              }
+              if (link && typeof link === "object") {
+                const path = link.path || "";
+                const p = path ? getPageMap().get(path) : null;
+                return {
+                  label: link.label || (p ? p.menuLabel || p.h1 : path.split("/").pop()?.replace(/-/g, " ") || "Link"),
+                  path,
+                };
+              }
+              return null;
+            })
+            .filter((l): l is { label: string; path: string } => Boolean(l && l.path))
+        : [];
+
+      const groups = Array.isArray(menu.groups)
+        ? menu.groups.map((group) => ({
+            ...group,
+            items: Array.isArray(group.items)
+              ? group.items.map((it: any) => {
+                  if (it && typeof it === "object" && !("dynamic" in it)) {
+                    const path = it.path || "";
+                    const p = path ? getPageMap().get(path) : null;
+                    return {
+                      pageId: it.pageId || p?.id || "",
+                      label: it.label || (p ? p.menuLabel || p.h1 : path.split("/").pop()?.replace(/-/g, " ") || "Page"),
+                      path,
+                    };
+                  }
+                  return it;
+                })
+              : [],
+          }))
+        : [];
+
+      return {
+        ...menu,
+        bottomBarLinks,
+        groups,
+      };
+    }),
+  };
+}
+
 export async function getNavigation(): Promise<NavigationRecord | null> {
   const custom = await getDbItem<NavigationRecord>("SITE#config", "NAVIGATION");
   if (custom && Array.isArray(custom.menus) && custom.menus.length > 0) {
-    return custom;
+    return normalizeNavigationRecord(custom);
   }
   try {
     const seed = require("@/content/ia-v2.seed.json");
     if (seed && seed.navigation && Array.isArray(seed.navigation.menus)) {
-      return seed.navigation as NavigationRecord;
+      return normalizeNavigationRecord(seed.navigation as NavigationRecord);
     }
   } catch (err) {
     console.error("Failed to load fallback navigation:", err);
@@ -405,7 +481,8 @@ export async function getNavigation(): Promise<NavigationRecord | null> {
  * Retrieve the previous navigation record backup.
  */
 export async function getPreviousNavigation(): Promise<NavigationRecord | null> {
-  return getDbItem<NavigationRecord>("SITE#config", "NAVIGATION#previous");
+  const prev = await getDbItem<NavigationRecord>("SITE#config", "NAVIGATION#previous");
+  return prev ? normalizeNavigationRecord(prev) : null;
 }
 
 /**

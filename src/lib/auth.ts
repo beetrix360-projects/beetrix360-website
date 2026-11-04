@@ -29,7 +29,8 @@ function getJwtSecret(): Uint8Array {
   const secret =
     process.env.ADMIN_JWT_SECRET ||
     process.env.BEETRIX_AUTH_SECRET ||
-    process.env.AUTH_SECRET;
+    process.env.AUTH_SECRET ||
+    (process.env.NODE_ENV !== "production" ? "beetrix360-dev-local-jwt-secret-key-32chars" : "");
   if (!secret || secret.trim() === "") {
     console.error(
       "[AUTH ERROR] ADMIN_JWT_SECRET (or AUTH_SECRET) environment variable is missing. Authentication refused."
@@ -108,7 +109,6 @@ export function setCliSessionToken(token: string | null) {
  */
 export async function getSessionUser(): Promise<UserProfile | null> {
   try {
-    const secret = getJwtSecret();
     let token: string | null = null;
 
     // CLI override only available outside production environment
@@ -125,6 +125,8 @@ export async function getSessionUser(): Promise<UserProfile | null> {
       }
     }
     if (!token) return null;
+
+    const secret = getJwtSecret();
 
     const { payload } = await jwtVerify(token, secret);
     return {

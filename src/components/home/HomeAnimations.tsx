@@ -52,7 +52,7 @@ export function HomeAnimations() {
           defaults: { ease: "none" },
           scrollTrigger: {
             trigger: "#pillars",
-            pin: true,
+            pin: "#pillars-pinned",
             start: "top top",
             end: () => "+=" + window.innerHeight * 3,
             scrub: 0.8,
@@ -816,8 +816,9 @@ export function HomeAnimations() {
     else on(window, "load", refresh);
 
     return () => {
-      ctx.revert();
+      ScrollTrigger.getAll().forEach((t) => t.kill(true));
       mm.revert();
+      ctx.revert();
       cleanups.forEach((fn) => fn());
       timers.forEach(clearTimeout);
       intervals.forEach(clearInterval);

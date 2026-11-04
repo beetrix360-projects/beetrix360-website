@@ -56,9 +56,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${bricolage.variable} ${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
     >
-      <body className="font-sans selection:bg-bx-pink selection:text-white">
+      <body suppressHydrationWarning className="font-sans selection:bg-bx-pink selection:text-white">
         <GoogleAnalyticsAndTagManager settings={analytics} />
         <JsonLd data={[organizationSchema(site), websiteSchema(site)]} />
         <MarketingShell site={site} navigation={navigation} divisions={divisions}>

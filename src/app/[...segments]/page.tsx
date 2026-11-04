@@ -168,7 +168,7 @@ export default async function CatchAllPage({ params }: PageProps) {
   return (
     <>
       <JsonLd data={ldNodes} />
-      <main className="min-h-screen bg-bx-bg text-bx-dark selection:bg-bx-pink selection:text-white">
+      <div className="min-h-screen bg-bx-bg text-bx-dark selection:bg-bx-pink selection:text-white">
         <HeroSection
           h1={page.h1}
           badge={page.division || "Beetrix360"}
@@ -180,7 +180,7 @@ export default async function CatchAllPage({ params }: PageProps) {
           secondaryCta={heroSection?.content?.secondaryCta}
         />
         <SectionRenderer sections={sections} isAdmin={isAdmin} />
-      </main>
+      </div>
     </>
   );
 }
