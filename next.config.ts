@@ -12,6 +12,20 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/home-1",
+        destination: "/seo",
+        permanent: true,
+      },
+      {
+        source: "/ai-search-and-seo",
+        destination: "/seo",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

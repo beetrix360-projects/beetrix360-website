@@ -18,13 +18,18 @@ interface Props {
 export function MarketingShell({ site, navigation, divisions, children }: Props) {
   const pathname = usePathname();
   const isAdmin = pathname?.startsWith("/admin");
-  const isHome1 = pathname === "/home-1" || pathname?.startsWith("/home-1/");
+  const isAiSearch =
+    pathname === "/seo" ||
+    pathname === "/ai-search-and-seo" ||
+    pathname?.startsWith("/ai-search-and-seo/") ||
+    pathname === "/home-1" ||
+    pathname?.startsWith("/home-1/");
 
   if (isAdmin) {
     return <div className="min-h-screen bg-[#f8fafc] text-neutral-900 antialiased">{children}</div>;
   }
 
-  if (isHome1) {
+  if (isAiSearch) {
     return <>{children}</>;
   }
 

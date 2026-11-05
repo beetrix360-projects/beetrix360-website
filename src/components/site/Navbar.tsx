@@ -27,7 +27,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileAccordion, setMobileAccordion] = useState<number | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const triggerRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const triggerRefs = useRef<(HTMLElement | null)[]>([]);
 
   // Measurement refs for dynamic zero-overlap detection
   const containerRef = useRef<HTMLDivElement>(null);
@@ -178,36 +178,69 @@ export function Navbar({ site, navigation }: NavbarProps) {
                   className="relative shrink-0"
                   onMouseEnter={() => handleMouseEnter(mIdx)}
                 >
-                  <button
-                    ref={(el) => { triggerRefs.current[mIdx] = el; }}
-                    type="button"
-                    onClick={() => toggleDropdown(mIdx)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
-                        e.preventDefault();
-                        toggleDropdown(mIdx);
-                      } else if (e.key === "Escape") {
-                        e.preventDefault();
-                        setOpenDropdown(null);
-                        triggerRefs.current[mIdx]?.focus();
-                      }
-                    }}
-                    aria-expanded={isOpen}
-                    aria-haspopup="true"
-                    aria-controls={`mega-menu-${mIdx}`}
-                    className={`px-2 xl:px-2.5 2xl:px-3 py-1.5 2xl:py-2 text-xs xl:text-[13px] 2xl:text-sm font-semibold tracking-tight transition rounded-lg flex items-center gap-0.5 xl:gap-1 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink ${
-                      isOpen
-                        ? "text-bx-pink bg-bx-pink/5"
-                        : "text-neutral-700 hover:text-bx-pink hover:bg-neutral-50"
-                    }`}
-                  >
-                    <span>{displayLabel}</span>
-                    <ChevronDown
-                      className={`w-3 h-3 2xl:w-3.5 2xl:h-3.5 text-neutral-400 transition-transform duration-200 ${
-                        isOpen ? "rotate-180 text-bx-pink" : ""
+                  {displayLabel === "AI Search & SEO" || menu.label === "AI Search & SEO" ? (
+                    <Link
+                      ref={(el) => { triggerRefs.current[mIdx] = el; }}
+                      href="/seo"
+                      onClick={() => setOpenDropdown(null)}
+                      onKeyDown={(e) => {
+                        if (e.key === "ArrowDown") {
+                          e.preventDefault();
+                          setOpenDropdown(mIdx);
+                        } else if (e.key === "Escape") {
+                          e.preventDefault();
+                          setOpenDropdown(null);
+                          triggerRefs.current[mIdx]?.focus();
+                        }
+                      }}
+                      aria-expanded={isOpen}
+                      aria-haspopup="true"
+                      aria-controls={`mega-menu-${mIdx}`}
+                      className={`px-2 xl:px-2.5 2xl:px-3 py-1.5 2xl:py-2 text-xs xl:text-[13px] 2xl:text-sm font-semibold tracking-tight transition rounded-lg flex items-center gap-0.5 xl:gap-1 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink ${
+                        isOpen
+                          ? "text-bx-pink bg-bx-pink/5"
+                          : "text-neutral-700 hover:text-bx-pink hover:bg-neutral-50"
                       }`}
-                    />
-                  </button>
+                    >
+                      <span>{displayLabel}</span>
+                      <ChevronDown
+                        className={`w-3 h-3 2xl:w-3.5 2xl:h-3.5 text-neutral-400 transition-transform duration-200 ${
+                          isOpen ? "rotate-180 text-bx-pink" : ""
+                        }`}
+                      />
+                    </Link>
+                  ) : (
+                    <button
+                      ref={(el) => { triggerRefs.current[mIdx] = el; }}
+                      type="button"
+                      onClick={() => toggleDropdown(mIdx)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+                          e.preventDefault();
+                          toggleDropdown(mIdx);
+                        } else if (e.key === "Escape") {
+                          e.preventDefault();
+                          setOpenDropdown(null);
+                          triggerRefs.current[mIdx]?.focus();
+                        }
+                      }}
+                      aria-expanded={isOpen}
+                      aria-haspopup="true"
+                      aria-controls={`mega-menu-${mIdx}`}
+                      className={`px-2 xl:px-2.5 2xl:px-3 py-1.5 2xl:py-2 text-xs xl:text-[13px] 2xl:text-sm font-semibold tracking-tight transition rounded-lg flex items-center gap-0.5 xl:gap-1 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink ${
+                        isOpen
+                          ? "text-bx-pink bg-bx-pink/5"
+                          : "text-neutral-700 hover:text-bx-pink hover:bg-neutral-50"
+                      }`}
+                    >
+                      <span>{displayLabel}</span>
+                      <ChevronDown
+                        className={`w-3 h-3 2xl:w-3.5 2xl:h-3.5 text-neutral-400 transition-transform duration-200 ${
+                          isOpen ? "rotate-180 text-bx-pink" : ""
+                        }`}
+                      />
+                    </button>
+                  )}
 
                   {/* Dropdown 5-Track Mega Menu (Aligned identically to header container) */}
                   <div
@@ -412,19 +445,39 @@ export function Navbar({ site, navigation }: NavbarProps) {
               const isAccordionOpen = mobileAccordion === mIdx;
               return (
                 <div key={menu.label} className="border-b border-neutral-100 pb-3">
-                  <button
-                    type="button"
-                    onClick={() => setMobileAccordion(isAccordionOpen ? null : mIdx)}
-                    className="w-full flex items-center justify-between py-2 text-left font-heading font-bold text-base text-neutral-900"
-                    aria-expanded={isAccordionOpen}
-                  >
-                    <span>{menu.label}</span>
-                    <ChevronDown
-                      className={`w-5 h-5 text-neutral-400 transition-transform ${
-                        isAccordionOpen ? "rotate-180 text-bx-pink" : ""
-                      }`}
-                    />
-                  </button>
+                  <div className="w-full flex items-center justify-between py-2">
+                    {menu.label === "AI Search & SEO" ? (
+                      <Link
+                        href="/seo"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="font-heading font-bold text-base text-neutral-900 hover:text-bx-pink flex-1"
+                      >
+                        {menu.label}
+                      </Link>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => setMobileAccordion(isAccordionOpen ? null : mIdx)}
+                        className="font-heading font-bold text-base text-neutral-900 text-left flex-1"
+                        aria-expanded={isAccordionOpen}
+                      >
+                        {menu.label}
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => setMobileAccordion(isAccordionOpen ? null : mIdx)}
+                      className="p-1 text-neutral-400 hover:text-bx-pink focus-visible:outline-none"
+                      aria-label={`Toggle ${menu.label} submenu`}
+                      aria-expanded={isAccordionOpen}
+                    >
+                      <ChevronDown
+                        className={`w-5 h-5 transition-transform ${
+                          isAccordionOpen ? "rotate-180 text-bx-pink" : ""
+                        }`}
+                      />
+                    </button>
+                  </div>
 
                   {isAccordionOpen && (
                     <div className="pt-3 pb-2 pl-2 space-y-5">

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 
-export function Home1Footer() {
+export function AiSearchFooter() {
   return (
     <footer className="bx-ftr">
       <div>

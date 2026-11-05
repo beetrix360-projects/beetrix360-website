@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import "./home-1.css";
+import "./ai-search.css";
 import { getPageData } from "./data";
+import { useAiSearchAnimations } from "./hooks/useAiSearchAnimations";
 import { MarketeamHeader } from "./components/MarketeamHeader";
 import { BandMarquee } from "./components/BandMarquee";
 import { HeroSection } from "./components/HeroSection";
@@ -14,7 +15,7 @@ import { ReviewsSection } from "./components/ReviewsSection";
 import { ClosingSection } from "./components/ClosingSection";
 import { FaqSection } from "./components/FaqSection";
 import { FloatingBar } from "./components/FloatingBar";
-import { Home1Footer } from "./components/Home1Footer";
+import { AiSearchFooter } from "./components/AiSearchFooter";
 
 const topBandItems = [
   { label: "SEO", slug: "seo" },
@@ -39,17 +40,26 @@ const botBandItems = [
   { label: "Get chosen", href: "#bx-close" },
 ];
 
-export function Home1Client() {
+export function AiSearchAndSeoClient() {
   const [slug, setSlug] = useState("generative-engine-optimization");
   const progRef = useRef<HTMLDivElement>(null);
   const curRef = useRef<HTMLDivElement>(null);
+
+  // Run all scroll-linked motion, entrance animations, and reveal observers
+  useAiSearchAnimations(slug);
+
+  // Ensure top-of-page scroll on fresh navigation
+  useEffect(() => {
+    if (typeof window !== "undefined" && !window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
 
   // Sync hash on mount and on change
   useEffect(() => {
     function handleHash() {
       const h = window.location.hash.slice(1);
       if (h && h !== slug) {
-        // Check if hash matches a slug
         const p = getPageData(h);
         if (p && h.length > 2 && !h.startsWith("bx-") && !h.startsWith("fx-")) {
           setSlug(h);
@@ -69,7 +79,7 @@ export function Home1Client() {
 
   const page = getPageData(slug);
 
-  // Scroll progress, custom cursor, tilt physics, and reveal intersection observer
+  // Reading progress bar & custom cursor physics
   useEffect(() => {
     const isReduce =
       typeof window !== "undefined" &&
@@ -99,6 +109,7 @@ export function Home1Client() {
     let cy = 0;
     let tx = 0;
     let ty = 0;
+    let mag: HTMLElement | null = null;
     const cur = curRef.current;
 
     if (isFine && !isReduce && cur) {
@@ -145,6 +156,28 @@ export function Home1Client() {
             c.style.setProperty("--ry", `${(((ev.clientX - q.left) / q.width - 0.5) * 14).toFixed(2)}deg`);
           }
         }
+
+        // Magnetic button feel
+        const m = target.closest(".btn, .s-btn, .btn-border-wrap, #stay a") as HTMLElement | null;
+        if (mag && mag !== m) {
+          mag.style.setProperty("--bx", "0px");
+          mag.style.setProperty("--by", "0px");
+        }
+        mag = m;
+        if (m) {
+          const b = m.getBoundingClientRect();
+          m.style.setProperty("--bx", `${((ev.clientX - b.left - b.width / 2) * 0.22).toFixed(1)}px`);
+          m.style.setProperty("--by", `${((ev.clientY - b.top - b.height / 2) * 0.32).toFixed(1)}px`);
+          if (m.matches("#stay a")) {
+            m.style.translate = "var(--bx) var(--by)";
+          }
+        }
+
+        const marketeamEl = document.getElementById("marketeam");
+        if (target.closest("#marketeam") && marketeamEl) {
+          marketeamEl.style.setProperty("--px", `${((ev.clientX / window.innerWidth - 0.5) * -34).toFixed(1)}px`);
+          marketeamEl.style.setProperty("--py", `${((ev.clientY / window.innerHeight - 0.5) * -26).toFixed(1)}px`);
+        }
       }
 
       function onPointerOut(ev: PointerEvent) {
@@ -175,7 +208,7 @@ export function Home1Client() {
   }, []);
 
   return (
-    <div className="home-1-wrapper bg-[#060607] text-white min-h-screen overflow-x-hidden relative selection:bg-[#DE2056] selection:text-white">
+    <div className="ai-search-wrapper bg-[#060607] text-white min-h-screen overflow-x-hidden relative selection:bg-[#DE2056] selection:text-white">
       {/* Reading Progress Indicator */}
       <div id="fx-prog" ref={progRef} aria-hidden="true" />
 
@@ -224,7 +257,7 @@ export function Home1Client() {
       <FloatingBar />
 
       {/* 14. Footer */}
-      <Home1Footer />
+      <AiSearchFooter />
     </div>
   );
 }
