@@ -1,15 +1,43 @@
 import type { Metadata } from "next";
-import { AiSearchAndSeoClient } from "./AiSearchAndSeoClient";
+import { getMainSeoPage } from "./data";
+import { page, schema } from "./render";
+import { SeoClient } from "./SeoClient";
+import { JsonLd } from "@/components/site/JsonLd";
 
-export const metadata: Metadata = {
-  title: "AI Search & SEO Services | Beetrix360",
-  description:
-    "Technical fixes, content and authority, run as one system and measured in pipeline. Built to rank in Google and get cited by AI.",
-  alternates: {
-    canonical: "/seo",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const p = getMainSeoPage();
+  return {
+    title: p.title,
+    description: p.desc,
+    keywords: p.kws,
+    alternates: {
+      canonical: p.path,
+    },
+    openGraph: {
+      title: p.title,
+      description: p.desc,
+      url: `https://www.beetrix360.com${p.path}`,
+      type: "website",
+      siteName: "Beetrix360",
+      locale: "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: p.title,
+      description: p.desc,
+    },
+  };
+}
 
 export default function SeoMainPage() {
-  return <AiSearchAndSeoClient />;
+  const pageData = getMainSeoPage();
+  const htmlContent = page(pageData);
+  const jsonLd = schema(pageData);
+
+  return (
+    <>
+      <JsonLd data={jsonLd} />
+      <SeoClient pageData={pageData} htmlContent={htmlContent} />
+    </>
+  );
 }

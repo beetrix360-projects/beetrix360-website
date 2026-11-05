@@ -1,3049 +1,1951 @@
-// Auto-generated data for Home-1 (Beetrix360 AI Search & SEO Template)
+// Auto-generated strongly typed SEO page data from beetrix-seo-pages3
 
-export interface PageData {
+export interface SeoPageData {
+  id: string;
   path: string;
-  group: string;
+  col: string;
   name: string;
-  process: "seo" | "ai" | "strategy";
-  h1: [string, string] | string[];
-  sub: string;
-  chips: [string, string, string] | string[];
-  meta: string;
-  stmt: string;
-  pains: [string, string][];
-  incl: [string, string][];
-  cmp: [string, string, string][];
-  faq: [string, string][];
-  what: string;
-  why: string;
-  who: string;
-  how: string;
-  mist: string[];
-  kpis: string[];
-  q: string;
+  short: string;
+  kw: string;
+  title: string;
+  desc: string;
+  h1?: string | string[];
+  lead?: string;
+  answer?: string;
+  q?: string[];
+  para?: string[];
+  deep?: string[][];
+  kws?: string[];
+  pains?: string[][];
+  items?: string[][];
+  steps?: string[];
+  faq?: any[];
+  [key: string]: any;
 }
 
-export interface ReviewItem {
-  q: string;
-  a: string;
-  c: string;
-  r: string;
-  s: number;
-  v: string;
-  k: string;
-  g: string;
-  pages?: string[];
-}
-
-export const BASE = "";
-
-export const NAV: Record<string, string[]> = {
-  "Search Engine Optimization": [
-    "seo",
-    "local-seo",
-    "technical-seo",
-    "on-page-seo",
-    "link-building",
-    "ecommerce-seo"
-  ],
-  "AI Search Visibility": [
-    "generative-engine-optimization",
-    "answer-engine-optimization",
-    "programmatic-seo",
-    "chatgpt-optimization",
-    "ai-visibility-tracking",
-    "ai-brand-perception"
-  ],
-  "Strategy & Enterprise": [
-    "keyword-research",
-    "competitor-analysis",
-    "enterprise-seo",
-    "enterprise-geo"
-  ]
-};
-
-export const NAV_LINKS: Record<string, [string, string][]> = {
-  "Expertise": [
-    [
-      "Our Results",
-      "/results"
-    ],
-    [
-      "Case Studies",
-      "/case-studies"
-    ],
-    [
-      "Our AI Search Approach",
-      "/about/our-approach/ai-search"
-    ]
-  ],
-  "Pricing": [
-    [
-      "How Much Does SEO Cost?",
-      "/pricing/seo-cost"
-    ],
-    [
-      "How Much Does Generative Engine Optimization Cost?",
-      "/pricing/geo-cost"
-    ],
-    [
-      "Local SEO Pricing",
-      "/pricing/local-seo-pricing"
-    ]
-  ]
-};
-
-export const TOP: [string, string][] = [
-  [
-    "Paid Media",
-    "/paid-media"
-  ],
-  [
-    "Brand & Social",
-    "/branding"
-  ],
-  [
-    "AI Content",
-    "/ai-content"
-  ],
-  [
-    "Web & Conversion",
-    "/web-design"
-  ],
-  [
-    "AI & Automation",
-    "/ai"
-  ],
-  [
-    "Company",
-    "/about"
-  ]
-];
-
-export const ROLLOUT: [string, string, string][] = [
-  [
-    "Days 01–14",
-    "Audit",
-    "Map your search data and find where visibility and leads slip away."
-  ],
-  [
-    "Days 15–30",
-    "Build",
-    "Fix the foundations and connect search data to your CRM."
-  ],
-  [
-    "Days 31–60",
-    "Activate",
-    "Publish, optimize and earn citations against an agreed plan."
-  ],
-  [
-    "Days 61–90+",
-    "Scale",
-    "Double down on what the pipeline data shows is working."
-  ]
-];
-
-export const PROCESS: Record<string, [string, string][]> = {
-  "seo": [
-    [
-      "Audit",
-      "Crawl the site and benchmark rankings, competitors and lost demand."
-    ],
-    [
-      "Prioritize",
-      "Rank fixes by likely revenue, not by audit score."
-    ],
-    [
-      "Ship",
-      "Make the changes on your site with your team or ours."
-    ],
-    [
-      "Measure",
-      "Tie rankings and traffic back to leads and deals."
-    ]
-  ],
-  "ai": [
-    [
-      "Test",
-      "Run your buyers' questions across ChatGPT, Perplexity, Claude and AI Overviews."
-    ],
-    [
-      "Map",
-      "Find the sources AI engines trust and where you are missing."
-    ],
-    [
-      "Publish",
-      "Ship structured, citable content and earn mentions."
-    ],
-    [
-      "Track",
-      "Watch citations, share of voice and AI-source traffic weekly."
-    ]
-  ],
-  "strategy": [
-    [
-      "Discover",
-      "Learn your market, buyers, margins and sales cycle."
-    ],
-    [
-      "Analyze",
-      "Pull the data on demand, competitors and gaps."
-    ],
-    [
-      "Decide",
-      "Turn the findings into a ranked, costed plan."
-    ],
-    [
-      "Govern",
-      "Report on progress and keep every team on one plan."
-    ]
-  ]
-};
-
-export const REPORT_ROW: [string, string, string] = [
-  "Reporting",
-  "Rankings and clicks",
-  "Pipeline and booked revenue"
-];
-
-export const PAGES: Record<string, PageData> = {
-  "seo": {
+export const SEO_PAGES: SeoPageData[] = [
+  {
+    "id": "seo",
     "path": "/seo",
-    "group": "Search Engine Optimization",
-    "name": "Search Engine Optimization",
-    "process": "seo",
+    "col": "hub",
+    "name": "SEO Marketing Agency & AI Search",
+    "short": "SEO Marketing Agency",
+    "kw": "seo marketing agency",
+    "title": "SEO Marketing Agency | B2B SEO Services & AI Search | Beetrix360",
+    "desc": "Beetrix360 is an SEO marketing agency and B2B SEO services partner that engineers organic search, AI answer visibility, and CRM attribution into closed revenue.",
     "h1": [
-      "SEO that books",
-      "revenue, not reports."
+      "SEO marketing agency",
+      "engineered for revenue,",
+      "not just rankings"
     ],
-    "sub": "Technical fixes, content and authority, run as one system and measured in pipeline. Built to rank in Google and get cited by AI.",
-    "chips": [
-      "Technical",
-      "Content",
-      "Authority"
+    "lead": "Beetrix360 is an SEO marketing agency that unifies traditional organic search with Generative Engine Optimization (GEO). We engineer technical crawl health, high-intent topic clusters, and authoritative digital PR directly to your CRM—transforming search visibility into qualified pipeline and closed revenue.",
+    "answer": "An SEO marketing agency plans, executes, and scales organic search visibility across traditional search engines (Google, Bing) and AI answer engines (ChatGPT, Perplexity, Google AI Overviews). Unlike legacy providers focused on traffic volume alone, a revenue-focused agency aligns technical crawlability, commercial intent mapping, entity authority, and closed-loop CRM attribution to convert search demand into qualified pipeline.",
+    "q": [
+      "seo marketing agency for b2b",
+      "b2b seo services tied to pipeline",
+      "geo vs seo in 2026",
+      "wordpress seo services for enterprise",
+      "how to rank in google ai overviews and chatgpt"
     ],
-    "meta": "SEO services from Beetrix360: technical, on-page, local and link building, measured in pipeline and booked revenue.",
-    "stmt": "Most SEO stalls because the work is split up. One vendor audits, another writes, nobody connects any of it to revenue.",
+    "para": [
+      "Search is no longer a single-channel game of ten blue links. Modern B2B and enterprise buyers move fluidly between Google search results, AI Overviews, Perplexity, and ChatGPT before ever speaking to sales. A fragmented approach or isolated blog campaign cannot capture this audience. As a full-service SEO marketing agency, we engineer an integrated organic search engine that secures top organic rankings in Google while establishing your brand as the definitive cited source in AI answer engines.",
+      "From specialized B2B SEO services and high-performance WordPress SEO services to programmatic expansion, international SEO, and small business growth architectures, our practice routes search intent into high-converting spokes. We eliminate vanity clicks and build durable, compounding organic equity tied directly to closed-won revenue."
+    ],
+    "deep": [
+      [
+        "Full-Funnel B2B SEO Services & Technical Infrastructure",
+        "Enterprise and B2B growth demands deep technical rigor. Our B2B SEO agency services resolve crawl budget limitations, JavaScript rendering barriers, Core Web Vitals, and complex site architecture. We optimize enterprise CMS environments—including specialized WordPress SEO services—transforming product and solutions hubs into high-performance revenue drivers that outrank rivals for high-value buying queries."
+      ],
+      [
+        "The AI Search Shift: Traditional SEO Meets GEO & LLMO",
+        "Google AI Overviews and generative AI assistants source their answers from authoritative, machine-readable domains. We structure your digital footprint with semantic entity schema, concise answer-first content, and tier-1 digital PR citations. This dual-track strategy ensures your brand dominates both traditional search engine result pages (SERPs) and conversational AI recommendations."
+      ],
+      [
+        "Global & Scaled Growth: International & Small Business SEO",
+        "Whether deploying international SEO with localized hreflang tags, currency structures, and multi-region CDN caching, or accelerating small business SEO to capture high-margin local and regional demand, our architectures scale. Every campaign integrates directly with your CRM (Salesforce, HubSpot) to track every lead from initial search impression to closed deal."
+      ]
+    ],
+    "kws": [
+      "SEO Services",
+      "seo marketing agency",
+      "b2b seo agency",
+      "b2b seo services",
+      "wordpress seo services",
+      "ai seo",
+      "international seo",
+      "small business seo",
+      "geo vs seo",
+      "seo vs ppc",
+      "seo vs sem",
+      "organic search strategy",
+      "technical SEO audit",
+      "enterprise SEO",
+      "generative engine optimization",
+      "revenue attribution"
+    ],
     "pains": [
       [
-        "We rank, but leads are flat.",
-        "We target the searches buyers make right before they contact a vendor."
+        "Organic traffic climbs, but sales pipeline and demos remain flat",
+        "We realign targeting from zero-intent keywords to high-intent commercial queries, replacing low-value blog posts with conversion-focused solution hubs."
       ],
       [
-        "Traffic keeps sliding.",
-        "We find the cause: technical issues, content decay or AI answers taking the click."
+        "Competitors dominate Google AI Overviews and ChatGPT recommendations",
+        "We implement semantic entity markup, machine-readable answer architecture, and authoritative digital PR so AI models cite your brand as the category authority."
       ],
       [
-        "Reports show clicks, not contracts.",
-        "We connect search data to your CRM so you see revenue by page."
+        "SEO and PPC operate in disconnected silos with redundant spend",
+        "We synchronize paid and organic intelligence, using high-converting PPC query data to build organic dominance while reducing redundant ad spend on established organic winners."
       ],
       [
-        "Every fix waits in a queue.",
-        "We ship changes ourselves or work directly with your developers."
+        "Search algorithm core updates cause unpredictable ranking volatility",
+        "We fortify your domain with technical crawl hygiene, rapid Core Web Vitals, and authentic E-E-A-T entity signals that search engines consistently reward."
       ]
     ],
-    "incl": [
+    "items": [
       [
-        "Technical foundations",
-        "Crawling, indexing, speed and site structure, fixed in order of impact."
+        "Technical Foundation & Core Vitals",
+        "Crawl hygiene, indexing prioritization, mobile Core Web Vitals, and comprehensive schema markup ranked by revenue potential."
       ],
       [
-        "Content that ranks",
-        "Pages built around buyer intent, and refreshes for pages losing ground."
+        "B2B Intent & Revenue Mapping",
+        "Commercial query mapping that connects every target keyword to a distinct page, buyer stage, and closed revenue opportunity."
       ],
       [
-        "Authority building",
-        "Earned links and mentions from sites your buyers actually read."
+        "WordPress & Enterprise CMS Optimization",
+        "Code-level performance tuning, database optimization, taxonomy hygiene, and speed engineering for WordPress and custom stacks."
       ],
       [
-        "Revenue reporting",
-        "One view from search query to booked deal."
+        "AI Search & GEO Visibility",
+        "Structured data and answer-first content engineered to win Google AI Overviews, ChatGPT citations, and Perplexity recommendations."
+      ],
+      [
+        "Authority Building & Digital PR",
+        "Tier-1 editorial backlinks, authoritative industry research studies, and high-trust citations that cement domain authority."
+      ],
+      [
+        "Closed-Loop CRM Attribution",
+        "Real-time integration with HubSpot, Salesforce, and analytics platforms to attribute organic visits directly to pipeline and revenue."
       ]
     ],
-    "cmp": [
-      [
-        "Goal",
-        "More traffic",
-        "More qualified pipeline"
-      ],
-      [
-        "Scope",
-        "Separate audit, content and links",
-        "One plan across all three"
-      ],
-      [
-        "Search",
-        "Google only",
-        "Google and AI answers"
-      ]
+    "steps": [
+      "Days 1–14: Comprehensive technical audit, crawl hygiene review, commercial intent gap analysis, and CRM attribution integration.",
+      "Days 15–30: Resolution of critical technical blockers, publishing of the B2B keyword architecture, and schema markup deployment.",
+      "Days 31–60: Launch of high-intent hub pages, content optimization, AI citation structuring, and digital PR link acquisition.",
+      "Days 61–90+: Expansion of top-performing topic clusters, international and programmatic scaling, and revenue optimization based on closed CRM data."
     ],
     "faq": [
       [
-        "How long does SEO take to work?",
-        "Technical fixes can show up within weeks. Competitive rankings usually take several months. Your audit gives you a timeline based on your market and site."
+        "GEO vs SEO: What is the difference and do you need both?",
+        "SEO (Search Engine Optimization) focuses on earning top rankings in traditional search engine results pages like Google and Bing. GEO (Generative Engine Optimization) optimizes content and brand entity signals so AI engines (ChatGPT, Google AI Overviews, Perplexity) cite and recommend your company in conversational answers. You need both: robust SEO provides the crawlability and domain authority that AI search models depend on, while GEO structures that information for direct machine synthesis."
       ],
       [
-        "Do you need access to our site?",
-        "Yes, or we work through your developers. We need analytics and Search Console access either way."
+        "SEO vs PPC: Which should B2B companies prioritize?",
+        "B2B companies should deploy SEO and PPC as mutually reinforcing channels. PPC provides immediate visibility, rapid message testing, and instant lead capture for high-stakes launches. SEO builds long-term, compounding organic equity with an effective cost-per-lead that decreases over time. The most profitable strategy uses paid search data to identify high-converting commercial queries, then builds organic search dominance for those terms to lower overall customer acquisition costs."
       ],
       [
-        "Does SEO still matter with AI search?",
-        "Yes. AI engines lean on pages that are already trusted and well structured, so strong SEO supports AI visibility."
+        "SEO vs SEM: What is the difference and how do they work together?",
+        "SEM (Search Engine Marketing) is the comprehensive umbrella discipline encompassing all search-based marketing, including both organic Search Engine Optimization (SEO) and paid search advertising (PPC like Google Ads). SEO focuses on earning non-paid, organic rankings through technical performance, content relevance, and domain authority. A unified search marketing strategy leverages both: organic SEO captures research and mid-funnel intent, while paid SEM provides tactical agility for brand defense and competitive conquesting."
       ],
       [
-        "What does an SEO service include?",
-        "It includes a technical audit, keyword and intent research, on-page optimization, content creation or refreshes, link earning and monthly reporting. We scope the mix around where your site is weakest."
+        "What does an SEO marketing agency do for B2B companies?",
+        "A specialized B2B SEO marketing agency designs and executes search strategies tailored to multi-month, multi-stakeholder purchasing decisions. Rather than generating vanity traffic, a B2B agency focuses on commercial and transactional keywords, technical architecture for enterprise websites, content that satisfies technical evaluators and executive buyers, and closed-loop attribution syncing organic conversions directly to CRM opportunities."
       ],
       [
-        "Should we do SEO or paid ads first?",
-        "Paid ads bring demand quickly, while SEO compounds over time. Most companies benefit from both, and search data from one can improve the other."
+        "Do you provide specialized WordPress SEO services?",
+        "Yes. While WordPress powers many enterprise and mid-market web properties, it often suffers from theme bloat, unoptimized database queries, redundant category archives, and slow Core Web Vitals. Our WordPress SEO services include code-level performance audits, database optimization, custom caching architectures, taxonomy cleanup, and advanced JSON-LD schema implementation to turn WordPress into an ultra-fast, search-dominant platform."
       ],
       [
-        "How do you report on SEO results?",
-        "You get a report that links search visibility to leads and revenue through your analytics and CRM, not only a list of rankings."
+        "How does Beetrix360 approach international and small business SEO?",
+        "For international SEO, we implement scalable multi-region architectures with precise hreflang annotations, localized content nuances, and global CDN delivery to win overseas markets without duplicate content penalties. For small businesses and mid-market challengers, we prioritize high-margin commercial terms, dominant local search pack presence, and agile technical execution that outranks slower incumbent competitors."
       ],
       [
-        "What can slow SEO results down?",
-        "Slow development queues, thin content, weak authority and strong competitors are the usual causes. Your audit will show which ones apply to you."
+        "How do you measure and attribute SEO revenue?",
+        "We measure SEO success by qualified pipeline and closed revenue, not just keyword positions or raw sessions. By connecting Google Search Console and analytics data directly to your CRM (Salesforce, HubSpot), we trace inbound opportunities, demos, and closed contracts back to the specific organic landing pages and search queries that initiated the relationship."
       ],
       [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
+        "How long does it take for an SEO marketing agency to produce revenue?",
+        "Technical crawl fixes and on-page optimization for existing high-potential pages frequently show ranking and conversion improvements within 30 to 60 days. Comprehensive commercial dominance, new keyword cluster rankings, and compounding pipeline acceleration typically mature between months 3 and 6 as search engines and AI models index new authority signals."
       ]
-    ],
-    "q": "Which agency should we hire for SEO that ties to revenue?",
-    "what": "Search engine optimization is the work of making your website the best result for what your buyers search for. It covers three areas: how well search engines can crawl your site, how well your content answers real questions, and how much other trusted sites vouch for you. At Beetrix360 we run all three as one program, so a technical fix, a new page and an earned link all push toward the same revenue goal.",
-    "why": "Search is still where most buyers start, but the results page has changed. AI Overviews, featured snippets and chat answers now sit above the classic links, and they draw on the same trusted pages that rank well. Strong SEO is therefore the foundation of AEO, GEO and LLMO. A site that is slow, thin or poorly linked will struggle in Google and in AI answers alike.",
-    "who": "This service suits B2B companies, service businesses and ecommerce brands that want organic search to become a dependable source of qualified leads. It works best when a sales team can act on the demand we create and when you can share analytics and CRM data with us.",
-    "kpis": [
-      "Qualified organic leads and booked calls",
-      "Rankings for high-intent commercial terms",
-      "Organic revenue and pipeline by landing page",
-      "Share of voice against named competitors"
-    ],
-    "how": "We start with a full audit of your site, your competitors and your lost demand. Then we rank every task by likely revenue, so the first fixes are the ones most likely to pay back. Our team ships changes directly or works with your developers, and each month we show what moved and what comes next.",
-    "mist": [
-      "Chasing traffic that never converts",
-      "Publishing content with no link to revenue",
-      "Treating SEO and AI search as separate projects"
     ]
   },
-  "local-seo": {
+  {
+    "id": "local-seo",
     "path": "/seo/local-seo",
-    "group": "Search Engine Optimization",
+    "col": "seo",
     "name": "Local SEO",
-    "process": "seo",
+    "short": "Local SEO",
+    "kw": "local SEO services",
+    "title": "Local SEO Services for Map Pack Rankings | Beetrix360",
+    "desc": "Local SEO services that improve Google Business Profile, map pack rankings, citations and reviews, so nearby buyers call you first.",
     "h1": [
-      "Be the first call",
-      "in your city."
+      "Local SEO that puts you",
+      "first on the map",
+      "when buyers search nearby"
     ],
-    "sub": "Own the map pack, local search and AI answers in every area you serve, so nearby buyers find you first.",
-    "chips": [
-      "Maps",
-      "Reviews",
-      "Citations"
+    "lead": "Our local SEO services help businesses win the Google map pack, strengthen Google Business Profile performance and turn “near me” searches into calls, bookings and store visits.",
+    "answer": "Local SEO is the process of improving a business's visibility in location-based searches, including Google Maps and the local pack. It relies on an optimized Google Business Profile, consistent citations, reviews, and location pages relevant to the searcher's area.",
+    "q": [
+      "best contractor near me",
+      "local seo company for multi-location brands",
+      "how to rank in google map pack"
     ],
-    "meta": "Local SEO from Beetrix360: Google Business Profile, location pages, reviews and citations that turn nearby searches into booked calls.",
-    "stmt": "Local buyers decide fast. If you are not in the map pack or the AI answer, the call goes to whoever is.",
-    "pains": [
+    "para": [
+      "When someone searches “near me”, Google weighs relevance, distance and prominence. We improve the parts you control: a complete Google Business Profile, accurate name, address and phone data across directories, location pages with real local content, and a steady flow of genuine reviews.",
+      "For multi-location brands, local search gets complicated quickly. We build a repeatable system for store locators, location landing pages, profile management and reporting, so every branch competes in its own area without duplicate content."
+    ],
+    "deep": [
       [
-        "Competitors beat us on the map.",
-        "We optimize your Google Business Profile and the signals behind it."
+        "Google Business Profile optimization",
+        "Categories, services, photos, posts, products and Q&A all shape how your listing performs. We complete and maintain each one and track calls, direction requests and bookings as outcomes."
       ],
       [
-        "We serve many areas but rank in one.",
-        "We build useful location pages, one for each real service area."
-      ],
-      [
-        "Our reviews are thin or old.",
-        "We set up a steady, policy-compliant review request flow."
-      ],
-      [
-        "Our business details don't match.",
-        "We clean up your name, address and phone across directories."
+        "Local citations and review strategy",
+        "Consistent NAP data builds trust with search engines, and fresh reviews build trust with buyers. We clean up listings and set up a compliant review request flow."
       ]
     ],
-    "incl": [
+    "kws": [
+      "local SEO agency",
+      "Google Business Profile optimization",
+      "Google Maps SEO",
+      "map pack ranking",
+      "near me searches",
+      "local citations",
+      "NAP consistency",
+      "multi-location SEO",
+      "local link building",
+      "review management",
+      "location pages",
+      "local search ranking"
+    ],
+    "pains": [
+      [
+        "Competitors outrank you on Maps",
+        "We close the gaps in categories, reviews and local relevance."
+      ],
+      [
+        "Your listing gets views, not calls",
+        "Profile content and offers are rewritten around booking intent."
+      ],
+      [
+        "Addresses differ across directories",
+        "Citation cleanup makes your business data consistent everywhere."
+      ],
+      [
+        "Branches compete with each other",
+        "Each location gets its own page, profile and tracking."
+      ]
+    ],
+    "items": [
       [
         "Google Business Profile",
-        "Categories, services, photos, posts and Q&A, kept current."
+        "Full profile optimization, categories, posts and ongoing management."
+      ],
+      [
+        "Citation cleanup",
+        "Audit and correction of business listings across directories."
       ],
       [
         "Location pages",
-        "Pages with real local proof, written for each area you serve."
+        "Unique pages for each city, service area or branch."
       ],
       [
-        "Reviews and reputation",
-        "Automated requests and a response process your team can keep up."
+        "Review generation",
+        "A compliant process that earns more genuine customer reviews."
       ],
       [
-        "Citations and local links",
-        "Accurate listings and links from local sources."
+        "Local links",
+        "Sponsorships, partners and local press that strengthen prominence."
+      ],
+      [
+        "Call and booking tracking",
+        "Reporting on calls, direction requests and form leads per location."
       ]
     ],
-    "cmp": [
-      [
-        "Goal",
-        "Rank for a city keyword",
-        "Win calls in every service area"
-      ],
-      [
-        "Listings",
-        "One-off directory blast",
-        "Maintained, accurate citations"
-      ],
-      [
-        "Reviews",
-        "Left to chance",
-        "Automated, compliant requests"
-      ]
+    "steps": [
+      "Audit profiles, citations, rankings and competitors by area.",
+      "Fix listings and publish location pages.",
+      "Start review, post and local link activity.",
+      "Expand to new areas that show the best return."
     ],
     "faq": [
       [
-        "Do we need a physical address?",
-        "A real location or a verified service area is required. We will check which setup fits your business."
+        "What is local SEO?",
+        "Local SEO improves how a business appears in searches tied to a location, including Google Maps and the local pack. It focuses on Google Business Profile, citations, reviews and local pages."
       ],
       [
-        "How many locations can you handle?",
-        "From one branch to multi-location brands. Larger networks are managed from a shared reporting view."
-      ],
-      [
-        "Can you guarantee the top map spot?",
-        "No one can honestly guarantee that. We work on the factors you can control and report the results by area."
-      ],
-      [
-        "What is a Google Business Profile?",
-        "It is your free business listing on Google Search and Maps. It shows your services, hours, reviews and photos, and it is one of the strongest local ranking signals."
+        "How do I rank in the Google map pack?",
+        "Choose accurate categories, complete your Google Business Profile, keep your NAP data consistent, earn genuine reviews and publish relevant local content. Proximity to the searcher also matters."
       ],
       [
         "Do reviews affect local rankings?",
-        "Yes. The number, quality and freshness of reviews can all influence visibility and trust. We only use compliant methods to request them."
+        "Yes. Review quantity, recency and quality contribute to local prominence, and they strongly influence whether a searcher chooses to call you."
       ],
       [
-        "Should each city get its own page?",
-        "Only where you truly serve that area and can add local proof. Thin copies of one page tend to perform poorly."
+        "Can a service-area business do local SEO without a storefront?",
+        "Yes. Service-area businesses can hide their address on Google Business Profile and build service pages for the areas they cover."
       ],
       [
-        "How does local SEO connect with AI search?",
-        "AI assistants use reviews, listings and local content to recommend businesses, so accurate local data supports local AEO and GEO too."
+        "How does local SEO work for multiple locations?",
+        "Each location needs its own profile, accurate citations and a unique landing page. We manage this as one system with reporting per branch."
       ],
       [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
+        "How much do local SEO services cost?",
+        "Cost depends on locations and competition. See our Local SEO Pricing guide for what affects the price, or request a scoped proposal."
       ]
-    ],
-    "q": "Who is the best local provider near me?",
-    "what": "Local SEO helps your business appear when people nearby search for what you offer. That includes the Google map pack, local organic results, directories and AI answers to near-me questions. The work centers on your Google Business Profile, accurate business details, useful location pages and a steady flow of genuine reviews.",
-    "why": "Local searches carry strong intent. Someone looking for a provider nearby often wants to call, book or visit soon, and they usually choose from the first few options they see. Assistants and AI Overviews now shape those choices too, pulling from the same reviews, listings and local pages. Weak local signals can leave you out of both the map and the AI answer.",
-    "who": "Local SEO fits clinics, law firms, home services, real estate teams, restaurants, retailers and multi-location brands. It works for a single branch or a large network, as long as each location has a real presence or a verified service area.",
-    "kpis": [
-      "Calls, direction requests and bookings",
-      "Map pack visibility by service area",
-      "Review volume, recency and rating",
-      "Leads and revenue by location"
-    ],
-    "how": "We begin by mapping every location and service area you cover, then compare your visibility with the businesses that win those searches. From there we fix your profile, clean up your listings, build useful local pages and set up review requests your staff can actually keep doing.",
-    "mist": [
-      "Using one generic page for every city",
-      "Letting business details drift across directories",
-      "Ignoring reviews until a bad one appears"
     ]
   },
-  "technical-seo": {
+  {
+    "id": "technical-seo",
     "path": "/seo/technical-seo",
-    "group": "Search Engine Optimization",
+    "col": "seo",
     "name": "Technical SEO",
-    "process": "seo",
+    "short": "Technical SEO",
+    "kw": "technical SEO services",
+    "title": "Technical SEO Services & Site Audits | Beetrix360",
+    "desc": "Technical SEO services that fix crawling, indexing, Core Web Vitals, JavaScript rendering and schema, so search and AI engines can read your site.",
     "h1": [
-      "Fix what search",
-      "engines trip over."
+      "Technical SEO that lets",
+      "search engines and AI",
+      "actually read your site"
     ],
-    "sub": "Crawling, indexing, speed and structure, repaired so Google and AI crawlers can read every page that matters.",
-    "chips": [
-      "Crawl",
-      "Speed",
-      "Schema"
+    "lead": "Our technical SEO agency finds and fixes the crawl, indexing, speed and rendering problems that stop good content from ranking or being cited by AI engines.",
+    "answer": "Technical SEO is the work of making a website easy for search engines and AI crawlers to access, render, understand and index. It covers site architecture, crawl budget, canonical tags, sitemaps, page speed, structured data and JavaScript rendering.",
+    "q": [
+      "technical seo audit",
+      "why are my pages not indexed",
+      "fix core web vitals nextjs"
     ],
-    "meta": "Technical SEO from Beetrix360: crawl, index, Core Web Vitals, structured data and migrations, prioritized by revenue impact.",
-    "stmt": "Great content can't rank on a site crawlers can't read. Technical debt quietly taxes every page you publish.",
-    "pains": [
+    "para": [
+      "Great content can't rank if crawlers can't reach it. A technical SEO audit shows what search engines actually see: blocked resources, wrong canonicals, redirect chains, orphan pages, duplicate URLs and pages returning server errors.",
+      "Modern sites add another layer. React and Next.js builds, headless CMS setups and edge caching can hide content from crawlers that don't run JavaScript, and many AI crawlers don't. We test how your site renders and fix the delivery, so full content appears in the initial HTML."
+    ],
+    "deep": [
       [
-        "Key pages aren't indexed.",
-        "We trace the crawl path and remove what blocks your important pages."
+        "Crawling, indexing and site architecture",
+        "We review robots.txt, XML sitemaps, canonicals, redirects, status codes and internal linking, then shape a structure that sends crawl budget and authority to your money pages."
       ],
       [
-        "The site feels slow.",
-        "We fix Core Web Vitals with your developers, starting with templates."
-      ],
-      [
-        "A migration cost us traffic.",
-        "We map old URLs, repair redirects and recover what can be recovered."
-      ],
-      [
-        "AI crawlers can't read our content.",
-        "We make key content render cleanly and add structured data."
+        "Core Web Vitals and page experience",
+        "We diagnose LCP, INP and CLS with field data, then work with your developers on image delivery, JavaScript weight, caching and layout stability."
       ]
     ],
-    "incl": [
+    "kws": [
+      "technical SEO audit",
+      "site audit",
+      "crawl budget",
+      "indexing issues",
+      "Core Web Vitals",
+      "XML sitemap",
+      "robots.txt",
+      "canonical tags",
+      "schema markup",
+      "JavaScript SEO",
+      "Next.js SEO",
+      "site migration SEO",
+      "log file analysis"
+    ],
+    "pains": [
       [
-        "Crawl and index audit",
-        "Logs, sitemaps, canonicals and redirects, checked page type by page type."
+        "Pages stay out of the index",
+        "We trace the cause in canonicals, sitemaps, rendering or quality signals."
+      ],
+      [
+        "Migration wiped out traffic",
+        "Redirect mapping and recovery work restore lost equity."
+      ],
+      [
+        "Site feels slow on mobile",
+        "Field data shows what to fix first for Core Web Vitals."
+      ],
+      [
+        "JavaScript hides your content",
+        "Server rendering puts full content in the first HTML response."
+      ]
+    ],
+    "items": [
+      [
+        "Full technical audit",
+        "A prioritized list of issues with the business impact of each."
+      ],
+      [
+        "Indexing control",
+        "Robots, canonical, sitemap and status code cleanup."
       ],
       [
         "Core Web Vitals",
-        "Speed and stability fixes at template level."
+        "LCP, INP and CLS improvements using real user data."
+      ],
+      [
+        "Rendering and JavaScript SEO",
+        "SSR and static delivery checks for React and Next.js sites."
       ],
       [
         "Structured data",
-        "Schema that helps search and AI engines understand your pages."
+        "Valid schema for organizations, services, products and FAQs."
       ],
       [
         "Migration support",
-        "Planning, redirect mapping and monitoring for redesigns and moves."
+        "Redirect maps, launch checks and post-launch monitoring."
       ]
     ],
-    "cmp": [
-      [
-        "Output",
-        "A 90-page PDF",
-        "Fixes shipped to your site"
-      ],
-      [
-        "Priority",
-        "Sorted by tool score",
-        "Sorted by revenue at risk"
-      ],
-      [
-        "Crawlers",
-        "Googlebot only",
-        "Search and AI crawlers"
-      ]
+    "steps": [
+      "Crawl the site, review logs and map all issues.",
+      "Fix critical indexing and rendering faults.",
+      "Improve speed, schema and internal linking.",
+      "Monitor with automated alerts and regular checks."
     ],
     "faq": [
       [
-        "Will you need developer access?",
-        "We can work in your codebase or hand clear tickets to your team. Most clients use a mix."
+        "What is technical SEO?",
+        "Technical SEO makes a site easy for search engines and AI crawlers to access, render and index. It covers architecture, speed, canonicals, sitemaps, structured data and JavaScript rendering."
       ],
       [
-        "Which platforms do you work with?",
-        "Custom builds, Next.js and headless setups, WordPress and major ecommerce platforms."
+        "What does a technical SEO audit include?",
+        "It reviews crawlability, indexing, status codes, redirects, canonicals, sitemaps, site speed, mobile experience, schema and rendering, and ends with a prioritized fix list."
       ],
       [
-        "Is a technical audit enough on its own?",
-        "An audit only helps if the fixes ship, so we scope the implementation with it."
+        "How do Core Web Vitals affect SEO?",
+        "Core Web Vitals are part of Google's page experience signals. They rarely outweigh relevance, but they matter in close competition and they directly affect conversion."
       ],
       [
-        "What are Core Web Vitals?",
-        "They are Google's measures of real-user loading, interactivity and visual stability. We improve them at template level so fixes apply across many pages."
+        "Do AI crawlers run JavaScript?",
+        "Many don't render JavaScript reliably. Important content should be in the server-rendered HTML so AI crawlers and search engines can read it."
       ],
       [
-        "Can AI crawlers read JavaScript sites?",
-        "Support varies, and many AI crawlers read far less JavaScript than Googlebot. Server-side rendering is the safest way to make content visible."
+        "Can you work with our developers?",
+        "Yes. We write clear tickets, explain the reasoning and review changes before release. We can also implement fixes on Next.js and headless builds."
       ],
       [
-        "How often should a technical audit run?",
-        "A full audit once or twice a year is common, with continuous monitoring in between and extra checks around major releases."
-      ],
-      [
-        "What should we do before a site migration?",
-        "Benchmark current traffic, map every important URL, plan redirects and test on staging. Involve SEO early, before design decisions are final."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
+        "How often should a technical audit be done?",
+        "Run a full audit at least once a year and after any migration or redesign. Automated monitoring should catch issues in between."
       ]
-    ],
-    "q": "Who can fix our site's technical SEO problems?",
-    "what": "Technical SEO is the work that makes a website easy for search engines and AI crawlers to find, render and understand. It covers crawling, indexing, site architecture, redirects, page speed, structured data, canonical tags and mobile usability. Good technical SEO rarely gets noticed. Poor technical SEO quietly limits everything else you publish.",
-    "why": "Every page you create depends on this foundation. If key pages are blocked, duplicated or slow, content and links can't deliver their full value. AI crawlers add a new layer, since many of them read less JavaScript than Googlebot. Content that only appears after heavy client-side rendering may not reach LLMs at all, which directly limits GEO and LLMO.",
-    "who": "This service is a strong fit for large or complex sites, JavaScript frameworks such as Next.js, ecommerce catalogs and companies planning a redesign or migration. It also helps any business that has seen an unexplained traffic drop.",
-    "kpis": [
-      "Share of key pages indexed",
-      "Core Web Vitals by template",
-      "Crawl errors and redirect chains resolved",
-      "Organic traffic recovered or protected"
-    ],
-    "how": "We crawl your site the way search engines and AI bots do, then review logs, templates and rendering. Issues are grouped by page type and ranked by revenue at risk. Your developers get clear tickets with examples, and we test each fix after release to confirm it worked.",
-    "mist": [
-      "Fixing audit scores instead of real problems",
-      "Shipping redesigns without an SEO review",
-      "Hiding key content behind client-side JavaScript"
     ]
   },
-  "on-page-seo": {
+  {
+    "id": "on-page-seo",
     "path": "/seo/on-page-seo",
-    "group": "Search Engine Optimization",
+    "col": "seo",
     "name": "On-Page SEO",
-    "process": "seo",
+    "short": "On-Page SEO",
+    "kw": "on-page SEO services",
+    "title": "On-Page SEO Services & Content Optimization | Beetrix360",
+    "desc": "On-page SEO services covering titles, headings, content, internal links and schema, so each page matches search intent and converts.",
     "h1": [
-      "Pages that answer",
-      "and convert."
+      "On-page SEO that makes",
+      "every page earn",
+      "its place in search"
     ],
-    "sub": "Titles, content, internal links and structure tuned so each page matches what buyers want and moves them to act.",
-    "chips": [
-      "Intent",
-      "Content",
-      "Links"
+    "lead": "We optimize titles, headings, copy, internal links and structured data so each page clearly answers search intent, ranks for the right terms and moves visitors toward a sale.",
+    "answer": "On-page SEO is the practice of optimizing the content and HTML of individual pages so they rank higher and earn more relevant traffic. It includes title tags, meta descriptions, headings, body content, internal links, image alt text and structured data.",
+    "q": [
+      "on page seo checklist",
+      "optimize service pages for seo",
+      "how to fix keyword cannibalization"
     ],
-    "meta": "On-page SEO from Beetrix360: content, titles, internal linking and structure tuned to search intent and conversions.",
-    "stmt": "Most pages are written for the company, not the searcher. So they rank for little and convert even less.",
-    "pains": [
+    "para": [
+      "On-page optimization is the fastest lever most sites have, because you fully control it. We start with the pages that already have impressions, then improve the match between what the searcher wants and what the page says.",
+      "Keyword density stopped being the goal years ago. Modern on-page SEO is about topical coverage, clear structure and useful answers. We add the subtopics, examples and entities a page is missing, and remove thin or overlapping sections that dilute it."
+    ],
+    "deep": [
       [
-        "Pages sit on page two.",
-        "We close the gap between your page and what already ranks."
+        "Search intent comes first",
+        "We look at what already ranks to see whether Google treats a query as a guide, a comparison or a service page, then shape your page to match."
       ],
       [
-        "Old pages are losing ground.",
-        "We refresh content before decay costs you the traffic."
-      ],
-      [
-        "Our pages compete with each other.",
-        "We merge overlapping pages and give each a clear job."
-      ],
-      [
-        "Visitors read, then leave.",
-        "We add proof and a clear next step where buyers decide."
+        "Internal linking and content structure",
+        "Descriptive internal links pass authority and show how topics relate. Clean heading structure helps readers, search engines and AI engines pull out the right answer."
       ]
     ],
-    "incl": [
+    "kws": [
+      "on-page optimization",
+      "title tag optimization",
+      "meta descriptions",
+      "header tags",
+      "content optimization",
+      "internal linking",
+      "keyword cannibalization",
+      "search intent",
+      "topical authority",
+      "image alt text",
+      "content refresh",
+      "SEO copywriting"
+    ],
+    "pains": [
       [
-        "Intent mapping",
-        "One clear search intent assigned to each important page."
+        "Pages stuck on page two",
+        "Content gaps and intent mismatches are the usual cause, and we fix both."
+      ],
+      [
+        "Two pages fight for one keyword",
+        "We merge or re-target pages to end cannibalization."
+      ],
+      [
+        "High impressions, few clicks",
+        "Rewritten titles and descriptions lift click-through rate."
+      ],
+      [
+        "Visitors arrive and leave",
+        "Clear structure and CTAs keep readers moving toward a decision."
+      ]
+    ],
+    "items": [
+      [
+        "Page-level audit",
+        "Each priority page scored for intent match, depth and conversion."
+      ],
+      [
+        "Titles and meta",
+        "Click-worthy titles and descriptions built around the main query."
       ],
       [
         "Content optimization",
-        "Sections, answers and examples added where they help the reader."
+        "Added depth, entities and examples that fill topical gaps."
       ],
       [
         "Internal linking",
-        "Links that pass authority to your money pages."
-      ],
-      [
-        "Conversion paths",
-        "Calls to action and proof placed along the reading path."
-      ]
-    ],
-    "cmp": [
-      [
-        "Method",
-        "Keyword density checks",
-        "Search intent and page purpose"
-      ],
-      [
-        "Scope",
-        "Meta tags only",
-        "Content, links and conversion"
-      ],
-      [
-        "Search",
-        "Written for rankings",
-        "Written to be cited too"
-      ]
-    ],
-    "faq": [
-      [
-        "Will you rewrite all of our pages?",
-        "No. We start with the pages closest to revenue and improve what already works."
-      ],
-      [
-        "Can our team write the content?",
-        "Yes. We can give your writers briefs, or write it ourselves."
-      ],
-      [
-        "How do you avoid hurting pages that already rank?",
-        "We test changes in stages and watch rankings, then adjust."
-      ],
-      [
-        "What is search intent?",
-        "It is the reason behind a search. People may want to learn, compare, buy or find a specific site. A page must match that goal to rank well."
-      ],
-      [
-        "How long should a page be?",
-        "As long as it needs to be to answer the question well. We compare what ranks and what buyers ask, then avoid padding."
-      ],
-      [
-        "How does on-page SEO help AEO?",
-        "Clear headings and direct answers make your content easy to quote, which improves your chance of appearing in snippets and AI answers."
-      ],
-      [
-        "What is keyword cannibalization?",
-        "It happens when several of your pages target the same intent and compete with each other. We merge or redirect them so one page leads."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-      ]
-    ],
-    "q": "How do we improve the pages on our website for search?",
-    "what": "On-page SEO is the practice of improving each page so it clearly answers the search behind it. That means matching search intent, structuring headings, writing useful copy, adding internal links, improving titles and descriptions, and making the next step obvious. It is where keyword research turns into pages that people actually want to read.",
-    "why": "Search engines have become very good at judging whether a page satisfies a query. Keyword stuffing no longer works, and vague marketing copy rarely wins. Clear structure helps twice: it improves rankings and makes your content easier for answer engines to extract. A well-organized page is more likely to earn a snippet, an AI Overview citation or a mention in an LLM response.",
-    "who": "On-page work is ideal when you already have traffic or rankings but pages sit just outside the top results, or when older content has started to decline. It suits service sites, SaaS companies, publishers and ecommerce stores with established pages.",
-    "kpis": [
-      "Rankings for each page's target intent",
-      "Click-through rate from search results",
-      "Engagement and conversion rate by page",
-      "Featured snippets and AI citations won"
-    ],
-    "how": "We review each priority page against its search intent, its competitors and its conversion goal. Then we rewrite weak sections, tighten titles, add internal links and place proof where buyers need it. Changes roll out in batches so we can see what moves rankings and leads.",
-    "mist": [
-      "Writing for keywords instead of readers",
-      "Burying the answer below a long intro",
-      "Leaving old pages to decay for years"
-    ]
-  },
-  "link-building": {
-    "path": "/seo/link-building",
-    "group": "Search Engine Optimization",
-    "name": "Link Building",
-    "process": "seo",
-    "h1": [
-      "Earn links that",
-      "actually count."
-    ],
-    "sub": "Editorial mentions from sites your buyers read. They build rankings in Google and trust with AI engines.",
-    "chips": [
-      "Digital PR",
-      "Editorial",
-      "Outreach"
-    ],
-    "meta": "Link building from Beetrix360: editorial links and digital PR from relevant sites, with no link farms or private networks.",
-    "stmt": "Bought links fade or backfire. Authority comes from being worth mentioning on sites people actually trust.",
-    "pains": [
-      [
-        "Competitors outrank us on authority.",
-        "We study their link profile and target the gaps that matter."
-      ],
-      [
-        "Past links look risky.",
-        "We review your profile and clean up what could hurt you."
-      ],
-      [
-        "Outreach gets ignored.",
-        "We pitch data and stories that writers can use."
-      ],
-      [
-        "Links aren't helping money pages.",
-        "We route authority through internal links to pages that sell."
-      ]
-    ],
-    "incl": [
-      [
-        "Link gap analysis",
-        "See which sites link to your rivals and which are worth pursuing."
-      ],
-      [
-        "Digital PR",
-        "Original data and expert commentary for journalists and editors."
-      ],
-      [
-        "Editorial outreach",
-        "Personal pitches to relevant, real publications."
-      ],
-      [
-        "Profile clean-up",
-        "Risk review of existing links, plus a plan for what to do about them."
-      ]
-    ],
-    "cmp": [
-      [
-        "Source",
-        "Paid guest post lists",
-        "Earned editorial mentions"
-      ],
-      [
-        "Metric",
-        "Number of links",
-        "Relevance and referral value"
-      ],
-      [
-        "Search",
-        "Google rankings only",
-        "Rankings and AI citations"
-      ]
-    ],
-    "faq": [
-      [
-        "Do you buy links?",
-        "No. Buying links for ranking breaks Google's spam policies and puts your site at risk."
-      ],
-      [
-        "How many links will we get per month?",
-        "It varies by market, so we avoid fixed quotas. One strong mention can beat dozens of weak ones."
-      ],
-      [
-        "Do links help with AI visibility?",
-        "Mentions on trusted sites help AI engines find and trust your brand, which is why we track both."
-      ],
-      [
-        "What makes a link high quality?",
-        "Relevance, editorial placement, a trustworthy site and real readers. A natural link from a respected page in your field beats many weak ones."
-      ],
-      [
-        "What is digital PR?",
-        "It uses data stories, expert comment and newsworthy assets to win coverage from journalists, which earns links and brand mentions together."
-      ],
-      [
-        "Can bad links hurt us?",
-        "Google usually ignores low-quality links, but manipulative patterns can cause problems. We review your profile and act only where it is needed."
-      ],
-      [
-        "Do unlinked brand mentions matter?",
-        "They can help AI engines connect your brand with a topic, which is why we track mentions as well as links."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-      ]
-    ],
-    "q": "Which company can earn quality backlinks for our brand?",
-    "what": "Link building is the process of earning links from other websites to yours. A link from a relevant, trusted site acts as a vote of confidence and can bring referral traffic too. Our approach focuses on earned editorial coverage: original data, expert commentary and resources that writers want to cite.",
-    "why": "Authority still separates pages of similar quality. It also matters beyond Google. AI engines often lean on well-known publications, reviews and industry sites when forming answers, so a mention there can feed GEO and LLMO as well as SEO. One relevant article in a respected publication is often worth more than a long list of low-quality links.",
-    "who": "This service helps companies in competitive categories whose content is solid but lacks authority. It suits SaaS, finance, professional services, ecommerce and B2B brands with real expertise or data worth sharing.",
-    "kpis": [
-      "Relevant referring domains earned",
-      "Rankings for pages receiving authority",
-      "Referral traffic and assisted conversions",
-      "Brand mentions on AI-cited sources"
-    ],
-    "how": "We study who links to your rivals, then find angles those writers actually care about. That can mean original data, expert commentary or useful resources. Every pitch is written by hand, and we report on the placements that matter, not on a monthly link count.",
-    "mist": [
-      "Buying packaged guest posts",
-      "Chasing domain metrics over relevance",
-      "Pointing every link at the home page"
-    ]
-  },
-  "ecommerce-seo": {
-    "path": "/seo/ecommerce-seo",
-    "group": "Search Engine Optimization",
-    "name": "Ecommerce SEO",
-    "process": "seo",
-    "h1": [
-      "Turn searches",
-      "into orders."
-    ],
-    "sub": "Category, product and feed optimization that wins shoppers on Google, in AI recommendations and at checkout.",
-    "chips": [
-      "Categories",
-      "Products",
-      "Schema"
-    ],
-    "meta": "Ecommerce SEO from Beetrix360: category and product page optimization, faceted navigation and product schema that drive orders.",
-    "stmt": "Stores leak revenue through thin categories, duplicate products and filters that waste crawl budget.",
-    "pains": [
-      [
-        "Paid ads carry all our sales.",
-        "We build organic category traffic so revenue isn't tied to ad spend."
-      ],
-      [
-        "Filters create thousands of junk URLs.",
-        "We control faceted navigation so crawlers focus on what sells."
-      ],
-      [
-        "Product pages all sound alike.",
-        "We scale useful descriptions, and write unique copy for top sellers."
-      ],
-      [
-        "AI shopping answers skip us.",
-        "We add product schema and clear data that AI can quote."
-      ]
-    ],
-    "incl": [
-      [
-        "Category strategy",
-        "Category pages that match how shoppers search."
-      ],
-      [
-        "Product optimization",
-        "Titles, descriptions, reviews and availability data."
-      ],
-      [
-        "Faceted navigation",
-        "Rules that keep filters useful and stop index bloat."
-      ],
-      [
-        "Product schema",
-        "Prices, stock and ratings that search and AI can read."
-      ]
-    ],
-    "cmp": [
-      [
-        "Focus",
-        "Blog traffic",
-        "Category and product revenue"
-      ],
-      [
-        "Metric",
-        "Sessions",
-        "Orders and margin"
-      ],
-      [
-        "Search",
-        "Blue links",
-        "Shopping results and AI answers"
-      ]
-    ],
-    "faq": [
-      [
-        "Which platforms do you support?",
-        "Shopify, WooCommerce, headless builds and custom stores."
-      ],
-      [
-        "Can you handle big catalogs?",
-        "Yes. We use templates and automation for scale, then hand-tune top sellers."
-      ],
-      [
-        "Does this replace paid shopping ads?",
-        "No. It lowers your dependence on them and the two work well together."
-      ],
-      [
-        "Are category pages more important than product pages?",
-        "Often, yes. Categories target broader buying searches, while product pages capture specific ones. A strong store needs both."
-      ],
-      [
-        "How do you handle out-of-stock products?",
-        "It depends on whether the item returns. We keep temporary items live, and redirect or retire permanent ones with care."
-      ],
-      [
-        "What is product schema?",
-        "It is structured data that tells search engines a product's price, stock and ratings, which can support rich results."
-      ],
-      [
-        "How do we get shown in AI shopping answers?",
-        "Clear product data, helpful descriptions, real reviews and mentions on trusted sites all improve your chances."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-      ]
-    ],
-    "q": "Which store has the best option for what I want to buy?",
-    "what": "Ecommerce SEO helps online stores win organic traffic for the products and categories shoppers search for. It covers category page strategy, product page optimization, faceted navigation, internal linking, product schema, reviews and site speed. The goal is measured in orders and margin, not sessions.",
-    "why": "Ad costs tend to rise as more sellers compete, so organic revenue protects your margins. Shoppers also research in new places now. AI assistants compare products, summarize reviews and suggest options, and they rely on clear product data to do it. Stores with structured details on price, stock and ratings give those systems something accurate to work with.",
-    "who": "Ecommerce SEO suits Shopify, WooCommerce, headless and custom stores with growing catalogs. It is especially useful for brands that rely heavily on paid ads or marketplaces and want a stronger direct sales channel.",
-    "kpis": [
-      "Organic revenue and orders",
-      "Category rankings for buying terms",
-      "Indexed product and category pages",
-      "Conversion rate from organic traffic"
-    ],
-    "how": "We map how shoppers search your categories, then match that demand to your store structure. Next we improve category and product templates, control filters and add product schema. Because reporting ties to orders and margin, we can focus on the ranges that make you money.",
-    "mist": [
-      "Letting filters create endless duplicate URLs",
-      "Using manufacturer copy on every product",
-      "Deleting seasonal pages and losing their authority"
-    ]
-  },
-  "generative-engine-optimization": {
-    "path": "/seo/generative-engine-optimization",
-    "group": "AI Search Visibility",
-    "name": "Generative Engine & LLM Optimization",
-    "process": "ai",
-    "h1": [
-      "Get cited by AI,",
-      "not just ranked."
-    ],
-    "sub": "Buyers shortlist vendors in ChatGPT, Perplexity, Claude and AI Overviews. We make sure you're the answer.",
-    "chips": [
-      "GEO",
-      "LLMO",
-      "Citations"
-    ],
-    "meta": "Generative engine and LLM optimization from Beetrix360: get your brand cited in ChatGPT, Perplexity, Claude and AI Overviews.",
-    "stmt": "Your buyers ask AI who to hire. If the model doesn't know you, you never make the shortlist or see the lost deal.",
-    "pains": [
-      [
-        "AI recommends our competitors.",
-        "We find which sources it uses and earn a place in them."
-      ],
-      [
-        "We rank on Google but not in AI.",
-        "We reshape content into clear, quotable answers."
-      ],
-      [
-        "AI gets our offer wrong.",
-        "We publish consistent facts across the sources models read."
-      ],
-      [
-        "We can't see any of this.",
-        "We track prompts, citations and share of voice every week."
-      ]
-    ],
-    "incl": [
-      [
-        "Prompt research",
-        "The real questions buyers ask AI engines about your category."
-      ],
-      [
-        "Citable content",
-        "Pages with clear claims, data and structure that models can quote."
-      ],
-      [
-        "Source building",
-        "Mentions on the third-party sites AI engines lean on."
-      ],
-      [
-        "Citation tracking",
-        "Weekly reporting across the major AI engines."
-      ]
-    ],
-    "cmp": [
-      [
-        "Goal",
-        "Blue-link rankings",
-        "Citations in AI answers"
-      ],
-      [
-        "Content",
-        "Long posts for keywords",
-        "Structured, quotable answers"
-      ],
-      [
-        "Tracking",
-        "Rank tracker",
-        "Prompts and share of voice"
-      ]
-    ],
-    "faq": [
-      [
-        "What is the difference between GEO and SEO?",
-        "SEO earns rankings in search results. GEO earns mentions and citations inside AI-generated answers. They share foundations, and we run them together."
-      ],
-      [
-        "Can you guarantee ChatGPT will recommend us?",
-        "No. AI answers vary and no one controls them. We improve the signals models rely on and measure the change."
-      ],
-      [
-        "How do we measure GEO?",
-        "With a tracked set of prompts, your citation share against rivals, and traffic from AI sources."
-      ],
-      [
-        "What is LLMO?",
-        "LLMO stands for large language model optimization. It improves how models such as ChatGPT and Claude understand, represent and mention your brand."
-      ],
-      [
-        "Does GEO replace SEO?",
-        "No. GEO builds on SEO. Many AI engines use search results and trusted pages, so strong SEO supports better AI visibility."
-      ],
-      [
-        "What content do AI engines cite most?",
-        "They tend to favor clear answers, original data, comparisons and well-structured pages from sources they already trust."
-      ],
-      [
-        "Do we need an llms.txt file?",
-        "It may help some tools, but it is not a proven ranking factor. We treat it as optional and focus on content and sources first."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-      ]
-    ],
-    "q": "Which vendors should we shortlist for this project?",
-    "what": "Generative engine optimization, or GEO, is the practice of making your brand visible inside AI-generated answers. LLM optimization, or LLMO, focuses on how large language models understand and describe you. Together they cover ChatGPT, Perplexity, Claude, Gemini and Google AI Overviews, where buyers now research, compare and shortlist vendors.",
-    "why": "AI answers often name just a few options, so being left out means you may never be considered, and you may never know a deal was lost. These engines favor clear, consistent and well-sourced information. Brands that publish quotable facts and earn mentions on trusted sites give models more reason to include them. Early work also builds a lead that gets harder for rivals to close.",
-    "who": "GEO and LLMO suit B2B companies, SaaS brands, professional services and any business whose buyers research before contacting sales. They are particularly valuable when your category has clear comparison questions such as best vendor, top tools or alternatives.",
-    "kpis": [
-      "Citation share across tracked prompts",
-      "Share of voice against named rivals",
-      "Traffic and leads from AI sources",
-      "Accuracy of how AI describes your brand"
-    ],
-    "how": "We test the questions your buyers ask across the major AI engines, then record who gets named and which sources are cited. Using that map, we rewrite key pages into quotable answers and earn mentions on trusted sites. Weekly tracking shows where your share of voice is growing.",
-    "mist": [
-      "Checking one prompt and calling it research",
-      "Publishing vague claims with no evidence",
-      "Ignoring the third-party sources AI relies on"
-    ]
-  },
-  "answer-engine-optimization": {
-    "path": "/seo/answer-engine-optimization",
-    "group": "AI Search Visibility",
-    "name": "Answer Engine Optimization",
-    "process": "ai",
-    "h1": [
-      "Be the answer",
-      "they read first."
-    ],
-    "sub": "Structure your expertise so featured snippets, voice assistants and AI Overviews choose your words.",
-    "chips": [
-      "AEO",
-      "Snippets",
-      "Schema"
-    ],
-    "meta": "Answer engine optimization from Beetrix360: win featured snippets, AI Overviews and voice answers with structured, direct content.",
-    "stmt": "Search is turning into answers. Buyers get what they need on the results page, and only the source gets the credit.",
-    "pains": [
-      [
-        "AI Overviews took our clicks.",
-        "We rework pages so you become the cited source."
-      ],
-      [
-        "Rivals hold our featured snippets.",
-        "We write clearer, better-structured answers to win them."
-      ],
-      [
-        "Our FAQs are buried or missing.",
-        "We build answer hubs around what buyers really ask."
-      ],
-      [
-        "Our content is hard to quote.",
-        "We lead with direct answers and back them with proof."
-      ]
-    ],
-    "incl": [
-      [
-        "Question mapping",
-        "Real buyer questions from search, sales calls and support."
-      ],
-      [
-        "Answer-first content",
-        "A direct answer up top, then the depth."
+        "A deliberate link structure that lifts priority pages."
       ],
       [
         "Schema markup",
-        "FAQ, how-to, product and organization data where valid."
+        "Structured data for FAQs, services, articles and breadcrumbs."
       ],
       [
-        "Snippet tracking",
-        "Monitoring of snippets, AI Overviews and voice results."
+        "Content refresh program",
+        "A schedule for updating pages before they decay."
       ]
     ],
-    "cmp": [
-      [
-        "Format",
-        "Long intro, late answer",
-        "Direct answer first"
-      ],
-      [
-        "Target",
-        "Position one",
-        "The answer itself"
-      ],
-      [
-        "Data",
-        "Unstructured pages",
-        "Clean schema and entities"
-      ]
+    "steps": [
+      "Pick priority pages from search console and revenue data.",
+      "Rewrite structure, titles and copy.",
+      "Add internal links, schema and new sections.",
+      "Measure each change and roll wins out across the site."
     ],
     "faq": [
       [
-        "How is AEO different from GEO?",
-        "AEO focuses on direct answers such as snippets, voice results and AI Overviews. GEO covers citations across generative tools. We run them together."
+        "What is on-page SEO?",
+        "On-page SEO optimizes a page's content and HTML so it ranks better for relevant searches. It includes titles, headings, copy, internal links, images and schema."
       ],
       [
-        "Won't answers reduce our clicks?",
-        "Some informational clicks may drop. The goal is brand exposure and the higher-intent visits that follow."
+        "What is the difference between on-page and off-page SEO?",
+        "On-page SEO covers what's on your site. Off-page SEO covers signals from elsewhere, mainly backlinks and brand mentions."
       ],
       [
-        "Does FAQ schema still help?",
-        "It helps engines understand your content, even where rich results are limited."
+        "How many keywords should one page target?",
+        "Target one main topic and its close variations. Many related terms can rank on one page if the search intent is the same."
       ],
       [
-        "What is a featured snippet?",
-        "It is a short answer shown at the top of Google, taken from a web page. Direct and well-structured answers are most likely to win one."
+        "Does word count matter for SEO?",
+        "Not directly. A page should be as long as it takes to fully answer the query. Thin pages struggle, and padding doesn't help."
       ],
       [
-        "How do you optimize for voice search?",
-        "Use natural questions, concise answers and strong local data. Voice assistants tend to read one short, clear response."
+        "How do I fix keyword cannibalization?",
+        "Decide which page should own the term, then merge, redirect or re-target the others and update internal links to match."
       ],
       [
-        "Which pages should we optimize first?",
-        "Start with questions that sales and support hear often, especially where you already rank on page one."
-      ],
-      [
-        "How do we measure AEO without clicks?",
-        "We track snippets, citations, brand searches and assisted conversions, since an answer can influence a buyer without a direct visit."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
+        "How often should pages be updated?",
+        "Review important pages at least twice a year, and sooner if rankings fall or facts change."
       ]
-    ],
-    "q": "What is the best answer to this question from a trusted source?",
-    "what": "Answer engine optimization, or AEO, means structuring your content so search engines and assistants can pull a direct answer from it. It targets featured snippets, People Also Ask boxes, voice results and AI Overviews. Instead of hoping for a click on a blue link, AEO aims to make your brand the source of the answer itself.",
-    "why": "More searches now end on the results page because the answer appears right there. That changes what winning looks like. The brand quoted in the answer earns trust at the moment a buyer is forming an opinion, even without a click. Clear, direct content also makes it easier for GEO and LLMO systems to reuse your information accurately.",
-    "who": "AEO is a great fit for companies with many buyer questions: SaaS, healthcare, finance, education, legal and professional services. It also suits support-heavy businesses whose knowledge base can double as a source of answers.",
-    "kpis": [
-      "Featured snippets and AI Overview citations",
-      "People Also Ask appearances",
-      "Branded search growth",
-      "Assisted conversions from answer content"
-    ],
-    "how": "We collect real questions from search data, sales calls and support tickets. Then we build pages that answer each one directly and back the answer with detail. We add valid schema where it helps, and track which snippets and AI Overviews start to use your content.",
-    "mist": [
-      "Hiding answers below long introductions",
-      "Marking up content with invalid schema",
-      "Writing FAQs nobody actually asks"
     ]
   },
-  "programmatic-seo": {
-    "path": "/seo/programmatic-seo",
-    "group": "AI Search Visibility",
-    "name": "Programmatic SEO",
-    "process": "ai",
+  {
+    "id": "link-building",
+    "path": "/seo/link-building",
+    "col": "seo",
+    "name": "Link Building",
+    "short": "Link Building",
+    "kw": "link building services",
+    "title": "Link Building Services & Digital PR | Beetrix360",
+    "desc": "White-hat link building services and digital PR that earn editorial backlinks from relevant sites and strengthen your authority in search and AI.",
     "h1": [
-      "Thousands of pages,",
-      "none of them thin."
+      "Link building that earns",
+      "real authority",
+      "from sites buyers trust"
     ],
-    "sub": "Data-driven templates that cover long-tail demand at scale, with real value on every page.",
-    "chips": [
-      "Data",
-      "Templates",
-      "Scale"
+    "lead": "Our link building agency earns editorial backlinks through digital PR, research and outreach. We go after relevance and real audiences, so every link can stand up to scrutiny.",
+    "answer": "Link building is the process of earning hyperlinks from other websites to your own. Search engines treat relevant links from trusted sites as a signal of authority, and those same mentions help AI engines recognize your brand as a credible source.",
+    "q": [
+      "white hat link building agency",
+      "how to get quality backlinks",
+      "digital pr for b2b saas"
     ],
-    "meta": "Programmatic SEO from Beetrix360: data-driven page templates that capture long-tail demand at scale without thin content.",
-    "stmt": "Your buyers search in thousands of variations. Writing each page by hand can't cover them, and cheap AI spam gets filtered out.",
+    "para": [
+      "A backlink is only useful if a real publication would be happy to defend it. We avoid private blog networks, paid link farms and bulk guest posts. Those shortcuts create risk and rarely hold value.",
+      "Instead, we earn placements with original data, expert commentary and useful resources. Links, brand mentions and press coverage all help search engines and AI models connect your brand with your category."
+    ],
+    "deep": [
+      [
+        "Digital PR and data-led outreach",
+        "We turn your data and expertise into stories journalists can use, then pitch them to relevant writers and trade publications."
+      ],
+      [
+        "Competitor backlink gap analysis",
+        "We compare your link profile with those of the sites outranking you to find realistic targets and the pages that need authority most."
+      ]
+    ],
+    "kws": [
+      "backlink building",
+      "white hat link building",
+      "digital PR",
+      "guest posting",
+      "backlink audit",
+      "domain authority",
+      "referral domains",
+      "anchor text",
+      "broken link building",
+      "editorial backlinks",
+      "link acquisition",
+      "brand mentions"
+    ],
     "pains": [
       [
-        "We miss the long tail.",
-        "We map repeatable patterns such as location, industry and use case."
+        "Rivals have stronger links",
+        "A gap analysis shows which targets you can realistically win."
       ],
       [
-        "Scaled pages got deindexed.",
-        "We rebuild them around unique data and useful content."
+        "An old vendor left spammy links",
+        "We audit the profile and handle what needs cleaning up."
       ],
       [
-        "We have data but no way to publish it.",
-        "We connect your data to templates through your CMS."
+        "Great pages get no links",
+        "Linkable assets and outreach give those pages support."
       ],
       [
-        "Large sites are hard to keep clean.",
-        "We automate quality checks and internal linking."
+        "AI engines ignore your brand",
+        "Third-party mentions build the trust AI models look for."
       ]
     ],
-    "incl": [
+    "items": [
       [
-        "Pattern research",
-        "Find the page types with enough demand to justify scale."
+        "Backlink audit",
+        "A review of your link profile, risks and anchor text."
       ],
       [
-        "Data pipeline",
-        "Clean, structured sources that feed each page."
+        "Gap analysis",
+        "Domains linking to competitors that you can pursue."
       ],
       [
-        "Template design",
-        "Pages built to be useful, fast and conversion-ready."
+        "Digital PR campaigns",
+        "Data-driven stories pitched to relevant journalists."
       ],
       [
-        "Quality controls",
-        "Rules that hold back weak pages before they go live."
+        "Expert commentary",
+        "Your specialists quoted in trade and industry media."
+      ],
+      [
+        "Linkable assets",
+        "Research, tools and guides worth citing."
+      ],
+      [
+        "Internal link support",
+        "Authority routed from linked pages to revenue pages."
       ]
     ],
-    "cmp": [
-      [
-        "Content",
-        "AI text with swapped city names",
-        "Unique data on each page"
-      ],
-      [
-        "Launch",
-        "Everything at once",
-        "Staged rollout, then scale"
-      ],
-      [
-        "Index",
-        "Hoping pages stick",
-        "Monitored by page type"
-      ]
+    "steps": [
+      "Audit your profile and competitor gaps.",
+      "Build assets and list relevant publications.",
+      "Run outreach and digital PR campaigns.",
+      "Report each placement and direct authority to key pages."
     ],
     "faq": [
       [
-        "Is programmatic SEO spam?",
-        "It can be, if pages are thin. Done well, each page offers data or value a searcher can't get elsewhere."
+        "What is link building?",
+        "Link building is earning links from other websites to yours. Relevant links from trusted sites help search engines judge your authority."
       ],
       [
-        "What data do we need?",
-        "Product, location, pricing, review or usage data all work. We will review what you have first."
+        "Are backlinks still important for SEO?",
+        "Yes. Links remain an important signal, especially in competitive categories, although relevance and quality matter far more than volume."
       ],
       [
-        "How many pages should we launch?",
-        "We start with a small batch, confirm it gets indexed and performs, then expand."
+        "What is white-hat link building?",
+        "White-hat link building earns links through useful content, PR and outreach, within search engine guidelines. It avoids buying links or using link networks."
       ],
       [
-        "What is an example of programmatic SEO?",
-        "A software company might publish a page for each integration, or a travel site a page for each route. Each one uses real data."
+        "How many backlinks do I need?",
+        "There's no fixed number. Compare yourself with the pages ranking for your target terms and focus on closing that gap with relevant links."
       ],
       [
-        "Can AI write programmatic pages?",
-        "It can help, but it needs human review and real data. Mass-produced text with no added value risks being filtered out."
+        "Do you buy links?",
+        "No. We earn placements through outreach and PR, because paid link schemes carry real penalty risk."
       ],
       [
-        "What technology do we need?",
-        "A clean dataset, a flexible CMS or framework and templates. We can work with your stack or build the pipeline."
-      ],
-      [
-        "How do you stop index bloat?",
-        "We publish in stages, set quality thresholds and block weak pages from being indexed until they are ready."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
+        "Do backlinks help AI search visibility?",
+        "They can. Citations and mentions on trusted sites help establish your brand as a recognized entity, which supports AI visibility."
       ]
-    ],
-    "q": "Which provider serves my exact industry and location?",
-    "what": "Programmatic SEO uses structured data and page templates to create large sets of useful pages. Instead of writing each one by hand, you target a repeatable pattern, such as a service in each city or an integration with each tool. Done well, every page gives searchers something specific that they can't find on a generic page.",
-    "why": "Long-tail searches are specific, often high in intent and low in competition, yet there are too many to cover manually. Programmatic pages can reach that demand at scale. The risk is thin content, since search engines filter out pages that add little value. Unique data and strong quality controls are what make this approach safe, and they also give AI engines precise facts to cite.",
-    "who": "This approach suits marketplaces, SaaS platforms with integrations, travel, real estate and directory-style businesses, or any company with a rich dataset. It works best when you have real data and a CMS that can publish it reliably.",
-    "kpis": [
-      "Pages indexed by template",
-      "Long-tail rankings and impressions",
-      "Conversions from programmatic pages",
-      "Share of pages with unique data"
-    ],
-    "how": "We first find a repeatable search pattern with real demand, then check that your data can support it. We design one strong template, publish a small test batch and watch indexing and conversions. Only after that do we scale, with automated checks to hold back weak pages.",
-    "mist": [
-      "Launching thousands of pages at once",
-      "Swapping only the city name on each page",
-      "Publishing without internal links or quality rules"
     ]
   },
-  "chatgpt-optimization": {
-    "path": "/seo/chatgpt-optimization",
-    "group": "AI Search Visibility",
-    "name": "ChatGPT Optimization",
-    "process": "ai",
+  {
+    "id": "ecommerce-seo",
+    "path": "/seo/ecommerce-seo",
+    "col": "seo",
+    "name": "Ecommerce SEO",
+    "short": "Ecommerce SEO",
+    "kw": "ecommerce SEO services",
+    "title": "Ecommerce SEO Services for Online Stores | Beetrix360",
+    "desc": "Ecommerce SEO services for Shopify and custom stores: category pages, product schema, faceted navigation and AI shopping visibility.",
     "h1": [
-      "Show up when buyers",
-      "ask ChatGPT."
+      "Ecommerce SEO that turns",
+      "product searches",
+      "into paid orders"
     ],
-    "sub": "Increase your chances of being named in ChatGPT's answers for the questions that lead to a sale.",
-    "chips": [
-      "ChatGPT",
-      "Sources",
-      "Prompts"
+    "lead": "We help online stores rank category and product pages, fix faceted navigation problems and appear when shoppers compare products in Google and AI assistants.",
+    "answer": "Ecommerce SEO is the optimization of an online store so its category and product pages rank in search and shopping results. It focuses on site structure, product schema, faceted navigation, unique product content and page speed.",
+    "q": [
+      "best shopify seo agency",
+      "seo for category pages",
+      "how to rank products on google"
     ],
-    "meta": "ChatGPT optimization from Beetrix360: improve how often and how accurately ChatGPT mentions your brand in buyer conversations.",
-    "stmt": "Buyers now describe their exact problem to ChatGPT and ask who can solve it. That is your new first impression.",
+    "para": [
+      "Stores have SEO problems that normal websites don't: thousands of near-duplicate URLs, filters that waste crawl budget, out-of-stock pages and thin manufacturer descriptions. We set clear rules for all of them so search engines spend their time on pages that sell.",
+      "Category pages usually hold the biggest commercial opportunity, because they match broad buying searches. We strengthen those first, then improve product pages with helpful content, reviews and structured data."
+    ],
+    "deep": [
+      [
+        "Product schema and rich results",
+        "Accurate product, price, availability and review markup can earn richer search listings and gives AI shopping assistants clean data."
+      ],
+      [
+        "Shopify, WooCommerce and headless stores",
+        "Each platform has its own limits. We work around duplicate paths, faceted URLs and app bloat, and we support headless builds."
+      ]
+    ],
+    "kws": [
+      "Shopify SEO",
+      "WooCommerce SEO",
+      "category page SEO",
+      "product page optimization",
+      "product schema",
+      "faceted navigation",
+      "Google Shopping SEO",
+      "online store SEO",
+      "Google Merchant Center",
+      "AI shopping search",
+      "product descriptions",
+      "retail SEO"
+    ],
     "pains": [
       [
-        "ChatGPT never mentions us.",
-        "We build the web presence it draws on for your category."
+        "Filters create endless URLs",
+        "Crawl rules and canonicals keep crawlers on pages that sell."
       ],
       [
-        "It names our rivals instead.",
-        "We study which sources favor them and close the gap."
+        "Category pages barely rank",
+        "Better structure, copy and internal links lift them."
       ],
       [
-        "It repeats old information.",
-        "We update the pages and profiles behind the outdated claims."
+        "Duplicate supplier descriptions",
+        "Unique product content sets you apart from resellers."
       ],
       [
-        "We don't know what it says.",
-        "We run your buyer prompts on a schedule and report the answers."
+        "Sold-out items lose rankings",
+        "A clear out-of-stock policy keeps the value on your site."
       ]
     ],
-    "incl": [
+    "items": [
       [
-        "Prompt testing",
-        "Repeat tests of your buyers' questions to see real patterns."
+        "Store architecture",
+        "Logical categories and navigation built on search demand."
       ],
       [
-        "Crawler access",
-        "Make sure AI crawlers can reach your most useful pages."
+        "Category optimization",
+        "Rich category copy, filters and internal links."
       ],
       [
-        "Brand entity work",
-        "Consistent facts about you across trusted sources."
+        "Product page SEO",
+        "Unique descriptions, reviews and buyer questions."
       ],
       [
-        "Answer reporting",
-        "See mentions, wording, and which sources get cited."
+        "Product schema",
+        "Price, stock and review markup for rich results."
+      ],
+      [
+        "Faceted navigation control",
+        "Rules for filters, sorting and pagination."
+      ],
+      [
+        "Revenue tracking",
+        "Reports on organic orders, revenue and top categories."
       ]
     ],
-    "cmp": [
-      [
-        "Method",
-        "One-off prompt check",
-        "Scheduled, repeated testing"
-      ],
-      [
-        "Fix",
-        "Tips and hacks",
-        "Better sources and content"
-      ],
-      [
-        "Result",
-        "Screenshot of a mention",
-        "Tracked mention share"
-      ]
+    "steps": [
+      "Audit structure, products and crawl waste.",
+      "Fix facets, schema and technical issues.",
+      "Optimize top categories and products.",
+      "Roll out to the full catalog using templates."
     ],
     "faq": [
       [
-        "Can you pay to appear in ChatGPT answers?",
-        "Organic answers can't be bought. We focus on earning mentions through content and trusted sources."
+        "What is ecommerce SEO?",
+        "Ecommerce SEO helps online stores rank category and product pages so shoppers can find them. It covers structure, product content, schema, speed and faceted navigation."
       ],
       [
-        "Why do answers keep changing?",
-        "AI responses vary by wording and user context. That is why we test repeatedly and track trends."
-      ],
-      [
-        "How long until we see changes?",
-        "Live search-based answers can shift sooner. Model knowledge takes longer, so we track both."
-      ],
-      [
-        "How does ChatGPT choose which brands to mention?",
-        "It draws on training data and, with search on, live web sources. Clear information and trusted third-party mentions both matter."
-      ],
-      [
-        "Should we allow OpenAI's crawlers?",
-        "Usually, yes, if you want visibility. OpenAI publishes separate crawlers for search and training, so you can review each setting."
-      ],
-      [
-        "Does ChatGPT use Bing?",
-        "Its search feature uses web results from search partners, so being indexed and visible in traditional search still helps."
-      ],
-      [
-        "Can you track ChatGPT traffic in analytics?",
-        "Often, yes, through referral data, though some visits appear as direct. We set up reporting to separate what can be seen."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-      ]
-    ],
-    "q": "Who are the top providers for this, and why?",
-    "what": "ChatGPT optimization is a focused form of GEO. It aims to improve how often ChatGPT mentions your brand, how accurately it describes you and which sources it cites. The work combines prompt testing, crawler access, stronger content and mentions on the sites that shape its answers. It also supports your wider LLMO program.",
-    "why": "Many buyers now ask ChatGPT for recommendations before they ever visit a website. They describe their exact situation and get a short list, which makes the conversation feel like advice from a trusted colleague. If your brand is missing or misdescribed, the competitor that appears gets a head start, and you get no signal that it happened.",
-    "who": "This service suits brands in categories where buyers compare options: software, agencies, consultants, finance, travel and consumer products. It is also useful for leadership teams who want a clear view of what ChatGPT says about them.",
-    "kpis": [
-      "Mention rate across tracked prompts",
-      "Position within the answer",
-      "Sources cited alongside your brand",
-      "Referral traffic from ChatGPT"
-    ],
-    "how": "We run your buyers' prompts in ChatGPT on a schedule and record what comes back. Then we check crawler access, strengthen your key pages and close gaps in the sources behind each answer. You see how often you are named, how you are described and what changed.",
-    "mist": [
-      "Trying to game answers with tricks",
-      "Blocking AI crawlers by accident",
-      "Judging visibility from a single screenshot"
-    ]
-  },
-  "ai-visibility-tracking": {
-    "path": "/seo/ai-visibility-tracking",
-    "group": "AI Search Visibility",
-    "name": "AI & LLM Visibility Tracking",
-    "process": "ai",
-    "h1": [
-      "See where AI",
-      "mentions you."
-    ],
-    "sub": "Track citations, mentions and share of voice across AI engines, and connect them to traffic and pipeline.",
-    "chips": [
-      "Prompts",
-      "Share of voice",
-      "Alerts"
-    ],
-    "meta": "AI and LLM visibility tracking from Beetrix360: monitor citations, mentions and share of voice across ChatGPT, Perplexity, Claude and AI Overviews.",
-    "stmt": "Rank trackers can't see AI answers. A big part of your buyer's research now happens where your reports don't look.",
-    "pains": [
-      [
-        "We have no AI baseline.",
-        "We build a prompt set and record where you stand today."
-      ],
-      [
-        "Leadership wants numbers.",
-        "We report share of voice against named competitors."
-      ],
-      [
-        "AI traffic looks like direct traffic.",
-        "We set up analytics to separate AI referrals."
-      ],
-      [
-        "We can't tell if the work helps.",
-        "We track changes against the content you ship."
-      ]
-    ],
-    "incl": [
-      [
-        "Prompt library",
-        "A tracked set of buyer questions, grouped by funnel stage."
-      ],
-      [
-        "Multi-engine monitoring",
-        "ChatGPT, Perplexity, Claude and AI Overviews, side by side."
-      ],
-      [
-        "Competitor share of voice",
-        "How often you appear compared with named rivals."
-      ],
-      [
-        "Attribution setup",
-        "AI-source traffic connected to leads and deals."
-      ]
-    ],
-    "cmp": [
-      [
-        "View",
-        "Google rankings",
-        "AI answers and citations"
-      ],
-      [
-        "Cadence",
-        "A quarterly check",
-        "Weekly tracking"
-      ],
-      [
-        "Link",
-        "Visibility only",
-        "Visibility tied to pipeline"
-      ]
-    ],
-    "faq": [
-      [
-        "Which AI engines do you track?",
-        "ChatGPT, Perplexity, Claude and Google AI Overviews by default, and others when they matter to your buyers."
-      ],
-      [
-        "How accurate is AI tracking?",
-        "Answers vary, so we use repeated tests and treat results as directional trends."
-      ],
-      [
-        "Can we track without other services?",
-        "Yes. Tracking works alone, and it shows where to invest next."
-      ],
-      [
-        "What is AI share of voice?",
-        "It is how often your brand appears in AI answers for tracked prompts, compared with your competitors."
-      ],
-      [
-        "How many prompts should we track?",
-        "Enough to reflect your funnel, often from dozens to a few hundred. We group them by topic and buying stage."
-      ],
-      [
-        "Why do results differ between checks?",
-        "AI answers change with wording, location and time. Repeated sampling gives a more reliable trend than any single check."
-      ],
-      [
-        "Can you show which sources AI uses?",
-        "Where an engine shows citations, yes. We use those sources to decide where to build content and mentions."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-      ]
-    ],
-    "q": "How often is our brand mentioned compared with rivals?",
-    "what": "AI and LLM visibility tracking measures how your brand appears in AI-generated answers. We run a defined set of buyer prompts across engines such as ChatGPT, Perplexity, Claude and Google AI Overviews. We then record whether you appear, where you appear, what is said and which sources are cited, and compare that with your competitors.",
-    "why": "Traditional rank trackers can't see these answers, so many companies have a blind spot in a growing channel. Without a baseline, GEO and LLMO work is hard to justify or improve. Tracking turns AI visibility into something a team can manage, showing what changed, which rival gained ground and which content earned the citation.",
-    "who": "Tracking suits marketing leaders who need to report on AI search, SEO teams expanding into GEO, and brands in competitive categories. Enterprises can segment results by product, market or language.",
-    "kpis": [
-      "AI share of voice",
-      "Citation and mention rate by engine",
-      "Sentiment and accuracy of answers",
-      "AI-source sessions, leads and revenue"
-    ],
-    "how": "We build a prompt library around your products, buyers and funnel stages, then sample it across each engine on a set schedule. Results go into one dashboard with competitor comparisons. We also set up analytics so AI referrals stop disappearing into direct traffic.",
-    "mist": [
-      "Tracking branded prompts only",
-      "Reading one answer as a final result",
-      "Reporting visibility with no link to pipeline"
-    ]
-  },
-  "ai-brand-perception": {
-    "path": "/seo/ai-brand-perception",
-    "group": "AI Search Visibility",
-    "name": "AI Brand Perception",
-    "process": "ai",
-    "h1": [
-      "Shape what AI",
-      "says about you."
-    ],
-    "sub": "Audit how AI engines describe your brand, then correct the sources behind wrong or weak answers.",
-    "chips": [
-      "Sentiment",
-      "Accuracy",
-      "Entity"
-    ],
-    "meta": "AI brand perception from Beetrix360: audit how AI engines describe your brand and improve the sources behind their answers.",
-    "stmt": "AI is already describing your company to buyers. It may be out of date, wrong, or borrowed from your competitors.",
-    "pains": [
-      [
-        "AI gets our pricing or services wrong.",
-        "We correct the source pages it relies on."
-      ],
-      [
-        "Old reviews define us.",
-        "We build fresher, stronger proof across trusted sites."
-      ],
-      [
-        "We sound like every other vendor.",
-        "We make your differentiators clear and repeatable."
-      ],
-      [
-        "An old problem keeps surfacing.",
-        "We publish accurate context and build better sources."
-      ]
-    ],
-    "incl": [
-      [
-        "Perception audit",
-        "How each AI engine describes your brand, offer and rivals."
-      ],
-      [
-        "Source tracing",
-        "Find the pages behind wrong or unflattering answers."
-      ],
-      [
-        "Entity alignment",
-        "Consistent facts across your site, profiles and listings."
-      ],
-      [
-        "Narrative content",
-        "Proof-led content that makes your strengths easy to cite."
-      ]
-    ],
-    "cmp": [
-      [
-        "Focus",
-        "Social sentiment",
-        "What AI tells buyers"
-      ],
-      [
-        "Fix",
-        "Reactive replies",
-        "Corrected, stronger sources"
-      ],
-      [
-        "Proof",
-        "Brand survey",
-        "Repeated AI answer tests"
-      ]
-    ],
-    "faq": [
-      [
-        "Can you edit what ChatGPT says?",
-        "No one can directly edit it. We change the public information it draws on, and answers can improve over time."
-      ],
-      [
-        "What if the negative information is true?",
-        "We won't hide it. We help you add accurate context and show what has changed."
-      ],
-      [
-        "Who usually owns this work?",
-        "Marketing, with input from communications and legal on sensitive issues."
-      ],
-      [
-        "How do we find out what AI says about us?",
-        "We run brand, category and comparison prompts across major engines, then review the wording, tone, facts and sources."
-      ],
-      [
-        "How long does it take to correct AI answers?",
-        "Search-connected answers can change sooner. Model knowledge can lag, so we work on the sources and track progress."
-      ],
-      [
-        "What sources shape brand perception?",
-        "Your site, review platforms, forums, news, Wikipedia-style references and industry sites can all play a part."
-      ],
-      [
-        "Is this the same as online reputation management?",
-        "They overlap, but this work focuses on the answers AI gives and the sources feeding them."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-      ]
-    ],
-    "q": "What is this company known for, and can I trust it?",
-    "what": "AI brand perception is what AI engines believe and say about your company. When a buyer asks about your pricing, reputation or strengths, the answer may blend your website, reviews, forums and news. We audit those answers across major models, trace where they come from and improve the public information behind them.",
-    "why": "An AI answer can sound certain even when it is outdated or wrong. Buyers may never check it, and the same claim can reach thousands of people. Reputation has always mattered, but now it is summarized for buyers in seconds. Correcting the sources early protects trust and sales, and supports both LLMO and your wider brand strategy.",
-    "who": "This service suits established brands, companies after a rebrand or merger, businesses with outdated reviews and leadership teams who want to know how they are portrayed. It is also valuable before a major launch or funding round.",
-    "kpis": [
-      "Accuracy of key brand facts",
-      "Sentiment across AI engines",
-      "Presence of your differentiators in answers",
-      "Share of trusted sources that are current"
-    ],
-    "how": "We ask each major AI engine what it knows about you, your rivals and your category. Next we trace wrong or weak claims back to their sources. Then we update your own pages, align your profiles and build fresh proof on sites those engines trust.",
-    "mist": [
-      "Assuming AI answers are out of your control",
-      "Leaving old profiles and listings online",
-      "Sending mixed messages across channels"
-    ]
-  },
-  "keyword-research": {
-    "path": "/seo/keyword-research",
-    "group": "Strategy & Enterprise",
-    "name": "Keyword Research",
-    "process": "strategy",
-    "h1": [
-      "Find the searches",
-      "that make money."
-    ],
-    "sub": "A keyword plan built on buyer intent, value and competition, including the questions people now ask AI.",
-    "chips": [
-      "Intent",
-      "Value",
-      "Prompts"
-    ],
-    "meta": "Keyword research from Beetrix360: a prioritized plan based on buyer intent, commercial value and AI search questions.",
-    "stmt": "Most keyword lists sort by volume. Volume doesn't pay the bills. Buyers with a problem and a budget do.",
-    "pains": [
-      [
-        "We target words nobody buys from.",
-        "We score each term by intent and likely value."
-      ],
-      [
-        "Our list is huge and unusable.",
-        "We group it into topics, pages and priorities."
-      ],
-      [
-        "We fight unwinnable terms.",
-        "We check real competition and find routes you can win."
-      ],
-      [
-        "The list ignores AI search.",
-        "We add the longer questions buyers ask AI tools."
-      ]
-    ],
-    "incl": [
-      [
-        "Demand research",
-        "Search data, sales calls and customer language."
-      ],
-      [
-        "Intent scoring",
-        "Each topic labeled by where the buyer is in the journey."
-      ],
-      [
-        "Topic map",
-        "Keywords grouped into a clear site structure."
-      ],
-      [
-        "AI prompt map",
-        "The conversational questions that sit alongside your keywords."
-      ]
-    ],
-    "cmp": [
-      [
-        "Sort",
-        "Search volume",
-        "Revenue potential"
-      ],
-      [
-        "Output",
-        "A spreadsheet dump",
-        "A page-by-page roadmap"
-      ],
-      [
-        "Scope",
-        "Short keywords",
-        "Keywords and AI prompts"
-      ]
-    ],
-    "faq": [
-      [
-        "What do we receive?",
-        "A prioritized map of topics and target pages, with intent, value and difficulty for each."
-      ],
-      [
-        "Can our team use this without you?",
-        "Yes. It is built so your writers and developers can act on it."
-      ],
-      [
-        "How often should we redo it?",
-        "Review it at least yearly, and sooner if your offer or market shifts."
-      ],
-      [
-        "What is the difference between short-tail and long-tail keywords?",
-        "Short-tail terms are broad with high volume. Long-tail terms are specific, and they often convert better and face less competition."
-      ],
-      [
-        "What is keyword difficulty?",
-        "It estimates how hard a term is to rank for. We also look at the real results, since tool scores alone can mislead."
-      ],
-      [
-        "How do you research AI prompts?",
-        "We use sales and support questions, People Also Ask data and repeated AI testing to map how buyers ask."
-      ],
-      [
-        "Can you do keyword research in other languages?",
-        "Yes. We research each market separately, because direct translations often miss how people really search."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-      ]
-    ],
-    "q": "What are buyers really searching for in this category?",
-    "what": "Keyword research finds the words and questions your buyers use, and shows which ones are worth targeting. We combine search data with customer language from sales calls, reviews and support tickets. Each topic is then scored on intent, value and difficulty, and mapped to a specific page, so your team knows exactly what to create or improve.",
-    "why": "Good research prevents expensive mistakes. Without it, teams write content for terms that never convert or chase phrases they can't realistically win. Search behavior is also changing, as people ask longer questions in AI tools. A modern plan covers classic keywords for SEO alongside the questions that matter for AEO, GEO and LLMO.",
-    "who": "Keyword research suits new websites, companies entering a new market and teams planning a content calendar or site redesign. It also helps established brands that have grown without a clear search strategy.",
-    "kpis": [
-      "Topics mapped to pages",
-      "Share of revenue-focused terms targeted",
-      "Rankings gained for prioritized terms",
-      "Leads from newly targeted pages"
-    ],
-    "how": "We combine search tools with your sales calls, reviews and support tickets, so the list reflects how buyers really talk. Each topic gets scored for intent, value and difficulty. The result is a page-by-page roadmap that your writers and developers can start on right away.",
-    "mist": [
-      "Sorting a list by volume alone",
-      "Targeting terms that never lead to sales",
-      "Ignoring how people phrase questions in AI tools"
-    ]
-  },
-  "competitor-analysis": {
-    "path": "/digital-marketing/competitor-analysis",
-    "group": "Strategy & Enterprise",
-    "name": "Digital Marketing Competitor Analysis",
-    "process": "strategy",
-    "h1": [
-      "See how rivals",
-      "win your buyers."
-    ],
-    "sub": "A clear view of their search, ads, content and AI visibility, plus the gaps you can take.",
-    "chips": [
-      "SEO",
-      "Ads",
-      "AI answers"
-    ],
-    "meta": "Digital marketing competitor analysis from Beetrix360: compare rivals' search, paid, content and AI visibility to find winnable gaps.",
-    "stmt": "Your competitors publish their strategy every day. Most companies never put the pieces together.",
-    "pains": [
-      [
-        "New rivals keep outranking us.",
-        "We show what changed and how to respond."
-      ],
-      [
-        "We don't know their ad strategy.",
-        "We review their paid messaging, offers and landing pages."
-      ],
-      [
-        "We copy instead of compete.",
-        "We find gaps they have left open."
-      ],
-      [
-        "AI recommends them, not us.",
-        "We compare which sources favor them."
-      ]
-    ],
-    "incl": [
-      [
-        "Search comparison",
-        "Rankings, content and links, measured side by side."
-      ],
-      [
-        "Paid media review",
-        "Visible ads, offers and landing pages."
-      ],
-      [
-        "AI visibility benchmark",
-        "Who gets named in AI answers, and why."
-      ],
-      [
-        "Opportunity plan",
-        "A ranked list of moves worth making first."
-      ]
-    ],
-    "cmp": [
-      [
-        "Output",
-        "A pile of charts",
-        "A ranked action plan"
-      ],
-      [
-        "Scope",
-        "SEO metrics only",
-        "Search, paid, content and AI"
-      ],
-      [
-        "Timing",
-        "A one-time snapshot",
-        "Refreshed on a set cadence"
-      ]
-    ],
-    "faq": [
-      [
-        "Which competitors do you review?",
-        "You name your main rivals, and we add those who show up in search and AI answers."
-      ],
-      [
-        "Where does the data come from?",
-        "Public sources, including search results, ad libraries, third-party tools and AI answers."
-      ],
-      [
-        "Do you need our internal data?",
-        "No, but your CRM and analytics help us size each opportunity."
-      ],
-      [
-        "How often should we run a competitor analysis?",
-        "A full review once or twice a year works for most companies, with lighter monitoring each quarter."
-      ],
-      [
-        "Can you see competitors' ad spend?",
-        "Not exactly. We can estimate activity and review public ad libraries, which show messaging and offers."
-      ],
-      [
-        "What is a content gap?",
-        "It is a topic your rivals rank for or cover well that you don't. Closing the right gaps can bring in qualified demand."
-      ],
-      [
-        "What do we do with the findings?",
-        "You get a ranked plan with owners and effort levels, so the findings become actions and not just a report."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-      ]
-    ],
-    "q": "How do we compare with the other companies in our market?",
-    "what": "Digital marketing competitor analysis shows how rivals attract and convert your buyers. We compare search rankings, content, backlinks, paid ads, offers, landing pages, social presence and AI visibility. You get a clear picture of where they are strong, where they are exposed and which moves are worth making first.",
-    "why": "Competitors reveal a lot through what they publish and advertise. Reviewing it stops you from guessing, and it can show gaps that aren't obvious from inside your business. It also now matters where they appear in AI answers. A rival that dominates GEO and LLMO may be winning buyers long before your team sees them.",
-    "who": "This service suits companies entering a market, teams losing ground to new players and leaders preparing an annual plan. It also helps agencies and in-house teams that need a fact-based case for budget.",
-    "kpis": [
-      "Search share of voice against rivals",
-      "Content and keyword gaps closed",
-      "AI share of voice against rivals",
-      "Opportunities shipped from the plan"
-    ],
-    "how": "We agree on your main rivals, then add the ones that really show up in search and AI answers. We compare their rankings, content, links, ads and offers side by side. Each finding becomes a ranked action with an owner, effort level and likely impact.",
-    "mist": [
-      "Copying rivals without knowing what works",
-      "Watching only your direct competitors",
-      "Producing a report that nobody acts on"
-    ]
-  },
-  "enterprise-seo": {
-    "path": "/seo/enterprise-seo",
-    "group": "Strategy & Enterprise",
-    "name": "Enterprise SEO",
-    "process": "strategy",
-    "h1": [
-      "SEO for sites",
-      "with real complexity."
-    ],
-    "sub": "Large sites, many teams, strict governance. One search program that works across all of them.",
-    "chips": [
-      "Governance",
-      "Scale",
-      "Attribution"
-    ],
-    "meta": "Enterprise SEO from Beetrix360: search programs for large sites with governance, multi-market scale and closed-loop revenue attribution.",
-    "stmt": "At enterprise scale the ranking factors are the easy part. The hard part is getting ten teams to ship one plan.",
-    "pains": [
-      [
-        "SEO requests sit in the backlog.",
-        "We write business cases and tickets engineers can act on."
-      ],
-      [
-        "Every market does its own thing.",
-        "We set shared standards with room for local needs."
-      ],
-      [
-        "Releases keep breaking SEO.",
-        "We add checks into your release process."
-      ],
-      [
-        "Leadership can't see the value.",
-        "We connect search data to your CRM and revenue reports."
-      ]
-    ],
-    "incl": [
-      [
-        "Program governance",
-        "Clear owners, standards and an operating rhythm."
-      ],
-      [
-        "Technical at scale",
-        "Template-level fixes across large and complex sites."
-      ],
-      [
-        "International SEO",
-        "Hreflang, market structure and local content."
-      ],
-      [
-        "Closed-loop reporting",
-        "Search linked to pipeline in one unified data layer."
-      ]
-    ],
-    "cmp": [
-      [
-        "Model",
-        "Recommendations only",
-        "Embedded with your teams"
-      ],
-      [
-        "Data",
-        "Separate tool exports",
-        "One unified data layer"
-      ],
-      [
-        "Security",
-        "Generic tools",
-        "Privacy-first, self-hosted option"
-      ]
-    ],
-    "faq": [
-      [
-        "Do you work with internal SEO teams?",
-        "Yes. We usually support them with strategy, capacity and engineering help."
-      ],
-      [
-        "Can you meet our security reviews?",
-        "Yes, we work through procurement and security steps, and offer a self-hosted AI option."
-      ],
-      [
-        "Which systems can you connect?",
-        "Salesforce, HubSpot, Odoo, Dynamics and more through APIs."
-      ],
-      [
-        "What makes enterprise SEO different?",
-        "Scale and coordination. The hard part is often getting changes approved and shipped across many teams and systems."
-      ],
-      [
-        "How do you handle international SEO?",
-        "We plan URL structure, hreflang and local content by market, then set shared standards for regional teams."
-      ],
-      [
-        "Can you build SEO checks into our release process?",
-        "Yes. We add automated checks and review steps so that problems are caught before they go live."
-      ],
-      [
-        "How do you prove ROI to leadership?",
-        "We connect search data with your CRM and BI tools, then report pipeline and revenue by market and product."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-      ]
-    ],
-    "q": "Which partner can run SEO for a large, global company?",
-    "what": "Enterprise SEO is search strategy for large organizations with big websites, many stakeholders and complex approval paths. It combines technical work at scale with governance: who owns what, how changes ship and how search fits into product, content and engineering. The aim is one program that runs across brands, regions and teams.",
-    "why": "Large sites have huge potential, but small errors can spread across thousands of pages. A single template or release can cost traffic overnight, and regional teams may duplicate work. Strong processes matter as much as tactics. Enterprises also face a growing AI search challenge, so we build SEO in a way that supports AEO, GEO and LLMO from the start.",
-    "who": "This service suits enterprises with large or international sites, several business units and internal SEO or digital teams that need extra strategy, capacity and engineering support.",
-    "kpis": [
-      "Organic pipeline across business units",
-      "Issues caught before release",
-      "Template-level technical health",
-      "Time from recommendation to release"
-    ],
-    "how": "We start by learning how your teams, systems and approvals really work. Then we set shared standards, build business cases for the biggest fixes and add SEO checks to your release process. Reporting connects to your CRM, so each market can see its contribution.",
-    "mist": [
-      "Running SEO separately in every market",
-      "Reviewing SEO after a release goes live",
-      "Reporting traffic when leaders want pipeline"
-    ]
-  },
-  "enterprise-geo": {
-    "path": "/seo/enterprise-geo",
-    "group": "Strategy & Enterprise",
-    "name": "Enterprise GEO",
-    "process": "strategy",
-    "h1": [
-      "Own the AI answer",
-      "across every market."
-    ],
-    "sub": "A governed AI visibility program for large brands, covering multiple products, regions and languages.",
-    "chips": [
-      "Multi-market",
-      "Governance",
-      "Self-hosted"
-    ],
-    "meta": "Enterprise GEO from Beetrix360: governed AI search visibility across products, regions and languages, with privacy-first options.",
-    "stmt": "Big brands have the most to lose in AI answers. One wrong statement can repeat in every market at once.",
-    "pains": [
-      [
-        "AI describes our products inconsistently.",
-        "We align facts across sites, regions and business units."
-      ],
-      [
-        "No one owns AI visibility.",
-        "We set up clear ownership, process and reporting."
-      ],
-      [
-        "Each language gets different answers.",
-        "We test prompts and fix sources market by market."
-      ],
-      [
-        "Compliance worries slow us down.",
-        "We build review steps and offer self-hosted AI."
-      ]
-    ],
-    "incl": [
-      [
-        "Global benchmark",
-        "AI share of voice by product, market and language."
-      ],
-      [
-        "Governance model",
-        "Approval flows, owners and shared standards."
-      ],
-      [
-        "Knowledge alignment",
-        "One source of truth for key brand and product facts."
-      ],
-      [
-        "Executive reporting",
-        "AI visibility tied to pipeline, for leadership."
-      ]
-    ],
-    "cmp": [
-      [
-        "Scale",
-        "One market, one prompt list",
-        "Every product and region"
-      ],
-      [
-        "Control",
-        "Ad hoc content updates",
-        "Governed approval flows"
-      ],
-      [
-        "Data",
-        "Shared public AI tools",
-        "Privacy-first, self-hosted option"
-      ]
-    ],
-    "faq": [
-      [
-        "How is this different from standard GEO?",
-        "It adds governance, multi-market testing and reporting that fit a large organization."
-      ],
-      [
-        "Is our data used to train public AI?",
-        "No. Your data never trains public AI, and we offer a self-hosted LLM option."
-      ],
-      [
-        "Which languages can you cover?",
-        "We scope languages to your markets, with local review for accuracy."
-      ],
-      [
-        "Who should own enterprise GEO?",
-        "Usually marketing or digital leads it, with support from SEO, comms, product and legal. We help define clear roles."
-      ],
-      [
-        "How do you keep product facts consistent?",
-        "We create a single source of truth, then align websites, documentation, listings and partner content to it."
-      ],
-      [
-        "Does this work in regulated industries?",
-        "Yes, with suitable approval flows. We build legal and compliance review into publishing."
-      ],
-      [
-        "Can you report on AI visibility by country?",
-        "Yes. We test prompts by market and language, then roll results up into one executive view."
-      ],
-      [
-        "How much does this service cost?",
-        "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-      ],
-      [
-        "How do we get started with Beetrix360?",
-        "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-      ],
-      [
-        "Can you work with our in-house team or current agency?",
-        "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-      ]
-    ],
-    "q": "Which enterprise brands lead this market, globally?",
-    "what": "Enterprise GEO is a managed program for AI search visibility at large organizations. It applies generative engine optimization and LLMO across many products, regions and languages, with the governance big brands need. We measure how AI engines describe you in each market, align your key facts and set a repeatable process for improving them.",
-    "why": "AI answers can spread one wrong claim across every market at once, and regulated industries face extra risk. Separate teams often publish conflicting details, which gives models mixed signals. A coordinated program gives leaders one view of AI visibility, keeps product facts consistent and adds the review steps that legal and compliance teams expect.",
-    "who": "This service suits global brands, regulated industries and companies with large product ranges. It is well suited to organizations that need self-hosted AI options, strict data handling or reporting across several business units.",
-    "kpis": [
-      "AI share of voice by market and product",
-      "Accuracy of priority brand claims",
-      "Coverage across languages",
-      "AI-attributed pipeline"
-    ],
-    "how": "We benchmark your AI visibility by product, market and language, then build one approved source of truth for key facts. Local teams get clear standards and review flows. Executive reporting shows where you lead, where you lag and which sources need attention.",
-    "mist": [
-      "Letting each region publish different facts",
-      "Skipping legal and compliance review",
-      "Testing prompts only in English"
-    ]
-  }
-};
-
-export const MORE: Record<string, any> = {
-  "seo": {
-    "what": "Search engine optimization is the work of making your website the best result for what your buyers search for. It covers three areas: how well search engines can crawl your site, how well your content answers real questions, and how much other trusted sites vouch for you. At Beetrix360 we run all three as one program, so a technical fix, a new page and an earned link all push toward the same revenue goal.",
-    "why": "Search is still where most buyers start, but the results page has changed. AI Overviews, featured snippets and chat answers now sit above the classic links, and they draw on the same trusted pages that rank well. Strong SEO is therefore the foundation of AEO, GEO and LLMO. A site that is slow, thin or poorly linked will struggle in Google and in AI answers alike.",
-    "who": "This service suits B2B companies, service businesses and ecommerce brands that want organic search to become a dependable source of qualified leads. It works best when a sales team can act on the demand we create and when you can share analytics and CRM data with us.",
-    "kpis": [
-      "Qualified organic leads and booked calls",
-      "Rankings for high-intent commercial terms",
-      "Organic revenue and pipeline by landing page",
-      "Share of voice against named competitors"
-    ],
-    "faq": [
-      [
-        "What does an SEO service include?",
-        "It includes a technical audit, keyword and intent research, on-page optimization, content creation or refreshes, link earning and monthly reporting. We scope the mix around where your site is weakest."
-      ],
-      [
-        "Should we do SEO or paid ads first?",
-        "Paid ads bring demand quickly, while SEO compounds over time. Most companies benefit from both, and search data from one can improve the other."
-      ],
-      [
-        "How do you report on SEO results?",
-        "You get a report that links search visibility to leads and revenue through your analytics and CRM, not only a list of rankings."
-      ],
-      [
-        "What can slow SEO results down?",
-        "Slow development queues, thin content, weak authority and strong competitors are the usual causes. Your audit will show which ones apply to you."
-      ]
-    ]
-  },
-  "local-seo": {
-    "what": "Local SEO helps your business appear when people nearby search for what you offer. That includes the Google map pack, local organic results, directories and AI answers to near-me questions. The work centers on your Google Business Profile, accurate business details, useful location pages and a steady flow of genuine reviews.",
-    "why": "Local searches carry strong intent. Someone looking for a provider nearby often wants to call, book or visit soon, and they usually choose from the first few options they see. Assistants and AI Overviews now shape those choices too, pulling from the same reviews, listings and local pages. Weak local signals can leave you out of both the map and the AI answer.",
-    "who": "Local SEO fits clinics, law firms, home services, real estate teams, restaurants, retailers and multi-location brands. It works for a single branch or a large network, as long as each location has a real presence or a verified service area.",
-    "kpis": [
-      "Calls, direction requests and bookings",
-      "Map pack visibility by service area",
-      "Review volume, recency and rating",
-      "Leads and revenue by location"
-    ],
-    "faq": [
-      [
-        "What is a Google Business Profile?",
-        "It is your free business listing on Google Search and Maps. It shows your services, hours, reviews and photos, and it is one of the strongest local ranking signals."
-      ],
-      [
-        "Do reviews affect local rankings?",
-        "Yes. The number, quality and freshness of reviews can all influence visibility and trust. We only use compliant methods to request them."
-      ],
-      [
-        "Should each city get its own page?",
-        "Only where you truly serve that area and can add local proof. Thin copies of one page tend to perform poorly."
-      ],
-      [
-        "How does local SEO connect with AI search?",
-        "AI assistants use reviews, listings and local content to recommend businesses, so accurate local data supports local AEO and GEO too."
-      ]
-    ]
-  },
-  "technical-seo": {
-    "what": "Technical SEO is the work that makes a website easy for search engines and AI crawlers to find, render and understand. It covers crawling, indexing, site architecture, redirects, page speed, structured data, canonical tags and mobile usability. Good technical SEO rarely gets noticed. Poor technical SEO quietly limits everything else you publish.",
-    "why": "Every page you create depends on this foundation. If key pages are blocked, duplicated or slow, content and links can't deliver their full value. AI crawlers add a new layer, since many of them read less JavaScript than Googlebot. Content that only appears after heavy client-side rendering may not reach LLMs at all, which directly limits GEO and LLMO.",
-    "who": "This service is a strong fit for large or complex sites, JavaScript frameworks such as Next.js, ecommerce catalogs and companies planning a redesign or migration. It also helps any business that has seen an unexplained traffic drop.",
-    "kpis": [
-      "Share of key pages indexed",
-      "Core Web Vitals by template",
-      "Crawl errors and redirect chains resolved",
-      "Organic traffic recovered or protected"
-    ],
-    "faq": [
-      [
-        "What are Core Web Vitals?",
-        "They are Google's measures of real-user loading, interactivity and visual stability. We improve them at template level so fixes apply across many pages."
-      ],
-      [
-        "Can AI crawlers read JavaScript sites?",
-        "Support varies, and many AI crawlers read far less JavaScript than Googlebot. Server-side rendering is the safest way to make content visible."
-      ],
-      [
-        "How often should a technical audit run?",
-        "A full audit once or twice a year is common, with continuous monitoring in between and extra checks around major releases."
-      ],
-      [
-        "What should we do before a site migration?",
-        "Benchmark current traffic, map every important URL, plan redirects and test on staging. Involve SEO early, before design decisions are final."
-      ]
-    ]
-  },
-  "on-page-seo": {
-    "what": "On-page SEO is the practice of improving each page so it clearly answers the search behind it. That means matching search intent, structuring headings, writing useful copy, adding internal links, improving titles and descriptions, and making the next step obvious. It is where keyword research turns into pages that people actually want to read.",
-    "why": "Search engines have become very good at judging whether a page satisfies a query. Keyword stuffing no longer works, and vague marketing copy rarely wins. Clear structure helps twice: it improves rankings and makes your content easier for answer engines to extract. A well-organized page is more likely to earn a snippet, an AI Overview citation or a mention in an LLM response.",
-    "who": "On-page work is ideal when you already have traffic or rankings but pages sit just outside the top results, or when older content has started to decline. It suits service sites, SaaS companies, publishers and ecommerce stores with established pages.",
-    "kpis": [
-      "Rankings for each page's target intent",
-      "Click-through rate from search results",
-      "Engagement and conversion rate by page",
-      "Featured snippets and AI citations won"
-    ],
-    "faq": [
-      [
-        "What is search intent?",
-        "It is the reason behind a search. People may want to learn, compare, buy or find a specific site. A page must match that goal to rank well."
-      ],
-      [
-        "How long should a page be?",
-        "As long as it needs to be to answer the question well. We compare what ranks and what buyers ask, then avoid padding."
-      ],
-      [
-        "How does on-page SEO help AEO?",
-        "Clear headings and direct answers make your content easy to quote, which improves your chance of appearing in snippets and AI answers."
-      ],
-      [
-        "What is keyword cannibalization?",
-        "It happens when several of your pages target the same intent and compete with each other. We merge or redirect them so one page leads."
-      ]
-    ]
-  },
-  "link-building": {
-    "what": "Link building is the process of earning links from other websites to yours. A link from a relevant, trusted site acts as a vote of confidence and can bring referral traffic too. Our approach focuses on earned editorial coverage: original data, expert commentary and resources that writers want to cite.",
-    "why": "Authority still separates pages of similar quality. It also matters beyond Google. AI engines often lean on well-known publications, reviews and industry sites when forming answers, so a mention there can feed GEO and LLMO as well as SEO. One relevant article in a respected publication is often worth more than a long list of low-quality links.",
-    "who": "This service helps companies in competitive categories whose content is solid but lacks authority. It suits SaaS, finance, professional services, ecommerce and B2B brands with real expertise or data worth sharing.",
-    "kpis": [
-      "Relevant referring domains earned",
-      "Rankings for pages receiving authority",
-      "Referral traffic and assisted conversions",
-      "Brand mentions on AI-cited sources"
-    ],
-    "faq": [
-      [
-        "What makes a link high quality?",
-        "Relevance, editorial placement, a trustworthy site and real readers. A natural link from a respected page in your field beats many weak ones."
-      ],
-      [
-        "What is digital PR?",
-        "It uses data stories, expert comment and newsworthy assets to win coverage from journalists, which earns links and brand mentions together."
-      ],
-      [
-        "Can bad links hurt us?",
-        "Google usually ignores low-quality links, but manipulative patterns can cause problems. We review your profile and act only where it is needed."
-      ],
-      [
-        "Do unlinked brand mentions matter?",
-        "They can help AI engines connect your brand with a topic, which is why we track mentions as well as links."
-      ]
-    ]
-  },
-  "ecommerce-seo": {
-    "what": "Ecommerce SEO helps online stores win organic traffic for the products and categories shoppers search for. It covers category page strategy, product page optimization, faceted navigation, internal linking, product schema, reviews and site speed. The goal is measured in orders and margin, not sessions.",
-    "why": "Ad costs tend to rise as more sellers compete, so organic revenue protects your margins. Shoppers also research in new places now. AI assistants compare products, summarize reviews and suggest options, and they rely on clear product data to do it. Stores with structured details on price, stock and ratings give those systems something accurate to work with.",
-    "who": "Ecommerce SEO suits Shopify, WooCommerce, headless and custom stores with growing catalogs. It is especially useful for brands that rely heavily on paid ads or marketplaces and want a stronger direct sales channel.",
-    "kpis": [
-      "Organic revenue and orders",
-      "Category rankings for buying terms",
-      "Indexed product and category pages",
-      "Conversion rate from organic traffic"
-    ],
-    "faq": [
-      [
-        "Are category pages more important than product pages?",
-        "Often, yes. Categories target broader buying searches, while product pages capture specific ones. A strong store needs both."
+        "Should I focus on category or product pages?",
+        "Start with category pages, because they usually match higher-volume buying searches. Then improve your top-selling product pages."
       ],
       [
         "How do you handle out-of-stock products?",
-        "It depends on whether the item returns. We keep temporary items live, and redirect or retire permanent ones with care."
+        "Keep the page live if the item returns. For permanent removals, redirect to the closest alternative or category."
       ],
       [
-        "What is product schema?",
-        "It is structured data that tells search engines a product's price, stock and ratings, which can support rich results."
+        "Is Shopify good for SEO?",
+        "Yes, with some limits such as fixed URL paths. A solid setup and clean apps make Shopify competitive."
       ],
       [
-        "How do we get shown in AI shopping answers?",
-        "Clear product data, helpful descriptions, real reviews and mentions on trusted sites all improve your chances."
+        "What is faceted navigation in SEO?",
+        "It's the filter system on category pages. Without rules, filters can create huge numbers of low-value URLs that waste crawl budget."
+      ],
+      [
+        "How do products appear in AI shopping answers?",
+        "AI assistants depend on clean product data, reviews and clear descriptions. Accurate schema and merchant feeds give you the best footing."
       ]
     ]
   },
-  "generative-engine-optimization": {
-    "what": "Generative engine optimization, or GEO, is the practice of making your brand visible inside AI-generated answers. LLM optimization, or LLMO, focuses on how large language models understand and describe you. Together they cover ChatGPT, Perplexity, Claude, Gemini and Google AI Overviews, where buyers now research, compare and shortlist vendors.",
-    "why": "AI answers often name just a few options, so being left out means you may never be considered, and you may never know a deal was lost. These engines favor clear, consistent and well-sourced information. Brands that publish quotable facts and earn mentions on trusted sites give models more reason to include them. Early work also builds a lead that gets harder for rivals to close.",
-    "who": "GEO and LLMO suit B2B companies, SaaS brands, professional services and any business whose buyers research before contacting sales. They are particularly valuable when your category has clear comparison questions such as best vendor, top tools or alternatives.",
-    "kpis": [
-      "Citation share across tracked prompts",
-      "Share of voice against named rivals",
-      "Traffic and leads from AI sources",
-      "Accuracy of how AI describes your brand"
+  {
+    "id": "geo",
+    "path": "/seo/generative-engine-optimization",
+    "col": "ai",
+    "name": "Generative Engine & LLM Optimization (GEO)",
+    "short": "GEO",
+    "kw": "generative engine optimization services",
+    "title": "Generative Engine Optimization (GEO) Services | Beetrix360",
+    "desc": "GEO and LLM optimization services that help your brand get cited in ChatGPT, Perplexity, Claude and Google AI Overviews.",
+    "h1": [
+      "Generative engine optimization",
+      "that makes AI",
+      "recommend you"
+    ],
+    "lead": "Our GEO agency structures your content, entity data and third-party presence so large language models can find, trust and cite your brand when buyers ask for recommendations.",
+    "answer": "Generative engine optimization (GEO) is the practice of improving how a brand appears in answers from AI systems such as ChatGPT, Perplexity, Claude and Google AI Overviews. LLM optimization focuses on clear entities, citable content and trusted third-party mentions.",
+    "q": [
+      "best geo agency",
+      "how to get cited by chatgpt",
+      "what is llm optimization"
+    ],
+    "para": [
+      "When a buyer asks an AI assistant for the best vendor, there may be no list of ten links to compete on. The answer names a few brands. GEO is how you become one of them, and our AI search work has delivered +586% traffic from AI sources.",
+      "AI engines tend to reward content that is specific, well structured and supported elsewhere on the web. We find the prompts that matter in your category, check who gets cited today, then close the gaps in your content and off-site presence."
+    ],
+    "deep": [
+      [
+        "GEO, LLMO and AEO explained",
+        "GEO and LLM optimization (LLMO) focus on AI-generated answers. Answer engine optimization (AEO) focuses on being the direct answer to a question. All three build on solid SEO, and we run them together."
+      ],
+      [
+        "How content earns AI citations",
+        "Clear definitions, original data, named experts, comparison tables and answer-first structure make passages easy to extract and attribute."
+      ]
+    ],
+    "kws": [
+      "GEO agency",
+      "LLM optimization",
+      "LLMO",
+      "AI search optimization",
+      "AI citations",
+      "AI Overviews optimization",
+      "Perplexity SEO",
+      "Claude visibility",
+      "llms.txt",
+      "entity SEO",
+      "AI share of voice",
+      "generative search"
+    ],
+    "pains": [
+      [
+        "ChatGPT recommends your rivals",
+        "We find why they're cited and build your path into those answers."
+      ],
+      [
+        "AI gets your details wrong",
+        "Consistent entity data corrects how models describe you."
+      ],
+      [
+        "Traffic falls as AI answers rise",
+        "We adapt your content to earn citations when clicks fall."
+      ],
+      [
+        "No idea where you stand",
+        "Prompt tracking shows your share of voice across engines."
+      ]
+    ],
+    "items": [
+      [
+        "Prompt research",
+        "The real questions buyers ask AI engines in your category."
+      ],
+      [
+        "AI visibility baseline",
+        "Where you and your rivals appear today, engine by engine."
+      ],
+      [
+        "Citable content",
+        "Answer-first pages built with data, definitions and structure."
+      ],
+      [
+        "Entity optimization",
+        "Schema and consistent facts that define your brand."
+      ],
+      [
+        "Third-party presence",
+        "Reviews, directories and PR that AI models draw from."
+      ],
+      [
+        "Crawler access",
+        "Robots, llms.txt and rendering set up for AI crawlers."
+      ]
+    ],
+    "steps": [
+      "Map prompts and baseline your AI visibility.",
+      "Fix crawler access, entities and key pages.",
+      "Publish citable content and earn off-site mentions.",
+      "Track citations and expand winning topics."
     ],
     "faq": [
       [
-        "What is LLMO?",
-        "LLMO stands for large language model optimization. It improves how models such as ChatGPT and Claude understand, represent and mention your brand."
+        "What is generative engine optimization?",
+        "GEO is the practice of improving how a brand appears in AI-generated answers from tools such as ChatGPT, Perplexity, Claude and Google AI Overviews."
       ],
       [
-        "Does GEO replace SEO?",
-        "No. GEO builds on SEO. Many AI engines use search results and trusted pages, so strong SEO supports better AI visibility."
+        "What is the difference between SEO and GEO?",
+        "SEO aims to rank pages in search results. GEO aims to get your brand mentioned or cited in AI answers. Both rely on quality content and authority."
       ],
       [
-        "What content do AI engines cite most?",
-        "They tend to favor clear answers, original data, comparisons and well-structured pages from sources they already trust."
+        "How do I get my brand cited by ChatGPT?",
+        "Make your site crawlable, publish clear factual content, keep your brand facts consistent and earn mentions on sources AI engines trust."
       ],
       [
-        "Do we need an llms.txt file?",
-        "It may help some tools, but it is not a proven ranking factor. We treat it as optional and focus on content and sources first."
+        "Can GEO results be measured?",
+        "Yes. We track prompts across AI engines, plus citations, share of voice and referral traffic from AI sources."
+      ],
+      [
+        "Does an llms.txt file help?",
+        "It may help some AI tools understand your site, though support varies. Treat it as a small extra, after crawl access and content quality."
+      ],
+      [
+        "How long does GEO take?",
+        "Some engines reflect changes quickly, while others depend on model updates and outside sources. Most programs set their foundations within 90 days."
       ]
     ]
   },
-  "answer-engine-optimization": {
-    "what": "Answer engine optimization, or AEO, means structuring your content so search engines and assistants can pull a direct answer from it. It targets featured snippets, People Also Ask boxes, voice results and AI Overviews. Instead of hoping for a click on a blue link, AEO aims to make your brand the source of the answer itself.",
-    "why": "More searches now end on the results page because the answer appears right there. That changes what winning looks like. The brand quoted in the answer earns trust at the moment a buyer is forming an opinion, even without a click. Clear, direct content also makes it easier for GEO and LLMO systems to reuse your information accurately.",
-    "who": "AEO is a great fit for companies with many buyer questions: SaaS, healthcare, finance, education, legal and professional services. It also suits support-heavy businesses whose knowledge base can double as a source of answers.",
-    "kpis": [
-      "Featured snippets and AI Overview citations",
-      "People Also Ask appearances",
-      "Branded search growth",
-      "Assisted conversions from answer content"
+  {
+    "id": "aeo",
+    "path": "/seo/answer-engine-optimization",
+    "col": "ai",
+    "name": "Answer Engine Optimization (AEO)",
+    "short": "AEO",
+    "kw": "answer engine optimization services",
+    "title": "Answer Engine Optimization (AEO) Services | Beetrix360",
+    "desc": "AEO services that make your content the direct answer in featured snippets, voice search, People Also Ask and AI assistants.",
+    "h1": [
+      "Answer engine optimization",
+      "that makes you",
+      "the answer"
+    ],
+    "lead": "We structure your content so search engines, voice assistants and AI tools can lift a clear, correct answer from your site and credit you for it.",
+    "answer": "Answer engine optimization (AEO) is the practice of structuring content so it can be delivered as a direct answer in featured snippets, People Also Ask, voice assistants and AI tools. It uses clear questions, concise answers and structured data.",
+    "q": [
+      "what is answer engine optimization",
+      "how to win featured snippets",
+      "aeo vs seo"
+    ],
+    "para": [
+      "Buyers increasingly ask full questions and expect one clear answer. AEO meets that shift. We collect the questions your market asks, then write direct answers that a machine can extract and a person can trust.",
+      "The method is simple but disciplined: put the question in a heading, answer it in the first two sentences, then add depth, evidence and next steps. The page you're reading follows that pattern."
+    ],
+    "deep": [
+      [
+        "Featured snippets and People Also Ask",
+        "Paragraph, list and table formats each suit different questions. We match the format to what the results page already rewards."
+      ],
+      [
+        "FAQ content and structured data",
+        "Useful FAQ sections on service pages capture long-tail questions. Schema helps machines understand them, though visible, accurate content matters most."
+      ]
+    ],
+    "kws": [
+      "AEO agency",
+      "featured snippets",
+      "People Also Ask",
+      "voice search optimization",
+      "FAQ schema",
+      "question keywords",
+      "zero-click search",
+      "direct answers",
+      "conversational search",
+      "Google AI Overviews",
+      "structured data",
+      "answer-first content"
+    ],
+    "pains": [
+      [
+        "Rivals own the featured snippet",
+        "We reformat and sharpen answers to compete directly."
+      ],
+      [
+        "Pages bury the answer",
+        "Answer-first structure puts the key point up front."
+      ],
+      [
+        "FAQs written as an afterthought",
+        "Real buyer questions replace generic filler."
+      ],
+      [
+        "Voice assistants skip you",
+        "Short, spoken-style answers give them something to use."
+      ]
+    ],
+    "items": [
+      [
+        "Question research",
+        "Questions from search data, sales calls and support tickets."
+      ],
+      [
+        "Answer-first rewrites",
+        "Direct answers placed where machines and readers look first."
+      ],
+      [
+        "Snippet targeting",
+        "Formats matched to paragraph, list and table results."
+      ],
+      [
+        "FAQ systems",
+        "Useful page-level FAQs that capture long-tail searches."
+      ],
+      [
+        "Structured data",
+        "Schema that defines questions, answers and page types."
+      ],
+      [
+        "Zero-click tracking",
+        "Reports on snippet wins, impressions and brand search."
+      ]
+    ],
+    "steps": [
+      "Collect the questions buyers actually ask.",
+      "Rewrite priority pages to answer first.",
+      "Add FAQs, tables and structured data.",
+      "Track snippets and AI answers, then expand."
     ],
     "faq": [
       [
-        "What is a featured snippet?",
-        "It is a short answer shown at the top of Google, taken from a web page. Direct and well-structured answers are most likely to win one."
+        "What is answer engine optimization?",
+        "AEO structures content so search engines and AI assistants can use it as a direct answer. It relies on clear questions, concise answers and structured data."
       ],
       [
-        "How do you optimize for voice search?",
-        "Use natural questions, concise answers and strong local data. Voice assistants tend to read one short, clear response."
+        "What is the difference between AEO and SEO?",
+        "SEO aims for rankings and clicks. AEO aims to be the answer itself, including in results where the searcher may never click."
       ],
       [
-        "Which pages should we optimize first?",
-        "Start with questions that sales and support hear often, especially where you already rank on page one."
+        "What's the difference between AEO and GEO?",
+        "AEO targets direct answers across snippets, voice and AI. GEO focuses on AI-generated answers. The tactics overlap, so we run them together."
       ],
       [
-        "How do we measure AEO without clicks?",
-        "We track snippets, citations, brand searches and assisted conversions, since an answer can influence a buyer without a direct visit."
+        "How long should an AEO answer be?",
+        "Lead with about two sentences that fully answer the question, then expand below. Keep the first answer able to stand on its own."
+      ],
+      [
+        "Does FAQ schema still help?",
+        "FAQ rich results are now limited on Google, but the markup still clarifies content for machines. The visible FAQ is what matters most."
+      ],
+      [
+        "Can AEO work if people don't click?",
+        "Yes. Being the cited answer builds brand recognition and trust, and we measure brand search and assisted conversions as well as clicks."
       ]
     ]
   },
-  "programmatic-seo": {
-    "what": "Programmatic SEO uses structured data and page templates to create large sets of useful pages. Instead of writing each one by hand, you target a repeatable pattern, such as a service in each city or an integration with each tool. Done well, every page gives searchers something specific that they can't find on a generic page.",
-    "why": "Long-tail searches are specific, often high in intent and low in competition, yet there are too many to cover manually. Programmatic pages can reach that demand at scale. The risk is thin content, since search engines filter out pages that add little value. Unique data and strong quality controls are what make this approach safe, and they also give AI engines precise facts to cite.",
-    "who": "This approach suits marketplaces, SaaS platforms with integrations, travel, real estate and directory-style businesses, or any company with a rich dataset. It works best when you have real data and a CMS that can publish it reliably.",
-    "kpis": [
-      "Pages indexed by template",
-      "Long-tail rankings and impressions",
-      "Conversions from programmatic pages",
-      "Share of pages with unique data"
+  {
+    "id": "programmatic-seo",
+    "path": "/seo/programmatic-seo",
+    "col": "ai",
+    "name": "Programmatic SEO",
+    "short": "Programmatic SEO",
+    "kw": "programmatic SEO services",
+    "title": "Programmatic SEO Services at Scale | Beetrix360",
+    "desc": "Programmatic SEO services that turn your data into thousands of useful, indexable pages built on Next.js, with quality controls.",
+    "h1": [
+      "Programmatic SEO that scales",
+      "pages from data",
+      "without thin content"
+    ],
+    "lead": "We turn structured data into large sets of useful landing pages for long-tail searches, with templates, automation and quality checks that keep them worth indexing.",
+    "answer": "Programmatic SEO is the method of creating many search-targeted pages from a template and a structured dataset. It captures large numbers of long-tail searches, such as location, integration or comparison queries, and works only when each page offers unique value.",
+    "q": [
+      "programmatic seo agency",
+      "how to build pages at scale",
+      "programmatic seo with next.js"
+    ],
+    "para": [
+      "Programmatic SEO works when a keyword pattern repeats and you have real data for every variation. Think “[service] in [city]”, “[tool] integration” or “[product] vs [product]”. We find those patterns and check whether your data can make each page useful.",
+      "The risk is thin content. Swapping one word across a thousand pages helps nobody and can hurt the whole domain. We build in unique data, conditional content, internal linking and publication gates, and we release in batches so we can measure before scaling."
+    ],
+    "deep": [
+      [
+        "Data, templates and automation",
+        "We design the data model, build fast Next.js templates and automate publishing from a database, CMS or API, using Python where needed."
+      ],
+      [
+        "Indexing large page sets",
+        "Scale needs sitemap segmentation, internal linking and monitoring, so that search engines find and keep the pages that matter."
+      ]
+    ],
+    "kws": [
+      "pSEO",
+      "SEO at scale",
+      "long-tail keywords",
+      "landing pages at scale",
+      "template SEO",
+      "headless CMS SEO",
+      "Next.js SEO",
+      "data-driven SEO",
+      "location pages at scale",
+      "comparison pages",
+      "integration pages",
+      "AI content at scale"
+    ],
+    "pains": [
+      [
+        "Thousands of keywords, few pages",
+        "Templates and data cover the long tail efficiently."
+      ],
+      [
+        "Earlier pages never got indexed",
+        "Quality gates and better linking fix the root cause."
+      ],
+      [
+        "Publishing is manual and slow",
+        "Automation moves data straight into live pages."
+      ],
+      [
+        "AI-written pages feel thin",
+        "Real data and human review make pages useful."
+      ]
+    ],
+    "items": [
+      [
+        "Pattern research",
+        "Keyword patterns with real demand and business value."
+      ],
+      [
+        "Data modeling",
+        "Datasets structured to give each page something unique."
+      ],
+      [
+        "Template design",
+        "Conversion-ready templates, built on a fast stack."
+      ],
+      [
+        "Publishing automation",
+        "Pipelines from your database to live pages."
+      ],
+      [
+        "Quality controls",
+        "Thin-page rules, sampling and human review."
+      ],
+      [
+        "Index monitoring",
+        "Coverage tracking by batch and template."
+      ]
+    ],
+    "steps": [
+      "Validate patterns, data and demand.",
+      "Build the template and data pipeline.",
+      "Launch a test batch and measure it.",
+      "Scale the winners and prune the rest."
     ],
     "faq": [
       [
-        "What is an example of programmatic SEO?",
-        "A software company might publish a page for each integration, or a travel site a page for each route. Each one uses real data."
+        "What is programmatic SEO?",
+        "Programmatic SEO creates many landing pages from templates and structured data to target repeating long-tail searches."
+      ],
+      [
+        "Is programmatic SEO spam?",
+        "Not when each page is genuinely useful. It becomes a problem when pages are thin or duplicate. Quality controls are essential."
+      ],
+      [
+        "What businesses suit programmatic SEO?",
+        "It suits marketplaces, SaaS, directories, travel, real estate and multi-location businesses that hold structured data."
+      ],
+      [
+        "How many pages should we launch at first?",
+        "Start with a small test batch, confirm indexing and performance, then scale in stages."
       ],
       [
         "Can AI write programmatic pages?",
-        "It can help, but it needs human review and real data. Mass-produced text with no added value risks being filtered out."
+        "AI can help with drafts, but your data should provide the value. We pair it with templates, rules and human review."
       ],
       [
-        "What technology do we need?",
-        "A clean dataset, a flexible CMS or framework and templates. We can work with your stack or build the pipeline."
-      ],
-      [
-        "How do you stop index bloat?",
-        "We publish in stages, set quality thresholds and block weak pages from being indexed until they are ready."
+        "What tech stack do you use?",
+        "We typically use Next.js with a headless CMS or database, plus Python and API automation."
       ]
     ]
   },
-  "chatgpt-optimization": {
-    "what": "ChatGPT optimization is a focused form of GEO. It aims to improve how often ChatGPT mentions your brand, how accurately it describes you and which sources it cites. The work combines prompt testing, crawler access, stronger content and mentions on the sites that shape its answers. It also supports your wider LLMO program.",
-    "why": "Many buyers now ask ChatGPT for recommendations before they ever visit a website. They describe their exact situation and get a short list, which makes the conversation feel like advice from a trusted colleague. If your brand is missing or misdescribed, the competitor that appears gets a head start, and you get no signal that it happened.",
-    "who": "This service suits brands in categories where buyers compare options: software, agencies, consultants, finance, travel and consumer products. It is also useful for leadership teams who want a clear view of what ChatGPT says about them.",
-    "kpis": [
-      "Mention rate across tracked prompts",
-      "Position within the answer",
-      "Sources cited alongside your brand",
-      "Referral traffic from ChatGPT"
+  {
+    "id": "chatgpt-optimization",
+    "path": "/seo/chatgpt-optimization",
+    "col": "ai",
+    "name": "ChatGPT Optimization",
+    "short": "ChatGPT Optimization",
+    "kw": "ChatGPT optimization services",
+    "title": "ChatGPT Optimization Services | Beetrix360",
+    "desc": "ChatGPT optimization services that help your brand show up accurately in ChatGPT answers, recommendations and search citations.",
+    "h1": [
+      "ChatGPT optimization that",
+      "gets your brand named",
+      "when buyers ask"
+    ],
+    "lead": "We improve how ChatGPT finds, describes and recommends your business, from crawler access and content structure to the third-party sources it relies on.",
+    "answer": "ChatGPT optimization is the work of improving how a brand appears in ChatGPT's responses and search citations. It involves allowing OpenAI's crawlers, publishing clear factual content, and building a consistent presence on sources the model and its search feature use.",
+    "q": [
+      "how to rank in chatgpt",
+      "best crm for mid-size manufacturers",
+      "why doesn't chatgpt mention my brand"
+    ],
+    "para": [
+      "Try it now. Ask ChatGPT for the best vendor in your space. If your name isn't there, or the description is out of date, buyers using it may never reach your website.",
+      "ChatGPT draws on what it learned in training and, when search is used, on live web results. So we work on both: the long-term signals that shape how models know your brand, and the current pages and listings that search can retrieve."
+    ],
+    "deep": [
+      [
+        "Crawler access for ChatGPT",
+        "OpenAI uses separate crawlers for search, user-requested browsing and training. We review robots.txt and firewall rules so you allow what you want, on purpose."
+      ],
+      [
+        "Fixing inaccurate AI descriptions",
+        "When answers are outdated or wrong, we find the likely sources, correct your public facts and strengthen pages that state them clearly."
+      ]
+    ],
+    "kws": [
+      "rank in ChatGPT",
+      "ChatGPT SEO",
+      "ChatGPT search",
+      "OAI-SearchBot",
+      "GPTBot",
+      "ChatGPT recommendations",
+      "AI brand mentions",
+      "OpenAI crawler",
+      "SearchGPT",
+      "AI referral traffic",
+      "prompt tracking",
+      "AI search"
+    ],
+    "pains": [
+      [
+        "ChatGPT never mentions you",
+        "We review prompts, sources and crawl access to find the reason."
+      ],
+      [
+        "Its answers about you are wrong",
+        "We correct source facts and publish clear reference pages."
+      ],
+      [
+        "Crawlers may be blocked",
+        "Robots and firewall settings get checked rule by rule."
+      ],
+      [
+        "You can't see AI referrals",
+        "Analytics setup isolates ChatGPT traffic and leads."
+      ]
+    ],
+    "items": [
+      [
+        "Prompt testing",
+        "Repeated tests of buyer prompts to see real patterns."
+      ],
+      [
+        "Crawler access review",
+        "OAI-SearchBot, ChatGPT-User and GPTBot rules set deliberately."
+      ],
+      [
+        "Brand fact pages",
+        "Clear reference pages for what you do and who you serve."
+      ],
+      [
+        "Source strategy",
+        "Presence on the reviews and lists ChatGPT cites."
+      ],
+      [
+        "Comparison content",
+        "Honest comparisons that answer shortlist questions."
+      ],
+      [
+        "AI traffic analytics",
+        "Tracking for referrals, conversions and citation trends."
+      ]
+    ],
+    "steps": [
+      "Test buyer prompts and record who gets named.",
+      "Open crawler access and fix brand facts.",
+      "Publish citable pages and build sources.",
+      "Retest monthly and expand to new prompts."
     ],
     "faq": [
       [
-        "How does ChatGPT choose which brands to mention?",
-        "It draws on training data and, with search on, live web sources. Clear information and trusted third-party mentions both matter."
+        "Can you rank in ChatGPT?",
+        "There's no fixed ranking, and answers vary, but you can improve how often and how accurately you appear by strengthening your content, data and third-party presence."
       ],
       [
-        "Should we allow OpenAI's crawlers?",
-        "Usually, yes, if you want visibility. OpenAI publishes separate crawlers for search and training, so you can review each setting."
+        "Why doesn't ChatGPT mention my brand?",
+        "Common reasons are low web presence, unclear positioning, blocked crawlers or few mentions on trusted sites."
       ],
       [
-        "Does ChatGPT use Bing?",
-        "Its search feature uses web results from search partners, so being indexed and visible in traditional search still helps."
+        "Should I block GPTBot?",
+        "That's a business choice. GPTBot relates to training, while OAI-SearchBot supports search. Many brands allow search crawlers even if they restrict training."
       ],
       [
-        "Can you track ChatGPT traffic in analytics?",
-        "Often, yes, through referral data, though some visits appear as direct. We set up reporting to separate what can be seen."
+        "Can you guarantee ChatGPT recommendations?",
+        "No, and you should be wary of anyone who does. We improve the inputs and measure your visibility over time."
+      ],
+      [
+        "How do I track ChatGPT traffic?",
+        "Use analytics to filter referrals from ChatGPT, and run regular prompt tests, since many mentions don't lead to a click."
+      ],
+      [
+        "How is this different from GEO?",
+        "ChatGPT optimization focuses on one platform. GEO covers all major AI engines."
       ]
     ]
   },
-  "ai-visibility-tracking": {
-    "what": "AI and LLM visibility tracking measures how your brand appears in AI-generated answers. We run a defined set of buyer prompts across engines such as ChatGPT, Perplexity, Claude and Google AI Overviews. We then record whether you appear, where you appear, what is said and which sources are cited, and compare that with your competitors.",
-    "why": "Traditional rank trackers can't see these answers, so many companies have a blind spot in a growing channel. Without a baseline, GEO and LLMO work is hard to justify or improve. Tracking turns AI visibility into something a team can manage, showing what changed, which rival gained ground and which content earned the citation.",
-    "who": "Tracking suits marketing leaders who need to report on AI search, SEO teams expanding into GEO, and brands in competitive categories. Enterprises can segment results by product, market or language.",
-    "kpis": [
+  {
+    "id": "ai-visibility-tracking",
+    "path": "/seo/ai-visibility-tracking",
+    "col": "ai",
+    "name": "AI & LLM Visibility Tracking",
+    "short": "AI Visibility Tracking",
+    "kw": "AI visibility tracking",
+    "title": "AI & LLM Visibility Tracking Services | Beetrix360",
+    "desc": "Track your brand across ChatGPT, Perplexity, Claude and AI Overviews: prompts, citations, share of voice and sentiment in one dashboard.",
+    "h1": [
+      "AI visibility tracking that",
+      "shows where you stand",
+      "in every AI answer"
+    ],
+    "lead": "We monitor the prompts your buyers use across AI engines and report who gets cited, how you're described and how your share of voice changes over time.",
+    "answer": "AI visibility tracking measures how often and how favorably a brand appears in answers from AI engines. It monitors a set of buyer prompts across tools such as ChatGPT, Perplexity, Claude and Google AI Overviews, and reports citations, share of voice and sentiment.",
+    "q": [
+      "ai visibility tracking tool",
+      "track brand mentions in chatgpt",
+      "measure ai share of voice"
+    ],
+    "para": [
+      "Standard rank trackers can't see inside AI answers. Responses change by user and session, so one manual check proves very little. We test your prompt set repeatedly, then look at trends rather than single results.",
+      "The output is a practical view of your market: which competitors AI names, which sources it cites and which topics you're missing. That turns a vague worry about AI search into a clear work list."
+    ],
+    "deep": [
+      [
+        "What we track",
+        "Brand mentions, cited URLs, position within the answer, sentiment, competitor presence and the outside sources that shape each response."
+      ],
+      [
+        "From data to action",
+        "Each report links findings to next steps, such as a page to rewrite, a directory to fix or a source to earn."
+      ]
+    ],
+    "kws": [
+      "LLM visibility",
       "AI share of voice",
-      "Citation and mention rate by engine",
-      "Sentiment and accuracy of answers",
-      "AI-source sessions, leads and revenue"
+      "AI brand monitoring",
+      "prompt tracking",
+      "AI citation tracking",
+      "AI rank tracking",
+      "AI Overviews tracking",
+      "Perplexity tracking",
+      "generative search analytics",
+      "competitor AI visibility",
+      "AI analytics dashboard",
+      "AI referral traffic"
+    ],
+    "pains": [
+      [
+        "AI visibility is a black box",
+        "Regular prompt tests turn it into a trend you can read."
+      ],
+      [
+        "Leadership wants numbers",
+        "Share-of-voice reporting gives a simple baseline."
+      ],
+      [
+        "Manual checks don't agree",
+        "Repeated sampling smooths out answer randomness."
+      ],
+      [
+        "Your rival appears from nowhere",
+        "Alerts and source analysis show what changed."
+      ]
+    ],
+    "items": [
+      [
+        "Prompt library",
+        "Buyer prompts grouped by topic, stage and product."
+      ],
+      [
+        "Multi-engine monitoring",
+        "Coverage of the AI platforms your buyers use."
+      ],
+      [
+        "Share of voice",
+        "Your presence compared with named competitors."
+      ],
+      [
+        "Citation analysis",
+        "The URLs and domains that shape answers."
+      ],
+      [
+        "Sentiment review",
+        "How AI describes you, including factual errors."
+      ],
+      [
+        "Executive dashboard",
+        "A clear monthly view with recommended actions."
+      ]
+    ],
+    "steps": [
+      "Build the prompt library and competitor set.",
+      "Run the baseline across AI engines.",
+      "Set up the dashboard and reporting rhythm.",
+      "Turn findings into a monthly action plan."
     ],
     "faq": [
+      [
+        "What is AI visibility tracking?",
+        "It measures how often and how well a brand appears in AI-generated answers, using repeated tests of buyer prompts across AI engines."
+      ],
       [
         "What is AI share of voice?",
-        "It is how often your brand appears in AI answers for tracked prompts, compared with your competitors."
+        "It's the share of relevant AI answers that mention your brand compared with competitors, across a defined set of prompts."
+      ],
+      [
+        "Why do AI answers change every time?",
+        "AI responses vary with the model, context and retrieved sources. That's why tracking relies on repeated sampling rather than one test."
+      ],
+      [
+        "Which AI platforms do you track?",
+        "We typically cover ChatGPT, Perplexity, Claude, Gemini and Google AI Overviews, based on where your buyers spend time."
+      ],
+      [
+        "Can I connect AI visibility to revenue?",
+        "Partly. We track AI referral traffic and conversions directly, and we watch brand search and pipeline for indirect effects."
       ],
       [
         "How many prompts should we track?",
-        "Enough to reflect your funnel, often from dozens to a few hundred. We group them by topic and buying stage."
-      ],
-      [
-        "Why do results differ between checks?",
-        "AI answers change with wording, location and time. Repeated sampling gives a more reliable trend than any single check."
-      ],
-      [
-        "Can you show which sources AI uses?",
-        "Where an engine shows citations, yes. We use those sources to decide where to build content and mentions."
+        "Enough to represent your main topics and buying stages. We scope the set around your product lines and markets."
       ]
     ]
   },
-  "ai-brand-perception": {
-    "what": "AI brand perception is what AI engines believe and say about your company. When a buyer asks about your pricing, reputation or strengths, the answer may blend your website, reviews, forums and news. We audit those answers across major models, trace where they come from and improve the public information behind them.",
-    "why": "An AI answer can sound certain even when it is outdated or wrong. Buyers may never check it, and the same claim can reach thousands of people. Reputation has always mattered, but now it is summarized for buyers in seconds. Correcting the sources early protects trust and sales, and supports both LLMO and your wider brand strategy.",
-    "who": "This service suits established brands, companies after a rebrand or merger, businesses with outdated reviews and leadership teams who want to know how they are portrayed. It is also valuable before a major launch or funding round.",
-    "kpis": [
-      "Accuracy of key brand facts",
-      "Sentiment across AI engines",
-      "Presence of your differentiators in answers",
-      "Share of trusted sources that are current"
+  {
+    "id": "ai-brand-perception",
+    "path": "/seo/ai-brand-perception",
+    "col": "ai",
+    "name": "AI Brand Perception",
+    "short": "AI Brand Perception",
+    "kw": "AI brand perception",
+    "title": "AI Brand Perception Audits & Management | Beetrix360",
+    "desc": "Find out what AI engines say about your brand. We audit AI brand perception, correct errors and shape how models describe you.",
+    "h1": [
+      "AI brand perception that",
+      "changes what AI says",
+      "about you"
+    ],
+    "lead": "AI assistants now give buyers a first impression of your business. We audit how models describe you, correct errors and strengthen the sources behind those descriptions.",
+    "answer": "AI brand perception is how AI models describe, compare and recommend a brand. It's shaped by the content, reviews, news and third-party sources those models learn from or retrieve, and it can be improved by correcting and strengthening those sources.",
+    "q": [
+      "what does ai say about my brand",
+      "fix wrong information in chatgpt",
+      "ai brand reputation management"
+    ],
+    "para": [
+      "Ask an AI assistant what your company does, who you serve and how you compare with competitors. The reply may be outdated, vague or wrong, and buyers often take it as fact.",
+      "We treat this like brand research. We test how models talk about you, trace the sources behind each claim, and improve those sources so the story becomes more accurate and more favorable over time."
+    ],
+    "deep": [
+      [
+        "Perception audit",
+        "We test questions on positioning, strengths, weaknesses, pricing, trust and comparisons, then summarize the themes and errors."
+      ],
+      [
+        "Correcting the record",
+        "We update your site, profiles, directories and press coverage, so accurate facts appear in many places AI systems can draw on."
+      ]
+    ],
+    "kws": [
+      "AI reputation management",
+      "brand sentiment in AI",
+      "AI brand audit",
+      "LLM brand perception",
+      "AI brand monitoring",
+      "entity management",
+      "Knowledge Graph",
+      "AI misinformation",
+      "online reputation",
+      "review strategy",
+      "brand narrative",
+      "AI comparisons"
+    ],
+    "pains": [
+      [
+        "AI describes your old business",
+        "Clear, current facts replace outdated positioning."
+      ],
+      [
+        "Rivals come out ahead in comparisons",
+        "We find what drives those comparisons and address it."
+      ],
+      [
+        "Old complaints keep surfacing",
+        "Fresh reviews and evidence provide balance."
+      ],
+      [
+        "Your category is misread",
+        "Entity signals link you to the right market."
+      ]
+    ],
+    "items": [
+      [
+        "Perception audit",
+        "How leading models describe your brand today."
+      ],
+      [
+        "Sentiment map",
+        "Themes across strengths, risks and doubts."
+      ],
+      [
+        "Error log",
+        "Factual mistakes and their likely sources."
+      ],
+      [
+        "Narrative pages",
+        "Reference content that states your position clearly."
+      ],
+      [
+        "Source improvement",
+        "Fixes to profiles, directories and listings."
+      ],
+      [
+        "Review and PR plan",
+        "Fresh third-party proof for key themes."
+      ]
+    ],
+    "steps": [
+      "Test models and document brand perception.",
+      "Trace sources and rank the issues.",
+      "Correct facts and publish reference content.",
+      "Re-test and report how perception shifts."
     ],
     "faq": [
       [
-        "How do we find out what AI says about us?",
-        "We run brand, category and comparison prompts across major engines, then review the wording, tone, facts and sources."
+        "What is AI brand perception?",
+        "It's how AI models describe and compare your brand. It's formed from the web content, reviews and news those models learn from or retrieve."
       ],
       [
-        "How long does it take to correct AI answers?",
-        "Search-connected answers can change sooner. Model knowledge can lag, so we work on the sources and track progress."
+        "Can I correct wrong information in AI answers?",
+        "Often, yes, though usually indirectly. You fix the sources, publish clear facts and give models accurate information to draw on."
       ],
       [
-        "What sources shape brand perception?",
-        "Your site, review platforms, forums, news, Wikipedia-style references and industry sites can all play a part."
+        "How long do changes take to appear?",
+        "Tools that use live search can update fairly quickly. Models relying on training data change more slowly."
       ],
       [
-        "Is this the same as online reputation management?",
-        "They overlap, but this work focuses on the answers AI gives and the sources feeding them."
+        "Is this the same as reputation management?",
+        "It's related. Reputation management focuses on search results and reviews, while this focuses on how AI models summarize you."
+      ],
+      [
+        "Can you remove negative content from AI?",
+        "We can't delete it from a model. We can address false claims at the source and strengthen accurate, positive evidence."
+      ],
+      [
+        "Who needs an AI perception audit?",
+        "Any brand that buyers research before purchasing, especially in B2B, finance, real estate and other considered purchases."
       ]
     ]
   },
-  "keyword-research": {
-    "what": "Keyword research finds the words and questions your buyers use, and shows which ones are worth targeting. We combine search data with customer language from sales calls, reviews and support tickets. Each topic is then scored on intent, value and difficulty, and mapped to a specific page, so your team knows exactly what to create or improve.",
-    "why": "Good research prevents expensive mistakes. Without it, teams write content for terms that never convert or chase phrases they can't realistically win. Search behavior is also changing, as people ask longer questions in AI tools. A modern plan covers classic keywords for SEO alongside the questions that matter for AEO, GEO and LLMO.",
-    "who": "Keyword research suits new websites, companies entering a new market and teams planning a content calendar or site redesign. It also helps established brands that have grown without a clear search strategy.",
-    "kpis": [
-      "Topics mapped to pages",
-      "Share of revenue-focused terms targeted",
-      "Rankings gained for prioritized terms",
-      "Leads from newly targeted pages"
+  {
+    "id": "keyword-research",
+    "path": "/seo/keyword-research",
+    "col": "str",
+    "name": "Keyword Research",
+    "short": "Keyword Research",
+    "kw": "keyword research services",
+    "title": "Keyword Research Services & Strategy | Beetrix360",
+    "desc": "Keyword research services that map buyer intent, topic clusters and AI prompts into a content plan built around revenue.",
+    "h1": [
+      "Keyword research that finds",
+      "the searches",
+      "that close deals"
+    ],
+    "lead": "We go beyond search volume to find the terms and AI prompts your buyers actually use, then map each one to a page, a stage and a business outcome.",
+    "answer": "Keyword research is the process of finding the words and questions people use when searching for a product, service or topic. It analyzes search volume, difficulty, intent and business value to decide which pages to create or improve.",
+    "q": [
+      "keyword research service",
+      "find high intent keywords",
+      "topic cluster strategy"
+    ],
+    "para": [
+      "A high-volume keyword can be worthless if the searcher will never buy. We weight research by commercial intent and use sales calls, CRM data and customer language to find terms that keyword tools miss.",
+      "The result isn't a spreadsheet dump. You get a prioritized keyword map showing which page owns which term, what to create next and how topics connect. We also add the conversational prompts buyers use with AI."
+    ],
+    "deep": [
+      [
+        "Search intent and keyword mapping",
+        "Each term is labeled as informational, commercial, transactional or navigational, then assigned to one page, which prevents cannibalization."
+      ],
+      [
+        "Topic clusters and content gaps",
+        "Pillar pages and supporting articles show depth in a subject. Gap analysis shows where rivals have coverage that you don't."
+      ]
+    ],
+    "kws": [
+      "keyword strategy",
+      "keyword mapping",
+      "long-tail keywords",
+      "search intent analysis",
+      "keyword gap analysis",
+      "topic clusters",
+      "search volume",
+      "keyword difficulty",
+      "buyer keywords",
+      "content strategy",
+      "semantic keywords",
+      "SEO content plan"
+    ],
+    "pains": [
+      [
+        "Lots of traffic, wrong people",
+        "Intent-led targeting brings in actual buyers."
+      ],
+      [
+        "Content has no clear plan",
+        "A map shows what to write, and in what order."
+      ],
+      [
+        "Pages compete with each other",
+        "One owner per keyword ends cannibalization."
+      ],
+      [
+        "Tools miss your niche",
+        "Sales and CRM language reveal hidden terms."
+      ]
+    ],
+    "items": [
+      [
+        "Seed discovery",
+        "Terms from customers, sales calls and tools."
+      ],
+      [
+        "Intent classification",
+        "Each keyword labeled by buying stage."
+      ],
+      [
+        "Opportunity scoring",
+        "Priority based on volume, difficulty and value."
+      ],
+      [
+        "Keyword map",
+        "One clear page assigned to each cluster."
+      ],
+      [
+        "Competitor gaps",
+        "Topics rivals rank for that you've missed."
+      ],
+      [
+        "AI prompt research",
+        "Conversational questions buyers ask AI."
+      ]
+    ],
+    "steps": [
+      "Gather terms from data, tools and sales teams.",
+      "Score intent, difficulty and business value.",
+      "Build clusters and the keyword map.",
+      "Turn it into a prioritized content roadmap."
     ],
     "faq": [
       [
-        "What is the difference between short-tail and long-tail keywords?",
-        "Short-tail terms are broad with high volume. Long-tail terms are specific, and they often convert better and face less competition."
+        "What is keyword research?",
+        "Keyword research finds the terms and questions people search for, then evaluates volume, difficulty, intent and business value."
       ],
       [
-        "What is keyword difficulty?",
-        "It estimates how hard a term is to rank for. We also look at the real results, since tool scores alone can mislead."
+        "How do you find high-intent keywords?",
+        "Look for words that signal buying, such as pricing, best, vs and service terms. Then validate them against your sales conversations."
       ],
       [
-        "How do you research AI prompts?",
-        "We use sales and support questions, People Also Ask data and repeated AI testing to map how buyers ask."
+        "What are long-tail keywords?",
+        "They are longer, more specific searches. They often have lower volume but clearer intent and less competition."
       ],
       [
-        "Can you do keyword research in other languages?",
-        "Yes. We research each market separately, because direct translations often miss how people really search."
+        "How many keywords should one page target?",
+        "One primary topic plus closely related variations that share the same intent."
+      ],
+      [
+        "What is a topic cluster?",
+        "It's a group of related pages linked around a main pillar page, showing depth on a subject."
+      ],
+      [
+        "How often should keyword research be updated?",
+        "Review it at least quarterly, or whenever you launch a product or enter a new market."
       ]
     ]
   },
-  "competitor-analysis": {
-    "what": "Digital marketing competitor analysis shows how rivals attract and convert your buyers. We compare search rankings, content, backlinks, paid ads, offers, landing pages, social presence and AI visibility. You get a clear picture of where they are strong, where they are exposed and which moves are worth making first.",
-    "why": "Competitors reveal a lot through what they publish and advertise. Reviewing it stops you from guessing, and it can show gaps that aren't obvious from inside your business. It also now matters where they appear in AI answers. A rival that dominates GEO and LLMO may be winning buyers long before your team sees them.",
-    "who": "This service suits companies entering a market, teams losing ground to new players and leaders preparing an annual plan. It also helps agencies and in-house teams that need a fact-based case for budget.",
-    "kpis": [
-      "Search share of voice against rivals",
-      "Content and keyword gaps closed",
-      "AI share of voice against rivals",
-      "Opportunities shipped from the plan"
+  {
+    "id": "enterprise-seo",
+    "path": "/seo/enterprise-seo",
+    "col": "str",
+    "name": "Enterprise SEO",
+    "short": "Enterprise SEO",
+    "kw": "enterprise SEO services",
+    "title": "Enterprise SEO Services & Agency | Beetrix360",
+    "desc": "Enterprise SEO services for large websites: governance, international SEO, migrations, automation and revenue reporting across teams.",
+    "h1": [
+      "Enterprise SEO built for",
+      "large sites",
+      "and larger stakeholders"
+    ],
+    "lead": "We run SEO programs for complex organizations, combining technical scale, governance, automation and reporting that leadership and every business unit can use.",
+    "answer": "Enterprise SEO is search optimization for large organizations and websites, often with thousands of pages, several brands or markets, and many stakeholders. It focuses on scale, governance, automation, cross-team workflows and revenue reporting.",
+    "q": [
+      "enterprise seo agency",
+      "seo for large websites",
+      "international seo strategy"
+    ],
+    "para": [
+      "At enterprise level, the hardest part is rarely knowing what to fix. It's getting the fix released across product, engineering, legal and regional teams. We build the processes, tickets and business cases that get SEO into the roadmap.",
+      "Scale also changes the tools. We use automation, log file analysis and templates to manage huge sites, and we connect SEO data to your CRM and BI systems, so results are shown in the numbers your leadership already trusts."
+    ],
+    "deep": [
+      [
+        "Governance and cross-team workflows",
+        "Standards, training, release checks and clear ownership keep SEO from being undone by the next deployment."
+      ],
+      [
+        "International and multi-brand SEO",
+        "We handle hreflang, domain strategy, localization and shared templates across countries and brands."
+      ]
+    ],
+    "kws": [
+      "enterprise SEO agency",
+      "large website SEO",
+      "international SEO",
+      "hreflang",
+      "SEO governance",
+      "SEO at scale",
+      "site migration",
+      "log file analysis",
+      "multi-brand SEO",
+      "SEO automation",
+      "Fortune 500 SEO",
+      "SEO business case"
+    ],
+    "pains": [
+      [
+        "SEO tickets die in the backlog",
+        "Business cases and clear specs win engineering time."
+      ],
+      [
+        "Every team works differently",
+        "Shared standards keep brands and regions aligned."
+      ],
+      [
+        "Site migration feels risky",
+        "Planned redirects and checks protect your traffic."
+      ],
+      [
+        "Leadership doubts SEO's value",
+        "Reporting ties organic to pipeline in your own BI."
+      ]
+    ],
+    "items": [
+      [
+        "Enterprise audit",
+        "Log files, templates and crawl data at scale."
+      ],
+      [
+        "Governance model",
+        "Standards, roles and release checks."
+      ],
+      [
+        "Automation",
+        "Python scripts for monitoring and bulk fixes."
+      ],
+      [
+        "International SEO",
+        "Hreflang, localization and domain strategy."
+      ],
+      [
+        "Migration management",
+        "Planning for replatforms and mergers."
+      ],
+      [
+        "Executive reporting",
+        "Revenue reports built on your BI stack."
+      ]
+    ],
+    "steps": [
+      "Audit templates and map stakeholders.",
+      "Set priorities, standards and business cases.",
+      "Ship fixes and templates with product teams.",
+      "Automate monitoring and scale across units."
     ],
     "faq": [
       [
-        "How often should we run a competitor analysis?",
-        "A full review once or twice a year works for most companies, with lighter monitoring each quarter."
+        "What is enterprise SEO?",
+        "Enterprise SEO is search optimization for large organizations and sites. It focuses on scale, governance, automation and cross-team delivery."
       ],
       [
-        "Can you see competitors' ad spend?",
-        "Not exactly. We can estimate activity and review public ad libraries, which show messaging and offers."
+        "How is enterprise SEO different from regular SEO?",
+        "The basics are the same, but the scale, stakeholders, risk and reporting needs are much larger."
       ],
       [
-        "What is a content gap?",
-        "It is a topic your rivals rank for or cover well that you don't. Closing the right gaps can bring in qualified demand."
+        "Do you work with in-house teams?",
+        "Yes. We often support internal SEO, product and engineering teams with strategy and specialist work."
       ],
       [
-        "What do we do with the findings?",
-        "You get a ranked plan with owners and effort levels, so the findings become actions and not just a report."
+        "Can you handle international SEO?",
+        "Yes, including hreflang, localization, domain structure and regional reporting."
+      ],
+      [
+        "How do you handle security and privacy?",
+        "We follow your access rules and can use self-hosted AI, so your data never trains public models."
+      ],
+      [
+        "How do you prove enterprise SEO ROI?",
+        "We connect organic data to your CRM and BI tools, so results can be reported as pipeline and revenue."
       ]
     ]
   },
-  "enterprise-seo": {
-    "what": "Enterprise SEO is search strategy for large organizations with big websites, many stakeholders and complex approval paths. It combines technical work at scale with governance: who owns what, how changes ship and how search fits into product, content and engineering. The aim is one program that runs across brands, regions and teams.",
-    "why": "Large sites have huge potential, but small errors can spread across thousands of pages. A single template or release can cost traffic overnight, and regional teams may duplicate work. Strong processes matter as much as tactics. Enterprises also face a growing AI search challenge, so we build SEO in a way that supports AEO, GEO and LLMO from the start.",
-    "who": "This service suits enterprises with large or international sites, several business units and internal SEO or digital teams that need extra strategy, capacity and engineering support.",
-    "kpis": [
-      "Organic pipeline across business units",
-      "Issues caught before release",
-      "Template-level technical health",
-      "Time from recommendation to release"
+  {
+    "id": "enterprise-geo",
+    "path": "/seo/enterprise-geo",
+    "col": "str",
+    "name": "Enterprise GEO",
+    "short": "Enterprise GEO",
+    "kw": "enterprise GEO services",
+    "title": "Enterprise GEO & AI Search Strategy | Beetrix360",
+    "desc": "Enterprise generative engine optimization for global brands: AI visibility governance, entity control, privacy-first tooling and reporting.",
+    "h1": [
+      "Enterprise GEO that protects",
+      "your brand",
+      "in every AI answer"
     ],
-    "faq": [
+    "lead": "We help large organizations manage how AI engines represent their brands, products and markets, with governance, reporting and privacy-first infrastructure.",
+    "answer": "Enterprise GEO is generative engine optimization for large organizations. It manages how multiple brands, products and regions appear in AI answers, using entity governance, prompt monitoring at scale, content standards and reporting for leadership.",
+    "q": [
+      "enterprise geo agency",
+      "ai search strategy for global brands",
+      "manage brand in ai answers"
+    ],
+    "para": [
+      "For a large brand, AI answers carry risk as well as opportunity. Products get mixed up, regions get the wrong details and outdated claims keep circulating. Enterprise GEO brings this under control.",
+      "We build shared entity data, content standards and monitoring across brands and markets. For sensitive sectors, we offer self-hosted LLM options, so your data stays private and never trains public AI."
+    ],
+    "deep": [
       [
-        "What makes enterprise SEO different?",
-        "Scale and coordination. The hard part is often getting changes approved and shipped across many teams and systems."
+        "Entity governance at scale",
+        "We create a single source of truth for brand, product and location facts, then publish it consistently through schema, pages and profiles."
       ],
       [
-        "How do you handle international SEO?",
-        "We plan URL structure, hreflang and local content by market, then set shared standards for regional teams."
-      ],
-      [
-        "Can you build SEO checks into our release process?",
-        "Yes. We add automated checks and review steps so that problems are caught before they go live."
-      ],
-      [
-        "How do you prove ROI to leadership?",
-        "We connect search data with your CRM and BI tools, then report pipeline and revenue by market and product."
+        "AI risk and compliance",
+        "Regulated teams need review steps. We add legal checks, monitoring and escalation paths for inaccurate AI claims."
       ]
-    ]
-  },
-  "enterprise-geo": {
-    "what": "Enterprise GEO is a managed program for AI search visibility at large organizations. It applies generative engine optimization and LLMO across many products, regions and languages, with the governance big brands need. We measure how AI engines describe you in each market, align your key facts and set a repeatable process for improving them.",
-    "why": "AI answers can spread one wrong claim across every market at once, and regulated industries face extra risk. Separate teams often publish conflicting details, which gives models mixed signals. A coordinated program gives leaders one view of AI visibility, keeps product facts consistent and adds the review steps that legal and compliance teams expect.",
-    "who": "This service suits global brands, regulated industries and companies with large product ranges. It is well suited to organizations that need self-hosted AI options, strict data handling or reporting across several business units.",
-    "kpis": [
-      "AI share of voice by market and product",
-      "Accuracy of priority brand claims",
-      "Coverage across languages",
-      "AI-attributed pipeline"
+    ],
+    "kws": [
+      "enterprise AI search",
+      "AI search strategy",
+      "global GEO",
+      "AI governance",
+      "entity governance",
+      "brand safety in AI",
+      "self-hosted LLM",
+      "AI visibility at scale",
+      "multi-brand GEO",
+      "AI compliance",
+      "enterprise LLM optimization",
+      "AI risk monitoring"
+    ],
+    "pains": [
+      [
+        "Models confuse your products",
+        "Entity data separates each brand and product line."
+      ],
+      [
+        "Regions get the wrong details",
+        "Local facts are published and monitored market by market."
+      ],
+      [
+        "Legal worries about AI claims",
+        "Review workflows and alerts manage the risk."
+      ],
+      [
+        "No one owns AI visibility",
+        "A governance model assigns clear responsibility."
+      ]
+    ],
+    "items": [
+      [
+        "Enterprise AI audit",
+        "Visibility across brands, products and markets."
+      ],
+      [
+        "Entity source of truth",
+        "One governed set of brand facts."
+      ],
+      [
+        "Prompt monitoring at scale",
+        "Tracking by region, language and business unit."
+      ],
+      [
+        "Content standards",
+        "Citable templates and rules for every team."
+      ],
+      [
+        "Privacy-first tooling",
+        "Self-hosted LLM options for sensitive data."
+      ],
+      [
+        "Board-level reporting",
+        "AI share of voice and risk, in plain terms."
+      ]
+    ],
+    "steps": [
+      "Audit AI visibility and risks by business unit.",
+      "Set governance and the entity source of truth.",
+      "Roll out content standards and monitoring.",
+      "Report to leadership and scale to more markets."
     ],
     "faq": [
       [
-        "Who should own enterprise GEO?",
-        "Usually marketing or digital leads it, with support from SEO, comms, product and legal. We help define clear roles."
+        "What is enterprise GEO?",
+        "Enterprise GEO is generative engine optimization for large organizations, managing how many brands, products and regions appear in AI answers."
       ],
       [
-        "How do you keep product facts consistent?",
-        "We create a single source of truth, then align websites, documentation, listings and partner content to it."
+        "How is enterprise GEO different from standard GEO?",
+        "It adds governance, compliance, multi-market monitoring and leadership reporting."
       ],
       [
-        "Does this work in regulated industries?",
-        "Yes, with suitable approval flows. We build legal and compliance review into publishing."
+        "Can you keep our data private?",
+        "Yes. Your data never trains public AI, and we offer a self-hosted LLM option."
       ],
       [
-        "Can you report on AI visibility by country?",
-        "Yes. We test prompts by market and language, then roll results up into one executive view."
+        "Who should own AI visibility?",
+        "Usually marketing or brand, with support from SEO, legal, PR and product. We help define the roles."
+      ],
+      [
+        "Do you support multiple languages and regions?",
+        "Yes. We scope prompt monitoring and entity data by market and language."
+      ],
+      [
+        "What should we do first?",
+        "Begin with an AI visibility and risk audit across your most important brands and markets."
       ]
     ]
   }
-};
-
-export const SHARED_FAQ: [string, string][] = [
-  [
-    "How much does this service cost?",
-    "Pricing depends on your site, market and goals. See our pricing guides or request a free audit for a scoped plan."
-  ],
-  [
-    "How do we get started with Beetrix360?",
-    "Request a free audit. We review your SEO, AEO, GEO and LLMO, then send a 90-day blueprint, usually within one business day."
-  ],
-  [
-    "Can you work with our in-house team or current agency?",
-    "Yes. We can lead the work, support your team or fill a specific gap, and we share everything we do."
-  ]
 ];
 
-export const M2: Record<string, any> = {
-  "seo": [
-    "We start with a full audit of your site, your competitors and your lost demand. Then we rank every task by likely revenue, so the first fixes are the ones most likely to pay back. Our team ships changes directly or works with your developers, and each month we show what moved and what comes next.",
-    [
-      "Chasing traffic that never converts",
-      "Publishing content with no link to revenue",
-      "Treating SEO and AI search as separate projects"
-    ]
-  ],
-  "local-seo": [
-    "We begin by mapping every location and service area you cover, then compare your visibility with the businesses that win those searches. From there we fix your profile, clean up your listings, build useful local pages and set up review requests your staff can actually keep doing.",
-    [
-      "Using one generic page for every city",
-      "Letting business details drift across directories",
-      "Ignoring reviews until a bad one appears"
-    ]
-  ],
-  "technical-seo": [
-    "We crawl your site the way search engines and AI bots do, then review logs, templates and rendering. Issues are grouped by page type and ranked by revenue at risk. Your developers get clear tickets with examples, and we test each fix after release to confirm it worked.",
-    [
-      "Fixing audit scores instead of real problems",
-      "Shipping redesigns without an SEO review",
-      "Hiding key content behind client-side JavaScript"
-    ]
-  ],
-  "on-page-seo": [
-    "We review each priority page against its search intent, its competitors and its conversion goal. Then we rewrite weak sections, tighten titles, add internal links and place proof where buyers need it. Changes roll out in batches so we can see what moves rankings and leads.",
-    [
-      "Writing for keywords instead of readers",
-      "Burying the answer below a long intro",
-      "Leaving old pages to decay for years"
-    ]
-  ],
-  "link-building": [
-    "We study who links to your rivals, then find angles those writers actually care about. That can mean original data, expert commentary or useful resources. Every pitch is written by hand, and we report on the placements that matter, not on a monthly link count.",
-    [
-      "Buying packaged guest posts",
-      "Chasing domain metrics over relevance",
-      "Pointing every link at the home page"
-    ]
-  ],
-  "ecommerce-seo": [
-    "We map how shoppers search your categories, then match that demand to your store structure. Next we improve category and product templates, control filters and add product schema. Because reporting ties to orders and margin, we can focus on the ranges that make you money.",
-    [
-      "Letting filters create endless duplicate URLs",
-      "Using manufacturer copy on every product",
-      "Deleting seasonal pages and losing their authority"
-    ]
-  ],
-  "generative-engine-optimization": [
-    "We test the questions your buyers ask across the major AI engines, then record who gets named and which sources are cited. Using that map, we rewrite key pages into quotable answers and earn mentions on trusted sites. Weekly tracking shows where your share of voice is growing.",
-    [
-      "Checking one prompt and calling it research",
-      "Publishing vague claims with no evidence",
-      "Ignoring the third-party sources AI relies on"
-    ]
-  ],
-  "answer-engine-optimization": [
-    "We collect real questions from search data, sales calls and support tickets. Then we build pages that answer each one directly and back the answer with detail. We add valid schema where it helps, and track which snippets and AI Overviews start to use your content.",
-    [
-      "Hiding answers below long introductions",
-      "Marking up content with invalid schema",
-      "Writing FAQs nobody actually asks"
-    ]
-  ],
-  "programmatic-seo": [
-    "We first find a repeatable search pattern with real demand, then check that your data can support it. We design one strong template, publish a small test batch and watch indexing and conversions. Only after that do we scale, with automated checks to hold back weak pages.",
-    [
-      "Launching thousands of pages at once",
-      "Swapping only the city name on each page",
-      "Publishing without internal links or quality rules"
-    ]
-  ],
-  "chatgpt-optimization": [
-    "We run your buyers' prompts in ChatGPT on a schedule and record what comes back. Then we check crawler access, strengthen your key pages and close gaps in the sources behind each answer. You see how often you are named, how you are described and what changed.",
-    [
-      "Trying to game answers with tricks",
-      "Blocking AI crawlers by accident",
-      "Judging visibility from a single screenshot"
-    ]
-  ],
-  "ai-visibility-tracking": [
-    "We build a prompt library around your products, buyers and funnel stages, then sample it across each engine on a set schedule. Results go into one dashboard with competitor comparisons. We also set up analytics so AI referrals stop disappearing into direct traffic.",
-    [
-      "Tracking branded prompts only",
-      "Reading one answer as a final result",
-      "Reporting visibility with no link to pipeline"
-    ]
-  ],
-  "ai-brand-perception": [
-    "We ask each major AI engine what it knows about you, your rivals and your category. Next we trace wrong or weak claims back to their sources. Then we update your own pages, align your profiles and build fresh proof on sites those engines trust.",
-    [
-      "Assuming AI answers are out of your control",
-      "Leaving old profiles and listings online",
-      "Sending mixed messages across channels"
-    ]
-  ],
-  "keyword-research": [
-    "We combine search tools with your sales calls, reviews and support tickets, so the list reflects how buyers really talk. Each topic gets scored for intent, value and difficulty. The result is a page-by-page roadmap that your writers and developers can start on right away.",
-    [
-      "Sorting a list by volume alone",
-      "Targeting terms that never lead to sales",
-      "Ignoring how people phrase questions in AI tools"
-    ]
-  ],
-  "competitor-analysis": [
-    "We agree on your main rivals, then add the ones that really show up in search and AI answers. We compare their rankings, content, links, ads and offers side by side. Each finding becomes a ranked action with an owner, effort level and likely impact.",
-    [
-      "Copying rivals without knowing what works",
-      "Watching only your direct competitors",
-      "Producing a report that nobody acts on"
-    ]
-  ],
-  "enterprise-seo": [
-    "We start by learning how your teams, systems and approvals really work. Then we set shared standards, build business cases for the biggest fixes and add SEO checks to your release process. Reporting connects to your CRM, so each market can see its contribution.",
-    [
-      "Running SEO separately in every market",
-      "Reviewing SEO after a release goes live",
-      "Reporting traffic when leaders want pipeline"
-    ]
-  ],
-  "enterprise-geo": [
-    "We benchmark your AI visibility by product, market and language, then build one approved source of truth for key facts. Local teams get clear standards and review flows. Executive reporting shows where you lead, where you lag and which sources need attention.",
-    [
-      "Letting each region publish different facts",
-      "Skipping legal and compliance review",
-      "Testing prompts only in English"
-    ]
-  ]
-};
+export function getMainSeoPage(): SeoPageData {
+  return SEO_PAGES.find((p) => p.id === "seo") || SEO_PAGES[0];
+}
 
-export const REVIEWS: ReviewItem[] = [];
+export function getSeoPageBySlug(slug: string): SeoPageData | undefined {
+  const targetPath = "/seo/" + slug;
+  return SEO_PAGES.find((p) => p.path === targetPath || p.id === slug);
+}
 
-export const VERIFIED: [string, string, string][] = [
-  [
-    "Redtail CRM for a financial firm",
-    "CRM troubleshooting, lead generation and marketing automation",
-    "Dec 2025 – Feb 2026"
-  ],
-  [
-    "SOS Inventory, QBO and Shopify",
-    "Multi-location planning through to implementation",
-    "Dec 2025 – Mar 2026"
-  ],
-  [
-    "AI UGC and Meta Ads creative",
-    "Creative strategy and video for ecommerce and lead generation brands",
-    "Feb – May 2026"
-  ],
-  [
-    "Organic social engagement",
-    "Engagement across Reddit, Facebook and X to build traffic and brand interest",
-    "Jan – Feb 2026"
-  ]
-];
-
-export const VG: Record<string, [string, string, string]> = {
-  "seo": [
-    "One search",
-    "system for",
-    "real revenue"
-  ],
-  "local-seo": [
-    "Every area",
-    "you serve,",
-    "one system"
-  ],
-  "technical-seo": [
-    "A site that",
-    "crawlers can",
-    "actually read"
-  ],
-  "on-page-seo": [
-    "Pages built",
-    "around what",
-    "buyers want"
-  ],
-  "link-building": [
-    "Authority",
-    "you earn,",
-    "never buy"
-  ],
-  "ecommerce-seo": [
-    "From search",
-    "to checkout,",
-    "connected"
-  ],
-  "generative-engine-optimization": [
-    "Your brand",
-    "inside the",
-    "AI answer"
-  ],
-  "answer-engine-optimization": [
-    "From question",
-    "to answer",
-    "to you"
-  ],
-  "programmatic-seo": [
-    "Scale pages",
-    "without",
-    "thin content"
-  ],
-  "chatgpt-optimization": [
-    "Your name",
-    "in the",
-    "conversation"
-  ],
-  "ai-visibility-tracking": [
-    "Every mention",
-    "measured,",
-    "every week"
-  ],
-  "ai-brand-perception": [
-    "The story",
-    "AI tells",
-    "about you"
-  ],
-  "keyword-research": [
-    "From search",
-    "data to a",
-    "clear plan"
-  ],
-  "competitor-analysis": [
-    "Their moves,",
-    "your next",
-    "best step"
-  ],
-  "enterprise-seo": [
-    "One program",
-    "across every",
-    "team"
-  ],
-  "enterprise-geo": [
-    "One brand",
-    "voice in",
-    "every market"
-  ]
-};
-
-export const OUT: Record<string, string> = {
-  "seo": "Ranked",
-  "ai": "Cited",
-  "strategy": "Planned"
-};
-
-export const ENGINES: string[] = [
-  "SEO",
-  "AEO",
-  "GEO",
-  "LLMO",
-  "ChatGPT",
-  "Perplexity"
-];
-
-export const D: [string, string, string][] = [
-  [
-    "SEO",
-    "Search engine optimization",
-    "earns rankings in Google and Bing, so buyers find you when they search."
-  ],
-  [
-    "AEO",
-    "Answer engine optimization",
-    "shapes your content into direct answers for snippets, voice search and AI Overviews."
-  ],
-  [
-    "GEO",
-    "Generative engine optimization",
-    "earns citations inside ChatGPT, Perplexity, Claude and other AI answers."
-  ],
-  [
-    "LLMO",
-    "Large language model optimization",
-    "improves how AI models understand and describe your brand."
-  ]
-];
-
-export const CLIENTS: string[] = [
-  "Tesla Solar",
-  "Microsoft",
-  "Subway",
-  "West & Post",
-  "Bay Square"
-];
-
-export const TAIL: string = "Get your free SEO, AEO, GEO and LLMO audit.";
-
-export const SLUGS = Object.keys(PAGES);
-
-export function getPageData(slug: string): PageData {
-  return PAGES[slug] || PAGES["generative-engine-optimization"] || PAGES["seo"];
+export function getAllSeoSlugs(): string[] {
+  return SEO_PAGES
+    .filter((p) => p.id !== "seo")
+    .map((p) => p.path.replace("/seo/", ""));
 }

@@ -7,7 +7,7 @@
    Font names are replaced with the next/font CSS variables set in layout.tsx.
    ------------------------------------------------------------------ */
 html{scroll-behavior:auto}
-body{background:#fff;color:#0A0A0A;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{background:#fff;color:#0A0A0A;overflow-x:clip;-webkit-font-smoothing:antialiased}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 :focus-visible{outline:2px solid #DE2056;outline-offset:3px;border-radius:6px}
 
