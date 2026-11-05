@@ -12,9 +12,19 @@ import { getSessionUser } from "@/lib/auth";
 
 export const dynamicParams = true;
 
+const EXPLICIT_ROOTS = [
+  "seo",
+  "branding",
+  "social-media",
+  "content-marketing",
+  "digital-marketing",
+  "admin",
+];
+
 export async function generateStaticParams() {
   try {
-    // Pre-generate parameters from the page store for fast build & ISR
+    // Pre-generate parameters from the page store for fast build & ISR,
+    // excluding dedicated routes that have their own App Router directory.
     const pages = await getAllPages();
     if (!Array.isArray(pages)) return [];
     return pages
@@ -25,7 +35,10 @@ export async function generateStaticParams() {
           segments: clean ? clean.split("/").filter(Boolean) : [],
         };
       })
-      .filter((entry) => entry.segments.length > 0);
+      .filter((entry) => {
+        if (!entry.segments.length) return false;
+        return !EXPLICIT_ROOTS.includes(entry.segments[0]);
+      });
   } catch (err) {
     console.warn("[generateStaticParams] Warning during build:", err);
     return [];
@@ -38,6 +51,9 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { segments } = await params;
+  if (segments.length > 0 && EXPLICIT_ROOTS.includes(segments[0])) {
+    return {};
+  }
   const rawPath = "/" + segments.join("/");
 
   // Check for redirect first
@@ -92,6 +108,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function CatchAllPage({ params }: PageProps) {
   const { segments } = await params;
+  if (segments.length > 0 && EXPLICIT_ROOTS.includes(segments[0])) {
+    notFound();
+  }
   const rawPath = "/" + segments.join("/");
 
   // 1. Check for 301/308 redirect

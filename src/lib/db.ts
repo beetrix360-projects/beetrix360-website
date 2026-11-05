@@ -50,26 +50,32 @@ export const ddbDocClient = rawClient
 export const TABLE_NAME = process.env.DYNAMODB_CONTENT_TABLE || "Beetrix_Content";
 
 /**
- * Local file fallback for seamless local development without requiring AWS setup.
- * Once deployed to AWS Amplify with DYNAMODB_CONTENT_TABLE configured, this automatically uses DynamoDB.
+ * Local file and in-memory fallback for seamless local development and serverless runtimes.
+ * If running on a read-only serverless filesystem (Vercel, AWS Lambda, Amplify SSR),
+ * it seamlessly maintains state in memory without throwing EROFS errors.
  */
 const DATA_DIR = path.join(process.cwd(), ".data");
 const LOCAL_STORE_FILE = path.join(DATA_DIR, "content-store.json");
 
+let localMemoryCache: Record<string, any> | null = null;
+
 function ensureLocalStore(): Record<string, any> {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+  if (localMemoryCache) {
+    return localMemoryCache;
   }
 
-  if (fs.existsSync(LOCAL_STORE_FILE)) {
-    try {
-      return JSON.parse(fs.readFileSync(LOCAL_STORE_FILE, "utf-8"));
-    } catch {
-      // fallback
+  // 1. Try reading from existing local store file if available
+  try {
+    if (fs.existsSync(LOCAL_STORE_FILE)) {
+      const parsed = JSON.parse(fs.readFileSync(LOCAL_STORE_FILE, "utf-8"));
+      localMemoryCache = parsed;
+      return parsed;
     }
+  } catch {
+    // Read fallback
   }
 
-  // Seed default content from existing src/content
+  // 2. Seed default content from existing src/content
   const seed: Record<string, any> = {};
   try {
     const hp = path.join(process.cwd(), "src/content/homepage.json");
@@ -102,15 +108,31 @@ function ensureLocalStore(): Record<string, any> {
     console.error("Failed to seed initial local content store:", err);
   }
 
-  fs.writeFileSync(LOCAL_STORE_FILE, JSON.stringify(seed, null, 2), "utf-8");
+  localMemoryCache = seed;
+
+  // 3. Attempt to persist to disk if environment allows (local dev); safely ignore in read-only serverless
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    fs.writeFileSync(LOCAL_STORE_FILE, JSON.stringify(seed, null, 2), "utf-8");
+  } catch {
+    // Read-only filesystem in serverless environments (e.g. Vercel, AWS Lambda)
+  }
+
   return seed;
 }
 
 function writeLocalStore(data: Record<string, any>) {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+  localMemoryCache = data;
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    fs.writeFileSync(LOCAL_STORE_FILE, JSON.stringify(data, null, 2), "utf-8");
+  } catch {
+    // Read-only filesystem safety catch
   }
-  fs.writeFileSync(LOCAL_STORE_FILE, JSON.stringify(data, null, 2), "utf-8");
 }
 
 /**

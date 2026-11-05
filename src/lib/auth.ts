@@ -50,9 +50,11 @@ export async function seedInitialAdmin(): Promise<void> {
   if (existing.length === 0) {
     const initialPassword = process.env.INITIAL_ADMIN_PASSWORD;
     if (!initialPassword || initialPassword.trim() === "") {
-      console.warn(
-        "[AUTH NOTICE] No administrator accounts exist in the store, and INITIAL_ADMIN_PASSWORD is not set. To seed the initial admin account, set INITIAL_ADMIN_PASSWORD in .env.local or your environment variables."
-      );
+      if (process.env.NODE_ENV !== "production") {
+        console.warn(
+          "[AUTH NOTICE] No administrator accounts exist in the store, and INITIAL_ADMIN_PASSWORD is not set. To seed the initial admin account, set INITIAL_ADMIN_PASSWORD in .env.local or your environment variables."
+        );
+      }
       return;
     }
 
