@@ -172,16 +172,22 @@ export function Navbar({ site, navigation }: NavbarProps) {
             {menus.map((menu, mIdx) => {
               const isOpen = openDropdown === mIdx;
               const displayLabel = menu.shortLabel || menu.label;
+              const navLinkHref =
+                displayLabel === "AI Search & SEO" || menu.label === "AI Search & SEO"
+                  ? "/seo"
+                  : displayLabel === "Brand & Social" || menu.label === "Brand, Content & Social" || menu.label === "Brand & Social"
+                  ? "/digital-marketing"
+                  : null;
               return (
                 <div
                   key={menu.label}
                   className="relative shrink-0"
                   onMouseEnter={() => handleMouseEnter(mIdx)}
                 >
-                  {displayLabel === "AI Search & SEO" || menu.label === "AI Search & SEO" ? (
+                  {navLinkHref ? (
                     <Link
                       ref={(el) => { triggerRefs.current[mIdx] = el; }}
-                      href="/seo"
+                      href={navLinkHref}
                       onClick={() => setOpenDropdown(null)}
                       onKeyDown={(e) => {
                         if (e.key === "ArrowDown") {
@@ -446,9 +452,9 @@ export function Navbar({ site, navigation }: NavbarProps) {
               return (
                 <div key={menu.label} className="border-b border-neutral-100 pb-3">
                   <div className="w-full flex items-center justify-between py-2">
-                    {menu.label === "AI Search & SEO" ? (
+                    {menu.label === "AI Search & SEO" || menu.label === "Brand, Content & Social" || menu.shortLabel === "Brand & Social" ? (
                       <Link
-                        href="/seo"
+                        href={menu.label === "AI Search & SEO" ? "/seo" : "/digital-marketing"}
                         onClick={() => setMobileMenuOpen(false)}
                         className="font-heading font-bold text-base text-neutral-900 hover:text-bx-pink flex-1"
                       >
