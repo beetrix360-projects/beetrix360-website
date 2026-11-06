@@ -24,7 +24,7 @@
         "metaDescription": null,
         "canonicalPath": "/",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -49,17 +49,17 @@
       "slug": "seo",
       "h1": "SEO Services",
       "menuLabel": "SEO Services",
-      "targetKeyword": "seo services",
+      "targetKeyword": "seo marketing agency",
       "pageType": "hub",
       "origin": "both",
       "division": "AI Search & SEO",
       "note": "Division hub for search. Keyword Research lives here as a section too.",
       "seo": {
-        "titleTag": "SEO Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "SEO Marketing Agency | B2B SEO Services & AI Search | Beetrix360",
+        "metaDescription": "Beetrix360 is an SEO marketing agency and B2B SEO services partner that engineers organic search, AI answer visibility, and CRM attribution into closed revenue.",
         "canonicalPath": "/seo",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -87,17 +87,17 @@
       "slug": "local-seo",
       "h1": "Local SEO",
       "menuLabel": "Local SEO",
-      "targetKeyword": "local seo services",
+      "targetKeyword": "local seo agency",
       "pageType": "service",
       "origin": "both",
       "division": "AI Search & SEO",
       "note": "",
       "seo": {
-        "titleTag": "Local SEO Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Local SEO Agency | Google Maps & Map Pack Services | Beetrix360",
+        "metaDescription": "Beetrix360 is a premier local SEO agency. We optimize Google Business Profiles, dominate Google Maps 3-packs, fix citations, and scale multi-location rankings to drive phone calls and revenue.",
         "canonicalPath": "/seo/local-seo",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -125,17 +125,17 @@
       "slug": "technical-seo",
       "h1": "Technical SEO",
       "menuLabel": "Technical SEO",
-      "targetKeyword": "technical seo services",
+      "targetKeyword": "technical seo audit services",
       "pageType": "service",
       "origin": "hammad",
       "division": "AI Search & SEO",
       "note": "",
       "seo": {
-        "titleTag": "Technical SEO Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Technical SEO Audit Services & Engineering Experts | Beetrix360",
+        "metaDescription": "Beetrix360 delivers technical SEO audit services and implementation. Our technical SEO experts fix crawling, indexing, JavaScript rendering, Core Web Vitals, and schema for search and AI engines.",
         "canonicalPath": "/seo/technical-seo",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -163,17 +163,17 @@
       "slug": "on-page-seo",
       "h1": "On-Page SEO",
       "menuLabel": "On-Page SEO",
-      "targetKeyword": "on-page seo services",
+      "targetKeyword": "on-page seo checklist",
       "pageType": "service",
       "origin": "hammad",
       "division": "AI Search & SEO",
       "note": "Absorbs Hammad's 'AI Content Optimization' page.",
       "seo": {
-        "titleTag": "On-page SEO Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "On-Page SEO Checklist & Content Optimization Services | Beetrix360",
+        "metaDescription": "The definitive on-page SEO checklist and execution services. Audit and optimize heading hierarchies, semantic entities, internal link graphs, and schema to dominate SERPs and AI answers.",
         "canonicalPath": "/seo/on-page-seo",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -201,17 +201,17 @@
       "slug": "ecommerce-seo",
       "h1": "Ecommerce SEO",
       "menuLabel": "Ecommerce SEO",
-      "targetKeyword": "ecommerce seo services",
+      "targetKeyword": "ecommerce seo expert",
       "pageType": "service",
       "origin": "hammad",
       "division": "AI Search & SEO",
       "note": "",
       "seo": {
-        "titleTag": "Ecommerce SEO Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Ecommerce SEO Expert & Services for Online Stores | Beetrix360",
+        "metaDescription": "Partner with an elite ecommerce seo expert. Data-backed seo services for ecommerce websites that scale organic revenue across Shopify, Magento, and WooCommerce.",
         "canonicalPath": "/seo/ecommerce-seo",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -239,17 +239,17 @@
       "slug": "link-building",
       "h1": "Link Building",
       "menuLabel": "Link Building",
-      "targetKeyword": "link building services",
+      "targetKeyword": "link building agency",
       "pageType": "service",
       "origin": "hammad",
       "division": "AI Search & SEO",
       "note": "",
       "seo": {
-        "titleTag": "Link Building Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Link Building Agency & Digital PR Services | Beetrix360",
+        "metaDescription": "Elite link building agency securing high-authority editorial backlinks and digital PR coverage. Explore quality link building services and agency white-label solutions.",
         "canonicalPath": "/seo/link-building",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -283,11 +283,11 @@
       "division": "AI Search & SEO",
       "note": "Not in menu. Linked from the SEO hub.",
       "seo": {
-        "titleTag": "Keyword Research Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Keyword Research Services & Strategy | Beetrix360",
+        "metaDescription": "Keyword research services that map buyer intent, topic clusters and AI prompts into a content plan built around revenue.",
         "canonicalPath": "/seo/keyword-research",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -315,17 +315,17 @@
       "slug": "programmatic-seo",
       "h1": "Programmatic SEO",
       "menuLabel": "Programmatic SEO",
-      "targetKeyword": "programmatic seo services",
+      "targetKeyword": "programmatic seo expert",
       "pageType": "service",
       "origin": "hammad",
       "division": "AI Search & SEO",
       "note": "Moved here from Hammad's AI SEO Content hub.",
       "seo": {
-        "titleTag": "Programmatic SEO Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Programmatic SEO Expert & Scaled Landing Page Agency | Beetrix360",
+        "metaDescription": "Hire a programmatic seo expert. Scale thousands of indexable, high-converting programmatic pages without thin content penalties using Next.js and Postgres.",
         "canonicalPath": "/seo/programmatic-seo",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -353,17 +353,17 @@
       "slug": "generative-engine-optimization",
       "h1": "Generative Engine & LLM Optimization (GEO)",
       "menuLabel": "Generative Engine & LLM Optimization (GEO)",
-      "targetKeyword": "generative engine optimization services",
+      "targetKeyword": "generative engine optimization agency",
       "pageType": "service",
       "origin": "both",
       "division": "AI Search & SEO",
       "note": "The ONE primary GEO page. Hammad's duplicate GEO page under AI SEO Content is dropped.",
       "seo": {
-        "titleTag": "Generative Engine Optimization Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Generative Engine Optimization Agency | GEO & LLM Services | Beetrix360",
+        "metaDescription": "The premier generative engine optimization agency. Secure citations across ChatGPT, Perplexity, Gemini, and Claude using advanced GEO and LLM optimization strategies.",
         "canonicalPath": "/seo/generative-engine-optimization",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -391,17 +391,17 @@
       "slug": "answer-engine-optimization",
       "h1": "Answer Engine Optimization (AEO)",
       "menuLabel": "Answer Engine Optimization (AEO)",
-      "targetKeyword": "answer engine optimization services",
+      "targetKeyword": "answer engine optimization agency",
       "pageType": "service",
       "origin": "hammad",
       "division": "AI Search & SEO",
       "note": "",
       "seo": {
-        "titleTag": "Answer Engine Optimization Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Answer Engine Optimization Agency | AEO Services & Snippets | Beetrix360",
+        "metaDescription": "The premier answer engine optimization agency. Win Google featured snippets, People Also Ask boxes, and AI Overviews with best answer engine optimization services.",
         "canonicalPath": "/seo/answer-engine-optimization",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -429,17 +429,17 @@
       "slug": "chatgpt-optimization",
       "h1": "ChatGPT Optimization",
       "menuLabel": "ChatGPT Optimization",
-      "targetKeyword": "chatgpt optimization",
+      "targetKeyword": "best ai search optimization agencies for chatgpt",
       "pageType": "service",
       "origin": "webfx",
       "division": "AI Search & SEO",
       "note": "Kept from WebFX. Must target ChatGPT-specific intent, not general GEO.",
       "seo": {
-        "titleTag": "ChatGPT Optimization | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Best AI Search Optimization Agencies for ChatGPT | Beetrix360",
+        "metaDescription": "Ranked among the best ai search optimization agencies for chatgpt. Optimize crawler permissions, brand citations, and prompt visibility across ChatGPT and Perplexity.",
         "canonicalPath": "/seo/chatgpt-optimization",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -467,17 +467,17 @@
       "slug": "ai-visibility-tracking",
       "h1": "AI & LLM Visibility Tracking",
       "menuLabel": "AI & LLM Visibility Tracking",
-      "targetKeyword": "ai visibility tracking",
+      "targetKeyword": "AI visibility tracking",
       "pageType": "service",
       "origin": "webfx",
       "division": "AI Search & SEO",
       "note": "Kept from WebFX. Sell as a reporting service (no proprietary SaaS claim).",
       "seo": {
-        "titleTag": "AI Visibility Tracking | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "AI & LLM Visibility Tracking Services | Beetrix360",
+        "metaDescription": "Track your brand across ChatGPT, Perplexity, Claude and AI Overviews: prompts, citations, share of voice and sentiment in one dashboard.",
         "canonicalPath": "/seo/ai-visibility-tracking",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -505,17 +505,17 @@
       "slug": "ai-brand-perception",
       "h1": "AI Brand Perception",
       "menuLabel": "AI Brand Perception",
-      "targetKeyword": "ai brand perception services",
+      "targetKeyword": "AI brand perception",
       "pageType": "service",
       "origin": "webfx",
       "division": "AI Search & SEO",
       "note": "Kept from WebFX.",
       "seo": {
-        "titleTag": "AI Brand Perception Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "AI Brand Perception Audits & Management | Beetrix360",
+        "metaDescription": "Find out what AI engines say about your brand. We audit AI brand perception, correct errors and shape how models describe you.",
         "canonicalPath": "/seo/ai-brand-perception",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -543,17 +543,17 @@
       "slug": "enterprise-seo",
       "h1": "Enterprise SEO",
       "menuLabel": "Enterprise SEO",
-      "targetKeyword": "enterprise seo services",
+      "targetKeyword": "enterprise seo consulting",
       "pageType": "service",
       "origin": "both",
       "division": "AI Search & SEO",
       "note": "Publish only with enterprise proof on the page.",
       "seo": {
-        "titleTag": "Enterprise SEO Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Enterprise SEO Consulting & Strategy Firm | Beetrix360",
+        "metaDescription": "Strategic enterprise seo consulting for complex organizations. Scale governance, technical infrastructure, and pipeline with premier enterprise seo solutions.",
         "canonicalPath": "/seo/enterprise-seo",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -581,17 +581,17 @@
       "slug": "enterprise-geo",
       "h1": "Enterprise GEO",
       "menuLabel": "Enterprise GEO",
-      "targetKeyword": "enterprise generative engine optimization",
+      "targetKeyword": "best geo agencies for enterprise brands",
       "pageType": "service",
       "origin": "both",
       "division": "AI Search & SEO",
       "note": "Publish only with enterprise proof on the page.",
       "seo": {
-        "titleTag": "Enterprise Generative Engine Optimization | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Best GEO Agencies for Enterprise Brands | Beetrix360",
+        "metaDescription": "Vetted among the best geo agencies for enterprise brands. Secure multi-brand AI visibility, SOC2-compliant governance, and enterprise platform integrations.",
         "canonicalPath": "/seo/enterprise-geo",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -625,11 +625,11 @@
       "division": "Brand, Content & Social",
       "note": "Full-service overview. Links to every division.",
       "seo": {
-        "titleTag": "Digital Marketing Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Digital Marketing Services: Full Service Marketing Agency | Beetrix360",
+        "metaDescription": "Beetrix360 provides full-funnel digital marketing services: SEO, paid ads, content, brand, and social media integrated into one measurable revenue growth engine.",
         "canonicalPath": "/digital-marketing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -771,17 +771,17 @@
       "slug": "google-ads",
       "h1": "Google Ads Management",
       "menuLabel": "Google Ads Management",
-      "targetKeyword": "google ads management services",
+      "targetKeyword": "google ads management agency",
       "pageType": "service",
       "origin": "hammad",
       "division": "Paid Media & Marketplaces",
       "note": "On-page sections: audience & customer match, competition analysis, ad copy, ad testing, tracking, bid management.",
       "seo": {
-        "titleTag": "Google Ads Management Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Google Ads Management Agency | Performance PPC Services | Beetrix360",
+        "metaDescription": "Data-driven Google Ads management agency specializing in Search, Shopping, and Performance Max. Lower CAC and scale revenue with transparent weekly reporting.",
         "canonicalPath": "/paid-media/google-ads",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -847,17 +847,17 @@
       "slug": "meta-ads",
       "h1": "Meta Ads Management",
       "menuLabel": "Meta Ads Management",
-      "targetKeyword": "meta ads management services",
+      "targetKeyword": "facebook ads management services",
       "pageType": "service",
       "origin": "hammad",
       "division": "Paid Media & Marketplaces",
       "note": "On-page sections: audience targeting, campaign management, reporting, ad copy & creatives.",
       "seo": {
-        "titleTag": "Meta Ads Management Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Facebook Ads Management Services & Instagram Agency | Beetrix360",
+        "metaDescription": "Scale customer acquisition with expert facebook ads management services and instagram ads agency solutions. Full-funnel creative testing and CAPI tracking.",
         "canonicalPath": "/paid-media/meta-ads",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -885,17 +885,17 @@
       "slug": "tiktok-ads",
       "h1": "TikTok Ads Management",
       "menuLabel": "TikTok Ads Management",
-      "targetKeyword": "tiktok ads management",
+      "targetKeyword": "best tiktok ads agency",
       "pageType": "service",
       "origin": "hammad",
       "division": "Paid Media & Marketplaces",
       "note": "On-page sections: account setup & audit, audience research, strategy & launch, optimization, influencer collabs, reporting.",
       "seo": {
-        "titleTag": "TikTok Ads Management | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Best TikTok Ads Agency | Creative Video & Paid Media | Beetrix360",
+        "metaDescription": "Partner with the best tiktok ads agency for viral UGC creative and algorithmic scaling. Transparent tiktok ads pricing and full-funnel media buying.",
         "canonicalPath": "/paid-media/tiktok-ads",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -967,11 +967,11 @@
       "division": "Paid Media & Marketplaces",
       "note": "Kept from WebFX.",
       "seo": {
-        "titleTag": "Programmatic Advertising Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Programmatic Advertising Services & DSP Agency | Beetrix360",
+        "metaDescription": "Scale reach across CTV, digital audio, and display with premier programmatic advertising services. Optimize real-time bidding via leading DSP platforms.",
         "canonicalPath": "/paid-media/programmatic-advertising",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1113,17 +1113,17 @@
       "slug": "amazon",
       "h1": "Amazon Management Services",
       "menuLabel": "Amazon Management Services",
-      "targetKeyword": "amazon management services",
+      "targetKeyword": "amazon account management services",
       "pageType": "hub",
       "origin": "hammad",
       "division": "Paid Media & Marketplaces",
       "note": "Build first and in depth (Hammad's call, if your revenue confirms it).",
       "seo": {
-        "titleTag": "Amazon Management Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Amazon Account Management Services | Seller & Vendor Hub | Beetrix360",
+        "metaDescription": "Full-service amazon account management services for Seller & Vendor Central. Unified ads, listing SEO, DSP, and brand operations for scaling merchants.",
         "canonicalPath": "/marketplaces/amazon",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1151,17 +1151,17 @@
       "slug": "advertising",
       "h1": "Amazon Advertising Management",
       "menuLabel": "Amazon Advertising Management",
-      "targetKeyword": "amazon advertising management",
+      "targetKeyword": "amazon ads agency",
       "pageType": "sub",
       "origin": "both",
       "division": "Paid Media & Marketplaces",
       "note": "Hammad's 'Amazon Ads' + WebFX 'Advertising Management for Amazon' as one page.",
       "seo": {
-        "titleTag": "Amazon Advertising Management | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Amazon Ads Agency | Top Amazon PPC Experts | Beetrix360",
+        "metaDescription": "Scale Amazon revenue and lower ACOS with an elite amazon ads agency. Sponsored Products, Brands, and Display managed by top Amazon PPC experts.",
         "canonicalPath": "/marketplaces/amazon/advertising",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1189,17 +1189,17 @@
       "slug": "seo",
       "h1": "Amazon SEO & Listing Optimization",
       "menuLabel": "Amazon SEO & Listing Optimization",
-      "targetKeyword": "amazon seo services",
+      "targetKeyword": "amazon listing optimization services",
       "pageType": "sub",
       "origin": "webfx",
       "division": "Paid Media & Marketplaces",
       "note": "Kept from WebFX ('SEO for Amazon').",
       "seo": {
-        "titleTag": "Amazon SEO Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Amazon Listing Optimization Services | Amazon SEO Agency | Beetrix360",
+        "metaDescription": "Rank higher on Amazon with proven amazon listing optimization services. Master the A9/A10 algorithm with keyword indexing, backend terms, and A+ content.",
         "canonicalPath": "/marketplaces/amazon/seo",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1227,17 +1227,17 @@
       "slug": "dsp",
       "h1": "Amazon DSP Management",
       "menuLabel": "Amazon DSP Management",
-      "targetKeyword": "amazon dsp management",
+      "targetKeyword": "best amazon advertising agency for dsp",
       "pageType": "sub",
       "origin": "hammad",
       "division": "Paid Media & Marketplaces",
       "note": "",
       "seo": {
-        "titleTag": "Amazon DSP Management | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Best Amazon Advertising Agency for DSP | Amazon DSP Agency | Beetrix360",
+        "metaDescription": "Scale off-Amazon programmatic reach with the best amazon advertising agency for dsp. Target verified Amazon shoppers across the open web, Prime Video, and CTV.",
         "canonicalPath": "/marketplaces/amazon/dsp",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1265,17 +1265,17 @@
       "slug": "seller-operations",
       "h1": "Amazon Seller Operations Management",
       "menuLabel": "Amazon Seller Operations Management",
-      "targetKeyword": "amazon seller account management",
+      "targetKeyword": "amazon account management agency",
       "pageType": "sub",
       "origin": "hammad",
       "division": "Paid Media & Marketplaces",
       "note": "",
       "seo": {
-        "titleTag": "Amazon Seller Account Management | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Amazon Account Management Agency | Seller Operations | Beetrix360",
+        "metaDescription": "Turnkey back-office operations from an elite amazon account management agency. Resolve seller support cases, stranded inventory, and Brand Registry issues.",
         "canonicalPath": "/marketplaces/amazon/seller-operations",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1303,17 +1303,17 @@
       "slug": "brand-management",
       "h1": "Amazon Brand Management",
       "menuLabel": "Amazon Brand Management",
-      "targetKeyword": "amazon brand management services",
+      "targetKeyword": "amazon brand management agency",
       "pageType": "sub",
       "origin": "hammad",
       "division": "Paid Media & Marketplaces",
       "note": "Not in menu. Linked from the Amazon hub.",
       "seo": {
-        "titleTag": "Amazon Brand Management Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Amazon Brand Management Agency | Brand Protection | Beetrix360",
+        "metaDescription": "Protect pricing, resolve channel conflict, and scale catalog equity with a leading amazon brand management agency. Specialized beauty & CPG brand solutions.",
         "canonicalPath": "/marketplaces/amazon/brand-management",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1341,17 +1341,17 @@
       "slug": "creator-connections",
       "h1": "Amazon Creator Connections",
       "menuLabel": "Amazon Creator Connections",
-      "targetKeyword": "amazon creator connections",
+      "targetKeyword": "amazon creator connection",
       "pageType": "sub",
       "origin": "hammad",
       "division": "Paid Media & Marketplaces",
       "note": "Not in menu. Linked from the Amazon hub.",
       "seo": {
-        "titleTag": "Amazon Creator Connections | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Amazon Creator Connection Strategy & Campaigns | Beetrix360",
+        "metaDescription": "Scale authentic shoppable video and off-platform influencer sales with amazon creator connection campaigns managed by Beetrix360 experts.",
         "canonicalPath": "/marketplaces/amazon/creator-connections",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1417,17 +1417,17 @@
       "slug": "walmart",
       "h1": "Walmart Marketplace & Ads Management",
       "menuLabel": "Walmart Marketplace & Ads Management",
-      "targetKeyword": "walmart marketplace advertising",
+      "targetKeyword": "walmart advertising agency",
       "pageType": "service",
       "origin": "both",
       "division": "Paid Media & Marketplaces",
       "note": "Hammad's Walmart Ads + WebFX Walmart Marketplace as one page.",
       "seo": {
-        "titleTag": "Walmart Marketplace Advertising | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Walmart Advertising Agency | Walmart Connect & PPC | Beetrix360",
+        "metaDescription": "Scale revenue on Walmart.com with a premier walmart advertising agency. Certified Walmart Connect management, Sponsored Search, and listing health.",
         "canonicalPath": "/marketplaces/walmart",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1499,11 +1499,11 @@
       "division": "Brand, Content & Social",
       "note": "",
       "seo": {
-        "titleTag": "Branding Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Branding Agency: Strategy, Identity & Design | Beetrix360",
+        "metaDescription": "Beetrix360 builds brands from strategy to identity, naming and packaging, as one system designed to win trust and revenue.",
         "canonicalPath": "/branding",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1531,17 +1531,17 @@
       "slug": "brand-strategy",
       "h1": "Brand Strategy",
       "menuLabel": "Brand Strategy",
-      "targetKeyword": "brand strategy services",
+      "targetKeyword": "brand strategy consulting",
       "pageType": "service",
       "origin": "hammad",
       "division": "Brand, Content & Social",
       "note": "",
       "seo": {
-        "titleTag": "Brand Strategy Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Brand Strategy Consulting Agency | Positioning & Architecture | Beetrix360",
+        "metaDescription": "Strategic brand strategy consulting that defines positioning, narrative architecture, and commercial messaging before visual design begins.",
         "canonicalPath": "/branding/brand-strategy",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1575,11 +1575,11 @@
       "division": "Brand, Content & Social",
       "note": "NEW. Restored from your original 'Digitization of Business' pillar.",
       "seo": {
-        "titleTag": "Business Naming Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Business Naming Agency & Company Name Services | Beetrix360",
+        "metaDescription": "Business naming services that create memorable company and product names, screened for domains, trademarks and meaning.",
         "canonicalPath": "/branding/business-naming",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1607,17 +1607,17 @@
       "slug": "brand-identity-design",
       "h1": "Brand Identity Design",
       "menuLabel": "Brand Identity Design",
-      "targetKeyword": "brand identity design",
+      "targetKeyword": "brand identity design services",
       "pageType": "service",
       "origin": "hammad",
       "division": "Brand, Content & Social",
       "note": "",
       "seo": {
-        "titleTag": "Brand Identity Design | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Brand Identity Design Services & Visual Systems | Beetrix360",
+        "metaDescription": "Comprehensive brand identity design services: typography, color palettes, visual guidelines, and design systems built to elevate enterprise brands.",
         "canonicalPath": "/branding/brand-identity-design",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1645,17 +1645,17 @@
       "slug": "logo-design",
       "h1": "Logo Design",
       "menuLabel": "Logo Design",
-      "targetKeyword": "logo design services",
+      "targetKeyword": "logo design agency",
       "pageType": "service",
       "origin": "hammad",
       "division": "Brand, Content & Social",
       "note": "",
       "seo": {
-        "titleTag": "Logo Design Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Agency-Grade Logo Design & Brand Marks | Beetrix360",
+        "metaDescription": "Award-winning logo design agency delivering timeless, versatile brand marks, typography, and vector assets engineered for high-growth brands.",
         "canonicalPath": "/branding/logo-design",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1683,17 +1683,17 @@
       "slug": "collateral-design",
       "h1": "Collateral Design",
       "menuLabel": "Collateral Design",
-      "targetKeyword": "marketing collateral design services",
+      "targetKeyword": "marketing collateral design",
       "pageType": "service",
       "origin": "hammad",
       "division": "Brand, Content & Social",
       "note": "",
       "seo": {
         "titleTag": "Marketing Collateral Design Services | Beetrix360",
-        "metaDescription": null,
+        "metaDescription": "Marketing collateral design for pitch decks, brochures, one-pagers, sales sheets and trade show materials that help close deals.",
         "canonicalPath": "/branding/collateral-design",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1721,17 +1721,17 @@
       "slug": "packaging-label-design",
       "h1": "Packaging & Label Design",
       "menuLabel": "Packaging & Label Design",
-      "targetKeyword": "packaging and label design services",
+      "targetKeyword": "packaging and label design",
       "pageType": "service",
       "origin": "hammad",
       "division": "Brand, Content & Social",
       "note": "",
       "seo": {
-        "titleTag": "Packaging and Label Design Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Packaging & Label Design Services | Beetrix360",
+        "metaDescription": "Packaging and label design that stands out on the shelf and online, with print-ready dielines and regulatory layout support.",
         "canonicalPath": "/branding/packaging-label-design",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1765,11 +1765,11 @@
       "division": "Brand, Content & Social",
       "note": "",
       "seo": {
-        "titleTag": "Social Media Management Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Social Media Management Services & Agency | Beetrix360",
+        "metaDescription": "Full-service social media management services across Instagram, Facebook, LinkedIn, and TikTok: content production, community moderation, and growth.",
         "canonicalPath": "/social-media",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1797,17 +1797,17 @@
       "slug": "instagram-management",
       "h1": "Instagram Management",
       "menuLabel": "Instagram Management",
-      "targetKeyword": "instagram management services",
+      "targetKeyword": "instagram management service",
       "pageType": "platform",
       "origin": "hammad",
       "division": "Brand, Content & Social",
       "note": "Not in menu. Linked from the social hub.",
       "seo": {
-        "titleTag": "Instagram Management Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Instagram Management Services & Growth Agency | Beetrix360",
+        "metaDescription": "Professional instagram management services: high-retention Reels, visual grid curation, Stories cadence, and community DM engagement.",
         "canonicalPath": "/social-media/instagram-management",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1841,11 +1841,11 @@
       "division": "Brand, Content & Social",
       "note": "Not in menu. Linked from the social hub.",
       "seo": {
-        "titleTag": "Facebook Management Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Facebook Page Management Services & Community Growth | Beetrix360",
+        "metaDescription": "Professional organic facebook management services: Page curation, Facebook Group moderation, native video publishing, and customer engagement.",
         "canonicalPath": "/social-media/facebook-management",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1879,11 +1879,11 @@
       "division": "Brand, Content & Social",
       "note": "Not in menu. Linked from the social hub.",
       "seo": {
-        "titleTag": "LinkedIn Management Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "LinkedIn Management Services & B2B Lead Generation | Beetrix360",
+        "metaDescription": "Premier linkedin management services: B2B company pages, executive personal branding, thought leadership, and high-ROI LinkedIn Ads management.",
         "canonicalPath": "/social-media/linkedin-management",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1917,11 +1917,11 @@
       "division": "Brand, Content & Social",
       "note": "Not in menu. Linked from the social hub.",
       "seo": {
-        "titleTag": "TikTok Account Management | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "TikTok Account Management Agency | Organic Growth & Video | Beetrix360",
+        "metaDescription": "End-to-end tiktok account management services: trend research, scriptwriting, native video editing, multi-account scaling, and community management.",
         "canonicalPath": "/social-media/tiktok-management",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1949,17 +1949,17 @@
       "slug": "content-and-design",
       "h1": "Social Media Content & Design",
       "menuLabel": "Social Media Content & Design",
-      "targetKeyword": "social media content creation",
+      "targetKeyword": "social media content creation services",
       "pageType": "service",
       "origin": "both",
       "division": "Brand, Content & Social",
       "note": "Hammad's 'Social Media Content Creation' + WebFX 'Social Media Design' as one page.",
       "seo": {
-        "titleTag": "Social Media Content Creation | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Social Media Content Creation Services & Design Agency | Beetrix360",
+        "metaDescription": "High-velocity social media content creation services: custom motion graphics, carousels, UGC video production, and social-first visual assets.",
         "canonicalPath": "/social-media/content-and-design",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1987,17 +1987,17 @@
       "slug": "community-management",
       "h1": "Community Management",
       "menuLabel": "Community Management",
-      "targetKeyword": "social media community management",
+      "targetKeyword": "community management agency",
       "pageType": "service",
       "origin": "hammad",
       "division": "Brand, Content & Social",
       "note": "",
       "seo": {
-        "titleTag": "Social Media Community Management | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Community Management Agency: Social Media Moderation & SLAs | Beetrix360",
+        "metaDescription": "Beetrix360 is a premier community management agency delivering 24/7 social media community management services, comment moderation, DM support, and crisis SLAs.",
         "canonicalPath": "/social-media/community-management",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2025,17 +2025,17 @@
       "slug": "influencer-marketing",
       "h1": "Influencer Marketing",
       "menuLabel": "Influencer Marketing",
-      "targetKeyword": "influencer marketing services",
+      "targetKeyword": "influencer marketing agencies",
       "pageType": "service",
       "origin": "webfx",
       "division": "Paid Media & Marketplaces",
       "note": "Kept from WebFX.",
       "seo": {
-        "titleTag": "Influencer Marketing Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Top Influencer Marketing Agencies | Creator Sourcing & Strategy | Beetrix360",
+        "metaDescription": "Vetted among the best influencer marketing agency partners. End-to-end creator sourcing, contracting, and measurement as a dedicated managed service.",
         "canonicalPath": "/social-media/influencer-marketing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2069,11 +2069,11 @@
       "division": "Brand, Content & Social",
       "note": "",
       "seo": {
-        "titleTag": "Enterprise Social Media Management | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Enterprise Social Media Management & Governance Agency | Beetrix360",
+        "metaDescription": "Enterprise social media management for global multi-brand organizations: compliance governance, tiered approvals, API reporting, and enterprise social media solutions.",
         "canonicalPath": "/social-media/enterprise-management",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2107,11 +2107,11 @@
       "division": "Brand, Content & Social",
       "note": "Kept from WebFX.",
       "seo": {
-        "titleTag": "Content Marketing Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Content Marketing Agency | Beetrix360",
+        "metaDescription": "Content marketing services that plan, write and distribute content to earn search visibility, AI citations, leads and sales.",
         "canonicalPath": "/content-marketing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2145,11 +2145,11 @@
       "division": "Brand, Content & Social",
       "note": "Absorbs Hammad's 'AI Website Content'.",
       "seo": {
-        "titleTag": "Website Copywriting Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Website Copywriting Services: SEO & GEO Optimized Copy | Beetrix360",
+        "metaDescription": "Professional website copywriting services engineered for conversion and AI search engines. Transform your site with SEO copywriting and GEO-optimized copy.",
         "canonicalPath": "/content-marketing/website-copywriting",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2177,17 +2177,17 @@
       "slug": "infographics-motion-graphics",
       "h1": "Infographics & Motion Graphics",
       "menuLabel": "Infographics & Motion Graphics",
-      "targetKeyword": "infographic and motion graphics services",
+      "targetKeyword": "motion graphics services",
       "pageType": "service",
       "origin": "webfx",
       "division": "Brand, Content & Social",
       "note": "Kept from WebFX.",
       "seo": {
-        "titleTag": "Infographic and Motion Graphics Services | Beetrix360",
-        "metaDescription": null,
+        "titleTag": "Motion Graphics Services & Explainer Video Agency | Beetrix360",
+        "metaDescription": "Elite motion graphics services, 3D motion design, and animated explainer videos that transform complex business concepts into unforgettable visual stories.",
         "canonicalPath": "/content-marketing/infographics-motion-graphics",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5649,7 +5649,7 @@
         "metaDescription": null,
         "canonicalPath": "/pricing/seo-cost",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5797,7 +5797,7 @@
         "metaDescription": null,
         "canonicalPath": "/pricing/local-seo-pricing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
