@@ -172,12 +172,22 @@ export function Navbar({ site, navigation }: NavbarProps) {
             {menus.map((menu, mIdx) => {
               const isOpen = openDropdown === mIdx;
               const displayLabel = menu.shortLabel || menu.label;
-              const navLinkHref =
-                displayLabel === "AI Search & SEO" || menu.label === "AI Search & SEO"
-                  ? "/seo"
-                  : displayLabel === "Brand & Social" || menu.label === "Brand, Content & Social" || menu.label === "Brand & Social"
-                  ? "/digital-marketing"
-                  : null;
+              const isCompanyMenu = displayLabel === "Company" || menu.label === "Company";
+              const navLinkHref = isCompanyMenu
+                ? null
+                : displayLabel === "AI Search & SEO" || menu.label === "AI Search & SEO"
+                ? "/seo"
+                : displayLabel === "Paid Media" || menu.label === "Paid Media & Marketplaces"
+                ? "/paid-media"
+                : displayLabel === "Brand & Social" || menu.label === "Brand, Content & Social" || menu.label === "Brand & Social"
+                ? "/digital-marketing"
+                : displayLabel === "AI Content" || menu.label === "AI Content"
+                ? "/ai-content"
+                : displayLabel === "Web & Conversion" || menu.label === "Web & Conversion"
+                ? "/web-design"
+                : displayLabel === "AI & Automation" || menu.label === "AI & Automation"
+                ? "/ai"
+                : menu.viewAllPath || null;
               return (
                 <div
                   key={menu.label}
@@ -449,12 +459,29 @@ export function Navbar({ site, navigation }: NavbarProps) {
           <nav aria-label="Mobile Navigation" className="space-y-4 pb-12">
             {menus.map((menu, mIdx) => {
               const isAccordionOpen = mobileAccordion === mIdx;
+              const displayLabel = menu.shortLabel || menu.label;
+              const isCompanyMenu = displayLabel === "Company" || menu.label === "Company";
+              const mobileLinkHref = isCompanyMenu
+                ? null
+                : displayLabel === "AI Search & SEO" || menu.label === "AI Search & SEO"
+                ? "/seo"
+                : displayLabel === "Paid Media" || menu.label === "Paid Media & Marketplaces"
+                ? "/paid-media"
+                : displayLabel === "Brand & Social" || menu.label === "Brand, Content & Social" || menu.label === "Brand & Social"
+                ? "/digital-marketing"
+                : displayLabel === "AI Content" || menu.label === "AI Content"
+                ? "/ai-content"
+                : displayLabel === "Web & Conversion" || menu.label === "Web & Conversion"
+                ? "/web-design"
+                : displayLabel === "AI & Automation" || menu.label === "AI & Automation"
+                ? "/ai"
+                : menu.viewAllPath || null;
               return (
                 <div key={menu.label} className="border-b border-neutral-100 pb-3">
                   <div className="w-full flex items-center justify-between py-2">
-                    {menu.label === "AI Search & SEO" || menu.label === "Brand, Content & Social" || menu.shortLabel === "Brand & Social" ? (
+                    {mobileLinkHref ? (
                       <Link
-                        href={menu.label === "AI Search & SEO" ? "/seo" : "/digital-marketing"}
+                        href={mobileLinkHref}
                         onClick={() => setMobileMenuOpen(false)}
                         className="font-heading font-bold text-base text-neutral-900 hover:text-bx-pink flex-1"
                       >

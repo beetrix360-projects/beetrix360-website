@@ -1,0 +1,1179 @@
+// @ts-nocheck
+/* eslint-disable */
+// Auto-generated from Beetrix360-Service-Pages/01-AI-Search-SEO/source — DO NOT EDIT MANUALLY
+
+export const GROUP_ID = "01";
+export const SCOPE_CLASS = "bx-sp-01";
+export const FONTS_URL = "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap";
+export const SCOPED_CSS = ".bx-sp-01{padding-top:76px;position:relative;overflow-x:clip;display:block}.bx-sp-01 .bx-sp-subbar{position:sticky;top:76px;z-index:44;background:var(--paper,#fff)}\n.bx-sp-01 [hidden]{display:none!important}\n.bx-sp-01{--ink:#171717;--paper:#fff;--wash:#f8f8f8;--line:#e6e6e6;--mute:#5c5c5c;--mag:#de2056;--magd:#de2056;--cy:#3abef9;--gr:#2cb383;--ye:#fab12f;--mint:#e4f8f1;--sky:#e3f5fd;--butter:#fdf0d9;--rose:#fde7ec;--lilac:#e9f6fb;--blue:#3abef9;\n--disp:\"Plus Jakarta Sans\",\"Segoe UI\",system-ui,sans-serif;--ui:\"Inter\",system-ui,sans-serif;--mono:\"DM Mono\",ui-monospace,Menlo,monospace;--e:cubic-bezier(.2,.8,.2,1);color-scheme:light}\n.bx-sp-01, .bx-sp-01 *, .bx-sp-01 *::before, .bx-sp-01 *::after{box-sizing:border-box}.bx-sp-01{scroll-behavior:smooth;scroll-padding-top:130px}.bx-sp-01{margin:0;background:#fff;color:var(--ink);font:16px/1.6 var(--ui);overflow-x:clip;-webkit-font-smoothing:antialiased}.bx-sp-01::before{content:\"\";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:#fff}\n.bx-sp-01 h1,.bx-sp-01 h2,.bx-sp-01 h3,.bx-sp-01 p{margin:0}.bx-sp-01 a{color:inherit}.bx-sp-01 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}.bx-sp-01 input,.bx-sp-01 textarea{font:inherit;color:var(--ink)}.bx-sp-01 :focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px}\n.bx-sp-01 .wrap{padding-left:max(clamp(24px,4vw,72px),env(safe-area-inset-left,0px));padding-right:max(clamp(24px,4vw,72px),env(safe-area-inset-right,0px))}.bx-sp-01 .skip{position:absolute;left:-999px}.bx-sp-01 .skip:focus{left:12px;top:12px;z-index:90;background:#fff;padding:8px}.bx-sp-01 .tiny{font-size:13px;color:var(--mute)}.bx-sp-01 .mark{width:32px;height:32px}\n.bx-sp-01 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border-radius:999px;font:700 15px/1.2 var(--disp);text-decoration:none;transition:transform .2s var(--e),box-shadow .2s}.bx-sp-01 .btn.sm{padding:9px 15px;font-size:14px}.bx-sp-01 .btn.pri{background:var(--mag);color:#fff;box-shadow:0 6px 0 var(--magd)}.bx-sp-01 .btn.pri:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--magd)}.bx-sp-01 .btn.pri:active{transform:translateY(5px);box-shadow:0 1px 0 var(--magd)}.bx-sp-01 .btn.ghost{box-shadow:inset 0 0 0 2px var(--ink)}.bx-sp-01 .btn.ghost:hover{background:var(--ink);color:#fff}.bx-sp-01 .arr{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.bx-sp-01 .brand{display:flex;gap:8px;align-items:center;text-decoration:none;font:800 20px var(--disp)}.bx-sp-01 .brand b{color:var(--mag)}\n.bx-sp-01 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.bx-sp-01 .topin{display:flex;align-items:center;justify-content:space-between;gap:20px;height:70px}.bx-sp-01 .brand{display:flex;gap:8px;align-items:center;text-decoration:none;font:800 20px var(--disp)}.bx-sp-01 .brand b{color:var(--mag)}.bx-sp-01 .mark{width:32px;height:32px}.bx-sp-01 .nav{display:flex;align-items:center;gap:4px}.bx-sp-01 .nb{display:flex;gap:6px;align-items:center;padding:8px 10px;border-radius:9px;font:600 14px var(--disp);text-decoration:none}.bx-sp-01 .nb:hover{background:var(--wash)}.bx-sp-01 .nb.on{background:#fdeaee;color:var(--mag)}.bx-sp-01 .nb svg{width:10px;fill:none;stroke:currentColor;stroke-width:1.8}.bx-sp-01 .nav>.btn{margin-left:10px}.bx-sp-01 .burger{display:none;width:44px;height:44px;flex-direction:column;gap:5px;align-items:center;justify-content:center}.bx-sp-01 .burger i{width:22px;height:2px;background:var(--ink)}\n.bx-sp-01 .mega{position:absolute;left:0;right:0;top:100%;display:none;grid-template-columns:repeat(4,1fr) 230px;gap:22px 28px;padding:26px clamp(24px,4vw,72px);background:#fff;border-bottom:1px solid var(--line);box-shadow:0 30px 50px -30px #0005}.bx-sp-01 .ni.has:hover .mega,.bx-sp-01 .ni.has:focus-within .mega,.bx-sp-01 .mega.open{display:grid}.bx-sp-01 .mcol{display:grid;align-content:start;gap:2px;min-width:0}.bx-sp-01 .mh{font:700 15px var(--disp);padding-bottom:10px;margin:0 0 6px;border-bottom:1px solid var(--line);text-decoration:none}.bx-sp-01 .mcol a:not(.mh){font-size:13.5px;color:var(--mute);text-decoration:none;padding:6px 8px;margin-inline:-8px;border-radius:7px;transition:.15s}.bx-sp-01 .mcol a:not(.mh):hover{background:#fdeaee;color:var(--magd);padding-left:14px}.bx-sp-01 .mcol a[aria-current]{color:var(--mag);font-weight:700}.bx-sp-01 .mpromo{grid-row:span 1;background:var(--ink);color:#fff;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:4px;text-decoration:none}.bx-sp-01 .mpromo strong{font:italic 500 28px/1.1 var(--ser);color:var(--ye)}.bx-sp-01 .mpromo span{font-size:13px;color:#b1b1b1}.bx-sp-01 .mpromo em{margin-top:auto;font:700 13px var(--disp);display:flex;gap:6px;align-items:center;color:#ed7f99}.bx-sp-01 .mfoot{grid-column:1/-1;border-top:1px solid var(--line);padding-top:12px;font-size:13.5px}.bx-sp-01 .mfoot a{text-decoration:none;color:var(--magd);font-weight:600;display:inline-flex;gap:6px;align-items:center}.bx-sp-01 .mfoot .arr{width:15px;height:15px}\n.bx-sp-01 .bar{height:3px}.bx-sp-01 .bar i{display:block;height:100%;background:var(--mag);transform:scaleX(0);transform-origin:left}\n.bx-sp-01 .mega{grid-template-columns:repeat(var(--n),minmax(0,1fr)) 220px}.bx-sp-01 .mega:not(:has(.mpromo)){grid-template-columns:repeat(var(--n),minmax(0,1fr))}.bx-sp-01 .mcol.wide{grid-column:span 2}.bx-sp-01 .m2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 16px;grid-auto-flow:column;grid-template-rows:repeat(5,auto)}.bx-sp-01 .m2 a{font-size:13.5px;color:var(--mute);text-decoration:none;padding:6px 8px;margin-inline:-8px;border-radius:7px;transition:.15s}.bx-sp-01 .m2 a:hover{background:#fdeaee;color:var(--magd);padding-left:14px}.bx-sp-01 .m2 a[aria-current]{color:var(--mag);font-weight:700}.bx-sp-01 .mh span{opacity:.5}\n.bx-sp-01 .mpromo strong{font-size:23px}.bx-sp-01 .mfoot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 18px}.bx-sp-01 .mfoot span{display:flex;flex-wrap:wrap;gap:6px 18px}.bx-sp-01 .mfoot span a{color:var(--mute);font-weight:400}.bx-sp-01 .nb[aria-expanded=true]{background:var(--wash)}.bx-sp-01 .nav .nb{white-space:nowrap}\n@media(max-width:1280px){.bx-sp-01 .burger{display:flex}.bx-sp-01 .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;background:#fff;padding:12px 24px 18px;border-bottom:1px solid var(--line);max-height:calc(100vh - 80px);overflow:auto}.bx-sp-01 .nav.open{display:flex}.bx-sp-01 .mega,.bx-sp-01 .mega:not(:has(.mpromo)){grid-template-columns:repeat(2,minmax(0,1fr))}.bx-sp-01 .mcol.wide{grid-column:auto}.bx-sp-01 .m2{grid-auto-flow:row;grid-template-columns:minmax(0,1fr);grid-template-rows:none}.bx-sp-01 .mpromo{display:none}}\n.bx-sp-01 .imgs{--c:var(--cy);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:100%;max-width:100%;aspect-ratio:var(--ar);margin:0;padding:10px;border-radius:8px;overflow:hidden;text-align:center;color:var(--mute);border:1.5px dashed color-mix(in srgb,var(--c) 70%,#797979);background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 13%,transparent) 0 10px,color-mix(in srgb,var(--c) 4%,transparent) 10px 20px)}.bx-sp-01 .imgs.v1{--c:var(--mag)}.bx-sp-01 .imgs.v2{--c:var(--gr)}.bx-sp-01 .imgs.v3{--c:var(--ye)}.bx-sp-01 figure.imgs[data-slot]{cursor:pointer}.bx-sp-01 figure.imgs[data-slot]:hover{border-style:solid}.bx-sp-01 .imgs.has{padding:0;border:0;background:none}.bx-sp-01 .imgs img{width:100%;height:100%;object-fit:cover;display:block}.bx-sp-01 .il1{font:600 13px/1.25 var(--disp);max-width:30ch;color:var(--ink)}.bx-sp-01 .il2{font:500 11px var(--mono)}.bx-sp-01 .il3{position:absolute;inset:auto 0 0;padding:4px;font:600 11px var(--mono);background:var(--ink);color:#fff;transform:translateY(100%);transition:transform .2s}.bx-sp-01 figure.imgs:hover .il3,.bx-sp-01 figure.imgs:focus .il3{transform:none}\n\n.bx-sp-01 .mega{grid-template-columns:repeat(var(--n),minmax(0,1fr)) 220px}.bx-sp-01 .mega:not(:has(.mpromo)){grid-template-columns:repeat(var(--n),minmax(0,1fr))}.bx-sp-01 .mcol.wide{grid-column:span 2}.bx-sp-01 .m2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 16px;grid-auto-flow:column;grid-template-rows:repeat(5,auto)}.bx-sp-01 .m2 a{font-size:13.5px;color:var(--mute);text-decoration:none;padding:6px 8px;margin-inline:-8px;border-radius:7px;transition:.15s}.bx-sp-01 .m2 a:hover{background:#fdeaee;color:var(--magd);padding-left:14px}.bx-sp-01 .m2 a[aria-current]{color:var(--mag);font-weight:700}.bx-sp-01 .mh span{opacity:.5}\n.bx-sp-01 .mpromo strong{font-size:23px}.bx-sp-01 .mfoot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 18px}.bx-sp-01 .mfoot span{display:flex;flex-wrap:wrap;gap:6px 18px}.bx-sp-01 .mfoot span a{color:var(--mute);font-weight:400}.bx-sp-01 .nb[aria-expanded=true]{background:var(--wash)}.bx-sp-01 .nav .nb{white-space:nowrap}\n@media(max-width:1280px){.bx-sp-01 .burger{display:flex}.bx-sp-01 .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;background:#fff;padding:12px 24px 18px;border-bottom:1px solid var(--line);max-height:calc(100vh - 80px);overflow:auto}.bx-sp-01 .nav.open{display:flex}.bx-sp-01 .mega,.bx-sp-01 .mega:not(:has(.mpromo)){grid-template-columns:repeat(2,minmax(0,1fr))}.bx-sp-01 .mcol.wide{grid-column:auto}.bx-sp-01 .m2{grid-auto-flow:row;grid-template-columns:minmax(0,1fr);grid-template-rows:none}.bx-sp-01 .mpromo{display:none}}\n.bx-sp-01 .imgs{--c:var(--cy);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:100%;max-width:100%;aspect-ratio:var(--ar);margin:0;padding:10px;border-radius:8px;overflow:hidden;text-align:center;color:var(--mute);border:1.5px dashed color-mix(in srgb,var(--c) 70%,#797979);background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 13%,transparent) 0 10px,color-mix(in srgb,var(--c) 4%,transparent) 10px 20px)}.bx-sp-01 .imgs.v1{--c:var(--mag)}.bx-sp-01 .imgs.v2{--c:var(--gr)}.bx-sp-01 .imgs.v3{--c:var(--ye)}.bx-sp-01 figure.imgs[data-slot]{cursor:pointer}.bx-sp-01 figure.imgs[data-slot]:hover{border-style:solid}.bx-sp-01 .imgs.has{padding:0;border:0;background:none}.bx-sp-01 .imgs img{width:100%;height:100%;object-fit:cover;display:block}.bx-sp-01 .il1{font:600 13px/1.25 var(--disp);max-width:30ch;color:var(--ink)}.bx-sp-01 .il2{font:500 11px var(--mono)}.bx-sp-01 .il3{position:absolute;inset:auto 0 0;padding:4px;font:600 11px var(--mono);background:var(--ink);color:#fff;transform:translateY(100%);transition:transform .2s}.bx-sp-01 figure.imgs:hover .il3,.bx-sp-01 figure.imgs:focus .il3{transform:none}.bx-sp-01 .top{--disp:\"Bricolage Grotesque\",\"Segoe UI\",system-ui,sans-serif;--ui:\"Inter\",system-ui,sans-serif;font-family:var(--ui)}.bx-sp-01 .top .btn{border-radius:10px;font-family:var(--disp)}.bx-sp-01 .top .brand{font-family:var(--disp)}.bx-sp-01 .mpromo strong{font-family:var(--disp);font-style:normal;font-weight:700}\n.bx-sp-01 .top .btn.pri{box-shadow:none}.bx-sp-01 .top .btn{border-radius:10px}\n.bx-sp-01 .foot{background:var(--ink);color:#b6b6b6;padding-block:24px 22px;font-size:14px;border-top:1px solid #ffffff1f}.bx-sp-01 .ft{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}.bx-sp-01 .foot nav{display:grid;gap:6px;align-content:start}.bx-sp-01 .foot a{text-decoration:none}.bx-sp-01 .foot nav a:hover{color:#fff}.bx-sp-01 .brand.inv{color:#fff;margin-bottom:8px}.bx-sp-01 .copy{margin-top:20px;font-size:12.5px}.bx-sp-01 .dock{display:none;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:#ffffffee;border-top:1px solid var(--line)}.bx-sp-01 .dock .btn{width:100%}\n@media(max-width:760px){.bx-sp-01 .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.bx-sp-01 .wt{padding-inline:16px}.bx-sp-01 .notes,.bx-sp-01 .pair,.bx-sp-01 .kwg,.bx-sp-01 .rel,.bx-sp-01 .ft,.bx-sp-01 .two{grid-template-columns:minmax(0,1fr)}.bx-sp-01 .wall{grid-template-columns:repeat(2,minmax(0,1fr))}.bx-sp-01 .note{min-height:130px}.bx-sp-01 .url{flex-wrap:wrap;border-radius:20px;padding:10px}.bx-sp-01 .url button{width:100%;justify-content:center}.bx-sp-01 .fr{grid-template-columns:minmax(0,1fr)}.bx-sp-01 .dock{display:block}.bx-sp-01 .foot{padding-bottom:86px}.bx-sp-01 .band .btn{width:100%}.bx-sp-01 .mega{grid-template-columns:minmax(0,1fr)!important}.bx-sp-01 .lbar{justify-content:center}}.bx-sp-01{--bg:#f0f0f0;--ink2:#0a0a0a;--body:#2e2e2e;--muted:#707070;--code:#666666;--comment:#8a8a8a;--hot:#DE2056;--x:#de2056;--hot-soft:#fde4ea;--sans:\"Inter\",system-ui,sans-serif;--serif:\"Newsreader\",Georgia,serif;--pm:\"IBM Plex Mono\",ui-monospace,Menlo,monospace;--cw:46vw;--gap:4.75vw;--pad:clamp(20px,4vw,72px);--gw:clamp(0px,9vw,150px);\n--dunes:url(https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/0e201fcd-ffc0-46a0-bd06-faa07bf0e84b.webp),radial-gradient(90% 60% at 70% 22%,#ffe2a8,transparent 60%),linear-gradient(162deg,#f2b566 0,#e08a3a 42%,#a4501f 66%,#4c220e 100%);\n--foundry:url(https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/e80ba08d-d7b6-4b27-b0cd-8d0ad09c788c.webp),radial-gradient(50% 60% at 45% 60%,#ffd27a,#ff7a1c 34%,#6e1f08 62%,#120806 100%);\n--mineral:url(https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/2bebad68-8177-446a-9550-d64074166364.webp),radial-gradient(70% 70% at 30% 30%,#c58a5a,#6b3f27 55%,#2a1810 100%);\n--mesa:url(https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/62b0d7c1-3eb7-44bd-9b19-57b975fb250f.webp),linear-gradient(180deg,#2b3f66 0,#6b6f92 46%,#b5714c 58%,#3d2118 100%);\n--fire:url(https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/156ff74d-ee37-4443-8f3a-11ae2095ed4c.webp),radial-gradient(60% 80% at 30% 60%,#ffb347,#ff5a1f 36%,#7a1e08 66%,#140c08 100%);\n--saltflat:url(https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/7b6ad638-89ec-4dec-be74-d36fbff3ea53.webp),linear-gradient(180deg,#b9cbe2 0,#dfe7f1 50%,#f6f7f9 100%)}\n.bx-sp-01{scroll-padding-top:140px}.bx-sp-01{background:var(--bg);color:var(--body)}.bx-sp-01{overflow-x:clip}.bx-sp-01 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.bx-sp-01 .tiny{font:400 12px var(--pm);color:var(--muted)}\n.bx-sp-01 .hot{display:inline-flex;align-items:center;height:42px;padding:0 22px;border-radius:999px;background:var(--hot);color:#fff;font:500 14px var(--sans);text-decoration:none;transition:transform .35s var(--e);cursor:pointer}.bx-sp-01 .hot:hover{transform:translateY(-2px)}.bx-sp-01 main .btn.pri{background:var(--hot);box-shadow:none}\n\n.bx-sp-01 .hero{position:relative;display:flex;flex-direction:column;height:calc(100svh - 76px);min-height:620px;background:var(--bg);overflow:hidden}.bx-sp-01 .hcopy{display:grid;grid-template-columns:1fr 34vw;gap:4vw;padding:clamp(18px,3vh,30px) 8.9vw 0;align-items:start;position:relative;z-index:3}.bx-sp-01 .crumb{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0 0 8px;padding:0;font:400 11.5px var(--pm);color:var(--code)}.bx-sp-01 .crumb li+li::before{content:\"/\";margin-right:6px}.bx-sp-01 .crumb a{text-decoration:none}\n.bx-sp-01 .eb{font:500 11.5px var(--pm);letter-spacing:.06em;text-transform:uppercase;color:var(--body)}.bx-sp-01 .hero h1{margin-top:12px;font:400 clamp(30px,3vw,58px)/1.05 var(--serif);letter-spacing:-.025em;color:var(--ink2);text-wrap:balance}.bx-sp-01 .hero h1 em{font-style:italic}.bx-sp-01 .hr{padding-top:18px}.bx-sp-01 .hr p{font:400 clamp(14px,1.05vw,19px)/1.55 var(--sans);color:var(--body);max-width:34vw}.bx-sp-01 .hr .hot{margin-top:18px;height:40px;font-size:13px}\n.bx-sp-01 .beltw{position:relative;flex:1;min-height:0;--ch:400px}.bx-sp-01 .belt{position:absolute;inset:0;cursor:grab;touch-action:pan-y;user-select:none}.bx-sp-01 .belt.gr{cursor:grabbing}.bx-sp-01 .codes,.bx-sp-01 .cards{position:absolute;inset:0}.bx-sp-01 .codes{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 24vw);mask-image:linear-gradient(90deg,transparent 0,#000 24vw)}.bx-sp-01 .fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}\n.bx-sp-01 .card,.bx-sp-01 .code{position:absolute;top:70px;left:0;width:var(--cw);height:var(--ch)}.bx-sp-01 .card{border-radius:1.6vw;overflow:hidden;color:#fff;font-family:var(--sans);will-change:transform,clip-path;container-type:inline-size;background:#0a0a0a}.bx-sp-01 .code{container-type:inline-size;overflow:hidden;white-space:pre;visibility:hidden}.bx-sp-01 .code pre{position:absolute;top:0;margin:0;font:400 1.56cqw/1.39 var(--pm);color:var(--code)}.bx-sp-01 .code .h{left:0}.bx-sp-01 .code .cm{left:51%;color:var(--comment)}\n.bx-sp-01 .scan{position:absolute;left:50%;top:56px;width:0;height:calc(var(--ch) + 40px);z-index:2;pointer-events:none}.bx-sp-01 .scan i{position:absolute;left:-2px;top:0;bottom:0;width:4px;border-radius:4px;background:linear-gradient(#de2056,#DE2056 12%,#DE2056 88%,#de2056);box-shadow:0 0 10px 2px rgba(222,32,86,.85),0 0 34px 10px rgba(222,32,86,.38)}.bx-sp-01 .scan b{position:absolute;left:0;top:4%;bottom:4%;width:42px;background:linear-gradient(90deg,rgba(222,32,86,.55),transparent);filter:blur(6px)}\n.bx-sp-01 .badge{position:absolute;left:50%;top:0;transform:translateX(-50%);display:grid;justify-items:center;gap:6px;z-index:3;pointer-events:none}.bx-sp-01 .badge span{font:400 11.5px var(--sans);color:var(--muted)}.bx-sp-01 .pill{display:flex;height:26px;border-radius:99px;overflow:hidden;box-shadow:0 0 18px rgba(222,32,86,.35);font:500 12.5px/26px var(--pm)}.bx-sp-01 .pill strong{font-weight:500;background:var(--hot);color:#fff;padding:0 11px 0 13px;min-width:8.2ch;text-align:right;font-variant-numeric:tabular-nums}.bx-sp-01 .pill em{font-style:normal;font-size:11px;background:var(--hot-soft);color:#de2056;padding:0 12px 0 10px}.bx-sp-01 .exn{position:absolute;right:16px;bottom:8px;font:400 10.5px var(--pm);color:var(--muted);z-index:3;pointer-events:none}\n\n.bx-sp-01 .k-bg{position:absolute;inset:0;background-size:cover;background-position:center}.bx-sp-01 .k-v{position:absolute;inset:0}.bx-sp-01 .k-nav{position:absolute;left:4.4cqw;right:4.4cqw;top:4cqw;display:flex;justify-content:space-between;align-items:center}.bx-sp-01 .k-l{display:flex;align-items:center;gap:1.3cqw;font:500 4.6cqw/1 var(--sans);letter-spacing:-.03em}.bx-sp-01 .k-l svg{width:5.4cqw;height:4.2cqw}.bx-sp-01 .k-m{display:flex;gap:3.4cqw;font:500 1.32cqw var(--sans);letter-spacing:.14em;opacity:.85}.bx-sp-01 .k-m .p{border:1px solid rgba(255,255,255,.6);border-radius:99px;padding:.7cqw 1.6cqw;margin:-.7cqw -1.6cqw}\n.bx-sp-01 .k1{position:absolute;left:4.4cqw;right:4.4cqw;bottom:4.4cqw;display:flex;justify-content:space-between;align-items:flex-end}.bx-sp-01 .st2{display:flex;gap:4cqw}.bx-sp-01 .st2>div+div{border-left:1px solid rgba(255,255,255,.35);padding-left:4cqw}.bx-sp-01 .st2 b{display:block;font:300 9cqw/.9 var(--sans);letter-spacing:-.04em}.bx-sp-01 .st2 span{font-size:1.9cqw}.bx-sp-01 .k1 p{font-size:2.2cqw;line-height:1.3;width:24cqw}\n.bx-sp-01 .k2{color:#191919;background:radial-gradient(120% 90% at 20% 110%,#FAB12F 0,#fab12f 35%,#FDDFA6 62%,#fef2dc 100%)}.bx-sp-01 .k2 .k-m .p{border-color:rgba(25,25,25,.6)}.bx-sp-01 .pr{position:absolute;left:4.4cqw;top:36%}.bx-sp-01 .pr b{display:block;font:300 13cqw/1 var(--sans);letter-spacing:-.05em}.bx-sp-01 .pr sup{font-size:.4em;vertical-align:.8em}.bx-sp-01 .pr span{display:block;margin-top:1.6cqw;font:400 1.6cqw var(--pm);opacity:.75}.bx-sp-01 .pl2{position:absolute;right:4.4cqw;top:36%;width:36cqw;margin:0;padding:0;list-style:none;font-size:2.1cqw}.bx-sp-01 .pl2 li,.bx-sp-01 .sp li{display:flex;justify-content:space-between;padding:1.4cqw 0;border-top:1px solid rgba(25,25,25,.25)}.bx-sp-01 .kbtn{position:absolute;left:4.4cqw;bottom:4.4cqw;background:#191919;color:#f7ebd6;border-radius:99px;padding:1.3cqw 2.8cqw;font-size:1.9cqw}\n.bx-sp-01 .kk{position:absolute;left:4.4cqw;font:400 1.4cqw var(--pm);letter-spacing:.06em}.bx-sp-01 .kt{position:absolute;left:4.4cqw;top:24%;width:56cqw;margin:0;font:400 4.6cqw/1.08 var(--serif)}.bx-sp-01 .s3{position:absolute;left:4.4cqw;right:4.4cqw;bottom:4.4cqw;display:grid;grid-template-columns:repeat(3,1fr);gap:3cqw}.bx-sp-01 .s3>div{border-top:1px solid rgba(255,255,255,.4);padding-top:1.4cqw}.bx-sp-01 .s3 b{display:block;font:300 6cqw/1 var(--sans)}.bx-sp-01 .s3 span{font-size:1.7cqw}\n.bx-sp-01 .k4{background:#151515}.bx-sp-01 .tiles{position:absolute;left:4.4cqw;right:4.4cqw;top:21%;height:46%;display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:2cqw}.bx-sp-01 .tiles i{border-radius:1.4cqw;background-size:cover;background-position:center}.bx-sp-01 .tiles p{font:400 3.4cqw/1.12 var(--serif);align-self:center}.bx-sp-01 .tiles em{opacity:.75}.bx-sp-01 .vf{position:absolute;left:4.4cqw;right:4.4cqw;bottom:4.4cqw;display:flex;justify-content:space-between;align-items:flex-end;font-size:1.6cqw;opacity:.7}\n.bx-sp-01 .al{position:absolute;left:4.4cqw;bottom:4.4cqw;margin:0;font:400 7.4cqw/.98 var(--serif)}.bx-sp-01 .sp{position:absolute;right:4.4cqw;bottom:4.4cqw;width:30cqw;margin:0;padding:0;list-style:none;font-size:1.9cqw}.bx-sp-01 .sp li{border-color:rgba(255,255,255,.35)}\n.bx-sp-01 .k6{background:#ededed;color:#191919}.bx-sp-01 .k6 .k-m{opacity:.7}.bx-sp-01 .k6 .k-m .p{border-color:#19191999}.bx-sp-01 .jt{position:absolute;left:4.4cqw;top:21%;margin:0;font:400 5.6cqw/1.02 var(--serif)}.bx-sp-01 .jt em{color:#5e5e5e}.bx-sp-01 .jp{position:absolute;left:4.4cqw;right:4.4cqw;bottom:3.6cqw;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:2.4cqw;align-items:end}.bx-sp-01 .jp i{display:block;aspect-ratio:4/3;border-radius:1.2cqw;background-size:cover;background-position:center}.bx-sp-01 .jp span{display:block;margin-top:1cqw;font:400 1.2cqw var(--pm);color:#777777}.bx-sp-01 .jp p{margin:.4cqw 0 0;font-size:1.8cqw;line-height:1.2}\n\n.bx-sp-01 .tabs{position:sticky;top:76px;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:20px;height:50px;padding:0 var(--pad);background:#fff;border-block:1px solid #dcdcdc}.bx-sp-01 .tl{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0}.bx-sp-01 .tl a{flex:none;padding:6px 11px;border-radius:7px;font:500 13px var(--sans);text-decoration:none;color:var(--muted)}.bx-sp-01 .tl a:hover{color:var(--ink2)}.bx-sp-01 .tl a.on{color:#de2056;background:var(--hot-soft)}.bx-sp-01 .vw{display:flex;align-items:center;gap:9px;flex:none;font:400 11.5px var(--pm);color:var(--muted)}.bx-sp-01 .seg{display:flex;padding:3px;border-radius:9px;background:var(--bg)}.bx-sp-01 .seg button{padding:4px 11px;border-radius:7px;font:500 12px var(--sans);color:var(--muted);transition:.2s}.bx-sp-01 .seg button[aria-pressed=true]{background:var(--ink2);color:#fff}\n.bx-sp-01 .mb{display:flex;flex-wrap:wrap;gap:6px 26px;padding:10px var(--pad);background:var(--hot-soft);color:#845703;font:400 12.5px var(--pm)}.bx-sp-01 .mb b{font-weight:500}\n\n.bx-sp-01 .s{position:relative;display:grid;grid-template-columns:var(--gw) minmax(0,1fr);padding:clamp(52px,7vw,104px) var(--pad);background:#fff;border-bottom:1px solid #e6e6e6}.bx-sp-01 .s.alt{background:var(--bg)}.bx-sp-01 .gut{font:400 11.5px var(--pm);color:var(--comment);padding-top:4px}.bx-sp-01 .gut b{display:block;font-weight:400;color:var(--hot);margin-bottom:6px}.bx-sp-01 .gut code{font:inherit;writing-mode:vertical-rl;letter-spacing:.03em}\n.bx-sp-01 .ey{font:500 11.5px var(--pm);letter-spacing:.06em;text-transform:uppercase;color:#de2056}.bx-sp-01 .hd{max-width:880px;margin-bottom:clamp(26px,3.4vw,46px)}.bx-sp-01 .hd h2,.bx-sp-01 .final h2{margin-top:10px;font:400 clamp(34px,4.3vw,76px)/1.04 var(--serif);letter-spacing:-.025em;color:var(--ink2);text-wrap:balance}.bx-sp-01 .sub{margin-top:12px;font-size:clamp(16px,1.2vw,19px);color:var(--body);max-width:60ch}\n.bx-sp-01 .g{display:grid;gap:clamp(28px,5vw,90px)}.bx-sp-01 .ag{grid-template-columns:1.15fr 1fr;align-items:start}.bx-sp-01 .ans{font:400 clamp(21px,1.9vw,31px)/1.32 var(--serif);color:var(--ink2);margin-bottom:24px;max-width:34em}\n.bx-sp-01 .askh{font:500 11.5px var(--pm);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}.bx-sp-01 .qs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}.bx-sp-01 .qs button{padding:7px 12px;border:1px solid #d6d6d6;border-radius:99px;font:400 13px var(--sans);transition:.2s}.bx-sp-01 .qs button:hover{border-color:var(--hot)}.bx-sp-01 .qs button[aria-selected=true]{background:var(--ink2);color:#fff;border-color:var(--ink2)}.bx-sp-01 .box{padding:clamp(18px,2vw,28px);border-radius:16px;background:var(--bg)}.bx-sp-01 .bq{display:grid;gap:3px;padding-bottom:14px;border-bottom:1px solid #d6d6d6}.bx-sp-01 .bq span{font:400 11px var(--pm);color:var(--muted)}.bx-sp-01 .bq b{font:400 22px/1.2 var(--serif);color:var(--ink2)}\n.bx-sp-01 .st{list-style:none;margin:12px 0;padding:0;display:grid;gap:9px}.bx-sp-01 .st li{position:relative;padding-left:26px;display:grid;font-size:14px}.bx-sp-01 .st li::before{content:\"\";position:absolute;left:0;top:4px;width:15px;height:15px;border-radius:50%;background:#d6d6d6}.bx-sp-01 .st strong{color:var(--ink2);font-weight:600}.bx-sp-01 .st span{color:var(--muted);font-size:13px}.bx-sp-01 .st.go li::before{animation:lit .4s var(--e) forwards;animation-delay:calc(var(--i)*.34s + .1s)}@keyframes lit{to{background:var(--hot);box-shadow:0 0 0 4px var(--hot-soft)}}\n.bx-sp-01 .wg{grid-template-columns:1.1fr 1fr;align-items:start}.bx-sp-01 .prose p{font-size:clamp(17px,1.25vw,20px);line-height:1.65;margin-bottom:1.1em}.bx-sp-01 .imgs{border-radius:14px}\n.bx-sp-01 .s.dark{background:var(--ink2);border:0;color:#cdcdcd}.bx-sp-01 .dark .gut code{color:#5f5f5f}.bx-sp-01 .term{min-width:0}.bx-sp-01 .tb{display:flex;gap:6px;align-items:center;margin-bottom:26px}.bx-sp-01 .tb i{width:10px;height:10px;border-radius:50%;background:#3f3f3f}.bx-sp-01 .tb span{margin-left:8px;font:400 12px var(--pm);color:#828282}.bx-sp-01 .dark .hd h2{color:#fff}.bx-sp-01 .dark .sub{color:#b3b3b3}.bx-sp-01 .dark .ey{color:#fab12f}\n.bx-sp-01 .lg{list-style:none;margin:0;padding:0;font-family:var(--pm)}.bx-sp-01 .lg li{border-top:1px solid #2b2b2b}.bx-sp-01 .lg button{display:grid;grid-template-columns:62px 1fr 24px;gap:12px;width:100%;padding:15px 0;font:400 clamp(15px,1.2vw,18px)/1.35 var(--pm);color:#f2f2f2}.bx-sp-01 .lg button:hover .m{color:#fab12f}.bx-sp-01 .lv{color:#fab12f;font-size:13px}.bx-sp-01 .lv.ok{color:#5bd7a9;display:inline-block;width:74px}.bx-sp-01 .pl{text-align:right;color:#828282;transition:transform .2s}.bx-sp-01 [aria-expanded=true] .pl{transform:rotate(45deg)}.bx-sp-01 .lg p{padding:0 0 16px;font:400 14.5px/1.55 var(--pm);color:#bdbdbd}\n.bx-sp-01 .bw{background:var(--ink2);padding:0 var(--pad) clamp(40px,5vw,70px)}.bx-sp-01 .band{position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-top:30px;padding:clamp(20px,2.4vw,34px) clamp(22px,3vw,44px);border-radius:16px;overflow:hidden;background:radial-gradient(120% 200% at 12% 120%,#FAB12F 0,#fab12f 35%,#FDDFA6 62%,#fef2dc 100%);color:#191919}.bx-sp-01 .bw .band{margin-top:0}.bx-sp-01 .band p{font:400 clamp(22px,2.4vw,38px)/1.1 var(--serif);position:relative}.bx-sp-01 .band i{position:absolute;top:0;bottom:0;left:-8%;width:3px;background:#fff;box-shadow:0 0 16px 4px #fff9;animation:sw 6s linear infinite}@keyframes sw{to{left:108%}}.bx-sp-01 .band .btn{position:relative;background:#191919;color:#fff}\n.bx-sp-01 .mg{grid-template-columns:minmax(240px,.8fr) 1.4fr}.bx-sp-01 .tree{list-style:none;margin:0;padding:0;font:400 14px var(--pm)}.bx-sp-01 .tree .root{color:var(--muted);padding:6px 0}.bx-sp-01 .tree li:not(.root){position:relative;padding-left:22px}.bx-sp-01 .tree li:not(.root)::before{content:\"\";position:absolute;left:4px;top:-8px;bottom:0;border-left:1px solid #cccccc}.bx-sp-01 .tree li:last-child::before{bottom:50%}.bx-sp-01 .tree li:not(.root)::after{content:\"\";position:absolute;left:4px;top:50%;width:13px;border-top:1px solid #cccccc}.bx-sp-01 .tree button{display:block;width:100%;padding:8px 10px;border-radius:7px}.bx-sp-01 .tree button:hover{background:var(--bg)}.bx-sp-01 .tree button[aria-selected=true]{background:var(--hot-soft);color:#de2056}\n.bx-sp-01 .tp .n{font:400 12px var(--pm);color:var(--muted)}.bx-sp-01 .tp h3{margin:8px 0;font:400 clamp(30px,3.2vw,54px)/1.05 var(--serif);letter-spacing:-.02em;color:var(--ink2)}.bx-sp-01 .tp [data-ip] p:last-child{font-size:18px;max-width:50ch}.bx-sp-01 .kwr{margin-top:30px;padding-top:18px;border-top:1px solid #e6e6e6}.bx-sp-01 .kwr ul{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:10px 0 0;padding:0}.bx-sp-01 .kwr li{padding:4px 10px;border-radius:6px;background:var(--bg);font:400 12.5px var(--pm)}\n.bx-sp-01 .sg{grid-template-columns:1fr 1.1fr;align-items:start}.bx-sp-01 .meter{margin:0 0 20px}.bx-sp-01 .meter>p:first-child{font:400 clamp(62px,7vw,120px)/1 var(--serif);color:var(--ink2)}.bx-sp-01 .meter>p span{font-size:.4em;color:var(--muted);margin-left:8px}.bx-sp-01 .mt{height:6px;border-radius:9px;background:#d6d6d6;overflow:hidden;margin:10px 0;max-width:420px}.bx-sp-01 .mt i{display:block;height:100%;background:var(--hot);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s var(--e)}.bx-sp-01 .mv{font-size:15px}.bx-sp-01 .cks{list-style:none;margin:0;padding:0;background:#fff;border-radius:14px}.bx-sp-01 .cks li+li{border-top:1px solid #e6e6e6}.bx-sp-01 .cks label{display:flex;gap:13px;padding:13px 18px;cursor:pointer}.bx-sp-01 .cks input{width:18px;height:18px;margin-top:3px;accent-color:var(--hot)}.bx-sp-01 .cks span{display:grid}.bx-sp-01 .cks strong{color:var(--ink2);font-weight:600;font-size:15.5px}.bx-sp-01 .cks em{font-style:normal;font-size:14px;color:var(--muted)}\n.bx-sp-01 .ly details{border-top:1px solid #dcdcdc}.bx-sp-01 .ly summary{display:flex;gap:18px;align-items:baseline;padding:18px 0;cursor:pointer;list-style:none}.bx-sp-01 .ly summary::-webkit-details-marker,.bx-sp-01 .fq summary::-webkit-details-marker{display:none}.bx-sp-01 .ly summary span{font:400 12px var(--pm);color:var(--hot)}.bx-sp-01 .ly h3{font:400 clamp(24px,2.5vw,40px)/1.1 var(--serif);color:var(--ink2);letter-spacing:-.02em}.bx-sp-01 .ly p{padding:0 0 22px 36px;max-width:66ch;font-size:17px}\n.bx-sp-01 .pipe{--p:0;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,40px);list-style:none;margin:0;padding:30px 0 0}.bx-sp-01 .pipe::before,.bx-sp-01 .pipe::after{content:\"\";position:absolute;left:0;right:0;top:0;height:3px;background:#d6d6d6}.bx-sp-01 .pipe::after{background:var(--hot);box-shadow:0 0 12px var(--hot);transform:scaleX(var(--p));transform-origin:0 50%}.bx-sp-01 .pipe b{display:block;font:400 clamp(36px,4vw,70px)/1 var(--serif);color:#c7c7c7;transition:color .3s}.bx-sp-01 .pipe li.on b{color:var(--hot)}.bx-sp-01 .pipe p{margin-top:10px;font-size:16.5px}\n.bx-sp-01 .fl{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}.bx-sp-01 .fl button{padding:6px 13px;border:1px solid #d6d6d6;border-radius:99px;font:400 13px var(--sans)}.bx-sp-01 .fl button[aria-pressed=true]{background:var(--ink2);border-color:var(--ink2);color:#fff}.bx-sp-01 .wkg{grid-template-columns:1.5fr 1fr;align-items:start}.bx-sp-01 .wk{list-style:none;margin:0;padding:0}.bx-sp-01 .wk li{display:grid;grid-template-columns:1.2fr .8fr 1.1fr;gap:12px;align-items:baseline;padding:13px 8px;border-top:1px solid #e6e6e6;cursor:pointer;transition:background .15s,padding .2s}.bx-sp-01 .wk li.on,.bx-sp-01 .wk li:hover{background:var(--bg);padding-left:16px}.bx-sp-01 .wk strong{font:400 clamp(20px,1.7vw,28px)/1.15 var(--serif);color:var(--ink2)}.bx-sp-01 .wk span{font:400 12.5px var(--pm);color:var(--muted)}.bx-sp-01 .wk em{font-style:normal;font-size:14px}.bx-sp-01 .wk em b{color:#de2056}.bx-sp-01 .wp{position:sticky;top:140px}.bx-sp-01 .wp p{margin-top:10px;font-size:14.5px}\n.bx-sp-01 .fg{grid-template-columns:1fr 1.5fr;align-items:start}.bx-sp-01 .fs{position:sticky;top:140px}.bx-sp-01 #faq-q{width:100%;max-width:340px;padding:11px 14px;border:1px solid #cccccc;border-radius:10px;background:#fff;margin-bottom:8px}.bx-sp-01 .fq details{border-top:1px solid #d6d6d6}.bx-sp-01 .fq summary{padding:15px 0;cursor:pointer;list-style:none}.bx-sp-01 .fq h3{font:500 clamp(17px,1.3vw,21px)/1.3 var(--sans);color:var(--ink2)}.bx-sp-01 .fq details[open] h3{color:#de2056}.bx-sp-01 .fq p{padding-bottom:17px;font-size:16px;max-width:64ch}\n.bx-sp-01 .gg{grid-template-columns:minmax(220px,.5fr) 1.5fr;align-items:start}.bx-sp-01 .gn{position:sticky;top:140px;display:grid;gap:2px;font:400 13px var(--pm)}.bx-sp-01 .gn a{padding:6px 10px;border-left:2px solid #dcdcdc;text-decoration:none;color:var(--muted)}.bx-sp-01 .gn a:hover{color:#de2056;border-color:var(--hot)}.bx-sp-01 .ga{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px clamp(24px,3vw,50px)}.bx-sp-01 .ga article:first-child{grid-column:1/-1}.bx-sp-01 .ga article:first-child p{font-size:18.5px;max-width:70ch}.bx-sp-01 .ga h3{font:400 clamp(22px,2vw,31px)/1.15 var(--serif);color:var(--ink2);margin-bottom:8px}.bx-sp-01 .ga article{scroll-margin-top:140px}.bx-sp-01 .ga p{font-size:16px;line-height:1.65}\n.bx-sp-01 .rl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#d6d6d6;border:1px solid #d6d6d6;border-radius:14px;overflow:hidden}.bx-sp-01 .rl a{position:relative;display:grid;gap:3px;padding:22px;background:var(--bg);text-decoration:none;transition:background .2s}.bx-sp-01 .rl a:hover{background:var(--hot-soft)}.bx-sp-01 .rl strong{font:400 24px/1.1 var(--serif);color:var(--ink2)}.bx-sp-01 .rl span{font-size:13.5px;color:var(--muted)}.bx-sp-01 .rl .arr{position:absolute;right:18px;top:22px;width:18px;fill:none;stroke:currentColor;stroke-width:2}\n.bx-sp-01 .final{padding:clamp(56px,7vw,110px) var(--pad);background:radial-gradient(120% 110% at 8% 110%,#FAB12F 0,#fab12f 32%,#FDDFA6 60%,#fef2dc 100%);color:#191919}.bx-sp-01 .final .ey,.bx-sp-01 .final h2{color:#191919}.bx-sp-01 .final .sub{color:#2a2a2a}.bx-sp-01 .fgr{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,90px);align-items:start}.bx-sp-01 .tel{margin:14px 0 20px;font:500 16px var(--pm)}.bx-sp-01 .fw{display:grid;gap:13px;padding:clamp(20px,2.6vw,36px);border-radius:18px;background:#fff;color:var(--body);font-size:14px;font-weight:500}.bx-sp-01 .fw label{display:grid;gap:4px}.bx-sp-01 .fw input,.bx-sp-01 .fw textarea{padding:11px 13px;border:1px solid #cccccc;border-radius:9px;background:#fff;width:100%}.bx-sp-01 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.bx-sp-01 .fw .hot{justify-content:center;width:100%;border:0}.bx-sp-01 .fmsg{min-height:1.4em;font-size:13px;font-weight:400}\n.bx-sp-01 .dock{display:none;position:fixed;left:16px;right:16px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:45}.bx-sp-01 .dock .btn{width:100%}\n\n.bx-sp-01[data-view=m] .doc,.bx-sp-01[data-view=m] .final{--serif:var(--pm);--sans:var(--pm);background:#fff;font-family:var(--pm);color:var(--code)}.bx-sp-01[data-view=m] .s,.bx-sp-01[data-view=m] .s.alt,.bx-sp-01[data-view=m] .s.dark,.bx-sp-01[data-view=m] .bw,.bx-sp-01[data-view=m] .final{background:#fff;color:var(--code)}.bx-sp-01[data-view=m] .doc h2,.bx-sp-01[data-view=m] .final h2{font-size:clamp(22px,2vw,30px);line-height:1.2;letter-spacing:0;color:var(--ink2)}.bx-sp-01[data-view=m] .doc h3{font-size:18px!important;letter-spacing:0;color:var(--ink2)}.bx-sp-01[data-view=m] .doc p,.bx-sp-01[data-view=m] .doc li,.bx-sp-01[data-view=m] .doc em{font-size:14px!important;line-height:1.5;color:var(--code)}.bx-sp-01[data-view=m] .imgs,.bx-sp-01[data-view=m] .band,.bx-sp-01[data-view=m] .bw,.bx-sp-01[data-view=m] .tb,.bx-sp-01[data-view=m] .gut b{display:none}.bx-sp-01[data-view=m] .doc h2::before,.bx-sp-01[data-view=m] .final h2::before{content:\"<h2> \";color:var(--hot)}.bx-sp-01[data-view=m] .doc h3::before{content:\"<h3> \";color:var(--hot)}.bx-sp-01[data-view=m] .prose p::before,.bx-sp-01[data-view=m] .ans::before,.bx-sp-01[data-view=m] .ga p::before,.bx-sp-01[data-view=m] .fq p::before{content:\"<p> \";color:var(--hot)}.bx-sp-01[data-view=m] .box,.bx-sp-01[data-view=m] .cks,.bx-sp-01[data-view=m] .rl a{background:#fff}.bx-sp-01[data-view=m] .g{grid-template-columns:minmax(0,1fr)!important;gap:24px}.bx-sp-01[data-view=m] .fs,.bx-sp-01[data-view=m] .wp,.bx-sp-01[data-view=m] .gn{position:static}\n@media(max-width:1000px){.bx-sp-01 .ag,.bx-sp-01 .wg,.bx-sp-01 .mg,.bx-sp-01 .sg,.bx-sp-01 .wkg,.bx-sp-01 .fg,.bx-sp-01 .gg,.bx-sp-01 .fgr{grid-template-columns:minmax(0,1fr)}.bx-sp-01 .fs,.bx-sp-01 .wp,.bx-sp-01 .gn{position:static}.bx-sp-01 .wp{display:none}.bx-sp-01 .pipe{grid-template-columns:repeat(2,1fr)}.bx-sp-01 .rl{grid-template-columns:repeat(2,minmax(0,1fr))}.bx-sp-01 .gn{display:flex;flex-wrap:wrap}.bx-sp-01 .gn a{border:1px solid #dcdcdc;border-radius:99px}}\n@media(max-width:767px){.bx-sp-01{--cw:84vw;--gap:7vw;--gw:0px}.bx-sp-01 .hero{height:auto;min-height:0}.bx-sp-01 .hcopy{grid-template-columns:minmax(0,1fr);gap:14px;padding:18px 20px 0}.bx-sp-01 .hero h1{font-size:34px}.bx-sp-01 .hr{padding:0}.bx-sp-01 .hr p{max-width:none;font-size:14px}.bx-sp-01 .hr .hot{margin-top:14px}.bx-sp-01 .beltw{flex:none;height:calc(54vw + 110px)}.bx-sp-01 .codes{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30vw);mask-image:linear-gradient(90deg,transparent 0,#000 30vw)}.bx-sp-01 .gut{display:none}.bx-sp-01 .s{grid-template-columns:minmax(0,1fr);padding:48px 16px}.bx-sp-01 .tabs{height:auto;padding:6px 16px;flex-wrap:wrap;gap:4px 12px}.bx-sp-01 .tl{order:2;width:100%}.bx-sp-01 .vw span{display:none}.bx-sp-01 .vw{margin-left:auto}.bx-sp-01 .ft,.bx-sp-01 .two,.bx-sp-01 .ga,.bx-sp-01 .rl,.bx-sp-01 .pipe{grid-template-columns:minmax(0,1fr)}.bx-sp-01 .wk li{grid-template-columns:minmax(0,1fr);gap:2px}.bx-sp-01 .dock{display:block}.bx-sp-01 .foot{padding-bottom:86px}.bx-sp-01 .band .btn{width:100%}.bx-sp-01 .mega{grid-template-columns:minmax(0,1fr)!important}.bx-sp-01 .bw{padding:0 16px 40px}.bx-sp-01 .lg button{grid-template-columns:50px 1fr 20px;gap:8px}.bx-sp-01 .final{padding:48px 16px}.bx-sp-01 .exn{right:auto;left:16px;bottom:2px}}\n@media(prefers-reduced-motion:reduce){.bx-sp-01 .band i{animation:none;display:none}.bx-sp-01 .st.go li::before{animation-duration:.01s;animation-delay:0s}}\n\n.bx-sp-01 .beltw{order:-1}.bx-sp-01 .hcopy{padding-top:6px;padding-bottom:clamp(20px,3.4vh,34px);align-items:end}.bx-sp-01 .hr{padding-top:0}\n@media(max-width:767px){.bx-sp-01 .hcopy{padding:8px 20px 24px}.bx-sp-01 .exn{bottom:6px}}\n\n.bx-sp-01 .card,.bx-sp-01 .code{top:34px}.bx-sp-01 .scan{top:20px}.bx-sp-01 .badge{top:calc(var(--ch) + 66px)}.bx-sp-01 .pill strong{min-width:7ch}\n@media(max-width:767px){.bx-sp-01 .beltw{height:calc(54vw + 122px)}}\n@media(max-width:767px){.bx-sp-01 .beltw{height:calc(54vw + 136px)}.bx-sp-01 .exn{left:0;right:0;bottom:0;text-align:center}}\n\n\n.bx-sp-01 .txs{padding:clamp(40px,5vw,72px) clamp(20px,4vw,72px);background:#fff;color:#0a0a0a;position:relative;z-index:1}.bx-sp-01 .flow>.txs,.bx-sp-01 .pipe>.txs{padding-inline:0;background:none}.bx-sp-01 .txh{margin:0 0 clamp(18px,2.4vw,30px)!important;font-size:clamp(24px,2.6vw,38px)!important;line-height:1.12!important;letter-spacing:-.02em;color:#0a0a0a;text-transform:none!important}.bx-sp-01 .txg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(20px,2.4vw,34px)}.bx-sp-01 .txa{min-width:0;padding-left:14px;border-left:2px solid #de2056}.bx-sp-01 .txa:nth-child(4n+2){border-color:#fab12f}.bx-sp-01 .txa:nth-child(4n+3){border-color:#3abef9}.bx-sp-01 .txa:nth-child(4n){border-color:#2cb383}.bx-sp-01 .txa h3{margin:0 0 6px!important;font-size:18px!important;line-height:1.28!important;font-weight:600!important;letter-spacing:-.005em;color:#0a0a0a;text-transform:none!important}.bx-sp-01 .txa p{margin:0;font-size:15.5px;line-height:1.6;color:#2b2b2b}.bx-sp-01 .txa .txp{color:#6b6b6b;font-style:italic}\n";
+
+function createGroupRuntime() {
+const PAGES=[
+{id:"seo",path:"/seo",col:"hub",name:"Search Engine Optimization",short:"SEO Services",kw:"SEO services",
+title:"SEO Services That Drive Revenue | Beetrix360",desc:"Beetrix360 SEO services combine technical SEO, content, links and AI search visibility into one system tied to pipeline and closed revenue.",
+h1:["SEO services built to","win revenue,","not just rankings"],
+lead:"Beetrix360 is an SEO agency that connects technical SEO, on-page optimization, link building and AI search visibility to your CRM, so every ranking can be traced to a real opportunity.",
+answer:"SEO services are the technical, content and authority work that helps a business appear in organic search results and AI answers when buyers look for what it sells. Good SEO increases qualified traffic, leads and revenue, and it keeps paying back after the work is done.",
+q:["best seo company for b2b","seo agency that reports on revenue","how to rank higher on google"],
+para:["Most SEO reports stop at traffic. Yours should reach closed revenue. Our search engine optimization services start with how your buyers actually search, then line up site architecture, page content, internal links and authority around the queries that lead to sales conversations.",
+"Search has also changed. Buyers now move between Google, AI Overviews, ChatGPT and Perplexity in one research session. We build one organic search strategy for all of them, so the content that ranks is also the content AI engines can read, trust and cite."],
+deep:[["What full-service SEO includes","A complete SEO program covers crawling and indexing, site speed and Core Web Vitals, keyword research, content optimization, schema markup, digital PR and link acquisition, local visibility, and ongoing reporting. We scope each part to the gap your audit shows."],
+["SEO and AI search work together","Rankings, entity signals and clear answers feed each other. Pages that earn organic visibility are easier for answer engines to find, and pages structured for answer engines tend to be clearer for human readers too."]],
+kws:["SEO agency","SEO company","organic search strategy","search engine optimization services","SEO consultant","SEO audit","organic traffic growth","B2B SEO","Google ranking","SEO management","monthly SEO","SEO reporting"],
+pains:[["Traffic is up, leads are flat","We rebuild targeting around buying-intent queries and map each page to a sales stage."],["Reports show clicks, not contracts","Closed-loop attribution ties organic sessions to CRM deals."],["Rankings slid after an update","An audit separates technical faults from content and authority gaps."],["AI answers name your rivals","We add entity structure and answer-first content alongside classic SEO."]],
+items:[["Technical foundation","Crawl, index, speed and schema fixes, ranked by the revenue they unlock."],["Keyword and intent map","Every target query is assigned to one page and one stage of the buyer journey."],["On-page optimization","Titles, headings, copy and internal links rewritten for people and search engines."],["Authority building","Editorial links and digital PR that earn trust in your category."],["AI search visibility","Structured content built to be cited in AI Overviews, ChatGPT and Perplexity."],["Revenue reporting","Dashboards connecting organic visits to pipeline, deals and closed revenue."]],
+steps:["Audit crawl health, rankings, content and CRM data.","Fix priority issues and publish the keyword map.","Launch content, links and AI-ready page updates.","Scale what the revenue data proves is working."],
+faq:[["What do SEO services include?","SEO services include technical fixes, keyword research, on-page optimization, content, link building and reporting. Beetrix360 also adds AI search visibility and CRM attribution so results can be tied to revenue."],["How long does SEO take to work?","Technical fixes can show effects within weeks, while competitive rankings often take several months. Our 90-day rollout puts the foundations in place, and growth compounds from there."],["Why choose an SEO agency over in-house?","An agency brings a full team of specialists and tested processes at once. Many clients keep an in-house marketer and use us for technical SEO, AI search and attribution."],["Is SEO still worth it with AI search?","Yes. AI engines draw on the same web content that search engines index, so strong SEO supports AI visibility. The goal now is to rank and to be cited."],["How do you measure SEO success?","We track qualified organic leads, pipeline and closed revenue, along with rankings and AI citations. Traffic is a supporting signal, not the goal."],["Can you take over from our current SEO provider?","Yes. We begin with an audit of the existing work, keep what performs and replace what doesn't, with no loss of momentum on pages already ranking."]]},
+
+{id:"local-seo",path:"/seo/local-seo",col:"seo",name:"Local SEO",short:"Local SEO",kw:"local SEO services",
+title:"Local SEO Services for Map Pack Rankings | Beetrix360",desc:"Local SEO services that improve Google Business Profile, map pack rankings, citations and reviews, so nearby buyers call you first.",
+h1:["Local SEO that puts you","first on the map","when buyers search nearby"],
+lead:"Our local SEO services help businesses win the Google map pack, strengthen Google Business Profile performance and turn “near me” searches into calls, bookings and store visits.",
+answer:"Local SEO is the process of improving a business's visibility in location-based searches, including Google Maps and the local pack. It relies on an optimized Google Business Profile, consistent citations, reviews, and location pages relevant to the searcher's area.",
+q:["best contractor near me","local seo company for multi-location brands","how to rank in google map pack"],
+para:["When someone searches “near me”, Google weighs relevance, distance and prominence. We improve the parts you control: a complete Google Business Profile, accurate name, address and phone data across directories, location pages with real local content, and a steady flow of genuine reviews.",
+"For multi-location brands, local search gets complicated quickly. We build a repeatable system for store locators, location landing pages, profile management and reporting, so every branch competes in its own area without duplicate content."],
+deep:[["Google Business Profile optimization","Categories, services, photos, posts, products and Q&A all shape how your listing performs. We complete and maintain each one and track calls, direction requests and bookings as outcomes."],
+["Local citations and review strategy","Consistent NAP data builds trust with search engines, and fresh reviews build trust with buyers. We clean up listings and set up a compliant review request flow."]],
+kws:["local SEO agency","Google Business Profile optimization","Google Maps SEO","map pack ranking","near me searches","local citations","NAP consistency","multi-location SEO","local link building","review management","location pages","local search ranking"],
+pains:[["Competitors outrank you on Maps","We close the gaps in categories, reviews and local relevance."],["Your listing gets views, not calls","Profile content and offers are rewritten around booking intent."],["Addresses differ across directories","Citation cleanup makes your business data consistent everywhere."],["Branches compete with each other","Each location gets its own page, profile and tracking."]],
+items:[["Google Business Profile","Full profile optimization, categories, posts and ongoing management."],["Citation cleanup","Audit and correction of business listings across directories."],["Location pages","Unique pages for each city, service area or branch."],["Review generation","A compliant process that earns more genuine customer reviews."],["Local links","Sponsorships, partners and local press that strengthen prominence."],["Call and booking tracking","Reporting on calls, direction requests and form leads per location."]],
+steps:["Audit profiles, citations, rankings and competitors by area.","Fix listings and publish location pages.","Start review, post and local link activity.","Expand to new areas that show the best return."],
+faq:[["What is local SEO?","Local SEO improves how a business appears in searches tied to a location, including Google Maps and the local pack. It focuses on Google Business Profile, citations, reviews and local pages."],["How do I rank in the Google map pack?","Choose accurate categories, complete your Google Business Profile, keep your NAP data consistent, earn genuine reviews and publish relevant local content. Proximity to the searcher also matters."],["Do reviews affect local rankings?","Yes. Review quantity, recency and quality contribute to local prominence, and they strongly influence whether a searcher chooses to call you."],["Can a service-area business do local SEO without a storefront?","Yes. Service-area businesses can hide their address on Google Business Profile and build service pages for the areas they cover."],["How does local SEO work for multiple locations?","Each location needs its own profile, accurate citations and a unique landing page. We manage this as one system with reporting per branch."],["How much do local SEO services cost?","Cost depends on locations and competition. See our Local SEO Pricing guide for what affects the price, or request a scoped proposal."]]},
+
+{id:"technical-seo",path:"/seo/technical-seo",col:"seo",name:"Technical SEO",short:"Technical SEO",kw:"technical SEO services",
+title:"Technical SEO Services & Site Audits | Beetrix360",desc:"Technical SEO services that fix crawling, indexing, Core Web Vitals, JavaScript rendering and schema, so search and AI engines can read your site.",
+h1:["Technical SEO that lets","search engines and AI","actually read your site"],
+lead:"Our technical SEO agency finds and fixes the crawl, indexing, speed and rendering problems that stop good content from ranking or being cited by AI engines.",
+answer:"Technical SEO is the work of making a website easy for search engines and AI crawlers to access, render, understand and index. It covers site architecture, crawl budget, canonical tags, sitemaps, page speed, structured data and JavaScript rendering.",
+q:["technical seo audit","why are my pages not indexed","fix core web vitals nextjs"],
+para:["Great content can't rank if crawlers can't reach it. A technical SEO audit shows what search engines actually see: blocked resources, wrong canonicals, redirect chains, orphan pages, duplicate URLs and pages returning server errors.",
+"Modern sites add another layer. React and Next.js builds, headless CMS setups and edge caching can hide content from crawlers that don't run JavaScript, and many AI crawlers don't. We test how your site renders and fix the delivery, so full content appears in the initial HTML."],
+deep:[["Crawling, indexing and site architecture","We review robots.txt, XML sitemaps, canonicals, redirects, status codes and internal linking, then shape a structure that sends crawl budget and authority to your money pages."],
+["Core Web Vitals and page experience","We diagnose LCP, INP and CLS with field data, then work with your developers on image delivery, JavaScript weight, caching and layout stability."]],
+kws:["technical SEO audit","site audit","crawl budget","indexing issues","Core Web Vitals","XML sitemap","robots.txt","canonical tags","schema markup","JavaScript SEO","Next.js SEO","site migration SEO","log file analysis"],
+pains:[["Pages stay out of the index","We trace the cause in canonicals, sitemaps, rendering or quality signals."],["Migration wiped out traffic","Redirect mapping and recovery work restore lost equity."],["Site feels slow on mobile","Field data shows what to fix first for Core Web Vitals."],["JavaScript hides your content","Server rendering puts full content in the first HTML response."]],
+items:[["Full technical audit","A prioritized list of issues with the business impact of each."],["Indexing control","Robots, canonical, sitemap and status code cleanup."],["Core Web Vitals","LCP, INP and CLS improvements using real user data."],["Rendering and JavaScript SEO","SSR and static delivery checks for React and Next.js sites."],["Structured data","Valid schema for organizations, services, products and FAQs."],["Migration support","Redirect maps, launch checks and post-launch monitoring."]],
+steps:["Crawl the site, review logs and map all issues.","Fix critical indexing and rendering faults.","Improve speed, schema and internal linking.","Monitor with automated alerts and regular checks."],
+faq:[["What is technical SEO?","Technical SEO makes a site easy for search engines and AI crawlers to access, render and index. It covers architecture, speed, canonicals, sitemaps, structured data and JavaScript rendering."],["What does a technical SEO audit include?","It reviews crawlability, indexing, status codes, redirects, canonicals, sitemaps, site speed, mobile experience, schema and rendering, and ends with a prioritized fix list."],["How do Core Web Vitals affect SEO?","Core Web Vitals are part of Google's page experience signals. They rarely outweigh relevance, but they matter in close competition and they directly affect conversion."],["Do AI crawlers run JavaScript?","Many don't render JavaScript reliably. Important content should be in the server-rendered HTML so AI crawlers and search engines can read it."],["Can you work with our developers?","Yes. We write clear tickets, explain the reasoning and review changes before release. We can also implement fixes on Next.js and headless builds."],["How often should a technical audit be done?","Run a full audit at least once a year and after any migration or redesign. Automated monitoring should catch issues in between."]]},
+
+{id:"on-page-seo",path:"/seo/on-page-seo",col:"seo",name:"On-Page SEO",short:"On-Page SEO",kw:"on-page SEO services",
+title:"On-Page SEO Services & Content Optimization | Beetrix360",desc:"On-page SEO services covering titles, headings, content, internal links and schema, so each page matches search intent and converts.",
+h1:["On-page SEO that makes","every page earn","its place in search"],
+lead:"We optimize titles, headings, copy, internal links and structured data so each page clearly answers search intent, ranks for the right terms and moves visitors toward a sale.",
+answer:"On-page SEO is the practice of optimizing the content and HTML of individual pages so they rank higher and earn more relevant traffic. It includes title tags, meta descriptions, headings, body content, internal links, image alt text and structured data.",
+q:["on page seo checklist","optimize service pages for seo","how to fix keyword cannibalization"],
+para:["On-page optimization is the fastest lever most sites have, because you fully control it. We start with the pages that already have impressions, then improve the match between what the searcher wants and what the page says.",
+"Keyword density stopped being the goal years ago. Modern on-page SEO is about topical coverage, clear structure and useful answers. We add the subtopics, examples and entities a page is missing, and remove thin or overlapping sections that dilute it."],
+deep:[["Search intent comes first","We look at what already ranks to see whether Google treats a query as a guide, a comparison or a service page, then shape your page to match."],
+["Internal linking and content structure","Descriptive internal links pass authority and show how topics relate. Clean heading structure helps readers, search engines and AI engines pull out the right answer."]],
+kws:["on-page optimization","title tag optimization","meta descriptions","header tags","content optimization","internal linking","keyword cannibalization","search intent","topical authority","image alt text","content refresh","SEO copywriting"],
+pains:[["Pages stuck on page two","Content gaps and intent mismatches are the usual cause, and we fix both."],["Two pages fight for one keyword","We merge or re-target pages to end cannibalization."],["High impressions, few clicks","Rewritten titles and descriptions lift click-through rate."],["Visitors arrive and leave","Clear structure and CTAs keep readers moving toward a decision."]],
+items:[["Page-level audit","Each priority page scored for intent match, depth and conversion."],["Titles and meta","Click-worthy titles and descriptions built around the main query."],["Content optimization","Added depth, entities and examples that fill topical gaps."],["Internal linking","A deliberate link structure that lifts priority pages."],["Schema markup","Structured data for FAQs, services, articles and breadcrumbs."],["Content refresh program","A schedule for updating pages before they decay."]],
+steps:["Pick priority pages from search console and revenue data.","Rewrite structure, titles and copy.","Add internal links, schema and new sections.","Measure each change and roll wins out across the site."],
+faq:[["What is on-page SEO?","On-page SEO optimizes a page's content and HTML so it ranks better for relevant searches. It includes titles, headings, copy, internal links, images and schema."],["What is the difference between on-page and off-page SEO?","On-page SEO covers what's on your site. Off-page SEO covers signals from elsewhere, mainly backlinks and brand mentions."],["How many keywords should one page target?","Target one main topic and its close variations. Many related terms can rank on one page if the search intent is the same."],["Does word count matter for SEO?","Not directly. A page should be as long as it takes to fully answer the query. Thin pages struggle, and padding doesn't help."],["How do I fix keyword cannibalization?","Decide which page should own the term, then merge, redirect or re-target the others and update internal links to match."],["How often should pages be updated?","Review important pages at least twice a year, and sooner if rankings fall or facts change."]]},
+
+{id:"link-building",path:"/seo/link-building",col:"seo",name:"Link Building",short:"Link Building",kw:"link building services",
+title:"Link Building Services & Digital PR | Beetrix360",desc:"White-hat link building services and digital PR that earn editorial backlinks from relevant sites and strengthen your authority in search and AI.",
+h1:["Link building that earns","real authority","from sites buyers trust"],
+lead:"Our link building agency earns editorial backlinks through digital PR, research and outreach. We go after relevance and real audiences, so every link can stand up to scrutiny.",
+answer:"Link building is the process of earning hyperlinks from other websites to your own. Search engines treat relevant links from trusted sites as a signal of authority, and those same mentions help AI engines recognize your brand as a credible source.",
+q:["white hat link building agency","how to get quality backlinks","digital pr for b2b saas"],
+para:["A backlink is only useful if a real publication would be happy to defend it. We avoid private blog networks, paid link farms and bulk guest posts. Those shortcuts create risk and rarely hold value.",
+"Instead, we earn placements with original data, expert commentary and useful resources. Links, brand mentions and press coverage all help search engines and AI models connect your brand with your category."],
+deep:[["Digital PR and data-led outreach","We turn your data and expertise into stories journalists can use, then pitch them to relevant writers and trade publications."],
+["Competitor backlink gap analysis","We compare your link profile with those of the sites outranking you to find realistic targets and the pages that need authority most."]],
+kws:["backlink building","white hat link building","digital PR","guest posting","backlink audit","domain authority","referral domains","anchor text","broken link building","editorial backlinks","link acquisition","brand mentions"],
+pains:[["Rivals have stronger links","A gap analysis shows which targets you can realistically win."],["An old vendor left spammy links","We audit the profile and handle what needs cleaning up."],["Great pages get no links","Linkable assets and outreach give those pages support."],["AI engines ignore your brand","Third-party mentions build the trust AI models look for."]],
+items:[["Backlink audit","A review of your link profile, risks and anchor text."],["Gap analysis","Domains linking to competitors that you can pursue."],["Digital PR campaigns","Data-driven stories pitched to relevant journalists."],["Expert commentary","Your specialists quoted in trade and industry media."],["Linkable assets","Research, tools and guides worth citing."],["Internal link support","Authority routed from linked pages to revenue pages."]],
+steps:["Audit your profile and competitor gaps.","Build assets and list relevant publications.","Run outreach and digital PR campaigns.","Report each placement and direct authority to key pages."],
+faq:[["What is link building?","Link building is earning links from other websites to yours. Relevant links from trusted sites help search engines judge your authority."],["Are backlinks still important for SEO?","Yes. Links remain an important signal, especially in competitive categories, although relevance and quality matter far more than volume."],["What is white-hat link building?","White-hat link building earns links through useful content, PR and outreach, within search engine guidelines. It avoids buying links or using link networks."],["How many backlinks do I need?","There's no fixed number. Compare yourself with the pages ranking for your target terms and focus on closing that gap with relevant links."],["Do you buy links?","No. We earn placements through outreach and PR, because paid link schemes carry real penalty risk."],["Do backlinks help AI search visibility?","They can. Citations and mentions on trusted sites help establish your brand as a recognized entity, which supports AI visibility."]]},
+
+{id:"ecommerce-seo",path:"/seo/ecommerce-seo",col:"seo",name:"Ecommerce SEO",short:"Ecommerce SEO",kw:"ecommerce SEO services",
+title:"Ecommerce SEO Services for Online Stores | Beetrix360",desc:"Ecommerce SEO services for Shopify and custom stores: category pages, product schema, faceted navigation and AI shopping visibility.",
+h1:["Ecommerce SEO that turns","product searches","into paid orders"],
+lead:"We help online stores rank category and product pages, fix faceted navigation problems and appear when shoppers compare products in Google and AI assistants.",
+answer:"Ecommerce SEO is the optimization of an online store so its category and product pages rank in search and shopping results. It focuses on site structure, product schema, faceted navigation, unique product content and page speed.",
+q:["best shopify seo agency","seo for category pages","how to rank products on google"],
+para:["Stores have SEO problems that normal websites don't: thousands of near-duplicate URLs, filters that waste crawl budget, out-of-stock pages and thin manufacturer descriptions. We set clear rules for all of them so search engines spend their time on pages that sell.",
+"Category pages usually hold the biggest commercial opportunity, because they match broad buying searches. We strengthen those first, then improve product pages with helpful content, reviews and structured data."],
+deep:[["Product schema and rich results","Accurate product, price, availability and review markup can earn richer search listings and gives AI shopping assistants clean data."],
+["Shopify, WooCommerce and headless stores","Each platform has its own limits. We work around duplicate paths, faceted URLs and app bloat, and we support headless builds."]],
+kws:["Shopify SEO","WooCommerce SEO","category page SEO","product page optimization","product schema","faceted navigation","Google Shopping SEO","online store SEO","Google Merchant Center","AI shopping search","product descriptions","retail SEO"],
+pains:[["Filters create endless URLs","Crawl rules and canonicals keep crawlers on pages that sell."],["Category pages barely rank","Better structure, copy and internal links lift them."],["Duplicate supplier descriptions","Unique product content sets you apart from resellers."],["Sold-out items lose rankings","A clear out-of-stock policy keeps the value on your site."]],
+items:[["Store architecture","Logical categories and navigation built on search demand."],["Category optimization","Rich category copy, filters and internal links."],["Product page SEO","Unique descriptions, reviews and buyer questions."],["Product schema","Price, stock and review markup for rich results."],["Faceted navigation control","Rules for filters, sorting and pagination."],["Revenue tracking","Reports on organic orders, revenue and top categories."]],
+steps:["Audit structure, products and crawl waste.","Fix facets, schema and technical issues.","Optimize top categories and products.","Roll out to the full catalog using templates."],
+faq:[["What is ecommerce SEO?","Ecommerce SEO helps online stores rank category and product pages so shoppers can find them. It covers structure, product content, schema, speed and faceted navigation."],["Should I focus on category or product pages?","Start with category pages, because they usually match higher-volume buying searches. Then improve your top-selling product pages."],["How do you handle out-of-stock products?","Keep the page live if the item returns. For permanent removals, redirect to the closest alternative or category."],["Is Shopify good for SEO?","Yes, with some limits such as fixed URL paths. A solid setup and clean apps make Shopify competitive."],["What is faceted navigation in SEO?","It's the filter system on category pages. Without rules, filters can create huge numbers of low-value URLs that waste crawl budget."],["How do products appear in AI shopping answers?","AI assistants depend on clean product data, reviews and clear descriptions. Accurate schema and merchant feeds give you the best footing."]]},
+
+{id:"geo",path:"/seo/generative-engine-optimization",col:"ai",name:"Generative Engine & LLM Optimization (GEO)",short:"GEO",kw:"generative engine optimization services",
+title:"Generative Engine Optimization (GEO) Services | Beetrix360",desc:"GEO and LLM optimization services that help your brand get cited in ChatGPT, Perplexity, Claude and Google AI Overviews.",
+h1:["Generative engine optimization","that makes AI","recommend you"],
+lead:"Our GEO agency structures your content, entity data and third-party presence so large language models can find, trust and cite your brand when buyers ask for recommendations.",
+answer:"Generative engine optimization (GEO) is the practice of improving how a brand appears in answers from AI systems such as ChatGPT, Perplexity, Claude and Google AI Overviews. LLM optimization focuses on clear entities, citable content and trusted third-party mentions.",
+q:["best geo agency","how to get cited by chatgpt","what is llm optimization"],
+para:["When a buyer asks an AI assistant for the best vendor, there may be no list of ten links to compete on. The answer names a few brands. GEO is how you become one of them, and our AI search work has delivered +586% traffic from AI sources.",
+"AI engines tend to reward content that is specific, well structured and supported elsewhere on the web. We find the prompts that matter in your category, check who gets cited today, then close the gaps in your content and off-site presence."],
+deep:[["GEO, LLMO and AEO explained","GEO and LLM optimization (LLMO) focus on AI-generated answers. Answer engine optimization (AEO) focuses on being the direct answer to a question. All three build on solid SEO, and we run them together."],
+["How content earns AI citations","Clear definitions, original data, named experts, comparison tables and answer-first structure make passages easy to extract and attribute."]],
+kws:["GEO agency","LLM optimization","LLMO","AI search optimization","AI citations","AI Overviews optimization","Perplexity SEO","Claude visibility","llms.txt","entity SEO","AI share of voice","generative search"],
+pains:[["ChatGPT recommends your rivals","We find why they're cited and build your path into those answers."],["AI gets your details wrong","Consistent entity data corrects how models describe you."],["Traffic falls as AI answers rise","We adapt your content to earn citations when clicks fall."],["No idea where you stand","Prompt tracking shows your share of voice across engines."]],
+items:[["Prompt research","The real questions buyers ask AI engines in your category."],["AI visibility baseline","Where you and your rivals appear today, engine by engine."],["Citable content","Answer-first pages built with data, definitions and structure."],["Entity optimization","Schema and consistent facts that define your brand."],["Third-party presence","Reviews, directories and PR that AI models draw from."],["Crawler access","Robots, llms.txt and rendering set up for AI crawlers."]],
+steps:["Map prompts and baseline your AI visibility.","Fix crawler access, entities and key pages.","Publish citable content and earn off-site mentions.","Track citations and expand winning topics."],
+faq:[["What is generative engine optimization?","GEO is the practice of improving how a brand appears in AI-generated answers from tools such as ChatGPT, Perplexity, Claude and Google AI Overviews."],["What is the difference between SEO and GEO?","SEO aims to rank pages in search results. GEO aims to get your brand mentioned or cited in AI answers. Both rely on quality content and authority."],["How do I get my brand cited by ChatGPT?","Make your site crawlable, publish clear factual content, keep your brand facts consistent and earn mentions on sources AI engines trust."],["Can GEO results be measured?","Yes. We track prompts across AI engines, plus citations, share of voice and referral traffic from AI sources."],["Does an llms.txt file help?","It may help some AI tools understand your site, though support varies. Treat it as a small extra, after crawl access and content quality."],["How long does GEO take?","Some engines reflect changes quickly, while others depend on model updates and outside sources. Most programs set their foundations within 90 days."]]},
+
+{id:"aeo",path:"/seo/answer-engine-optimization",col:"ai",name:"Answer Engine Optimization (AEO)",short:"AEO",kw:"answer engine optimization services",
+title:"Answer Engine Optimization (AEO) Services | Beetrix360",desc:"AEO services that make your content the direct answer in featured snippets, voice search, People Also Ask and AI assistants.",
+h1:["Answer engine optimization","that makes you","the answer"],
+lead:"We structure your content so search engines, voice assistants and AI tools can lift a clear, correct answer from your site and credit you for it.",
+answer:"Answer engine optimization (AEO) is the practice of structuring content so it can be delivered as a direct answer in featured snippets, People Also Ask, voice assistants and AI tools. It uses clear questions, concise answers and structured data.",
+q:["what is answer engine optimization","how to win featured snippets","aeo vs seo"],
+para:["Buyers increasingly ask full questions and expect one clear answer. AEO meets that shift. We collect the questions your market asks, then write direct answers that a machine can extract and a person can trust.",
+"The method is simple but disciplined: put the question in a heading, answer it in the first two sentences, then add depth, evidence and next steps. The page you're reading follows that pattern."],
+deep:[["Featured snippets and People Also Ask","Paragraph, list and table formats each suit different questions. We match the format to what the results page already rewards."],
+["FAQ content and structured data","Useful FAQ sections on service pages capture long-tail questions. Schema helps machines understand them, though visible, accurate content matters most."]],
+kws:["AEO agency","featured snippets","People Also Ask","voice search optimization","FAQ schema","question keywords","zero-click search","direct answers","conversational search","Google AI Overviews","structured data","answer-first content"],
+pains:[["Rivals own the featured snippet","We reformat and sharpen answers to compete directly."],["Pages bury the answer","Answer-first structure puts the key point up front."],["FAQs written as an afterthought","Real buyer questions replace generic filler."],["Voice assistants skip you","Short, spoken-style answers give them something to use."]],
+items:[["Question research","Questions from search data, sales calls and support tickets."],["Answer-first rewrites","Direct answers placed where machines and readers look first."],["Snippet targeting","Formats matched to paragraph, list and table results."],["FAQ systems","Useful page-level FAQs that capture long-tail searches."],["Structured data","Schema that defines questions, answers and page types."],["Zero-click tracking","Reports on snippet wins, impressions and brand search."]],
+steps:["Collect the questions buyers actually ask.","Rewrite priority pages to answer first.","Add FAQs, tables and structured data.","Track snippets and AI answers, then expand."],
+faq:[["What is answer engine optimization?","AEO structures content so search engines and AI assistants can use it as a direct answer. It relies on clear questions, concise answers and structured data."],["What is the difference between AEO and SEO?","SEO aims for rankings and clicks. AEO aims to be the answer itself, including in results where the searcher may never click."],["What's the difference between AEO and GEO?","AEO targets direct answers across snippets, voice and AI. GEO focuses on AI-generated answers. The tactics overlap, so we run them together."],["How long should an AEO answer be?","Lead with about two sentences that fully answer the question, then expand below. Keep the first answer able to stand on its own."],["Does FAQ schema still help?","FAQ rich results are now limited on Google, but the markup still clarifies content for machines. The visible FAQ is what matters most."],["Can AEO work if people don't click?","Yes. Being the cited answer builds brand recognition and trust, and we measure brand search and assisted conversions as well as clicks."]]},
+
+{id:"programmatic-seo",path:"/seo/programmatic-seo",col:"ai",name:"Programmatic SEO",short:"Programmatic SEO",kw:"programmatic SEO services",
+title:"Programmatic SEO Services at Scale | Beetrix360",desc:"Programmatic SEO services that turn your data into thousands of useful, indexable pages built on Next.js, with quality controls.",
+h1:["Programmatic SEO that scales","pages from data","without thin content"],
+lead:"We turn structured data into large sets of useful landing pages for long-tail searches, with templates, automation and quality checks that keep them worth indexing.",
+answer:"Programmatic SEO is the method of creating many search-targeted pages from a template and a structured dataset. It captures large numbers of long-tail searches, such as location, integration or comparison queries, and works only when each page offers unique value.",
+q:["programmatic seo agency","how to build pages at scale","programmatic seo with next.js"],
+para:["Programmatic SEO works when a keyword pattern repeats and you have real data for every variation. Think “[service] in [city]”, “[tool] integration” or “[product] vs [product]”. We find those patterns and check whether your data can make each page useful.",
+"The risk is thin content. Swapping one word across a thousand pages helps nobody and can hurt the whole domain. We build in unique data, conditional content, internal linking and publication gates, and we release in batches so we can measure before scaling."],
+deep:[["Data, templates and automation","We design the data model, build fast Next.js templates and automate publishing from a database, CMS or API, using Python where needed."],
+["Indexing large page sets","Scale needs sitemap segmentation, internal linking and monitoring, so that search engines find and keep the pages that matter."]],
+kws:["pSEO","SEO at scale","long-tail keywords","landing pages at scale","template SEO","headless CMS SEO","Next.js SEO","data-driven SEO","location pages at scale","comparison pages","integration pages","AI content at scale"],
+pains:[["Thousands of keywords, few pages","Templates and data cover the long tail efficiently."],["Earlier pages never got indexed","Quality gates and better linking fix the root cause."],["Publishing is manual and slow","Automation moves data straight into live pages."],["AI-written pages feel thin","Real data and human review make pages useful."]],
+items:[["Pattern research","Keyword patterns with real demand and business value."],["Data modeling","Datasets structured to give each page something unique."],["Template design","Conversion-ready templates, built on a fast stack."],["Publishing automation","Pipelines from your database to live pages."],["Quality controls","Thin-page rules, sampling and human review."],["Index monitoring","Coverage tracking by batch and template."]],
+steps:["Validate patterns, data and demand.","Build the template and data pipeline.","Launch a test batch and measure it.","Scale the winners and prune the rest."],
+faq:[["What is programmatic SEO?","Programmatic SEO creates many landing pages from templates and structured data to target repeating long-tail searches."],["Is programmatic SEO spam?","Not when each page is genuinely useful. It becomes a problem when pages are thin or duplicate. Quality controls are essential."],["What businesses suit programmatic SEO?","It suits marketplaces, SaaS, directories, travel, real estate and multi-location businesses that hold structured data."],["How many pages should we launch at first?","Start with a small test batch, confirm indexing and performance, then scale in stages."],["Can AI write programmatic pages?","AI can help with drafts, but your data should provide the value. We pair it with templates, rules and human review."],["What tech stack do you use?","We typically use Next.js with a headless CMS or database, plus Python and API automation."]]},
+
+{id:"chatgpt-optimization",path:"/seo/chatgpt-optimization",col:"ai",name:"ChatGPT Optimization",short:"ChatGPT Optimization",kw:"ChatGPT optimization services",
+title:"ChatGPT Optimization Services | Beetrix360",desc:"ChatGPT optimization services that help your brand show up accurately in ChatGPT answers, recommendations and search citations.",
+h1:["ChatGPT optimization that","gets your brand named","when buyers ask"],
+lead:"We improve how ChatGPT finds, describes and recommends your business, from crawler access and content structure to the third-party sources it relies on.",
+answer:"ChatGPT optimization is the work of improving how a brand appears in ChatGPT's responses and search citations. It involves allowing OpenAI's crawlers, publishing clear factual content, and building a consistent presence on sources the model and its search feature use.",
+q:["how to rank in chatgpt","best crm for mid-size manufacturers","why doesn't chatgpt mention my brand"],
+para:["Try it now. Ask ChatGPT for the best vendor in your space. If your name isn't there, or the description is out of date, buyers using it may never reach your website.",
+"ChatGPT draws on what it learned in training and, when search is used, on live web results. So we work on both: the long-term signals that shape how models know your brand, and the current pages and listings that search can retrieve."],
+deep:[["Crawler access for ChatGPT","OpenAI uses separate crawlers for search, user-requested browsing and training. We review robots.txt and firewall rules so you allow what you want, on purpose."],
+["Fixing inaccurate AI descriptions","When answers are outdated or wrong, we find the likely sources, correct your public facts and strengthen pages that state them clearly."]],
+kws:["rank in ChatGPT","ChatGPT SEO","ChatGPT search","OAI-SearchBot","GPTBot","ChatGPT recommendations","AI brand mentions","OpenAI crawler","SearchGPT","AI referral traffic","prompt tracking","AI search"],
+pains:[["ChatGPT never mentions you","We review prompts, sources and crawl access to find the reason."],["Its answers about you are wrong","We correct source facts and publish clear reference pages."],["Crawlers may be blocked","Robots and firewall settings get checked rule by rule."],["You can't see AI referrals","Analytics setup isolates ChatGPT traffic and leads."]],
+items:[["Prompt testing","Repeated tests of buyer prompts to see real patterns."],["Crawler access review","OAI-SearchBot, ChatGPT-User and GPTBot rules set deliberately."],["Brand fact pages","Clear reference pages for what you do and who you serve."],["Source strategy","Presence on the reviews and lists ChatGPT cites."],["Comparison content","Honest comparisons that answer shortlist questions."],["AI traffic analytics","Tracking for referrals, conversions and citation trends."]],
+steps:["Test buyer prompts and record who gets named.","Open crawler access and fix brand facts.","Publish citable pages and build sources.","Retest monthly and expand to new prompts."],
+faq:[["Can you rank in ChatGPT?","There's no fixed ranking, and answers vary, but you can improve how often and how accurately you appear by strengthening your content, data and third-party presence."],["Why doesn't ChatGPT mention my brand?","Common reasons are low web presence, unclear positioning, blocked crawlers or few mentions on trusted sites."],["Should I block GPTBot?","That's a business choice. GPTBot relates to training, while OAI-SearchBot supports search. Many brands allow search crawlers even if they restrict training."],["Can you guarantee ChatGPT recommendations?","No, and you should be wary of anyone who does. We improve the inputs and measure your visibility over time."],["How do I track ChatGPT traffic?","Use analytics to filter referrals from ChatGPT, and run regular prompt tests, since many mentions don't lead to a click."],["How is this different from GEO?","ChatGPT optimization focuses on one platform. GEO covers all major AI engines."]]},
+
+{id:"ai-visibility-tracking",path:"/seo/ai-visibility-tracking",col:"ai",name:"AI & LLM Visibility Tracking",short:"AI Visibility Tracking",kw:"AI visibility tracking",
+title:"AI & LLM Visibility Tracking Services | Beetrix360",desc:"Track your brand across ChatGPT, Perplexity, Claude and AI Overviews: prompts, citations, share of voice and sentiment in one dashboard.",
+h1:["AI visibility tracking that","shows where you stand","in every AI answer"],
+lead:"We monitor the prompts your buyers use across AI engines and report who gets cited, how you're described and how your share of voice changes over time.",
+answer:"AI visibility tracking measures how often and how favorably a brand appears in answers from AI engines. It monitors a set of buyer prompts across tools such as ChatGPT, Perplexity, Claude and Google AI Overviews, and reports citations, share of voice and sentiment.",
+q:["ai visibility tracking tool","track brand mentions in chatgpt","measure ai share of voice"],
+para:["Standard rank trackers can't see inside AI answers. Responses change by user and session, so one manual check proves very little. We test your prompt set repeatedly, then look at trends rather than single results.",
+"The output is a practical view of your market: which competitors AI names, which sources it cites and which topics you're missing. That turns a vague worry about AI search into a clear work list."],
+deep:[["What we track","Brand mentions, cited URLs, position within the answer, sentiment, competitor presence and the outside sources that shape each response."],
+["From data to action","Each report links findings to next steps, such as a page to rewrite, a directory to fix or a source to earn."]],
+kws:["LLM visibility","AI share of voice","AI brand monitoring","prompt tracking","AI citation tracking","AI rank tracking","AI Overviews tracking","Perplexity tracking","generative search analytics","competitor AI visibility","AI analytics dashboard","AI referral traffic"],
+pains:[["AI visibility is a black box","Regular prompt tests turn it into a trend you can read."],["Leadership wants numbers","Share-of-voice reporting gives a simple baseline."],["Manual checks don't agree","Repeated sampling smooths out answer randomness."],["Your rival appears from nowhere","Alerts and source analysis show what changed."]],
+items:[["Prompt library","Buyer prompts grouped by topic, stage and product."],["Multi-engine monitoring","Coverage of the AI platforms your buyers use."],["Share of voice","Your presence compared with named competitors."],["Citation analysis","The URLs and domains that shape answers."],["Sentiment review","How AI describes you, including factual errors."],["Executive dashboard","A clear monthly view with recommended actions."]],
+steps:["Build the prompt library and competitor set.","Run the baseline across AI engines.","Set up the dashboard and reporting rhythm.","Turn findings into a monthly action plan."],
+faq:[["What is AI visibility tracking?","It measures how often and how well a brand appears in AI-generated answers, using repeated tests of buyer prompts across AI engines."],["What is AI share of voice?","It's the share of relevant AI answers that mention your brand compared with competitors, across a defined set of prompts."],["Why do AI answers change every time?","AI responses vary with the model, context and retrieved sources. That's why tracking relies on repeated sampling rather than one test."],["Which AI platforms do you track?","We typically cover ChatGPT, Perplexity, Claude, Gemini and Google AI Overviews, based on where your buyers spend time."],["Can I connect AI visibility to revenue?","Partly. We track AI referral traffic and conversions directly, and we watch brand search and pipeline for indirect effects."],["How many prompts should we track?","Enough to represent your main topics and buying stages. We scope the set around your product lines and markets."]]},
+
+{id:"ai-brand-perception",path:"/seo/ai-brand-perception",col:"ai",name:"AI Brand Perception",short:"AI Brand Perception",kw:"AI brand perception",
+title:"AI Brand Perception Audits & Management | Beetrix360",desc:"Find out what AI engines say about your brand. We audit AI brand perception, correct errors and shape how models describe you.",
+h1:["AI brand perception that","changes what AI says","about you"],
+lead:"AI assistants now give buyers a first impression of your business. We audit how models describe you, correct errors and strengthen the sources behind those descriptions.",
+answer:"AI brand perception is how AI models describe, compare and recommend a brand. It's shaped by the content, reviews, news and third-party sources those models learn from or retrieve, and it can be improved by correcting and strengthening those sources.",
+q:["what does ai say about my brand","fix wrong information in chatgpt","ai brand reputation management"],
+para:["Ask an AI assistant what your company does, who you serve and how you compare with competitors. The reply may be outdated, vague or wrong, and buyers often take it as fact.",
+"We treat this like brand research. We test how models talk about you, trace the sources behind each claim, and improve those sources so the story becomes more accurate and more favorable over time."],
+deep:[["Perception audit","We test questions on positioning, strengths, weaknesses, pricing, trust and comparisons, then summarize the themes and errors."],
+["Correcting the record","We update your site, profiles, directories and press coverage, so accurate facts appear in many places AI systems can draw on."]],
+kws:["AI reputation management","brand sentiment in AI","AI brand audit","LLM brand perception","AI brand monitoring","entity management","Knowledge Graph","AI misinformation","online reputation","review strategy","brand narrative","AI comparisons"],
+pains:[["AI describes your old business","Clear, current facts replace outdated positioning."],["Rivals come out ahead in comparisons","We find what drives those comparisons and address it."],["Old complaints keep surfacing","Fresh reviews and evidence provide balance."],["Your category is misread","Entity signals link you to the right market."]],
+items:[["Perception audit","How leading models describe your brand today."],["Sentiment map","Themes across strengths, risks and doubts."],["Error log","Factual mistakes and their likely sources."],["Narrative pages","Reference content that states your position clearly."],["Source improvement","Fixes to profiles, directories and listings."],["Review and PR plan","Fresh third-party proof for key themes."]],
+steps:["Test models and document brand perception.","Trace sources and rank the issues.","Correct facts and publish reference content.","Re-test and report how perception shifts."],
+faq:[["What is AI brand perception?","It's how AI models describe and compare your brand. It's formed from the web content, reviews and news those models learn from or retrieve."],["Can I correct wrong information in AI answers?","Often, yes, though usually indirectly. You fix the sources, publish clear facts and give models accurate information to draw on."],["How long do changes take to appear?","Tools that use live search can update fairly quickly. Models relying on training data change more slowly."],["Is this the same as reputation management?","It's related. Reputation management focuses on search results and reviews, while this focuses on how AI models summarize you."],["Can you remove negative content from AI?","We can't delete it from a model. We can address false claims at the source and strengthen accurate, positive evidence."],["Who needs an AI perception audit?","Any brand that buyers research before purchasing, especially in B2B, finance, real estate and other considered purchases."]]},
+
+{id:"keyword-research",path:"/seo/keyword-research",col:"str",name:"Keyword Research",short:"Keyword Research",kw:"keyword research services",
+title:"Keyword Research Services & Strategy | Beetrix360",desc:"Keyword research services that map buyer intent, topic clusters and AI prompts into a content plan built around revenue.",
+h1:["Keyword research that finds","the searches","that close deals"],
+lead:"We go beyond search volume to find the terms and AI prompts your buyers actually use, then map each one to a page, a stage and a business outcome.",
+answer:"Keyword research is the process of finding the words and questions people use when searching for a product, service or topic. It analyzes search volume, difficulty, intent and business value to decide which pages to create or improve.",
+q:["keyword research service","find high intent keywords","topic cluster strategy"],
+para:["A high-volume keyword can be worthless if the searcher will never buy. We weight research by commercial intent and use sales calls, CRM data and customer language to find terms that keyword tools miss.",
+"The result isn't a spreadsheet dump. You get a prioritized keyword map showing which page owns which term, what to create next and how topics connect. We also add the conversational prompts buyers use with AI."],
+deep:[["Search intent and keyword mapping","Each term is labeled as informational, commercial, transactional or navigational, then assigned to one page, which prevents cannibalization."],
+["Topic clusters and content gaps","Pillar pages and supporting articles show depth in a subject. Gap analysis shows where rivals have coverage that you don't."]],
+kws:["keyword strategy","keyword mapping","long-tail keywords","search intent analysis","keyword gap analysis","topic clusters","search volume","keyword difficulty","buyer keywords","content strategy","semantic keywords","SEO content plan"],
+pains:[["Lots of traffic, wrong people","Intent-led targeting brings in actual buyers."],["Content has no clear plan","A map shows what to write, and in what order."],["Pages compete with each other","One owner per keyword ends cannibalization."],["Tools miss your niche","Sales and CRM language reveal hidden terms."]],
+items:[["Seed discovery","Terms from customers, sales calls and tools."],["Intent classification","Each keyword labeled by buying stage."],["Opportunity scoring","Priority based on volume, difficulty and value."],["Keyword map","One clear page assigned to each cluster."],["Competitor gaps","Topics rivals rank for that you've missed."],["AI prompt research","Conversational questions buyers ask AI."]],
+steps:["Gather terms from data, tools and sales teams.","Score intent, difficulty and business value.","Build clusters and the keyword map.","Turn it into a prioritized content roadmap."],
+faq:[["What is keyword research?","Keyword research finds the terms and questions people search for, then evaluates volume, difficulty, intent and business value."],["How do you find high-intent keywords?","Look for words that signal buying, such as pricing, best, vs and service terms. Then validate them against your sales conversations."],["What are long-tail keywords?","They are longer, more specific searches. They often have lower volume but clearer intent and less competition."],["How many keywords should one page target?","One primary topic plus closely related variations that share the same intent."],["What is a topic cluster?","It's a group of related pages linked around a main pillar page, showing depth on a subject."],["How often should keyword research be updated?","Review it at least quarterly, or whenever you launch a product or enter a new market."]]},
+
+{id:"competitor-analysis",path:"/digital-marketing/competitor-analysis",col:"str",name:"Digital Marketing Competitor Analysis",short:"Competitor Analysis",kw:"digital marketing competitor analysis",
+title:"Digital Marketing Competitor Analysis | Beetrix360",desc:"Competitor analysis across SEO, AI search, ads, content and funnels, so you can see what's working for rivals and where to win.",
+h1:["Competitor analysis that shows","exactly where you","can win"],
+lead:"We break down your rivals' SEO, AI visibility, paid media, content and funnels, then turn the findings into a clear plan for taking market share.",
+answer:"Digital marketing competitor analysis is the study of competitors' search rankings, content, advertising, social presence and conversion funnels. It reveals what's working in a market, where the gaps are and how a business can differentiate.",
+q:["competitor analysis service","see competitor keywords","who ranks above me and why"],
+para:["Your real competitors in search may not be the companies you meet in sales. We identify who actually takes your visibility across Google and AI answers, then study what they do well.",
+"We look at more than rankings: the keywords they own, the links they've earned, their ad messaging and offers, and how their landing pages convert. You get a focused set of moves rather than a long report."],
+deep:[["SEO and AI search comparison","We compare keywords, content, links, technical health and AI citations to show who leads each topic and why."],
+["Paid media and funnel teardown","We review ad copy, offers, landing pages and follow-up paths to find positioning gaps you can use."]],
+kws:["competitive analysis","SEO competitor analysis","competitor keywords","competitor backlinks","SWOT analysis","market share analysis","competitor ads","ad teardown","content gap analysis","competitive intelligence","benchmarking","positioning"],
+pains:[["Rivals outrank you, reasons unclear","We show exactly which factors put them ahead."],["Your message sounds like everyone else's","Positioning gaps show where you can stand apart."],["Ad costs keep climbing","Competitor analysis shows where to bid and what to say."],["Reports go unused","Findings become a short, prioritized plan."]],
+items:[["Competitor set","True search and AI competitors, not just known names."],["Keyword gap","Terms rivals win and you're missing."],["Backlink comparison","Their strongest sources and your realistic targets."],["AI visibility compare","Who gets cited and for which prompts."],["Ad and offer teardown","Messaging, offers and landing page review."],["Action plan","Ranked moves with expected effort and impact."]],
+steps:["Define rivals across search, AI and paid.","Collect and compare channel data.","Tear down funnels, offers and messaging.","Present the ranked plan and start on top moves."],
+faq:[["What is digital marketing competitor analysis?","It studies rivals' search, content, ads, social and funnels to show what's working and where you can gain an edge."],["How do I find my real SEO competitors?","Look at who ranks for your target terms, which may differ from your business rivals. AI answers can reveal others."],["What does a competitor analysis include?","Keywords, backlinks, content, technical health, AI visibility, ad messaging, offers and landing pages."],["How often should we analyze competitors?","Do a full review each year or two, with lighter quarterly checks."],["Can you see competitors' ad spend?","Only estimates. Tools show likely activity and creative, not exact budgets."],["Is using competitor data legal?","Yes, when based on publicly available data. We review public pages, ads and rankings only."]]},
+
+{id:"enterprise-seo",path:"/seo/enterprise-seo",col:"str",name:"Enterprise SEO",short:"Enterprise SEO",kw:"enterprise SEO services",
+title:"Enterprise SEO Services & Agency | Beetrix360",desc:"Enterprise SEO services for large websites: governance, international SEO, migrations, automation and revenue reporting across teams.",
+h1:["Enterprise SEO built for","large sites","and larger stakeholders"],
+lead:"We run SEO programs for complex organizations, combining technical scale, governance, automation and reporting that leadership and every business unit can use.",
+answer:"Enterprise SEO is search optimization for large organizations and websites, often with thousands of pages, several brands or markets, and many stakeholders. It focuses on scale, governance, automation, cross-team workflows and revenue reporting.",
+q:["enterprise seo agency","seo for large websites","international seo strategy"],
+para:["At enterprise level, the hardest part is rarely knowing what to fix. It's getting the fix released across product, engineering, legal and regional teams. We build the processes, tickets and business cases that get SEO into the roadmap.",
+"Scale also changes the tools. We use automation, log file analysis and templates to manage huge sites, and we connect SEO data to your CRM and BI systems, so results are shown in the numbers your leadership already trusts."],
+deep:[["Governance and cross-team workflows","Standards, training, release checks and clear ownership keep SEO from being undone by the next deployment."],
+["International and multi-brand SEO","We handle hreflang, domain strategy, localization and shared templates across countries and brands."]],
+kws:["enterprise SEO agency","large website SEO","international SEO","hreflang","SEO governance","SEO at scale","site migration","log file analysis","multi-brand SEO","SEO automation","Fortune 500 SEO","SEO business case"],
+pains:[["SEO tickets die in the backlog","Business cases and clear specs win engineering time."],["Every team works differently","Shared standards keep brands and regions aligned."],["Site migration feels risky","Planned redirects and checks protect your traffic."],["Leadership doubts SEO's value","Reporting ties organic to pipeline in your own BI."]],
+items:[["Enterprise audit","Log files, templates and crawl data at scale."],["Governance model","Standards, roles and release checks."],["Automation","Python scripts for monitoring and bulk fixes."],["International SEO","Hreflang, localization and domain strategy."],["Migration management","Planning for replatforms and mergers."],["Executive reporting","Revenue reports built on your BI stack."]],
+steps:["Audit templates and map stakeholders.","Set priorities, standards and business cases.","Ship fixes and templates with product teams.","Automate monitoring and scale across units."],
+faq:[["What is enterprise SEO?","Enterprise SEO is search optimization for large organizations and sites. It focuses on scale, governance, automation and cross-team delivery."],["How is enterprise SEO different from regular SEO?","The basics are the same, but the scale, stakeholders, risk and reporting needs are much larger."],["Do you work with in-house teams?","Yes. We often support internal SEO, product and engineering teams with strategy and specialist work."],["Can you handle international SEO?","Yes, including hreflang, localization, domain structure and regional reporting."],["How do you handle security and privacy?","We follow your access rules and can use self-hosted AI, so your data never trains public models."],["How do you prove enterprise SEO ROI?","We connect organic data to your CRM and BI tools, so results can be reported as pipeline and revenue."]]},
+
+{id:"enterprise-geo",path:"/seo/enterprise-geo",col:"str",name:"Enterprise GEO",short:"Enterprise GEO",kw:"enterprise GEO services",
+title:"Enterprise GEO & AI Search Strategy | Beetrix360",desc:"Enterprise generative engine optimization for global brands: AI visibility governance, entity control, privacy-first tooling and reporting.",
+h1:["Enterprise GEO that protects","your brand","in every AI answer"],
+lead:"We help large organizations manage how AI engines represent their brands, products and markets, with governance, reporting and privacy-first infrastructure.",
+answer:"Enterprise GEO is generative engine optimization for large organizations. It manages how multiple brands, products and regions appear in AI answers, using entity governance, prompt monitoring at scale, content standards and reporting for leadership.",
+q:["enterprise geo agency","ai search strategy for global brands","manage brand in ai answers"],
+para:["For a large brand, AI answers carry risk as well as opportunity. Products get mixed up, regions get the wrong details and outdated claims keep circulating. Enterprise GEO brings this under control.",
+"We build shared entity data, content standards and monitoring across brands and markets. For sensitive sectors, we offer self-hosted LLM options, so your data stays private and never trains public AI."],
+deep:[["Entity governance at scale","We create a single source of truth for brand, product and location facts, then publish it consistently through schema, pages and profiles."],
+["AI risk and compliance","Regulated teams need review steps. We add legal checks, monitoring and escalation paths for inaccurate AI claims."]],
+kws:["enterprise AI search","AI search strategy","global GEO","AI governance","entity governance","brand safety in AI","self-hosted LLM","AI visibility at scale","multi-brand GEO","AI compliance","enterprise LLM optimization","AI risk monitoring"],
+pains:[["Models confuse your products","Entity data separates each brand and product line."],["Regions get the wrong details","Local facts are published and monitored market by market."],["Legal worries about AI claims","Review workflows and alerts manage the risk."],["No one owns AI visibility","A governance model assigns clear responsibility."]],
+items:[["Enterprise AI audit","Visibility across brands, products and markets."],["Entity source of truth","One governed set of brand facts."],["Prompt monitoring at scale","Tracking by region, language and business unit."],["Content standards","Citable templates and rules for every team."],["Privacy-first tooling","Self-hosted LLM options for sensitive data."],["Board-level reporting","AI share of voice and risk, in plain terms."]],
+steps:["Audit AI visibility and risks by business unit.","Set governance and the entity source of truth.","Roll out content standards and monitoring.","Report to leadership and scale to more markets."],
+faq:[["What is enterprise GEO?","Enterprise GEO is generative engine optimization for large organizations, managing how many brands, products and regions appear in AI answers."],["How is enterprise GEO different from standard GEO?","It adds governance, compliance, multi-market monitoring and leadership reporting."],["Can you keep our data private?","Yes. Your data never trains public AI, and we offer a self-hosted LLM option."],["Who should own AI visibility?","Usually marketing or brand, with support from SEO, legal, PR and product. We help define the roles."],["Do you support multiple languages and regions?","Yes. We scope prompt monitoring and entity data by market and language."],["What should we do first?","Begin with an AI visibility and risk audit across your most important brands and markets."]]}
+];
+
+/* SEO GUIDE COPY. Edit freely, then run: node build.js
+   Each line is: ["target keyword", "section heading", "paragraph"]. Add more lines to add more paragraphs. */
+const SEO={
+"seo":[["SEO agency","What a good SEO agency actually does","A good SEO agency starts with how your buyers search, then fixes whatever stops your site from earning those visits. That usually means technical repairs, better pages, stronger internal links and earned authority. Ask any agency how it connects its work to leads and revenue, not just to rankings."],["search engine optimization services","What search engine optimization services include","Search engine optimization services normally cover technical audits, keyword research, on-page improvements, content planning and link building. The right mix depends on your site. A young site may need authority first, while an older site may gain more from fixing crawl problems and refreshing the pages it already has."],["organic search strategy","Building an organic search strategy","An organic search strategy decides which topics you should own, which pages will own them and what order to build them in. Start with the searches closest to a purchase. Then add the educational content that brings earlier buyers in and links them to your money pages."],["SEO ROI","How to measure SEO ROI","To measure SEO ROI, connect organic visits to form fills, calls and sales in your CRM. Rankings and traffic are useful signals, but they do not pay invoices. Compare the value of organic revenue over time with the full cost of the program, including content and development."],["how long does SEO take","How long SEO takes to work","Most sites see early movement within a few months, and stronger results over six to twelve months. Timing depends on competition, site health and how much work ships each month. Technical fixes can move quickly, while authority and topical depth build more slowly."]],
+"local-seo":[["local SEO services","What local SEO services cover","Local SEO services help a business appear when nearby buyers search. The work covers your Google Business Profile, local pages, citations, reviews and local links. Every part supports the same goal, which is more calls, direction requests and bookings from people in your service area."],["Google Business Profile optimization","Getting more from your Google Business Profile","Your Google Business Profile is often the first thing a local buyer sees. Choose accurate categories, list every service, add real photos and keep hours current. Post regularly and answer questions, because a complete and active profile gives searchers more reasons to call you."],["map pack ranking","How map pack ranking works","Google weighs relevance, distance and prominence when it builds the map pack. You cannot move your address, but you can improve the other two. Clear categories, strong local pages, steady reviews and mentions from local websites all help you compete."],["NAP consistency","Why NAP consistency matters","NAP stands for name, address and phone number. When these details differ across directories, search engines and customers lose confidence. Audit your main listings, pick one correct format and fix old entries, especially after a move, a rebrand or a change of number."],["multi-location SEO","Multi-location SEO without duplicate pages","Multi-location SEO needs a real page for each branch, with local proof such as staff, reviews, photos and directions. Swapping the city name on a template rarely works. Link each page to its own Google Business Profile so that every location can rank on its own."]],
+"technical-seo":[["technical SEO audit","What a technical SEO audit should find","A technical SEO audit checks whether search engines can crawl, render and index your pages. It should rank problems by business impact rather than list every warning. The most useful audits end with clear tickets your developers can ship, each tied to pages that matter."],["crawl budget","When crawl budget matters","Crawl budget matters most on large sites with many URLs. If bots spend their time on filters, duplicates and redirects, your important pages get visited less often. Clean up parameter URLs, fix internal links and keep your XML sitemaps limited to pages you want indexed."],["Core Web Vitals","Improving Core Web Vitals","Core Web Vitals measure loading, responsiveness and visual stability. They matter for users as well as search. Start with heavy images, unused scripts and slow server responses, then test the templates that carry the most traffic instead of chasing a perfect score on one page."],["JavaScript SEO","Common JavaScript SEO problems","JavaScript can hide content and links from crawlers if a page relies on rendering in the browser. Check what search engines and AI crawlers really receive. Server-side rendering or pre-rendering usually solves this, and it also helps AI systems read your content."],["schema markup","Using schema markup well","Schema markup describes your content in a format machines can read. Use types that match the page, such as Organization, Service, Product or FAQPage, and only mark up content people can see. Validate it after every template change, because broken markup often goes unnoticed."]],
+"on-page-seo":[["on-page SEO services","What on-page SEO services change","On-page SEO services improve the parts of a page you control, such as titles, headings, copy, internal links and structured data. The aim is to match what the searcher wants better than competing pages. Small changes on pages that already rank can pay back quickly."],["search intent","Matching search intent","Search intent is the job a searcher wants done. Look at the current results before writing. If Google shows comparison guides, a sales page will struggle however well it is written. Match the format first, then beat competitors on clarity, depth and proof."],["title tag optimization","Writing better title tags","A good title tag tells people and search engines what the page offers. Lead with the main topic, keep it readable and give a reason to click. Avoid repeating keywords. Test changes on pages with many impressions and a low click-through rate."],["content optimization","Content optimization without keyword stuffing","Content optimization means covering a topic properly, not repeating a phrase. Answer the questions buyers ask, add examples and remove padding. Use clear subheadings and short opening answers, because that structure helps readers, search engines and AI summaries alike."],["internal linking","Internal linking that moves rankings","Internal links show which pages matter and how topics connect. Link from strong pages to the pages you want to grow, using descriptive anchor text. Check for important pages with few internal links, because they are often the cheapest ranking wins available."]],
+"link-building":[["link building services","What to expect from link building services","Link building services earn mentions and links from relevant websites. Quality matters more than volume. Ask where links come from, how outreach works and which pages they support. Be careful with any provider that promises a fixed number of high-authority links for a low price."],["digital PR","How digital PR earns links","Digital PR creates stories, data and expert commentary that journalists want to use. One good story can earn links from sites you could never reach through direct outreach. It also builds brand mentions, which AI systems may use when deciding which companies to recommend."],["guest posting","Guest posting done carefully","Guest posting still works when the site is real, the audience is relevant and the article is useful. Avoid sites that exist only to sell posts. If the only reason to publish is the link, the placement probably carries little value and may add risk."],["backlink profile","Reviewing your backlink profile","A backlink profile review shows who links to you, which pages earn links and where competitors are ahead. Use it to find gaps, recover lost links and fix broken pages that still attract them. Most sites do not need to disavow links regularly."],["anchor text","Keeping anchor text natural","Anchor text is the clickable text of a link. Most natural links use your brand name, the page title or a plain description. Too many exact-match anchors can look manipulated, so focus on earning links in context and let the wording vary."]],
+"ecommerce-seo":[["ecommerce SEO services","What ecommerce SEO services focus on","Ecommerce SEO services help products and categories appear when shoppers are ready to buy. The work usually covers site structure, category pages, product content, technical health and reviews. Good programs measure revenue by page type, so effort goes where sales are made."],["category page SEO","Why category page SEO often wins","Category pages often target the strongest buying searches. Give each one useful copy, clear filters, helpful links to subcategories and products in stock. Keep the copy useful to shoppers, and place it where it supports buying rather than pushing products down the page."],["product page optimization","Product page optimization that sells","A strong product page answers every question a shopper has before buying. Write original descriptions, add specifications, real photos, delivery details and reviews. Avoid manufacturer copy, because the same text appears on many other stores and gives search engines no reason to prefer yours."],["faceted navigation","Controlling faceted navigation","Filters for size, color and price can create thousands of near-duplicate URLs. Decide which filter pages deserve indexing because people search for them. Block or canonicalize the rest, so search engines focus on the pages that can actually rank and sell."],["product schema","Product schema and rich results","Product schema shares price, stock and review data with search engines and shopping surfaces. Keep it in sync with what shoppers see on the page. Accurate structured data can make listings richer, and it helps AI shopping answers describe your products correctly."]],
+"geo":[["generative engine optimization","What generative engine optimization means","Generative engine optimization, or GEO, improves how often AI assistants mention and cite your brand. It builds on SEO but adds a focus on clear entities, quotable passages and third-party reputation. The goal is to be part of the answer, not just one of the links."],["LLM optimization","How LLM optimization works","LLM optimization makes your brand easier for large language models to understand and recommend. Publish clear facts about what you do, who it is for and how you compare. Keep those facts consistent across your site, profiles, directories and press coverage."],["GEO vs SEO","GEO vs SEO","SEO aims to rank pages in search results. GEO aims to get your brand into generated answers. They share a lot, including crawlable pages and strong authority. GEO puts more weight on direct answers, original facts and what other trusted sources say about you."],["AI citations","How to earn AI citations","AI citations tend to go to pages that answer a specific question clearly. Put the answer near the top, support it with evidence and keep the page up to date. Original data, expert quotes and comparison content give engines something worth citing."],["generative search","Preparing your content for generative search","Start with the prompts buyers would use in your category. Test them across the main assistants and note who gets cited. Then fill the gaps, both on your own site and on the third-party sources those assistants already appear to trust."]],
+"aeo":[["answer engine optimization","What answer engine optimization means","Answer engine optimization, or AEO, structures content so search engines and AI tools can pull a direct answer from it. It covers question-led pages, short definitions, FAQs and structured data. It helps you appear in AI Overviews, featured snippets and voice results."],["featured snippets","Winning featured snippets","To win a featured snippet, ask the question in a heading and answer it right below in about two to four sentences. Then expand with detail. Use lists for steps and tables for comparisons, and check which format currently holds the snippet."],["AI Overviews optimization","Showing up in AI Overviews","Pages cited in AI Overviews usually already rank reasonably well and answer the question clearly. Start with informational searches where you have authority. Improve the opening answer, add supporting detail and make sure the page loads well and stays crawlable."],["FAQ schema","Using FAQ content properly","FAQ sections still help readers and machines, even though Google shows FAQ rich results far less often than it once did. Write real buyer questions, keep answers short and only add FAQPage schema when the questions and answers are visible on the page."],["voice search optimization","Voice search optimization","Voice assistants tend to read a short, plain answer. Write the way people speak, use question phrasing and keep your business details accurate. For local businesses, a complete Google Business Profile remains one of the most important voice search assets."]],
+"programmatic-seo":[["programmatic SEO agency","When to hire a programmatic SEO agency","A programmatic SEO agency helps you publish many useful pages from structured data and templates. It suits businesses with repeatable searches, such as locations, integrations or product combinations. It needs real data and engineering, so it is rarely a good fit for thin content."],["SEO at scale","What SEO at scale requires","SEO at scale needs a dataset, a strong template, quality rules and a safe release plan. Each page must offer something the others do not. Launch a small batch, check indexing and engagement, then expand the patterns that perform well."],["long-tail keywords","Finding long-tail keyword patterns","Programmatic work starts with long-tail keyword patterns, such as a service plus a city or a tool plus an integration. Check that real people search for those combinations, and confirm that you have unique information to publish for each one."],["thin content","Avoiding thin content","Thin content is the main risk in programmatic SEO. If pages differ only by a swapped word, they are unlikely to stay indexed. Add unique data, local detail, images or reviews, and exclude any page that does not have enough real information."],["indexation","Managing indexation on large page sets","Large page sets need careful indexation control. Use hub pages, internal links and clean sitemaps so crawlers can find new pages. Watch Search Console by page group, and remove or improve groups that are crawled but never indexed."]],
+"chatgpt-optimization":[["ChatGPT SEO","What ChatGPT SEO means","ChatGPT SEO is the work of making your brand easier for ChatGPT to find, understand and recommend. It combines crawlable content, clear brand facts and third-party mentions. No one can guarantee a mention, but you can improve your odds with consistent work."],["rank in ChatGPT","Can you rank in ChatGPT?","ChatGPT does not have a fixed ranking like a results page. Answers change by prompt, user and time. Measure how often you appear across a set of buyer prompts, then improve the sources and content that shape those answers."],["ChatGPT recommendations","How to earn ChatGPT recommendations","To earn recommendations, make sure trusted sources describe your business accurately. Reviews, comparison articles, directories and press all matter. Your own site should state clearly who you serve, what you offer and why buyers should choose you."],["OAI-SearchBot","Letting OpenAI crawlers reach your site","Check your robots.txt and firewall so OpenAI's search crawler can reach public pages. OAI-SearchBot supports search features, while GPTBot relates to model training, so you can make separate decisions about each one. Confirm the rules against OpenAI's current documentation."],["ChatGPT citations","Improving your ChatGPT citations","When ChatGPT browses, it tends to cite pages that answer the question directly. Write clear, current pages with specific facts and named authors. Track which of your pages get cited, then apply the same structure to similar topics."]],
+"ai-visibility-tracking":[["AI visibility tracking","What AI visibility tracking measures","AI visibility tracking shows how often your brand appears in AI answers for the prompts that matter. It also records which competitors appear, what is said and which sources are cited. Over time, this becomes a baseline for your GEO work."],["AI share of voice","Measuring AI share of voice","AI share of voice is your share of brand mentions across a defined set of prompts. Keep the prompt set stable so that trends mean something. Compare by engine, topic and market, because your position can differ widely between them."],["LLM monitoring","How LLM monitoring works","LLM monitoring runs prompts on a schedule and stores the responses. Because answers vary from run to run, repeat each prompt and look at patterns rather than single results. Good monitoring flags wrong facts, new competitors and lost citations."],["prompt tracking","Choosing prompts to track","Choose prompts that reflect real buying moments, not only your brand name. Include category questions, comparisons and problem statements. Use sales calls, support tickets and search data to find the words your customers actually use."],["AI referral traffic","Tracking AI referral traffic","AI referral traffic can be tracked in analytics by grouping sources such as chatgpt.com and perplexity.ai. Some visits arrive without a referrer, so the figure is a minimum. Connect these visits to leads to see their real value."]],
+"ai-brand-perception":[["AI brand perception","What AI brand perception means","AI brand perception is how assistants describe your company when buyers ask about it. That can include your strengths, weaknesses, pricing and who you suit. These descriptions shape opinions before a buyer ever visits your website."],["brand sentiment analysis","Brand sentiment analysis in AI answers","Sentiment analysis of AI answers looks at the tone and claims attached to your brand. Compare it with competitors across the same prompts. Look for repeated phrases, because they often point to the sources that are shaping the description."],["AI reputation management","AI reputation management basics","AI reputation management starts with finding which claims are wrong or outdated, then tracing where they come from. Correct your own pages first, then update profiles, reviews and third-party articles. Changes can take time to appear in answers."],["brand entity optimization","Brand entity optimization","An entity is a thing machines can recognize, such as your company. Strengthen yours with consistent names, clear descriptions, Organization schema and links between your official profiles. Clear entity data reduces confusion with similarly named companies."],["AI hallucinations","Dealing with AI hallucinations about your brand","AI systems sometimes state things about a brand that are simply wrong. Document each error, publish a clear correct source and use feedback tools where they exist. Then keep monitoring, because fixes are rarely instant or permanent."]],
+"keyword-research":[["keyword research services","What keyword research services deliver","Keyword research services show what your buyers search for, how hard each topic is to win and what it could be worth. The result should be a prioritized plan rather than a giant spreadsheet. Every keyword group should map to a page and a purpose."],["keyword difficulty","How to read keyword difficulty","Keyword difficulty scores are estimates, and they differ between tools. Look at who actually ranks. If the results are full of major brands with strong pages, plan for a longer effort, or start with a narrower topic you can win sooner."],["search intent mapping","Search intent mapping","Intent mapping sorts keywords by what the searcher wants: to learn, compare or buy. Then each group gets the right page type. This stops several pages competing for the same search and shows which stages of the journey you are missing."],["topic clusters","Building topic clusters","A topic cluster links a broad pillar page to detailed supporting articles. It shows depth on a subject and gives readers a clear route through it. Choose clusters that lead naturally to what you sell, not just topics with high volume."],["AI prompt research","Adding AI prompts to keyword research","Modern research should include the longer questions people ask AI assistants. Mine sales calls, forums and People Also Ask. These prompts often show the detail and comparisons buyers care about, and they can guide both pages and FAQs."]],
+"competitor-analysis":[["competitor analysis services","What competitor analysis services show","Competitor analysis services show where rivals win attention and how they do it. A complete review covers search, paid ads, content, social and AI answers. The useful output is a short list of moves, not a long report that nobody acts on."],["SEO competitor analysis","Running an SEO competitor analysis","Start with the sites that rank for your target searches, which may differ from your business competitors. Compare their keywords, content, links and page speed. Look for valuable topics they cover well and you do not."],["share of voice analysis","Share of voice analysis","Share of voice estimates your portion of visibility in a market. Measured across search, ads and AI answers, it shows whether you are gaining or losing ground. Track it over time, because one month alone tells you very little."],["paid ads competitor research","Researching competitor ads","Public ad libraries show which messages and offers competitors are running. Ads that stay live for a long time may be working. Use them to learn about market positioning, then create your own angle rather than copying theirs."],["content gap analysis","Finding content gaps","A content gap analysis lists topics your competitors cover and you do not. Filter them by business value, not by volume alone. The best gaps are close to a buying decision and match something you can do better."]],
+"enterprise-seo":[["enterprise SEO agency","What an enterprise SEO agency adds","An enterprise SEO agency brings the process needed for large sites and big teams. That includes governance, roadmaps, release checks and reporting that leaders understand. The hardest part is often not finding issues, but getting them prioritized and shipped."],["enterprise SEO strategy","Building an enterprise SEO strategy","An enterprise SEO strategy aligns search work with business lines and product plans. Agree on shared goals, name an owner in each team and tie SEO requirements to the development cycle, so that fixes are built in and not bolted on later."],["large site SEO","Large site SEO challenges","Large sites face crawl waste, duplicate templates and pages that compete with each other. Work at the template level, since one fix can improve thousands of URLs. Monitor log files to see how bots really behave on your site."],["international SEO","International SEO basics","International SEO uses clean URL structures, hreflang tags and proper localization. Translation alone is not enough, because search behavior differs by market. Give local teams clear guardrails, and keep technical standards the same everywhere."],["SEO governance","Why SEO governance matters","SEO governance sets the rules for migrations, templates, content and tagging. Without it, one release can undo months of work. Add automated checks before launch, and agree who approves changes that could affect organic traffic."]],
+"enterprise-geo":[["enterprise GEO","What enterprise GEO involves","Enterprise GEO manages how large organizations appear in AI answers across brands, products and regions. It adds governance, compliance and leadership reporting to standard GEO work. The aim is a consistent, accurate picture of the company everywhere."],["AI governance","AI governance for marketing teams","AI governance sets rules for how teams use and monitor AI tools. For visibility work, it covers approved facts, data privacy, vendor choices and who responds to errors. Clear ownership helps legal, brand and marketing work from the same plan."],["AI visibility strategy","Setting an AI visibility strategy","An AI visibility strategy decides which prompts, products and markets matter most. Start with a baseline audit, then set targets by business unit. Treat it as a continuing program, since models and answers keep changing."],["entity management","Enterprise entity management","Large companies have many brands, products and legal names that can confuse AI systems. Keep one governed source of truth, use consistent schema and align public profiles. This reduces errors when assistants describe your products."],["AI brand risk","Managing AI brand risk","AI answers can repeat outdated pricing, wrong claims or competitor messaging at scale. Monitor sensitive prompts, set escalation paths and report on them regularly. For regulated sectors, include legal and compliance teams from the beginning."]]
+};
+
+/* PARAGRAPH TEXT. Each line is: ["Heading", "target keyword", "your paragraph"].
+   Type your paragraph into the third slot, change any heading or keyword, and add lines to add more paragraphs. Then run: node build.js
+   Empty slots show a writing prompt. Before going live, fill them or set HIDE_EMPTY to true so the prompts are left out of the pages. */
+const HIDE_EMPTY=false;
+const TEXT={
+"seo":[
+["SEO Services: what it is and how it works","SEO agency",""],
+["Why SEO Services matters","SEO company",""],
+["Benefits of SEO Services","organic search strategy",""],
+["Who needs SEO Services","search engine optimization services",""],
+["Signs your business needs SEO Services","SEO consultant",""],
+["How to choose a partner for SEO Services","SEO audit",""],
+["SEO Services pricing factors","organic traffic growth",""],
+["SEO Services timeline","B2B SEO",""],
+["SEO Services best practices","Google ranking",""],
+["Common SEO Services mistakes","SEO management",""],
+["SEO Services compared with the alternatives","monthly SEO",""],
+["Tools used for SEO Services","SEO reporting",""],
+["SEO Services by industry","SEO agency",""],
+["SEO Services for small businesses","SEO company",""],
+["SEO Services for large companies","organic search strategy",""],
+["How to measure SEO Services","search engine optimization services",""],
+["SEO Services trends to watch","SEO consultant",""],
+["SEO Services case study","SEO audit",""],
+["The Beetrix360 approach to SEO Services","organic traffic growth",""],
+["Getting started with SEO Services","B2B SEO",""],
+["SEO agency","SEO agency",""],
+["SEO company","SEO company",""],
+["Organic search strategy","organic search strategy",""],
+["Search engine optimization services","search engine optimization services",""],
+["SEO consultant","SEO consultant",""],
+["SEO audit","SEO audit",""],
+["Organic traffic growth","organic traffic growth",""],
+["B2B SEO","B2B SEO",""],
+["Google ranking","Google ranking",""],
+["SEO management","SEO management",""],
+["Monthly SEO","monthly SEO",""],
+["SEO reporting","SEO reporting",""]
+],
+"local-seo":[
+["Local SEO: what it is and how it works","local SEO agency",""],
+["Why Local SEO matters","Google Business Profile optimization",""],
+["Benefits of Local SEO","Google Maps SEO",""],
+["Who needs Local SEO","map pack ranking",""],
+["Signs your business needs Local SEO","near me searches",""],
+["How to choose a partner for Local SEO","local citations",""],
+["Local SEO pricing factors","NAP consistency",""],
+["Local SEO timeline","multi-location SEO",""],
+["Local SEO best practices","local link building",""],
+["Common Local SEO mistakes","review management",""],
+["Local SEO compared with the alternatives","location pages",""],
+["Tools used for Local SEO","local search ranking",""],
+["Local SEO by industry","local SEO agency",""],
+["Local SEO for small businesses","Google Business Profile optimization",""],
+["Local SEO for large companies","Google Maps SEO",""],
+["How to measure Local SEO","map pack ranking",""],
+["Local SEO trends to watch","near me searches",""],
+["Local SEO case study","local citations",""],
+["The Beetrix360 approach to Local SEO","NAP consistency",""],
+["Getting started with Local SEO","multi-location SEO",""],
+["Local SEO agency","local SEO agency",""],
+["Google Business Profile optimization","Google Business Profile optimization",""],
+["Google Maps SEO","Google Maps SEO",""],
+["Map pack ranking","map pack ranking",""],
+["Near me searches","near me searches",""],
+["Local citations","local citations",""],
+["NAP consistency","NAP consistency",""],
+["Multi-location SEO","multi-location SEO",""],
+["Local link building","local link building",""],
+["Review management","review management",""],
+["Location pages","location pages",""],
+["Local search ranking","local search ranking",""]
+],
+"technical-seo":[
+["Technical SEO: what it is and how it works","technical SEO audit",""],
+["Why Technical SEO matters","site audit",""],
+["Benefits of Technical SEO","crawl budget",""],
+["Who needs Technical SEO","indexing issues",""],
+["Signs your business needs Technical SEO","Core Web Vitals",""],
+["How to choose a partner for Technical SEO","XML sitemap",""],
+["Technical SEO pricing factors","robots.txt",""],
+["Technical SEO timeline","canonical tags",""],
+["Technical SEO best practices","schema markup",""],
+["Common Technical SEO mistakes","JavaScript SEO",""],
+["Technical SEO compared with the alternatives","Next.js SEO",""],
+["Tools used for Technical SEO","site migration SEO",""],
+["Technical SEO by industry","log file analysis",""],
+["Technical SEO for small businesses","technical SEO audit",""],
+["Technical SEO for large companies","site audit",""],
+["How to measure Technical SEO","crawl budget",""],
+["Technical SEO trends to watch","indexing issues",""],
+["Technical SEO case study","Core Web Vitals",""],
+["The Beetrix360 approach to Technical SEO","XML sitemap",""],
+["Getting started with Technical SEO","robots.txt",""],
+["Technical SEO audit","technical SEO audit",""],
+["Site audit","site audit",""],
+["Crawl budget","crawl budget",""],
+["Indexing issues","indexing issues",""],
+["Core Web Vitals","Core Web Vitals",""],
+["XML sitemap","XML sitemap",""],
+["Robots.txt","robots.txt",""],
+["Canonical tags","canonical tags",""],
+["Schema markup","schema markup",""],
+["JavaScript SEO","JavaScript SEO",""],
+["Next.js SEO","Next.js SEO",""],
+["Site migration SEO","site migration SEO",""],
+["Log file analysis","log file analysis",""]
+],
+"on-page-seo":[
+["On-Page SEO: what it is and how it works","on-page optimization",""],
+["Why On-Page SEO matters","title tag optimization",""],
+["Benefits of On-Page SEO","meta descriptions",""],
+["Who needs On-Page SEO","header tags",""],
+["Signs your business needs On-Page SEO","content optimization",""],
+["How to choose a partner for On-Page SEO","internal linking",""],
+["On-Page SEO pricing factors","keyword cannibalization",""],
+["On-Page SEO timeline","search intent",""],
+["On-Page SEO best practices","topical authority",""],
+["Common On-Page SEO mistakes","image alt text",""],
+["On-Page SEO compared with the alternatives","content refresh",""],
+["Tools used for On-Page SEO","SEO copywriting",""],
+["On-Page SEO by industry","on-page optimization",""],
+["On-Page SEO for small businesses","title tag optimization",""],
+["On-Page SEO for large companies","meta descriptions",""],
+["How to measure On-Page SEO","header tags",""],
+["On-Page SEO trends to watch","content optimization",""],
+["On-Page SEO case study","internal linking",""],
+["The Beetrix360 approach to On-Page SEO","keyword cannibalization",""],
+["Getting started with On-Page SEO","search intent",""],
+["On-page optimization","on-page optimization",""],
+["Title tag optimization","title tag optimization",""],
+["Meta descriptions","meta descriptions",""],
+["Header tags","header tags",""],
+["Content optimization","content optimization",""],
+["Internal linking","internal linking",""],
+["Keyword cannibalization","keyword cannibalization",""],
+["Search intent","search intent",""],
+["Topical authority","topical authority",""],
+["Image alt text","image alt text",""],
+["Content refresh","content refresh",""],
+["SEO copywriting","SEO copywriting",""]
+],
+"link-building":[
+["Link Building: what it is and how it works","backlink building",""],
+["Why Link Building matters","white hat link building",""],
+["Benefits of Link Building","digital PR",""],
+["Who needs Link Building","guest posting",""],
+["Signs your business needs Link Building","backlink audit",""],
+["How to choose a partner for Link Building","domain authority",""],
+["Link Building pricing factors","referral domains",""],
+["Link Building timeline","anchor text",""],
+["Link Building best practices","broken link building",""],
+["Common Link Building mistakes","editorial backlinks",""],
+["Link Building compared with the alternatives","link acquisition",""],
+["Tools used for Link Building","brand mentions",""],
+["Link Building by industry","backlink building",""],
+["Link Building for small businesses","white hat link building",""],
+["Link Building for large companies","digital PR",""],
+["How to measure Link Building","guest posting",""],
+["Link Building trends to watch","backlink audit",""],
+["Link Building case study","domain authority",""],
+["The Beetrix360 approach to Link Building","referral domains",""],
+["Getting started with Link Building","anchor text",""],
+["Backlink building","backlink building",""],
+["White hat link building","white hat link building",""],
+["Digital PR","digital PR",""],
+["Guest posting","guest posting",""],
+["Backlink audit","backlink audit",""],
+["Domain authority","domain authority",""],
+["Referral domains","referral domains",""],
+["Anchor text","anchor text",""],
+["Broken link building","broken link building",""],
+["Editorial backlinks","editorial backlinks",""],
+["Link acquisition","link acquisition",""],
+["Brand mentions","brand mentions",""]
+],
+"ecommerce-seo":[
+["Ecommerce SEO: what it is and how it works","Shopify SEO",""],
+["Why Ecommerce SEO matters","WooCommerce SEO",""],
+["Benefits of Ecommerce SEO","category page SEO",""],
+["Who needs Ecommerce SEO","product page optimization",""],
+["Signs your business needs Ecommerce SEO","product schema",""],
+["How to choose a partner for Ecommerce SEO","faceted navigation",""],
+["Ecommerce SEO pricing factors","Google Shopping SEO",""],
+["Ecommerce SEO timeline","online store SEO",""],
+["Ecommerce SEO best practices","Google Merchant Center",""],
+["Common Ecommerce SEO mistakes","AI shopping search",""],
+["Ecommerce SEO compared with the alternatives","product descriptions",""],
+["Tools used for Ecommerce SEO","retail SEO",""],
+["Ecommerce SEO by industry","Shopify SEO",""],
+["Ecommerce SEO for small businesses","WooCommerce SEO",""],
+["Ecommerce SEO for large companies","category page SEO",""],
+["How to measure Ecommerce SEO","product page optimization",""],
+["Ecommerce SEO trends to watch","product schema",""],
+["Ecommerce SEO case study","faceted navigation",""],
+["The Beetrix360 approach to Ecommerce SEO","Google Shopping SEO",""],
+["Getting started with Ecommerce SEO","online store SEO",""],
+["Shopify SEO","Shopify SEO",""],
+["WooCommerce SEO","WooCommerce SEO",""],
+["Category page SEO","category page SEO",""],
+["Product page optimization","product page optimization",""],
+["Product schema","product schema",""],
+["Faceted navigation","faceted navigation",""],
+["Google Shopping SEO","Google Shopping SEO",""],
+["Online store SEO","online store SEO",""],
+["Google Merchant Center","Google Merchant Center",""],
+["AI shopping search","AI shopping search",""],
+["Product descriptions","product descriptions",""],
+["Retail SEO","retail SEO",""]
+],
+"geo":[
+["GEO: what it is and how it works","GEO agency",""],
+["Why GEO matters","LLM optimization",""],
+["Benefits of GEO","LLMO",""],
+["Who needs GEO","AI search optimization",""],
+["Signs your business needs GEO","AI citations",""],
+["How to choose a partner for GEO","AI Overviews optimization",""],
+["GEO pricing factors","Perplexity SEO",""],
+["GEO timeline","Claude visibility",""],
+["GEO best practices","llms.txt",""],
+["Common GEO mistakes","entity SEO",""],
+["GEO compared with the alternatives","AI share of voice",""],
+["Tools used for GEO","generative search",""],
+["GEO by industry","GEO agency",""],
+["GEO for small businesses","LLM optimization",""],
+["GEO for large companies","LLMO",""],
+["How to measure GEO","AI search optimization",""],
+["GEO trends to watch","AI citations",""],
+["GEO case study","AI Overviews optimization",""],
+["The Beetrix360 approach to GEO","Perplexity SEO",""],
+["Getting started with GEO","Claude visibility",""],
+["GEO agency","GEO agency",""],
+["LLM optimization","LLM optimization",""],
+["LLMO","LLMO",""],
+["AI search optimization","AI search optimization",""],
+["AI citations","AI citations",""],
+["AI Overviews optimization","AI Overviews optimization",""],
+["Perplexity SEO","Perplexity SEO",""],
+["Claude visibility","Claude visibility",""],
+["Llms.txt","llms.txt",""],
+["Entity SEO","entity SEO",""],
+["AI share of voice","AI share of voice",""],
+["Generative search","generative search",""]
+],
+"aeo":[
+["AEO: what it is and how it works","AEO agency",""],
+["Why AEO matters","featured snippets",""],
+["Benefits of AEO","People Also Ask",""],
+["Who needs AEO","voice search optimization",""],
+["Signs your business needs AEO","FAQ schema",""],
+["How to choose a partner for AEO","question keywords",""],
+["AEO pricing factors","zero-click search",""],
+["AEO timeline","direct answers",""],
+["AEO best practices","conversational search",""],
+["Common AEO mistakes","Google AI Overviews",""],
+["AEO compared with the alternatives","structured data",""],
+["Tools used for AEO","answer-first content",""],
+["AEO by industry","AEO agency",""],
+["AEO for small businesses","featured snippets",""],
+["AEO for large companies","People Also Ask",""],
+["How to measure AEO","voice search optimization",""],
+["AEO trends to watch","FAQ schema",""],
+["AEO case study","question keywords",""],
+["The Beetrix360 approach to AEO","zero-click search",""],
+["Getting started with AEO","direct answers",""],
+["AEO agency","AEO agency",""],
+["Featured snippets","featured snippets",""],
+["People Also Ask","People Also Ask",""],
+["Voice search optimization","voice search optimization",""],
+["FAQ schema","FAQ schema",""],
+["Question keywords","question keywords",""],
+["Zero-click search","zero-click search",""],
+["Direct answers","direct answers",""],
+["Conversational search","conversational search",""],
+["Google AI Overviews","Google AI Overviews",""],
+["Structured data","structured data",""],
+["Answer-first content","answer-first content",""]
+],
+"programmatic-seo":[
+["Programmatic SEO: what it is and how it works","pSEO",""],
+["Why Programmatic SEO matters","SEO at scale",""],
+["Benefits of Programmatic SEO","long-tail keywords",""],
+["Who needs Programmatic SEO","landing pages at scale",""],
+["Signs your business needs Programmatic SEO","template SEO",""],
+["How to choose a partner for Programmatic SEO","headless CMS SEO",""],
+["Programmatic SEO pricing factors","Next.js SEO",""],
+["Programmatic SEO timeline","data-driven SEO",""],
+["Programmatic SEO best practices","location pages at scale",""],
+["Common Programmatic SEO mistakes","comparison pages",""],
+["Programmatic SEO compared with the alternatives","integration pages",""],
+["Tools used for Programmatic SEO","AI content at scale",""],
+["Programmatic SEO by industry","pSEO",""],
+["Programmatic SEO for small businesses","SEO at scale",""],
+["Programmatic SEO for large companies","long-tail keywords",""],
+["How to measure Programmatic SEO","landing pages at scale",""],
+["Programmatic SEO trends to watch","template SEO",""],
+["Programmatic SEO case study","headless CMS SEO",""],
+["The Beetrix360 approach to Programmatic SEO","Next.js SEO",""],
+["Getting started with Programmatic SEO","data-driven SEO",""],
+["PSEO","pSEO",""],
+["SEO at scale","SEO at scale",""],
+["Long-tail keywords","long-tail keywords",""],
+["Landing pages at scale","landing pages at scale",""],
+["Template SEO","template SEO",""],
+["Headless CMS SEO","headless CMS SEO",""],
+["Next.js SEO","Next.js SEO",""],
+["Data-driven SEO","data-driven SEO",""],
+["Location pages at scale","location pages at scale",""],
+["Comparison pages","comparison pages",""],
+["Integration pages","integration pages",""],
+["AI content at scale","AI content at scale",""]
+],
+"chatgpt-optimization":[
+["ChatGPT Optimization: what it is and how it works","rank in ChatGPT",""],
+["Why ChatGPT Optimization matters","ChatGPT SEO",""],
+["Benefits of ChatGPT Optimization","ChatGPT search",""],
+["Who needs ChatGPT Optimization","OAI-SearchBot",""],
+["Signs your business needs ChatGPT Optimization","GPTBot",""],
+["How to choose a partner for ChatGPT Optimization","ChatGPT recommendations",""],
+["ChatGPT Optimization pricing factors","AI brand mentions",""],
+["ChatGPT Optimization timeline","OpenAI crawler",""],
+["ChatGPT Optimization best practices","SearchGPT",""],
+["Common ChatGPT Optimization mistakes","AI referral traffic",""],
+["ChatGPT Optimization compared with the alternatives","prompt tracking",""],
+["Tools used for ChatGPT Optimization","AI search",""],
+["ChatGPT Optimization by industry","rank in ChatGPT",""],
+["ChatGPT Optimization for small businesses","ChatGPT SEO",""],
+["ChatGPT Optimization for large companies","ChatGPT search",""],
+["How to measure ChatGPT Optimization","OAI-SearchBot",""],
+["ChatGPT Optimization trends to watch","GPTBot",""],
+["ChatGPT Optimization case study","ChatGPT recommendations",""],
+["The Beetrix360 approach to ChatGPT Optimization","AI brand mentions",""],
+["Getting started with ChatGPT Optimization","OpenAI crawler",""],
+["Rank in ChatGPT","rank in ChatGPT",""],
+["ChatGPT SEO","ChatGPT SEO",""],
+["ChatGPT search","ChatGPT search",""],
+["OAI-SearchBot","OAI-SearchBot",""],
+["GPTBot","GPTBot",""],
+["ChatGPT recommendations","ChatGPT recommendations",""],
+["AI brand mentions","AI brand mentions",""],
+["OpenAI crawler","OpenAI crawler",""],
+["SearchGPT","SearchGPT",""],
+["AI referral traffic","AI referral traffic",""],
+["Prompt tracking","prompt tracking",""],
+["AI search","AI search",""]
+],
+"ai-visibility-tracking":[
+["AI Visibility Tracking: what it is and how it works","LLM visibility",""],
+["Why AI Visibility Tracking matters","AI share of voice",""],
+["Benefits of AI Visibility Tracking","AI brand monitoring",""],
+["Who needs AI Visibility Tracking","prompt tracking",""],
+["Signs your business needs AI Visibility Tracking","AI citation tracking",""],
+["How to choose a partner for AI Visibility Tracking","AI rank tracking",""],
+["AI Visibility Tracking pricing factors","AI Overviews tracking",""],
+["AI Visibility Tracking timeline","Perplexity tracking",""],
+["AI Visibility Tracking best practices","generative search analytics",""],
+["Common AI Visibility Tracking mistakes","competitor AI visibility",""],
+["AI Visibility Tracking compared with the alternatives","AI analytics dashboard",""],
+["Tools used for AI Visibility Tracking","AI referral traffic",""],
+["AI Visibility Tracking by industry","LLM visibility",""],
+["AI Visibility Tracking for small businesses","AI share of voice",""],
+["AI Visibility Tracking for large companies","AI brand monitoring",""],
+["How to measure AI Visibility Tracking","prompt tracking",""],
+["AI Visibility Tracking trends to watch","AI citation tracking",""],
+["AI Visibility Tracking case study","AI rank tracking",""],
+["The Beetrix360 approach to AI Visibility Tracking","AI Overviews tracking",""],
+["Getting started with AI Visibility Tracking","Perplexity tracking",""],
+["LLM visibility","LLM visibility",""],
+["AI share of voice","AI share of voice",""],
+["AI brand monitoring","AI brand monitoring",""],
+["Prompt tracking","prompt tracking",""],
+["AI citation tracking","AI citation tracking",""],
+["AI rank tracking","AI rank tracking",""],
+["AI Overviews tracking","AI Overviews tracking",""],
+["Perplexity tracking","Perplexity tracking",""],
+["Generative search analytics","generative search analytics",""],
+["Competitor AI visibility","competitor AI visibility",""],
+["AI analytics dashboard","AI analytics dashboard",""],
+["AI referral traffic","AI referral traffic",""]
+],
+"ai-brand-perception":[
+["AI Brand Perception: what it is and how it works","AI reputation management",""],
+["Why AI Brand Perception matters","brand sentiment in AI",""],
+["Benefits of AI Brand Perception","AI brand audit",""],
+["Who needs AI Brand Perception","LLM brand perception",""],
+["Signs your business needs AI Brand Perception","AI brand monitoring",""],
+["How to choose a partner for AI Brand Perception","entity management",""],
+["AI Brand Perception pricing factors","Knowledge Graph",""],
+["AI Brand Perception timeline","AI misinformation",""],
+["AI Brand Perception best practices","online reputation",""],
+["Common AI Brand Perception mistakes","review strategy",""],
+["AI Brand Perception compared with the alternatives","brand narrative",""],
+["Tools used for AI Brand Perception","AI comparisons",""],
+["AI Brand Perception by industry","AI reputation management",""],
+["AI Brand Perception for small businesses","brand sentiment in AI",""],
+["AI Brand Perception for large companies","AI brand audit",""],
+["How to measure AI Brand Perception","LLM brand perception",""],
+["AI Brand Perception trends to watch","AI brand monitoring",""],
+["AI Brand Perception case study","entity management",""],
+["The Beetrix360 approach to AI Brand Perception","Knowledge Graph",""],
+["Getting started with AI Brand Perception","AI misinformation",""],
+["AI reputation management","AI reputation management",""],
+["Brand sentiment in AI","brand sentiment in AI",""],
+["AI brand audit","AI brand audit",""],
+["LLM brand perception","LLM brand perception",""],
+["AI brand monitoring","AI brand monitoring",""],
+["Entity management","entity management",""],
+["Knowledge Graph","Knowledge Graph",""],
+["AI misinformation","AI misinformation",""],
+["Online reputation","online reputation",""],
+["Review strategy","review strategy",""],
+["Brand narrative","brand narrative",""],
+["AI comparisons","AI comparisons",""]
+],
+"keyword-research":[
+["Keyword Research: what it is and how it works","keyword strategy",""],
+["Why Keyword Research matters","keyword mapping",""],
+["Benefits of Keyword Research","long-tail keywords",""],
+["Who needs Keyword Research","search intent analysis",""],
+["Signs your business needs Keyword Research","keyword gap analysis",""],
+["How to choose a partner for Keyword Research","topic clusters",""],
+["Keyword Research pricing factors","search volume",""],
+["Keyword Research timeline","keyword difficulty",""],
+["Keyword Research best practices","buyer keywords",""],
+["Common Keyword Research mistakes","content strategy",""],
+["Keyword Research compared with the alternatives","semantic keywords",""],
+["Tools used for Keyword Research","SEO content plan",""],
+["Keyword Research by industry","keyword strategy",""],
+["Keyword Research for small businesses","keyword mapping",""],
+["Keyword Research for large companies","long-tail keywords",""],
+["How to measure Keyword Research","search intent analysis",""],
+["Keyword Research trends to watch","keyword gap analysis",""],
+["Keyword Research case study","topic clusters",""],
+["The Beetrix360 approach to Keyword Research","search volume",""],
+["Getting started with Keyword Research","keyword difficulty",""],
+["Keyword strategy","keyword strategy",""],
+["Keyword mapping","keyword mapping",""],
+["Long-tail keywords","long-tail keywords",""],
+["Search intent analysis","search intent analysis",""],
+["Keyword gap analysis","keyword gap analysis",""],
+["Topic clusters","topic clusters",""],
+["Search volume","search volume",""],
+["Keyword difficulty","keyword difficulty",""],
+["Buyer keywords","buyer keywords",""],
+["Content strategy","content strategy",""],
+["Semantic keywords","semantic keywords",""],
+["SEO content plan","SEO content plan",""]
+],
+"competitor-analysis":[
+["Competitor Analysis: what it is and how it works","competitive analysis",""],
+["Why Competitor Analysis matters","SEO competitor analysis",""],
+["Benefits of Competitor Analysis","competitor keywords",""],
+["Who needs Competitor Analysis","competitor backlinks",""],
+["Signs your business needs Competitor Analysis","SWOT analysis",""],
+["How to choose a partner for Competitor Analysis","market share analysis",""],
+["Competitor Analysis pricing factors","competitor ads",""],
+["Competitor Analysis timeline","ad teardown",""],
+["Competitor Analysis best practices","content gap analysis",""],
+["Common Competitor Analysis mistakes","competitive intelligence",""],
+["Competitor Analysis compared with the alternatives","benchmarking",""],
+["Tools used for Competitor Analysis","positioning",""],
+["Competitor Analysis by industry","competitive analysis",""],
+["Competitor Analysis for small businesses","SEO competitor analysis",""],
+["Competitor Analysis for large companies","competitor keywords",""],
+["How to measure Competitor Analysis","competitor backlinks",""],
+["Competitor Analysis trends to watch","SWOT analysis",""],
+["Competitor Analysis case study","market share analysis",""],
+["The Beetrix360 approach to Competitor Analysis","competitor ads",""],
+["Getting started with Competitor Analysis","ad teardown",""],
+["Competitive analysis","competitive analysis",""],
+["SEO competitor analysis","SEO competitor analysis",""],
+["Competitor keywords","competitor keywords",""],
+["Competitor backlinks","competitor backlinks",""],
+["SWOT analysis","SWOT analysis",""],
+["Market share analysis","market share analysis",""],
+["Competitor ads","competitor ads",""],
+["Ad teardown","ad teardown",""],
+["Content gap analysis","content gap analysis",""],
+["Competitive intelligence","competitive intelligence",""],
+["Benchmarking","benchmarking",""],
+["Positioning","positioning",""]
+],
+"enterprise-seo":[
+["Enterprise SEO: what it is and how it works","enterprise SEO agency",""],
+["Why Enterprise SEO matters","large website SEO",""],
+["Benefits of Enterprise SEO","international SEO",""],
+["Who needs Enterprise SEO","hreflang",""],
+["Signs your business needs Enterprise SEO","SEO governance",""],
+["How to choose a partner for Enterprise SEO","SEO at scale",""],
+["Enterprise SEO pricing factors","site migration",""],
+["Enterprise SEO timeline","log file analysis",""],
+["Enterprise SEO best practices","multi-brand SEO",""],
+["Common Enterprise SEO mistakes","SEO automation",""],
+["Enterprise SEO compared with the alternatives","Fortune 500 SEO",""],
+["Tools used for Enterprise SEO","SEO business case",""],
+["Enterprise SEO by industry","enterprise SEO agency",""],
+["Enterprise SEO for small businesses","large website SEO",""],
+["Enterprise SEO for large companies","international SEO",""],
+["How to measure Enterprise SEO","hreflang",""],
+["Enterprise SEO trends to watch","SEO governance",""],
+["Enterprise SEO case study","SEO at scale",""],
+["The Beetrix360 approach to Enterprise SEO","site migration",""],
+["Getting started with Enterprise SEO","log file analysis",""],
+["Enterprise SEO agency","enterprise SEO agency",""],
+["Large website SEO","large website SEO",""],
+["International SEO","international SEO",""],
+["Hreflang","hreflang",""],
+["SEO governance","SEO governance",""],
+["SEO at scale","SEO at scale",""],
+["Site migration","site migration",""],
+["Log file analysis","log file analysis",""],
+["Multi-brand SEO","multi-brand SEO",""],
+["SEO automation","SEO automation",""],
+["Fortune 500 SEO","Fortune 500 SEO",""],
+["SEO business case","SEO business case",""]
+],
+"enterprise-geo":[
+["Enterprise GEO: what it is and how it works","enterprise AI search",""],
+["Why Enterprise GEO matters","AI search strategy",""],
+["Benefits of Enterprise GEO","global GEO",""],
+["Who needs Enterprise GEO","AI governance",""],
+["Signs your business needs Enterprise GEO","entity governance",""],
+["How to choose a partner for Enterprise GEO","brand safety in AI",""],
+["Enterprise GEO pricing factors","self-hosted LLM",""],
+["Enterprise GEO timeline","AI visibility at scale",""],
+["Enterprise GEO best practices","multi-brand GEO",""],
+["Common Enterprise GEO mistakes","AI compliance",""],
+["Enterprise GEO compared with the alternatives","enterprise LLM optimization",""],
+["Tools used for Enterprise GEO","AI risk monitoring",""],
+["Enterprise GEO by industry","enterprise AI search",""],
+["Enterprise GEO for small businesses","AI search strategy",""],
+["Enterprise GEO for large companies","global GEO",""],
+["How to measure Enterprise GEO","AI governance",""],
+["Enterprise GEO trends to watch","entity governance",""],
+["Enterprise GEO case study","brand safety in AI",""],
+["The Beetrix360 approach to Enterprise GEO","self-hosted LLM",""],
+["Getting started with Enterprise GEO","AI visibility at scale",""],
+["Enterprise AI search","enterprise AI search",""],
+["AI search strategy","AI search strategy",""],
+["Global GEO","global GEO",""],
+["AI governance","AI governance",""],
+["Entity governance","entity governance",""],
+["Brand safety in AI","brand safety in AI",""],
+["Self-hosted LLM","self-hosted LLM",""],
+["AI visibility at scale","AI visibility at scale",""],
+["Multi-brand GEO","multi-brand GEO",""],
+["AI compliance","AI compliance",""],
+["Enterprise LLM optimization","enterprise LLM optimization",""],
+["AI risk monitoring","AI risk monitoring",""]
+],
+
+};
+
+/* Extra FAQs, added to every page. Each one is skipped if the page already answers that topic. */
+const FAQ_EXTRA=[
+[/pric|cost|how much/i,n=>"How is pricing set for "+n+"?","Pricing depends on your goals, scope and how much work is needed each month. We scope the work after a free audit, so you get a clear price before anything starts."],
+[/how long|how soon|how quickly|timeline|when will/i,n=>"How soon can we expect results from "+n+"?","It depends on your starting point and market. We share a realistic timeline after the audit, with milestones you can track from the first month."],
+[/who (is|are|should|needs)/i,n=>"Who is "+n+" best for?","It suits businesses that want a clear return from their marketing and growth work. The audit shows whether it is the right next step for you, or whether something else should come first."],
+[/need from|start|begin|first step/i,n=>"What do you need from us to start "+n+"?","A short kickoff call, access to the relevant accounts and your main goals. We send a simple checklist after the audit so nothing is missed."],
+[/measure|report|track|kpi/i,n=>"How do you measure results from "+n+"?","We agree on the numbers that matter before work starts, such as leads, pipeline or revenue. You get plain-language reports that show what changed and what comes next."],
+[/in-house|internal|our team/i,n=>"Can "+n+" work alongside our in-house team?","Yes. We can lead the work, support your team, or hand over what we build with documentation and training."],
+[/guarantee/i,n=>"Do you guarantee results from "+n+"?","No honest partner can promise exact outcomes, because results depend on your market and many outside factors. We do commit to clear goals, transparent reporting and steady work on the highest-value priorities."],
+[/why (choose|beetrix|hire|work)/i,n=>"Why choose Beetrix360 for "+n+"?","We tie the work to leads and revenue, explain it in plain language, and keep strategy and delivery with one team."],
+[/after the (free )?audit/i,()=>"What happens after the free audit?","We share what we found, recommend priorities and send a scoped proposal. There is no obligation to continue."]];
+PAGES.forEach(p=>{if(!p.faq)return;const n=p.short||p.name;FAQ_EXTRA.forEach(x=>{if(!p.faq.some(q=>x[0].test(q[0])))p.faq.push([x[1](n),x[2]])})});
+
+const SITE="https://www.beetrix360.com",TEL="+1 (424) 441-6042";
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const LOGO=c=>`<svg class="${c||""}" viewBox="0 0 100 100" aria-hidden="true"><path fill="#2CB383" d="M12,18 C12,13.5 15.5,10 20,10 L46,10 L46,23 C51,21 56,25 56,30 C56,35 51,39 46,37 L46,48 L35,48 C35,42 29,39 25,42 C21,45 23,48 23,48 L12,48 Z"/><path fill="#DE2056" d="M52,10 L78,10 C82.5,10 86,13.5 86,18 L86,44 L73,44 C73,50 64,50 64,44 L52,44 L52,35 C58,35 58,25 52,25 Z"/><path fill="#3ABEF9" d="M50,52 L64,52 C64,58 73,58 73,52 L86,52 L86,80 C86,84.5 82.5,88 78,88 L50,88 L50,75 C44,75 44,65 50,65 Z"/><path fill="#FAB12F" d="M12,52 L24,52 C24,46 33,46 33,52 L46,52 L46,65 C40,65 40,75 46,75 L46,88 L20,88 C15.5,88 12,84.5 12,80 Z"/></svg>`;
+const ARROW=`<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>`;
+const cta=(l,c)=>`<a class="btn ${c||"pri"}" href="#start"><span>${esc(l)}</span>${ARROW}</a>`;
+/* IMAGES: add real files here, then run build. Key "page-id:slot" for one page, or "slot" for all pages. */
+const IMAGES={};let SLOTN=0;
+function img(p,slot,w,h,what,alt,tag){tag=tag||"figure";const src=IMAGES[p.id+":"+slot]||IMAGES[slot],n=SLOTN++%4;
+if(src)return `<${tag} class="imgs has" style="--ar:${w}/${h}"><img src="${esc(src)}" alt="${esc(alt)}" width="${w}" height="${h}" loading="lazy"></${tag}>`;
+return `<${tag} class="imgs v${n}" style="--ar:${w}/${h}" data-slot="${esc(slot)}" data-alt="${esc(alt)}"><span class="il1">${esc(what)}</span><span class="il2">${w} × ${h}</span></${tag}>`}
+/* Same navigation as beetrix360.com. */
+const C=(h,href,links,wide)=>({h,href,links,wide});
+const NAV=[
+{t:"AI Search & SEO",href:"/seo",cur:1,cols:[C("Search Engine Optimization","/seo",[["Local SEO","/seo/local-seo"],["Technical SEO","/seo/technical-seo"],["On-Page SEO","/seo/on-page-seo"],["Link Building","/seo/link-building"],["Ecommerce SEO","/seo/ecommerce-seo"]]),C("AI Search Visibility","",[["Generative Engine & LLM Optimization (GEO)","/seo/generative-engine-optimization"],["Answer Engine Optimization (AEO)","/seo/answer-engine-optimization"],["Programmatic SEO","/seo/programmatic-seo"],["ChatGPT Optimization","/seo/chatgpt-optimization"],["AI & LLM Visibility Tracking","/seo/ai-visibility-tracking"],["AI Brand Perception","/seo/ai-brand-perception"]]),C("Strategy & Enterprise","",[["Keyword Research","/seo/keyword-research"],["Digital Marketing Competitor Analysis","/digital-marketing/competitor-analysis"],["Enterprise SEO","/seo/enterprise-seo"],["Enterprise GEO","/seo/enterprise-geo"]]),C("Expertise","",[["Our Results","/results"],["Case Studies","/case-studies"],["Our AI Search Approach","/about/our-approach/ai-search"]])],promo:["See our SEO results","Read the case study","/case-studies"],all:["View all in AI Search & SEO","/seo"],extra:[["How Much Does SEO Cost?","/pricing/seo-cost"],["How Much Does Generative Engine Optimization Cost?","/pricing/geo-cost"],["Local SEO Pricing","/pricing/local-seo-pricing"]]},
+{t:"Paid Media",href:"/paid-media",cols:[C("Paid Search & Programmatic","/paid-media",[["Google Ads Management","/paid-media/google-ads"],["Google Local Services Ads Management","/paid-media/google-local-services-ads"],["Programmatic Advertising","/paid-media/programmatic-advertising"],["Enterprise PPC Management","/paid-media/enterprise-ppc"]]),C("Social Advertising","/paid-media/social-media-advertising",[["Meta Ads Management","/paid-media/meta-ads"],["TikTok Ads Management","/paid-media/tiktok-ads"],["Influencer Marketing","/social-media/influencer-marketing"],["Enterprise Social Media Advertising","/paid-media/enterprise-social-advertising"]]),C("Amazon & Retail Marketplaces","/marketplaces",[["Amazon Management Services","/marketplaces/amazon"],["Amazon Advertising Management","/marketplaces/amazon/advertising"],["Amazon SEO & Listing Optimization","/marketplaces/amazon/seo"],["Amazon DSP Management","/marketplaces/amazon/dsp"],["Amazon Seller Operations Management","/marketplaces/amazon/seller-operations"],["Amazon Brand Management","/marketplaces/amazon/brand-management"],["Amazon Creator Connections","/marketplaces/amazon/creator-connections"],["Enterprise Amazon Advertising","/marketplaces/amazon/enterprise-advertising"],["Walmart Marketplace & Ads Management","/marketplaces/walmart"],["Target Plus & Roundel Ads Management","/marketplaces/target"]],1)],promo:["See our paid media results","Read the case study","/case-studies"],all:["View all in Paid Media & Marketplaces","/paid-media"],extra:[["How Much Does PPC Cost?","/pricing/ppc-cost"]]},
+{t:"Brand & Social",href:"/digital-marketing",cols:[C("Brand","/branding",[["Brand Strategy","/branding/brand-strategy"],["Business Naming","/branding/business-naming"],["Brand Identity Design","/branding/brand-identity-design"],["Logo Design","/branding/logo-design"],["Collateral Design","/branding/collateral-design"],["Packaging & Label Design","/branding/packaging-label-design"]]),C("Social Media","/social-media",[["Instagram Management","/social-media/instagram-management"],["Facebook Management","/social-media/facebook-management"],["LinkedIn Management","/social-media/linkedin-management"],["TikTok Account Management","/social-media/tiktok-management"],["Social Media Content & Design","/social-media/content-and-design"],["Community Management","/social-media/community-management"],["Enterprise Social Media Management","/social-media/enterprise-management"]],1),C("Content Marketing","/content-marketing",[["Digital Marketing Services","/digital-marketing"],["Website Copywriting","/content-marketing/website-copywriting"],["Infographics & Motion Graphics","/content-marketing/infographics-motion-graphics"]])],promo:["See brand and social work","View the portfolio","/portfolio"],all:["View all in Brand, Content & Social","/digital-marketing"],extra:[["Social Media Pricing","/pricing/social-media-pricing"]]},
+{t:"AI Content",href:"/ai-content",cols:[C("AI Content Writing","/ai-content/writing",[["AI Blog Writing","/ai-content/writing/blog-writing"],["AI Copywriting","/ai-content/writing/copywriting"],["AI Product Descriptions","/ai-content/writing/product-descriptions"]]),C("AI Video Generation","/ai-content/video",[["AI Avatar Videos","/ai-content/video/avatar-videos"],["AI Explainer & Faceless Videos","/ai-content/video/faceless-videos"],["AI Video Ads","/ai-content/video/video-ads"],["AI Product Videos","/ai-content/video/product-videos"]]),C("AI Image Generation","/ai-content/images",[["AI Product Photography","/ai-content/images/product-photography"],["AI Ad Creatives","/ai-content/images/ad-creatives"],["AI Lifestyle Images","/ai-content/images/lifestyle-images"]]),C("Social, UGC & Enterprise","",[["AI Social Media Content","/ai-content/social-media"],["AI Reels & Shorts","/ai-content/social-media/reels-shorts"],["AI UGC Ads","/ai-content/ugc-ads"],["AI UGC Avatars","/ai-content/ugc-ads/ugc-avatars"],["AI TikTok UGC Ads","/ai-content/ugc-ads/tiktok-ugc-ads"],["Enterprise AI Content","/ai-content/enterprise"]])],promo:["See AI video and ad creative work","View the portfolio","/portfolio"],all:["View all in AI Content","/ai-content"],extra:[]},
+{t:"Web & Conversion",href:"/web-design",cols:[C("Design","/web-design",[["Website Redesign","/web-design/redesign"],["Rapid Web Design","/web-design/rapid-web-design"],["Ecommerce Website Design","/web-design/ecommerce"],["Landing Page Design","/web-design/landing-pages"]]),C("Development","/web-development",[["WordPress Development","/web-development/wordpress"],["Ecommerce Development","/web-development/ecommerce"],["Web Apps & Portals","/web-development/web-applications"],["CMS Development","/web-development/cms"],["Website Security","/web-development/site-security"],["Web Infrastructure & Maintenance","/web-development/maintenance"]]),C("Conversion & Lifecycle","/conversion",[["Sales Funnel Development","/conversion/sales-funnels"],["Lead Generation","/conversion/lead-generation"],["Marketing Automation","/automation/marketing-automation"],["Analytics & Tracking Setup","/conversion/analytics-tracking"],["Website Personalization","/conversion/website-personalization"],["Online Review Generation","/conversion/review-generation"],["Account-Based Marketing","/conversion/account-based-marketing"],["Salesforce Marketing Automation","/automation/salesforce-marketing-automation"],["Channel Partner Pipeline Management","/automation/channel-partner-pipeline"]]),C("Email Marketing","/email-marketing",[["Email Campaign Management","/email-marketing/campaign-management"],["Email Automation","/email-marketing/automation"],["Newsletter Management","/email-marketing/newsletter-management"],["Email Design & Testing","/email-marketing/design-testing"]])],promo:null,all:["View all in Web & Conversion","/web-design"],extra:[["How Much Should a Website Cost?","/pricing/website-cost"]]},
+{t:"AI & Automation",href:"/ai",cols:[C("AI Agents & Chatbots","/ai/agent-development",[["Custom AI Agents","/ai/agent-development/custom-ai-agents"],["AI Sales Agents","/ai/agent-development/ai-sales-agents"],["AI Customer Service Agents","/ai/agent-development/ai-customer-service-agents"],["Multi-Agent Systems","/ai/agent-development/multi-agent-systems"],["AI Chatbot Development","/ai/chatbot-development"],["Website Chatbots","/ai/chatbot-development/website-chatbots"],["WhatsApp Chatbots","/ai/chatbot-development/whatsapp-chatbots"],["Ecommerce Chatbots","/ai/chatbot-development/ecommerce-chatbots"]]),C("Process Automation","/automation",[["Business Process Automation","/automation/business-process-automation"],["Document Processing Automation","/automation/document-processing"],["Data Entry & Sync Automation","/automation/data-entry-automation"],["API & Systems Integration","/automation/api-integration"],["Low-Code & No-Code Automation","/automation/no-code-automation"],["CRM Automation","/automation/crm-automation"]]),C("Integration & Strategy","/ai/integration",[["AI Consulting","/ai/consulting"],["ChatGPT API Integration","/ai/integration/chatgpt-integration"],["CRM AI Integration","/ai/integration/crm-ai-integration"],["AI Software Integration","/ai/integration/ai-software-integration"],["AI Digital Marketing Services","/digital-marketing/ai-digital-marketing"],["Enterprise AI Automation","/ai/enterprise-automation"]])],promo:["See our automation results","Read the case study","/case-studies"],all:["View all in AI & Automation","/ai"],extra:[["How Much Does AI Automation Cost?","/pricing/ai-automation-cost"]]},
+{t:"Company",href:"/about",cols:[C("About Beetrix360","/about",[["Our Approach","/about/our-approach"],["Case Studies","/case-studies"],["Portfolio","/portfolio"],["Careers","/careers"],["Contact","/contact"],["Company Values","/about/values"],["Our History","/about/history"],["Industries","/industries"],["Blog","/blog"]],1),C("Challenges We Solve","",[["My Website Doesn't Drive Leads","/challenges/website-doesnt-drive-leads"],["My Website Traffic Is Going Down","/challenges/website-traffic-going-down"],["My Website Doesn't Convert","/challenges/website-doesnt-convert"],["My Website Isn't Appearing in AI Search","/challenges/not-appearing-in-ai-search"],["My Agency Isn't Driving Results","/challenges/agency-isnt-driving-results"],["My Team Is Buried in Manual Work","/challenges/too-much-manual-work"],["My Ads Spend but Don't Sell","/challenges/ads-spend-but-dont-sell"]],1)],promo:["See client results","Read the case study","/case-studies"],all:["View all in Company","/about"],extra:[]}];
+function navLink(l,p){const x=PAGES.find(y=>y.path===l[1]);return `<a href="${l[1]}"${x?` data-page="${x.id}"`:""}${x&&x.id===p.id?' aria-current="page"':""}>${esc(l[0])}</a>`}
+function siteHeader(p){return `<div class="bx-sp-subbar"><div class="bar" aria-hidden="true"><i id="bar"></i></div></div>`}
+/* Layout concept: the page is a source file. Every section is a labelled element in a numbered gutter, and the People / Machines switch re-renders the whole page the way an AI crawler reads it. */
+const TABS=[["answer","Answer"],["why","Why it matters"],["log","Issues"],["map","What's included"],["score","Self-check"],["plan","Process"],["work","Past work"],["faq","FAQs"],["guide","Guide"]];
+const WORK=[["Tesla Solar","Clean energy","+40%","pre-orders vs. target","ent","Campaign work for a clean energy launch, measured against pre-order targets."],["Microsoft","Enterprise SaaS","+30%","enterprise engagement","ent","Enterprise marketing work measured on engagement."],["Subway","Global QSR","+25%","in-store footfall","ent","Local campaign work measured on in-store visits."],
+["West & Post","Oakville","","Real estate launch","ca","Launch marketing for a residential project in Oakville, Canada."],["Bravo","Vaughan","","Real estate launch","ca","Launch marketing for a residential project in Vaughan, Canada."],["River & Sky","Woodstock","","Real estate launch","ca","Launch marketing for a residential project in Woodstock, Canada."],["Pickering City Centre","Pickering","","Real estate launch","ca","Launch marketing for a development in Pickering, Canada."],
+["Elo 3 by Damac","Dubai","","Real estate launch","ae","Launch marketing for a residential project in Dubai."],["IVY Gardens 2","Dubai","","Real estate launch","ae","Launch marketing for a residential project in Dubai."],["Bay Square","Dubai","","Real estate launch","ae","Launch marketing for a project in Dubai."]];
+const CHECKS=[["Bots can reach your pages","robots.txt and your firewall allow search and AI crawlers."],["Content is in the HTML","Key text appears without waiting for JavaScript."],["The answer comes first","Each page opens with a short, direct answer."],["Headings describe the page","One H1, then H2s that read like an outline."],["Your brand facts match","Name, services and contact details agree everywhere."],["Schema is valid","Organization, Service and FAQPage data pass testing."],["Others mention you","Trusted third-party sites describe what you do."],["Pages show real proof","Named authors, dates, data and customer evidence."]];
+const nm=p=>p.short;
+const pad=n=>String(n).padStart(2,"0");
+let SEC=0;
+const sec=(id,tag,body,c)=>`<section class="s ${c||""}" id="${id}"><div class="gut" aria-hidden="true"><b>${pad(++SEC)}</b><code>&lt;${tag}&gt;</code></div><div class="in">${body}</div></section>`;
+const hd=(e,h,s)=>`<header class="hd"><p class="ey">${esc(e)}</p><h2>${h}</h2>${s?`<p class="sub">${esc(s)}</p>`:""}</header>`;
+const band=(t,l)=>`<aside class="band"><i aria-hidden="true"></i><p>${esc(t)}</p>${cta(l)}</aside>`;
+function allFaq(p){const f=p.faq.slice();if(!f.some(x=>/cost|price|pricing/i.test(x[0])))f.push([`How much do ${p.short} services cost?`,"Cost depends on your site, market and goals. We scope the work after a free audit, so you get a clear price for the work you actually need."]);return f}
+function hero(p){const hub=p.id==="seo";return `<section class="hero" data-hero aria-label="${esc(p.short)}"><div class="hcopy"><div><ol class="crumb"><li><a href="/">Home</a></li>${hub?"":`<li><a href="/seo" data-page="seo">AI Search &amp; SEO</a></li>`}<li aria-current="page">${esc(p.short)}</li></ol><p class="eb">${esc(p.kw)}</p><h1>${esc(p.h1[0])}<br><em>${esc(p.h1[1])} ${esc(p.h1[2])}</em></h1></div><div class="hr"><p>${esc(p.lead)}</p><a class="hot" href="#start">Get my free audit</a></div></div><div class="beltw" data-beltw aria-hidden="true"><div class="belt" data-belt></div><div class="scan"><i></i><b></b></div><div class="badge"><div class="pill"><strong data-num>+0</strong><em data-pct>buying intent</em></div><span>Keywords found</span></div><p class="exn">Example website and numbers. Drag to scrub.</p></div></section>
+<nav class="tabs" aria-label="On this page"><div class="tl">${TABS.map(t=>`<a href="#${t[0]}" data-tb="${t[0]}">${t[1]}</a>`).join("")}</div><div class="vw"><span>View as</span><div class="seg" role="group" aria-label="View this page as"><button data-view="p" aria-pressed="true">People</button><button data-view="m" aria-pressed="false">Machines</button></div></div></nav><div class="mb" data-mb hidden><span>This is close to what an AI crawler keeps from this page.</span><span>HTML <b data-th>0</b> tokens</span><span>Clean text <b data-tt>0</b> tokens</span></div>`}
+function answer(p){return sec("answer",'article id="answer"',`<div class="g ag"><div>${hd("Short answer",`What is ${esc(nm(p))}?`)}<p class="ans">${esc(p.answer)}</p>${cta("Check my site")}</div><div class="ask"><p class="askh">Buyer questions to win</p><div class="qs" role="tablist" aria-label="Buyer questions">${p.q.map((q,i)=>`<button role="tab" data-q="${i}" aria-selected="${i?"false":"true"}">${esc(q)}</button>`).join("")}</div><div class="box"><p class="bq"><span>Prompt</span><b data-qt>${esc(p.q[0])}</b></p><ol class="st" data-st>${[["Can it reach you?","Crawlers load your public pages."],["Can it read you?","Clean HTML, clear structure, plain answers."],["Can it trust you?","Consistent facts and third-party proof."],["Will it cite you?","You become a source for this answer."]].map((x,i)=>`<li style="--i:${i}"><strong>${x[0]}</strong><span>${x[1]}</span></li>`).join("")}</ol><p class="tiny">The four tests your page must pass for this question.</p></div></div></div>`)}
+function why(p){return sec("why",'section id="why"',`${hd("Why it matters",`${esc(p.short)} for the way people search now`)}<div class="g wg"><div class="prose">${p.para.map(x=>`<p>${esc(x)}</p>`).join("")}</div>${img(p,"overview",900,700,"Your team, dashboard or results image",`${p.short} work by Beetrix360`)}</div>`,"alt")}
+function log(p){return sec("log",'pre id="log"',`<div class="term"><div class="tb"><i></i><i></i><i></i><span>audit.log</span></div>${hd("Common issues",`What usually holds ${esc(nm(p))} back`,"Open any line to see how we fix it.")}<ul class="lg">${p.pains.map((x,i)=>`<li><button aria-expanded="${i?"false":"true"}" data-log><span class="lv">WARN</span><span class="m">${esc(x[0])}</span><span class="pl" aria-hidden="true">+</span></button><p${i?" hidden":""}><span class="lv ok">FIX</span>${esc(x[1])}</p></li>`).join("")}</ul></div>`,"dark")+`<div class="bw">${band("Which of these is costing you the most?","Find out for free")}</div>`}
+function map(p){return sec("map",'nav id="map"',`${hd("What's included",`Everything inside ${esc(nm(p))}`,"Pick a branch to see what it covers.")}<div class="g mg"><ul class="tree" role="tablist" aria-label="Included services"><li class="root">/${esc(p.path.split("/").pop())}</li>${p.items.map((x,i)=>`<li><button role="tab" data-it="${i}" aria-selected="${i?"false":"true"}">${esc(x[0])}</button></li>`).join("")}</ul><div class="tp">${p.items.map((x,i)=>`<div data-ip="${i}"${i?" hidden":""}><p class="n">${pad(i+1)} / ${pad(p.items.length)}</p><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p></div>`).join("")}<div class="kwr"><p class="ey">Topics covered</p><ul>${p.kws.map(k=>`<li>${esc(k)}</li>`).join("")}</ul></div></div></div>`)}
+function score(p){return sec("score",'form id="score"',`<div class="g sg"><div>${hd("Self-check","How readable is your site to machines?","Tick what is true today. This is a quick self-check, not a measured score.")}<div class="meter"><p><b data-sc>0</b><span>/ 8</span></p><div class="mt"><i data-sb></i></div><p class="mv" data-sv>Tick the items that apply.</p></div><a class="hot" href="#start">Get a real audit</a></div><ul class="cks">${CHECKS.map((c,i)=>`<li><label><input type="checkbox" data-ck><span><strong>${esc(c[0])}</strong><em>${esc(c[1])}</em></span></label></li>`).join("")}</ul></div>`,"alt")}
+function layers(p){return sec("layers",'details id="layers"',`${hd("In depth",`How we approach ${esc(nm(p))}`)}<div class="ly">${p.deep.map((x,i)=>`<details${i?"":" open"}><summary><span>${pad(i+1)}</span><h3>${esc(x[0])}</h3></summary><p>${esc(x[1])}</p></details>`).join("")}</div>`)}
+function plan(p){return sec("plan",'ol id="plan"',`${hd("Process","From crawl to citation","Four stages, each with a clear output you can review.")}<ol class="pipe" data-pipe>${p.steps.map((x,i)=>`<li><b>${pad(i+1)}</b><p>${esc(x)}</p></li>`).join("")}</ol>`,"alt")}
+function work(p){const K=[["all","All"],["ent","Global brands"],["ca","Canada"],["ae","Dubai"]];return sec("work",'table id="work"',`${hd("Past work","Brands we've worked with","Hover a row to preview its image. Add real project images when ready.")}<div class="fl" role="group" aria-label="Filter past work">${K.map((k,i)=>`<button data-f="${k[0]}" aria-pressed="${i?"false":"true"}">${k[1]}</button>`).join("")}</div><div class="g wkg"><ul class="wk">${WORK.map((w,i)=>`<li data-k="${w[4]}" data-w="${i}"><strong>${esc(w[0])}</strong><span>${esc(w[1])}</span><em>${w[2]?`<b>${esc(w[2])}</b> `:""}${esc(w[3])}</em></li>`).join("")}</ul><div class="wp">${img(p,"work",800,640,"Project image",`Beetrix360 past work`)}<p data-wd>${esc(WORK[0][5])}</p></div></div>`)}
+function ask(p){const f=allFaq(p);return sec("faq",'section id="faq"',`<div class="g fg"><div class="fs">${hd("FAQs",`${esc(nm(p))} questions, answered`)}<label class="sr" for="faq-q">Search these questions</label><input id="faq-q" placeholder="Search questions" autocomplete="off"><p class="tiny" data-faqn>${f.length} questions</p></div><div class="fq">${f.map((x,i)=>`<details data-qa${i?"":" open"}><summary><h3>${esc(x[0])}</h3></summary><p>${esc(x[1])}</p></details>`).join("")}<p data-none hidden>No match. <a href="#start">Ask us directly.</a></p></div></div>`,"alt")}
+function guide(p){const g=SEO[p.id]||[];return sec("guide",'main id="guide"',`${hd("Guide",`The complete guide to ${esc(nm(p))}`,"Plain answers on the topics buyers search for most.")}<div class="g gg"><nav class="gn" aria-label="Guide topics">${g.map((x,i)=>`<a href="#g${i}">${esc(x[0])}</a>`).join("")}</nav><div class="ga">${g.map((x,i)=>`<article id="g${i}" data-kw="${esc(x[0])}"><h3>${esc(x[1])}</h3><p>${esc(x[2])}</p></article>`).join("")}</div></div>${band("Want this applied to your website?","Talk to a specialist")}`)}
+function more(p){const o=PAGES.filter(x=>x.id!==p.id&&x.col===p.col).concat(PAGES.filter(x=>x.id!==p.id&&x.col!==p.col)).slice(0,6);return sec("more",'footer id="more"',`${hd("Related","More from AI Search & SEO")}<div class="rl">${o.map(x=>`<a href="${x.path}" data-page="${x.id}"><strong>${esc(x.short)}</strong><span>${esc(x.kw)}</span>${ARROW}</a>`).join("")}</div>`,"alt")}
+function start(p){return `<section class="final" id="start"><div class="fgr"><div><p class="ey">Free audit</p><h2>See your site the way machines see it.</h2><p class="sub">Send your URL. We'll reply within 1 business day with what's stopping search engines and AI from choosing you.</p><p class="tel"><a href="tel:+14244416042">${TEL}</a></p>${img(p,"team",900,460,"Your team photo","The Beetrix360 team")}</div><form class="fw" data-lead novalidate><label for="f-w">Website<input id="f-w" name="website" required autocomplete="url"></label><div class="two"><label for="f-n">Name<input id="f-n" name="name" required autocomplete="name"></label><label for="f-e">Work email<input id="f-e" name="email" type="email" required autocomplete="email"></label></div><label for="f-m">What's your main goal?<textarea id="f-m" name="notes" rows="4"></textarea></label><button class="hot" type="submit">Get my free audit</button><p class="fmsg" data-msg role="status"></p></form></div></section>`}
+function foot(){return `<div class="dock"><a class="btn pri sm" href="#start"><span>Free site audit</span>${ARROW}</a></div>`}
+/* Paragraph blocks, filled from text-content.js */
+const TXG=["The basics","Choosing the right approach","Doing it well","Results and next steps"];
+function txt(p,i,raw){const a=TEXT[p.id]||[],n=Math.ceil(a.length/4),L=a.slice(i*n,(i+1)*n).filter(x=>x[2]||!HIDE_EMPTY);if(!L.length)return "";const b=`<h2 class="txh">${esc(p.short||p.name)}: ${TXG[i]}</h2><div class="txg">${L.map(x=>`<article class="txa"><h3>${esc(x[0])}</h3>${x[2]?`<p>${esc(x[2])}</p>`:`<p class="txp">Write 80 to 120 words here. Answer the topic in the first sentence, use &ldquo;${esc(x[1])}&rdquo; naturally, and add one real example.</p>`}</article>`).join("")}</div>`;return raw?b:`<section class="txs" aria-label="${TXG[i]}">${b}</section>`}
+function page(p){SLOTN=0;SEC=0;return siteHeader(p)+`<main id="main">`+hero(p)+`<div class="doc">`+answer(p)+why(p)+sec("txt0","section",txt(p,0,1))+log(p)+map(p)+sec("txt1","section",txt(p,1,1))+score(p)+layers(p)+plan(p)+sec("txt2","section",txt(p,2,1))+work(p)+ask(p)+sec("txt3","section",txt(p,3,1))+guide(p)+more(p)+`</div>`+start(p)+`</main>`+foot()}
+function schema(p){const url=SITE+p.path,org={"@type":"Organization","@id":SITE+"/#organization",name:"Beetrix360",alternateName:"Bee Social",url:SITE,logo:SITE+"/logo.svg",foundingDate:"2016",telephone:"+14244416042"};const c=[["Home",SITE+"/"]];if(p.id!=="seo")c.push(["AI Search & SEO",SITE+"/seo"]);c.push([p.short,url]);
+return {"@context":"https://schema.org","@graph":[org,{"@type":"Service","@id":url+"#service",name:p.short,serviceType:p.kw,description:p.desc,url,provider:{"@id":SITE+"/#organization"}},{"@type":"BreadcrumbList",itemListElement:c.map((x,i)=>({"@type":"ListItem",position:i+1,name:x[0],item:x[1]}))},{"@type":"FAQPage",mainEntity:allFaq(p).map(x=>({"@type":"Question",name:x[0],acceptedAnswer:{"@type":"Answer",text:x[1]}}))}]}}
+
+
+  function mountClient(root, pageId, navigate) {
+    let __disposed = false;
+    const __intervals = new Set();
+    const __timeouts = new Set();
+    const __rafs = new Set();
+    const __observers = new Set();
+    const __listeners = [];
+    const __renderers = [];
+
+    const setInterval = (fn, ms) => {
+      if (__disposed) return 0;
+      const id = window.setInterval(fn, ms);
+      __intervals.add(id);
+      return id;
+    };
+    const clearInterval = (id) => {
+      __intervals.delete(id);
+      window.clearInterval(id);
+    };
+    const setTimeout = (fn, ms) => {
+      if (__disposed) return 0;
+      const id = window.setTimeout(() => {
+        __timeouts.delete(id);
+        if (!__disposed) fn();
+      }, ms);
+      __timeouts.add(id);
+      return id;
+    };
+    const clearTimeout = (id) => {
+      __timeouts.delete(id);
+      window.clearTimeout(id);
+    };
+    const requestAnimationFrame = (fn) => {
+      if (__disposed) return 0;
+      const id = window.requestAnimationFrame((ts) => {
+        __rafs.delete(id);
+        if (!__disposed) fn(ts);
+      });
+      __rafs.add(id);
+      return id;
+    };
+    const cancelAnimationFrame = (id) => {
+      __rafs.delete(id);
+      window.cancelAnimationFrame(id);
+    };
+
+    const IntersectionObserver =
+      typeof window !== "undefined" && "IntersectionObserver" in window
+        ? function (cb, opts) {
+            const obs = new window.IntersectionObserver((entries, o) => {
+              if (!__disposed) cb(entries, o);
+            }, opts);
+            __observers.add(obs);
+            return obs;
+          }
+        : undefined;
+
+    const addEventListener = (type, fn, opts) => {
+      if (type === "hashchange") return;
+      window.addEventListener(type, fn, opts);
+      __listeners.push([window, type, fn, opts]);
+    };
+
+    const docElementProxy = {
+      get scrollHeight() {
+        return window.document.documentElement.scrollHeight;
+      },
+      get clientHeight() {
+        return window.document.documentElement.clientHeight;
+      },
+      get clientWidth() {
+        return window.document.documentElement.clientWidth;
+      },
+      get classList() {
+        return root.classList;
+      },
+      get dataset() {
+        return root.dataset;
+      },
+      get animate() {
+        return root.animate ? root.animate.bind(root) : undefined;
+      },
+    };
+
+    const document = {
+      querySelector: (s) => root.querySelector(s),
+      querySelectorAll: (s) => root.querySelectorAll(s),
+      getElementById: (id) => {
+        try {
+          return root.querySelector('[id="' + CSS.escape(id) + '"]') || window.document.getElementById(id);
+        } catch {
+          return window.document.getElementById(id);
+        }
+      },
+      createElement: (tag) => window.document.createElement(tag),
+      addEventListener: (type, fn, opts) => {
+        const target = type === "keydown" ? window : root;
+        target.addEventListener(type, fn, opts);
+        __listeners.push([target, type, fn, opts]);
+      },
+      get readyState() {
+        return "complete";
+      },
+      get fonts() {
+        return window.document.fonts;
+      },
+      get title() {
+        return window.document.title;
+      },
+      set title(v) {
+        window.document.title = v;
+      },
+      body: {
+        append: (...nodes) => root.append(...nodes),
+        appendChild: (node) => root.appendChild(node),
+      },
+      documentElement: docElementProxy,
+    };
+
+    window.BX_PAGE = pageId;
+    window.BX_PREVIEW = false;
+
+    // Ensure clean DOM state before booting (handles React Strict Mode & soft navigation remounts)
+    root.querySelectorAll("#swarm, .bu").forEach((el) => el.remove());
+    root.querySelectorAll(".pend, .wipe").forEach((el) => el.classList.remove("pend", "wipe"));
+    root.classList.remove("intro", "nogl", "pv");
+
+    try {
+      const $=(s,r)=>(r||document).querySelector(s),$$=(s,r)=>[...(r||document).querySelectorAll(s)],reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const IMG=n=>`var(--${n})`,MT=`<svg viewBox="0 0 54 42" aria-hidden="true"><path d="M2 40 19 8l13 24M22 40 37 12l15 28" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const kn=(a,o)=>`<div class="k-nav"><div class="k-l">${MT}<span>Kessler</span></div><div class="k-m">${a.map((x,i)=>`<span${o===i?' class="p"':""}>${x}</span>`).join("")}</div></div>`;
+const PI=["PRODUCTS","IMPACT","ABOUT"];
+const CARDS=[
+{id:"home",n:1284,i:"brand",u:"kessler.co/",c:`<div class="k-bg" style="background-image:${IMG("dunes")}"></div><div class="k-v" style="background:linear-gradient(rgba(10,10,10,.25),transparent 30%,rgba(10,10,10,.55))"></div>${kn(PI)}<div class="k1"><div class="st2"><div><b>200x</b><span>stronger</span></div><div><b>87%</b><span>lower emissions</span></div></div><p>Advanced materials for a stronger tomorrow.</p></div>`,
+h:`<h1>Kessler — Advanced materials</h1>\n<p>Advanced materials for a stronger\ntomorrow. Ceramic-matrix alloys made\nwith desert sand and solar heat.</p>\n<h2>At a glance</h2>\n<ul>\n  <li>Strength: 200x steel by weight</li>\n  <li>Emissions: 87% lower</li>\n  <li>Plants: Nevada, Atacama, Oman</li>\n  <li>Founded: 2019</li>\n</ul>\n<h2>Products</h2>\n<ul>\n  <li>K-Alloy 7 — structural</li>\n  <li>Basalt fibre — tensile</li>\n  <li>Ceramic matrix — thermal</li>\n</ul>\n<a href="/demo">Book a demo</a>`},
+{id:"price",n:642,i:"buying",u:"kessler.co/pricing",cl:"k2",c:`${kn(["PRODUCTS","PRICING","CONTACT"],1)}<div class="pr"><b><sup>$</sup>2,400</b><span>PER MONTH · INDUSTRIAL</span></div><ul class="pl2"><li><span>Pilot</span><span>$299</span></li><li><span>Industrial</span><span>$2,400</span></li><li><span>Foundry</span><span>Custom</span></li></ul><span class="kbtn">Start a pilot</span>`,
+h:`<h1>Kessler — Pricing</h1>\n<p>Three plans for every scale of\nproduction. Start small, scale to\nfull foundry output.</p>\n<h2>Pilot — $299 / mo</h2>\n<ul>\n  <li>Sample batches: 4 / mo</li>\n  <li>Alloy grades: 2</li>\n  <li>Support: email</li>\n</ul>\n<h2>Industrial — $2,400 / mo</h2>\n<ul>\n  <li>Tonnage: up to 40 t / mo</li>\n  <li>Alloy grades: all</li>\n  <li>Certification: ISO 9001</li>\n  <li>Support: dedicated engineer</li>\n</ul>`},
+{id:"case",n:2156,i:"compare",u:"kessler.co/cases/atlas-rail",c:`<div class="k-bg" style="background-image:${IMG("mineral")};filter:blur(1.4cqw) saturate(1.1);transform:scale(1.12)"></div><div class="k-v" style="background:linear-gradient(rgba(10,10,10,.15),rgba(10,10,10,.55))"></div>${kn(PI)}<p class="kk" style="top:17%">CASE STUDY · ATLAS RAIL</p><h4 class="kt">How Atlas Rail cut track weight by a third in eighteen months</h4><div class="s3"><div><b>34%</b><span>lighter track</span></div><div><b>3.4x</b><span>service life</span></div><div><b>0</b><span>unplanned closures</span></div></div>`,
+h:`<h1>Case study: Atlas Rail</h1>\n<p>How Atlas Rail cut track weight by\na third in eighteen months.</p>\n<h2>The challenge</h2>\n<p>1,200 km of desert line, rails\nwarping above 50 °C every summer.</p>\n<h2>The result</h2>\n<ul>\n  <li>34% lighter track sections</li>\n  <li>3.4x longer service life</li>\n  <li>0 unplanned closures in 2025</li>\n</ul>\n<p>"We stopped losing summers."\n— Head of Infrastructure</p>`},
+{id:"vision",n:918,i:"learning",u:"kessler.co/vision",cl:"k4",c:`${kn(["PRODUCTS","VISION","ABOUT"],1)}<div class="tiles"><i style="background-image:${IMG("foundry")}"></i><i style="background-image:${IMG("mesa")}"></i><p>The Kessler vision: <em>materials that outlast the people who made them.</em></p></div><div class="vf"><span>How Kessler pours alloy<br>at the edge of the desert</span><span>Manifesto · 6 min</span></div>`,
+h:`<article>\n<h1>The Kessler vision</h1>\n<p>Materials that outlast the people\nwho made them.</p>\n<p>We build where the sun is\nstrongest and the sand is free:\nthree plants, one closed loop.</p>\n<h2>Principles</h2>\n<ol>\n  <li>Heat from the sun, not gas</li>\n  <li>Sand in, scrap back in</li>\n  <li>Publish every number</li>\n</ol>\n</article>`},
+{id:"alloy",n:1537,i:"buying",u:"kessler.co/products/k-alloy-7",cl:"k5",c:`<div class="k-bg" style="background-image:${IMG("fire")};filter:blur(.6cqw);transform:scale(1.06)"></div><div class="k-v" style="background:linear-gradient(90deg,transparent 45%,rgba(10,10,10,.55))"></div>${kn(PI)}<h4 class="al">The carbon‑negative<br><em>alloy.</em></h4><ul class="sp"><li><span>Product</span><span>K-Alloy 7</span></li><li><span>Tensile</span><span>1,940 MPa</span></li><li><span>Datasheet</span><span>PDF ↗</span></li></ul>`,
+h:`<h1>K-Alloy 7</h1>\n<p>The carbon-negative alloy.</p>\n<h2>Specification</h2>\n<ul>\n  <li>Tensile strength: 1,940 MPa</li>\n  <li>Density: 2.9 g/cm³</li>\n  <li>Max service temp: 1,150 °C</li>\n  <li>CO₂: −0.4 kg per kg made</li>\n</ul>\n<h2>Uses</h2>\n<ul>\n  <li>Rail, bridges, turbine housings</li>\n</ul>\n<a href="/k-alloy-7.pdf">Datasheet</a>`},
+{id:"journal",n:1073,i:"learning",u:"kessler.co/journal",cl:"k6",c:`${kn(["PRODUCTS","JOURNAL","ABOUT"],1)}<h4 class="jt">Journal<br><em>field notes from the flats</em></h4><div class="jp"><div><i style="background-image:${IMG("saltflat")}"></i><span>FIELD NOTES</span><p>Mining nothing but light on the salt flats</p></div><div><i style="background-image:${IMG("mesa")}"></i><span>PLANTS</span><p>Atacama, year one</p></div><div><i style="background-image:${IMG("dunes")}"></i><span>PROCESS</span><p>Why we melt sand at noon</p></div></div>`,
+h:`<h1>Kessler Journal</h1>\n<p>Field notes from the flats.</p>\n<article>\n  <h2>Mining nothing but light</h2>\n  <time>2026-03-14</time>\n</article>\n<article>\n  <h2>Atacama, year one</h2>\n  <time>2026-02-02</time>\n</article>\n<article>\n  <h2>Why we melt sand at noon</h2>\n  <time>2026-01-09</time>\n</article>`}];
+const S={b:null};
+function scanInit(){const b=document.querySelector("[data-belt]");S.b=b;if(!b)return;const f=n=>n.toLocaleString("en-US"),E=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+b.innerHTML=`<div class="codes">${CARDS.map(c=>`<div class="code"><pre class="h">${E(c.h)}</pre><pre class="cm">${E(`<!-- keywords found: ${f(c.n)} -->\n<!-- search intent: ${c.i} -->\n<!-- ${c.u} -->`)}</pre></div>`).join("")}</div><div class="cards">${CARDS.map(c=>`<div class="card ${c.cl||""}">${c.c}</div>`).join("")}</div><canvas class="fx"></canvas>`;
+S.cards=[...b.querySelectorAll(".card")];S.codes=[...b.querySelectorAll(".code")];S.cv=b.querySelector(".fx");S.x=S.cv.getContext("2d");S.num=document.querySelector("[data-num]");S.pct=document.querySelector("[data-pct]");S.w=document.querySelector("[data-beltw]");S.drag=false;S.hoverT=0;S.vel=null;S.shown=0;S.cur=-1;S.spk=[];S.off=null;measure();
+b.addEventListener("pointerenter",()=>S.hoverT=1);b.addEventListener("pointerleave",()=>S.hoverT=0);
+b.addEventListener("pointerdown",e=>{S.drag=true;S.lx=e.clientX;S.lt=performance.now();S.dv=0;b.setPointerCapture(e.pointerId);b.classList.add("gr")});
+b.addEventListener("pointermove",e=>{if(!S.drag)return;const n=performance.now(),dx=e.clientX-S.lx;S.off+=dx;S.dv=dx/Math.max(8,n-S.lt)*1000*.8+S.dv*.2;S.lx=e.clientX;S.lt=n});
+const up=()=>{if(S.drag){S.drag=false;S.vel=S.dv;b.classList.remove("gr")}};b.addEventListener("pointerup",up);b.addEventListener("pointercancel",up);
+b.addEventListener("wheel",e=>{if(Math.abs(e.deltaX)>Math.abs(e.deltaY))S.vel-=e.deltaX*6},{passive:true})}
+function measure(){if(!S.b)return;const w=S.w,W=innerWidth,mob=W<=767,cw=(mob?.84:.46)*W,H=w.clientHeight,ch=mob?.54*W:Math.min(H-120,cw/1.38);w.style.setProperty("--ch",ch+"px");S.cw=cw;S.ch=ch;S.gap=(mob?.07:.0475)*W;S.Lx=W/2;S.R=.016*W;S.dpr=Math.min(devicePixelRatio||1,2);S.bw=S.b.clientWidth;S.bh=S.b.clientHeight;S.cv.width=S.bw*S.dpr;S.cv.height=S.bh*S.dpr;if(S.off===null)S.off=W/2-.62*cw;if(S.vel===null)S.vel=reduce?0:-.075*W}
+const mod=(a,n)=>((a%n)+n)%n;const hash=(a,b,c)=>{let h=(Math.imul(a,374761393)+Math.imul(b,668265263)+Math.imul(c,2147483647))|0;h=Math.imul(h^(h>>>13),1274126177)|0;return((h^(h>>>16))>>>0)/4294967296};
+const PAL=["#DE2056","#DE2056","#FAB12F","#3ABEF9","#2CB383","#fde4ea","#FFFFFF"];
+function fx(i,x,cut,t){const c=S.x,{Lx,cw,ch}=S,top=34,hw=Math.min(150,x+cw-Lx);if(hw>0){const g=c.createLinearGradient(Lx,0,Lx+150,0);g.addColorStop(0,"rgba(222,32,86,.42)");g.addColorStop(1,"rgba(222,32,86,0)");c.fillStyle=g;c.fillRect(Lx,top,hw,ch)}
+const R=.3*cw,rows=Math.floor(ch/3),g0=Math.floor(cut/3),g1=Math.min(Math.ceil(cw/3),Math.ceil((Lx+R-x)/3)),tk=Math.floor(t*9)+97;
+for(let gx=g0;gx<=g1;gx++){const sx=x+gx*3,d=sx-Lx;if(d<-2||d>R)continue;const p=Math.pow(1-Math.max(0,d)/R,1.7);for(let r=-5;r<rows+5;r++){const out=r<0?-r:r>=rows?r-rows+1:0,th=out?p*.16*(1-out/6):p*.92;if(hash(gx,r,i)>=th)continue;if(!reduce&&hash(gx,r,tk)<.22)continue;const h2=hash(r,gx,i+31),k=d<10?5+Math.floor(h2*2):Math.floor(h2*h2*7),s=1.1+h2*1.7,jx=reduce?0:(hash(gx,r,5)-.5)*1.6,jy=reduce?0:(hash(r,gx,7)-.5)*1.6;c.fillStyle=PAL[k];c.fillRect(sx+jx,top+r*3+jy,s,s)}}
+if(!reduce&&hw>0)for(let n=0;n<3;n++)if(Math.random()<.7)S.spk.push({x:Lx+Math.random()*30,y:top-10+Math.random()*(ch+20),vx:-30+Math.random()*70+S.vel*.6,vy:(Math.random()-.5)*50,s:.8+Math.random()*1.8,c:PAL[Math.random()*7|0],l:.3+Math.random()*.8})}
+let last=performance.now(),hov=0;
+function tick(n){requestAnimationFrame(tick);const dt=Math.min(.05,(n-last)/1000);last=n;if(!S.b||!S.b.isConnected)return;const rb=S.w.getBoundingClientRect();if(rb.bottom<0||rb.top>innerHeight)return;const{cw,ch,gap,Lx,R}=S;hov+=(S.hoverT-hov)*Math.min(1,dt*4);const auto=reduce?0:-.075*innerWidth,tgt=auto*(1-.65*hov);if(!S.drag){S.vel+=(tgt-S.vel)*(1-Math.exp(-2.2*dt));S.off+=S.vel*dt}
+const span=cw+gap,per=span*6,t=n/1000;S.x.setTransform(S.dpr,0,0,S.dpr,0,0);S.x.clearRect(0,0,S.bw,S.bh);let act=-1,prog=0;
+S.cards.forEach((c,i)=>{const x=mod(S.off+i*span+span,per)-span,cut=Math.max(0,Math.min(cw,Lx-x)),cd=S.codes[i],T=`translate3d(${x}px,0,0)`;c.style.transform=T;cd.style.transform=T;const hid=cut>=cw;c.style.visibility=hid?"hidden":"visible";
+if(cut>0&&!hid){c.style.clipPath=`inset(0 0 0 ${cut}px round 0 ${R}px ${R}px 0)`;const m=`linear-gradient(90deg,transparent ${cut}px,#000 ${cut+26}px)`;c.style.maskImage=m;c.style.webkitMaskImage=m}else{c.style.clipPath="";c.style.maskImage="";c.style.webkitMaskImage=""}
+cd.style.visibility=cut>0?"visible":"hidden";cd.style.clipPath=`inset(0 ${cw-cut}px 0 0)`;if(cut>0&&x+cw>Lx){act=i;prog=cut/cw;fx(i,x,cut,reduce?0:t)}});
+if(act>=0){const k=CARDS[act],tg=Math.round(k.n*prog);if(act!==S.cur){S.cur=act;S.shown=tg;S.pct.textContent=k.i+" intent"}S.shown+=(tg-S.shown)*Math.min(1,dt*14);S.num.textContent="+"+Math.round(S.shown).toLocaleString("en-US")}
+const c=S.x;S.spk=S.spk.filter(s=>(s.l-=dt)>0);for(const s of S.spk){s.x+=s.vx*dt;s.y+=s.vy*dt;c.globalAlpha=Math.min(1,s.l*2.2);c.fillStyle=s.c;c.fillRect(s.x,s.y,s.s,s.s)}c.globalAlpha=1}
+requestAnimationFrame(tick);addEventListener("resize",measure);
+let cur=window.BX_PAGE||PAGES[0].id,io=null,view="p";
+function closeNav(){$$(".mega.open").forEach(m=>m.classList.remove("open"));$$(".nb[aria-expanded=true]").forEach(b=>b.setAttribute("aria-expanded","false"));$("#nav")?.classList.remove("open");$(".burger")?.setAttribute("aria-expanded","false")}
+function goTo(id){const p=PAGES.find(x=>x.id===id);if(!p)return;cur=id;$("#app").innerHTML=page(p);document.title=p.title;const l=$("#bx-ld");if(l)l.textContent=JSON.stringify(schema(p));boot();scrollTo(0,0)}
+function pick(f){const i=document.createElement("input");i.type="file";i.accept="image/*";i.onchange=()=>{const u=i.files[0]&&URL.createObjectURL(i.files[0]);if(!u)return;const m=new Image();m.src=u;m.alt=f.dataset.alt;f.classList.add("has");f.replaceChildren(m)};i.click()}
+function slots(){if(!window.BX_PREVIEW)return;$$("figure.imgs[data-slot]").forEach(f=>{f.tabIndex=0;f.setAttribute("role","button");f.setAttribute("aria-label","Preview an image here: "+f.dataset.slot);const l=document.createElement("span");l.className="il3";l.textContent="Click to try an image";f.append(l)})}
+function prog(){const h=document.documentElement,x=Math.min(1,scrollY/Math.max(1,h.scrollHeight-innerHeight)),b=$(".bar i");if(b)b.style.transform="scaleX("+x+")";const q=$("[data-pipe]");if(q){const r=q.getBoundingClientRect(),v=Math.max(0,Math.min(1,(innerHeight*.75-r.top)/(r.height+innerHeight*.25)));q.style.setProperty("--p",v);$$("li",q).forEach((l,i,a)=>l.classList.toggle("on",v>=(i+.2)/a.length))}}
+function watch(){if(io)io.disconnect();if(!("IntersectionObserver" in window))return;io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;$$("[data-tb]").forEach(a=>{const o=a.dataset.tb===e.target.id;a.classList.toggle("on",o);if(o&&a.parentNode.scrollWidth>a.parentNode.clientWidth)a.parentNode.scrollLeft=a.offsetLeft-40})}),{rootMargin:"-30% 0px -60% 0px"});$$(".s").forEach(s=>io.observe(s))}
+function setView(v){view=v;document.documentElement.dataset.view=v;$$("[data-view]").forEach(b=>{if(b.tagName==="BUTTON")b.setAttribute("aria-pressed",b.dataset.view===v)});const m=$("[data-mb]");if(!m)return;m.hidden=v!=="m";if(v==="m"){const d=$("#main"),n=x=>Math.round(x/4).toLocaleString("en-US");$("[data-th]").textContent=n(d.innerHTML.length);$("[data-tt]").textContent=n(d.textContent.replace(/\s+/g," ").length)}}
+function runQ(){const s=$("[data-st]");if(!s)return;s.classList.remove("go");void s.offsetWidth;s.classList.add("go")}
+function sc(){const n=$$("[data-ck]:checked").length;$("[data-sc]").textContent=n;$("[data-sb]").style.transform="scaleX("+n/8+")";$("[data-sv]").textContent=n===0?"Tick the items that apply.":n<4?"Machines will struggle to use your site.":n<7?"A solid base, with clear gaps to close.":"Strong foundations. Time to test it properly."}
+function boot(){if(window.BX_PREVIEW)document.documentElement.classList.add("pv");scanInit();slots();prog();watch();setView(view);runQ()}
+addEventListener("scroll",prog,{passive:true});
+document.addEventListener("input",e=>{const t=e.target;if(t.matches("[data-ck]"))sc();if(t.id==="faq-q"){const q=t.value.toLowerCase().trim();let n=0;$$("[data-qa]").forEach(d=>{const m=!q||d.textContent.toLowerCase().includes(q);d.hidden=!m;if(m){n++;if(q)d.open=true}});$("[data-none]").hidden=n>0;$("[data-faqn]").textContent=n+(n===1?" question":" questions")}});
+document.addEventListener("submit",e=>{e.preventDefault();const f=e.target;if(f.matches("[data-url]")){$("#f-w").value=f.d.value;$("#start").scrollIntoView({behavior:reduce?"auto":"smooth"});$("#f-n").focus({preventScroll:true});return}if(!f.matches("[data-lead]"))return;const m=$("[data-msg]");if(!f.checkValidity()){const b=f.querySelector(":invalid");m.textContent="Please complete "+b.labels[0].firstChild.textContent+".";b.focus();return}const ep=window.BX_FORM_ENDPOINT;if(!ep){m.textContent="Preview only: connect BX_FORM_ENDPOINT to receive this lead. Nothing was sent.";return}fetch(ep,{method:"POST",body:new FormData(f)}).then(r=>{if(!r.ok)throw 0;f.reset();m.textContent="You're in. We'll reply within 1 business day."}).catch(()=>{m.textContent="That didn't send. Please call "+TEL+"."})});
+document.addEventListener("click",e=>{const t=e.target,c=s=>t.closest(s);let n;
+if(n=c(".burger")){const o=$("#nav").classList.toggle("open");n.setAttribute("aria-expanded",o);return}
+if(n=c(".nb[aria-controls]")){const m=document.getElementById(n.getAttribute("aria-controls")),o=!m.classList.contains("open");$$(".mega.open").forEach(x=>x.classList.remove("open"));$$(".nb[aria-expanded=true]").forEach(b=>b.setAttribute("aria-expanded","false"));m.classList.toggle("open",o);n.setAttribute("aria-expanded",o);return}
+if(window.BX_PREVIEW&&(n=c("figure.imgs[data-slot]"))){pick(n);return}
+if(n=c("[data-page]")){if(window.BX_PREVIEW){e.preventDefault();location.hash=n.dataset.page}closeNav();return}
+if(n=c("button[data-view]")){setView(n.dataset.view);return}
+if(n=c("[data-q]")){$$("[data-q]").forEach(b=>b.setAttribute("aria-selected",b===n));$("[data-qt]").textContent=n.textContent;runQ();return}
+if(n=c("[data-log]")){const o=n.getAttribute("aria-expanded")!=="true";n.setAttribute("aria-expanded",o);n.nextElementSibling.hidden=!o;return}
+if(n=c("[data-it]")){$$("[data-it]").forEach(b=>b.setAttribute("aria-selected",b===n));$$("[data-ip]").forEach(p=>p.hidden=p.dataset.ip!==n.dataset.it);return}
+if(n=c("[data-f]")){$$("[data-f]").forEach(b=>b.setAttribute("aria-pressed",b===n));const f=n.dataset.f;$$("[data-w]").forEach(k=>{k.hidden=!(f==="all"||k.dataset.k===f)});return}
+if(n=c("[data-w]")){wk(n);return}
+if(!c("#nav"))closeNav();
+if(n=c('a[href^="#"]')){const id=n.getAttribute("href").slice(1),el=document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:reduce?"auto":"smooth"});if(id==="start")$("#f-w")?.focus({preventScroll:true})}return}
+if(window.BX_PREVIEW&&c("a[href^='/']"))e.preventDefault()});
+function wk(n){$$("[data-w]").forEach(x=>x.classList.toggle("on",x===n));$("[data-wd]").textContent=WORK[+n.dataset.w][5]}
+document.addEventListener("mouseover",e=>{const n=e.target.closest&&e.target.closest("[data-w]");if(n)wk(n)});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNav();const f=e.target.closest&&e.target.closest("figure.imgs[data-slot]");if(f&&e.key==="Enter")pick(f)});
+addEventListener("hashchange",()=>{const id=location.hash.slice(1);if(PAGES.some(x=>x.id===id)&&id!==cur)goTo(id)});
+const h=location.hash.slice(1);if(window.BX_PREVIEW&&PAGES.some(x=>x.id===h))goTo(h);else boot();
+
+      
+    } catch (err) {
+      console.error("[ServicePageClient] Error mounting group 01:", err);
+    }
+
+    // Intercept internal Next.js links inside root for smooth SPA navigation
+    const handleInternalLink = (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+      if (!a || !root.contains(a)) return;
+      if (a.target && a.target !== "_self") return;
+      const href = a.getAttribute("href") || "";
+      if (href.startsWith("/") && !href.startsWith("//")) {
+        e.preventDefault();
+        navigate(href);
+      }
+    };
+    root.addEventListener("click", handleInternalLink);
+    __listeners.push([root, "click", handleInternalLink, undefined]);
+
+    return () => {
+      __disposed = true;
+      __intervals.forEach((id) => window.clearInterval(id));
+      __intervals.clear();
+      __timeouts.forEach((id) => window.clearTimeout(id));
+      __timeouts.clear();
+      __rafs.forEach((id) => window.cancelAnimationFrame(id));
+      __rafs.clear();
+      __observers.forEach((obs) => {
+        try { obs.disconnect(); } catch {}
+      });
+      __observers.clear();
+      __listeners.forEach(([t, type, fn, opts]) => {
+        try { t.removeEventListener(type, fn, opts); } catch {}
+      });
+      __listeners.length = 0;
+      __renderers.forEach((r) => {
+        try { if (typeof r.setAnimationLoop === "function") r.setAnimationLoop(null); } catch {}
+        try { r.dispose(); } catch {}
+      });
+      __renderers.length = 0;
+      root.querySelectorAll("#swarm, .bu").forEach((el) => el.remove());
+      root.querySelectorAll(".pend, .wipe").forEach((el) => el.classList.remove("pend", "wipe"));
+      root.classList.remove("intro", "nogl", "pv");
+    };
+  }
+
+  return {
+    PAGES,
+    renderPage: (pageId) => {
+      const p = PAGES.find((x) => x.id === pageId) || PAGES[0];
+      return page(p);
+    },
+    renderSchema: (pageId) => {
+      const p = PAGES.find((x) => x.id === pageId) || PAGES[0];
+      return schema(p);
+    },
+    mountClient,
+  };
+}
+
+export const groupRuntime = createGroupRuntime();

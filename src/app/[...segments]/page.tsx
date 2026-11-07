@@ -9,6 +9,8 @@ import { generatePlaceholderSections } from "@/lib/placeholder-generator";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { SectionRenderer } from "@/components/sections/SectionRenderer";
 import { getSessionUser } from "@/lib/auth";
+import { getServicePageByPath } from "@/lib/service-pages";
+import { buildServicePageMetadata, ServicePageView } from "@/lib/service-pages/ServicePageView";
 
 export const dynamicParams = true;
 
@@ -55,6 +57,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
   const rawPath = "/" + segments.join("/");
+
+  // Check unified service-page templates first
+  const spMeta = buildServicePageMetadata(rawPath);
+  if (spMeta) {
+    return spMeta;
+  }
 
   // Check for redirect first
   const redirect = await getRedirect(rawPath);
@@ -112,6 +120,11 @@ export default async function CatchAllPage({ params }: PageProps) {
     notFound();
   }
   const rawPath = "/" + segments.join("/");
+
+  // 0. If this path is one of the 127 service pages from Beetrix360-Service-Pages, render it directly
+  if (getServicePageByPath(rawPath)) {
+    return <ServicePageView path={rawPath} />;
+  }
 
   // 1. Check for 301/308 redirect
   const redirect = await getRedirect(rawPath);

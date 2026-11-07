@@ -1,0 +1,1437 @@
+// @ts-nocheck
+/* eslint-disable */
+// Auto-generated from Beetrix360-Service-Pages/04-AI-Content/source — DO NOT EDIT MANUALLY
+
+export const GROUP_ID = "04";
+export const SCOPE_CLASS = "bx-sp-04";
+export const FONTS_URL = "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Questrial&family=JetBrains+Mono:wght@500;600;700&display=swap";
+export const SCOPED_CSS = ".bx-sp-04{padding-top:76px;position:relative;overflow-x:clip;display:block}.bx-sp-04 .bx-sp-subbar{position:sticky;top:76px;z-index:44;background:var(--paper,#fff)}\n.bx-sp-04 [hidden]{display:none!important}\n.bx-sp-04{--ink:#0a0a0a;--paper:#fff;--wash:#f8f8f8;--line:#e9e9e9;--mute:#5d5d5d;--mag:#de2056;--magd:#de2056;--cy:#3abef9;--gr:#2cb383;--ye:#fab12f;--mk:#fde0aa;--blue:#3abef9;\n--disp:\"Bricolage Grotesque\",\"Segoe UI\",system-ui,sans-serif;--ser:\"Newsreader\",Georgia,serif;--ui:\"Inter\",system-ui,sans-serif;--mono:\"JetBrains Mono\",ui-monospace,Menlo,monospace;--e:cubic-bezier(.2,.8,.2,1);color-scheme:light}\n.bx-sp-04, .bx-sp-04 *, .bx-sp-04 *::before, .bx-sp-04 *::after{box-sizing:border-box}.bx-sp-04{scroll-behavior:smooth;scroll-padding-top:90px}.bx-sp-04{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--ui);overflow-x:clip;-webkit-font-smoothing:antialiased}\n.bx-sp-04::before{content:\"\";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}\n.bx-sp-04 h1,.bx-sp-04 h2,.bx-sp-04 h3,.bx-sp-04 p{margin:0}.bx-sp-04 a{color:inherit}.bx-sp-04 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}.bx-sp-04 input,.bx-sp-04 textarea{font:inherit;color:var(--ink)}.bx-sp-04 :focus-visible{outline:3px solid var(--cy);outline-offset:2px;border-radius:4px}\n.bx-sp-04 .wrap{padding-left:max(clamp(24px,4vw,72px),env(safe-area-inset-left,0px));padding-right:max(clamp(24px,4vw,72px),env(safe-area-inset-right,0px))}\n.bx-sp-04 .skip{position:absolute;left:-999px}.bx-sp-04 .skip:focus{left:12px;top:12px;z-index:90;background:#fff;padding:8px}.bx-sp-04 .tiny{font-size:13px;color:var(--mute)}\n.bx-sp-04 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border-radius:10px;font:700 15px/1.2 var(--disp);text-decoration:none;position:relative;overflow:hidden;isolation:isolate;transition:transform .2s var(--e)}.bx-sp-04 .btn.sm{padding:9px 15px;font-size:14px}.bx-sp-04 .btn.pri{background:var(--mag);color:#fff}.bx-sp-04 .btn.ghost{box-shadow:inset 0 0 0 1.5px var(--ink)}.bx-sp-04 .btn::before{content:\"\";position:absolute;inset:0;background:var(--ink);transform:translateY(101%);transition:transform .3s var(--e);z-index:-1}.bx-sp-04 .btn.ghost::before{background:var(--mk)}.bx-sp-04 .btn:hover::before{transform:none}.bx-sp-04 .btn:active{transform:scale(.97)}.bx-sp-04 .arr{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s var(--e)}.bx-sp-04 .btn:hover .arr{transform:translateX(4px)}\n.bx-sp-04 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.bx-sp-04 .topin{display:flex;align-items:center;justify-content:space-between;gap:20px;height:70px}.bx-sp-04 .brand{display:flex;gap:8px;align-items:center;text-decoration:none;font:800 20px var(--disp)}.bx-sp-04 .brand b{color:var(--mag)}.bx-sp-04 .mark{width:32px;height:32px}.bx-sp-04 .nav{display:flex;align-items:center;gap:4px}.bx-sp-04 .nb{display:flex;gap:6px;align-items:center;padding:8px 10px;border-radius:9px;font:600 14px var(--disp);text-decoration:none}.bx-sp-04 .nb:hover{background:var(--wash)}.bx-sp-04 .nb.on{background:#fdeaee;color:var(--mag)}.bx-sp-04 .nb svg{width:10px;fill:none;stroke:currentColor;stroke-width:1.8}.bx-sp-04 .nav>.btn{margin-left:10px}.bx-sp-04 .burger{display:none;width:44px;height:44px;flex-direction:column;gap:5px;align-items:center;justify-content:center}.bx-sp-04 .burger i{width:22px;height:2px;background:var(--ink)}\n.bx-sp-04 .mega{position:absolute;left:0;right:0;top:100%;display:none;grid-template-columns:repeat(4,1fr) 230px;gap:22px 28px;padding:26px clamp(24px,4vw,72px);background:#fff;border-bottom:1px solid var(--line);box-shadow:0 30px 50px -30px #0005}.bx-sp-04 .ni.has:hover .mega,.bx-sp-04 .ni.has:focus-within .mega,.bx-sp-04 .mega.open{display:grid}.bx-sp-04 .mcol{display:grid;align-content:start;gap:2px;min-width:0}.bx-sp-04 .mh{font:700 15px var(--disp);padding-bottom:10px;margin:0 0 6px;border-bottom:1px solid var(--line);text-decoration:none}.bx-sp-04 .mcol a:not(.mh){font-size:13.5px;color:var(--mute);text-decoration:none;padding:6px 8px;margin-inline:-8px;border-radius:7px;transition:.15s}.bx-sp-04 .mcol a:not(.mh):hover{background:#fdeaee;color:var(--magd);padding-left:14px}.bx-sp-04 .mcol a[aria-current]{color:var(--mag);font-weight:700}.bx-sp-04 .mpromo{grid-row:span 1;background:var(--ink);color:#fff;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:4px;text-decoration:none}.bx-sp-04 .mpromo strong{font:italic 500 28px/1.1 var(--ser);color:var(--ye)}.bx-sp-04 .mpromo span{font-size:13px;color:#b1b1b1}.bx-sp-04 .mpromo em{margin-top:auto;font:700 13px var(--disp);display:flex;gap:6px;align-items:center;color:#ed7f99}.bx-sp-04 .mfoot{grid-column:1/-1;border-top:1px solid var(--line);padding-top:12px;font-size:13.5px}.bx-sp-04 .mfoot a{text-decoration:none;color:var(--magd);font-weight:600;display:inline-flex;gap:6px;align-items:center}.bx-sp-04 .mfoot .arr{width:15px;height:15px}\n.bx-sp-04 .bar{height:3px}.bx-sp-04 .bar i{display:block;height:100%;background:var(--mag);transform:scaleX(0);transform-origin:left}\n.bx-sp-04 .studio{background:radial-gradient(circle at 1px 1px,#dbdbdb 1px,transparent 1.5px) 0 0/22px 22px;padding-block:48px 56px}.bx-sp-04 .hg{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}.bx-sp-04 .hl{display:grid;gap:20px;min-width:0}.bx-sp-04 .crumb{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0;font:500 12.5px var(--mono);color:var(--mute)}.bx-sp-04 .crumb li+li::before{content:\"/ \";opacity:.5}.bx-sp-04 .crumb a{text-decoration:none}\n.bx-sp-04 h1{font:500 clamp(46px,6vw,112px)/.98 var(--ser);letter-spacing:-.03em;text-wrap:balance}.bx-sp-04 h1 em{font-style:italic;background:linear-gradient(var(--mk),var(--mk)) 0 88%/100% 34% no-repeat;animation:sw 1s .3s var(--e) both}@keyframes sw{from{background-size:0 34%}}.bx-sp-04 .lead{font:500 clamp(26px,2.6vw,42px)/1.2 var(--ser);color:var(--ink);max-width:30ch;letter-spacing:-.01em}.bx-sp-04 .hc{display:flex;flex-wrap:wrap;gap:10px}\n.bx-sp-04 .stu{background:#fff;border:1.5px solid var(--ink);border-radius:16px;box-shadow:10px 10px 0 var(--ink);padding:14px;display:grid;gap:12px;min-width:0}.bx-sp-04 .sh1{display:flex;gap:6px;align-items:center;font:600 12.5px var(--mono)}.bx-sp-04 .sh1 i{width:10px;height:10px;border-radius:50%;background:var(--mag)}.bx-sp-04 .sh1 i:nth-child(2){background:var(--ye)}.bx-sp-04 .sh1 i:nth-child(3){background:var(--gr)}.bx-sp-04 .sh1 b{margin-left:8px}.bx-sp-04 .field{background:var(--wash);border-radius:10px;padding:9px 12px;display:grid;gap:2px}.bx-sp-04 .field span{font:600 10.5px var(--mono);color:var(--mute);text-transform:uppercase}.bx-sp-04 .field p{font:500 14px var(--mono);overflow-wrap:anywhere}.bx-sp-04 .row1{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between}.bx-sp-04 .tones{display:flex;gap:4px;background:var(--wash);padding:4px;border-radius:9px}.bx-sp-04 .tones button{padding:6px 12px;border-radius:6px;font:600 13px var(--disp);transition:.15s}.bx-sp-04 .tones [aria-pressed=true]{background:var(--ink);color:#fff}.bx-sp-04 .go{background:var(--mag);color:#fff;padding:8px 16px;border-radius:9px;font:700 13.5px var(--disp);transition:transform .15s}.bx-sp-04 .go:hover{transform:translateY(-2px)}.bx-sp-04 .out{min-height:260px;background:var(--wash);border-radius:10px;padding:14px;display:grid}.bx-sp-04 .note{font:500 11.5px var(--mono);color:var(--mute);text-align:center}\n.bx-sp-04 .o{display:grid;gap:10px;align-content:start;min-width:0}.bx-sp-04 .doc{background:#fff;padding:18px;border-radius:6px;box-shadow:0 1px 0 var(--line)}.bx-sp-04 .doc small{font:600 11px var(--mono);color:var(--mute)}.bx-sp-04 .doc h3{font:600 23px var(--ser)}.bx-sp-04 .doc p{font:400 18px/1.45 var(--ser);min-height:52px}.bx-sp-04 .ln{height:9px;border-radius:4px;background:var(--line)}.bx-sp-04 .w9{width:92%}.bx-sp-04 .w7{width:68%}.bx-sp-04 .w8{width:82%}\n.bx-sp-04 .frame{aspect-ratio:16/8;display:flex;align-items:flex-end;padding:14px;border-radius:8px;background:linear-gradient(130deg,#0a0a0a,#202020 60%,var(--mag));color:#fff}.bx-sp-04 .frame p{font:700 19px/1.2 var(--disp);min-height:46px}.bx-sp-04 .tl{position:relative;display:grid;grid-template-columns:2fr 3fr 2fr 4fr 2fr;gap:3px;height:28px}.bx-sp-04 .tl i{border-radius:3px}.bx-sp-04 .c1{background:var(--mag)}.bx-sp-04 .c2{background:var(--cy)}.bx-sp-04 .c3{background:var(--ye)}.bx-sp-04 .c4{background:var(--gr)}.bx-sp-04 .c5{background:var(--ink)}.bx-sp-04 .head{position:absolute;top:-4px;bottom:-4px;left:0;width:2px;background:#de2056}.bx-sp-04 .head.run{animation:hd 4s linear infinite}@keyframes hd{to{left:100%}}.bx-sp-04 .tc{display:flex;justify-content:space-between;font:500 11px var(--mono);color:var(--mute)}\n.bx-sp-04 .cv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.bx-sp-04 .cv canvas{width:100%;height:auto;display:block;border-radius:4px;image-rendering:pixelated;background:var(--line);transition:transform .2s}.bx-sp-04 .cv canvas:hover{transform:scale(1.04)}.bx-sp-04 .gen p{font:500 14px/1.35 var(--mono);min-height:40px}\n.bx-sp-04 .soc{justify-items:center}.bx-sp-04 .phone{width:min(240px,100%);background:#fff;border:1.5px solid var(--ink);border-radius:18px;padding:10px;display:grid;gap:8px}.bx-sp-04 .who{display:flex;gap:6px;align-items:center;font-size:13px}.bx-sp-04 .who i{width:22px;height:22px;border-radius:50%;background:var(--mag)}.bx-sp-04 .pic{height:96px;border-radius:8px;background:linear-gradient(120deg,var(--cy),var(--mag),var(--ye))}.bx-sp-04 .phone p{font-size:13.5px;line-height:1.35;min-height:54px}.bx-sp-04 .rx{display:flex;gap:10px}.bx-sp-04 .rx span{transition:transform .2s;cursor:default}.bx-sp-04 .rx span:hover{transform:scale(1.4)}\n.bx-sp-04 .tick{overflow:hidden;background:var(--ink);color:#fff;padding-block:13px}.bx-sp-04 .tick div{display:flex;gap:40px;width:max-content;animation:mq 60s linear infinite;font:italic 400 21px var(--ser)}.bx-sp-04 .tick span::after{content:\"✦\";margin-left:40px;color:var(--ye);font-style:normal}.bx-sp-04 .tick:hover div{animation-play-state:paused}@keyframes mq{to{transform:translateX(-50%)}}\n.bx-sp-04 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding-block:20px;border-bottom:1px solid var(--line)}.bx-sp-04 .stats p{font-size:14px;color:var(--mute)}.bx-sp-04 .stats b{display:block;font:500 34px/1.1 var(--ser);color:var(--ink)}\n.bx-sp-04 .lay{display:grid;grid-template-columns:210px minmax(0,1fr);gap:48px}.bx-sp-04 .rail{position:sticky;top:90px;align-self:start;display:grid;gap:12px;padding-block:44px;max-height:calc(100vh - 90px);overflow:auto}.bx-sp-04 .rail>p{font:600 11.5px var(--mono);color:var(--mute);text-transform:uppercase}.bx-sp-04 .rail nav{display:grid}.bx-sp-04 .rail a[data-r]{position:relative;padding:6px 10px;border-left:2px solid var(--line);font-size:14px;color:var(--mute);text-decoration:none;transition:.2s}.bx-sp-04 .rail a[data-r]:hover{color:var(--ink);padding-left:14px}.bx-sp-04 .rail a.on{border-color:var(--mag);color:var(--ink);font-weight:700;background:#fdeaee}.bx-sp-04 .brief{font-size:13.5px;padding:10px;background:var(--mk);border-radius:8px;display:grid;gap:2px}.bx-sp-04 .brief a{font-weight:700}\n.bx-sp-04 .flow{min-width:0}.bx-sp-04 .s{padding-block:clamp(44px,5vw,76px);border-bottom:1px solid var(--line);display:grid;gap:18px}.bx-sp-04 .s.wash{background:var(--wash);box-shadow:0 0 0 100vmax var(--wash);clip-path:inset(0 -100vmax 0 -4vw)}.bx-sp-04 .s.dk{background:var(--ink);color:#fff;box-shadow:0 0 0 100vmax var(--ink);clip-path:inset(0 -100vmax 0 -4vw)}.bx-sp-04 .s h2{font:500 clamp(34px,4.2vw,68px)/1.04 var(--ser);letter-spacing:-.02em;text-wrap:balance}.bx-sp-04 .sub{font:400 19px/1.45 var(--ser);color:var(--mute);max-width:64ch}.bx-sp-04 .dk .sub{color:#b1b1b1}\n.bx-sp-04 .pr{display:inline-flex;align-items:center;gap:10px;justify-self:start;max-width:100%;padding:6px 14px 6px 6px;background:var(--ink);color:#fff;border-radius:999px}.bx-sp-04 .you{background:var(--mag);padding:2px 8px;border-radius:99px;font:700 11px var(--ui)}.bx-sp-04 .pr code{font:500 13.5px var(--mono);overflow-wrap:anywhere}.bx-sp-04 .dk .pr{background:#fff;color:var(--ink)}.bx-sp-04 .dk .you{color:#fff}\n.bx-sp-04 .art{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,1fr);gap:56px}.bx-sp-04 .body{display:grid;gap:18px;min-width:0}.bx-sp-04 .body p{font:400 20px/1.6 var(--ser);color:#232323}.bx-sp-04 .body h3{font:600 28px/1.15 var(--ser);margin-top:10px}.bx-sp-04 .ans{font-size:23px!important;line-height:1.45!important;padding-left:18px;border-left:4px solid var(--mag)}.bx-sp-04 .dc::first-letter{float:left;font:500 74px/.82 var(--ser);padding:6px 10px 0 0;color:var(--mag)}.bx-sp-04 mark{background:linear-gradient(var(--mk),var(--mk)) 0 90%/100% 40% no-repeat;color:inherit}.bx-sp-04 .side{display:grid;gap:22px;align-content:start;min-width:0}.bx-sp-04 blockquote{margin:0;font:italic 400 31px/1.2 var(--ser)}.bx-sp-04 .tp>p{font:600 12px var(--mono);color:var(--mute);margin-bottom:8px}.bx-sp-04 .chips{display:flex;flex-wrap:wrap;gap:6px}.bx-sp-04 .chip{padding:5px 11px;border-radius:7px;background:var(--wash);font-size:13.5px;transition:.15s var(--e)}.bx-sp-04 .chip:hover{background:var(--mk);transform:translateY(-2px)}.bx-sp-04 .chip[aria-pressed=true]{background:var(--ink);color:#fff}\n.bx-sp-04 .band{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-top:14px}.bx-sp-04 .band p{font:italic 400 24px/1.25 var(--ser);flex:1 1 280px;min-width:0}\n.bx-sp-04 .cmp{position:relative;display:grid;border-radius:14px;overflow:hidden;border:1.5px solid var(--ink);background:#fff}.bx-sp-04 .pane{grid-area:1/1;padding:clamp(22px,3vw,44px);display:grid;gap:10px;align-content:start}.bx-sp-04 .pane small{font:600 12px var(--mono);text-transform:uppercase}.bx-sp-04 .pane p{font:400 clamp(21px,2.3vw,34px)/1.3 var(--ser)}.bx-sp-04 .pane.a{background:#f2f2f2;color:var(--mute)}.bx-sp-04 .pane.b{background:var(--ink);color:#fff;clip-path:inset(0 0 0 var(--p))}.bx-sp-04 .pane.b small{text-align:right;color:var(--ye)}.bx-sp-04 .hd{position:absolute;top:0;bottom:0;left:var(--p);width:3px;margin-left:-1.5px;background:var(--mag)}.bx-sp-04 .hd::after{content:\"⇆\";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--mag);color:#fff}.bx-sp-04 .cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}.bx-sp-04 .pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}\n.bx-sp-04 .fl{display:grid}.bx-sp-04 .fr{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center;width:100%;padding:20px 40px 20px 0;border-top:1px solid var(--line);transition:padding .25s var(--e)}.bx-sp-04 .fr:last-child{border-bottom:1px solid var(--line)}.bx-sp-04 .fr .n{font:500 clamp(23px,2.8vw,40px)/1.1 var(--ser)}.bx-sp-04 .fr .f{font-size:17px;color:var(--mute);opacity:.45;transition:.25s}.bx-sp-04 .fr:hover,.bx-sp-04 .fr.on{padding-left:14px}.bx-sp-04 .fr:hover .f,.bx-sp-04 .fr.on .f{opacity:1;color:var(--ink)}.bx-sp-04 .fr:hover .n,.bx-sp-04 .fr.on .n{color:var(--mag);font-style:italic}.bx-sp-04 .fr i{position:absolute;right:6px;top:50%;width:14px;height:2px;background:var(--ink)}\n.bx-sp-04 .idx{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}.bx-sp-04 .ix{position:relative;display:grid;gap:4px;padding:16px 34px 16px 0;border-top:1px solid #d5d5d5;transition:.2s}.bx-sp-04 .ix b{font:600 23px/1.15 var(--ser)}.bx-sp-04 .ix>span:not(.imgs){color:var(--mute);font-size:15.5px}.bx-sp-04 .ix .imgs{max-height:0;padding:0;opacity:0;border-width:0;transition:max-height .35s var(--e),opacity .25s,margin .3s;aspect-ratio:auto}.bx-sp-04 .ix:hover .imgs,.bx-sp-04 .ix:focus-visible .imgs,.bx-sp-04 .ix[aria-pressed=true] .imgs{max-height:190px;height:190px;opacity:1;margin-top:8px;padding:12px;border-width:1.5px}.bx-sp-04 .ix i{position:absolute;right:4px;top:18px;font:600 22px var(--ui);font-style:normal;transition:transform .2s}.bx-sp-04 .ix[aria-pressed=true] i{transform:rotate(45deg);color:var(--mag)}.bx-sp-04 .ix[aria-pressed=true] b{color:var(--mag)}\n.bx-sp-04 .st{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.bx-sp-04 .stp{display:grid;gap:5px;width:100%;height:100%;align-content:start;padding:10px 10px 16px;border-radius:12px;transition:.2s var(--e)}.bx-sp-04 .stp:hover{background:var(--wash)}.bx-sp-04 .stp.on{background:var(--mk)}.bx-sp-04 .stp small{font:600 11.5px var(--mono);color:var(--mute);margin-top:6px}.bx-sp-04 .stp b{font:500 30px var(--ser)}\n.bx-sp-04 .mg{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:48px;align-items:center}.bx-sp-04 .rgs{display:grid;gap:16px;margin-top:18px}.bx-sp-04 .rg{display:grid;gap:4px;font-weight:600}.bx-sp-04 .rg span{display:flex;justify-content:space-between}.bx-sp-04 .rg output{font:700 15px var(--mono);color:var(--ye)}.bx-sp-04 .rg input{width:100%;accent-color:var(--mag);cursor:pointer}.bx-sp-04 .res{display:grid;gap:12px;background:#fff;color:var(--ink);padding:24px;border-radius:14px}.bx-sp-04 .res div{display:grid}.bx-sp-04 .res small{font:600 11.5px var(--mono);color:var(--mute)}.bx-sp-04 .res b{font:500 clamp(34px,4vw,52px)/1.05 var(--ser)}.bx-sp-04 .res .btn{justify-self:start}\n.bx-sp-04 .filters{display:flex;flex-wrap:wrap;gap:6px}.bx-sp-04 .filters button{padding:6px 14px;border-radius:7px;background:var(--wash);font:600 14px var(--disp)}.bx-sp-04 .filters [aria-pressed=true]{background:var(--ink);color:#fff}.bx-sp-04 .sheet{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.bx-sp-04 .shot{display:grid;gap:3px;align-content:start;padding:8px 8px 14px;background:#fff;box-shadow:0 0 0 1px var(--line);transition:transform .25s var(--e),box-shadow .25s;min-width:0}.bx-sp-04 .shot:nth-child(odd){transform:rotate(-.7deg)}.bx-sp-04 .shot:nth-child(even){transform:rotate(.6deg)}.bx-sp-04 .shot:hover{transform:scale(1.04);box-shadow:0 14px 30px -14px #0006;z-index:2}.bx-sp-04 .shot b{font:600 18px/1.15 var(--ser);margin-top:6px}.bx-sp-04 .shot>span:last-child:not(.imgs){font-size:13px;color:var(--mute)}.bx-sp-04 .shot strong{color:var(--magd)}\n.bx-sp-04 .lb{position:fixed;inset:0;z-index:70;background:#0a0a0ab3;display:grid;place-items:center;padding:16px}.bx-sp-04 .lbc{position:relative;display:grid;gap:12px;width:min(520px,100%);background:#fff;border-radius:16px;padding:28px}.bx-sp-04 .lbc h3{font:500 34px var(--ser)}.bx-sp-04 .lbm{font-size:18px}.bx-sp-04 .x{position:absolute;right:14px;top:8px;font-size:28px}.bx-sp-04 .lbc .btn{justify-self:start}\n.bx-sp-04 .tg{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px;align-items:start}.bx-sp-04 .tg>div{display:grid;gap:16px;justify-items:start}.bx-sp-04 .tr{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 28px}.bx-sp-04 .tr b{display:block;font:600 20px/1.2 var(--ser)}.bx-sp-04 .tr span{font-size:15px;color:var(--mute)}\n.bx-sp-04 .ind{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px}.bx-sp-04 .il{display:grid;align-content:start}.bx-sp-04 .il button{padding:15px 4px;border-top:1px solid var(--line);font:500 24px/1.15 var(--ser);color:var(--mute);transition:.2s}.bx-sp-04 .il button:hover{padding-left:10px;color:var(--ink)}.bx-sp-04 .il [aria-selected=true]{color:var(--mag);font-style:italic}.bx-sp-04 .ip{display:grid;gap:14px;justify-items:start}.bx-sp-04 .pane2{display:none}.bx-sp-04 .ip .pane{display:none;padding:0;background:none;color:inherit;width:100%;gap:12px}.bx-sp-04 .ip .pane.on{display:grid}.bx-sp-04 .ip .pane p{font:400 21px/1.4 var(--ser)}\n.bx-sp-04 .fq{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:44px}.bx-sp-04 .fs{position:sticky;top:96px;align-self:start;display:grid;gap:12px;justify-items:start}.bx-sp-04 .srch{display:grid;gap:4px;width:100%;font-weight:600;font-size:14px}.bx-sp-04 .srch input{padding:11px 13px;border:1.5px solid var(--ink);border-radius:9px;background:#fff;width:100%}\n.bx-sp-04 .chat{display:grid;gap:10px;min-width:0}.bx-sp-04 details{display:grid}.bx-sp-04 summary{list-style:none;cursor:pointer;justify-self:end;max-width:88%;margin-left:auto;width:fit-content;background:var(--ink);color:#fff;padding:9px 15px;border-radius:14px 14px 3px 14px;transition:transform .15s}.bx-sp-04 summary::-webkit-details-marker{display:none}.bx-sp-04 summary:hover{transform:translateX(-4px)}.bx-sp-04 summary h3{font:500 16px/1.3 var(--ui)}.bx-sp-04 .a{display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;margin-top:8px;max-width:90%}.bx-sp-04 .a .mark{width:28px;height:28px}.bx-sp-04 .a p{background:#fff;border:1px solid var(--line);padding:10px 14px;border-radius:14px 14px 14px 3px;font:400 18px/1.45 var(--ser)}.bx-sp-04 .none{padding:12px;background:#fff;border-radius:8px}\n.bx-sp-04 .rel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 18px}.bx-sp-04 .rel a{display:grid;gap:4px;align-content:start;text-decoration:none}.bx-sp-04 .rel small{font:600 11.5px var(--mono);color:var(--magd);margin-top:6px}.bx-sp-04 .rel b{font:500 25px/1.1 var(--ser);background:linear-gradient(var(--mk),var(--mk)) 0 95%/0 40% no-repeat;transition:background-size .3s var(--e);justify-self:start}.bx-sp-04 .rel a:hover b{background-size:100% 40%}.bx-sp-04 .rel span:last-child:not(.imgs){font-size:15px;color:var(--mute)}.bx-sp-04 .rel .imgs{transition:transform .3s var(--e)}.bx-sp-04 .rel a:hover .imgs{transform:translateY(-4px)}\n.bx-sp-04 .final{background:var(--mk);padding-block:clamp(56px,6vw,96px)}.bx-sp-04 .fg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}.bx-sp-04 .eb{font:600 12px var(--mono);text-transform:uppercase}.bx-sp-04 .final h2{font:500 clamp(44px,6vw,96px)/1 var(--ser);letter-spacing:-.02em;margin-top:8px}.bx-sp-04 .final .sub{color:#333333;margin-top:12px}.bx-sp-04 .tel{font:700 19px var(--mono);margin:14px 0;user-select:all}.bx-sp-04 .comp{display:grid;gap:12px;background:#fff;border:1.5px solid var(--ink);box-shadow:10px 10px 0 var(--ink);border-radius:16px;padding:22px}.bx-sp-04 .comp label{display:grid;gap:4px;font-weight:600;font-size:14px;min-width:0}.bx-sp-04 .comp input,.bx-sp-04 .comp textarea{width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:9px;background:#fff}.bx-sp-04 .comp textarea{font:400 18px/1.4 var(--ser);resize:vertical}.bx-sp-04 .comp input:focus,.bx-sp-04 .comp textarea:focus{border-color:var(--mag);outline:0}.bx-sp-04 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.bx-sp-04 .fmsg{font-size:14px;font-weight:600;color:var(--magd);min-height:20px}\n.bx-sp-04 .foot{background:var(--ink);color:#b1b1b1;padding-block:40px 22px;font-size:14px}.bx-sp-04 .ft{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}.bx-sp-04 .foot nav{display:grid;gap:6px;align-content:start}.bx-sp-04 .foot a{text-decoration:none}.bx-sp-04 .foot nav a:hover{color:#fff}.bx-sp-04 .brand.inv{color:#fff;margin-bottom:8px}.bx-sp-04 .copy{margin-top:20px;font-size:12.5px}.bx-sp-04 .dock{display:none;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:#ffffffee;border-top:1px solid var(--line)}.bx-sp-04 .dock .btn{width:100%}\n.bx-sp-04 .imgs{--c:var(--cy);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:100%;max-width:100%;aspect-ratio:var(--ar);margin:0;padding:10px;border-radius:8px;overflow:hidden;text-align:center;color:var(--mute);border:1.5px dashed color-mix(in srgb,var(--c) 70%,#797979);background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 13%,transparent) 0 10px,color-mix(in srgb,var(--c) 4%,transparent) 10px 20px)}.bx-sp-04 .imgs.v1{--c:var(--mag)}.bx-sp-04 .imgs.v2{--c:var(--gr)}.bx-sp-04 .imgs.v3{--c:var(--ye)}.bx-sp-04 figure.imgs[data-slot]{cursor:pointer}.bx-sp-04 figure.imgs[data-slot]:hover{border-style:solid}.bx-sp-04 .imgs.has{padding:0;border:0;background:none}.bx-sp-04 .imgs img{width:100%;height:100%;object-fit:cover;display:block}.bx-sp-04 .il1{font:600 13px/1.25 var(--disp);max-width:30ch;color:var(--ink)}.bx-sp-04 .il2{font:500 11px var(--mono)}.bx-sp-04 .il3{position:absolute;inset:auto 0 0;padding:4px;font:600 11px var(--mono);background:var(--ink);color:#fff;transform:translateY(100%);transition:transform .2s}.bx-sp-04 figure.imgs:hover .il3,.bx-sp-04 figure.imgs:focus .il3{transform:none}\n@media(max-width:1280px){.bx-sp-04 .nav>.btn{margin:8px 0 0}.bx-sp-04 .mega{position:static;box-shadow:none;border:0;padding:10px 0;grid-template-columns:repeat(2,minmax(0,1fr))}.bx-sp-04 .ni.has:hover .mega,.bx-sp-04 .ni.has:focus-within .mega{display:none}.bx-sp-04 .ni.has .mega.open{display:grid}.bx-sp-04 .nb{justify-content:space-between;width:100%}}\n@media(max-width:1100px){.bx-sp-04 .hg,.bx-sp-04 .art,.bx-sp-04 .mg,.bx-sp-04 .tg,.bx-sp-04 .fq,.bx-sp-04 .fg,.bx-sp-04 .ind{grid-template-columns:minmax(0,1fr)}.bx-sp-04 .lay{grid-template-columns:minmax(0,1fr);gap:0}.bx-sp-04 .rail{display:none}.bx-sp-04 .fs{position:static}.bx-sp-04 .sheet{grid-template-columns:repeat(3,minmax(0,1fr))}.bx-sp-04 .st{grid-template-columns:repeat(2,minmax(0,1fr))}.bx-sp-04 .stu{box-shadow:6px 6px 0 var(--ink)}.bx-sp-04 .s.wash,.bx-sp-04 .s.dk{clip-path:inset(0 -100vmax)}}\n@media(max-width:760px){.bx-sp-04 .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.bx-sp-04 .mega,.bx-sp-04 .pair,.bx-sp-04 .idx,.bx-sp-04 .st,.bx-sp-04 .rel,.bx-sp-04 .tr,.bx-sp-04 .ft,.bx-sp-04 .two{grid-template-columns:minmax(0,1fr)}.bx-sp-04 .sheet{grid-template-columns:repeat(2,minmax(0,1fr))}.bx-sp-04 .stats{grid-template-columns:repeat(2,minmax(0,1fr))}.bx-sp-04 .fr{grid-template-columns:minmax(0,1fr);gap:6px}.bx-sp-04 .fr .f{opacity:1}.bx-sp-04 .ix .imgs{max-height:none;height:150px;opacity:1;margin-top:8px;padding:10px;border-width:1.5px}.bx-sp-04 .dock{display:block}.bx-sp-04 .foot{padding-bottom:86px}.bx-sp-04 .hc .btn,.bx-sp-04 .band .btn{width:100%}.bx-sp-04 .body p{font-size:19px}.bx-sp-04 .dc::first-letter{font-size:60px}.bx-sp-04 .lead{font-size:26px}}\n@media(prefers-reduced-motion:reduce){.bx-sp-04, .bx-sp-04 *, .bx-sp-04 *::before, .bx-sp-04 *::after,.bx-sp-04::before, .bx-sp-04 *::before,.bx-sp-04::after, .bx-sp-04 *::after{animation:none!important;transition:none!important}.bx-sp-04{scroll-behavior:auto}}\n\n\n.bx-sp-04{--white:#fff;--orange:#de2056;--dark:#151515}\n.bx-sp-04 .hero{position:relative;height:100vh;height:100svh;min-height:540px;overflow:hidden;isolation:isolate;background:#de2056 center/cover no-repeat}\n.bx-sp-04 .hero__video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover}.bx-sp-04 .hero__shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(31,31,31,.38) 0%,rgba(31,31,31,.12) 28%,rgba(0,0,0,0) 50%),linear-gradient(180deg,rgba(20,20,20,.18) 0%,rgba(0,0,0,0) 16%)}\n.bx-sp-04 #fox{position:absolute;inset:0;z-index:2;width:100%;height:100%;display:block;opacity:0;transition:opacity 1.2s ease}.bx-sp-04 #fox.is-ready{opacity:1}\n.bx-sp-04 .headline{position:absolute;left:clamp(18px,4vw,72px);top:46%;z-index:5;margin:0;font:400 clamp(30px,2.95vw,44px)/1.04 \"Questrial\",var(--ui);letter-spacing:-.005em;color:#fff;text-shadow:0 2px 18px rgba(36,36,36,.25)}\n.bx-sp-04 .headline span{display:block;width:max-content;max-width:calc(100vw - 36px);opacity:0;transform:translateY(14px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}.bx-sp-04 .headline span:nth-child(1){animation-delay:.25s}.bx-sp-04 .headline span:nth-child(2){animation-delay:.35s}.bx-sp-04 .headline span:nth-child(3){animation-delay:.45s}.bx-sp-04 .headline span:nth-child(4){animation-delay:.55s}.bx-sp-04 .headline .u{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}.bx-sp-04 .headline .indent{margin-left:3.5em}\n@keyframes rise{to{opacity:1;transform:none}}\n.bx-sp-04 .hero{height:calc(100vh - 76px);height:calc(100svh - 76px)}\n.bx-sp-04 .mega{grid-template-columns:repeat(var(--n),minmax(0,1fr)) 220px}.bx-sp-04 .mega:not(:has(.mpromo)){grid-template-columns:repeat(var(--n),minmax(0,1fr))}.bx-sp-04 .mcol.wide{grid-column:span 2}.bx-sp-04 .m2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 16px;grid-auto-flow:column;grid-template-rows:repeat(5,auto)}.bx-sp-04 .m2 a{font-size:13.5px;color:var(--mute);text-decoration:none;padding:6px 8px;margin-inline:-8px;border-radius:7px;transition:.15s}.bx-sp-04 .m2 a:hover{background:#fdeaee;color:var(--magd);padding-left:14px}.bx-sp-04 .m2 a[aria-current]{color:var(--mag);font-weight:700}.bx-sp-04 .mh span{opacity:.5}\n.bx-sp-04 .mpromo strong{font-size:23px}.bx-sp-04 .mfoot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 18px}.bx-sp-04 .mfoot span{display:flex;flex-wrap:wrap;gap:6px 18px}.bx-sp-04 .mfoot span a{color:var(--mute);font-weight:400}.bx-sp-04 .nb[aria-expanded=true]{background:var(--wash)}.bx-sp-04 .nav .nb{white-space:nowrap}\n@media(max-width:1280px){.bx-sp-04 .burger{display:flex}.bx-sp-04 .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;background:#fff;padding:12px 24px 18px;border-bottom:1px solid var(--line);max-height:calc(100vh - 80px);overflow:auto}.bx-sp-04 .nav.open{display:flex}.bx-sp-04 .mega,.bx-sp-04 .mega:not(:has(.mpromo)){grid-template-columns:repeat(2,minmax(0,1fr))}.bx-sp-04 .mcol.wide{grid-column:auto}.bx-sp-04 .m2{grid-auto-flow:row;grid-template-columns:minmax(0,1fr);grid-template-rows:none}.bx-sp-04 .mpromo{display:none}}\n@media(max-width:720px){.bx-sp-04 .headline{top:auto;bottom:80px;left:16px;font-size:34px}.bx-sp-04 .mega,.bx-sp-04 .mega:not(:has(.mpromo)){grid-template-columns:minmax(0,1fr)}}\n@media(prefers-reduced-motion:reduce){.bx-sp-04 .headline span{animation:none;opacity:1;transform:none}}\n\n\n.bx-sp-04 .txs{padding:clamp(40px,5vw,72px) clamp(20px,4vw,72px);background:#fff;color:#0a0a0a;position:relative;z-index:1}.bx-sp-04 .flow>.txs,.bx-sp-04 .pipe>.txs{padding-inline:0;background:none}.bx-sp-04 .txh{margin:0 0 clamp(18px,2.4vw,30px)!important;font-size:clamp(24px,2.6vw,38px)!important;line-height:1.12!important;letter-spacing:-.02em;color:#0a0a0a;text-transform:none!important}.bx-sp-04 .txg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(20px,2.4vw,34px)}.bx-sp-04 .txa{min-width:0;padding-left:14px;border-left:2px solid #de2056}.bx-sp-04 .txa:nth-child(4n+2){border-color:#fab12f}.bx-sp-04 .txa:nth-child(4n+3){border-color:#3abef9}.bx-sp-04 .txa:nth-child(4n){border-color:#2cb383}.bx-sp-04 .txa h3{margin:0 0 6px!important;font-size:18px!important;line-height:1.28!important;font-weight:600!important;letter-spacing:-.005em;color:#0a0a0a;text-transform:none!important}.bx-sp-04 .txa p{margin:0;font-size:15.5px;line-height:1.6;color:#2b2b2b}.bx-sp-04 .txa .txp{color:#6b6b6b;font-style:italic}\n";
+
+function createGroupRuntime() {
+const PAGES=[
+{id:"ai-content",path:"/ai-content",col:"video",hub:1,name:"AI Content",short:"AI Content",kw:"AI content services",what:"AI content creation",
+title:"AI Content Creation Services | Beetrix360",desc:"AI content services for writing, video, images and UGC-style ads, produced with AI and edited by people who know your brand.",
+h1:["AI content that sounds like","your brand,","not like everyone's AI"],
+lead:"Beetrix360 uses AI to produce writing, video, images and social content at speed, then puts every piece through human editors, brand checks and fact checks.",
+answer:"AI content creation is the use of generative AI tools to help produce written, visual and video content. The best results come from pairing AI speed with human strategy, editing and fact checking, so the content stays accurate and on brand.",
+q:["Make 30 days of content for our launch","Turn this webinar into ten assets","Write in our brand voice"],
+s:["Stop publishing filler. Start shipping content people remember.","Good content starts with listening. Here's what your customers told us.","The data is clear: specific, expert content outperforms generic output."],
+raw:"In today's fast-paced digital world, content is king. Our innovative AI solutions can help your business unlock its full potential.",
+refined:"Your team has 40 ideas and time for four. We turn the best ones into finished articles, videos and ads, checked by editors before anything goes live.",
+para:["Anyone can type a prompt now, so generic output is everywhere. What sets good AI content apart is what goes in and what happens after: your real expertise, a clear brief, and an editor who removes anything untrue or dull.",
+"We build a production system around your brand. Voice guides, product facts and approved examples shape the output, while people check each piece. You get more content without lowering the standard."],
+deep:[["Where AI helps most","AI is strong at first drafts, variations, repurposing and visual concepts. Strategy, original insight and final judgment stay with people."],
+["Quality, rights and disclosure","We review accuracy, check tool licensing and follow platform rules for labeling AI-generated media."]],
+kws:["AI content agency","generative AI content","AI writing","AI video production","AI image generation","AI marketing content","content at scale","AI content strategy","brand voice AI","human-edited AI","content repurposing","AI creative"],
+pains:[["Your AI content all sounds the same","Voice guides and editors bring back your personality."],["Facts slip through","Every claim is checked before publishing."],["Your team can't keep up","A production system adds capacity."],["Legal worries about AI","We review rights and disclosure rules."]],
+items:[["AI content strategy","Where AI helps and where people should lead."],["Brand voice system","Guides that keep every output on brand."],["AI writing","Articles, copy and product content."],["AI video","Avatars, explainers and ads."],["AI images","Product, ad and lifestyle visuals."],["Human review","Editing, fact checks and approvals."]],
+steps:["Audit your content and capture your voice.","Build prompts, templates and workflows.","Produce the first content batch.","Scale what performs and refine the system."],
+faq:[["What is AI content creation?","It's using generative AI to help produce text, images and video, usually with people guiding and editing the work."],["Is AI content bad for SEO?","Not by itself. Search engines care about helpfulness and quality. Thin, unedited content is the real risk."],["Will AI content sound like us?","It can, when trained on your voice guide and examples and reviewed by editors."],["Who owns AI-generated content?","Rights vary by country and tool. We review terms and advise you to confirm important uses with counsel."],["Do you use AI for everything?","No. We use it where it improves speed or quality, and people lead strategy and final review."],["Which AI tools do you use?","We choose tools by task, brand needs and licensing, and privacy-first options are available."]]},
+
+{id:"ai-writing",path:"/ai-content/writing",col:"writing",hub:1,name:"AI Content Writing",short:"AI Content Writing",kw:"AI content writing services",what:"AI content writing",
+title:"AI Content Writing Services | Beetrix360",desc:"AI content writing with human editors: blogs, copy and product content in your brand voice, fact checked and ready to publish.",
+h1:["AI content writing with","a real editor","on every word"],
+lead:"We combine AI drafting with human strategy and editing to produce articles, website copy and product content that read like your best writer on a great day.",
+answer:"AI content writing is the use of language models to help research, outline and draft written content. Human writers then add expertise, verify facts and edit the text so it matches the brand's voice.",
+q:["Draft a guide from our sales calls","Rewrite this page in our voice","Outline ten articles on our topic"],
+s:["Your blog isn't boring because of AI. It's boring because nobody had an opinion.","Let's start with the question your customers ask most.","Three findings from your sales calls should shape this article."],
+raw:"Content writing is very important for businesses because it helps them to connect with their target audience in a meaningful way.",
+refined:"Your sales team answers the same five questions every week. We turn those answers into articles your buyers can find before they ever call.",
+para:["AI can write a thousand words in seconds, but it can't interview your engineer or know what your customers complained about last week. We start with that source material, because it's what makes content worth reading.",
+"Our process uses AI where it saves time, such as research summaries, outlines and first drafts. Then editors rewrite for voice, add examples and check every claim against real sources."],
+deep:[["Prompting from your own knowledge","We build reference files from your interviews, product docs and past work, so drafts begin with your facts."],
+["Editing out the AI tone","Editors remove stock phrases, vague claims and repetitive structure, so the writing feels human."]],
+kws:["AI writer","AI article writing","AI copy","human-edited AI content","SEO content writing","AI blog posts","content editing","brand voice","fact checking","AI drafting","long-form content","content writing agency"],
+pains:[["Drafts sound robotic","Editors rewrite for rhythm and personality."],["Articles say nothing new","Interviews add real insight."],["Facts can't be trusted","Each claim is verified."],["Writers are stretched thin","AI speeds up the first draft."]],
+items:[["Voice guide","How your brand writes, with examples."],["Knowledge base","Your facts, ready for every draft."],["Prompt library","Tested prompts for each format."],["AI drafting","Fast outlines and first drafts."],["Human editing","Rewriting for voice and clarity."],["Fact checking","Claims verified against sources."]],
+steps:["Capture your voice and knowledge.","Build prompts and outlines.","Draft, edit and fact check.","Publish and improve from results."],
+faq:[["What is AI content writing?","It's using AI to help research and draft text, with people editing the result."],["Can AI writing rank on Google?","Yes, if it's helpful, accurate and original. Google focuses on quality rather than how content is made."],["Do you disclose AI use?","We follow your policy and any rules that apply to your industry."],["Can AI tools detect AI writing?","Detectors are unreliable. We focus on quality instead of trying to fool a tool."],["How do you keep facts accurate?","Editors check claims against primary sources and your own documents."],["Is our information kept private?","Yes. We use tools with suitable privacy terms, and a self-hosted option is available."]]},
+
+{id:"blog-writing",path:"/ai-content/writing/blog-writing",col:"writing",name:"AI Blog Writing",short:"AI Blog Writing",kw:"AI blog writing services",what:"AI blog writing",
+title:"AI Blog Writing Services | Beetrix360",desc:"AI blog writing with human editors: researched, SEO-ready articles that answer real questions and earn AI citations.",
+h1:["AI blog writing that","earns readers","and search rankings"],
+lead:"We produce researched, well-edited blog posts at a pace your team could never manage alone, built around questions your buyers really ask.",
+answer:"AI blog writing is the use of AI tools to research, outline and draft blog articles. With human editing and fact checking, it helps businesses publish helpful articles faster while staying accurate and on brand.",
+q:["Write a post on our top buyer question","Update our ten oldest articles","Build a topic cluster on pricing"],
+s:["Most blog posts die on page two. Here's how to write one that doesn't.","Here's the question we hear most from new customers.","We compared the top ten results. Here's what they all miss."],
+raw:"Blogging is a great way to increase traffic to your website. In this article we will discuss the top ten benefits of blogging.",
+refined:"Three of your top ten rivals answer this question badly. Here's the article that answers it properly, with your own numbers.",
+para:["A blog only works if people want what's on it. We pick topics using search data, AI prompts and sales questions, then study what ranks today to find the gap your article can fill.",
+"Each post starts with a direct answer, followed by depth, examples and internal links. That structure helps readers, search engines and AI engines all find what they need."],
+deep:[["Refreshing old posts","Updating existing articles is often the fastest win. We add new facts, sharpen answers and fix internal links."],
+["Blogging for AI citations","Clear definitions, tables and original data make articles easier for AI engines to cite."]],
+kws:["AI blog writer","blog writing service","SEO blog posts","article writing","blog content strategy","topic clusters","content refresh","long-tail blog posts","B2B blogging","AI-assisted blogging","blog outsourcing","blog editing"],
+pains:[["Posts get no traffic","Topics come from real demand."],["Publishing is too slow","AI drafts shorten the cycle."],["Old posts are decaying","Refreshes win back rankings."],["Posts don't produce leads","Clear CTAs link to your offers."]],
+items:[["Topic research","Search, AI and sales questions."],["Article briefs","Angle, sources and structure."],["AI-assisted drafts","Fast first versions."],["Editor rewrite","Voice, examples and clarity."],["SEO optimization","Titles, links and schema."],["Refresh program","Regular updates to older posts."]],
+steps:["Research topics and map clusters.","Write briefs and draft articles.","Edit, fact check and optimize.","Publish, measure and refresh."],
+faq:[["Can AI write good blog posts?","It can write a useful draft. A human editor makes it accurate, original and worth reading."],["How many blog posts should we publish?","Publish as many as you can keep helpful. Quality and promotion matter more than volume."],["How long should a blog post be?","As long as it takes to fully answer the question."],["Do you add images and links?","Yes. We include internal links and can supply custom visuals."],["Will you interview our experts?","Yes. Short interviews add real insight."],["Can you update our existing blog?","Yes. Refreshing old content is often a great starting point."]]},
+
+{id:"ai-copy",path:"/ai-content/writing/copywriting",col:"writing",name:"AI Copywriting",short:"AI Copywriting",kw:"AI copywriting services",what:"AI copywriting",
+title:"AI Copywriting Services | Beetrix360",desc:"AI copywriting for ads, landing pages and email: many fast variations, tested and refined by experienced human copywriters.",
+h1:["AI copywriting that","tests more ideas","and keeps the best ones"],
+lead:"We use AI to explore many headlines, hooks and offers, then human copywriters pick and sharpen the ones most likely to convert.",
+answer:"AI copywriting is the use of generative AI to draft persuasive marketing text, such as ads, headlines, landing pages and emails. Skilled copywriters then refine the options and test them to find what converts.",
+q:["Give me 20 hooks for this offer","Rewrite this landing page headline","Draft a five-email welcome series"],
+s:["Your headline has one job. This one finally does it.","You've got a great product. Let's say that like a person would.","Buyers respond to specifics, so we lead with the number."],
+raw:"Unlock the power of our innovative solution and take your business to the next level today!",
+refined:"Stop chasing invoices. Get paid in two clicks, with reminders that send themselves.",
+para:["Copy improves through volume and testing. AI makes it cheap to explore angles that would take a human team days. That means you can test twenty headlines instead of two.",
+"Judgment still decides what ships. An experienced copywriter reviews the options, removes clichés and checks claims. Then testing shows which message actually moves your audience."],
+deep:[["Variations for testing","We build sets of hooks, offers and calls to action for ad platforms and landing page tests."],
+["Email and lifecycle copy","Welcome series, nurture emails and win-back flows can be personalized by segment."]],
+kws:["AI copywriter","ad copy","landing page copy","email copywriting","AI headlines","conversion copywriting","sales copy","product messaging","A/B testing copy","marketing copy","CTA copy","ad variations"],
+pains:[["Every headline sounds generic","Copywriters add sharp, specific angles."],["You only test two options","AI widens the pool."],["Claims feel too risky","We review them before launch."],["Email feels like a chore","Templates and flows speed it up."]],
+items:[["Message research","Buyer language and objections."],["Hook library","Many angles for each offer."],["Ad variations","Copy sized for each platform."],["Landing page copy","Clear offers and CTAs."],["Email sequences","Welcome and nurture flows."],["Test plan","What to test and how to read it."]],
+steps:["Gather buyer language and offers.","Generate and shortlist variations.","Refine and approve the copy.","Test, learn and write the next round."],
+faq:[["What is AI copywriting?","It's using AI to draft marketing copy, then having copywriters refine and test it."],["Is AI copy better than human copy?","They work best together. AI gives range, and people give judgment."],["Can AI write my ads?","It can draft them, but platform rules and claims still need human review."],["How many variations do you write?","We scope this by channel and test volume."],["Can it match our tone?","Yes, with a voice guide and examples."],["Do you run the tests?","We can run them, or work with your team."]]},
+
+{id:"product-desc",path:"/ai-content/writing/product-descriptions",col:"writing",name:"AI Product Descriptions",short:"AI Product Descriptions",kw:"AI product description writing",what:"AI product description writing",
+title:"AI Product Description Writing | Beetrix360",desc:"AI product descriptions at catalog scale, built from your product data, written for search and checked for accuracy.",
+h1:["Product descriptions that","scale to your catalog","and still sell"],
+lead:"We turn your product data into unique, accurate descriptions for your store and marketplaces, with quality checks across thousands of items.",
+answer:"AI product description writing uses structured product data and language models to generate unique descriptions at scale. With templates and review, it helps stores improve search visibility and conversion across large catalogs.",
+q:["Write 500 descriptions from this feed","Rewrite supplier copy in our voice","Adapt listings for Amazon"],
+s:["This isn't just a backpack. It's the last one you'll need to buy.","Made for the walk to school and the weekend away.","Rated for 30 liters, with a 900D shell and a lifetime warranty."],
+raw:"This high-quality backpack is perfect for all your needs. It is durable, stylish and versatile.",
+refined:"Thirty liters, one main zip, and a padded sleeve that fits a 16-inch laptop. Built to survive the commute.",
+para:["Writing thousands of descriptions by hand is slow, and copying the supplier's text leaves you with duplicate content. AI lets you create unique copy from your own product data.",
+"Accuracy is the risk, so we limit the model to your data and add rules for each category. Editors check samples, and automated checks flag missing specs or banned words."],
+deep:[["Data first","Clean titles, attributes and specs produce better copy, so we fix your feed before writing."],
+["Adapting by channel","Your site, Amazon and Walmart each have different rules, so we adapt the structure for each."]],
+kws:["product descriptions","ecommerce copywriting","catalog content","Shopify descriptions","Amazon listing copy","product feed","bulk product copy","AI ecommerce","product SEO","PIM content","marketplace listings","category copy"],
+pains:[["You copy supplier text","Unique copy sets you apart."],["Thousands of SKUs have no copy","Batch generation fills the gap."],["Descriptions contain errors","Copy stays tied to your data."],["Each channel needs its own format","Templates adapt by marketplace."]],
+items:[["Data audit","Attributes, gaps and errors."],["Category templates","Rules for each product type."],["Voice settings","Your tone at catalog scale."],["Batch generation","Thousands of unique drafts."],["QA checks","Automated flags and sampling."],["Channel export","Files for your store and marketplaces."]],
+steps:["Audit your feed and rules.","Build templates by category.","Generate and review batches.","Publish and track conversion."],
+faq:[["Can AI write product descriptions at scale?","Yes. With clean data, templates and checks, it can handle thousands of products."],["Will the descriptions be unique?","Yes. They're generated from your data and voice, and we check for duplicates."],["What data do you need?","A product feed with titles, attributes and specifications."],["How do you stop errors?","We restrict drafts to your data and run automated and human checks."],["Can you upload them too?","Yes. We can deliver files or use your platform's tools."],["Do you write for Amazon?","Yes. We adapt to marketplace rules and limits."]]},
+
+{id:"ai-video",path:"/ai-content/video",col:"video",hub:1,name:"AI Video Generation",short:"AI Video Generation",kw:"AI video generation services",what:"AI video generation",
+title:"AI Video Generation Services | Beetrix360",desc:"AI video production for avatars, explainers, ads and product videos, scripted by people and finished by human editors.",
+h1:["AI video that gets made","in days, not months,","and still looks considered"],
+lead:"We script, generate and edit videos using AI, so you can produce explainers, ads and product videos without booking a full film crew each time.",
+answer:"AI video generation uses artificial intelligence to create or assist video production, including avatars, voiceovers, scenes and edits. It lowers the time and cost of making video, especially for variations and localization.",
+q:["Make a 30-second product explainer","Localize this video into five languages","Turn our blog post into a video"],
+s:["Thirty seconds. One idea. No film crew.","Meet the people your product helps every day.","Here's how it works, step by step."],
+raw:"Scene 1: Person smiling at laptop. Voiceover: Our product is the best solution for your business.",
+refined:"Open on a messy spreadsheet. Cut to the same data, sorted in one click. Voiceover: \"That took you three hours yesterday.\"",
+para:["AI video tools have improved fast, but raw output can still look strange. Good results depend on a strong script, the right tool for each shot and careful editing.",
+"We treat AI as part of a production pipeline. Script, storyboard, generation, sound and edit each get attention, and we mix AI footage with real product shots whenever that works better."],
+deep:[["Localization at scale","One master video can be adapted with translated voiceover and subtitles, with review by people who know the language."],
+["When to use real footage","AI suits explainers and variations. Authentic stories and real customers still deserve real filming."]],
+kws:["AI video production","AI video generator","AI video agency","text to video","AI voiceover","video localization","AI video editing","AI storyboards","generative video","AI explainer video","marketing video","video at scale"],
+pains:[["Video feels too expensive","AI lowers the cost per version."],["Shoots take months","Scripts become videos in days."],["AI footage looks fake","Editors pick and blend the best shots."],["You need many languages","One master can be localized."]],
+items:[["Creative brief","Goal, audience and message."],["Script","Written and reviewed by people."],["Storyboard","Scenes approved before generation."],["AI generation","The right tool for each shot."],["Sound and voice","Voiceover, music and captions."],["Final edit","Human finishing for each format."]],
+steps:["Write the brief and script.","Storyboard and generate scenes.","Edit, add sound and review.","Export and test versions."],
+faq:[["What is AI video generation?","It's using AI to create or assist video, including scenes, avatars and voiceovers."],["How good is AI video now?","It's strong for many marketing uses, but quality varies by subject, so editing matters."],["How long does an AI video take?","Often days rather than weeks, depending on complexity and approvals."],["Can you use our brand assets?","Yes. We add your logos, colors, fonts and product footage."],["Can you translate videos?","Yes, with voiceover or subtitles and human review."],["Who owns the finished video?","You receive the agreed rights, subject to each tool's terms."]]},
+
+{id:"avatar-videos",path:"/ai-content/video/avatar-videos",col:"video",name:"AI Avatar Videos",short:"AI Avatar Videos",kw:"AI avatar video production",what:"AI avatar video production",
+title:"AI Avatar Video Production | Beetrix360",desc:"AI avatar videos for training, sales and marketing, with licensed or consented avatars, clear scripts and multilingual versions.",
+h1:["AI avatar videos that","present for you","in any language"],
+lead:"We create presenter-led videos using licensed or consented AI avatars, ideal for training, onboarding, sales messages and product updates.",
+answer:"AI avatar videos use a digital presenter to deliver a script on camera. Avatars can be stock or custom-made from a consenting person, and they allow teams to update and translate presenter videos without reshooting.",
+q:["Create a training video with an avatar","Clone our CEO with consent","Update this onboarding video"],
+s:["Hi, I'm your new onboarding host, and I never need a retake.","Welcome to the team. Let's get you settled in.","Today's update covers three changes to the policy."],
+raw:"Hello and welcome to this video. Today we will be talking about the importance of compliance training in the workplace.",
+refined:"You have one job in the next three minutes: learn the two rules that keep client data safe. Let's start with the one people forget.",
+para:["Filming a presenter is slow, and any change means a reshoot. With an avatar, you edit a script and generate a new version, which makes it great for training and content that updates often.",
+"Consent and honesty matter. We only use licensed stock avatars or custom avatars made with written permission, and we recommend clear labeling so viewers know what they're watching."],
+deep:[["Custom avatars","Your spokesperson can record a short session and give consent, then appear in new scripts subject to agreed limits."],
+["Training and internal video","Avatars are especially useful for onboarding, compliance and product training across many languages."]],
+kws:["AI avatar","digital presenter","talking head video","AI spokesperson","synthetic video","training videos","AI onboarding video","custom avatar","multilingual video","HeyGen alternative","Synthesia videos","corporate video"],
+pains:[["Reshoots for each update","Edit the script and regenerate."],["Executives hate filming","A consented avatar can present."],["Training is outdated","Updates are quick to make."],["Avatars feel stiff","Better scripts and pacing help."]],
+items:[["Avatar selection","Licensed stock or custom options."],["Consent paperwork","Clear written permission."],["Script writing","Lines written for spoken delivery."],["Video generation","Presenter, scenes and slides."],["Localization","Voice and subtitles by language."],["Update workflow","Fast edits when things change."]],
+steps:["Choose the avatar and collect consent.","Write and approve scripts.","Generate and edit the video.","Localize and publish."],
+faq:[["What is an AI avatar video?","It's a video where a digital presenter delivers your script."],["Can you create an avatar of our CEO?","Yes, with their written consent and agreed usage limits."],["Should we tell viewers it's AI?","We recommend it. Clear labeling protects trust, and some platforms and laws require it."],["Can avatars speak other languages?","Yes, with translated voice and review."],["Are avatars good for marketing?","They suit explainers and training. For personal stories, real people usually work better."],["Will you use real people's likeness without consent?","Never. We only use licensed or consented avatars."]]},
+
+{id:"faceless-videos",path:"/ai-content/video/faceless-videos",col:"video",name:"AI Explainer & Faceless Videos",short:"AI Explainer Videos",kw:"AI explainer and faceless videos",what:"an AI explainer or faceless video",
+title:"AI Explainer & Faceless Video Production | Beetrix360",desc:"AI explainer and faceless videos with strong scripts, voiceover and visuals for YouTube, social, sales and product education.",
+h1:["Explainer and faceless videos","that teach fast","with nobody on camera"],
+lead:"We produce clear explainers and faceless channel videos using scripts, AI visuals, voiceover and motion graphics, so your message lands without a presenter.",
+answer:"AI explainer and faceless videos communicate an idea using narration, visuals and graphics instead of an on-camera host. They're useful for product education, YouTube channels and social media.",
+q:["Explain our product in 60 seconds","Make a faceless YouTube series","Turn this guide into a video"],
+s:["Your product takes ten minutes to explain. This takes sixty seconds.","Imagine your morning without the paperwork.","Here's the problem, the fix, and the proof."],
+raw:"In this video, we are going to explain what our platform does and how it can help you to improve your workflow.",
+refined:"Every week, your team copies the same data into three tools. Watch what happens when the tools do it themselves.",
+para:["A good explainer starts with one clear idea. We find the single thing viewers need to understand, write a script around it, and cut everything else.",
+"Faceless channels depend on consistent quality. We build a format with a repeatable hook, voice and visual style, then avoid low-effort, mass-produced output that platforms may limit."],
+deep:[["Script and storytelling","Retention depends on the opening seconds and a clear structure, so scripts get the most attention."],
+["Voiceover and captions","We use licensed AI voices or human artists, plus captions for silent viewers."]],
+kws:["explainer video","faceless video","faceless YouTube channel","animated explainer","product explainer","AI narration","script writing","YouTube automation","educational video","how-to video","video series","screen recording video"],
+pains:[["Nobody wants to be on camera","Narration and visuals do the job."],["Your product is hard to explain","One idea, told simply."],["Viewers drop off early","Stronger hooks hold attention."],["Your channel looks low effort","Consistent formats raise quality."]],
+items:[["Topic and angle","One clear idea per video."],["Script","Written for retention."],["Visual style","A repeatable look."],["Voiceover","AI or human narration."],["Motion and captions","Graphics that explain."],["Thumbnails and titles","Packaging for clicks."]],
+steps:["Find the idea and write the script.","Set the visual format.","Produce, voice and edit.","Publish and read retention data."],
+faq:[["What is a faceless video?","It's a video without an on-camera presenter, using voiceover and visuals."],["Do faceless channels still work?","Yes, when they add real value. Low-effort spam tends to struggle."],["How long should an explainer be?","Keep it as short as the idea allows, often about a minute."],["Can you use our product footage?","Yes. Real screens are often clearer than generated ones."],["Do you write the scripts?","Yes, or we can polish yours."],["Are AI voices allowed on YouTube?","Generally yes, but follow current policies and disclose where required."]]},
+
+{id:"video-ads",path:"/ai-content/video/video-ads",col:"video",name:"AI Video Ads",short:"AI Video Ads",kw:"AI video ad production",what:"AI video ad production",
+title:"AI Video Ads Production | Beetrix360",desc:"AI video ads for Meta, TikTok and YouTube: many hooks and versions, sized for each platform and edited to perform.",
+h1:["AI video ads that give you","more shots at a winner","every single week"],
+lead:"We create batches of video ads with different hooks, offers and formats, so your media team can test more ideas and fight creative fatigue.",
+answer:"AI video ads are advertising videos created with the help of generative AI for scripts, scenes, voiceovers or edits. They allow brands to produce many variations quickly and test which creative performs best.",
+q:["Make ten hooks for this ad","Resize this ad for every platform","Create a winter version of our best ad"],
+s:["Still running the same ad from March? Your audience noticed.","Here's what happened when one small shop tried something new.","Three seconds. One claim. One proof point."],
+raw:"Are you tired of expensive marketing? Try our amazing product today and see the difference!",
+refined:"Hook: \"We deleted our top-performing ad.\" Then show why, and what replaced it, in under 15 seconds.",
+para:["Creative is usually the biggest lever in paid media, and ads wear out fast. The more quality concepts you can test, the better your chance of finding a winner. AI makes each new version cheaper.",
+"We keep a human eye on what gets produced. Hooks are based on real data, claims get reviewed, and every ad follows the platform's rules, including those for AI-generated content."],
+deep:[["Variation testing","We change one thing at a time, such as the hook, offer or format, so results are clear."],
+["Platform-native formats","Each ad is built for its placement, including vertical, square and widescreen versions."]],
+kws:["AI video ad generator","video ad creative","performance creative","ad variations","Meta video ads","TikTok video ads","YouTube ads","creative testing","ad hooks","ad fatigue","short video ads","direct response video"],
+pains:[["Ads fatigue in weeks","New batches keep them fresh."],["Shoots are too slow for testing","AI turns ideas around quickly."],["You don't know what's working","Structured tests give clear answers."],["Sizes are a headache","We export every format."]],
+items:[["Performance review","What's working in your account."],["Concept and hooks","New angles to test."],["Ad scripts","Short, direct and compliant."],["AI production","Scenes, voice and editing."],["Variations","Hooks, offers and formats."],["Learning report","What to make next."]],
+steps:["Review results and audience data.","Plan concepts and hooks.","Produce the ad batch.","Test, learn and iterate."],
+faq:[["What are AI video ads?","They're ads made with AI help for scripts, scenes, voice or editing."],["Do AI video ads perform well?","They can, when the concept is strong. Tests decide, not the tool."],["How many variations should we test?","It depends on budget. We plan what your spend can fairly test."],["Do platforms label AI ads?","Some do, and rules change. We check current requirements."],["Can you use our product footage?","Yes. Real product shots usually improve trust."],["Can you run the ads too?","Yes. Our Paid Media team can manage them."]]},
+
+{id:"product-videos",path:"/ai-content/video/product-videos",col:"video",name:"AI Product Videos",short:"AI Product Videos",kw:"AI product video production",what:"AI product video production",
+title:"AI Product Video Production | Beetrix360",desc:"AI product videos that turn product images into motion for ecommerce, ads and marketplaces, while keeping products accurate.",
+h1:["AI product videos that","bring your catalog","to life"],
+lead:"We turn product images and specs into short videos for your store, marketplaces and ads, while checking that every product detail stays accurate.",
+answer:"AI product videos use generative tools to animate product images or create scenes around a product. They help ecommerce brands add video across large catalogs at a lower cost than traditional shoots.",
+q:["Animate this product photo","Make PDP videos for 50 products","Show this bag in three settings"],
+s:["Spin it, zoom it, want it.","Picture it on your kitchen counter.","Every seam, zip and detail, up close."],
+raw:"A product floats in space with sparkles around it while upbeat music plays.",
+refined:"Macro on the stitching, then a hand lifts the bag and drops it onto a desk. The label stays sharp for every frame.",
+para:["Video can help shoppers understand a product, but filming every item in a catalog is rarely practical. AI gives you a realistic way to cover many more products.",
+"Accuracy is the priority. AI can change shapes, logos or text, which risks misleading customers. We check each output against the real product and use real footage where detail matters."],
+deep:[["Video for store pages and marketplaces","Short clips can help on product pages and marketplace listings, following each platform's format rules."],
+["Keeping products truthful","We never show features a product doesn't have. If AI distorts something, we fix it or reshoot."]],
+kws:["product video","ecommerce video","product video generator","image to video","PDP video","Amazon product video","Shopify video","product animation","product demo","product showcase","catalog video","3D product video"],
+pains:[["Most products have no video","AI covers the long tail."],["Shoots cost too much per SKU","Batches lower the cost."],["AI warps your logo","Editors check every frame."],["Formats differ by channel","We export for each one."]],
+items:[["Product selection","Where video adds most value."],["Source asset prep","Clean images and references."],["Motion concepts","Spins, close-ups and scenes."],["AI generation","Short product clips."],["Accuracy review","Checks against the real product."],["Channel export","Sizes for site and marketplaces."]],
+steps:["Pick products and collect assets.","Define shots and style.","Generate and check clips.","Publish and track conversion."],
+faq:[["What is an AI product video?","It's a short video generated or animated from product images and details."],["Will the product look accurate?","We check each clip and reject anything misleading."],["What do you need from us?","High-quality images, specs and any brand rules."],["Can you do this at catalog scale?","Yes. We build batches by product type."],["Do these work on Amazon?","Yes, if they follow Amazon's video rules."],["Should we still film hero products?","Often yes. Hero items may deserve a real shoot."]]},
+
+{id:"ai-images",path:"/ai-content/images",col:"images",hub:1,name:"AI Image Generation",short:"AI Image Generation",kw:"AI image generation services",what:"AI image generation",
+title:"AI Image Generation Services | Beetrix360",desc:"AI image generation for marketing: product shots, ad creatives and lifestyle scenes, art directed and retouched by designers.",
+h1:["AI image generation with","an art director","behind every prompt"],
+lead:"We create on-brand images for products, ads and campaigns, combining AI generation with art direction, retouching and rights checks.",
+answer:"AI image generation creates pictures from text prompts or reference images using generative models. For marketing, it can produce product scenes, ad creative and lifestyle imagery quickly, with designers refining results.",
+q:["Create a campaign in our visual style","Make ten scenes for this product","Build a brand image library"],
+s:["A golden-hour campaign, without the flight.","Warm kitchen, soft light, real family breakfast.","Studio lighting, neutral backdrop, sharp product detail."],
+raw:"beautiful woman holding product, 4k, ultra realistic, trending, professional photo",
+refined:"Art direction: morning light from the left, brand magenta as the only accent, product at one-third, real hands, natural skin, no extra props.",
+para:["Good AI images start long before the prompt. An art director defines the look, then builds reference images and style rules, so a whole set feels like one campaign.",
+"We finish images the way a studio would. Designers fix hands, text and product details, match brand colors and prepare files for each placement."],
+deep:[["Consistency across a campaign","Reference images, style guides and custom models keep colors, lighting and composition aligned."],
+["Rights and likeness","We check tool terms, avoid copying real artists or brands, and never imitate real people without consent."]],
+kws:["AI image generator","AI art direction","AI photography","generative images","Midjourney agency","Firefly images","AI visuals","custom AI model","campaign visuals","AI retouching","image library","marketing images"],
+pains:[["AI images look generic","Art direction brings your style."],["Campaign sets don't match","Style guides keep them consistent."],["Hands and text look wrong","Designers retouch each image."],["You're unsure about rights","We review tool terms."]],
+items:[["Visual style guide","Your look, documented."],["Reference library","Images that guide generation."],["AI generation","Multiple directions at speed."],["Art direction","Selection and refinement."],["Retouching","Hands, text and product fixes."],["Asset delivery","Sizes for each channel."]],
+steps:["Define style and references.","Generate and curate options.","Retouch and match brand.","Deliver and build your library."],
+faq:[["What is AI image generation?","It's creating images from prompts or references using AI models."],["Can AI images match our brand?","Yes, with style guides, references and designer retouching."],["Are AI images safe for commercial use?","It depends on the tool and use. We review terms and avoid risky references."],["Can AI copy a famous style or brand?","We avoid imitating living artists, brands or real people."],["Who retouches the images?","Our designers finish every selected image."],["Can you train a custom model?","Yes, using images you own or have rights to."]]},
+
+{id:"product-photo",path:"/ai-content/images/product-photography",col:"images",name:"AI Product Photography",short:"AI Product Photography",kw:"AI product photography",what:"AI product photography",
+title:"AI Product Photography Services | Beetrix360",desc:"AI product photography that places your real products in new scenes, for ecommerce and ads, without a full studio shoot.",
+h1:["AI product photography that","moves your product","anywhere you need it"],
+lead:"We start with real photos of your product, then create new scenes, backgrounds and seasonal versions for your store, ads and marketplaces.",
+answer:"AI product photography uses generative tools to place a real product image into new backgrounds or scenes. It gives ecommerce brands more visuals at a lower cost, while the product itself should remain accurate.",
+q:["Put this bottle on a marble counter","Create seasonal versions of our range","Make clean white-background shots"],
+s:["Same bottle. Twelve new worlds.","Fresh from the kitchen counter, ready for breakfast.","Pure white background, true color, marketplace ready."],
+raw:"A generated bottle that looks like yours, with a slightly different label and an extra cap.",
+refined:"Your real bottle, untouched, on honed marble with soft window light and a shadow that matches the scene.",
+para:["Your product must stay real. We photograph it or use your source images, cut it out cleanly and build the scene around it, so labels, shapes and colors stay true.",
+"This lets you create seasonal, lifestyle and localized images without new shoots. It's ideal for testing ads, filling catalog gaps and keeping listings fresh."],
+deep:[["Marketplace-ready images","Main images on marketplaces have strict rules, so we follow each one and keep scene shots for secondary images."],
+["Color accuracy","We check color against your product to reduce disappointment and returns."]],
+kws:["AI product photos","product photography","ecommerce photography","product backgrounds","Amazon product images","lifestyle product photos","packshot","product mockups","background replacement","ghost mannequin","white background photos","seasonal product images"],
+pains:[["Shoots are expensive","One source photo can make many scenes."],["AI changed your label","We protect the real product."],["Images look dated","Seasonal versions keep them fresh."],["Rules differ by marketplace","We format each image correctly."]],
+items:[["Source capture","Clean photos of the real product."],["Cutouts","Accurate masking and edges."],["Scene creation","Backgrounds that fit your brand."],["Light and shadow","Realistic matching."],["Color checks","True-to-product color."],["Marketplace sizing","Rules applied per platform."]],
+steps:["Capture or review product images.","Design the scenes.","Composite and retouch.","Deliver for each channel."],
+faq:[["What is AI product photography?","It places real product images into AI-created scenes or backgrounds."],["Do we need to send products?","Good source images are enough, or you can send samples for us to shoot."],["Will my product look different?","It shouldn't. We keep the real product and check it carefully."],["Can I use these on Amazon?","Yes, within Amazon's image rules. Main images have strict requirements."],["Is this cheaper than a shoot?","Often, especially for many scenes or variations."],["Can you do apparel?","Yes, with careful review of fit and fabric."]]},
+
+{id:"ad-creatives",path:"/ai-content/images/ad-creatives",col:"images",name:"AI Ad Creatives",short:"AI Ad Creatives",kw:"AI ad creative production",what:"AI ad creative production",
+title:"AI Ad Creatives for Meta, Google & TikTok | Beetrix360",desc:"AI ad creatives produced in batches: static ads, carousels and banners, sized for each platform and built for testing.",
+h1:["AI ad creatives built","to be tested","not just admired"],
+lead:"We produce batches of static ads, carousels and banners in every size, each built around a clear hypothesis your media team can test.",
+answer:"AI ad creatives are advertising images and designs produced with the help of generative tools. They help brands create many on-brand variations for testing across platforms such as Meta, Google and TikTok.",
+q:["Make 20 static ads for this offer","Resize our best ad for all placements","Test three new angles"],
+s:["Your ad doesn't need to be pretty. It needs to stop a thumb.","A small win for a busy Tuesday.","Compare: 3 hours by hand, 3 clicks with us."],
+raw:"Generic stock-style banner with a smiling person and the words \"Best Solution For You\".",
+refined:"Split image: a pile of receipts versus one clean dashboard. Headline: \"Tax season, minus the shoebox.\"",
+para:["Creative testing works best when every ad asks a clear question. Does this audience respond more to price, proof or pain? We build variations to answer that, not just to fill a feed.",
+"AI speeds up concepting and imagery, while designers make sure type, layout and brand are right. Every size is prepared, so media buyers can launch straight away."],
+deep:[["Concept angles","We explore problem, proof, comparison, offer and story angles to widen what you test."],
+["Dynamic creative","Modular headlines, images and CTAs can feed platform tools that mix and match automatically."]],
+kws:["AI ad generator","ad design","static ads","Meta ad creatives","Google display banners","carousel ads","creative testing","ad variations","performance design","ad resizing","dynamic creative","social ads"],
+pains:[["You keep running the same ads","Fresh batches beat fatigue."],["Design requests take days","Fast production keeps pace."],["Resizing wastes hours","All placements are included."],["Tests teach you nothing","Each batch has a hypothesis."]],
+items:[["Creative audit","Patterns in your winning ads."],["Angle planning","Hypotheses to test."],["Batch design","Statics and carousels."],["Copy overlays","Short, sharp headlines."],["All sizes","Formats for each placement."],["Test reporting","What to scale next."]],
+steps:["Review past ads and data.","Plan angles and hypotheses.","Produce the batch.","Test and create the next round."],
+faq:[["What are AI ad creatives?","They're ad images and designs made with the help of AI."],["Do AI-generated ads perform?","They can. The idea and offer matter most."],["How many ads should we make?","Enough to test your hypotheses at your budget."],["Do you write the copy too?","Yes, or we can use yours."],["Can ads include real customers?","Only with permission. We won't fake testimonials."],["Can you match our brand?","Yes. We follow your guidelines."]]},
+
+{id:"lifestyle-images",path:"/ai-content/images/lifestyle-images",col:"images",name:"AI Lifestyle Images",short:"AI Lifestyle Images",kw:"AI lifestyle images",what:"AI lifestyle imagery",
+title:"AI Lifestyle Images for Brands | Beetrix360",desc:"AI lifestyle images for websites, social and campaigns: believable scenes and settings that are art directed for your brand.",
+h1:["AI lifestyle images that","feel lived in,","not generated"],
+lead:"We create believable scenes that show your brand in real settings, for websites, social media and campaigns, with art direction that keeps them natural.",
+answer:"AI lifestyle images are generated pictures showing people, places or products in everyday situations. They help brands show context and emotion without arranging a location shoot, as long as they stay honest and on brand.",
+q:["Show our customers at home","Create a Ramadan campaign scene","Make Dubai and Toronto versions"],
+s:["Not a stock photo. Your world.","Sunday morning, coffee and nowhere to be.","Modern workspace, natural light, focused team."],
+raw:"Perfect smiling family in a perfect white house. Everyone has perfect teeth and slightly odd hands.",
+refined:"A real-feeling Tuesday: toast crumbs, a half-packed school bag, soft light through a window, and your product in the middle of it.",
+para:["Stock photos make brands look alike, and AI can make the same mistake if you let it. The key is specificity: real places, small imperfections and cultural details that feel right to your audience.",
+"Local relevance is a big win. One campaign can show different cities, seasons and people, with reviews from people who know each market."],
+deep:[["Avoiding the AI look","We add natural imperfection, believable light and realistic detail, then remove anything uncanny."],
+["Representation","We direct diversity with care and review images to avoid stereotypes."]],
+kws:["lifestyle photography","AI lifestyle photos","brand imagery","website images","campaign imagery","AI stock photo alternative","social media images","localized imagery","seasonal campaign","hero images","brand photography","AI scenes"],
+pains:[["Stock images look fake","Custom scenes fit your brand."],["Shoots can't cover every market","Scenes can be localized."],["AI images feel plastic","Art direction adds realism."],["Your website looks generic","Hero images tell your story."]],
+items:[["Audience brief","Who, where and when."],["Scene direction","Details that feel real."],["AI generation","Options to choose from."],["Cultural review","Checks for each market."],["Retouching","Hands, faces and detail."],["Image library","Ready for every channel."]],
+steps:["Define the audience and setting.","Direct and generate scenes.","Review and retouch.","Deliver and build the library."],
+faq:[["What are AI lifestyle images?","They're generated scenes showing people or products in everyday settings."],["Will they look real?","With good direction and retouching, they can look natural."],["Should we label them as AI?","Follow platform rules and your policy. Be honest if a scene implies real events."],["Can you show real customers?","Only real customers with consent. Generated people shouldn't pose as customers."],["Can you localize scenes?","Yes, with review by people familiar with each market."],["Are they cheaper than a shoot?","Often, especially for many scenes or markets."]]},
+
+{id:"ai-social",path:"/ai-content/social-media",col:"social",name:"AI Social Media Content",short:"AI Social Media Content",kw:"AI social media content",what:"AI social media content",
+title:"AI Social Media Content Services | Beetrix360",desc:"AI social media content for every platform: posts, captions, carousels and video, planned by strategists and edited by people.",
+h1:["AI social content that","fills your calendar","without sounding automated"],
+lead:"We plan and produce a month of posts, captions and short videos at speed, then edit each one so it sounds like your brand.",
+answer:"AI social media content is social posts, captions, images and videos created with the help of AI tools. It helps teams post consistently, repurpose long content and adapt ideas for each platform.",
+q:["Plan 30 days of posts","Turn this blog into ten posts","Write captions for each platform"],
+s:["Thirty days of content. Zero Sunday-night panic.","A small thank you to everyone who's been with us.","Three lessons from our latest data."],
+raw:"Happy Monday! Here are 5 tips to boost your productivity this week! #motivation #business #success",
+refined:"We tracked 212 meetings last quarter. Forty should've been emails. Here's the test we use now.",
+para:["Social media eats time. AI can help you plan, draft and repurpose faster, but audiences spot generic posts instantly. We use it to multiply real ideas instead of replacing them.",
+"One webinar, interview or article becomes posts, carousels and clips, each adapted for its platform. Editors make sure the voice stays human."],
+deep:[["Repurposing","Long content contains many short ideas, and AI helps find and reshape them."],
+["Staying human","We use real stories, opinions and data, and keep generic motivational posts out of your feed."]],
+kws:["AI social media","AI captions","social media automation","AI post generator","content repurposing","AI content calendar","AI carousels","social media AI tools","LinkedIn AI posts","Instagram AI content","AI hashtags","social scheduling"],
+pains:[["Posts sound generic","Real stories and editors help."],["You run out of ideas","Repurposing fills the calendar."],["Each platform needs its own version","We adapt every post."],["Your team has no time","Monthly batches save hours."]],
+items:[["Content plan","A month of ideas."],["Repurposing","Long content into short posts."],["Captions","Written for each platform."],["AI visuals","Images and carousels."],["Short video","Clips and simple edits."],["Editing","Human review of every post."]],
+steps:["Gather source content and pillars.","Plan and generate the month.","Edit and approve posts.","Schedule and review results."],
+faq:[["Can AI write social media posts?","Yes, especially first drafts. Human editing keeps them authentic."],["Will followers notice it's AI?","They can notice generic content. Real ideas and editing avoid that."],["How much content can you make?","We scope monthly volume around your goals."],["Do you post it too?","We can schedule it, or hand it to your team."],["Can you repurpose our webinars?","Yes. They're great source material."],["Does AI content hurt reach?","Platforms care about engagement, so quality is what counts."]]},
+
+{id:"reels-shorts",path:"/ai-content/social-media/reels-shorts",col:"social",name:"AI Reels & Shorts",short:"AI Reels & Shorts",kw:"AI Reels and Shorts production",what:"AI Reels and Shorts production",
+title:"AI Reels & Shorts Production | Beetrix360",desc:"AI Reels and YouTube Shorts: long videos clipped into short vertical content with hooks, captions and fast, human edits.",
+h1:["AI Reels and Shorts that","hook in seconds","and keep people watching"],
+lead:"We clip long videos and create new short content, with strong hooks, captions and pacing, ready for Reels, Shorts and TikTok.",
+answer:"AI Reels and Shorts production uses AI tools to find highlights, add captions and generate short vertical videos. It helps brands publish more short-form video from existing footage or simple scripts.",
+q:["Clip this podcast into ten Shorts","Add captions and hooks","Make a weekly Reels series"],
+s:["Stop scrolling. This took us ten years to learn.","Here's a little thing we wish we'd known sooner.","The chart that changed our strategy."],
+raw:"Auto-clip: 58 seconds from the middle of the podcast with a slow start and no context.",
+refined:"Open on the punchline: \"We fired our best client.\" Then 22 seconds of why, big captions, and a clear reason to follow.",
+para:["Your long videos are full of short clips. AI can find likely moments quickly, but it often picks the wrong ones. Our editors choose highlights with a clear hook and payoff.",
+"We then tighten the pacing, add captions and adapt each clip for its platform. Series formats give viewers a reason to come back."],
+deep:[["Finding the hook","The opening seconds decide retention, so we often reorder clips to start with the strongest line."],
+["Consistency","Regular formats help you publish steadily without starting from scratch."]],
+kws:["AI video clipping","Instagram Reels","YouTube Shorts","short-form video","podcast clips","vertical video","auto captions","video repurposing","Opus Clip alternative","Reels editing","Shorts strategy","viral clips"],
+pains:[["Long videos go unwatched","Clips spread them further."],["Auto-clips miss the point","Editors pick the moments."],["Viewers swipe away","Stronger hooks keep them."],["Editing takes too long","Batches save time."]],
+items:[["Source review","Your long videos and audio."],["Clip selection","Moments with hook and payoff."],["Vertical reframing","Subjects kept in shot."],["Captions","Readable, branded subtitles."],["Pacing edit","Tighter cuts and b-roll."],["Publishing kit","Titles and captions per platform."]],
+steps:["Collect your long content.","Find and script the clips.","Edit, caption and review.","Publish and repeat what holds."],
+faq:[["What are AI Reels and Shorts?","They're short vertical videos made or clipped with AI tools."],["Can you clip our podcast?","Yes. Podcasts and webinars work very well."],["How long should a Reel be?","Long enough to pay off the hook, often well under a minute."],["Do captions matter?","Yes. Many people watch with sound off."],["How often should we post?","Choose a schedule you can maintain, ideally several times a week."],["Can the same clip go on all platforms?","Often, with small changes for each one."]]},
+
+{id:"ugc-ads",path:"/ai-content/ugc-ads",col:"social",name:"AI UGC Ads",short:"AI UGC Ads",kw:"AI UGC ads",what:"AI UGC-style advertising",
+title:"AI UGC-Style Ads Production | Beetrix360",desc:"AI UGC-style ads: scripted, native-feeling video ads made quickly and labeled honestly, for testing on social platforms.",
+h1:["AI UGC-style ads that","feel native","and stay honest"],
+lead:"We create UGC-style video ads with AI, using sharp scripts and native formats, for fast creative testing that never pretends to be a real customer review.",
+answer:"AI UGC ads are social video ads made with AI to resemble the casual style of user-generated content. They're useful for testing scripts quickly, but they must not be presented as genuine customer testimonials.",
+q:["Write five UGC-style scripts","Test three hooks for this product","Make a problem and solution ad"],
+s:["Okay, so nobody told me this about my skincare routine.","I keep this in my bag now. Here's why.","Three things to check before you buy one."],
+raw:"\"I'm a real customer and this product changed my life! Five stars!\" (spoken by an AI avatar)",
+refined:"Labeled demo: an AI presenter shows how the product works in 20 seconds, with no fake reviews or invented results.",
+para:["UGC-style ads work because they feel like content instead of advertising. AI helps you test scripts and hooks before paying real creators.",
+"There's one clear rule: AI people must not pretend to be real customers. Fake testimonials can break consumer protection law and platform policy. We script demos and explainers, label them where needed, and use real creators for genuine reviews."],
+deep:[["AI first, creators next","Use AI to find the winning angle, then have real creators film it for greater trust."],
+["Staying compliant","We avoid fake reviews, invented results and undisclosed synthetic endorsements."]],
+kws:["UGC ads","AI UGC","UGC-style video","AI UGC generator","direct response ads","ad scripts","creator ads","TikTok ads","Meta ads","AI actors","creative testing","native ads"],
+pains:[["Creators take weeks","AI tests scripts faster."],["You don't know which hook wins","Quick tests show the way."],["Creative costs add up","Spend real creator budget on proven ideas."],["You're worried about fake reviews","We keep every ad honest."]],
+items:[["Hook research","Angles from reviews and comments."],["Script writing","Short, native scripts."],["AI production","Presenter-led demos."],["Compliance review","Claims and labeling checks."],["Variations","Hooks and CTAs to test."],["Creator handoff","Winning scripts for real creators."]],
+steps:["Mine reviews for real language.","Write scripts and hooks.","Produce and review ads.","Test, then film winners with creators."],
+faq:[["What are AI UGC ads?","They're AI-made social ads in a casual, creator-style format."],["Are AI UGC ads legal?","They can be, but AI people must not pose as real customers or give fake reviews. Take legal advice for your market."],["Can AI replace real creators?","Not for genuine reviews. AI is best for testing ideas."],["Do I need to disclose AI use?","Rules vary by platform and country, and we follow current requirements."],["Do AI UGC ads convert?","They can work for testing, and real creators often build more trust."],["Can you write from real reviews?","Yes, for insight, but we won't invent quotes."]]},
+
+{id:"ugc-avatars",path:"/ai-content/ugc-ads/ugc-avatars",col:"social",name:"AI UGC Avatars",short:"AI UGC Avatars",kw:"AI UGC avatars",what:"an AI UGC avatar",
+title:"AI UGC Avatars for Ads | Beetrix360",desc:"AI UGC avatars for ad testing: licensed presenters and clear scripts for honest, labeled demo-style social videos.",
+h1:["AI UGC avatars for","testing ideas fast","without faking a customer"],
+lead:"We use licensed AI presenters to test scripts and hooks in a creator-style format, with clear rules so avatars never pose as real buyers.",
+answer:"AI UGC avatars are synthetic presenters who speak scripts in a casual, creator-style video. Brands use them for script testing and product demos, with licensed likenesses and without claiming to be real customers.",
+q:["Pick an avatar for our audience","Test four scripts with avatars","Make a demo in Spanish"],
+s:["Quick demo: here's how this works.","Let me show you the part people like best.","Three features, thirty seconds."],
+raw:"Avatar says: \"I bought this last month and lost ten pounds!\"",
+refined:"Avatar says: \"Here's how the app tracks your meals.\" On screen: \"AI presenter. Demo only.\"",
+para:["An avatar can help you test twenty scripts in the time it takes to book one creator. They're also useful for product demos and multilingual versions.",
+"We only use licensed avatars and we keep scripts factual. An avatar can explain how something works, but it can't share a personal experience it never had."],
+deep:[["Choosing an avatar","We select a presenter suited to your audience and platform, with commercial rights confirmed."],
+["What avatars shouldn't say","No personal testimonials, invented results or health claims. Those need real evidence and real people."]],
+kws:["AI avatars for ads","UGC avatar","AI spokesperson","synthetic creators","AI actors","Arcads alternative","avatar ads","licensed avatars","AI presenter","ad testing","multilingual ads","talking head ads"],
+pains:[["Scripts need testing before filming","Avatars test them quickly."],["Avatars say things they shouldn't","Scripts stay factual."],["Likeness rights are unclear","We use licensed presenters."],["They look uncanny","Careful selection and short edits help."]],
+items:[["Avatar selection","A fit for your audience."],["Rights check","Commercial use confirmed."],["Script rules","Factual demos only."],["Video generation","Multiple takes and hooks."],["Labels and captions","Clear disclosure options."],["Results review","Which scripts to take further."]],
+steps:["Choose avatars and confirm rights.","Write factual scripts.","Generate and review videos.","Test and move winners to creators."],
+faq:[["What is an AI UGC avatar?","It's a synthetic presenter delivering scripts in a creator-style format."],["Can avatars give testimonials?","No. A synthetic person hasn't used your product, so that would mislead viewers."],["Are the avatars real people?","They're often licensed from real actors. We confirm usage rights."],["Can avatars speak other languages?","Yes, with translation review."],["Do platforms allow them?","Generally yes, with disclosure rules that vary. We check the latest policies."],["Can you create a custom avatar?","Yes, from a consenting person, with agreed limits."]]},
+
+{id:"tiktok-ugc",path:"/ai-content/ugc-ads/tiktok-ugc-ads",col:"social",name:"AI TikTok UGC Ads",short:"AI TikTok UGC Ads",kw:"AI TikTok UGC ads",what:"an AI TikTok UGC ad",
+title:"AI TikTok UGC-Style Ads | Beetrix360",desc:"AI TikTok UGC-style ads with native hooks, fast cuts and labeled AI content, built for testing and scaling on TikTok.",
+h1:["AI TikTok ads that","fit the feed","and follow the rules"],
+lead:"We produce native-looking TikTok ad concepts with AI, built around fast hooks and clear labeling, then help you scale the winners with real creators.",
+answer:"AI TikTok UGC ads are short TikTok-style video ads made with AI tools. They mimic the platform's casual format for testing, and TikTok requires certain realistic AI-generated content to be labeled.",
+q:["Write ten TikTok hooks","Make a storytime-style demo","Adapt this ad for TikTok"],
+s:["POV: you finally found out what's been wrong.","Tiny thing, big difference in my morning.","Things in this category nobody explains."],
+raw:"Polished 30-second ad with slow logo intro and corporate voiceover.",
+refined:"First second: the problem, on screen. Fast cuts, native captions, and an \"AI-generated\" label where it's needed.",
+para:["TikTok rewards ads that feel like content, so the first second matters most. We use AI to test many hooks, then keep the formats that hold attention.",
+"Platform rules matter here. TikTok has policies on AI-generated content, and advertising claims must stay truthful. We check current rules before launch."],
+deep:[["Hooks and pacing","Quick cuts, pattern breaks and native captions keep viewers from swiping."],
+["From AI test to creator scale","When a concept works, real creators can film it and run it as a Spark Ad."]],
+kws:["TikTok UGC ads","TikTok ad creative","AI TikTok ads","TikTok hooks","Spark Ads","TikTok Creative Center","native ads","TikTok Shop ads","short video ads","creator ads","AI-generated label","TikTok testing"],
+pains:[["Your ads look like TV","Native formats fit the feed."],["Hooks don't hold","Testing finds the ones that do."],["You missed a platform rule","We check labeling first."],["You need volume","AI produces more concepts."]],
+items:[["Trend research","What's working in your niche."],["Hook writing","Many first-second ideas."],["Native editing","Fast cuts and captions."],["AI production","Concept videos at speed."],["Policy check","Labels and ad rules."],["Scale plan","Winners moved to creators."]],
+steps:["Research the niche and hooks.","Write and produce concepts.","Check policy and launch tests.","Scale winners with creators."],
+faq:[["What are AI TikTok UGC ads?","They're AI-made ads in TikTok's casual, creator-like format."],["Do I need to label AI content on TikTok?","TikTok has rules on labeling realistic AI content, and they can change. We check them for each campaign."],["Can AI ads use trending sounds?","Commercial use has limits, so we use licensed audio."],["How many hooks should we test?","As many as your budget can fairly judge."],["Will TikTok reject AI ads?","Not by default, but they must follow ad and AI policies."],["Can you run the ads?","Yes. Our paid team manages TikTok Ads."]]},
+
+{id:"enterprise-ai",path:"/ai-content/enterprise",col:"social",name:"Enterprise AI Content",short:"Enterprise AI Content",kw:"enterprise AI content",what:"enterprise AI content",
+title:"Enterprise AI Content Operations | Beetrix360",desc:"Enterprise AI content systems: governance, brand-safe workflows, private AI options and multi-market production at scale.",
+h1:["Enterprise AI content with","guardrails built in","from day one"],
+lead:"We help large organizations produce AI content safely, with governance, brand controls, private models and review workflows for every market.",
+answer:"Enterprise AI content is large-scale AI-assisted production inside a governed workflow. It combines brand rules, approved tools, data privacy, legal review and reporting, so many teams can create content safely and consistently.",
+q:["Create an AI content policy","Build a brand-safe workflow","Localize content for 12 markets"],
+s:["Scale your content without scaling your risk.","Give every market the same great starting point.","Approved tools, logged prompts, clear ownership."],
+raw:"Each team uses its own free AI tools, pastes in client data and publishes with no review.",
+refined:"Approved tools only, private data stays private, every asset passes brand and legal review, and usage is logged.",
+para:["Your employees are probably already using AI, whether or not you have a policy. The real risk is unmanaged use. A clear system gives teams safe tools and rules, so work moves faster with less exposure.",
+"We design the whole operation: approved tools, shared brand knowledge, prompt libraries, review steps and reporting. For sensitive data, we offer self-hosted LLM options."],
+deep:[["Governance","Policies define approved tools, data rules, disclosure and who signs off each content type."],
+["Private AI","Self-hosted models keep sensitive information inside your environment, and your data never trains public AI."]],
+kws:["enterprise AI","AI governance","AI content policy","brand-safe AI","self-hosted LLM","private AI","AI content operations","responsible AI","AI compliance","multi-market content","AI workflow","content supply chain"],
+pains:[["Teams use unapproved tools","Approved tools replace shadow AI."],["Sensitive data leaks into prompts","Rules and private models protect it."],["Brand quality varies","Shared guides and reviews align it."],["Legal can't keep up","Tiered approvals focus their time."]],
+items:[["AI readiness audit","Current use, tools and risks."],["Governance policy","Rules people can follow."],["Brand knowledge base","Approved facts and voice."],["Workflow design","Review steps by content type."],["Private deployment","Self-hosted LLM options."],["Training and reporting","Enablement and usage data."]],
+steps:["Audit AI use and risks.","Set policy and approved tools.","Build workflows and knowledge base.","Train teams and scale by market."],
+faq:[["What is enterprise AI content?","It's AI-assisted content at scale, inside a governed workflow."],["How do we keep data private?","Use approved tools, clear data rules and self-hosted models where needed."],["Will our data train public AI?","No. Your data never trains public AI in our workflows."],["Can legal review be built in?","Yes. We design tiered approvals by risk."],["Do you train teams?","Yes. We provide training and prompt libraries."],["Can this work across languages?","Yes, with local review in each market."]]}
+];
+
+
+/* PARAGRAPH TEXT. Each line is: ["Heading", "target keyword", "your paragraph"].
+   Type your paragraph into the third slot, change any heading or keyword, and add lines to add more paragraphs. Then run: node build.js
+   Empty slots show a writing prompt. Before going live, fill them or set HIDE_EMPTY to true so the prompts are left out of the pages. */
+const HIDE_EMPTY=false;
+const TEXT={
+"ai-content":[
+["AI Content: what it is and how it works","AI content agency",""],
+["Why AI Content matters","generative AI content",""],
+["Benefits of AI Content","AI writing",""],
+["Who needs AI Content","AI video production",""],
+["Signs your business needs AI Content","AI image generation",""],
+["How to choose a partner for AI Content","AI marketing content",""],
+["AI Content pricing factors","content at scale",""],
+["AI Content timeline","AI content strategy",""],
+["AI Content best practices","brand voice AI",""],
+["Common AI Content mistakes","human-edited AI",""],
+["AI Content compared with the alternatives","content repurposing",""],
+["Tools used for AI Content","AI creative",""],
+["AI Content by industry","AI content agency",""],
+["AI Content for small businesses","generative AI content",""],
+["AI Content for large companies","AI writing",""],
+["How to measure AI Content","AI video production",""],
+["AI Content trends to watch","AI image generation",""],
+["AI Content case study","AI marketing content",""],
+["The Beetrix360 approach to AI Content","content at scale",""],
+["Getting started with AI Content","AI content strategy",""],
+["AI content agency","AI content agency",""],
+["Generative AI content","generative AI content",""],
+["AI writing","AI writing",""],
+["AI video production","AI video production",""],
+["AI image generation","AI image generation",""],
+["AI marketing content","AI marketing content",""],
+["Content at scale","content at scale",""],
+["AI content strategy","AI content strategy",""],
+["Brand voice AI","brand voice AI",""],
+["Human-edited AI","human-edited AI",""],
+["Content repurposing","content repurposing",""],
+["AI creative","AI creative",""]
+],
+"ai-writing":[
+["AI Content Writing: what it is and how it works","AI writer",""],
+["Why AI Content Writing matters","AI article writing",""],
+["Benefits of AI Content Writing","AI copy",""],
+["Who needs AI Content Writing","human-edited AI content",""],
+["Signs your business needs AI Content Writing","SEO content writing",""],
+["How to choose a partner for AI Content Writing","AI blog posts",""],
+["AI Content Writing pricing factors","content editing",""],
+["AI Content Writing timeline","brand voice",""],
+["AI Content Writing best practices","fact checking",""],
+["Common AI Content Writing mistakes","AI drafting",""],
+["AI Content Writing compared with the alternatives","long-form content",""],
+["Tools used for AI Content Writing","content writing agency",""],
+["AI Content Writing by industry","AI writer",""],
+["AI Content Writing for small businesses","AI article writing",""],
+["AI Content Writing for large companies","AI copy",""],
+["How to measure AI Content Writing","human-edited AI content",""],
+["AI Content Writing trends to watch","SEO content writing",""],
+["AI Content Writing case study","AI blog posts",""],
+["The Beetrix360 approach to AI Content Writing","content editing",""],
+["Getting started with AI Content Writing","brand voice",""],
+["AI writer","AI writer",""],
+["AI article writing","AI article writing",""],
+["AI copy","AI copy",""],
+["Human-edited AI content","human-edited AI content",""],
+["SEO content writing","SEO content writing",""],
+["AI blog posts","AI blog posts",""],
+["Content editing","content editing",""],
+["Brand voice","brand voice",""],
+["Fact checking","fact checking",""],
+["AI drafting","AI drafting",""],
+["Long-form content","long-form content",""],
+["Content writing agency","content writing agency",""]
+],
+"blog-writing":[
+["AI Blog Writing: what it is and how it works","AI blog writer",""],
+["Why AI Blog Writing matters","blog writing service",""],
+["Benefits of AI Blog Writing","SEO blog posts",""],
+["Who needs AI Blog Writing","article writing",""],
+["Signs your business needs AI Blog Writing","blog content strategy",""],
+["How to choose a partner for AI Blog Writing","topic clusters",""],
+["AI Blog Writing pricing factors","content refresh",""],
+["AI Blog Writing timeline","long-tail blog posts",""],
+["AI Blog Writing best practices","B2B blogging",""],
+["Common AI Blog Writing mistakes","AI-assisted blogging",""],
+["AI Blog Writing compared with the alternatives","blog outsourcing",""],
+["Tools used for AI Blog Writing","blog editing",""],
+["AI Blog Writing by industry","AI blog writer",""],
+["AI Blog Writing for small businesses","blog writing service",""],
+["AI Blog Writing for large companies","SEO blog posts",""],
+["How to measure AI Blog Writing","article writing",""],
+["AI Blog Writing trends to watch","blog content strategy",""],
+["AI Blog Writing case study","topic clusters",""],
+["The Beetrix360 approach to AI Blog Writing","content refresh",""],
+["Getting started with AI Blog Writing","long-tail blog posts",""],
+["AI blog writer","AI blog writer",""],
+["Blog writing service","blog writing service",""],
+["SEO blog posts","SEO blog posts",""],
+["Article writing","article writing",""],
+["Blog content strategy","blog content strategy",""],
+["Topic clusters","topic clusters",""],
+["Content refresh","content refresh",""],
+["Long-tail blog posts","long-tail blog posts",""],
+["B2B blogging","B2B blogging",""],
+["AI-assisted blogging","AI-assisted blogging",""],
+["Blog outsourcing","blog outsourcing",""],
+["Blog editing","blog editing",""]
+],
+"ai-copy":[
+["AI Copywriting: what it is and how it works","AI copywriter",""],
+["Why AI Copywriting matters","ad copy",""],
+["Benefits of AI Copywriting","landing page copy",""],
+["Who needs AI Copywriting","email copywriting",""],
+["Signs your business needs AI Copywriting","AI headlines",""],
+["How to choose a partner for AI Copywriting","conversion copywriting",""],
+["AI Copywriting pricing factors","sales copy",""],
+["AI Copywriting timeline","product messaging",""],
+["AI Copywriting best practices","A/B testing copy",""],
+["Common AI Copywriting mistakes","marketing copy",""],
+["AI Copywriting compared with the alternatives","CTA copy",""],
+["Tools used for AI Copywriting","ad variations",""],
+["AI Copywriting by industry","AI copywriter",""],
+["AI Copywriting for small businesses","ad copy",""],
+["AI Copywriting for large companies","landing page copy",""],
+["How to measure AI Copywriting","email copywriting",""],
+["AI Copywriting trends to watch","AI headlines",""],
+["AI Copywriting case study","conversion copywriting",""],
+["The Beetrix360 approach to AI Copywriting","sales copy",""],
+["Getting started with AI Copywriting","product messaging",""],
+["AI copywriter","AI copywriter",""],
+["Ad copy","ad copy",""],
+["Landing page copy","landing page copy",""],
+["Email copywriting","email copywriting",""],
+["AI headlines","AI headlines",""],
+["Conversion copywriting","conversion copywriting",""],
+["Sales copy","sales copy",""],
+["Product messaging","product messaging",""],
+["A/B testing copy","A/B testing copy",""],
+["Marketing copy","marketing copy",""],
+["CTA copy","CTA copy",""],
+["Ad variations","ad variations",""]
+],
+"product-desc":[
+["AI Product Descriptions: what it is and how it works","product descriptions",""],
+["Why AI Product Descriptions matters","ecommerce copywriting",""],
+["Benefits of AI Product Descriptions","catalog content",""],
+["Who needs AI Product Descriptions","Shopify descriptions",""],
+["Signs your business needs AI Product Descriptions","Amazon listing copy",""],
+["How to choose a partner for AI Product Descriptions","product feed",""],
+["AI Product Descriptions pricing factors","bulk product copy",""],
+["AI Product Descriptions timeline","AI ecommerce",""],
+["AI Product Descriptions best practices","product SEO",""],
+["Common AI Product Descriptions mistakes","PIM content",""],
+["AI Product Descriptions compared with the alternatives","marketplace listings",""],
+["Tools used for AI Product Descriptions","category copy",""],
+["AI Product Descriptions by industry","product descriptions",""],
+["AI Product Descriptions for small businesses","ecommerce copywriting",""],
+["AI Product Descriptions for large companies","catalog content",""],
+["How to measure AI Product Descriptions","Shopify descriptions",""],
+["AI Product Descriptions trends to watch","Amazon listing copy",""],
+["AI Product Descriptions case study","product feed",""],
+["The Beetrix360 approach to AI Product Descriptions","bulk product copy",""],
+["Getting started with AI Product Descriptions","AI ecommerce",""],
+["Product descriptions","product descriptions",""],
+["Ecommerce copywriting","ecommerce copywriting",""],
+["Catalog content","catalog content",""],
+["Shopify descriptions","Shopify descriptions",""],
+["Amazon listing copy","Amazon listing copy",""],
+["Product feed","product feed",""],
+["Bulk product copy","bulk product copy",""],
+["AI ecommerce","AI ecommerce",""],
+["Product SEO","product SEO",""],
+["PIM content","PIM content",""],
+["Marketplace listings","marketplace listings",""],
+["Category copy","category copy",""]
+],
+"ai-video":[
+["AI Video Generation: what it is and how it works","AI video production",""],
+["Why AI Video Generation matters","AI video generator",""],
+["Benefits of AI Video Generation","AI video agency",""],
+["Who needs AI Video Generation","text to video",""],
+["Signs your business needs AI Video Generation","AI voiceover",""],
+["How to choose a partner for AI Video Generation","video localization",""],
+["AI Video Generation pricing factors","AI video editing",""],
+["AI Video Generation timeline","AI storyboards",""],
+["AI Video Generation best practices","generative video",""],
+["Common AI Video Generation mistakes","AI explainer video",""],
+["AI Video Generation compared with the alternatives","marketing video",""],
+["Tools used for AI Video Generation","video at scale",""],
+["AI Video Generation by industry","AI video production",""],
+["AI Video Generation for small businesses","AI video generator",""],
+["AI Video Generation for large companies","AI video agency",""],
+["How to measure AI Video Generation","text to video",""],
+["AI Video Generation trends to watch","AI voiceover",""],
+["AI Video Generation case study","video localization",""],
+["The Beetrix360 approach to AI Video Generation","AI video editing",""],
+["Getting started with AI Video Generation","AI storyboards",""],
+["AI video production","AI video production",""],
+["AI video generator","AI video generator",""],
+["AI video agency","AI video agency",""],
+["Text to video","text to video",""],
+["AI voiceover","AI voiceover",""],
+["Video localization","video localization",""],
+["AI video editing","AI video editing",""],
+["AI storyboards","AI storyboards",""],
+["Generative video","generative video",""],
+["AI explainer video","AI explainer video",""],
+["Marketing video","marketing video",""],
+["Video at scale","video at scale",""]
+],
+"avatar-videos":[
+["AI Avatar Videos: what it is and how it works","AI avatar",""],
+["Why AI Avatar Videos matters","digital presenter",""],
+["Benefits of AI Avatar Videos","talking head video",""],
+["Who needs AI Avatar Videos","AI spokesperson",""],
+["Signs your business needs AI Avatar Videos","synthetic video",""],
+["How to choose a partner for AI Avatar Videos","training videos",""],
+["AI Avatar Videos pricing factors","AI onboarding video",""],
+["AI Avatar Videos timeline","custom avatar",""],
+["AI Avatar Videos best practices","multilingual video",""],
+["Common AI Avatar Videos mistakes","HeyGen alternative",""],
+["AI Avatar Videos compared with the alternatives","Synthesia videos",""],
+["Tools used for AI Avatar Videos","corporate video",""],
+["AI Avatar Videos by industry","AI avatar",""],
+["AI Avatar Videos for small businesses","digital presenter",""],
+["AI Avatar Videos for large companies","talking head video",""],
+["How to measure AI Avatar Videos","AI spokesperson",""],
+["AI Avatar Videos trends to watch","synthetic video",""],
+["AI Avatar Videos case study","training videos",""],
+["The Beetrix360 approach to AI Avatar Videos","AI onboarding video",""],
+["Getting started with AI Avatar Videos","custom avatar",""],
+["AI avatar","AI avatar",""],
+["Digital presenter","digital presenter",""],
+["Talking head video","talking head video",""],
+["AI spokesperson","AI spokesperson",""],
+["Synthetic video","synthetic video",""],
+["Training videos","training videos",""],
+["AI onboarding video","AI onboarding video",""],
+["Custom avatar","custom avatar",""],
+["Multilingual video","multilingual video",""],
+["HeyGen alternative","HeyGen alternative",""],
+["Synthesia videos","Synthesia videos",""],
+["Corporate video","corporate video",""]
+],
+"faceless-videos":[
+["AI Explainer Videos: what it is and how it works","explainer video",""],
+["Why AI Explainer Videos matters","faceless video",""],
+["Benefits of AI Explainer Videos","faceless YouTube channel",""],
+["Who needs AI Explainer Videos","animated explainer",""],
+["Signs your business needs AI Explainer Videos","product explainer",""],
+["How to choose a partner for AI Explainer Videos","AI narration",""],
+["AI Explainer Videos pricing factors","script writing",""],
+["AI Explainer Videos timeline","YouTube automation",""],
+["AI Explainer Videos best practices","educational video",""],
+["Common AI Explainer Videos mistakes","how-to video",""],
+["AI Explainer Videos compared with the alternatives","video series",""],
+["Tools used for AI Explainer Videos","screen recording video",""],
+["AI Explainer Videos by industry","explainer video",""],
+["AI Explainer Videos for small businesses","faceless video",""],
+["AI Explainer Videos for large companies","faceless YouTube channel",""],
+["How to measure AI Explainer Videos","animated explainer",""],
+["AI Explainer Videos trends to watch","product explainer",""],
+["AI Explainer Videos case study","AI narration",""],
+["The Beetrix360 approach to AI Explainer Videos","script writing",""],
+["Getting started with AI Explainer Videos","YouTube automation",""],
+["Explainer video","explainer video",""],
+["Faceless video","faceless video",""],
+["Faceless YouTube channel","faceless YouTube channel",""],
+["Animated explainer","animated explainer",""],
+["Product explainer","product explainer",""],
+["AI narration","AI narration",""],
+["Script writing","script writing",""],
+["YouTube automation","YouTube automation",""],
+["Educational video","educational video",""],
+["How-to video","how-to video",""],
+["Video series","video series",""],
+["Screen recording video","screen recording video",""]
+],
+"video-ads":[
+["AI Video Ads: what it is and how it works","AI video ad generator",""],
+["Why AI Video Ads matters","video ad creative",""],
+["Benefits of AI Video Ads","performance creative",""],
+["Who needs AI Video Ads","ad variations",""],
+["Signs your business needs AI Video Ads","Meta video ads",""],
+["How to choose a partner for AI Video Ads","TikTok video ads",""],
+["AI Video Ads pricing factors","YouTube ads",""],
+["AI Video Ads timeline","creative testing",""],
+["AI Video Ads best practices","ad hooks",""],
+["Common AI Video Ads mistakes","ad fatigue",""],
+["AI Video Ads compared with the alternatives","short video ads",""],
+["Tools used for AI Video Ads","direct response video",""],
+["AI Video Ads by industry","AI video ad generator",""],
+["AI Video Ads for small businesses","video ad creative",""],
+["AI Video Ads for large companies","performance creative",""],
+["How to measure AI Video Ads","ad variations",""],
+["AI Video Ads trends to watch","Meta video ads",""],
+["AI Video Ads case study","TikTok video ads",""],
+["The Beetrix360 approach to AI Video Ads","YouTube ads",""],
+["Getting started with AI Video Ads","creative testing",""],
+["AI video ad generator","AI video ad generator",""],
+["Video ad creative","video ad creative",""],
+["Performance creative","performance creative",""],
+["Ad variations","ad variations",""],
+["Meta video ads","Meta video ads",""],
+["TikTok video ads","TikTok video ads",""],
+["YouTube ads","YouTube ads",""],
+["Creative testing","creative testing",""],
+["Ad hooks","ad hooks",""],
+["Ad fatigue","ad fatigue",""],
+["Short video ads","short video ads",""],
+["Direct response video","direct response video",""]
+],
+"product-videos":[
+["AI Product Videos: what it is and how it works","product video",""],
+["Why AI Product Videos matters","ecommerce video",""],
+["Benefits of AI Product Videos","product video generator",""],
+["Who needs AI Product Videos","image to video",""],
+["Signs your business needs AI Product Videos","PDP video",""],
+["How to choose a partner for AI Product Videos","Amazon product video",""],
+["AI Product Videos pricing factors","Shopify video",""],
+["AI Product Videos timeline","product animation",""],
+["AI Product Videos best practices","product demo",""],
+["Common AI Product Videos mistakes","product showcase",""],
+["AI Product Videos compared with the alternatives","catalog video",""],
+["Tools used for AI Product Videos","3D product video",""],
+["AI Product Videos by industry","product video",""],
+["AI Product Videos for small businesses","ecommerce video",""],
+["AI Product Videos for large companies","product video generator",""],
+["How to measure AI Product Videos","image to video",""],
+["AI Product Videos trends to watch","PDP video",""],
+["AI Product Videos case study","Amazon product video",""],
+["The Beetrix360 approach to AI Product Videos","Shopify video",""],
+["Getting started with AI Product Videos","product animation",""],
+["Product video","product video",""],
+["Ecommerce video","ecommerce video",""],
+["Product video generator","product video generator",""],
+["Image to video","image to video",""],
+["PDP video","PDP video",""],
+["Amazon product video","Amazon product video",""],
+["Shopify video","Shopify video",""],
+["Product animation","product animation",""],
+["Product demo","product demo",""],
+["Product showcase","product showcase",""],
+["Catalog video","catalog video",""],
+["3D product video","3D product video",""]
+],
+"ai-images":[
+["AI Image Generation: what it is and how it works","AI image generator",""],
+["Why AI Image Generation matters","AI art direction",""],
+["Benefits of AI Image Generation","AI photography",""],
+["Who needs AI Image Generation","generative images",""],
+["Signs your business needs AI Image Generation","Midjourney agency",""],
+["How to choose a partner for AI Image Generation","Firefly images",""],
+["AI Image Generation pricing factors","AI visuals",""],
+["AI Image Generation timeline","custom AI model",""],
+["AI Image Generation best practices","campaign visuals",""],
+["Common AI Image Generation mistakes","AI retouching",""],
+["AI Image Generation compared with the alternatives","image library",""],
+["Tools used for AI Image Generation","marketing images",""],
+["AI Image Generation by industry","AI image generator",""],
+["AI Image Generation for small businesses","AI art direction",""],
+["AI Image Generation for large companies","AI photography",""],
+["How to measure AI Image Generation","generative images",""],
+["AI Image Generation trends to watch","Midjourney agency",""],
+["AI Image Generation case study","Firefly images",""],
+["The Beetrix360 approach to AI Image Generation","AI visuals",""],
+["Getting started with AI Image Generation","custom AI model",""],
+["AI image generator","AI image generator",""],
+["AI art direction","AI art direction",""],
+["AI photography","AI photography",""],
+["Generative images","generative images",""],
+["Midjourney agency","Midjourney agency",""],
+["Firefly images","Firefly images",""],
+["AI visuals","AI visuals",""],
+["Custom AI model","custom AI model",""],
+["Campaign visuals","campaign visuals",""],
+["AI retouching","AI retouching",""],
+["Image library","image library",""],
+["Marketing images","marketing images",""]
+],
+"product-photo":[
+["AI Product Photography: what it is and how it works","AI product photos",""],
+["Why AI Product Photography matters","product photography",""],
+["Benefits of AI Product Photography","ecommerce photography",""],
+["Who needs AI Product Photography","product backgrounds",""],
+["Signs your business needs AI Product Photography","Amazon product images",""],
+["How to choose a partner for AI Product Photography","lifestyle product photos",""],
+["AI Product Photography pricing factors","packshot",""],
+["AI Product Photography timeline","product mockups",""],
+["AI Product Photography best practices","background replacement",""],
+["Common AI Product Photography mistakes","ghost mannequin",""],
+["AI Product Photography compared with the alternatives","white background photos",""],
+["Tools used for AI Product Photography","seasonal product images",""],
+["AI Product Photography by industry","AI product photos",""],
+["AI Product Photography for small businesses","product photography",""],
+["AI Product Photography for large companies","ecommerce photography",""],
+["How to measure AI Product Photography","product backgrounds",""],
+["AI Product Photography trends to watch","Amazon product images",""],
+["AI Product Photography case study","lifestyle product photos",""],
+["The Beetrix360 approach to AI Product Photography","packshot",""],
+["Getting started with AI Product Photography","product mockups",""],
+["AI product photos","AI product photos",""],
+["Product photography","product photography",""],
+["Ecommerce photography","ecommerce photography",""],
+["Product backgrounds","product backgrounds",""],
+["Amazon product images","Amazon product images",""],
+["Lifestyle product photos","lifestyle product photos",""],
+["Packshot","packshot",""],
+["Product mockups","product mockups",""],
+["Background replacement","background replacement",""],
+["Ghost mannequin","ghost mannequin",""],
+["White background photos","white background photos",""],
+["Seasonal product images","seasonal product images",""]
+],
+"ad-creatives":[
+["AI Ad Creatives: what it is and how it works","AI ad generator",""],
+["Why AI Ad Creatives matters","ad design",""],
+["Benefits of AI Ad Creatives","static ads",""],
+["Who needs AI Ad Creatives","Meta ad creatives",""],
+["Signs your business needs AI Ad Creatives","Google display banners",""],
+["How to choose a partner for AI Ad Creatives","carousel ads",""],
+["AI Ad Creatives pricing factors","creative testing",""],
+["AI Ad Creatives timeline","ad variations",""],
+["AI Ad Creatives best practices","performance design",""],
+["Common AI Ad Creatives mistakes","ad resizing",""],
+["AI Ad Creatives compared with the alternatives","dynamic creative",""],
+["Tools used for AI Ad Creatives","social ads",""],
+["AI Ad Creatives by industry","AI ad generator",""],
+["AI Ad Creatives for small businesses","ad design",""],
+["AI Ad Creatives for large companies","static ads",""],
+["How to measure AI Ad Creatives","Meta ad creatives",""],
+["AI Ad Creatives trends to watch","Google display banners",""],
+["AI Ad Creatives case study","carousel ads",""],
+["The Beetrix360 approach to AI Ad Creatives","creative testing",""],
+["Getting started with AI Ad Creatives","ad variations",""],
+["AI ad generator","AI ad generator",""],
+["Ad design","ad design",""],
+["Static ads","static ads",""],
+["Meta ad creatives","Meta ad creatives",""],
+["Google display banners","Google display banners",""],
+["Carousel ads","carousel ads",""],
+["Creative testing","creative testing",""],
+["Ad variations","ad variations",""],
+["Performance design","performance design",""],
+["Ad resizing","ad resizing",""],
+["Dynamic creative","dynamic creative",""],
+["Social ads","social ads",""]
+],
+"lifestyle-images":[
+["AI Lifestyle Images: what it is and how it works","lifestyle photography",""],
+["Why AI Lifestyle Images matters","AI lifestyle photos",""],
+["Benefits of AI Lifestyle Images","brand imagery",""],
+["Who needs AI Lifestyle Images","website images",""],
+["Signs your business needs AI Lifestyle Images","campaign imagery",""],
+["How to choose a partner for AI Lifestyle Images","AI stock photo alternative",""],
+["AI Lifestyle Images pricing factors","social media images",""],
+["AI Lifestyle Images timeline","localized imagery",""],
+["AI Lifestyle Images best practices","seasonal campaign",""],
+["Common AI Lifestyle Images mistakes","hero images",""],
+["AI Lifestyle Images compared with the alternatives","brand photography",""],
+["Tools used for AI Lifestyle Images","AI scenes",""],
+["AI Lifestyle Images by industry","lifestyle photography",""],
+["AI Lifestyle Images for small businesses","AI lifestyle photos",""],
+["AI Lifestyle Images for large companies","brand imagery",""],
+["How to measure AI Lifestyle Images","website images",""],
+["AI Lifestyle Images trends to watch","campaign imagery",""],
+["AI Lifestyle Images case study","AI stock photo alternative",""],
+["The Beetrix360 approach to AI Lifestyle Images","social media images",""],
+["Getting started with AI Lifestyle Images","localized imagery",""],
+["Lifestyle photography","lifestyle photography",""],
+["AI lifestyle photos","AI lifestyle photos",""],
+["Brand imagery","brand imagery",""],
+["Website images","website images",""],
+["Campaign imagery","campaign imagery",""],
+["AI stock photo alternative","AI stock photo alternative",""],
+["Social media images","social media images",""],
+["Localized imagery","localized imagery",""],
+["Seasonal campaign","seasonal campaign",""],
+["Hero images","hero images",""],
+["Brand photography","brand photography",""],
+["AI scenes","AI scenes",""]
+],
+"ai-social":[
+["AI Social Media Content: what it is and how it works","AI social media",""],
+["Why AI Social Media Content matters","AI captions",""],
+["Benefits of AI Social Media Content","social media automation",""],
+["Who needs AI Social Media Content","AI post generator",""],
+["Signs your business needs AI Social Media Content","content repurposing",""],
+["How to choose a partner for AI Social Media Content","AI content calendar",""],
+["AI Social Media Content pricing factors","AI carousels",""],
+["AI Social Media Content timeline","social media AI tools",""],
+["AI Social Media Content best practices","LinkedIn AI posts",""],
+["Common AI Social Media Content mistakes","Instagram AI content",""],
+["AI Social Media Content compared with the alternatives","AI hashtags",""],
+["Tools used for AI Social Media Content","social scheduling",""],
+["AI Social Media Content by industry","AI social media",""],
+["AI Social Media Content for small businesses","AI captions",""],
+["AI Social Media Content for large companies","social media automation",""],
+["How to measure AI Social Media Content","AI post generator",""],
+["AI Social Media Content trends to watch","content repurposing",""],
+["AI Social Media Content case study","AI content calendar",""],
+["The Beetrix360 approach to AI Social Media Content","AI carousels",""],
+["Getting started with AI Social Media Content","social media AI tools",""],
+["AI social media","AI social media",""],
+["AI captions","AI captions",""],
+["Social media automation","social media automation",""],
+["AI post generator","AI post generator",""],
+["Content repurposing","content repurposing",""],
+["AI content calendar","AI content calendar",""],
+["AI carousels","AI carousels",""],
+["Social media AI tools","social media AI tools",""],
+["LinkedIn AI posts","LinkedIn AI posts",""],
+["Instagram AI content","Instagram AI content",""],
+["AI hashtags","AI hashtags",""],
+["Social scheduling","social scheduling",""]
+],
+"reels-shorts":[
+["AI Reels & Shorts: what it is and how it works","AI video clipping",""],
+["Why AI Reels & Shorts matters","Instagram Reels",""],
+["Benefits of AI Reels & Shorts","YouTube Shorts",""],
+["Who needs AI Reels & Shorts","short-form video",""],
+["Signs your business needs AI Reels & Shorts","podcast clips",""],
+["How to choose a partner for AI Reels & Shorts","vertical video",""],
+["AI Reels & Shorts pricing factors","auto captions",""],
+["AI Reels & Shorts timeline","video repurposing",""],
+["AI Reels & Shorts best practices","Opus Clip alternative",""],
+["Common AI Reels & Shorts mistakes","Reels editing",""],
+["AI Reels & Shorts compared with the alternatives","Shorts strategy",""],
+["Tools used for AI Reels & Shorts","viral clips",""],
+["AI Reels & Shorts by industry","AI video clipping",""],
+["AI Reels & Shorts for small businesses","Instagram Reels",""],
+["AI Reels & Shorts for large companies","YouTube Shorts",""],
+["How to measure AI Reels & Shorts","short-form video",""],
+["AI Reels & Shorts trends to watch","podcast clips",""],
+["AI Reels & Shorts case study","vertical video",""],
+["The Beetrix360 approach to AI Reels & Shorts","auto captions",""],
+["Getting started with AI Reels & Shorts","video repurposing",""],
+["AI video clipping","AI video clipping",""],
+["Instagram Reels","Instagram Reels",""],
+["YouTube Shorts","YouTube Shorts",""],
+["Short-form video","short-form video",""],
+["Podcast clips","podcast clips",""],
+["Vertical video","vertical video",""],
+["Auto captions","auto captions",""],
+["Video repurposing","video repurposing",""],
+["Opus Clip alternative","Opus Clip alternative",""],
+["Reels editing","Reels editing",""],
+["Shorts strategy","Shorts strategy",""],
+["Viral clips","viral clips",""]
+],
+"ugc-ads":[
+["AI UGC Ads: what it is and how it works","UGC ads",""],
+["Why AI UGC Ads matters","AI UGC",""],
+["Benefits of AI UGC Ads","UGC-style video",""],
+["Who needs AI UGC Ads","AI UGC generator",""],
+["Signs your business needs AI UGC Ads","direct response ads",""],
+["How to choose a partner for AI UGC Ads","ad scripts",""],
+["AI UGC Ads pricing factors","creator ads",""],
+["AI UGC Ads timeline","TikTok ads",""],
+["AI UGC Ads best practices","Meta ads",""],
+["Common AI UGC Ads mistakes","AI actors",""],
+["AI UGC Ads compared with the alternatives","creative testing",""],
+["Tools used for AI UGC Ads","native ads",""],
+["AI UGC Ads by industry","UGC ads",""],
+["AI UGC Ads for small businesses","AI UGC",""],
+["AI UGC Ads for large companies","UGC-style video",""],
+["How to measure AI UGC Ads","AI UGC generator",""],
+["AI UGC Ads trends to watch","direct response ads",""],
+["AI UGC Ads case study","ad scripts",""],
+["The Beetrix360 approach to AI UGC Ads","creator ads",""],
+["Getting started with AI UGC Ads","TikTok ads",""],
+["UGC ads","UGC ads",""],
+["AI UGC","AI UGC",""],
+["UGC-style video","UGC-style video",""],
+["AI UGC generator","AI UGC generator",""],
+["Direct response ads","direct response ads",""],
+["Ad scripts","ad scripts",""],
+["Creator ads","creator ads",""],
+["TikTok ads","TikTok ads",""],
+["Meta ads","Meta ads",""],
+["AI actors","AI actors",""],
+["Creative testing","creative testing",""],
+["Native ads","native ads",""]
+],
+"ugc-avatars":[
+["AI UGC Avatars: what it is and how it works","AI avatars for ads",""],
+["Why AI UGC Avatars matters","UGC avatar",""],
+["Benefits of AI UGC Avatars","AI spokesperson",""],
+["Who needs AI UGC Avatars","synthetic creators",""],
+["Signs your business needs AI UGC Avatars","AI actors",""],
+["How to choose a partner for AI UGC Avatars","Arcads alternative",""],
+["AI UGC Avatars pricing factors","avatar ads",""],
+["AI UGC Avatars timeline","licensed avatars",""],
+["AI UGC Avatars best practices","AI presenter",""],
+["Common AI UGC Avatars mistakes","ad testing",""],
+["AI UGC Avatars compared with the alternatives","multilingual ads",""],
+["Tools used for AI UGC Avatars","talking head ads",""],
+["AI UGC Avatars by industry","AI avatars for ads",""],
+["AI UGC Avatars for small businesses","UGC avatar",""],
+["AI UGC Avatars for large companies","AI spokesperson",""],
+["How to measure AI UGC Avatars","synthetic creators",""],
+["AI UGC Avatars trends to watch","AI actors",""],
+["AI UGC Avatars case study","Arcads alternative",""],
+["The Beetrix360 approach to AI UGC Avatars","avatar ads",""],
+["Getting started with AI UGC Avatars","licensed avatars",""],
+["AI avatars for ads","AI avatars for ads",""],
+["UGC avatar","UGC avatar",""],
+["AI spokesperson","AI spokesperson",""],
+["Synthetic creators","synthetic creators",""],
+["AI actors","AI actors",""],
+["Arcads alternative","Arcads alternative",""],
+["Avatar ads","avatar ads",""],
+["Licensed avatars","licensed avatars",""],
+["AI presenter","AI presenter",""],
+["Ad testing","ad testing",""],
+["Multilingual ads","multilingual ads",""],
+["Talking head ads","talking head ads",""]
+],
+"tiktok-ugc":[
+["AI TikTok UGC Ads: what it is and how it works","TikTok UGC ads",""],
+["Why AI TikTok UGC Ads matters","TikTok ad creative",""],
+["Benefits of AI TikTok UGC Ads","AI TikTok ads",""],
+["Who needs AI TikTok UGC Ads","TikTok hooks",""],
+["Signs your business needs AI TikTok UGC Ads","Spark Ads",""],
+["How to choose a partner for AI TikTok UGC Ads","TikTok Creative Center",""],
+["AI TikTok UGC Ads pricing factors","native ads",""],
+["AI TikTok UGC Ads timeline","TikTok Shop ads",""],
+["AI TikTok UGC Ads best practices","short video ads",""],
+["Common AI TikTok UGC Ads mistakes","creator ads",""],
+["AI TikTok UGC Ads compared with the alternatives","AI-generated label",""],
+["Tools used for AI TikTok UGC Ads","TikTok testing",""],
+["AI TikTok UGC Ads by industry","TikTok UGC ads",""],
+["AI TikTok UGC Ads for small businesses","TikTok ad creative",""],
+["AI TikTok UGC Ads for large companies","AI TikTok ads",""],
+["How to measure AI TikTok UGC Ads","TikTok hooks",""],
+["AI TikTok UGC Ads trends to watch","Spark Ads",""],
+["AI TikTok UGC Ads case study","TikTok Creative Center",""],
+["The Beetrix360 approach to AI TikTok UGC Ads","native ads",""],
+["Getting started with AI TikTok UGC Ads","TikTok Shop ads",""],
+["TikTok UGC ads","TikTok UGC ads",""],
+["TikTok ad creative","TikTok ad creative",""],
+["AI TikTok ads","AI TikTok ads",""],
+["TikTok hooks","TikTok hooks",""],
+["Spark Ads","Spark Ads",""],
+["TikTok Creative Center","TikTok Creative Center",""],
+["Native ads","native ads",""],
+["TikTok Shop ads","TikTok Shop ads",""],
+["Short video ads","short video ads",""],
+["Creator ads","creator ads",""],
+["AI-generated label","AI-generated label",""],
+["TikTok testing","TikTok testing",""]
+],
+"enterprise-ai":[
+["Enterprise AI Content: what it is and how it works","enterprise AI",""],
+["Why Enterprise AI Content matters","AI governance",""],
+["Benefits of Enterprise AI Content","AI content policy",""],
+["Who needs Enterprise AI Content","brand-safe AI",""],
+["Signs your business needs Enterprise AI Content","self-hosted LLM",""],
+["How to choose a partner for Enterprise AI Content","private AI",""],
+["Enterprise AI Content pricing factors","AI content operations",""],
+["Enterprise AI Content timeline","responsible AI",""],
+["Enterprise AI Content best practices","AI compliance",""],
+["Common Enterprise AI Content mistakes","multi-market content",""],
+["Enterprise AI Content compared with the alternatives","AI workflow",""],
+["Tools used for Enterprise AI Content","content supply chain",""],
+["Enterprise AI Content by industry","enterprise AI",""],
+["Enterprise AI Content for small businesses","AI governance",""],
+["Enterprise AI Content for large companies","AI content policy",""],
+["How to measure Enterprise AI Content","brand-safe AI",""],
+["Enterprise AI Content trends to watch","self-hosted LLM",""],
+["Enterprise AI Content case study","private AI",""],
+["The Beetrix360 approach to Enterprise AI Content","AI content operations",""],
+["Getting started with Enterprise AI Content","responsible AI",""],
+["Enterprise AI","enterprise AI",""],
+["AI governance","AI governance",""],
+["AI content policy","AI content policy",""],
+["Brand-safe AI","brand-safe AI",""],
+["Self-hosted LLM","self-hosted LLM",""],
+["Private AI","private AI",""],
+["AI content operations","AI content operations",""],
+["Responsible AI","responsible AI",""],
+["AI compliance","AI compliance",""],
+["Multi-market content","multi-market content",""],
+["AI workflow","AI workflow",""],
+["Content supply chain","content supply chain",""]
+],
+
+};
+
+/* Extra FAQs, added to every page. Each one is skipped if the page already answers that topic. */
+const FAQ_EXTRA=[
+[/pric|cost|how much/i,n=>"How is pricing set for "+n+"?","Pricing depends on your goals, scope and how much work is needed each month. We scope the work after a free audit, so you get a clear price before anything starts."],
+[/how long|how soon|how quickly|timeline|when will/i,n=>"How soon can we expect results from "+n+"?","It depends on your starting point and market. We share a realistic timeline after the audit, with milestones you can track from the first month."],
+[/who (is|are|should|needs)/i,n=>"Who is "+n+" best for?","It suits businesses that want a clear return from their marketing and growth work. The audit shows whether it is the right next step for you, or whether something else should come first."],
+[/need from|start|begin|first step/i,n=>"What do you need from us to start "+n+"?","A short kickoff call, access to the relevant accounts and your main goals. We send a simple checklist after the audit so nothing is missed."],
+[/measure|report|track|kpi/i,n=>"How do you measure results from "+n+"?","We agree on the numbers that matter before work starts, such as leads, pipeline or revenue. You get plain-language reports that show what changed and what comes next."],
+[/in-house|internal|our team/i,n=>"Can "+n+" work alongside our in-house team?","Yes. We can lead the work, support your team, or hand over what we build with documentation and training."],
+[/guarantee/i,n=>"Do you guarantee results from "+n+"?","No honest partner can promise exact outcomes, because results depend on your market and many outside factors. We do commit to clear goals, transparent reporting and steady work on the highest-value priorities."],
+[/why (choose|beetrix|hire|work)/i,n=>"Why choose Beetrix360 for "+n+"?","We tie the work to leads and revenue, explain it in plain language, and keep strategy and delivery with one team."],
+[/after the (free )?audit/i,()=>"What happens after the free audit?","We share what we found, recommend priorities and send a scoped proposal. There is no obligation to continue."]];
+PAGES.forEach(p=>{if(!p.faq)return;const n=p.short||p.name;FAQ_EXTRA.forEach(x=>{if(!p.faq.some(q=>x[0].test(q[0])))p.faq.push([x[1](n),x[2]])})});
+
+const SITE="https://www.beetrix360.com",TEL="+1 (424) 441-6042";
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const LOGO=c=>`<svg class="${c||""}" viewBox="0 0 100 100" aria-hidden="true"><path fill="#2CB383" d="M12,18 C12,13.5 15.5,10 20,10 L46,10 L46,23 C51,21 56,25 56,30 C56,35 51,39 46,37 L46,48 L35,48 C35,42 29,39 25,42 C21,45 23,48 23,48 L12,48 Z"/><path fill="#DE2056" d="M52,10 L78,10 C82.5,10 86,13.5 86,18 L86,44 L73,44 C73,50 64,50 64,44 L52,44 L52,35 C58,35 58,25 52,25 Z"/><path fill="#3ABEF9" d="M50,52 L64,52 C64,58 73,58 73,52 L86,52 L86,80 C86,84.5 82.5,88 78,88 L50,88 L50,75 C44,75 44,65 50,65 Z"/><path fill="#FAB12F" d="M12,52 L24,52 C24,46 33,46 33,52 L46,52 L46,65 C40,65 40,75 46,75 L46,88 L20,88 C15.5,88 12,84.5 12,80 Z"/></svg>`;
+const ARROW=`<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>`;
+const cta=(l,c)=>`<a class="btn ${c||"pri"}" href="#start"><span>${esc(l)}</span>${ARROW}</a>`;
+/* IMAGES: add real files here, then run build. Key "page-id:slot" for one page, or "slot" for all pages. */
+const IMAGES={};let SLOTN=0;
+function img(p,slot,w,h,what,alt,tag){tag=tag||"figure";const src=IMAGES[p.id+":"+slot]||IMAGES[slot],n=SLOTN++%4;
+if(src)return `<${tag} class="imgs has" style="--ar:${w}/${h}"><img src="${esc(src)}" alt="${esc(alt)}" width="${w}" height="${h}" loading="lazy"></${tag}>`;
+return `<${tag} class="imgs v${n}" style="--ar:${w}/${h}" data-slot="${esc(slot)}" data-alt="${esc(alt)}"><span class="il1">${esc(what)}</span><span class="il2">${w} × ${h}</span></${tag}>`}
+const name=p=>p.what||p.short;
+const pr=(t)=>`<p class="pr"><span class="you">You</span><code data-type>${esc(t)}</code></p>`;
+function hl(t,p){let s=esc(t),n=0;p.kws.concat([p.kw,p.short]).forEach(k=>{if(n>=2)return;const r=new RegExp("\\b("+k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")\\b","i");if(r.test(s)){s=s.replace(r,"<mark>$1</mark>");n++}});return s}
+/* Same navigation as beetrix360.com. */
+const C=(h,href,links,wide)=>({h,href,links,wide});
+const NAV=[
+{t:"AI Search & SEO",href:"/seo",cols:[C("Search Engine Optimization","/seo",[["Local SEO","/seo/local-seo"],["Technical SEO","/seo/technical-seo"],["On-Page SEO","/seo/on-page-seo"],["Link Building","/seo/link-building"],["Ecommerce SEO","/seo/ecommerce-seo"]]),C("AI Search Visibility","",[["Generative Engine & LLM Optimization (GEO)","/seo/generative-engine-optimization"],["Answer Engine Optimization (AEO)","/seo/answer-engine-optimization"],["Programmatic SEO","/seo/programmatic-seo"],["ChatGPT Optimization","/seo/chatgpt-optimization"],["AI & LLM Visibility Tracking","/seo/ai-visibility-tracking"],["AI Brand Perception","/seo/ai-brand-perception"]]),C("Strategy & Enterprise","",[["Keyword Research","/seo/keyword-research"],["Digital Marketing Competitor Analysis","/digital-marketing/competitor-analysis"],["Enterprise SEO","/seo/enterprise-seo"],["Enterprise GEO","/seo/enterprise-geo"]]),C("Expertise","",[["Our Results","/results"],["Case Studies","/case-studies"],["Our AI Search Approach","/about/our-approach/ai-search"]])],promo:["See our SEO results","Read the case study","/case-studies"],all:["View all in AI Search & SEO","/seo"],extra:[["How Much Does SEO Cost?","/pricing/seo-cost"],["How Much Does Generative Engine Optimization Cost?","/pricing/geo-cost"],["Local SEO Pricing","/pricing/local-seo-pricing"]]},
+{t:"Paid Media",href:"/paid-media",cols:[C("Paid Search & Programmatic","/paid-media",[["Google Ads Management","/paid-media/google-ads"],["Google Local Services Ads Management","/paid-media/google-local-services-ads"],["Programmatic Advertising","/paid-media/programmatic-advertising"],["Enterprise PPC Management","/paid-media/enterprise-ppc"]]),C("Social Advertising","/paid-media/social-media-advertising",[["Meta Ads Management","/paid-media/meta-ads"],["TikTok Ads Management","/paid-media/tiktok-ads"],["Influencer Marketing","/social-media/influencer-marketing"],["Enterprise Social Media Advertising","/paid-media/enterprise-social-advertising"]]),C("Amazon & Retail Marketplaces","/marketplaces",[["Amazon Management Services","/marketplaces/amazon"],["Amazon Advertising Management","/marketplaces/amazon/advertising"],["Amazon SEO & Listing Optimization","/marketplaces/amazon/seo"],["Amazon DSP Management","/marketplaces/amazon/dsp"],["Amazon Seller Operations Management","/marketplaces/amazon/seller-operations"],["Amazon Brand Management","/marketplaces/amazon/brand-management"],["Amazon Creator Connections","/marketplaces/amazon/creator-connections"],["Enterprise Amazon Advertising","/marketplaces/amazon/enterprise-advertising"],["Walmart Marketplace & Ads Management","/marketplaces/walmart"],["Target Plus & Roundel Ads Management","/marketplaces/target"]],1)],promo:["See our paid media results","Read the case study","/case-studies"],all:["View all in Paid Media & Marketplaces","/paid-media"],extra:[["How Much Does PPC Cost?","/pricing/ppc-cost"]]},
+{t:"Brand & Social",href:"/digital-marketing",cols:[C("Brand","/branding",[["Brand Strategy","/branding/brand-strategy"],["Business Naming","/branding/business-naming"],["Brand Identity Design","/branding/brand-identity-design"],["Logo Design","/branding/logo-design"],["Collateral Design","/branding/collateral-design"],["Packaging & Label Design","/branding/packaging-label-design"]]),C("Social Media","/social-media",[["Instagram Management","/social-media/instagram-management"],["Facebook Management","/social-media/facebook-management"],["LinkedIn Management","/social-media/linkedin-management"],["TikTok Account Management","/social-media/tiktok-management"],["Social Media Content & Design","/social-media/content-and-design"],["Community Management","/social-media/community-management"],["Enterprise Social Media Management","/social-media/enterprise-management"]],1),C("Content Marketing","/content-marketing",[["Digital Marketing Services","/digital-marketing"],["Website Copywriting","/content-marketing/website-copywriting"],["Infographics & Motion Graphics","/content-marketing/infographics-motion-graphics"]])],promo:["See brand and social work","View the portfolio","/portfolio"],all:["View all in Brand, Content & Social","/digital-marketing"],extra:[["Social Media Pricing","/pricing/social-media-pricing"]]},
+{t:"AI Content",href:"/ai-content",cur:1,cols:[C("AI Content Writing","/ai-content/writing",[["AI Blog Writing","/ai-content/writing/blog-writing"],["AI Copywriting","/ai-content/writing/copywriting"],["AI Product Descriptions","/ai-content/writing/product-descriptions"]]),C("AI Video Generation","/ai-content/video",[["AI Avatar Videos","/ai-content/video/avatar-videos"],["AI Explainer & Faceless Videos","/ai-content/video/faceless-videos"],["AI Video Ads","/ai-content/video/video-ads"],["AI Product Videos","/ai-content/video/product-videos"]]),C("AI Image Generation","/ai-content/images",[["AI Product Photography","/ai-content/images/product-photography"],["AI Ad Creatives","/ai-content/images/ad-creatives"],["AI Lifestyle Images","/ai-content/images/lifestyle-images"]]),C("Social, UGC & Enterprise","",[["AI Social Media Content","/ai-content/social-media"],["AI Reels & Shorts","/ai-content/social-media/reels-shorts"],["AI UGC Ads","/ai-content/ugc-ads"],["AI UGC Avatars","/ai-content/ugc-ads/ugc-avatars"],["AI TikTok UGC Ads","/ai-content/ugc-ads/tiktok-ugc-ads"],["Enterprise AI Content","/ai-content/enterprise"]])],promo:["See AI video and ad creative work","View the portfolio","/portfolio"],all:["View all in AI Content","/ai-content"],extra:[]},
+{t:"Web & Conversion",href:"/web-design",cols:[C("Design","/web-design",[["Website Redesign","/web-design/redesign"],["Rapid Web Design","/web-design/rapid-web-design"],["Ecommerce Website Design","/web-design/ecommerce"],["Landing Page Design","/web-design/landing-pages"]]),C("Development","/web-development",[["WordPress Development","/web-development/wordpress"],["Ecommerce Development","/web-development/ecommerce"],["Web Apps & Portals","/web-development/web-applications"],["CMS Development","/web-development/cms"],["Website Security","/web-development/site-security"],["Web Infrastructure & Maintenance","/web-development/maintenance"]]),C("Conversion & Lifecycle","/conversion",[["Sales Funnel Development","/conversion/sales-funnels"],["Lead Generation","/conversion/lead-generation"],["Marketing Automation","/automation/marketing-automation"],["Analytics & Tracking Setup","/conversion/analytics-tracking"],["Website Personalization","/conversion/website-personalization"],["Online Review Generation","/conversion/review-generation"],["Account-Based Marketing","/conversion/account-based-marketing"],["Salesforce Marketing Automation","/automation/salesforce-marketing-automation"],["Channel Partner Pipeline Management","/automation/channel-partner-pipeline"]]),C("Email Marketing","/email-marketing",[["Email Campaign Management","/email-marketing/campaign-management"],["Email Automation","/email-marketing/automation"],["Newsletter Management","/email-marketing/newsletter-management"],["Email Design & Testing","/email-marketing/design-testing"]])],promo:null,all:["View all in Web & Conversion","/web-design"],extra:[["How Much Should a Website Cost?","/pricing/website-cost"]]},
+{t:"AI & Automation",href:"/ai",cols:[C("AI Agents & Chatbots","/ai/agent-development",[["Custom AI Agents","/ai/agent-development/custom-ai-agents"],["AI Sales Agents","/ai/agent-development/ai-sales-agents"],["AI Customer Service Agents","/ai/agent-development/ai-customer-service-agents"],["Multi-Agent Systems","/ai/agent-development/multi-agent-systems"],["AI Chatbot Development","/ai/chatbot-development"],["Website Chatbots","/ai/chatbot-development/website-chatbots"],["WhatsApp Chatbots","/ai/chatbot-development/whatsapp-chatbots"],["Ecommerce Chatbots","/ai/chatbot-development/ecommerce-chatbots"]]),C("Process Automation","/automation",[["Business Process Automation","/automation/business-process-automation"],["Document Processing Automation","/automation/document-processing"],["Data Entry & Sync Automation","/automation/data-entry-automation"],["API & Systems Integration","/automation/api-integration"],["Low-Code & No-Code Automation","/automation/no-code-automation"],["CRM Automation","/automation/crm-automation"]]),C("Integration & Strategy","/ai/integration",[["AI Consulting","/ai/consulting"],["ChatGPT API Integration","/ai/integration/chatgpt-integration"],["CRM AI Integration","/ai/integration/crm-ai-integration"],["AI Software Integration","/ai/integration/ai-software-integration"],["AI Digital Marketing Services","/digital-marketing/ai-digital-marketing"],["Enterprise AI Automation","/ai/enterprise-automation"]])],promo:["See our automation results","Read the case study","/case-studies"],all:["View all in AI & Automation","/ai"],extra:[["How Much Does AI Automation Cost?","/pricing/ai-automation-cost"]]},
+{t:"Company",href:"/about",cols:[C("About Beetrix360","/about",[["Our Approach","/about/our-approach"],["Case Studies","/case-studies"],["Portfolio","/portfolio"],["Careers","/careers"],["Contact","/contact"],["Company Values","/about/values"],["Our History","/about/history"],["Industries","/industries"],["Blog","/blog"]],1),C("Challenges We Solve","",[["My Website Doesn't Drive Leads","/challenges/website-doesnt-drive-leads"],["My Website Traffic Is Going Down","/challenges/website-traffic-going-down"],["My Website Doesn't Convert","/challenges/website-doesnt-convert"],["My Website Isn't Appearing in AI Search","/challenges/not-appearing-in-ai-search"],["My Agency Isn't Driving Results","/challenges/agency-isnt-driving-results"],["My Team Is Buried in Manual Work","/challenges/too-much-manual-work"],["My Ads Spend but Don't Sell","/challenges/ads-spend-but-dont-sell"]],1)],promo:["See client results","Read the case study","/case-studies"],all:["View all in Company","/about"],extra:[]}];
+function navLink(l,p){const x=PAGES.find(y=>y.path===l[1]);return `<a href="${l[1]}"${x?` data-page="${x.id}"`:""}${x&&x.id===p.id?' aria-current="page"':""}>${esc(l[0])}</a>`}
+function siteHeader(p){return `<div class="bx-sp-subbar"><div class="bar" aria-hidden="true"><i id="bar"></i></div></div>`}
+const MEDIA="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/",VID=MEDIA+"hf_20261016_125941_6c5f1180-2f4e-44ec-b90c-aa0b05e5109b.mp4",STILL=MEDIA+"hf_20261016_125845_ec7f8569-08dd-4a78-8310-9e094f5dd0a3.png";
+function lines(t){const w=t.split(/\s+/),tot=t.length,goal=tot/4,o=[];let c="";w.forEach((x,i)=>{const left=w.length-i,need=4-o.length-1;if(c&&(((c+" "+x).length>goal+3&&o.length<3)||left<=need)){o.push(c);c=x}else c=c?c+" "+x:x});o.push(c);return o}
+function fox(p){const l=lines(p.h1.join(" "));return `<section class="hero" id="top" style="background-image:url(${STILL})"><video class="hero__video" src="${VID}" poster="${STILL}" autoplay muted loop playsinline preload="auto"></video><div class="hero__shade"></div><canvas id="fox" aria-label="Cute 3D red fox holding a boba tea"></canvas><h1 class="headline">${l.map((x,i)=>`<span class="${i%2?"u":""}${i===3&&x.length<14?" indent":""}">${esc(x)}</span>`).join("")}</h1></section>`}
+
+const STU={writing:"Writing Desk",video:"Edit Suite",images:"Image Lab",social:"Social Feed"};
+const TONES=["Bold","Warm","Expert"];
+function output(p,t){const l=esc(p.s[t]);
+if(p.col==="writing")return `<div class="o doc"><small>Draft · Edited by a human</small><h3>${esc(p.short)}</h3><p data-stream>${l}</p><i class="ln w9"></i><i class="ln w7"></i><i class="ln w8"></i></div>`;
+if(p.col==="video")return `<div class="o vid"><div class="frame"><p data-stream>${l}</p></div><div class="tl" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><i class="c5"></i><b class="head"></b></div><div class="tc" aria-hidden="true"><span>Script</span><span>Scenes</span><span>Voice</span><span>Edit</span></div></div>`;
+if(p.col==="images")return `<div class="o gen"><div class="cv" aria-hidden="true">${[0,1,2,3,4,5].map(i=>`<canvas width="96" height="72" data-c="${i}"></canvas>`).join("")}</div><p data-stream>${l}</p></div>`;
+return `<div class="o soc"><div class="phone"><div class="who"><i></i><b>yourbrand</b></div><div class="pic"></div><p data-stream>${l}</p><div class="rx" aria-hidden="true"><span>♥</span><span>✦</span><span>➜</span></div></div></div>`}
+function hero(p){const pa=p.hub&&p.id==="ai-content"?"":`<li><a href="/ai-content">AI Content</a></li>`;
+return fox(p)+`<section class="studio"><div class="wrap hg"><div class="hl"><ol class="crumb"><li><a href="/">Home</a></li>${pa}<li aria-current="page">${esc(p.short)}</li></ol>
+<p class="lead">${esc(p.lead)}</p><div class="hc">${cta("Get my free content plan")}<a class="btn ghost" href="#refine"><span>See the human edit</span>${ARROW}</a></div><p class="tiny">Or call <a href="tel:+14244416042">${TEL}</a></p></div>
+<div class="stu" data-stu><div class="sh1"><i></i><i></i><i></i><b>Beetrix ${STU[p.col]}</b></div><div class="field"><span>Prompt</span><p data-typed>${esc(p.q[0])}</p></div>
+<div class="row1"><div class="tones" role="group" aria-label="Choose a tone">${TONES.map((x,i)=>`<button data-tone="${i}" aria-pressed="${i===0}">${x}</button>`).join("")}</div><button class="go" data-gen>Generate sample</button></div>
+<div class="out" data-out aria-live="polite">${output(p,0)}</div><p class="note">Sample output for illustration. Real work starts with your brief and your brand.</p></div></div></section>
+<div class="tick" aria-hidden="true"><div>${Array(2).fill(p.kws.map(k=>`<span>${esc(k)}</span>`).join("")).join("")}</div></div>
+<div class="wrap stats"><p><b>$10B+</b> pipeline generated</p><p><b>24.8M</b> leads processed</p><p><b>55+</b> industries</p><p><b>2016</b> building since</p></div>`}
+const RAIL=[["read","Explain it"],["refine","Raw vs. edited"],["fails","What goes wrong"],["incl","What's included"],["flow","How it's made"],["math","Time and cost"],["work","Previous work"],["trust","Safe and honest"],["who","Who it's for"],["faq","Your questions"],["more","Read next"]];
+function rail(){return `<aside class="rail" aria-label="On this page"><p>This conversation</p><nav>${RAIL.map(r=>`<a href="#${r[0]}" data-r="${r[0]}">${r[1]}</a>`).join("")}</nav><div class="brief" data-brief hidden><b data-bn>0 items</b> in your brief<a href="#start">Send it</a></div>${cta("Book a 30-minute call","ghost sm")}</aside>`}
+function read(p){const q=p.para[0].split(". ")[0];return `<section class="s" id="read">${pr(`Explain ${p.short} in plain English`)}<div class="art"><div class="body"><h2>What is ${esc(name(p))}?</h2><p class="ans">${esc(p.answer)}</p><p class="dc">${hl(p.para[0],p)}</p><p>${hl(p.para[1],p)}</p>${img(p,"explainer",1200,620,`How ${p.short} works`,`How ${p.short} works at Beetrix360`)}${p.deep.map((d,i)=>`<h3>${esc(d[0])}</h3><p>${hl(d[1],p)}</p>`).join("")}</div>
+<aside class="side"><blockquote>${esc(q)}.</blockquote>${img(p,"side-1",640,800,"Behind the scenes image",`${p.short} production at Beetrix360`)}<div class="tp"><p>Tap topics to add them to your brief</p><div class="chips">${p.kws.map(k=>`<button class="chip" aria-pressed="false" data-add="${esc(k)}">${esc(k)}</button>`).join("")}</div></div>${img(p,"side-2",640,420,"Example output",`Example of ${p.short}`)}</aside></div><div class="band"><p>Want this written around your brand?</p>${cta(`Show me my ${p.short} plan`)}</div></section>`}
+function refine(p){return `<section class="s wash" id="refine">${pr("Show me raw AI output next to the edited version")}<h2>The difference is the edit</h2><p class="sub">Drag the handle. The left side is typical raw output. The right side is what leaves our studio.</p>
+<div class="cmp" data-cmp style="--p:50%"><div class="pane a"><small>Raw AI output</small><p>${esc(p.raw)}</p></div><div class="pane b"><small>After Beetrix editors</small><p>${esc(p.refined)}</p></div><i class="hd" aria-hidden="true"></i><input type="range" min="0" max="100" value="50" aria-label="Compare raw and edited versions" data-cmpr></div>
+<div class="pair">${img(p,"before",800,460,"Before: raw generation",`Raw AI output for ${p.short}`)}${img(p,"after",800,460,"After: final approved asset",`Edited ${p.short} output`)}</div><div class="band"><p>Send us your worst AI draft. We'll show you what we'd do with it.</p>${cta("Fix my AI draft free")}</div></section>`}
+function fails(p){return `<section class="s" id="fails">${pr(`Why does ${p.short} usually go wrong?`)}<h2>Four ways AI content goes wrong</h2><div class="fl">${p.pains.map((x,i)=>`<button class="fr" aria-expanded="false"><span class="n">${esc(x[0])}</span><span class="f">${esc(x[1])}</span><i aria-hidden="true"></i></button>`).join("")}</div><div class="band"><p>Recognize one of these?</p>${cta("Find my biggest content gap")}</div></section>`}
+function incl(p){return `<section class="s wash" id="incl">${pr(`List everything included in ${p.short}`)}<h2>Everything in our ${esc(p.kw)}</h2><p class="sub">Hover to preview. Click to add an item to your brief.</p><div class="idx">${p.items.map((x,i)=>`<button class="ix" aria-pressed="false" data-add="${esc(x[0])}"><b>${esc(x[0])}</b><span>${esc(x[1])}</span>${img(p,"item-"+(i+1),560,300,x[0],x[0]+" for "+p.short,"span")}<i aria-hidden="true">+</i></button>`).join("")}</div><div class="band"><p>Picked what you need?</p>${cta("Send my brief to a strategist")}</div></section>`}
+const WHO=["Human","AI + human","Human","Data"];
+function flow(p){const ph=["Days 1–14","Days 15–30","Days 31–60","Days 61–90+"],nm=["Audit","Build","Activate","Scale"];return `<section class="s" id="flow">${pr("How does the work actually get done?")}<h2>From prompt to published in 90 days</h2><p class="sub">People lead each stage, and AI handles the heavy lifting in between.</p><ol class="st">${p.steps.map((s,i)=>`<li><button class="stp${i===0?" on":""}" data-step>${img(p,"step-"+(i+1),560,320,nm[i]+" stage",`${nm[i]} stage of ${p.short}`,"span")}<small>${ph[i]} · ${WHO[i]}</small><b>${nm[i]}</b><span>${esc(s)}</span></button></li>`).join("")}</ol><div class="band"><p>Kickoff call, audit plan and timeline in one 30-minute session.</p>${cta("Start my first batch")}</div></section>`}
+function math(p){const f=(id,l,mn,mx,st,v,pre,suf)=>`<label class="rg" for="m-${id}"><span>${l}<output data-o="${id}"></output></span><input id="m-${id}" type="range" min="${mn}" max="${mx}" step="${st}" value="${v}" data-m="${id}" data-pre="${pre}" data-suf="${suf}"></label>`;return `<section class="s dk" id="math">${pr("What could this save us?")}<div class="mg"><div><h2>Your content math</h2><p class="sub">Example numbers. Enter your own, including the share of time you think could be saved.</p><div class="rgs">${f("n","Pieces per month",1,200,1,20,"","")}${f("h","Hours per piece",.5,20,.5,6,"","")}${f("r","Hourly cost",15,200,5,50,"$","")}${f("s","Time you could save",10,80,5,40,"","%")}</div></div><div class="res"><div><small>Hours back each month</small><b data-r="hrs"></b></div><div><small>Value of that time</small><b data-r="val"></b></div><div><small>Current monthly cost</small><b data-r="cost"></b></div><p class="tiny">Planning arithmetic only, not a promise of savings.</p>${cta("Model my real numbers")}</div></div></section>`}
+const WORK=[["Tesla Solar","Clean energy","+40%","pre-orders vs. target","ent"],["Microsoft","Enterprise SaaS","+30%","enterprise engagement","ent"],["Subway","Global QSR","+25%","in-store footfall","ent"],["West & Post","Oakville","","Real estate launch","ca"],["Bravo","Vaughan","","Real estate launch","ca"],["River & Sky","Woodstock","","Real estate launch","ca"],["Pickering City Centre","Pickering","","Real estate launch","ca"],["Elo 3 by Damac","Dubai","","Real estate launch","ae"],["IVY Gardens 2","Dubai","","Real estate launch","ae"],["Bay Square","Dubai","","Real estate launch","ae"]];
+function work(p){return `<section class="s" id="work">${pr("Show me your previous work")}<h2>Proof, not promises</h2><div class="filters" role="group" aria-label="Filter work">${[["all","All"],["ent","Enterprise"],["ca","Canada"],["ae","Dubai"]].map((f,i)=>`<button data-f="${f[0]}" aria-pressed="${i===0}">${f[1]}</button>`).join("")}</div>
+<div class="sheet">${WORK.map((w,i)=>`<button class="shot s${i%5}" data-k="${w[4]}" data-w="${i}">${img(p,"work-"+(i+1),800,800,w[0]+" work sample",w[0]+" project by Beetrix360","span")}<b>${esc(w[0])}</b><span>${w[2]?`<strong>${w[2]}</strong> ${esc(w[3])}`:esc(w[1])+" · "+esc(w[3])}</span></button>`).join("")}</div><div class="band"><p>Want your brand in this contact sheet?</p>${cta("Put my brand on the sheet")}</div></section>`}
+const TR=[["Human review on everything","An editor checks each piece before it reaches you."],["Facts verified","Claims are checked against real sources and your own data."],["Rights checked","We review tool terms and avoid copying artists, brands or people."],["No fake testimonials","AI presenters never pose as real customers or give invented reviews."],["Clear disclosure","We follow platform and legal rules for labeling AI media."],["Your data stays yours","Your data never trains public AI, and a self-hosted option is available."]];
+function trust(p){return `<section class="s wash" id="trust">${pr("Is this safe and honest?")}<div class="tg"><div><h2>Rules we don't bend</h2><ul class="tr">${TR.map(t=>`<li><b>${t[0]}</b><span>${t[1]}</span></li>`).join("")}</ul>${cta("Read my risk checklist","ghost")}</div>${img(p,"trust",760,860,"Your review workflow",`Human review of ${p.short}`)}</div></section>`}
+const IND=[["Heavy equipment & manufacturing","Technical buyers need accurate content, so {s} starts with your engineers and spec sheets."],["Enterprise B2B SaaS","Long buying cycles need steady content, and {s} helps you cover each stage of the journey."],["Financial services","Compliance comes first, so {s} includes review steps for every claim."],["Tier-1 real estate","Launches need many assets fast, and {s} helps you adapt them for each audience and market."]];
+function who(p){return `<section class="s" id="who">${pr(`Who is ${p.short} for?`)}<h2>Made for your industry</h2><div class="ind"><div class="il" role="tablist" aria-label="Industries">${IND.map((x,i)=>`<button role="tab" aria-selected="${i===0}" data-i="${i}">${esc(x[0])}</button>`).join("")}</div><div class="ip">${IND.map((x,i)=>`<div class="pane${i===0?" on":""}" data-ip="${i}">${img(p,"industry-"+(i+1),1000,460,x[0]+" example",`${p.short} for ${x[0]}`)}<p>${esc(x[1].replace("{s}",p.short))}</p></div>`).join("")}${cta("See my industry playbook","ghost")}</div></div></section>`}
+function allFaq(p){return p.faq.concat([[`How much does ${name(p)} cost?`,`It depends on volume, formats and review needs. We confirm a fixed scope after a short discovery call.`],[`How do I get started with Beetrix360?`,`Request a free content plan. We'll review your brand and content, then walk you through a 90-day plan.`]])}
+function faq(p){const f=allFaq(p);return `<section class="s wash" id="faq">${pr("Answer my questions")}<div class="fq"><div class="fs"><h2>${esc(p.short)} questions, answered</h2><label class="srch" for="faq-q"><span>Search the FAQs</span><input id="faq-q" type="search" placeholder="Try “cost” or “rights”"></label><p class="tiny" data-faqn>${f.length} questions</p>${cta("Ask a strategist instead","ghost")}${img(p,"strategist",640,380,"Your strategist",`Beetrix360 ${p.short} strategist`)}</div><div class="chat">${f.map((x,i)=>`<details data-q${i===0?" open":""}><summary><h3>${esc(x[0])}</h3></summary><div class="a">${LOGO("mark")}<p>${esc(x[1])}</p></div></details>`).join("")}<p class="none" data-none hidden>No match yet. Send us the question and a strategist will answer it.</p></div></div></section>`}
+function more(p){const o=PAGES.filter(x=>x.id!==p.id&&!x.hub&&x.col===p.col).concat(PAGES.filter(x=>x.col!==p.col&&!x.hub)).slice(0,6);return `<section class="s" id="more">${pr("What else should I read?")}<h2>Keep reading</h2><div class="rel">${o.map(x=>`<a href="${x.path}" data-page="${x.id}">${img(p,"rel-"+x.id,640,360,x.short,x.short,"span")}<small>${STU[x.col]}</small><b>${esc(x.short)}</b><span>${esc(x.lead.split(". ")[0].replace(/^(.{0,110})\s.*$/,"$1…"))}</span></a>`).join("")}</div></section>`}
+function start(p){return `<section class="final" id="start"><div class="wrap fg"><div><p class="eb">Free content plan</p><h2>What should we make first?</h2><p class="sub">Tell us in your own words. We reply within 1 business day.</p><p class="tel">${TEL}</p>${img(p,"team",900,500,"Your team photo","The Beetrix360 team")}</div>
+<form class="comp" data-lead novalidate><label for="f-m">Your prompt<textarea id="f-m" name="notes" rows="5" placeholder="We need 20 ${esc(p.short)} assets for a launch in March..."></textarea></label><div class="two"><label for="f-n">Name<input id="f-n" name="name" required autocomplete="name"></label><label for="f-e">Work email<input id="f-e" name="email" type="email" required autocomplete="email"></label></div><label for="f-w">Website<input id="f-w" name="website" required autocomplete="url"></label><button class="btn pri" type="submit"><span>Generate my content plan</span>${ARROW}</button><p class="fmsg" data-msg role="status"></p></form></div></section>`}
+function foot(){return `<div class="dock"><a class="btn pri sm" href="#start"><span>Free content plan</span>${ARROW}</a></div><div class="lb" data-lb hidden role="dialog" aria-modal="true" aria-label="Project details"><div class="lbc"><button class="x" data-lbx aria-label="Close">×</button><div data-lbb></div>${cta("Talk about a project like this")}</div></div>`}
+/* Paragraph blocks, filled from text-content.js */
+const TXG=["The basics","Choosing the right approach","Doing it well","Results and next steps"];
+function txt(p,i,raw){const a=TEXT[p.id]||[],n=Math.ceil(a.length/4),L=a.slice(i*n,(i+1)*n).filter(x=>x[2]||!HIDE_EMPTY);if(!L.length)return "";const b=`<h2 class="txh">${esc(p.short||p.name)}: ${TXG[i]}</h2><div class="txg">${L.map(x=>`<article class="txa"><h3>${esc(x[0])}</h3>${x[2]?`<p>${esc(x[2])}</p>`:`<p class="txp">Write 80 to 120 words here. Answer the topic in the first sentence, use &ldquo;${esc(x[1])}&rdquo; naturally, and add one real example.</p>`}</article>`).join("")}</div>`;return raw?b:`<section class="txs" aria-label="${TXG[i]}">${b}</section>`}
+function page(p){SLOTN=0;return siteHeader(p)+`<main id="main">`+hero(p)+`<div class="lay wrap">`+rail()+`<div class="flow">`+read(p)+refine(p)+txt(p,0)+fails(p)+incl(p)+txt(p,1)+flow(p)+math(p)+txt(p,2)+work(p)+trust(p)+txt(p,3)+who(p)+faq(p)+more(p)+`</div></div>`+start(p)+`</main>`+foot()}
+function schema(p){const url=SITE+p.path,org={"@type":"Organization","@id":SITE+"/#organization",name:"Beetrix360",alternateName:"Bee Social",url:SITE,logo:SITE+"/logo.svg",foundingDate:"2016",telephone:"+14244416042"};const c=[["Home",SITE+"/"]];if(p.id!=="ai-content")c.push(["AI Content",SITE+"/ai-content"]);c.push([p.short,url]);
+return {"@context":"https://schema.org","@graph":[org,{"@type":"Service","@id":url+"#service",name:p.name,serviceType:p.kw,description:p.desc,url,provider:{"@id":SITE+"/#organization"}},{"@type":"BreadcrumbList",itemListElement:c.map((x,i)=>({"@type":"ListItem",position:i+1,name:x[0],item:x[1]}))},{"@type":"FAQPage",mainEntity:allFaq(p).map(x=>({"@type":"Question",name:x[0],acceptedAnswer:{"@type":"Answer",text:x[1]}}))}]}}
+
+
+  function mountClient(root, pageId, navigate) {
+    let __disposed = false;
+    const __intervals = new Set();
+    const __timeouts = new Set();
+    const __rafs = new Set();
+    const __observers = new Set();
+    const __listeners = [];
+    const __renderers = [];
+
+    const setInterval = (fn, ms) => {
+      if (__disposed) return 0;
+      const id = window.setInterval(fn, ms);
+      __intervals.add(id);
+      return id;
+    };
+    const clearInterval = (id) => {
+      __intervals.delete(id);
+      window.clearInterval(id);
+    };
+    const setTimeout = (fn, ms) => {
+      if (__disposed) return 0;
+      const id = window.setTimeout(() => {
+        __timeouts.delete(id);
+        if (!__disposed) fn();
+      }, ms);
+      __timeouts.add(id);
+      return id;
+    };
+    const clearTimeout = (id) => {
+      __timeouts.delete(id);
+      window.clearTimeout(id);
+    };
+    const requestAnimationFrame = (fn) => {
+      if (__disposed) return 0;
+      const id = window.requestAnimationFrame((ts) => {
+        __rafs.delete(id);
+        if (!__disposed) fn(ts);
+      });
+      __rafs.add(id);
+      return id;
+    };
+    const cancelAnimationFrame = (id) => {
+      __rafs.delete(id);
+      window.cancelAnimationFrame(id);
+    };
+
+    const IntersectionObserver =
+      typeof window !== "undefined" && "IntersectionObserver" in window
+        ? function (cb, opts) {
+            const obs = new window.IntersectionObserver((entries, o) => {
+              if (!__disposed) cb(entries, o);
+            }, opts);
+            __observers.add(obs);
+            return obs;
+          }
+        : undefined;
+
+    const addEventListener = (type, fn, opts) => {
+      if (type === "hashchange") return;
+      window.addEventListener(type, fn, opts);
+      __listeners.push([window, type, fn, opts]);
+    };
+
+    const docElementProxy = {
+      get scrollHeight() {
+        return window.document.documentElement.scrollHeight;
+      },
+      get clientHeight() {
+        return window.document.documentElement.clientHeight;
+      },
+      get clientWidth() {
+        return window.document.documentElement.clientWidth;
+      },
+      get classList() {
+        return root.classList;
+      },
+      get dataset() {
+        return root.dataset;
+      },
+      get animate() {
+        return root.animate ? root.animate.bind(root) : undefined;
+      },
+    };
+
+    const document = {
+      querySelector: (s) => root.querySelector(s),
+      querySelectorAll: (s) => root.querySelectorAll(s),
+      getElementById: (id) => {
+        try {
+          return root.querySelector('[id="' + CSS.escape(id) + '"]') || window.document.getElementById(id);
+        } catch {
+          return window.document.getElementById(id);
+        }
+      },
+      createElement: (tag) => window.document.createElement(tag),
+      addEventListener: (type, fn, opts) => {
+        const target = type === "keydown" ? window : root;
+        target.addEventListener(type, fn, opts);
+        __listeners.push([target, type, fn, opts]);
+      },
+      get readyState() {
+        return "complete";
+      },
+      get fonts() {
+        return window.document.fonts;
+      },
+      get title() {
+        return window.document.title;
+      },
+      set title(v) {
+        window.document.title = v;
+      },
+      body: {
+        append: (...nodes) => root.append(...nodes),
+        appendChild: (node) => root.appendChild(node),
+      },
+      documentElement: docElementProxy,
+    };
+
+    window.BX_PAGE = pageId;
+    window.BX_PREVIEW = false;
+
+    // Ensure clean DOM state before booting (handles React Strict Mode & soft navigation remounts)
+    root.querySelectorAll("#swarm, .bu").forEach((el) => el.remove());
+    root.querySelectorAll(".pend, .wipe").forEach((el) => el.classList.remove("pend", "wipe"));
+    root.classList.remove("intro", "nogl", "pv");
+
+    try {
+      const $=(s,r)=>(r||document).querySelector(s),$$=(s,r)=>[...(r||document).querySelectorAll(s)],reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let cur=window.BX_PAGE||PAGES[0].id,tone=0,tmr=[],seen=new Set(),io=null;const P=()=>PAGES.find(x=>x.id===cur)||PAGES[0],brief=new Set();
+const later=(f,t)=>{const i=setTimeout(f,t);tmr.push(i);return i};const stop=()=>{tmr.forEach(clearTimeout);tmr=[]};
+function closeNav(){$$(".mega.open").forEach(m=>m.classList.remove("open"));$$(".nb[aria-expanded=true]").forEach(b=>b.setAttribute("aria-expanded","false"));$("#nav")?.classList.remove("open");$(".burger")?.setAttribute("aria-expanded","false")}
+function goTo(id){const p=PAGES.find(x=>x.id===id);if(!p)return;cur=id;tone=0;brief.clear();const cv=$("#fox");$("#app").innerHTML=page(p);if(cv)$("#fox").replaceWith(cv);document.title=p.title;const l=$("#bx-ld");if(l)l.textContent=JSON.stringify(schema(p));boot();scrollTo(0,0)}
+function stream(el,t,sp){if(!el)return;if(reduce){el.textContent=t;return}el.textContent="";let i=0;const f=()=>{i+=2;el.textContent=t.slice(0,i);if(i<t.length)later(f,sp||18)};f()}
+function pix(){const pal=[["#de2056","#fab12f"],["#3abef9","#2cb383"],["#fab12f","#de2056"],["#2cb383","#3abef9"],["#0a0a0a","#3abef9"],["#de2056","#3abef9"]];$$("[data-c]").forEach((c,i)=>{const x=c.getContext("2d"),w=c.width,h=c.height,g=x.createLinearGradient(0,0,w,h);g.addColorStop(0,pal[i][0]);g.addColorStop(1,pal[i][1]);const dr=s=>{for(let a=0;a<w;a+=s)for(let b=0;b<h;b+=s){x.fillStyle=g;x.fillRect(a,b,s,s);if(s>1){x.fillStyle=`rgba(${Math.random()*255|0},${Math.random()*255|0},${Math.random()*255|0},${s/40})`;x.fillRect(a,b,s,s)}}};if(reduce){dr(1);return}[24,12,6,3,1].forEach((s,k)=>later(()=>dr(s),k*170+i*90))})}
+function gen(){stop();const p=P(),o=$("[data-out]");o.innerHTML=output(p,tone);const s=$("[data-stream]",o),t=p.s[tone];if(p.col==="images")pix();const h=$(".head",o);if(h){h.classList.remove("run");void h.offsetWidth;h.classList.add("run")}stream(s,t);typePrompt()}
+function typePrompt(){const e=$("[data-typed]");if(!e)return;const p=P();e.textContent=p.q[tone%p.q.length]}
+function calc(){if(!$("#m-n"))return;const g=i=>+$("#m-"+i).value,fm=(n,d)=>n.toLocaleString("en-US",{maximumFractionDigits:d||0,minimumFractionDigits:d||0});$$("[data-m]").forEach(e=>{const k=e.dataset.m;$(`[data-o=${k}]`).textContent=e.dataset.pre+fm(+e.value,k==="h"?1:0)+e.dataset.suf});const hrs=g("n")*g("h"),b=hrs*g("s")/100;$("[data-r=hrs]").textContent=fm(b);$("[data-r=val]").textContent="$"+fm(b*g("r"));$("[data-r=cost]").textContent="$"+fm(hrs*g("r"))}
+function bri(){const b=$("[data-brief]"),n=brief.size;if(b){b.hidden=!n;$("[data-bn]").textContent=n+(n===1?" item":" items")}const m=$("#f-m");if(m&&(!m.value||m.dataset.auto)){m.value=n?"We're interested in: "+[...brief].join(", "):"";m.dataset.auto=n?"1":""}}
+function pick(f){const i=document.createElement("input");i.type="file";i.accept="image/*";i.onchange=()=>{const u=i.files[0]&&URL.createObjectURL(i.files[0]);if(!u)return;const m=new Image();m.src=u;m.alt=f.dataset.alt;f.classList.add("has");f.replaceChildren(m)};i.click()}
+function slots(){if(!window.BX_PREVIEW)return;$$("figure.imgs[data-slot]").forEach(f=>{f.tabIndex=0;f.setAttribute("role","button");f.setAttribute("aria-label","Preview an image here: "+f.dataset.slot);const l=document.createElement("span");l.className="il3";l.textContent="Click to try an image";f.append(l)})}
+function watch(){if(io)io.disconnect();seen=new Set();if(!("IntersectionObserver" in window))return;io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const id=e.target.id;$$("[data-r]").forEach(a=>a.classList.toggle("on",a.dataset.r===id));if(seen.has(id))return;seen.add(id);e.target.classList.add("in");const c=$("[data-type]",e.target);if(c&&!reduce){const t=c.textContent;c.style.minWidth=c.offsetWidth+"px";stream(c,t,16)}}),{rootMargin:"-30% 0px -55% 0px"});$$(".s").forEach(s=>io.observe(s))}
+function prog(){const h=document.documentElement,x=Math.min(1,scrollY/Math.max(1,h.scrollHeight-innerHeight)),b=$(".bar i");if(b)b.style.transform=`scaleX(${x})`}
+function boot(){stop();calc();slots();watch();prog();if(P().col==="images")pix();const h=$(".head");if(h)h.classList.add("run");later(gen,600)}
+addEventListener("scroll",prog,{passive:true});
+document.addEventListener("input",e=>{const t=e.target;if(t.matches("[data-m]"))calc();if(t.matches("[data-cmpr]"))$("[data-cmp]").style.setProperty("--p",t.value+"%");if(t.id==="f-m")t.dataset.auto="";if(t.id==="faq-q"){const q=t.value.toLowerCase().trim();let n=0;$$("[data-q]").forEach(d=>{const m=!q||d.textContent.toLowerCase().includes(q);d.hidden=!m;if(m){n++;if(q)d.open=true}});$("[data-none]").hidden=n>0;$("[data-faqn]").textContent=n+(n===1?" question":" questions")}});
+document.addEventListener("submit",e=>{e.preventDefault();const f=e.target;if(!f.matches("[data-lead]"))return;const m=$("[data-msg]");if(!f.checkValidity()){const b=f.querySelector(":invalid");m.textContent="Please complete "+b.labels[0].firstChild.textContent+".";b.focus();return}const ep=window.BX_FORM_ENDPOINT;if(!ep){m.textContent="Preview only: connect BX_FORM_ENDPOINT to receive this lead. Nothing was sent.";return}fetch(ep,{method:"POST",body:new FormData(f)}).then(r=>{if(!r.ok)throw 0;f.reset();m.textContent="You're in. We'll reply within 1 business day."}).catch(()=>{m.textContent="That didn't send. Please call "+TEL+"."})});
+document.addEventListener("click",e=>{const t=e.target,c=s=>t.closest(s);let n;
+if(n=c(".burger")){const o=$("#nav").classList.toggle("open");n.setAttribute("aria-expanded",o);return}
+if(n=c(".nb[aria-controls]")){const m=document.getElementById(n.getAttribute("aria-controls")),o=!m.classList.contains("open");$$(".mega.open").forEach(x=>x.classList.remove("open"));$$(".nb[aria-expanded=true]").forEach(b=>b.setAttribute("aria-expanded","false"));m.classList.toggle("open",o);n.setAttribute("aria-expanded",o);return}
+if(window.BX_PREVIEW&&(n=c("figure.imgs[data-slot]"))){pick(n);return}
+if(n=c("[data-page]")){if(window.BX_PREVIEW){e.preventDefault();location.hash=n.dataset.page}closeNav();return}
+if(n=c("[data-tone]")){tone=+n.dataset.tone;$$("[data-tone]").forEach(b=>b.setAttribute("aria-pressed",b===n));gen();return}
+if(c("[data-gen]")){gen();return}
+if(n=c(".fr")){const o=n.classList.toggle("on");n.setAttribute("aria-expanded",o);return}
+if(n=c("[data-add]")){const k=n.dataset.add,o=n.getAttribute("aria-pressed")!=="true";n.setAttribute("aria-pressed",o);o?brief.add(k):brief.delete(k);bri();return}
+if(n=c("[data-step]")){$$("[data-step]").forEach(b=>b.classList.toggle("on",b===n));return}
+if(n=c("[data-f]")){$$("[data-f]").forEach(b=>b.setAttribute("aria-pressed",b===n));const f=n.dataset.f;$$(".shot").forEach(k=>{k.hidden=!(f==="all"||k.dataset.k===f)});return}
+if(n=c(".shot")){const w=WORK[+n.dataset.w];$("[data-lbb]").innerHTML=`<h3>${esc(w[0])}</h3><p class="lbm">${w[2]?`<b>${w[2]}</b> ${esc(w[3])}`:esc(w[3])}</p><p>${esc(w[1])}. Add the brief, your role and the assets here.</p>`;$("[data-lb]").hidden=false;$("[data-lbx]").focus();return}
+if(c("[data-lbx]")||(t.matches&&t.matches("[data-lb]"))){$("[data-lb]").hidden=true;return}
+if(n=c("[data-i]")){$$("[data-i]").forEach(b=>b.setAttribute("aria-selected",b===n));$$("[data-ip]").forEach(p=>p.classList.toggle("on",p.dataset.ip===n.dataset.i));return}
+if(!c("#nav"))closeNav();
+if(n=c('a[href^="#"]')){const id=n.getAttribute("href").slice(1),el=document.getElementById(id);$("[data-lb]").hidden=true;if(el){e.preventDefault();el.scrollIntoView({behavior:reduce?"auto":"smooth"});if(id==="start")$("#f-m")?.focus({preventScroll:true})}return}
+if(window.BX_PREVIEW&&c("a[href^='/']"))e.preventDefault()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeNav();const l=$("[data-lb]");if(l)l.hidden=true}const f=e.target.closest&&e.target.closest("figure.imgs[data-slot]");if(f&&e.key==="Enter")pick(f)});
+addEventListener("hashchange",()=>{const id=location.hash.slice(1);if(PAGES.some(x=>x.id===id)&&id!==cur)goTo(id)});
+const h=location.hash.slice(1);if(window.BX_PREVIEW&&PAGES.some(x=>x.id===h))goTo(h);else boot();
+
+      
+      const __dynImport = new Function("u", "return import(u)");
+      Promise.all([
+        __dynImport("https://esm.sh/three@0.160.0"),
+        __dynImport("https://esm.sh/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"),
+        __dynImport("https://esm.sh/three@0.160.0/examples/jsm/environments/RoomEnvironment.js")
+      ]).then(([THREE_MOD, GLTF_MOD, ENV_MOD]) => {
+        if (__disposed) return;
+        const { GLTFLoader } = GLTF_MOD;
+        const { RoomEnvironment } = ENV_MOD;
+        const THREE = new Proxy(THREE_MOD, {
+          get(target, prop) {
+            if (prop === "WebGLRenderer") {
+              return function(opts) {
+                const r = new target.WebGLRenderer(opts);
+                __renderers.push(r);
+                return r;
+              };
+            }
+            return target[prop];
+          }
+        });
+        const GLB="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261016_125948_52f145de-4509-41e1-9289-523cf0ac9c86.glb";
+const canvas=document.getElementById("fox");if(canvas){const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;let r;try{r=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true})}catch(e){r=null}
+if(r){r.setPixelRatio(Math.min(devicePixelRatio,2));r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.05;
+const scene=new THREE.Scene(),pm=new THREE.PMREMGenerator(r);scene.environment=pm.fromScene(new RoomEnvironment(),.04).texture;
+const cam=new THREE.PerspectiveCamera(30,1,.1,100);cam.position.set(0,0,6);scene.add(new THREE.HemisphereLight(0xffe9c0,0x7a5003,1.1));const d=new THREE.DirectionalLight(0xfcd58d,2.2);d.position.set(-3,4,3);scene.add(d);const rim=new THREE.DirectionalLight(0xfab12f,1.6);rim.position.set(3,2,-3);scene.add(rim);
+const pivot=new THREE.Group();scene.add(pivot);let baseX=.05,baseY=.05;const target={x:0,y:0},look={x:0,y:0};
+function layout(){const c=document.getElementById("fox"),w=c.clientWidth||innerWidth,h=c.clientHeight||innerHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();const m=w<720,a=w/h;baseX=m?0:.05;baseY=m?.45:.05;pivot.scale.setScalar(m?.62:Math.min(1,Math.max(.75,a/1.78)))}
+addEventListener("resize",layout);layout();addEventListener("pointermove",e=>{target.x=e.clientX/innerWidth*2-1;target.y=e.clientY/innerHeight*2-1},{passive:true});
+const load=()=>new GLTFLoader().load(GLB,g=>{const m=g.scene,box=new THREE.Box3().setFromObject(m),size=box.getSize(new THREE.Vector3()),ctr=box.getCenter(new THREE.Vector3());m.position.sub(ctr);const h=new THREE.Group();h.scale.setScalar(3.15/Math.max(size.x,size.y,size.z));h.add(m);pivot.add(h);m.traverse(o=>{if(o.isMesh&&o.material){o.material.envMapIntensity=.7;if(o.material.map)o.material.map.anisotropy=r.capabilities.getMaxAnisotropy()}});layout();document.getElementById("fox").classList.add("is-ready")},undefined,()=>{});
+document.readyState==="complete"?load():addEventListener("load",load);
+let vis=true;if("IntersectionObserver" in window)new IntersectionObserver(e=>{vis=e[0].isIntersecting}).observe(canvas);
+const clock=new THREE.Clock();r.setAnimationLoop(()=>{if(!vis)return;const t=reduce||window.BX_PAUSED?0:clock.getElapsedTime();look.x+=(target.x-look.x)*.04;look.y+=(target.y-look.y)*.04;const on=reduce?0:1,bob=Math.sin(t*2.2)*.09*on;pivot.position.set(baseX+look.x*.06,baseY+bob,0);pivot.rotation.z=Math.sin(t*2.2+.6)*.025*on;pivot.rotation.y=look.x*.22+Math.sin(t*.9)*.05*on;pivot.rotation.x=look.y*.1+Math.cos(t*2.2)*.02*on;r.render(scene,cam)})}}
+
+      }).catch(() => {});
+    
+    } catch (err) {
+      console.error("[ServicePageClient] Error mounting group 04:", err);
+    }
+
+    // Intercept internal Next.js links inside root for smooth SPA navigation
+    const handleInternalLink = (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+      if (!a || !root.contains(a)) return;
+      if (a.target && a.target !== "_self") return;
+      const href = a.getAttribute("href") || "";
+      if (href.startsWith("/") && !href.startsWith("//")) {
+        e.preventDefault();
+        navigate(href);
+      }
+    };
+    root.addEventListener("click", handleInternalLink);
+    __listeners.push([root, "click", handleInternalLink, undefined]);
+
+    return () => {
+      __disposed = true;
+      __intervals.forEach((id) => window.clearInterval(id));
+      __intervals.clear();
+      __timeouts.forEach((id) => window.clearTimeout(id));
+      __timeouts.clear();
+      __rafs.forEach((id) => window.cancelAnimationFrame(id));
+      __rafs.clear();
+      __observers.forEach((obs) => {
+        try { obs.disconnect(); } catch {}
+      });
+      __observers.clear();
+      __listeners.forEach(([t, type, fn, opts]) => {
+        try { t.removeEventListener(type, fn, opts); } catch {}
+      });
+      __listeners.length = 0;
+      __renderers.forEach((r) => {
+        try { if (typeof r.setAnimationLoop === "function") r.setAnimationLoop(null); } catch {}
+        try { r.dispose(); } catch {}
+      });
+      __renderers.length = 0;
+      root.querySelectorAll("#swarm, .bu").forEach((el) => el.remove());
+      root.querySelectorAll(".pend, .wipe").forEach((el) => el.classList.remove("pend", "wipe"));
+      root.classList.remove("intro", "nogl", "pv");
+    };
+  }
+
+  return {
+    PAGES,
+    renderPage: (pageId) => {
+      const p = PAGES.find((x) => x.id === pageId) || PAGES[0];
+      return page(p);
+    },
+    renderSchema: (pageId) => {
+      const p = PAGES.find((x) => x.id === pageId) || PAGES[0];
+      return schema(p);
+    },
+    mountClient,
+  };
+}
+
+export const groupRuntime = createGroupRuntime();
