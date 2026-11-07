@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  return buildServicePageMetadata(`/seo/${slug}`) || {};
+  return (await buildServicePageMetadata(`/seo/${slug}`)) || {};
 }
 
 export default async function SeoSubPage({ params }: PageProps) {

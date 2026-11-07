@@ -1,4 +1,5 @@
 import { AccentHeadingText, ArrowCta, Eyebrow, Ph } from "@/components/ui";
+import { ManagedMedia } from "@/components/site/ManagedMedia";
 import { accentDot, accentTile, pillarButtonHover, pillarRibbon } from "@/lib/accents";
 import type { HomepageContent } from "@/lib/types";
 import { PillarVisualBlock } from "./PillarVisuals";
@@ -59,13 +60,23 @@ export function FourPillars({ p }: PillarsProps) {
         <div className="lg:col-span-7">
           <div id="stack" className="relative lg:h-[600px]">
             {p.cards.map((c, i) => {
-              const ph = c.image ? (
-                <div key="img" className="col-span-3 rounded-2xl overflow-hidden border border-bx-border bg-neutral-900/5 relative flex items-center justify-center">
+              const slotKey = `pillar_card_0${i + 1}`;
+              const fallbackPh = c.image ? (
+                <div className="col-span-3 rounded-2xl overflow-hidden border border-bx-border bg-neutral-900/5 relative flex items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={c.image} alt={c.title} className="w-full h-full object-cover" />
                 </div>
               ) : (
-                <Ph key="ph" icon={c.placeholder.icon} lines={c.placeholder.lines} className="col-span-3 rounded-2xl" />
+                <Ph icon={c.placeholder.icon} lines={c.placeholder.lines} className="col-span-3 rounded-2xl" />
+              );
+              const ph = (
+                <ManagedMedia
+                  key="ph"
+                  pageSlug="home"
+                  placeholderKey={slotKey}
+                  className="col-span-3 rounded-2xl border border-bx-border"
+                  fallback={fallbackPh}
+                />
               );
               const vis = <PillarVisualBlock key="vis" visual={c.visual} />;
               return (

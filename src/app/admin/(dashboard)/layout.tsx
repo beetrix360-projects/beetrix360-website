@@ -11,6 +11,7 @@ import {
   LogOut,
   ShieldCheck,
   BarChart3,
+  Image as ImageIcon,
 } from "lucide-react";
 import { getSessionUser } from "@/lib/auth";
 import { logoutAction } from "../actions";
@@ -85,6 +86,14 @@ export default async function AdminDashboardLayout({
           >
             <FileText className="w-4 h-4 text-bx-green" />
             <span>Pages & Parents</span>
+          </Link>
+
+          <Link
+            href="/admin/media-placements"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition-colors"
+          >
+            <ImageIcon className="w-4 h-4 text-rose-500" />
+            <span>Media &amp; SEO Placements</span>
           </Link>
 
           <Link

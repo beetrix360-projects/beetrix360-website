@@ -41,7 +41,7 @@ function getS3Context() {
       })
     : null;
 
-  return { region, bucket, client, isCloudEnv };
+  return { region, bucket, client, isCloudEnv, hasExplicitCreds };
 }
 
 function getBaseUrl(bucket: string, region: string): string {
@@ -65,7 +65,7 @@ export async function uploadMedia(
   originalFilename: string,
   contentType: string
 ): Promise<UploadResult> {
-  const { region, bucket, client, isCloudEnv } = getS3Context();
+  const { region, bucket, client, isCloudEnv, hasExplicitCreds } = getS3Context();
 
   // Sanitize filename and create unique timestamped name
   const ext = path.extname(originalFilename).toLowerCase() || ".png";
@@ -75,8 +75,8 @@ export async function uploadMedia(
     .substring(0, 40);
   const uniqueKey = `uploads/${Date.now()}-${baseName}${ext}`;
 
-  // 1. If S3 bucket is configured, upload to AWS S3
-  if (client && bucket) {
+  // 1. If S3 bucket is configured and either in cloud or explicit AWS credentials exist, upload to AWS S3
+  if (client && bucket && (isCloudEnv || hasExplicitCreds)) {
     try {
       await client.send(
         new PutObjectCommand({
@@ -92,7 +92,10 @@ export async function uploadMedia(
       return { url, key: uniqueKey, storage: "s3" };
     } catch (err: any) {
       console.error("[S3 Upload Error]:", err);
-      throw new Error(`S3 upload to bucket '${bucket}' failed: ${err?.message || "Unknown error"}`);
+      if (isCloudEnv) {
+        throw new Error(`S3 upload to bucket '${bucket}' failed: ${err?.message || "Unknown error"}`);
+      }
+      console.warn("[S3 Upload Fallback]: Falling back to local public/uploads storage in development.");
     }
   }
 

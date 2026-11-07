@@ -287,8 +287,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                             >
                               {/* Group Heading */}
                               {group.headingPath ? (
-                                <Link
-                                  href={group.headingPath}
+                                <Link href={group.headingPath} prefetch={false}
                                   className="group/h font-heading font-bold text-sm text-neutral-900 hover:text-bx-pink flex items-center justify-between pb-3 mb-4 border-b border-neutral-100 transition"
                                 >
                                   <span>{group.heading}</span>
@@ -308,8 +307,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                                       .slice(0, Math.ceil(visibleItems.length / 2))
                                       .map((it, itIdx) => (
                                         <li key={it.path || `item-a-${itIdx}`}>
-                                          <Link
-                                            href={it.path}
+                                          <Link href={it.path} prefetch={false}
                                             className="text-xs text-neutral-600 hover:text-bx-pink hover:translate-x-1 transition-all block py-1 font-medium"
                                           >
                                             {it.label || it.path}
@@ -322,8 +320,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                                       .slice(Math.ceil(visibleItems.length / 2))
                                       .map((it, itIdx) => (
                                         <li key={it.path || `item-b-${itIdx}`}>
-                                          <Link
-                                            href={it.path}
+                                          <Link href={it.path} prefetch={false}
                                             className="text-xs text-neutral-600 hover:text-bx-pink hover:translate-x-1 transition-all block py-1 font-medium"
                                           >
                                             {it.label || it.path}
@@ -336,8 +333,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                                 <ul className="space-y-2 list-none p-0 m-0">
                                   {visibleItems.map((it, itIdx) => (
                                     <li key={it.path || `item-${itIdx}`}>
-                                      <Link
-                                        href={it.path}
+                                      <Link href={it.path} prefetch={false}
                                         className="text-xs text-neutral-600 hover:text-bx-pink hover:translate-x-1 transition-all block py-1 font-medium"
                                       >
                                         {it.label || it.path}
@@ -362,8 +358,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                               </p>
                             </div>
                             <div className="mt-6 pt-4 border-t border-white/10">
-                              <Link
-                                href={menu.proofCard.path || "/case-studies"}
+                              <Link prefetch={false} href={menu.proofCard.path || "/case-studies"}
                                 className="inline-flex items-center gap-1.5 text-xs font-bold text-bx-pink hover:text-white transition"
                               >
                                 {menu.proofCard.cta} <ArrowRight className="w-3.5 h-3.5" />
@@ -375,8 +370,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
 
                       {/* Bottom Bar: View all link & bottomBarLinks */}
                       <div className="mt-8 pt-6 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-4 text-xs">
-                        <Link
-                          href={menu.viewAllPath || "/"}
+                        <Link prefetch={false} href={menu.viewAllPath || "/"}
                           className="font-semibold text-bx-pink hover:underline flex items-center gap-1.5"
                         >
                           View all in {menu.label} <ArrowRight className="w-3.5 h-3.5" />
@@ -388,9 +382,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                               const label = (typeof link === "object" ? link?.label : null) || path;
                               if (!path) return null;
                               return (
-                                <Link
-                                  key={path || `bottom-${lIdx}`}
-                                  href={path}
+                                <Link key={path || `bottom-${lIdx}`} href={path} prefetch={false}
                                   className="hover:text-neutral-900 transition"
                                 >
                                   {label}
@@ -480,8 +472,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                 <div key={menu.label} className="border-b border-neutral-100 pb-3">
                   <div className="w-full flex items-center justify-between py-2">
                     {mobileLinkHref ? (
-                      <Link
-                        href={mobileLinkHref}
+                      <Link href={mobileLinkHref} prefetch={false}
                         onClick={() => setMobileMenuOpen(false)}
                         className="font-heading font-bold text-base text-neutral-900 hover:text-bx-pink flex-1"
                       >
@@ -522,8 +513,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                         return (
                           <div key={group.heading || gIdx} className="space-y-2">
                             {group.headingPath ? (
-                              <Link
-                                href={group.headingPath}
+                              <Link href={group.headingPath} prefetch={false}
                                 className="font-heading font-semibold text-xs uppercase tracking-wider text-bx-pink block"
                               >
                                 {group.heading} →
@@ -536,8 +526,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                             <ul className="space-y-2 list-none p-0 m-0">
                               {items.map((it, itIdx) => (
                                 <li key={it.path || `mobile-it-${itIdx}`}>
-                                  <Link
-                                    href={it.path}
+                                  <Link href={it.path} prefetch={false}
                                     className="text-sm text-neutral-700 hover:text-bx-pink block py-1"
                                   >
                                     {it.label || it.path}
@@ -550,8 +539,7 @@ export function Navbar({ site, navigation }: NavbarProps) {
                       })}
 
                       <div className="pt-2">
-                        <Link
-                          href={menu.viewAllPath}
+                        <Link prefetch={false} href={menu.viewAllPath}
                           className="inline-flex items-center gap-1.5 text-xs font-bold text-bx-pink"
                         >
                           View all in {menu.label} <ArrowRight className="w-3.5 h-3.5" />

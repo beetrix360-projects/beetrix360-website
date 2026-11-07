@@ -1,4 +1,5 @@
 import { AccentHeadingText, CtaBand, Eyebrow, Ph } from "@/components/ui";
+import { ManagedMedia } from "@/components/site/ManagedMedia";
 import { accentHex, accentText } from "@/lib/accents";
 import type { HomepageContent } from "@/lib/types";
 
@@ -18,13 +19,20 @@ export function RolloutTimeline({ p }: ProcessProps) {
             <AccentHeadingText heading={p.heading} />
           </h2>
           <p data-reveal="" className="text-neutral-600 mt-4 max-w-sm">{p.intro}</p>
-          <Ph
-            data-reveal=""
-            data-video={p.video.video}
-            data-cursor=""
-            icon="fa-solid fa-circle-play"
-            lines={[p.video.label]}
-            className="aspect-video rounded-2xl mt-8 cursor-pointer"
+          <ManagedMedia
+            pageSlug="home"
+            placeholderKey="process_rollout_video"
+            className="aspect-video rounded-2xl mt-8 border border-bx-border"
+            fallback={
+              <Ph
+                data-reveal=""
+                data-video={p.video.video}
+                data-cursor=""
+                icon="fa-solid fa-circle-play"
+                lines={[p.video.label]}
+                className="aspect-video rounded-2xl mt-8 cursor-pointer"
+              />
+            }
           />
           <ul data-reveal="" className="flex flex-wrap gap-2 mt-6">
             {p.badges.map((b) => (

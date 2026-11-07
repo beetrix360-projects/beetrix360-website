@@ -499,3 +499,42 @@ export interface RedirectRecord {
   createdAt?: string;
 }
 
+// ============================================================================
+// Dynamic Page Media & SEO Placement Model
+// ============================================================================
+
+export type MediaType = "IMAGE" | "VIDEO";
+export type MediaSourceType = "UPLOAD" | "URL";
+
+export interface MediaPlacement {
+  id: string; // Unique identifier, e.g. `${pageSlug}__${placeholderKey}`
+  pageSlug: string; // e.g., "home", "seo", "seo/local-seo", "about", "contact"
+  placeholderKey: string; // e.g., "hero_banner", "overview", "work", "team" — unique per pageSlug
+  label: string; // Human-readable name for the admin UI
+  mediaType: MediaType; // "IMAGE" | "VIDEO"
+  sourceType: MediaSourceType; // "UPLOAD" | "URL"
+  mediaUrl: string; // Stored file path/CDN URL or external URL (empty string if unconfigured/reset)
+  altText: string; // Required for accessibility and image/video SEO
+  seoTitle?: string; // Optional image/video title attribute or schema name
+  seoDescription?: string; // Optional description/caption for ImageObject/VideoObject JSON-LD & OpenGraph
+  dimensions?: string; // Optional dimensions hint, e.g. "1200 × 900"
+  updatedAt: string; // ISO timestamp
+}
+
+export interface MediaPlaceholderSlotView extends MediaPlacement {
+  isConfigured: boolean;
+  isCustomSlot?: boolean;
+  defaultAltText?: string;
+}
+
+export interface PageMediaGroup {
+  pageSlug: string;
+  pagePath: string;
+  pageTitle: string;
+  category: string;
+  placements: MediaPlaceholderSlotView[];
+  configuredCount: number;
+  totalCount: number;
+}
+
+

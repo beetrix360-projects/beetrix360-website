@@ -11,6 +11,9 @@ import { SectionRenderer } from "@/components/sections/SectionRenderer";
 import { getSessionUser } from "@/lib/auth";
 import { getServicePageByPath } from "@/lib/service-pages";
 import { buildServicePageMetadata, ServicePageView } from "@/lib/service-pages/ServicePageView";
+import { getPageMediaMetadata } from "@/lib/media-placements";
+import { ManagedMedia } from "@/components/site/ManagedMedia";
+import { MediaStructuredData } from "@/components/site/MediaStructuredData";
 
 export const dynamicParams = true;
 
@@ -59,7 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const rawPath = "/" + segments.join("/");
 
   // Check unified service-page templates first
-  const spMeta = buildServicePageMetadata(rawPath);
+  const spMeta = await buildServicePageMetadata(rawPath);
   if (spMeta) {
     return spMeta;
   }
@@ -85,6 +88,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     rawTitle = rawTitle.slice(0, -" | Beetrix360".length).trim();
   }
   const description = page.seo?.metaDescription || undefined;
+  const mediaSeo = await getPageMediaMetadata(rawPath);
+  const ogImages =
+    mediaSeo.openGraphImages.length > 0
+      ? mediaSeo.openGraphImages
+      : page.seo?.openGraph?.imagePath
+        ? [{ url: page.seo.openGraph.imagePath }]
+        : undefined;
 
   return {
     title: { absolute: rawTitle },
@@ -102,14 +112,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: canonicalUrl,
       type: "website",
       siteName: "Beetrix360",
-      images: page.seo?.openGraph?.imagePath
-        ? [{ url: page.seo.openGraph.imagePath }]
-        : undefined,
+      images: ogImages,
+      ...(mediaSeo.openGraphVideos.length > 0
+        ? { videos: mediaSeo.openGraphVideos }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: page.seo?.twitter?.title || rawTitle,
       ...(description ? { description: page.seo?.twitter?.description || description } : {}),
+      ...(mediaSeo.twitterImages.length > 0
+        ? { images: mediaSeo.twitterImages }
+        : {}),
     },
   };
 }
@@ -200,6 +214,7 @@ export default async function CatchAllPage({ params }: PageProps) {
   return (
     <>
       <JsonLd data={ldNodes} />
+      <MediaStructuredData pageSlug={rawPath} />
       <div className="min-h-screen bg-bx-bg text-bx-dark selection:bg-bx-pink selection:text-white">
         <HeroSection
           h1={page.h1}
@@ -211,7 +226,32 @@ export default async function CatchAllPage({ params }: PageProps) {
           primaryCta={heroSection?.content?.primaryCta}
           secondaryCta={heroSection?.content?.secondaryCta}
         />
+        <div className="max-w-6xl mx-auto px-6">
+          <ManagedMedia
+            pageSlug={rawPath}
+            placeholderKey="hero_banner"
+            className="rounded-3xl my-6 shadow-xl border border-black/10"
+            width={1600}
+            height={900}
+          />
+        </div>
         <SectionRenderer sections={sections} isAdmin={isAdmin} />
+        <div className="max-w-6xl mx-auto px-6 pb-12 space-y-8">
+          <ManagedMedia
+            pageSlug={rawPath}
+            placeholderKey="featured_media"
+            className="rounded-3xl shadow-lg border border-black/10"
+            width={1200}
+            height={800}
+          />
+          <ManagedMedia
+            pageSlug={rawPath}
+            placeholderKey="proof_showcase"
+            className="rounded-3xl shadow-lg border border-black/10"
+            width={1200}
+            height={675}
+          />
+        </div>
       </div>
     </>
   );

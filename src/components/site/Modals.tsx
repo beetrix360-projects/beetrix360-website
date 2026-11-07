@@ -144,13 +144,28 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
         >
           <i className="fa-solid fa-xmark" aria-hidden="true" />
         </button>
-        <div ref={videoRef} className="ph ph-dark w-full max-w-4xl aspect-video rounded-2xl">
-          <i className="fa-solid fa-film" aria-hidden="true" />
-          <span>
-            {v.label} · {videoLabel}
-          </span>
-          <span>{v.hint}</span>
-        </div>
+        {videoLabel &&
+        (videoLabel.startsWith("/") ||
+          videoLabel.startsWith("http://") ||
+          videoLabel.startsWith("https://")) ? (
+          <div ref={videoRef} className="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden bg-black shadow-2xl">
+            <video
+              src={videoLabel}
+              controls
+              autoPlay
+              playsInline
+              className="w-full h-full object-contain"
+            />
+          </div>
+        ) : (
+          <div ref={videoRef} className="ph ph-dark w-full max-w-4xl aspect-video rounded-2xl">
+            <i className="fa-solid fa-film" aria-hidden="true" />
+            <span>
+              {v.label} · {videoLabel}
+            </span>
+            <span>{v.hint}</span>
+          </div>
+        )}
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildServicePageMetadata, ServicePageView } from "@/lib/service-pages/ServicePageView";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return buildServicePageMetadata("/digital-marketing") || {};
+  return (await buildServicePageMetadata("/digital-marketing")) || {};
 }
 
 export default function DigitalMarketingHubPage() {

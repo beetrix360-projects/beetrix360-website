@@ -1,4 +1,5 @@
 import { Count, CtaBand, Eyebrow, Ph, Split } from "@/components/ui";
+import { ManagedMedia } from "@/components/site/ManagedMedia";
 import { accentDot, caseNumber } from "@/lib/accents";
 import type { HomepageContent } from "@/lib/types";
 
@@ -29,9 +30,14 @@ export function ProofSection({ w }: ProofProps) {
         </div>
 
         <div data-stagger="" className="grid md:grid-cols-3 gap-6 mt-12">
-          {w.cases.map((cs) => (
+          {w.cases.map((cs, idx) => (
             <article key={cs.title} data-tilt="" className="group rounded-[24px] border border-bx-border bg-white overflow-hidden shadow-ambient">
-              <Ph lines={[cs.placeholder]} className="aspect-[4/3] border-0 rounded-none" />
+              <ManagedMedia
+                pageSlug="home"
+                placeholderKey={`proof_case_0${idx + 1}`}
+                className="aspect-[4/3] w-full"
+                fallback={<Ph lines={[cs.placeholder]} className="aspect-[4/3] border-0 rounded-none" />}
+              />
               <div className="p-6">
                 <div className="flex items-center justify-between">
                   <span className="text-[11px] font-mono uppercase text-neutral-400">{cs.category}</span>
@@ -57,9 +63,14 @@ export function ProofSection({ w }: ProofProps) {
             </div>
           </div>
           <div id="re-strip" className="no-scrollbar flex gap-5 overflow-x-auto snap-x snap-mandatory pb-2 cursor-grab">
-            {w.realEstate.items.map((it) => (
+            {w.realEstate.items.map((it, idx) => (
               <figure key={it.name} className="snap-start shrink-0 w-[260px] sm:w-[320px]">
-                <Ph lines={[w.realEstate.placeholder]} className="aspect-[3/4] rounded-2xl" />
+                <ManagedMedia
+                  pageSlug="home"
+                  placeholderKey={`real_estate_0${idx + 1}`}
+                  className="aspect-[3/4] rounded-2xl w-full"
+                  fallback={<Ph lines={[w.realEstate.placeholder]} className="aspect-[3/4] rounded-2xl" />}
+                />
                 <figcaption className="mt-3 flex items-center justify-between text-sm">
                   <span className="font-semibold">{it.name}</span>
                   <span className="font-mono text-[11px] text-neutral-400">{it.location}</span>

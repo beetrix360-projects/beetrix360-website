@@ -10,6 +10,7 @@ import {
   CheckCircle2,
   Sparkles,
   BarChart3,
+  Image as ImageIcon,
 } from "lucide-react";
 import { getSessionUser } from "@/lib/auth";
 import { getAllPages } from "@/lib/page-manager";
@@ -226,6 +227,28 @@ export default async function AdminOverviewPage() {
             </div>
             <div className="mt-6 flex items-center gap-1.5 text-xs font-semibold text-orange-600 group-hover:translate-x-1 transition-transform">
               <span>Configure GA4 &amp; GTM</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </div>
+          </Link>
+
+          {/* Module 7: Dynamic Page Media & SEO Placement Manager */}
+          <Link
+            href="/admin/media-placements"
+            className="group p-6 rounded-2xl bg-white border border-neutral-200 hover:border-rose-300 hover:shadow-md transition-all flex flex-col justify-between"
+          >
+            <div>
+              <div className="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center mb-4 border border-rose-100">
+                <ImageIcon className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-bold text-neutral-900 group-hover:text-rose-700 transition-colors">
+                7. Media &amp; SEO Placements
+              </h3>
+              <p className="text-xs text-neutral-500 mt-2 leading-relaxed">
+                Upload images &amp; videos or attach external URLs to placeholders across all website pages with ALT text, OpenGraph &lt;head&gt; tags, and JSON-LD schema.
+              </p>
+            </div>
+            <div className="mt-6 flex items-center gap-1.5 text-xs font-semibold text-rose-600 group-hover:translate-x-1 transition-transform">
+              <span>Manage Media Placements</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </div>
           </Link>
