@@ -11,6 +11,7 @@ import {
   getSessionUser,
   setSessionCookie,
   updateUserRole,
+  updateUserPassword,
   UserRole,
 } from "@/lib/auth";
 import { saveAnalyticsSettings, saveHomepageContent, saveSiteSettings } from "@/lib/content";
@@ -520,6 +521,15 @@ export async function updateUserRoleAction(id: string, role: UserRole) {
   }
 
   await updateUserRole(id, role);
+  return { success: true };
+}
+
+export async function changeUserPasswordAction(id: string, newPassword: string) {
+  const user = await getSessionUser();
+  if (!user || user.role !== "admin") {
+    throw new Error("Forbidden: Only Full Administrators can change passwords.");
+  }
+  await updateUserPassword(id, newPassword);
   return { success: true };
 }
 
