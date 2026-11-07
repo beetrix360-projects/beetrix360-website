@@ -47,8 +47,11 @@ function getJwtSecret(): Uint8Array {
  */
 export async function seedInitialAdmin(): Promise<void> {
   const existing = await queryDbByPk<UserRecord>("USER");
+  const initialPassword = process.env.INITIAL_ADMIN_PASSWORD;
+  const initialEmail = (process.env.INITIAL_ADMIN_EMAIL || "admin@beetrix360.com").toLowerCase().trim();
+  const initialName = process.env.INITIAL_ADMIN_NAME?.trim() || "Master Administrator";
+
   if (existing.length === 0) {
-    const initialPassword = process.env.INITIAL_ADMIN_PASSWORD;
     if (!initialPassword || initialPassword.trim() === "") {
       if (process.env.NODE_ENV !== "production") {
         console.warn(
@@ -57,9 +60,6 @@ export async function seedInitialAdmin(): Promise<void> {
       }
       return;
     }
-
-    const initialEmail = (process.env.INITIAL_ADMIN_EMAIL || "admin@beetrix360.com").toLowerCase().trim();
-    const initialName = process.env.INITIAL_ADMIN_NAME?.trim() || "Master Administrator";
 
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(initialPassword.trim(), salt);
@@ -72,6 +72,30 @@ export async function seedInitialAdmin(): Promise<void> {
       createdAt: new Date().toISOString(),
     };
     await putDbItem("USER", initialAdmin.id, initialAdmin);
+    return;
+  }
+
+  // If RESET_ADMIN_PASSWORD=true is configured, force-update the admin's password
+  if (
+    (process.env.RESET_ADMIN_PASSWORD === "true" || process.env.RESET_ADMIN_PASSWORD === "1") &&
+    initialPassword &&
+    initialPassword.trim() !== ""
+  ) {
+    const target =
+      existing.find((u) => u.email.toLowerCase() === initialEmail) ||
+      existing.find((u) => u.id === "usr_initial_admin") ||
+      existing[0];
+
+    if (target) {
+      const salt = await bcrypt.genSalt(10);
+      target.passwordHash = await bcrypt.hash(initialPassword.trim(), salt);
+      if (process.env.INITIAL_ADMIN_EMAIL && target.email !== initialEmail) {
+        target.email = initialEmail;
+      }
+      target.updatedAt = new Date().toISOString();
+      await putDbItem("USER", target.id, target);
+      console.log(`[AUTH] Admin credentials for ${target.email} successfully updated via RESET_ADMIN_PASSWORD.`);
+    }
   }
 }
 
@@ -214,6 +238,22 @@ export async function updateUserRole(id: string, newRole: UserRole): Promise<voi
 
 export async function deleteUser(id: string): Promise<void> {
   await deleteDbItem("USER", id);
+}
+
+export async function updateUserPassword(idOrEmail: string, newPassword: string): Promise<void> {
+  const all = await queryDbByPk<UserRecord>("USER");
+  const needle = idOrEmail.toLowerCase().trim();
+  const user = all.find((u) => u.id === idOrEmail || u.email.toLowerCase() === needle);
+  if (!user) {
+    throw new Error(`User not found for identifier: ${idOrEmail}`);
+  }
+  if (!newPassword || newPassword.trim() === "") {
+    throw new Error("Password cannot be empty.");
+  }
+  const salt = await bcrypt.genSalt(10);
+  user.passwordHash = await bcrypt.hash(newPassword.trim(), salt);
+  user.updatedAt = new Date().toISOString();
+  await putDbItem("USER", user.id, user);
 }
 
 export async function authenticateUser(email: string, password: string): Promise<UserProfile | null> {

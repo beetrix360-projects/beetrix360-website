@@ -4,7 +4,7 @@ frontend:
     preBuild:
       commands:
         - npm ci
-        - env | grep -E '^(CONTENT_SOURCE|DYNAMODB_CONTENT_TABLE|DDB_REGION|S3_MEDIA_BUCKET|S3_REGION|AUTH_SECRET|ADMIN_JWT_SECRET|BEETRIX_AUTH_SECRET|INITIAL_ADMIN_|NEXT_PUBLIC_|GA_MEASUREMENT_ID|GTM_ID|APP_AWS_)' >> .env.production || true
+        - env | grep -E '^(CONTENT_SOURCE|DYNAMODB_CONTENT_TABLE|DDB_REGION|S3_MEDIA_BUCKET|S3_REGION|AUTH_SECRET|ADMIN_JWT_SECRET|BEETRIX_AUTH_SECRET|INITIAL_ADMIN_|RESET_ADMIN_|NEXT_PUBLIC_|GA_MEASUREMENT_ID|GTM_ID|APP_AWS_)' >> .env.production || true
         - node scripts/run-migrate.js --apply || true
     build:
       commands:
