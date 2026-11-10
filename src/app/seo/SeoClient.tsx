@@ -196,10 +196,37 @@ export function SeoClient({ pageData, htmlContent }: Props) {
           bad?.focus();
           return;
         }
-        if (m) {
-          f.reset();
-          m.textContent = "Thank you! We've received your request and will reach out shortly.";
-        }
+
+        const formData = new FormData(f);
+        const payload = {
+          name: formData.get("name")?.toString() || "",
+          email: formData.get("email")?.toString() || "",
+          whatsapp: formData.get("whatsapp")?.toString() || "",
+          website: formData.get("website")?.toString() || "",
+          goal: formData.get("goal")?.toString() || pageData.short || "AI search",
+          budget: formData.get("budget")?.toString() || "",
+          notes: formData.get("notes")?.toString() || "",
+          pageUrl: window.location.href,
+          sectionName: "SEO Page Blueprint Section (#start)",
+          buttonName: "Get my blueprint",
+        };
+
+        if (m) m.textContent = "Sending your inquiry...";
+
+        fetch("/api/inquiry", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        })
+          .then((r) => {
+            if (!r.ok) throw new Error();
+            f.reset();
+            if (m) m.textContent = "Thank you! We've received your request and will reply within 1 business day.";
+          })
+          .catch(() => {
+            if (m) m.textContent = "Could not send right now. Please call +1 (424) 441-6042 or message us on WhatsApp.";
+          });
+        return;
       }
     };
     root.addEventListener("submit", handleSubmit);

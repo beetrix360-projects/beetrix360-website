@@ -454,28 +454,7 @@ export function HomeAnimations() {
         });
       }
 
-      /* ---------- contact form (front-end only, as in the design) ---------- */
-      const ctaForm = $<HTMLFormElement>("#cta-form");
-      const ctaSuccess = $("#cta-success");
-      on(ctaForm, "submit", (e: SubmitEvent) => {
-        e.preventDefault();
-        if (!ctaForm || !ctaSuccess) return;
-        if (reduce) {
-          ctaForm.classList.add("hidden");
-          ctaSuccess.classList.remove("hidden");
-          return;
-        }
-        gsap.to(ctaForm, {
-          opacity: 0,
-          y: -20,
-          duration: 0.4,
-          onComplete: () => {
-            ctaForm.classList.add("hidden");
-            ctaSuccess.classList.remove("hidden");
-            gsap.from(ctaSuccess, { opacity: 0, scale: 0.9, duration: 0.6, ease: "back.out(2)" });
-          },
-        });
-      });
+      /* ---------- contact form submit handled by ContactSection.tsx ---------- */
 
       /* ---------- hero: rotating word ---------- */
       const rw = $$(".rot-word");

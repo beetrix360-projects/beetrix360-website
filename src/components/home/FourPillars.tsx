@@ -26,7 +26,7 @@ export function FourPillars({ p }: PillarsProps) {
           <h2 id="pillars-title" data-split="" className="font-heading font-extrabold text-4xl sm:text-6xl 2xl:text-7xl tracking-tight leading-[1.05] mt-4">
             <AccentHeadingText heading={p.heading} />
           </h2>
-          <p className="text-neutral-600 mt-4 max-w-sm">{p.intro}</p>
+          <p className="text-neutral-600 mt-4 max-w-sm text-justify">{p.intro}</p>
 
           <ol id="stack-steps" className="hidden lg:block mt-8 space-y-2">
             {p.cards.map((c, i) => (
@@ -94,7 +94,7 @@ export function FourPillars({ p }: PillarsProps) {
                       <span className="outline-num" aria-hidden="true">{c.number}</span>
                     </div>
                     <h3 className="font-heading font-extrabold text-2xl sm:text-3xl tracking-tight -mt-2">{c.title}</h3>
-                    <p className="text-neutral-500 mt-2">{c.text}</p>
+                    <p className="text-neutral-500 mt-2 text-justify">{c.text}</p>
                     <div className="grid grid-cols-5 gap-3 sm:gap-4 mt-5 sm:mt-6 flex-1 min-h-[140px] sm:min-h-[170px]">
                       {c.visualFirst ? [vis, ph] : [ph, vis]}
                     </div>

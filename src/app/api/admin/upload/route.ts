@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { getSessionUser } from "@/lib/auth";
 import { uploadMedia } from "@/lib/s3";
 
-// Maximum upload file size: 10MB
-const MAX_FILE_SIZE = 10 * 1024 * 1024;
+// Maximum upload file size: 25MB
+const MAX_FILE_SIZE = 25 * 1024 * 1024;
 const ALLOWED_MIME_TYPES = [
   "image/jpeg",
   "image/png",
@@ -12,6 +12,7 @@ const ALLOWED_MIME_TYPES = [
   "image/svg+xml",
   "image/avif",
   "video/mp4",
+  "application/pdf",
 ];
 
 export async function POST(req: NextRequest) {

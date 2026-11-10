@@ -556,10 +556,40 @@ export function BrandSocialClient({ pageData, htmlContent }: Props) {
           return;
         }
 
-        if (msg) {
-          msg.textContent = "Thank you! Your blueprint request has been received. A strategist will contact you within 1 business day.";
-        }
-        form.reset();
+        const formData = new FormData(form);
+        const payload = {
+          name: formData.get("name")?.toString() || "",
+          email: formData.get("email")?.toString() || "",
+          whatsapp: formData.get("whatsapp")?.toString() || "",
+          website: formData.get("website")?.toString() || "",
+          goal: formData.get("goal")?.toString() || pageData.short || "Brand & Social",
+          budget: formData.get("budget")?.toString() || "",
+          notes: formData.get("notes")?.toString() || "",
+          pageUrl: window.location.href,
+          sectionName: "Free 90-Day Blueprint Section (#start)",
+          buttonName: "Get my blueprint",
+        };
+
+        if (msg) msg.textContent = "Sending your inquiry...";
+
+        fetch("/api/inquiry", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        })
+          .then((r) => {
+            if (!r.ok) throw new Error();
+            if (msg) {
+              msg.textContent = "Thank you! Your blueprint request has been received. A strategist will contact you within 1 business day.";
+            }
+            form.reset();
+          })
+          .catch(() => {
+            if (msg) {
+              msg.textContent = "Could not send right now. Please call +1 (424) 441-6042 or message us on WhatsApp.";
+            }
+          });
+        return;
       }
     };
     root.addEventListener("submit", handleSubmit);

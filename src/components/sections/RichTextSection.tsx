@@ -39,7 +39,7 @@ export function RichTextSection({
             {title}
           </HeadingTag>
         )}
-        <div className="space-y-4 text-base sm:text-lg text-neutral-700 leading-relaxed">
+        <div className="space-y-4 text-base sm:text-lg text-neutral-700 leading-relaxed text-justify">
           {visibleParagraphs.map((p, idx) => {
             const hasBracket = p.includes("[") || p.includes("]");
             return (

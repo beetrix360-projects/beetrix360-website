@@ -85,7 +85,7 @@ export function ProcessSection({
                   {st.title}
                 </h3>
                 <p
-                  className={`text-sm leading-relaxed ${
+                  className={`text-sm leading-relaxed text-justify ${
                     hasBracket ? "text-amber-800 font-mono" : "text-neutral-600"
                   }`}
                 >

@@ -12,9 +12,9 @@ export function ProblemStatement({ s }: StatementProps) {
     <section id="statement" aria-label={s.eyebrow.label} className={`py-20 sm:py-28 lg:py-40 ${PAD}`}>
       <div className="w-full mx-auto max-w-[1500px]">
         <Eyebrow eyebrow={s.eyebrow} />
-        <p data-scrub="" className="font-heading font-extrabold tracking-tight text-3xl sm:text-5xl lg:text-[64px] 2xl:text-[80px] leading-[1.08] mt-6">
+        <h3 data-scrub="" className="font-heading font-extrabold tracking-tight text-3xl sm:text-5xl lg:text-[64px] 2xl:text-[80px] leading-[1.08] mt-6">
           <Split text={s.text} />
-        </p>
+        </h3>
         <div data-reveal="" className="mt-12 flex flex-wrap items-center gap-5">
           <ArrowCta cta={s.button.cta} className="bg-bx-dark hover:bg-bx-pink" circle="bg-white/15">
             {s.button.label}

@@ -6,6 +6,7 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { Modals } from "./Modals";
 import { SiteRuntime } from "./SiteRuntime";
+import { WhatsAppWidget } from "../chat/WhatsAppWidget";
 import type { Division, SiteSettings, NavigationRecord } from "@/lib/types";
 
 interface Props {
@@ -39,6 +40,7 @@ export function MarketingShell({ site, navigation, divisions, children }: Props)
       <main id="top">{children}</main>
       <Footer site={site} navigation={navigation} divisions={divisions} />
       <Modals modal={site.modal} video={site.videoModal} />
+      <WhatsAppWidget />
       <SiteRuntime />
     </>
   );

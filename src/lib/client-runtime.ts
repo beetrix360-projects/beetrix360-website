@@ -40,8 +40,30 @@ export function scrollToTarget(target: Element | number, offset = -60) {
 export const MODAL_EVENT = "bx:open-modal";
 export const VIDEO_EVENT = "bx:open-video";
 
-export function openModal(tag: string, domain = "") {
-  window.dispatchEvent(new CustomEvent(MODAL_EVENT, { detail: { tag, domain } }));
+export interface ModalPayload {
+  tag: string;
+  domain?: string;
+  sectionName?: string;
+  buttonName?: string;
+  pageUrl?: string;
+}
+
+export function openModal(
+  tag: string,
+  domain = "",
+  context?: { sectionName?: string; buttonName?: string; pageUrl?: string }
+) {
+  window.dispatchEvent(
+    new CustomEvent(MODAL_EVENT, {
+      detail: {
+        tag,
+        domain,
+        sectionName: context?.sectionName,
+        buttonName: context?.buttonName,
+        pageUrl: context?.pageUrl || (typeof window !== "undefined" ? window.location.href : ""),
+      },
+    })
+  );
 }
 
 export function openVideo(label: string) {

@@ -95,7 +95,7 @@ function related(p){const o=PAGES.filter(x=>x.id!==p.id&&x.col===p.col).concat(P
 
 function start(p){return `<section class="sec final" id="start"><div class="wrap fg"><div><p class="eye">Free 90-day blueprint</p><h2>Let's build your ${esc(p.short)} revenue engine.</h2><p class="sub">Get an AI-search audit, automation map and ROI model. We reply within 1 business day.</p><p class="tel">${TEL}</p>${img(p,"team",900,520,"Your team photo","The Beetrix360 team")}</div>
 <form class="lead-f" data-lead novalidate><div class="two"><label for="f-n">Name<input id="f-n" name="name" required autocomplete="name"></label><label for="f-e">Work email<input id="f-e" name="email" type="email" required autocomplete="email"></label></div>
-<label for="f-w">Website<input id="f-w" name="website" required autocomplete="url"></label>
+<div class="two"><label for="f-wa">WhatsApp / Phone<input id="f-wa" name="whatsapp" type="tel" placeholder="+1 (555) 000-0000" autocomplete="tel"></label><label for="f-w">Website<input id="f-w" name="website" required autocomplete="url"></label></div>
 <label for="f-g">Main goal<select id="f-g" name="goal"><option>${esc(p.short)}</option><option>AI search</option><option>Automation</option><option>AI agents</option><option>New website</option></select></label>
 <label for="f-b">Monthly budget<select id="f-b" name="budget"><option>$5k – $10k</option><option>$10k – $25k</option><option>$25k – $50k</option><option>$50k+</option></select></label>
 <label for="f-m">Anything we should know?<textarea id="f-m" name="notes" rows="3"></textarea></label>

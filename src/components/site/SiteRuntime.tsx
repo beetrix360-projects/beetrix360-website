@@ -25,13 +25,34 @@ export function SiteRuntime() {
     if (pathname?.startsWith("/admin")) return;
     ensureLenis();
 
+    // Expose global form endpoint for embedded service page templates
+    (window as any).BX_FORM_ENDPOINT = "/api/inquiry";
+
+    const getOriginContext = (el: HTMLElement) => {
+      const section = el.closest<HTMLElement>("section, header, footer, [id^='sec-'], [id^='pillar-'], [id^='txt'], [id^='start']");
+      const heading = section?.querySelector("h1, h2, h3")?.textContent?.trim()?.replace(/\s+/g, " ") || "";
+      const sectionId = section?.id ? `#${section.id}` : "";
+      const ariaLabel = section?.getAttribute("aria-label") || "";
+      const sectionName = heading ? (sectionId ? `${heading} (${sectionId})` : heading) : (ariaLabel || sectionId || "Page Section");
+      return {
+        sectionName,
+        pageUrl: window.location.href,
+      };
+    };
+
     const onClick = (e: MouseEvent) => {
       const el = e.target as HTMLElement;
       const cta = el.closest<HTMLElement>("[data-cta]");
       if (cta) {
         e.preventDefault();
         e.stopPropagation();
-        openModal(cta.dataset.cta || "");
+        const buttonName = cta.innerText?.trim() || cta.getAttribute("data-cta") || "CTA Button";
+        const origin = getOriginContext(cta);
+        openModal(cta.dataset.cta || "", "", {
+          buttonName,
+          sectionName: origin.sectionName,
+          pageUrl: origin.pageUrl,
+        });
         return;
       }
       const video = el.closest<HTMLElement>("[data-video]");
@@ -59,10 +80,17 @@ export function SiteRuntime() {
     // Forms marked data-modal-form open the request modal pre-filled with the typed domain.
     const onSubmit = (e: SubmitEvent) => {
       const form = e.target as HTMLFormElement;
-      if (!form.matches("[data-modal-form]")) return;
-      e.preventDefault();
-      const input = form.querySelector("input") as HTMLInputElement | null;
-      openModal(form.dataset.modalForm || "", input?.value.trim() || "");
+      if (form.matches("[data-modal-form]")) {
+        e.preventDefault();
+        const input = form.querySelector("input") as HTMLInputElement | null;
+        const button = form.querySelector("button")?.textContent?.trim() || "Run Audit";
+        const origin = getOriginContext(form);
+        openModal(form.dataset.modalForm || "", input?.value.trim() || "", {
+          buttonName: button,
+          sectionName: origin.sectionName,
+          pageUrl: origin.pageUrl,
+        });
+      }
     };
 
     document.addEventListener("click", onClick);

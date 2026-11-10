@@ -1,8 +1,10 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Wordmark } from "@/components/ui";
+import { DEFAULT_BROCHURE_CONFIG, type BrochureConfig } from "@/lib/brochure";
 import type { Division, SiteSettings, NavigationRecord } from "@/lib/types";
 
 interface FooterProps {
@@ -13,6 +15,21 @@ interface FooterProps {
 
 export function Footer({ site, navigation, divisions }: FooterProps) {
   const pathname = usePathname();
+  const [brochure, setBrochure] = useState<BrochureConfig>(DEFAULT_BROCHURE_CONFIG);
+
+  useEffect(() => {
+    fetch("/api/brochure")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && typeof data.enabled === "boolean") {
+          setBrochure(data);
+        }
+      })
+      .catch((err) => {
+        console.warn("[Footer] Could not fetch brochure config:", err);
+      });
+  }, []);
+
   if (pathname?.startsWith("/admin")) {
     return null;
   }
@@ -30,6 +47,21 @@ export function Footer({ site, navigation, divisions }: FooterProps) {
               <span className="w-8 h-1.5 rounded bg-bx-yellow" />
               <span className="w-8 h-1.5 rounded bg-bx-blue" />
             </div>
+
+            {brochure.enabled && (
+              <div className="mt-7">
+                <a
+                  href={brochure.fileUrl || "/downloads/beetrix360-brochure.pdf"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download={brochure.fileName || "Beetrix360-Corporate-Brochure.pdf"}
+                  className="inline-flex items-center justify-center gap-3 px-6 sm:px-7 py-3 rounded-full bg-neutral-900 hover:bg-bx-pink text-white text-xs font-heading font-semibold tracking-wide transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap group"
+                >
+                  <i className="fa-solid fa-file-arrow-down text-bx-yellow text-sm group-hover:translate-y-0.5 transition-transform shrink-0" aria-hidden="true" />
+                  <span className="whitespace-nowrap">{brochure.buttonLabel || "Download E-Brochure"}</span>
+                </a>
+              </div>
+            )}
           </div>
           <nav aria-label={f.exploreTitle}>
             <p className="text-[11px] font-mono uppercase text-neutral-400 mb-3">{f.exploreTitle}</p>

@@ -537,4 +537,27 @@ export interface PageMediaGroup {
   totalCount: number;
 }
 
+// ============================================================================
+// Lead Inquiries & CRM Model
+// ============================================================================
+
+export interface LeadInquiry {
+  id: string;
+  name: string;
+  email: string;
+  whatsapp?: string;
+  website?: string;
+  goal?: string;
+  budget?: string;
+  notes?: string;
+  pageUrl?: string;
+  sectionName?: string;
+  buttonName?: string;
+  status: "new" | "contacted" | "archived";
+  createdAt: string;
+  emailSent?: boolean;
+  emailError?: string;
+}
+
+
 

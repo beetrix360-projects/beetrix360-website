@@ -162,6 +162,68 @@ h1,h2,h3,.font-heading{font-family:var(--font-bricolage),var(--font-geist),sans-
 h1,h2{letter-spacing:-.035em!important}
 h3{letter-spacing:-.02em}
 p{text-wrap:pretty} h1,h2,h3{text-wrap:balance}
+
+/* ==========================================================================
+   Comprehensive Typography: Justified Text Across Frontend
+   Applied strictly to descriptions, paragraphs, and text spans (NOT headings/titles)
+   ========================================================================== */
+p,
+article p,
+section p,
+main p,
+.prose p,
+.prose,
+.txa p,
+.ga p,
+.body p,
+.ans,
+.lead,
+.st p,
+.pd p,
+.wb p,
+.txs p,
+.mf-body,
+.mfeature p,
+.stack-card p,
+.pc-inner p,
+.step p,
+.hero-tagline,
+.card p,
+.tile p,
+details p,
+.faq-item p,
+.rich-text p,
+.desc,
+.det,
+span.desc-text,
+span.justified-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* ==========================================================================
+   Service Page Text Grid (.txg) Responsive Layout:
+   - Desktop screens: 3 columns
+   - Tablet / Medium screens: 2 columns
+   - Mobile screens: 1 column
+   ========================================================================== */
+.txg {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(20px, 2.4vw, 34px) !important;
+}
+
+@media (max-width: 1024px) {
+  .txg {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .txg {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
 /* accent words in headlines become italic serif with a drawn underline */
 h1 span[class*="text-bx-"],h2 span[class*="text-bx-"],[data-scrub] span[class*="text-bx-"]{font-family:var(--font-instrument-serif),serif;font-style:italic;font-weight:400;letter-spacing:-.01em;font-size:1.06em}
 .mark{background-image:linear-gradient(color-mix(in srgb,currentColor 28%,transparent),color-mix(in srgb,currentColor 28%,transparent));background-repeat:no-repeat;background-position:0 92%;background-size:0% .12em;transition:background-size 1.3s .35s cubic-bezier(.16,1,.3,1)}
