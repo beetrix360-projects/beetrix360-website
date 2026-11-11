@@ -164,41 +164,77 @@ h3{letter-spacing:-.02em}
 p{text-wrap:pretty} h1,h2,h3{text-wrap:balance}
 
 /* ==========================================================================
-   Comprehensive Typography: Justified Text Across Frontend
-   Applied strictly to descriptions, paragraphs, and text spans (NOT headings/titles)
+   Refined Typography: Clean Justification with Gap Prevention
+   - Applies justified alignment cleanly to long-form article & reading paragraphs
+   - Automatically prevents gaps by enabling hyphenation and keeping the last line left-aligned
+   - Keeps large font-size text (leads, subheadings, hero taglines) and short card text left-aligned
+   - Disables justification on mobile/narrow screens to eliminate loose line spacing
    ========================================================================== */
-p,
 article p,
-section p,
-main p,
 .prose p,
-.prose,
+.rich-text p,
 .txa p,
-.ga p,
-.body p,
-.ans,
+.txs p {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  word-break: normal;
+}
+
+/* Explicit left-alignment for large font sizes, leads, subheadings, cards, pills, spans & badges (eliminating gaps) */
+h1, h2, h3, h4, h5, h6,
 .lead,
+.sub,
+.hero-tagline,
+.hero-fade,
+.text-lg,
+.text-xl,
+.text-2xl,
+.text-3xl,
+p.lead,
+p.sub,
+p.hero-tagline,
 .st p,
 .pd p,
-.wb p,
-.txs p,
-.mf-body,
-.mfeature p,
+.ga p,
+.ans,
+.band p,
+.card p,
+.tile p,
 .stack-card p,
 .pc-inner p,
 .step p,
-.hero-tagline,
-.card p,
-.tile p,
-details p,
 .faq-item p,
-.rich-text p,
-.desc,
-.det,
-span.desc-text,
-span.justified-text {
-  text-align: justify;
-  text-justify: inter-word;
+details p,
+summary,
+span,
+.pill,
+.eyebrow,
+.chap,
+.nav-trig,
+.mega,
+#site-nav,
+footer,
+footer p {
+  text-align: left;
+  text-justify: auto;
+  hyphens: manual;
+}
+
+/* On mobile and tablet screens, revert to clean left-alignment to prevent narrow-column word stretching */
+@media (max-width: 768px) {
+  p,
+  article p,
+  .prose p,
+  .txa p,
+  .txs p,
+  .rich-text p {
+    text-align: left !important;
+    text-justify: auto !important;
+    hyphens: manual !important;
+  }
 }
 
 /* ==========================================================================

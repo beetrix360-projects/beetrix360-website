@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { getSessionUser } from "@/lib/auth";
 import { uploadMedia } from "@/lib/s3";
 
+import path from "path";
+
 // Maximum upload file size: 25MB
 const MAX_FILE_SIZE = 25 * 1024 * 1024;
 const ALLOWED_MIME_TYPES = [
@@ -13,6 +15,22 @@ const ALLOWED_MIME_TYPES = [
   "image/avif",
   "video/mp4",
   "application/pdf",
+  "text/html",
+  "application/xhtml+xml",
+];
+
+const ALLOWED_EXTENSIONS = [
+  ".jpg",
+  ".jpeg",
+  ".png",
+  ".webp",
+  ".gif",
+  ".svg",
+  ".avif",
+  ".mp4",
+  ".pdf",
+  ".html",
+  ".htm",
 ];
 
 export async function POST(req: NextRequest) {
@@ -44,26 +62,40 @@ export async function POST(req: NextRequest) {
     // 3. Validate size & type
     if (file.size > MAX_FILE_SIZE) {
       return NextResponse.json(
-        { error: "File exceeds 10MB limit." },
+        { error: "File exceeds 25MB limit." },
         { status: 400 }
       );
     }
 
-    if (!ALLOWED_MIME_TYPES.includes(file.type)) {
+    const fileExt = path.extname(file.name || "").toLowerCase();
+    const isAllowedExt = ALLOWED_EXTENSIONS.includes(fileExt);
+    const isAllowedMime = ALLOWED_MIME_TYPES.includes(file.type);
+
+    if (!isAllowedMime && !isAllowedExt) {
       return NextResponse.json(
         {
           error:
-            "Invalid file format. Allowed formats: PNG, JPG, WebP, SVG, AVIF, GIF, MP4.",
+            "Invalid file format. Allowed formats: PNG, JPG, WebP, SVG, AVIF, GIF, MP4, PDF, HTML.",
         },
         { status: 400 }
       );
+    }
+
+    // Determine normalized content type
+    let resolvedContentType = file.type;
+    if (fileExt === ".html" || fileExt === ".htm") {
+      resolvedContentType = "text/html; charset=utf-8";
+    } else if (fileExt === ".pdf") {
+      resolvedContentType = "application/pdf";
+    } else if (!resolvedContentType) {
+      resolvedContentType = "application/octet-stream";
     }
 
     // 4. Read arrayBuffer and upload to S3 (or fallback)
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
-    const result = await uploadMedia(buffer, file.name, file.type);
+    const result = await uploadMedia(buffer, file.name, resolvedContentType);
 
     return NextResponse.json({
       success: true,

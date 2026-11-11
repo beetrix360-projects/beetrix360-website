@@ -54,7 +54,7 @@ export function Hero({ hero }: { hero: HomepageContent["hero"] }) {
                 ))}
               </span>
             </h1>
-            <p className="hero-fade text-neutral-600 text-lg mt-6 max-w-xl text-justify">{hero.subheading}</p>
+            <p className="hero-fade text-neutral-600 text-lg mt-6 max-w-xl leading-relaxed text-left">{hero.subheading}</p>
 
             <form
               id="audit-form"

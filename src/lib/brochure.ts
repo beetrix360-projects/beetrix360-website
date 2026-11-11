@@ -4,6 +4,7 @@ export interface BrochureConfig {
   fileUrl: string;
   fileName: string;
   fileSize?: string;
+  fileType?: "pdf" | "html" | "other";
   description?: string;
   updatedAt?: string;
 }
@@ -14,6 +15,7 @@ export const DEFAULT_BROCHURE_CONFIG: BrochureConfig = {
   fileUrl: "/downloads/beetrix360-corporate-brochure.pdf",
   fileName: "Beetrix360-Corporate-Capabilities-Brochure.pdf",
   fileSize: "PDF • 3.2 MB",
+  fileType: "pdf",
   description: "Comprehensive guide to Beetrix360's AI search, workflow automation, and revenue systems.",
 };
 

@@ -35,7 +35,7 @@ export function ChildCardsSection({
           {title}
         </HeadingTag>
         {subtitle && (
-          <p className="text-neutral-600 text-base sm:text-lg mb-8 max-w-2xl text-justify">
+          <p className="text-neutral-600 text-base sm:text-lg mb-8 max-w-2xl leading-relaxed text-left">
             {subtitle}
           </p>
         )}

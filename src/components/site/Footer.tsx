@@ -51,9 +51,7 @@ export function Footer({ site, navigation, divisions }: FooterProps) {
             {brochure.enabled && (
               <div className="mt-7">
                 <a
-                  href={brochure.fileUrl || "/downloads/beetrix360-brochure.pdf"}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/api/brochure/download"
                   download={brochure.fileName || "Beetrix360-Corporate-Brochure.pdf"}
                   className="inline-flex items-center justify-center gap-3 px-6 sm:px-7 py-3 rounded-full bg-neutral-900 hover:bg-bx-pink text-white text-xs font-heading font-semibold tracking-wide transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap group"
                 >

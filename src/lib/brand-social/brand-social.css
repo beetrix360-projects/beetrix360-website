@@ -7,7 +7,9 @@
 .bx-social-page *{box-sizing:border-box}
 .bx-social-page{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
 .bx-social-page h1,.bx-social-page h2,.bx-social-page h3,.bx-social-page p{margin:0}.bx-social-page h1,.bx-social-page h2,.bx-social-page h3{font-family:var(--disp);letter-spacing:-.02em;text-wrap:balance;line-height:1.06}
-.bx-social-page p,.bx-social-page .lead,.bx-social-page .sub,.bx-social-page .prose p,.bx-social-page article p,.bx-social-page .card p,.bx-social-page .tile p,.bx-social-page .det,.bx-social-page .band p,.bx-social-page details p{text-align:justify;text-justify:inter-word}
+.bx-social-page .prose p,.bx-social-page article p{text-align:justify;text-justify:inter-word;text-align-last:left;hyphens:auto;-webkit-hyphens:auto}
+.bx-social-page .lead,.bx-social-page .sub,.bx-social-page .card p,.bx-social-page .tile p,.bx-social-page .det,.bx-social-page .band p,.bx-social-page details p{text-align:left}
+@media(max-width:768px){.bx-social-page p,.bx-social-page .prose p{text-align:left!important;text-justify:auto!important;hyphens:manual!important}}
 .bx-social-page a{color:inherit}.bx-social-page button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
 .bx-social-page input,.bx-social-page select,.bx-social-page textarea{font:inherit;color:var(--ink)}
 .bx-social-page :focus-visible{outline:3px solid var(--cy);outline-offset:2px;border-radius:6px}

@@ -56,7 +56,7 @@ export function HeroSection({
         </h1>
 
         {tagline && (!tagline.includes("[") || isAdmin) && (
-          <p className={`mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed text-justify ${
+          <p className={`mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed text-left ${
             tagline.includes("[") ? "text-amber-800 font-mono text-base p-4 bg-amber-50/60 rounded-xl border border-amber-200" : "text-neutral-600"
           }`}>
             {tagline}

@@ -92,13 +92,13 @@ export function FaqSection({
                   />
                 </button>
                 <div
-                  className={`px-6 pb-6 pt-2 text-sm sm:text-base leading-relaxed border-t text-justify ${
+                  className={`px-6 pb-6 pt-2 text-sm sm:text-base leading-relaxed border-t text-left ${
                     hasBracket
                       ? "text-amber-900 border-amber-200 font-mono text-sm"
                       : "text-neutral-600 border-neutral-100"
                   } ${isOpen ? "block" : "hidden"}`}
                 >
-                  <p className="text-justify">{item.answer}</p>
+                  <p className="text-left leading-relaxed">{item.answer}</p>
                 </div>
               </div>
             );

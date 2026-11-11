@@ -107,7 +107,7 @@ export function WhatsAppWidget({ initialConfig }: WhatsAppWidgetProps) {
     <>
       {/* Floating Launcher Button */}
       <div
-        className={`fixed bottom-5 sm:bottom-7 z-[70] transition-all duration-500 ease-out ${posClasses} ${
+        className={`fixed bottom-5 sm:bottom-20 z-[70] transition-all duration-500 ease-out ${posClasses} ${
           isPastThreshold ? "translate-y-0 opacity-100 scale-100" : "translate-y-16 opacity-0 scale-90 pointer-events-none"
         }`}
       >

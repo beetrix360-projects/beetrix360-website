@@ -42,7 +42,7 @@ export function CtaSection({
           <HeadingTag className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight leading-tight">
             {title}
           </HeadingTag>
-          <p className="mt-4 text-base sm:text-lg text-neutral-300 leading-relaxed text-justify">
+          <p className="mt-4 text-base sm:text-lg text-neutral-300 leading-relaxed text-left">
             {text}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
