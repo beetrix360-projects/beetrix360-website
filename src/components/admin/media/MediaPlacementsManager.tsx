@@ -48,6 +48,31 @@ export function MediaPlacementsManager({
   const [addingSlot, setAddingSlot] = useState(false);
   const [addError, setAddError] = useState<string | null>(null);
 
+  // Database Sync State
+  const [syncingDb, setSyncingDb] = useState(false);
+  const [syncMessage, setSyncMessage] = useState<string | null>(null);
+
+  async function handleSyncToDynamoDb() {
+    setSyncingDb(true);
+    setSyncMessage(null);
+    try {
+      const res = await fetch("/api/admin/media-placements/sync-dynamodb", {
+        method: "POST",
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Sync encountered an issue");
+      }
+      setSyncMessage(data.message || "DynamoDB synchronized successfully!");
+      setTimeout(() => setSyncMessage(null), 6000);
+    } catch (err: any) {
+      setSyncMessage(`Database Notice: ${err?.message || "Could not sync to cloud DB"}`);
+      setTimeout(() => setSyncMessage(null), 6000);
+    } finally {
+      setSyncingDb(false);
+    }
+  }
+
   // Recompute category summaries dynamically from current groups state
   const categories = useMemo(() => {
     return initialCategories.map((cat) => {
@@ -309,7 +334,16 @@ export function MediaPlacementsManager({
           </p>
         </div>
 
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex flex-wrap items-center gap-3 shrink-0">
+          <button
+            type="button"
+            onClick={handleSyncToDynamoDb}
+            disabled={syncingDb}
+            className="px-4 py-2.5 rounded-xl bg-[#00c864]/20 hover:bg-[#00c864]/30 border border-[#00c864]/40 text-xs font-semibold text-[#00c864] transition flex items-center gap-2 disabled:opacity-50"
+            title="Ensures all 4,609 placements are stored in AWS DynamoDB"
+          >
+            <span>{syncingDb ? "Syncing to DynamoDB..." : "Sync Cloud Database"}</span>
+          </button>
           <button
             type="button"
             onClick={() => setShowAddModal(true)}
@@ -320,6 +354,13 @@ export function MediaPlacementsManager({
           </button>
         </div>
       </div>
+
+      {syncMessage && (
+        <div className="rounded-xl border border-[#00c864]/30 bg-[#00c864]/10 p-4 text-xs font-mono text-[#00c864] flex items-center gap-3">
+          <span className="w-2 h-2 rounded-full bg-[#00c864] animate-pulse" />
+          <span>{syncMessage}</span>
+        </div>
+      )}
 
       {/* Step 1: Category Navigation Tabs */}
       <div className="flex items-center gap-2 overflow-x-auto pb-1">

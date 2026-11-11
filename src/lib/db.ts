@@ -69,16 +69,13 @@ function ensureLocalStore(): Record<string, any> {
     if (fs.existsSync(LOCAL_STORE_FILE)) {
       const parsed = JSON.parse(fs.readFileSync(LOCAL_STORE_FILE, "utf-8"));
       // Ensure media placements seed is merged if missing from local store
-      const mediaSeed = path.join(process.cwd(), "src/content/media-placements.seed.json");
-      if (fs.existsSync(mediaSeed)) {
-        const hasMedia = Object.keys(parsed).some((k) => k.startsWith("MEDIA_PLACEMENT:"));
-        if (!hasMedia) {
-          try {
-            const mediaData = JSON.parse(fs.readFileSync(mediaSeed, "utf-8"));
-            Object.assign(parsed, mediaData);
-          } catch (e) {
-            console.error("Failed to merge media placements seed:", e);
-          }
+      const hasMedia = Object.keys(parsed).some((k) => k.startsWith("MEDIA_PLACEMENT:"));
+      if (!hasMedia) {
+        try {
+          const mediaData = require("@/content/media-placements.seed.json");
+          Object.assign(parsed, mediaData);
+        } catch (e) {
+          console.error("Failed to merge media placements seed:", e);
         }
       }
       localMemoryCache = parsed;
@@ -119,14 +116,11 @@ function ensureLocalStore(): Record<string, any> {
     }
 
     // Seed all 4,600+ media placements on fresh cloud deployments
-    const mediaSeed = path.join(process.cwd(), "src/content/media-placements.seed.json");
-    if (fs.existsSync(mediaSeed)) {
-      try {
-        const mediaData = JSON.parse(fs.readFileSync(mediaSeed, "utf-8"));
-        Object.assign(seed, mediaData);
-      } catch (e) {
-        console.error("Failed to seed media placements on startup:", e);
-      }
+    try {
+      const mediaData = require("@/content/media-placements.seed.json");
+      Object.assign(seed, mediaData);
+    } catch (e) {
+      console.error("Failed to seed media placements on startup:", e);
     }
   } catch (err) {
     console.error("Failed to seed initial local content store:", err);

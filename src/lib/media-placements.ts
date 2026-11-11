@@ -320,9 +320,25 @@ export function discoverAllPagePlaceholders(): DiscoveredPage[] {
 export async function getAllStoredPlacements(): Promise<MediaPlacement[]> {
   try {
     const records = await queryDbByPk<MediaPlacement>(PK_MEDIA_PLACEMENT);
-    return Array.isArray(records) ? records : [];
+    if (Array.isArray(records) && records.length > 0) {
+      return records;
+    }
   } catch (err) {
-    console.error("[media-placements] Error reading stored placements:", err);
+    console.error("[media-placements] Error reading stored placements from DB:", err);
+  }
+
+  // Fallback to static media placements seed (4,600+ curated records)
+  try {
+    const seedMap = require("@/content/media-placements.seed.json");
+    const list: MediaPlacement[] = [];
+    for (const [k, v] of Object.entries(seedMap)) {
+      if (k.startsWith(`${PK_MEDIA_PLACEMENT}:`) && v && typeof v === "object") {
+        list.push(v as MediaPlacement);
+      }
+    }
+    return list;
+  } catch (e) {
+    console.error("[media-placements] Failed to load media placements seed fallback:", e);
     return [];
   }
 }
@@ -331,7 +347,18 @@ export async function getMediaPlacementById(id: string): Promise<MediaPlacement 
   const parsed = parsePlacementId(id);
   if (!parsed) return null;
   const sk = buildSk(parsed.pageSlug, parsed.placeholderKey);
-  return await getDbItem<MediaPlacement>(PK_MEDIA_PLACEMENT, sk);
+  const saved = await getDbItem<MediaPlacement>(PK_MEDIA_PLACEMENT, sk);
+  if (saved && saved.mediaUrl) {
+    return saved;
+  }
+
+  // Fallback to static seed
+  try {
+    const seedMap = require("@/content/media-placements.seed.json");
+    const match = seedMap[`${PK_MEDIA_PLACEMENT}:${sk}`];
+    if (match) return match as MediaPlacement;
+  } catch {}
+  return null;
 }
 
 export async function getPageMediaPlacements(
