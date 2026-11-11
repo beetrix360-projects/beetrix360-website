@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Wordmark } from "@/components/ui";
+// import { Wordmark } from "@/components/ui";
+import { Logo } from "@/components/site/Logo";
 import { DEFAULT_BROCHURE_CONFIG, type BrochureConfig } from "@/lib/brochure";
 import type { Division, SiteSettings, NavigationRecord } from "@/lib/types";
 
@@ -39,7 +40,8 @@ export function Footer({ site, navigation, divisions }: FooterProps) {
       <div className="w-full mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-bx-border">
           <div className="lg:col-span-2">
-            <Wordmark className="text-2xl" />
+            {/* <Wordmark className="text-2xl" /> */}
+            <Logo />
             <p className="text-sm text-neutral-500 mt-3 max-w-xs">{f.tagline}</p>
             <div className="flex gap-1.5 mt-5" aria-hidden="true">
               <span className="w-8 h-1.5 rounded bg-bx-green" />

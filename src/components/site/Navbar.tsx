@@ -153,7 +153,8 @@ export function Navbar({ site, navigation }: NavbarProps) {
             className="flex items-center gap-2 xl:gap-2.5 2xl:gap-3 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bx-pink rounded-lg"
             aria-label={`${site.name} home`}
           >
-            <Logo floating />
+            {/* <Logo floating /> */}
+            <Logo />
           </Link>
         </div>
 
