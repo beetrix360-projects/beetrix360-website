@@ -59,6 +59,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       suppressHydrationWarning
       className={`${bricolage.variable} ${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
     >
+      <head>
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+      </head>
       <body suppressHydrationWarning className="font-sans selection:bg-bx-pink selection:text-white">
         <GoogleAnalyticsAndTagManager settings={analytics} />
         <JsonLd data={[organizationSchema(site), websiteSchema(site)]} />

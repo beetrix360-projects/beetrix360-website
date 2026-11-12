@@ -41,7 +41,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo",
@@ -79,7 +80,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/local-seo",
@@ -117,7 +119,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/technical-seo",
@@ -155,7 +158,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/on-page-seo",
@@ -193,7 +197,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/ecommerce-seo",
@@ -231,7 +236,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/link-building",
@@ -269,7 +275,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/keyword-research",
@@ -307,7 +314,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/programmatic-seo",
@@ -345,7 +353,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/generative-engine-optimization",
@@ -383,7 +392,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/answer-engine-optimization",
@@ -421,7 +431,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/chatgpt-optimization",
@@ -459,7 +470,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/ai-visibility-tracking",
@@ -497,7 +509,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/ai-brand-perception",
@@ -535,7 +548,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/enterprise-seo",
@@ -573,7 +587,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/seo/enterprise-geo",
@@ -611,7 +626,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/digital-marketing",
@@ -649,7 +665,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/digital-marketing/competitor-analysis",
@@ -667,7 +684,7 @@
         "metaDescription": null,
         "canonicalPath": "/digital-marketing/competitor-analysis",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -687,7 +704,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/digital-marketing/ai-digital-marketing",
@@ -705,7 +723,7 @@
         "metaDescription": null,
         "canonicalPath": "/digital-marketing/ai-digital-marketing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -725,7 +743,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/paid-media",
@@ -743,7 +762,7 @@
         "metaDescription": null,
         "canonicalPath": "/paid-media",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -763,7 +782,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/paid-media/google-ads",
@@ -801,7 +821,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/paid-media/google-local-services-ads",
@@ -819,7 +840,7 @@
         "metaDescription": null,
         "canonicalPath": "/paid-media/google-local-services-ads",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -839,7 +860,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/paid-media/meta-ads",
@@ -877,7 +899,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/paid-media/tiktok-ads",
@@ -915,7 +938,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/paid-media/social-media-advertising",
@@ -933,7 +957,7 @@
         "metaDescription": null,
         "canonicalPath": "/paid-media/social-media-advertising",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -953,7 +977,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/paid-media/programmatic-advertising",
@@ -991,7 +1016,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/paid-media/enterprise-ppc",
@@ -1009,7 +1035,7 @@
         "metaDescription": null,
         "canonicalPath": "/paid-media/enterprise-ppc",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1029,7 +1055,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/paid-media/enterprise-social-advertising",
@@ -1047,7 +1074,7 @@
         "metaDescription": null,
         "canonicalPath": "/paid-media/enterprise-social-advertising",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1067,7 +1094,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/marketplaces",
@@ -1085,7 +1113,7 @@
         "metaDescription": null,
         "canonicalPath": "/marketplaces",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1105,7 +1133,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/marketplaces/amazon",
@@ -1143,7 +1172,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/marketplaces/amazon/advertising",
@@ -1181,7 +1211,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/marketplaces/amazon/seo",
@@ -1219,7 +1250,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/marketplaces/amazon/dsp",
@@ -1257,7 +1289,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/marketplaces/amazon/seller-operations",
@@ -1295,7 +1328,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/marketplaces/amazon/brand-management",
@@ -1333,7 +1367,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/marketplaces/amazon/creator-connections",
@@ -1371,7 +1406,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/marketplaces/amazon/enterprise-advertising",
@@ -1389,7 +1425,7 @@
         "metaDescription": null,
         "canonicalPath": "/marketplaces/amazon/enterprise-advertising",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1409,7 +1445,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/marketplaces/walmart",
@@ -1447,7 +1484,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/marketplaces/target",
@@ -1465,7 +1503,7 @@
         "metaDescription": null,
         "canonicalPath": "/marketplaces/target",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -1485,7 +1523,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/branding",
@@ -1523,7 +1562,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/branding/brand-strategy",
@@ -1561,7 +1601,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/branding/business-naming",
@@ -1599,7 +1640,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/branding/brand-identity-design",
@@ -1637,7 +1679,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/branding/logo-design",
@@ -1675,7 +1718,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/branding/collateral-design",
@@ -1713,7 +1757,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/branding/packaging-label-design",
@@ -1751,7 +1796,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/social-media",
@@ -1789,7 +1835,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/social-media/instagram-management",
@@ -1827,7 +1874,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/social-media/facebook-management",
@@ -1865,7 +1913,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/social-media/linkedin-management",
@@ -1903,7 +1952,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/social-media/tiktok-management",
@@ -1941,7 +1991,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/social-media/content-and-design",
@@ -1979,7 +2030,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/social-media/community-management",
@@ -2017,7 +2069,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/social-media/influencer-marketing",
@@ -2055,7 +2108,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/social-media/enterprise-management",
@@ -2093,7 +2147,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/content-marketing",
@@ -2131,7 +2186,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/content-marketing/website-copywriting",
@@ -2169,7 +2225,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/content-marketing/infographics-motion-graphics",
@@ -2207,7 +2264,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content",
@@ -2225,7 +2283,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2245,7 +2303,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/writing",
@@ -2263,7 +2322,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/writing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2283,7 +2342,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/writing/blog-writing",
@@ -2301,7 +2361,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/writing/blog-writing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2321,7 +2381,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/writing/copywriting",
@@ -2339,7 +2400,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/writing/copywriting",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2359,7 +2420,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/writing/product-descriptions",
@@ -2377,7 +2439,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/writing/product-descriptions",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2397,7 +2459,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/video",
@@ -2415,7 +2478,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/video",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2435,7 +2498,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/video/avatar-videos",
@@ -2453,7 +2517,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/video/avatar-videos",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2473,7 +2537,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/video/faceless-videos",
@@ -2491,7 +2556,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/video/faceless-videos",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2511,7 +2576,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/video/video-ads",
@@ -2529,7 +2595,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/video/video-ads",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2549,7 +2615,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/video/product-videos",
@@ -2567,7 +2634,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/video/product-videos",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2587,7 +2654,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/images",
@@ -2605,7 +2673,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/images",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2625,7 +2693,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/images/product-photography",
@@ -2643,7 +2712,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/images/product-photography",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2663,7 +2732,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/images/ad-creatives",
@@ -2681,7 +2751,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/images/ad-creatives",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2701,7 +2771,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/images/lifestyle-images",
@@ -2719,7 +2790,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/images/lifestyle-images",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2739,7 +2810,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/ugc-ads",
@@ -2757,7 +2829,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/ugc-ads",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2777,7 +2849,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/ugc-ads/ugc-avatars",
@@ -2795,7 +2868,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/ugc-ads/ugc-avatars",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2815,7 +2888,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/ugc-ads/tiktok-ugc-ads",
@@ -2833,7 +2907,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/ugc-ads/tiktok-ugc-ads",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2853,7 +2927,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/social-media",
@@ -2871,7 +2946,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/social-media",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2891,7 +2966,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/social-media/reels-shorts",
@@ -2909,7 +2985,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/social-media/reels-shorts",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2929,7 +3005,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai-content/enterprise",
@@ -2947,7 +3024,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai-content/enterprise",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -2967,7 +3044,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-design",
@@ -2985,7 +3063,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-design",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3005,7 +3083,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-design/redesign",
@@ -3023,7 +3102,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-design/redesign",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3043,7 +3122,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-design/rapid-web-design",
@@ -3061,7 +3141,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-design/rapid-web-design",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3081,7 +3161,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-design/ecommerce",
@@ -3099,7 +3180,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-design/ecommerce",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3119,7 +3200,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-design/landing-pages",
@@ -3137,7 +3219,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-design/landing-pages",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3157,7 +3239,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-development",
@@ -3175,7 +3258,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-development",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3195,7 +3278,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-development/wordpress",
@@ -3213,7 +3297,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-development/wordpress",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3233,7 +3317,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-development/ecommerce",
@@ -3251,7 +3336,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-development/ecommerce",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3271,7 +3356,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-development/web-applications",
@@ -3289,7 +3375,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-development/web-applications",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3309,7 +3395,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-development/cms",
@@ -3327,7 +3414,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-development/cms",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3347,7 +3434,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-development/site-security",
@@ -3365,7 +3453,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-development/site-security",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3385,7 +3473,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/web-development/maintenance",
@@ -3403,7 +3492,7 @@
         "metaDescription": null,
         "canonicalPath": "/web-development/maintenance",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3423,7 +3512,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/conversion",
@@ -3441,7 +3531,7 @@
         "metaDescription": null,
         "canonicalPath": "/conversion",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3461,7 +3551,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/conversion/sales-funnels",
@@ -3479,7 +3570,7 @@
         "metaDescription": null,
         "canonicalPath": "/conversion/sales-funnels",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3499,7 +3590,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/conversion/lead-generation",
@@ -3517,7 +3609,7 @@
         "metaDescription": null,
         "canonicalPath": "/conversion/lead-generation",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3537,7 +3629,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/conversion/website-personalization",
@@ -3555,7 +3648,7 @@
         "metaDescription": null,
         "canonicalPath": "/conversion/website-personalization",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3575,7 +3668,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/conversion/review-generation",
@@ -3593,7 +3687,7 @@
         "metaDescription": null,
         "canonicalPath": "/conversion/review-generation",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3613,7 +3707,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/conversion/account-based-marketing",
@@ -3631,7 +3726,7 @@
         "metaDescription": null,
         "canonicalPath": "/conversion/account-based-marketing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3651,7 +3746,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/conversion/analytics-tracking",
@@ -3669,7 +3765,7 @@
         "metaDescription": null,
         "canonicalPath": "/conversion/analytics-tracking",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3689,7 +3785,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/email-marketing",
@@ -3707,7 +3804,7 @@
         "metaDescription": null,
         "canonicalPath": "/email-marketing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3727,7 +3824,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/email-marketing/campaign-management",
@@ -3745,7 +3843,7 @@
         "metaDescription": null,
         "canonicalPath": "/email-marketing/campaign-management",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3765,7 +3863,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/email-marketing/automation",
@@ -3783,7 +3882,7 @@
         "metaDescription": null,
         "canonicalPath": "/email-marketing/automation",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3803,7 +3902,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/email-marketing/newsletter-management",
@@ -3821,7 +3921,7 @@
         "metaDescription": null,
         "canonicalPath": "/email-marketing/newsletter-management",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3841,7 +3941,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/email-marketing/design-testing",
@@ -3859,7 +3960,7 @@
         "metaDescription": null,
         "canonicalPath": "/email-marketing/design-testing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3879,7 +3980,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai",
@@ -3897,7 +3999,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3917,7 +4019,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/consulting",
@@ -3935,7 +4038,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/consulting",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3955,7 +4058,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/agent-development",
@@ -3973,7 +4077,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/agent-development",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -3993,7 +4097,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/agent-development/custom-ai-agents",
@@ -4011,7 +4116,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/agent-development/custom-ai-agents",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4031,7 +4136,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/agent-development/ai-sales-agents",
@@ -4049,7 +4155,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/agent-development/ai-sales-agents",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4069,7 +4175,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/agent-development/ai-customer-service-agents",
@@ -4087,7 +4194,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/agent-development/ai-customer-service-agents",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4107,7 +4214,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/agent-development/multi-agent-systems",
@@ -4125,7 +4233,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/agent-development/multi-agent-systems",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4145,7 +4253,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/chatbot-development",
@@ -4163,7 +4272,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/chatbot-development",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4183,7 +4292,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/chatbot-development/website-chatbots",
@@ -4201,7 +4311,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/chatbot-development/website-chatbots",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4221,7 +4331,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/chatbot-development/whatsapp-chatbots",
@@ -4239,7 +4350,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/chatbot-development/whatsapp-chatbots",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4259,7 +4370,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/chatbot-development/ecommerce-chatbots",
@@ -4277,7 +4389,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/chatbot-development/ecommerce-chatbots",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4297,7 +4409,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/integration",
@@ -4315,7 +4428,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/integration",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4335,7 +4448,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/integration/chatgpt-integration",
@@ -4353,7 +4467,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/integration/chatgpt-integration",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4373,7 +4487,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/integration/crm-ai-integration",
@@ -4391,7 +4506,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/integration/crm-ai-integration",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4411,7 +4526,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/integration/ai-software-integration",
@@ -4429,7 +4545,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/integration/ai-software-integration",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4449,7 +4565,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/ai/enterprise-automation",
@@ -4467,7 +4584,7 @@
         "metaDescription": null,
         "canonicalPath": "/ai/enterprise-automation",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4487,7 +4604,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/automation",
@@ -4505,7 +4623,7 @@
         "metaDescription": null,
         "canonicalPath": "/automation",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4525,7 +4643,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/automation/business-process-automation",
@@ -4543,7 +4662,7 @@
         "metaDescription": null,
         "canonicalPath": "/automation/business-process-automation",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4563,7 +4682,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/automation/document-processing",
@@ -4581,7 +4701,7 @@
         "metaDescription": null,
         "canonicalPath": "/automation/document-processing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4601,7 +4721,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/automation/data-entry-automation",
@@ -4619,7 +4740,7 @@
         "metaDescription": null,
         "canonicalPath": "/automation/data-entry-automation",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4639,7 +4760,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/automation/api-integration",
@@ -4657,7 +4779,7 @@
         "metaDescription": null,
         "canonicalPath": "/automation/api-integration",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4677,7 +4799,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/automation/no-code-automation",
@@ -4695,7 +4818,7 @@
         "metaDescription": null,
         "canonicalPath": "/automation/no-code-automation",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4715,7 +4838,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/automation/crm-automation",
@@ -4733,7 +4857,7 @@
         "metaDescription": null,
         "canonicalPath": "/automation/crm-automation",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4753,7 +4877,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/automation/marketing-automation",
@@ -4771,7 +4896,7 @@
         "metaDescription": null,
         "canonicalPath": "/automation/marketing-automation",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4791,7 +4916,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/automation/salesforce-marketing-automation",
@@ -4809,7 +4935,7 @@
         "metaDescription": null,
         "canonicalPath": "/automation/salesforce-marketing-automation",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4829,7 +4955,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/automation/channel-partner-pipeline",
@@ -4847,7 +4974,7 @@
         "metaDescription": null,
         "canonicalPath": "/automation/channel-partner-pipeline",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4867,7 +4994,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/challenges/website-doesnt-drive-leads",
@@ -4885,7 +5013,7 @@
         "metaDescription": null,
         "canonicalPath": "/challenges/website-doesnt-drive-leads",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4904,7 +5032,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/challenges/website-traffic-going-down",
@@ -4922,7 +5051,7 @@
         "metaDescription": null,
         "canonicalPath": "/challenges/website-traffic-going-down",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4941,7 +5070,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/challenges/website-doesnt-convert",
@@ -4959,7 +5089,7 @@
         "metaDescription": null,
         "canonicalPath": "/challenges/website-doesnt-convert",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -4978,7 +5108,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/challenges/not-appearing-in-ai-search",
@@ -4996,7 +5127,7 @@
         "metaDescription": null,
         "canonicalPath": "/challenges/not-appearing-in-ai-search",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5015,7 +5146,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/challenges/agency-isnt-driving-results",
@@ -5033,7 +5165,7 @@
         "metaDescription": null,
         "canonicalPath": "/challenges/agency-isnt-driving-results",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5052,7 +5184,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/challenges/too-much-manual-work",
@@ -5070,7 +5203,7 @@
         "metaDescription": null,
         "canonicalPath": "/challenges/too-much-manual-work",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5089,7 +5222,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/challenges/ads-spend-but-dont-sell",
@@ -5107,7 +5241,7 @@
         "metaDescription": null,
         "canonicalPath": "/challenges/ads-spend-but-dont-sell",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5126,7 +5260,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/case-studies",
@@ -5144,7 +5279,7 @@
         "metaDescription": null,
         "canonicalPath": "/case-studies",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5162,7 +5297,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/portfolio",
@@ -5180,7 +5316,7 @@
         "metaDescription": null,
         "canonicalPath": "/portfolio",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5198,7 +5334,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/results",
@@ -5216,7 +5353,7 @@
         "metaDescription": null,
         "canonicalPath": "/results",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5234,7 +5371,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/industries",
@@ -5252,7 +5390,7 @@
         "metaDescription": null,
         "canonicalPath": "/industries",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5270,7 +5408,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/about",
@@ -5288,7 +5427,7 @@
         "metaDescription": null,
         "canonicalPath": "/about",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5306,7 +5445,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/about/our-approach",
@@ -5324,7 +5464,7 @@
         "metaDescription": null,
         "canonicalPath": "/about/our-approach",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5342,7 +5482,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/about/our-approach/ai-search",
@@ -5360,7 +5501,7 @@
         "metaDescription": null,
         "canonicalPath": "/about/our-approach/ai-search",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5378,7 +5519,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/about/values",
@@ -5396,7 +5538,7 @@
         "metaDescription": null,
         "canonicalPath": "/about/values",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5414,7 +5556,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/about/history",
@@ -5432,7 +5575,7 @@
         "metaDescription": null,
         "canonicalPath": "/about/history",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5450,7 +5593,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/careers",
@@ -5468,7 +5612,7 @@
         "metaDescription": null,
         "canonicalPath": "/careers",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5486,7 +5630,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/contact",
@@ -5504,7 +5649,7 @@
         "metaDescription": null,
         "canonicalPath": "/contact",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5522,7 +5667,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/get-a-proposal",
@@ -5540,7 +5686,7 @@
         "metaDescription": null,
         "canonicalPath": "/get-a-proposal",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5558,7 +5704,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/pricing",
@@ -5576,7 +5723,7 @@
         "metaDescription": null,
         "canonicalPath": "/pricing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5594,7 +5741,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/pricing/website-cost",
@@ -5612,7 +5760,7 @@
         "metaDescription": null,
         "canonicalPath": "/pricing/website-cost",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5631,7 +5779,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/pricing/seo-cost",
@@ -5668,7 +5817,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/pricing/ppc-cost",
@@ -5686,7 +5836,7 @@
         "metaDescription": null,
         "canonicalPath": "/pricing/ppc-cost",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5705,7 +5855,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/pricing/geo-cost",
@@ -5723,7 +5874,7 @@
         "metaDescription": null,
         "canonicalPath": "/pricing/geo-cost",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5742,7 +5893,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/pricing/social-media-pricing",
@@ -5760,7 +5912,7 @@
         "metaDescription": null,
         "canonicalPath": "/pricing/social-media-pricing",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5779,7 +5931,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/pricing/local-seo-pricing",
@@ -5816,7 +5969,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/pricing/ai-automation-cost",
@@ -5834,7 +5988,7 @@
         "metaDescription": null,
         "canonicalPath": "/pricing/ai-automation-cost",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5853,7 +6007,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/blog",
@@ -5871,7 +6026,7 @@
         "metaDescription": null,
         "canonicalPath": "/blog",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5889,7 +6044,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/privacy-policy",
@@ -5907,7 +6063,7 @@
         "metaDescription": null,
         "canonicalPath": "/privacy-policy",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5925,7 +6081,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/terms",
@@ -5943,7 +6100,7 @@
         "metaDescription": null,
         "canonicalPath": "/terms",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5961,7 +6118,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     },
     {
       "path": "/cookie-policy",
@@ -5979,7 +6137,7 @@
         "metaDescription": null,
         "canonicalPath": "/cookie-policy",
         "robots": {
-          "index": false,
+          "index": true,
           "follow": true
         },
         "robotsAfterContentReady": {
@@ -5997,7 +6155,8 @@
           "imagePath": null
         }
       },
-      "published": true
+      "published": true,
+      "contentStatus": "ready"
     }
   ],
   "navigation": {

@@ -1,6 +1,7 @@
 import { RAW_REDIRECT_MAP } from "./redirect-map";
 import "server-only";
 import staticMediaSeed from "../content/media-placements.seed.json";
+import staticIaSeed from "../content/ia-v2.seed.json";
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import {
   DynamoDBDocumentClient,
@@ -96,9 +97,8 @@ function ensureLocalStore(): Record<string, any> {
     if (fs.existsSync(site)) {
       seed["SITE#config:SETTINGS"] = JSON.parse(fs.readFileSync(site, "utf-8"));
     }
-    const seedFile = path.join(process.cwd(), "src/content/ia-v2.seed.json");
-    if (fs.existsSync(seedFile)) {
-      const seedData = JSON.parse(fs.readFileSync(seedFile, "utf-8"));
+    const seedData = (staticIaSeed as any) || (fs.existsSync(path.join(process.cwd(), "src/content/ia-v2.seed.json")) ? JSON.parse(fs.readFileSync(path.join(process.cwd(), "src/content/ia-v2.seed.json"), "utf-8")) : null);
+    if (seedData) {
       if (seedData.navigation) {
         seed["SITE#config:NAVIGATION"] = seedData.navigation;
       }
@@ -297,13 +297,10 @@ export async function getPageByPath(rawPath: string): Promise<PageRecordV2 | nul
   if (custom && custom.path) {
     return custom;
   }
-  try {
-    const seed = require("@/content/ia-v2.seed.json");
-    if (seed && Array.isArray(seed.pages)) {
-      const match = seed.pages.find((p: any) => normalizePath(p.path) === normalized);
-      if (match) return match as PageRecordV2;
-    }
-  } catch {}
+  if (staticIaSeed && Array.isArray((staticIaSeed as any).pages)) {
+    const match = (staticIaSeed as any).pages.find((p: any) => normalizePath(p.path) === normalized);
+    if (match) return match as PageRecordV2;
+  }
   return null;
 }
 
@@ -318,12 +315,9 @@ export async function getAllPages(): Promise<PageRecordV2[]> {
   if (valid.length > 0) {
     return valid;
   }
-  try {
-    const seed = require("@/content/ia-v2.seed.json");
-    if (seed && Array.isArray(seed.pages)) {
-      return seed.pages as PageRecordV2[];
-    }
-  } catch {}
+  if (staticIaSeed && Array.isArray((staticIaSeed as any).pages)) {
+    return (staticIaSeed as any).pages as PageRecordV2[];
+  }
   return [];
 }
 
@@ -425,15 +419,10 @@ function normalizeNavigationRecord(nav: NavigationRecord): NavigationRecord {
   const getPageMap = () => {
     if (!pageMap) {
       pageMap = new Map();
-      try {
-        const seed = require("@/content/ia-v2.seed.json");
-        if (seed && Array.isArray(seed.pages)) {
-          for (const p of seed.pages) {
-            if (p.path) pageMap.set(p.path, p);
-          }
+      if (staticIaSeed && Array.isArray((staticIaSeed as any).pages)) {
+        for (const p of (staticIaSeed as any).pages) {
+          if (p.path) pageMap.set(p.path, p);
         }
-      } catch {
-        // ignore
       }
     }
     return pageMap;
@@ -499,13 +488,8 @@ export async function getNavigation(): Promise<NavigationRecord | null> {
   if (custom && Array.isArray(custom.menus) && custom.menus.length > 0) {
     return normalizeNavigationRecord(custom);
   }
-  try {
-    const seed = require("@/content/ia-v2.seed.json");
-    if (seed && seed.navigation && Array.isArray(seed.navigation.menus)) {
-      return normalizeNavigationRecord(seed.navigation as NavigationRecord);
-    }
-  } catch (err) {
-    console.error("Failed to load fallback navigation:", err);
+  if (staticIaSeed && (staticIaSeed as any).navigation && Array.isArray((staticIaSeed as any).navigation.menus)) {
+    return normalizeNavigationRecord((staticIaSeed as any).navigation as NavigationRecord);
   }
   return null;
 }
