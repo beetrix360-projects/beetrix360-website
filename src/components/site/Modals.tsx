@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+} from "react";
 import { ensureLenis, gsap, MODAL_EVENT, prefersReducedMotion, VIDEO_EVENT } from "@/lib/client-runtime";
 import type { SiteSettings } from "@/lib/types";
 
@@ -21,6 +27,14 @@ const MODAL_GOALS = [
   { label: "Brand & social", icon: "fa-solid fa-bolt", color: "text-purple-500" },
 ];
 
+const FORM_TABS = [
+  { id: "goal", label: "Goal" },
+  { id: "contact", label: "Contact" },
+  { id: "website", label: "Website" },
+] as const;
+
+type FormTab = (typeof FORM_TABS)[number]["id"];
+
 /**
  * Request modal + video modal. Any element with `data-cta="..."` opens the request
  * modal (wired in SiteRuntime). Form submissions post to /api/inquiry with origin
@@ -29,6 +43,7 @@ const MODAL_GOALS = [
 export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; video: SiteSettings["videoModal"] }) {
   const [req, setReq] = useState<ModalRequestState | null>(null);
   const [selectedGoal, setSelectedGoal] = useState<string>("AI search");
+  const [activeFormTab, setActiveFormTab] = useState<FormTab>("goal");
   const [sent, setSent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -37,10 +52,12 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
     height: number;
     offsetTop: number;
     isLandscape: boolean;
+    isCoarsePointer: boolean;
   } | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLDivElement>(null);
   const firstInput = useRef<HTMLInputElement>(null);
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   useEffect(() => {
     const viewport = window.visualViewport;
@@ -48,12 +65,14 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
 
     const updateViewport = () => {
       const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+      const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
       setVisualViewport((current) =>
         current?.height === viewport.height &&
         current.offsetTop === viewport.offsetTop &&
-        current.isLandscape === isLandscape
+        current.isLandscape === isLandscape &&
+        current.isCoarsePointer === isCoarsePointer
           ? current
-          : { height: viewport.height, offsetTop: viewport.offsetTop, isLandscape },
+          : { height: viewport.height, offsetTop: viewport.offsetTop, isLandscape, isCoarsePointer },
       );
     };
 
@@ -74,6 +93,7 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
       setSent(false);
       setErrorMessage("");
       setIsSubmitting(false);
+      setActiveFormTab("goal");
 
       // Pre-select goal based on tag context if matched
       const tagLower = (detail.tag || "").toLowerCase();
@@ -168,6 +188,13 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
       buttonName: req?.buttonName || req?.tag || "Get Started",
     };
 
+    if (showLandscapeTabs && (!payload.name.trim() || !payload.email.trim())) {
+      setActiveFormTab("contact");
+      setErrorMessage("Please enter your name and work email to continue.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const res = await fetch("/api/inquiry", {
         method: "POST",
@@ -189,11 +216,23 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
   };
 
   const title = req ? (req.tag.length > 34 ? m.defaultTitle : req.tag) : m.defaultTitle;
+  const showLandscapeTabs = Boolean(visualViewport?.isLandscape && visualViewport.isCoarsePointer);
   const compactLandscape = Boolean(visualViewport?.isLandscape && visualViewport.height <= 600);
   const input =
     "w-full bg-bx-surface border border-bx-border focus:border-bx-dark rounded-xl px-3.5 sm:px-4 py-2 sm:py-2.5 text-[16px] sm:text-sm focus:outline-none transition-colors";
   const label = "block text-[11px] font-mono uppercase text-neutral-500 font-semibold mb-1";
+  const handleTabKeyDown = (event: ReactKeyboardEvent<HTMLButtonElement>, currentIndex: number) => {
+    let nextIndex: number | null = null;
+    if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % FORM_TABS.length;
+    if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + FORM_TABS.length) % FORM_TABS.length;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = FORM_TABS.length - 1;
+    if (nextIndex === null) return;
 
+    event.preventDefault();
+    setActiveFormTab(FORM_TABS[nextIndex].id);
+    tabRefs.current[nextIndex]?.focus();
+  };
   return (
     <>
       <div
@@ -284,8 +323,48 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
                   </div>
                 )}
 
+                {showLandscapeTabs && (
+                  <div
+                    role="tablist"
+                    aria-label="Inquiry form sections"
+                    className="flex gap-1 p-1 rounded-xl bg-neutral-100"
+                  >
+                    {FORM_TABS.map((tab, index) => {
+                      const isActive = activeFormTab === tab.id;
+                      return (
+                        <button
+                          key={tab.id}
+                          ref={(element) => {
+                            tabRefs.current[index] = element;
+                          }}
+                          id={`inquiry-tab-${tab.id}`}
+                          type="button"
+                          role="tab"
+                          aria-selected={isActive}
+                          aria-controls={`inquiry-panel-${tab.id}`}
+                          tabIndex={isActive ? 0 : -1}
+                          onClick={() => setActiveFormTab(tab.id)}
+                          onKeyDown={(event) => handleTabKeyDown(event, index)}
+                          className={`flex-1 min-w-0 px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
+                            isActive
+                              ? "bg-neutral-900 text-white shadow-sm"
+                              : "text-neutral-600 hover:bg-white"
+                          }`}
+                        >
+                          {tab.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+
                 {/* Main Goal Selection */}
-                <div>
+                <div
+                  id="inquiry-panel-goal"
+                  role={showLandscapeTabs ? "tabpanel" : undefined}
+                  aria-labelledby={showLandscapeTabs ? "inquiry-tab-goal" : undefined}
+                  hidden={showLandscapeTabs && activeFormTab !== "goal"}
+                >
                   <span className={label}>Main Goal</span>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
                     {MODAL_GOALS.map((g) => {
@@ -309,34 +388,38 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
                   </div>
                 </div>
 
-                {/* Name & Email */}
-                <div className="grid sm:grid-cols-2 gap-3">
-                  <div>
-                    <span className={label}>{m.namePlaceholder} *</span>
-                    <input
-                      ref={firstInput}
-                      required
-                      name="name"
-                      placeholder="Jane Doe"
-                      aria-label="Name"
-                      className={input}
-                    />
+                <div
+                  id="inquiry-panel-contact"
+                  role={showLandscapeTabs ? "tabpanel" : undefined}
+                  aria-labelledby={showLandscapeTabs ? "inquiry-tab-contact" : undefined}
+                  hidden={showLandscapeTabs && activeFormTab !== "contact"}
+                  className="space-y-3"
+                >
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    <div>
+                      <span className={label}>{m.namePlaceholder} *</span>
+                      <input
+                        ref={firstInput}
+                        required={!showLandscapeTabs || activeFormTab === "contact"}
+                        name="name"
+                        placeholder="Jane Doe"
+                        aria-label="Name"
+                        className={input}
+                      />
+                    </div>
+                    <div>
+                      <span className={label}>{m.emailPlaceholder} *</span>
+                      <input
+                        type="email"
+                        required={!showLandscapeTabs || activeFormTab === "contact"}
+                        name="email"
+                        placeholder="jane@company.com"
+                        aria-label="Work email"
+                        className={input}
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <span className={label}>{m.emailPlaceholder} *</span>
-                    <input
-                      type="email"
-                      required
-                      name="email"
-                      placeholder="jane@company.com"
-                      aria-label="Work email"
-                      className={input}
-                    />
-                  </div>
-                </div>
 
-                {/* WhatsApp & Website */}
-                <div className="grid sm:grid-cols-2 gap-3">
                   <div>
                     <span className={label}>WhatsApp / Phone</span>
                     <input
@@ -347,6 +430,14 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
                       className={input}
                     />
                   </div>
+                </div>
+
+                <div
+                  id="inquiry-panel-website"
+                  role={showLandscapeTabs ? "tabpanel" : undefined}
+                  aria-labelledby={showLandscapeTabs ? "inquiry-tab-website" : undefined}
+                  hidden={showLandscapeTabs && activeFormTab !== "website"}
+                >
                   <div>
                     <span className={label}>{m.websitePlaceholder}</span>
                     <input
