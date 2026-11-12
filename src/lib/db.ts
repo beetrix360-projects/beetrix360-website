@@ -328,10 +328,18 @@ export async function getAllPages(): Promise<PageRecordV2[]> {
         if (p && typeof p === "object" && typeof p.path === "string" && p.path.trim().length > 0) {
           const norm = normalizePath(p.path);
           const existing = pageMap.get(norm);
-          pageMap.set(norm, {
+          const merged: PageRecordV2 = {
             ...(existing || {}),
             ...p,
-          });
+          } as PageRecordV2;
+          if (!merged.seo) merged.seo = {} as any;
+          if (!merged.seo.robots) merged.seo.robots = { index: true, follow: true };
+          if (!merged.seo.indexLock) {
+            merged.seo.robots.index = true;
+            merged.seo.robots.follow = true;
+            merged.published = true;
+          }
+          pageMap.set(norm, merged);
         }
       }
     }

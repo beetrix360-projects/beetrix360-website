@@ -148,16 +148,13 @@ export async function GET() {
     console.warn("[sitemap] Failed to query dynamic placements:", err);
   }
 
-  // 4. Filter for indexable pages (exclude only explicit draft or indexLock)
-  const indexablePages = allPages.filter(
-    (p) =>
-      p &&
-      typeof p.path === "string" &&
-      p.path.trim().length > 0 &&
-      p.published !== false &&
-      p.seo?.robots?.index !== false &&
-      !p.seo?.indexLock
-  );
+  // 4. Filter for indexable pages: all public marketing & service pages are indexable unless explicitly indexLocked
+  const indexablePages = allPages.filter((p) => {
+    if (!p || typeof p.path !== "string" || p.path.trim().length === 0) return false;
+    if (p.path.startsWith("/admin") || p.path.startsWith("/api") || p.path.startsWith("/_")) return false;
+    if (p.seo?.indexLock) return false;
+    return true;
+  });
 
   const urlBlocks = indexablePages.map((p) => {
     const rawPath = p.path === "/" ? "/" : p.path;

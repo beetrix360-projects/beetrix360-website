@@ -64,7 +64,12 @@ export async function GET() {
 
   // Exactly the same set of indexed pages as sitemap.xml
   const indexedPages = pages
-    .filter((p) => p && typeof p.path === "string" && p.path.trim().length > 0 && p.published !== false && p.seo?.robots?.index !== false && !p.seo?.indexLock)
+    .filter((p) => {
+      if (!p || typeof p.path !== "string" || p.path.trim().length === 0) return false;
+      if (p.path.startsWith("/admin") || p.path.startsWith("/api") || p.path.startsWith("/_")) return false;
+      if (p.seo?.indexLock) return false;
+      return true;
+    })
     .sort((a, b) => (a.path === "/" ? -1 : b.path === "/" ? 1 : a.path.localeCompare(b.path)));
 
   lines.push("## Indexed Pages", "");
