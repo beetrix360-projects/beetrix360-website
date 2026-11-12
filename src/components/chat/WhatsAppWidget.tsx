@@ -78,11 +78,13 @@ export function WhatsAppWidget({ initialConfig }: WhatsAppWidgetProps) {
     };
   }, [config.enabled, config.scrollThreshold, isAdmin]);
 
-  // Focus textarea when popup opens
+  // Focus textarea when popup opens on desktop only (avoid abrupt keyboard pop on mobile)
   useEffect(() => {
     if (isOpen && textareaRef.current) {
       setTimeout(() => {
-        textareaRef.current?.focus();
+        if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+          textareaRef.current?.focus();
+        }
       }, 100);
     }
   }, [isOpen]);
