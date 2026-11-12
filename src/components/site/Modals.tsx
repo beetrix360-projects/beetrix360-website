@@ -33,7 +33,11 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [videoLabel, setVideoLabel] = useState<string | null>(null);
-  const [visualViewport, setVisualViewport] = useState<{ height: number; offsetTop: number } | null>(null);
+  const [visualViewport, setVisualViewport] = useState<{
+    height: number;
+    offsetTop: number;
+    isLandscape: boolean;
+  } | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLDivElement>(null);
   const firstInput = useRef<HTMLInputElement>(null);
@@ -43,19 +47,24 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
     if (!viewport) return;
 
     const updateViewport = () => {
+      const isLandscape = window.matchMedia("(orientation: landscape)").matches;
       setVisualViewport((current) =>
-        current?.height === viewport.height && current.offsetTop === viewport.offsetTop
+        current?.height === viewport.height &&
+        current.offsetTop === viewport.offsetTop &&
+        current.isLandscape === isLandscape
           ? current
-          : { height: viewport.height, offsetTop: viewport.offsetTop },
+          : { height: viewport.height, offsetTop: viewport.offsetTop, isLandscape },
       );
     };
 
     updateViewport();
     viewport.addEventListener("resize", updateViewport);
     viewport.addEventListener("scroll", updateViewport);
+    window.addEventListener("resize", updateViewport);
     return () => {
       viewport.removeEventListener("resize", updateViewport);
       viewport.removeEventListener("scroll", updateViewport);
+      window.removeEventListener("resize", updateViewport);
     };
   }, []);
 
@@ -122,8 +131,12 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
     if (!prefersReducedMotion() && cardRef.current)
       gsap.fromTo(cardRef.current, { y: 20, opacity: 0, scale: 0.98 }, { y: 0, opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" });
     const t = setTimeout(() => {
-      // Auto-focus only on desktop to prevent mobile/tablet keyboards from abruptly covering the modal
-      if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+      // Avoid opening the on-screen keyboard on touch devices, including tablets in landscape.
+      if (
+        typeof window !== "undefined" &&
+        window.innerWidth >= 1024 &&
+        window.matchMedia("(pointer: fine)").matches
+      ) {
         firstInput.current?.focus();
       }
     }, 50);
@@ -176,6 +189,7 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
   };
 
   const title = req ? (req.tag.length > 34 ? m.defaultTitle : req.tag) : m.defaultTitle;
+  const compactLandscape = Boolean(visualViewport?.isLandscape && visualViewport.height <= 600);
   const input =
     "w-full bg-bx-surface border border-bx-border focus:border-bx-dark rounded-xl px-3.5 sm:px-4 py-2 sm:py-2.5 text-[16px] sm:text-sm focus:outline-none transition-colors";
   const label = "block text-[11px] font-mono uppercase text-neutral-500 font-semibold mb-1";
@@ -184,13 +198,30 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
     <>
       <div
         className={`fixed inset-x-0 bottom-0 z-[80] ${req ? "flex" : "hidden"} items-start lg:items-center justify-center bg-bx-dark/75 backdrop-blur-sm p-3 sm:p-6 lg:p-4 pt-3 sm:pt-6 lg:pt-4 overflow-y-auto overscroll-contain`}
-        style={visualViewport ? { height: visualViewport.height, top: visualViewport.offsetTop, bottom: "auto" } : undefined}
+        style={
+          visualViewport
+            ? {
+                height: visualViewport.height,
+                top: visualViewport.offsetTop,
+                bottom: "auto",
+                ...(compactLandscape ? { alignItems: "flex-start", padding: "8px" } : {}),
+              }
+            : undefined
+        }
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
         onClick={(e) => e.target === e.currentTarget && setReq(null)}
       >
-        <div ref={cardRef} className="bg-white rounded-[24px] sm:rounded-[28px] max-w-lg w-full p-5 sm:p-8 shadow-mega relative overflow-hidden mt-1 sm:mt-4 lg:my-8 mb-28 sm:mb-24 lg:mb-8">
+        <div
+          ref={cardRef}
+          className="bg-white rounded-[24px] sm:rounded-[28px] max-w-lg w-full p-5 sm:p-8 shadow-mega relative overflow-hidden mt-1 sm:mt-4 lg:my-8 mb-28 sm:mb-24 lg:mb-8"
+          style={
+            compactLandscape
+              ? { margin: 0, maxHeight: "100%", overflowY: "auto", padding: "16px" }
+              : undefined
+          }
+        >
           <div className="grid grid-cols-4 h-1.5 absolute top-0 inset-x-0" aria-hidden="true">
             <div className="bg-bx-green" />
             <div className="bg-bx-pink" />
@@ -241,7 +272,11 @@ export function Modals({ modal: m, video: v }: { modal: SiteSettings["modal"]; v
                 </div>
               </div>
             ) : (
-              <form className="space-y-3 sm:space-y-3.5" onSubmit={submit} key={req?.tag + (req?.domain ?? "")}>
+              <form
+                className={compactLandscape ? "space-y-2" : "space-y-3 sm:space-y-3.5"}
+                onSubmit={submit}
+                key={req?.tag + (req?.domain ?? "")}
+              >
                 {errorMessage && (
                   <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
                     <i className="fa-solid fa-circle-exclamation shrink-0" aria-hidden="true" />
