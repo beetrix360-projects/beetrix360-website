@@ -1,4 +1,5 @@
 import "server-only";
+import staticMediaSeed from "../content/media-placements.seed.json";
 import { getDbItem, putDbItem, queryDbByPk, deleteDbItem } from "./db";
 import { getAllServicePages, renderServicePageByPath } from "./service-pages";
 import type { ServiceGroupId } from "./service-pages/types";
@@ -318,29 +319,42 @@ export function discoverAllPagePlaceholders(): DiscoveredPage[] {
 // ============================================================================
 
 export async function getAllStoredPlacements(): Promise<MediaPlacement[]> {
+  const map = new Map<string, MediaPlacement>();
+
+  // 1. Load the comprehensive baseline media seed (all 4,609 curated slots across 150 pages)
+  try {
+    const seedMap = (staticMediaSeed || {}) as Record<string, any>;
+    for (const [k, v] of Object.entries(seedMap)) {
+      if (k.startsWith(`${PK_MEDIA_PLACEMENT}:`) && v && typeof v === "object") {
+        const item = v as MediaPlacement;
+        const key = `${normalizePageSlug(item.pageSlug)}#${item.placeholderKey.trim()}`;
+        map.set(key, item);
+      }
+    }
+  } catch (e) {
+    console.error("[media-placements] Failed to load media seed fallback:", e);
+  }
+
+  // 2. Query DynamoDB (or local DB) for custom user edits and overlay them on top of the seed
   try {
     const records = await queryDbByPk<MediaPlacement>(PK_MEDIA_PLACEMENT);
-    if (Array.isArray(records) && records.length > 0) {
-      return records;
+    if (Array.isArray(records)) {
+      for (const rec of records) {
+        if (rec && rec.placeholderKey) {
+          const key = `${normalizePageSlug(rec.pageSlug)}#${rec.placeholderKey.trim()}`;
+          const existing = map.get(key);
+          map.set(key, {
+            ...(existing || {}),
+            ...rec,
+          });
+        }
+      }
     }
   } catch (err) {
     console.error("[media-placements] Error reading stored placements from DB:", err);
   }
 
-  // Fallback to static media placements seed (4,600+ curated records)
-  try {
-    const seedMap = require("@/content/media-placements.seed.json");
-    const list: MediaPlacement[] = [];
-    for (const [k, v] of Object.entries(seedMap)) {
-      if (k.startsWith(`${PK_MEDIA_PLACEMENT}:`) && v && typeof v === "object") {
-        list.push(v as MediaPlacement);
-      }
-    }
-    return list;
-  } catch (e) {
-    console.error("[media-placements] Failed to load media placements seed fallback:", e);
-    return [];
-  }
+  return Array.from(map.values());
 }
 
 export async function getMediaPlacementById(id: string): Promise<MediaPlacement | null> {
@@ -354,7 +368,7 @@ export async function getMediaPlacementById(id: string): Promise<MediaPlacement 
 
   // Fallback to static seed
   try {
-    const seedMap = require("@/content/media-placements.seed.json");
+    const seedMap = (staticMediaSeed || {}) as Record<string, any>;
     const match = seedMap[`${PK_MEDIA_PLACEMENT}:${sk}`];
     if (match) return match as MediaPlacement;
   } catch {}

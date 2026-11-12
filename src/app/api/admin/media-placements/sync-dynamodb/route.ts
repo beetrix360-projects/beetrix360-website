@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getSessionUser, canUpdate } from "@/lib/auth";
 import { ddbDocClient, TABLE_NAME } from "@/lib/db";
 import { BatchWriteCommand } from "@aws-sdk/lib-dynamodb";
+import staticMediaSeed from "../../../../../content/media-placements.seed.json";
 
 export const dynamic = "force-dynamic";
 
@@ -19,7 +20,7 @@ export async function POST() {
       );
     }
 
-    const seedMap = require("@/content/media-placements.seed.json");
+    const seedMap = (staticMediaSeed || {}) as Record<string, any>;
     const keys = Object.keys(seedMap).filter((k) => k.startsWith("MEDIA_PLACEMENT:"));
 
     const batchSize = 25;

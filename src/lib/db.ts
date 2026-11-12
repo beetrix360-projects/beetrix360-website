@@ -1,5 +1,6 @@
 import { RAW_REDIRECT_MAP } from "./redirect-map";
 import "server-only";
+import staticMediaSeed from "../content/media-placements.seed.json";
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import {
   DynamoDBDocumentClient,
@@ -70,13 +71,8 @@ function ensureLocalStore(): Record<string, any> {
       const parsed = JSON.parse(fs.readFileSync(LOCAL_STORE_FILE, "utf-8"));
       // Ensure media placements seed is merged if missing from local store
       const hasMedia = Object.keys(parsed).some((k) => k.startsWith("MEDIA_PLACEMENT:"));
-      if (!hasMedia) {
-        try {
-          const mediaData = require("@/content/media-placements.seed.json");
-          Object.assign(parsed, mediaData);
-        } catch (e) {
-          console.error("Failed to merge media placements seed:", e);
-        }
+      if (!hasMedia && staticMediaSeed) {
+        Object.assign(parsed, staticMediaSeed);
       }
       localMemoryCache = parsed;
       return parsed;
@@ -116,11 +112,8 @@ function ensureLocalStore(): Record<string, any> {
     }
 
     // Seed all 4,600+ media placements on fresh cloud deployments
-    try {
-      const mediaData = require("@/content/media-placements.seed.json");
-      Object.assign(seed, mediaData);
-    } catch (e) {
-      console.error("Failed to seed media placements on startup:", e);
+    if (staticMediaSeed) {
+      Object.assign(seed, staticMediaSeed);
     }
   } catch (err) {
     console.error("Failed to seed initial local content store:", err);
