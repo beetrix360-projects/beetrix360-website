@@ -308,17 +308,38 @@ export async function getPageByPath(rawPath: string): Promise<PageRecordV2 | nul
  * Retrieve all pages.
  */
 export async function getAllPages(): Promise<PageRecordV2[]> {
-  const pages = await queryDbByPk<PageRecordV2>("PAGE");
-  const valid = pages.filter(
-    (p) => p && typeof p === "object" && typeof p.path === "string" && p.path.trim().length > 0
-  );
-  if (valid.length > 0) {
-    return valid;
+  const pageMap = new Map<string, PageRecordV2>();
+
+  // 1. Always seed all baseline pages (all 159 pages, guaranteed!)
+  const seedPages = Array.isArray((staticIaSeed as any)?.pages)
+    ? (staticIaSeed as any).pages
+    : [];
+  for (const p of seedPages) {
+    if (p && p.path) {
+      pageMap.set(normalizePath(p.path), { ...p });
+    }
   }
-  if (staticIaSeed && Array.isArray((staticIaSeed as any).pages)) {
-    return (staticIaSeed as any).pages as PageRecordV2[];
+
+  // 2. Overlay any database custom edits or additions from DynamoDB / local store
+  try {
+    const dbPages = await queryDbByPk<PageRecordV2>("PAGE");
+    if (Array.isArray(dbPages)) {
+      for (const p of dbPages) {
+        if (p && typeof p === "object" && typeof p.path === "string" && p.path.trim().length > 0) {
+          const norm = normalizePath(p.path);
+          const existing = pageMap.get(norm);
+          pageMap.set(norm, {
+            ...(existing || {}),
+            ...p,
+          });
+        }
+      }
+    }
+  } catch (err) {
+    console.warn("[getAllPages] Error merging DB pages:", err);
   }
-  return [];
+
+  return Array.from(pageMap.values());
 }
 
 /**

@@ -4,7 +4,7 @@ import { getAllStoredPlacements, normalizePageSlug } from "@/lib/media-placement
 import { absoluteUrl } from "@/lib/site-url";
 import type { PageRecordV2 } from "@/lib/types";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 function getPriorityAndFrequency(page: PageRecordV2): {
   priority: number;
@@ -70,13 +70,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  // Exactly published pages with seo.robots.index === true and not locked
+  // Exactly published pages that are not explicitly marked index: false or locked
   const indexablePages = pages.filter(
     (p) =>
       p &&
       typeof p.path === "string" &&
-      p.published &&
-      p.seo?.robots?.index === true &&
+      p.path.trim().length > 0 &&
+      p.published !== false &&
+      p.seo?.robots?.index !== false &&
       !p.seo?.indexLock
   );
 
