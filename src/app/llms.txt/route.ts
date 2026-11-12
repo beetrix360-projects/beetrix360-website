@@ -1,15 +1,46 @@
 import { getHomepageContent, getSiteSettings, getAllPages } from "@/lib/content";
 import { absoluteUrl } from "@/lib/site-url";
+import type { PageRecordV2 } from "@/lib/types";
+import staticIaSeed from "../../../src/content/ia-v2.seed.json";
 
 // /llms.txt — a plain-Markdown map of the site for LLMs and answer engines (llmstxt.org convention).
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const [site, home, pages] = await Promise.all([
+  const [site, home] = await Promise.all([
     getSiteSettings(),
     getHomepageContent(),
-    getAllPages(),
   ]);
+
+  // Resilient page resolution starting from guaranteed baseline seed
+  const pageMap = new Map<string, PageRecordV2>();
+  const seedPages = Array.isArray((staticIaSeed as any)?.pages)
+    ? (staticIaSeed as any).pages
+    : [];
+  for (const p of seedPages) {
+    if (p && p.path) {
+      pageMap.set(p.path, { ...p });
+    }
+  }
+
+  try {
+    const dynamicPages = await getAllPages();
+    if (Array.isArray(dynamicPages)) {
+      for (const p of dynamicPages) {
+        if (p && typeof p.path === "string" && p.path.trim().length > 0) {
+          const existing = pageMap.get(p.path);
+          pageMap.set(p.path, {
+            ...(existing || {}),
+            ...p,
+          });
+        }
+      }
+    }
+  } catch (err) {
+    console.warn("[llms.txt] Error querying dynamic pages:", err);
+  }
+
+  const pages = Array.from(pageMap.values());
 
   const lines: string[] = [
     `# ${site.name}`,

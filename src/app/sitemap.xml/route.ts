@@ -1,7 +1,9 @@
 import { getAllPages } from "@/lib/content";
 import { getAllStoredPlacements, normalizePageSlug } from "@/lib/media-placements";
-import { absoluteUrl } from "@/lib/site-url";
+import { absoluteUrl, SITE_URL } from "@/lib/site-url";
 import type { PageRecordV2 } from "@/lib/types";
+import staticIaSeed from "../../../src/content/ia-v2.seed.json";
+import staticMediaSeed from "../../../src/content/media-placements.seed.json";
 
 export const dynamic = "force-dynamic";
 
@@ -64,34 +66,90 @@ function getPriorityAndFrequency(page: PageRecordV2): {
 }
 
 export async function GET() {
-  const [pages, placements] = await Promise.all([
-    getAllPages().catch(() => []),
-    getAllStoredPlacements().catch(() => []),
-  ]);
+  // 1. Build a resilient page map starting from the guaranteed 159 seed pages
+  const pageMap = new Map<string, PageRecordV2>();
+  const seedPages = Array.isArray((staticIaSeed as any)?.pages)
+    ? (staticIaSeed as any).pages
+    : [];
 
-  // Index images by page slug
+  for (const p of seedPages) {
+    if (p && p.path) {
+      pageMap.set(p.path, { ...p });
+    }
+  }
+
+  // 2. Overlay any live updates from DynamoDB / local store
+  try {
+    const dbPages = await getAllPages();
+    if (Array.isArray(dbPages)) {
+      for (const p of dbPages) {
+        if (p && typeof p.path === "string" && p.path.trim().length > 0) {
+          const existing = pageMap.get(p.path);
+          pageMap.set(p.path, {
+            ...(existing || {}),
+            ...p,
+          });
+        }
+      }
+    }
+  } catch (err) {
+    console.warn("[sitemap] Failed to query dynamic pages, using baseline seed:", err);
+  }
+
+  const allPages = Array.from(pageMap.values());
+
+  // 3. Build image map starting with static baseline, then overlay stored DB placements
   const imagesBySlug = new Map<string, string[]>();
-  for (const item of placements) {
+  const seedMedia = (staticMediaSeed || {}) as Record<string, any>;
+  for (const [k, v] of Object.entries(seedMedia)) {
     if (
-      item &&
-      item.pageSlug &&
-      item.mediaUrl &&
-      typeof item.mediaUrl === "string" &&
-      item.mediaUrl.startsWith("http") &&
-      !item.mediaUrl.endsWith(".mp4")
+      v &&
+      v.pageSlug &&
+      v.mediaUrl &&
+      typeof v.mediaUrl === "string" &&
+      v.mediaUrl.startsWith("http") &&
+      !v.mediaUrl.endsWith(".mp4")
     ) {
-      const slug = normalizePageSlug(item.pageSlug);
+      const slug = normalizePageSlug(v.pageSlug);
       if (!imagesBySlug.has(slug)) {
         imagesBySlug.set(slug, []);
       }
       const list = imagesBySlug.get(slug)!;
-      if (!list.includes(item.mediaUrl) && list.length < 3) {
-        list.push(item.mediaUrl);
+      if (!list.includes(v.mediaUrl) && list.length < 3) {
+        list.push(v.mediaUrl);
       }
     }
   }
 
-  const indexablePages = pages.filter(
+  try {
+    const dynamicPlacements = await getAllStoredPlacements();
+    if (Array.isArray(dynamicPlacements)) {
+      for (const item of dynamicPlacements) {
+        if (
+          item &&
+          item.pageSlug &&
+          item.mediaUrl &&
+          typeof item.mediaUrl === "string" &&
+          item.mediaUrl.startsWith("http") &&
+          !item.mediaUrl.endsWith(".mp4")
+        ) {
+          const slug = normalizePageSlug(item.pageSlug);
+          if (!imagesBySlug.has(slug)) {
+            imagesBySlug.set(slug, []);
+          }
+          const list = imagesBySlug.get(slug)!;
+          if (!list.includes(item.mediaUrl) && list.length < 3) {
+            list.push(item.mediaUrl);
+          }
+        }
+      }
+    }
+  } catch (err) {
+    console.warn("[sitemap] Failed to query dynamic placements:", err);
+  }
+
+  // 4. Filter for indexable pages (exclude only explicit draft or indexLock)
+  const indexablePages = allPages.filter(
     (p) =>
       p &&
       typeof p.path === "string" &&
@@ -135,6 +193,7 @@ export async function GET() {
     headers: {
       "Content-Type": "application/xml; charset=utf-8",
       "Cache-Control": "public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400",
+      "X-Sitemap-Total-Urls": String(urlBlocks.length),
     },
   });
 }
