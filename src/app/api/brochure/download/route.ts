@@ -74,20 +74,6 @@ export async function GET(req: NextRequest) {
       });
     }
 
-    // Fallback: If uploaded path missing, check default brochure
-    const defaultPdf = path.join(process.cwd(), "public", "downloads", "beetrix360-corporate-brochure.pdf");
-    if (fs.existsSync(defaultPdf)) {
-      const fileBuffer = fs.readFileSync(defaultPdf);
-      return new Response(fileBuffer, {
-        status: 200,
-        headers: {
-          "Content-Type": "application/pdf",
-          "Content-Disposition": `${dispositionType}; filename="beetrix360-corporate-brochure.pdf"`,
-          "Content-Length": fileBuffer.length.toString(),
-        },
-      });
-    }
-
     return NextResponse.json({ error: "Brochure file not found" }, { status: 404 });
   } catch (err: any) {
     console.error("[Brochure Download Error]:", err);
