@@ -49,19 +49,6 @@ export function Footer({ site, navigation, divisions }: FooterProps) {
               <span className="w-8 h-1.5 rounded bg-bx-yellow" />
               <span className="w-8 h-1.5 rounded bg-bx-blue" />
             </div>
-
-            {brochure.enabled && (
-              <div className="mt-7">
-                <a
-                  href="/api/brochure/download"
-                  download={brochure.fileName || "Beetrix360-Corporate-Brochure.pdf"}
-                  className="inline-flex items-center justify-center gap-3 px-6 sm:px-7 py-3 rounded-full bg-neutral-900 hover:bg-bx-pink text-white text-xs font-heading font-semibold tracking-wide transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap group"
-                >
-                  <i className="fa-solid fa-file-arrow-down text-bx-yellow text-sm group-hover:translate-y-0.5 transition-transform shrink-0" aria-hidden="true" />
-                  <span className="whitespace-nowrap">{brochure.buttonLabel || "Download E-Brochure"}</span>
-                </a>
-              </div>
-            )}
           </div>
           <nav aria-label={f.exploreTitle}>
             <p className="text-[11px] font-mono uppercase text-neutral-400 mb-3">{f.exploreTitle}</p>
@@ -89,6 +76,18 @@ export function Footer({ site, navigation, divisions }: FooterProps) {
                   {f.bookLabel}
                 </Link>
               </li>
+              {brochure.enabled && (
+              <div className="mt-7">
+                <a
+                  href="/api/brochure/download"
+                  download={brochure.fileName || "Beetrix360-Corporate-Brochure.pdf"}
+                  className="inline-flex items-center justify-center gap-3 px-6 sm:px-7 py-3 rounded-full bg-neutral-900 hover:bg-bx-pink text-white text-xs font-heading font-semibold tracking-wide transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap group"
+                >
+                  <i className="fa-solid fa-file-arrow-down text-bx-yellow text-sm group-hover:translate-y-0.5 transition-transform shrink-0" aria-hidden="true" />
+                  <span className="whitespace-nowrap">{brochure.buttonLabel || "Download E-Brochure"}</span>
+                </a>
+              </div>
+            )}
             </ul>
           </div>
         </div>
