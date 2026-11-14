@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
     }
 
     const { searchParams } = new URL(req.url);
-    const isInline = searchParams.get("inline") === "1" || searchParams.get("view") === "1";
+    const isAttachment = searchParams.get("download") === "1" || searchParams.get("attachment") === "1";
 
     const fileUrl = config.fileUrl;
     let fileName = config.fileName || path.basename(fileUrl) || "beetrix360-brochure.pdf";
@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
       contentType = "application/pdf";
     }
 
-    const dispositionType = isInline ? "inline" : "attachment";
+    const dispositionType = isAttachment ? "attachment" : "inline";
     const contentDisposition = `${dispositionType}; filename="${encodeURIComponent(fileName)}"; filename*=UTF-8''${encodeURIComponent(fileName)}`;
 
     // Case 1: Remote URL (S3, CloudFront, CDN)

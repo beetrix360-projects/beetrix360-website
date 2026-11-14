@@ -77,17 +77,18 @@ export function Footer({ site, navigation, divisions }: FooterProps) {
                 </Link>
               </li>
               {brochure.enabled && (
-              <div className="mt-7">
-                <a
-                  href="/api/brochure/download"
-                  download={brochure.fileName || "Beetrix360-Corporate-Brochure.pdf"}
-                  className="inline-flex items-center justify-center gap-3 px-6 sm:px-7 py-3 rounded-full bg-neutral-900 hover:bg-bx-pink text-white text-xs font-heading font-semibold tracking-wide transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap group"
-                >
-                  <i className="fa-solid fa-file-arrow-down text-bx-yellow text-sm group-hover:translate-y-0.5 transition-transform shrink-0" aria-hidden="true" />
-                  <span className="whitespace-nowrap">{brochure.buttonLabel || "Download E-Brochure"}</span>
-                </a>
-              </div>
-            )}
+                <div className="mt-7">
+                  <a
+                    href="/api/brochure/download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-3 px-6 sm:px-7 py-3 rounded-full bg-neutral-900 hover:bg-bx-pink text-white text-xs font-heading font-semibold tracking-wide transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap group"
+                  >
+                    <i className="fa-solid fa-arrow-up-right-from-square text-bx-yellow text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" aria-hidden="true" />
+                    <span className="whitespace-nowrap">{brochure.buttonLabel || "View E-Brochure"}</span>
+                  </a>
+                </div>
+              )}
             </ul>
           </div>
         </div>

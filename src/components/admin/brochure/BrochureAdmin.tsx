@@ -128,7 +128,7 @@ export function BrochureAdmin({ initialConfig }: Props) {
             <span>E-Brochure &amp; Capabilities Collateral</span>
           </h1>
           <p className="text-sm text-neutral-500 mt-1">
-            Upload and manage the corporate brochure (PDF or interactive HTML) downloadable across the website footer.
+            Upload and manage the corporate brochure (PDF or interactive HTML) viewed across the website footer in a new tab.
           </p>
         </div>
 
@@ -165,7 +165,7 @@ export function BrochureAdmin({ initialConfig }: Props) {
             <div>
               <p className="font-heading font-bold text-neutral-900 text-base">Show E-Brochure in Footer</p>
               <p className="text-xs text-neutral-500 mt-0.5">
-                Displays the 1-click download button under the company branding in the website footer.
+                Displays the 1-click button under the company branding in the website footer to open the brochure in a new tab.
               </p>
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
@@ -246,7 +246,7 @@ export function BrochureAdmin({ initialConfig }: Props) {
 
                   {/* Direct Download Test */}
                   <a
-                    href="/api/brochure/download"
+                    href="/api/brochure/download?download=1"
                     download={config.fileName || (isHtml ? "brochure.html" : "brochure.pdf")}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-xs font-medium text-white transition-colors"
                     title="Download file to test visitor experience"
@@ -431,11 +431,11 @@ export function BrochureAdmin({ initialConfig }: Props) {
                 <span>Visitor Experience:</span>
               </p>
               <p className="text-[11px] text-blue-800 leading-relaxed">
-                When visitors click the footer button, their browser will automatically download{" "}
+                When visitors click the footer button, their browser will open the brochure in a new tab:{" "}
                 <span className="font-semibold text-neutral-900">
                   {config.fileName || (isHtml ? "brochure.html" : "brochure.pdf")}
                 </span>
-                . Both PDF documents and interactive single-page HTML decks download directly.
+                . Both PDF documents and interactive single-page HTML decks render directly in the new browser tab with clean controls.
               </p>
             </div>
           </div>

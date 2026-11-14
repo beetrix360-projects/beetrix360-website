@@ -11,7 +11,7 @@ export interface BrochureConfig {
 
 export const DEFAULT_BROCHURE_CONFIG: BrochureConfig = {
   enabled: true,
-  buttonLabel: "Download E-Brochure",
+  buttonLabel: "View E-Brochure",
   fileUrl: "/downloads/beetrix360-corporate-brochure.pdf",
   fileName: "Beetrix360-Corporate-Capabilities-Brochure.pdf",
   fileSize: "PDF • 3.2 MB",
